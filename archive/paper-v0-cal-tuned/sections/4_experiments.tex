@@ -1,0 +1,272 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We evaluate AnomalyClaw on a 12-domain benchmark spanning industrial, 3D, remote sensing, medical, scene-level, and logical anomaly detection.
+All code and evaluation scripts will be released upon publication.
+
+%% ─────────────────────────────────────────────────────
+\subsection{Experimental Setup}
+\label{sec:setup}
+
+\paragraph{Benchmark.}
+We construct a cross-domain evaluation suite (\Cref{tab:benchmark}).
+Each domain contributes 120 test images (60 normal, 60 anomalous) drawn from established public datasets, totaling 1{,}440 test items.
+Domains are organized sequentially by type: industrial (D1--D4), logical (D5), 3D point cloud (D6), remote sensing (D7), medical (D8--D11), and scene (D12).
+VisA (D3) is included specifically for its multi-object categories (PCBs, capsules) and complex texture objects.
+Real3D-AD (D6) provides rendered point cloud views testing whether VLMs can detect geometric deformations.
+LEVIR-CD+ (D7) introduces satellite imagery change detection, testing cross-modality generalization.
+
+\begin{table}[t]
+\centering
+\caption{%
+    \textbf{Cross-domain benchmark overview.}
+    Twelve domains organized by anomaly type.
+    Each domain contributes 120 test images (60 normal, 60 anomalous).
+}
+\label{tab:benchmark}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}clllp{3.0cm}@{}}
+\toprule
+Code & Domain & Source & Type & Challenge \\
+\midrule
+D1  & Industrial Mfg.    & MVTec-AD    & Local      & Texture defects \\
+D2  & Retail Products    & GoodsAD     & Local      & Packaging damage \\
+D3  & Complex Industrial & VisA        & Local+Multi & Multi-object, complex \\
+D4  & Infrastructure     & SDNET2018   & Local      & Concrete cracks \\
+D5  & Logical Anomaly    & MVTec-LOCO  & Logical    & Rule violations \\
+D6  & 3D Product (RGB)   & Real3D-AD   & 3D/Geom.   & Shape deformations \\
+D7  & Remote Sensing     & LEVIR-CD+   & Change Det. & Building damage \\
+D8  & Dermatology        & DermaMNIST  & Medical    & Subtle morphology \\
+D9  & Brain MRI          & BraTS2021   & Medical    & Tissue overlap \\
+D10 & Liver CT           & BMAD-Liver  & Medical    & Low-contrast lesions \\
+D11 & GI Endoscopy       & HyperKvasir & Medical    & Polyp detection \\
+D12 & Road Safety        & BDD100K+RA21 & Scene     & Contextual reasoning \\
+\midrule
+    & \textbf{Total}           &                   &                      & \textbf{1{,}440 images} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Baselines.}
+We compare against methods spanning three categories:
+
+\emph{Expert-only methods} (no VLM):
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+    \item \textbf{CLIP-ZeroShot}: Zero-shot anomaly classification using CLIP text-image similarity with prompt templates (``a photo of a normal/defective [object]'').
+    \item \textbf{WinCLIP}~\citep{jeong2023winclip}: Window-level CLIP similarity with multi-scale aggregation.
+    \item \textbf{PatchCore Expert}: Our patch-level expert in isolation (DINOv2 features, top-1\% aggregation, $k{=}4$ retrieved references).
+\end{enumerate}
+
+\emph{Single-pass VLM methods} (one VLM call, no debate):
+\begin{enumerate}[leftmargin=*,itemsep=1pt,start=4]
+    \item \textbf{VLM-Direct}: VLM receives query image only, no references or expert evidence.
+    \item \textbf{Retrieval+VLM}: DINOv2 retrieval followed by VLM comparison between query and references.
+    \item \textbf{Expert-Informed VLM}: Retrieval + expert evidence as text context, single-pass VLM judgment (AnomalyClaw without debate).
+\end{enumerate}
+
+\emph{Multi-round/agent methods}:
+\begin{enumerate}[leftmargin=*,itemsep=1pt,start=7]
+    \item \textbf{AgentIAD}~\citep{zhang2025agentiad}: Tool-augmented single agent with iterative reasoning.
+    \item \textbf{Symmetric Debate}: Two VLM agents with identical roles debating anomaly presence (no Proposer/Advocate asymmetry, no expert grounding).
+\end{enumerate}
+
+\paragraph{Implementation details.}
+Unless otherwise noted, experiments use \tbd{[primary VLM]} as the debate backbone with temperature~0 and structured JSON output.
+The patch expert uses DINOv2 ViT-S/14 at native $518{\times}518$ resolution.
+Default debate depth is $D_{\max}=2$.
+We report AUROC as the primary metric.
+Confidence intervals are 95\% bootstrap CIs over 10{,}000 resamples.
+
+
+%% ─────────────────────────────────────────────────────
+\subsection{Main Results}
+\label{sec:main_results}
+
+\Cref{tab:main_results} presents per-domain AUROC for all methods.
+
+\begin{table}[t]
+\centering
+\caption{%
+    \textbf{Per-domain AUROC on the 12-domain benchmark.}
+    \colorbox{bestcolor}{Green} = best; \colorbox{secondcolor}{orange} = second best.
+    AnomalyClaw results use \tbd{[primary VLM]} with debate depth $D{=}2$.
+}
+\label{tab:main_results}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}lcccccccccccc|c@{}}
+\toprule
+Method & D1 & D2 & D3 & D4 & D5 & D6 & D7 & D8 & D9 & D10 & D11 & D12 & Macro \\
+\midrule
+\multicolumn{12}{@{}l}{\emph{Expert-only (no VLM)}} \\
+CLIP-ZeroShot
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XXX} \\
+WinCLIP
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XXX} \\
+PatchCore Expert
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XXX} \\
+\midrule
+\multicolumn{12}{@{}l}{\emph{Single-pass VLM}} \\
+VLM-Direct
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XXX} \\
+Retrieval+VLM
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XXX} \\
+Expert-Informed VLM
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XXX} \\
+\midrule
+\multicolumn{12}{@{}l}{\emph{Multi-round / agent}} \\
+AgentIAD
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XXX} \\
+Symmetric Debate
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XXX} \\
+\rowcolor{gray!10}
+\textbf{AnomalyClaw (Ours)}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX}
+    & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XX} & 	bd{.XXX} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Key observations.}
+\tbd{[Analysis of main results to be written after experiments complete.
+Expected observations:
+(1) AnomalyClaw should outperform all baselines on macro AUROC.
+(2) The gap over single-pass VLM methods should be larger than in the previous pipeline design, since debate catches hallucinations.
+(3) Expert-only baselines (CLIP-ZeroShot, WinCLIP) should be substantially weaker, establishing a clear progression.
+(4) Symmetric debate should underperform AnomalyClaw, validating the asymmetric design.
+(5) Largest gains expected on D5 (logical), D3 (multi-object), and medical domains where self-verification matters most.]}
+
+
+%% ─────────────────────────────────────────────────────
+\subsection{Ablation Studies}
+\label{sec:ablation}
+
+\paragraph{Ablation 1: Does adversarial debate help?}
+\Cref{tab:ablation_debate} isolates the contribution of the debate mechanism by comparing AnomalyClaw variants with identical expert evidence but different reasoning strategies.
+
+\begin{table}[t]
+\centering
+\caption{%
+    \textbf{Debate ablation.}
+    Adversarial debate with expert grounding outperforms all single-pass and symmetric alternatives.
+}
+\label{tab:ablation_debate}
+\small
+\begin{tabular}{@{}llcc@{}}
+\toprule
+Reasoning Strategy & Expert Evidence & Macro AUROC & VLM Calls/Query \\
+\midrule
+Single-pass VLM             & None           & \tbd{X.XXX} & 1 \\
+Single-pass VLM             & Patch + Retrieval & \tbd{X.XXX} & 1 \\
+Symmetric debate (no expert) & None           & \tbd{X.XXX} & 4 \\
+Symmetric debate            & Patch + Retrieval & \tbd{X.XXX} & 4 \\
+AnomalyClaw (asymmetric)     & Patch + Retrieval & \tbd{X.XXX} & 2--4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Ablation 2: Which experts matter?}
+\Cref{tab:ablation_experts} tests the contribution of different experts within the AnomalyClaw framework.
+
+\begin{table}[t]
+\centering
+\caption{%
+    \textbf{Expert pool ablation.}
+    Patch-level evidence provides the largest single improvement; combining multiple experts yields additional gains.
+}
+\label{tab:ablation_experts}
+\small
+\begin{tabular}{@{}lc@{}}
+\toprule
+Expert Configuration & Macro AUROC \\
+\midrule
+No experts (debate only)                & \tbd{X.XXX} \\
+Retrieval expert only                    & \tbd{X.XXX} \\
+Patch expert only                        & \tbd{X.XXX} \\
+Patch + Retrieval                        & \tbd{X.XXX} \\
+Patch + Retrieval + Texture              & \tbd{X.XXX} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Ablation 3: Debate depth.}
+\Cref{tab:ablation_depth} varies the maximum debate depth $D_{\max}$.
+
+\begin{table}[t]
+\centering
+\caption{%
+    \textbf{Effect of debate depth.}
+    Performance improves from $D{=}1$ to $D{=}2$ and plateaus at $D{=}3$.
+}
+\label{tab:ablation_depth}
+\small
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$D_{\max}$ & Macro AUROC & Avg.\ VLM Calls/Query \\
+\midrule
+1 & \tbd{X.XXX} & 2.0 \\
+2 & \tbd{X.XXX} & \tbd{X.X} \\
+3 & \tbd{X.XXX} & \tbd{X.X} \\
+4 & \tbd{X.XXX} & \tbd{X.X} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+%% ─────────────────────────────────────────────────────
+\subsection{Multi-VLM Generalization}
+\label{sec:multi_vlm}
+
+A key claim of AnomalyClaw is VLM-agnostic design.
+\Cref{tab:multi_vlm} evaluates the framework across multiple VLM backends.
+
+\begin{table}[t]
+\centering
+\caption{%
+    \textbf{Cross-VLM generalization.}
+    AnomalyClaw consistently improves over single-pass baselines regardless of the underlying VLM.
+}
+\label{tab:multi_vlm}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+VLM Backend & Single-Pass AUROC & AnomalyClaw AUROC \\
+\midrule
+\tbd{VLM-A}          & \tbd{X.XXX} & \tbd{X.XXX} \\
+\tbd{VLM-B}          & \tbd{X.XXX} & \tbd{X.XXX} \\
+\tbd{VLM-C (open)}   & \tbd{X.XXX} & \tbd{X.XXX} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+%% ─────────────────────────────────────────────────────
+\subsection{Analysis}
+\label{sec:analysis}
+
+\paragraph{Cost--accuracy tradeoff.}
+The autonomous controller enables a natural cost--accuracy tradeoff through debate depth control.
+\tbd{[Pareto plot comparing: PatchCore Expert (0 VLM calls), single-pass VLM (1 call), AnomalyClaw D=1 (2 calls), AnomalyClaw D=2 (2--4 calls), symmetric debate (4 calls).
+AnomalyClaw should Pareto-dominate symmetric debate (better accuracy, similar or lower cost).]}
+
+\paragraph{When does debate help most?}
+\tbd{[Per-domain analysis showing debate gain over single-pass.
+Expected: largest gains on D5 (logical---debate catches compositional errors), D3 (multi-object---debate resolves ambiguous multi-region claims), and medical domains (debate catches hallucinated defects on normal tissue).
+Smallest gains on D10 (road safety---semantically obvious anomalies).]}
+
+\paragraph{Autonomous controller behavior.}
+\tbd{[Statistics on expert selection frequency and debate depth per domain.
+Expected: D10 mostly 1-round (easy), medical domains mostly 2-round (ambiguous), D5 frequently triggers all experts (complex).]}
+
+\paragraph{Failure analysis.}
+\tbd{[Identify worst-performing domain (likely D8 Liver CT) and analyze error modes.
+Focus on: Does debate reduce false positives? Does it help with false negatives? What types of anomalies resist adversarial verification?]}

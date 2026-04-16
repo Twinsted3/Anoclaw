@@ -1,0 +1,173 @@
+\section{Method}
+\label{sec:method}
+
+We present AnomaClaw, a training-free system that combines dense patch-level expert analysis with VLM reasoning for cross-domain visual anomaly detection.
+The system operates in three stages---visual retrieval, patch expert analysis, and expert-informed VLM reasoning---with an optional family-adaptive fusion step that calibrates the expert--VLM balance per domain type.
+
+\subsection{Problem Formulation}
+\label{sec:formulation}
+
+Given a query image $\query$, a domain code $\domcode$ identifying the inspection context (e.g., \texttt{mvtec\_metal\_nut}, \texttt{brain\_mri}), and a bank of normal images $\bank_\domcode = \{I^n_1, \ldots, I^n_N\}$, the goal is to produce an anomaly score $\ascore \in [0,1]$ where higher values indicate greater anomaly likelihood.
+The system operates in a \emph{training-free, few-shot} setting: no parameters are learned from anomaly examples, and only $k$ normal references (typically $k \leq 5$) are used per query at inference time.
+
+We organize the benchmark domains into four \emph{anomaly families} that reflect the nature of deviations each domain exhibits. Each domain code $\domcode$ is assigned a known family label $\family(\domcode)$:
+\begin{equation}
+    \family(\domcode) \in \{\texttt{local\_appearance},\; \texttt{semantic\_medical},\; \texttt{semantic\_scene},\; \texttt{logical\_structural}\}.
+    \label{eq:families}
+\end{equation}
+Local appearance anomalies (industrial surfaces, retail products) manifest as spatially localized texture or color deviations.
+Semantic medical anomalies (brain MRI, liver CT, endoscopy) require clinical interpretation that goes beyond pixel-level comparison.
+Semantic scene anomalies (road hazards) involve contextual reasoning about object placement and safety.
+Logical structural anomalies (assembly errors, functional defects) concern violations of compositional rules where individual components appear normal in isolation.
+This family structure is used for the optional fusion step (\Cref{sec:fusion}) and for selecting family-appropriate guidance text in the VLM prompt; the pipeline \emph{architecture} (retrieval $\to$ patch expert $\to$ VLM) is identical across all domains, but the textual domain knowledge and family-specific guidance provided to the VLM differ per domain.
+
+\subsection{Pipeline Overview}
+\label{sec:overview}
+
+\Cref{fig:overview} illustrates the three-stage pipeline.
+\textbf{Stage~1 (Visual Retrieval):} We embed all normal images in $\bank_\domcode$ using DINOv2 and retrieve the $k$ most similar references to the query via cosine similarity.
+\textbf{Stage~2 (Patch Expert Analysis):} A PatchCore-style module extracts dense patch tokens from the query and references, computes patch-level nearest-neighbor distances, and aggregates these into both a scalar anomaly score $\ascore_{\text{expert}}$ and a structured text summary.
+\textbf{Stage~3 (VLM Reasoning):} The VLM receives the query image, retrieved reference images, domain-specific knowledge, and the expert's text summary, then outputs a final anomaly judgment.
+An optional \textbf{Stage~4 (Family-Adaptive Fusion)} combines $\ascore_{\text{expert}}$ and the VLM score $\ascore_{\text{vlm}}$ using family-specific weights.
+
+\begin{algorithm}[t]
+\caption{AnomaClaw inference pipeline}
+\label{alg:pipeline}
+\begin{algorithmic}[1]
+\REQUIRE Query image $\query$, domain code $\domcode$, normal bank $\bank_\domcode$, number of references $k$
+\ENSURE Anomaly score $\ascore \in [0,1]$
+\STATE \textbf{// Stage 1: Visual Retrieval}
+\STATE $\feat^q \gets \textsc{DINOv2-CLS}(\query)$
+\STATE $\refset \gets \text{top-}k \text{ images from } \bank_\domcode \text{ by } \cos(\feat^q, \feat^n)$
+\STATE \textbf{// Stage 2: Patch Expert Analysis}
+\STATE $\{\patch^q_i\}_{i=1}^{M} \gets \textsc{DINOv2-Patch}(\query)$
+\STATE $\mathcal{P}_{\text{ref}} \gets \bigcup_{I^r \in \refset} \textsc{DINOv2-Patch}(I^r)$
+\STATE $d_i \gets 1 - \max_{\patch \in \mathcal{P}_{\text{ref}}} \cos(\patch^q_i, \patch)$ for each $i$
+\STATE $\ascore_{\text{expert}} \gets \text{mean of top-}1\%\text{ of } \{d_i\}_{i=1}^{M}$
+\STATE $t_{\text{expert}} \gets \textsc{FormatSummary}(\ascore_{\text{expert}}, \cos(\feat^q, \feat^{r_1}))$
+\STATE \textbf{// Stage 3: VLM Reasoning}
+\STATE $\ascore_{\text{vlm}} \gets \textsc{VLM}(\query, \refset, t_{\text{expert}}, t_{\text{domain}})$
+\STATE \textbf{// Stage 4: Family-Adaptive Fusion (optional)}
+    \STATE $\ascore \gets \alphafam_{\family(\domcode)} \cdot \ascore_{\text{expert}} + (1 - \alphafam_{\family(\domcode)}) \cdot \ascore_{\text{vlm}}$
+\RETURN $\ascore$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Visual Retrieval}
+\label{sec:retrieval}
+
+Effective reference selection is critical for few-shot anomaly detection: the VLM and patch expert both benefit from references that are visually close to the query, as these reduce the false-positive rate from irrelevant comparisons.
+We use DINOv2-Small (ViT-S/14)~\citep{oquab2024dinov2} as the retrieval backbone.
+Each image in the normal bank $\bank_\domcode$ is passed through DINOv2, and the CLS token embedding $\feat^n \in \R^{384}$ is $\ell_2$-normalized and stored.
+At inference, the query embedding $\feat^q$ is computed identically, and the top-$k$ normal images are retrieved by cosine similarity:
+\begin{equation}
+    \refset = \underset{S \subset \bank_\domcode,\, |S|=k}{\argmax} \sum_{I^n \in S} \cos(\feat^q, \feat^n).
+    \label{eq:retrieval}
+\end{equation}
+This retrieval step replaces the random reference selection used in prior VLM-based methods~\citep{jiang2024mmad,zhang2025agentiad}, which we find to be particularly harmful in medical and industrial domains where within-class appearance variation is high (e.g., different brain slices or different metal nut orientations).
+The retrieved reference set $\refset$ is used by both the patch expert and the VLM in subsequent stages.
+
+\subsection{Patch Expert Analysis}
+\label{sec:expert}
+
+The patch expert provides a quantitative grounding signal that the VLM cannot compute from pixels alone.
+We extract dense patch tokens from DINOv2 at its native resolution of $518 \times 518$ pixels, yielding a $37 \times 37$ grid of $384$-dimensional feature vectors per image ($M = 1{,}369$ patches).
+
+\paragraph{Reference patch bank.}
+For the $k$ retrieved reference images, we concatenate all patch tokens into a reference bank:
+\begin{equation}
+    \mathcal{P}_{\text{ref}} = \bigcup_{I^r \in \refset} \{\patch^r_1, \ldots, \patch^r_M\}, \quad |\mathcal{P}_{\text{ref}}| = k \cdot M.
+    \label{eq:patchbank}
+\end{equation}
+
+\paragraph{Patch-level anomaly scoring.}
+For each query patch token $\patch^q_i$, we compute the cosine distance to its nearest neighbor in $\mathcal{P}_{\text{ref}}$:
+\begin{equation}
+    d_i = 1 - \max_{\patch \in \mathcal{P}_{\text{ref}}} \cos(\patch^q_i, \patch).
+    \label{eq:patch_distance}
+\end{equation}
+The expert anomaly score is the mean of the top-$1\%$ most anomalous patch distances:
+\begin{equation}
+    \ascore_{\text{expert}} = \frac{1}{|\mathcal{T}|} \sum_{i \in \mathcal{T}} d_i, \quad \mathcal{T} = \{i : d_i \geq d_{(0.99M)}\},
+    \label{eq:expert_score}
+\end{equation}
+where $d_{(0.99M)}$ denotes the $99$th-percentile distance.
+This aggregation captures localized deviations---characteristic of surface defects, lesions, and structural misalignments---while remaining robust to the natural patch-level variation present in normal images.
+
+\paragraph{Structured text interpretation.}
+Rather than passing the raw scalar score directly for fusion or routing, we convert the expert's findings into a structured text summary $t_{\text{expert}}$ that the VLM can parse:
+\begin{quote}
+\small
+\texttt{Patch-level anomaly score: 0.248 (higher=more different from refs)} \\
+\texttt{Global similarity to best reference: 0.864} \\
+\texttt{Assessment: moderate anomaly signal}
+\end{quote}
+The numeric value in the prompt is the raw mean patch distance $\ascore_{\text{expert}}$ (Eq.~\ref{eq:expert_score}).
+To generate the qualitative assessment label, this raw distance is internally passed through a sigmoid calibration $\sigma(20 \cdot (d_{\text{raw}} - 0.18))$ and binned into five levels (``very similar to normal'' through ``strong anomaly signal'').
+The downstream AUROC computation uses the sigmoid-calibrated value; the VLM sees the raw distance plus the qualitative interpretation.
+This text summary is the sole channel through which expert evidence reaches the VLM.
+
+\subsection{Expert-Informed VLM Reasoning}
+\label{sec:vlm}
+
+The VLM receives a multi-modal prompt consisting of four components:
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+    \item \textbf{Reference images:} the $k$ retrieved normal images from $\refset$, establishing the visual baseline.
+    \item \textbf{Query image:} the image $\query$ to be classified.
+    \item \textbf{Domain knowledge:} a text description specifying the anomaly criteria for domain $\domcode$ and listing common false-positive patterns (e.g., ``normal liver CT may show benign cysts; do not flag these as anomalies'').
+    \item \textbf{Expert analysis text:} the structured summary $t_{\text{expert}}$ from the patch expert.
+\end{enumerate}
+The VLM (GPT-5.4) outputs a JSON response containing an image-level label $y \in \{\texttt{normal}, \texttt{anomalous}\}$ and a confidence value $c \in [0,1]$.
+The VLM anomaly score is computed as:
+\begin{equation}
+    \ascore_{\text{vlm}} =
+    \begin{cases}
+        c & \text{if } y = \texttt{anomalous}, \\
+        1 - c & \text{if } y = \texttt{normal}.
+    \end{cases}
+    \label{eq:vlm_score}
+\end{equation}
+
+\paragraph{Why expert-as-context outperforms alternatives.}
+The central design choice in AnomaClaw is to provide expert evidence as \emph{text context} rather than using the expert as a \emph{router} or performing \emph{score fusion}.
+We briefly motivate this here; full ablations appear in \Cref{sec:experiments}.
+
+\textbf{Expert-as-router} uses the expert score to decide whether to invoke the VLM at all: if the expert is confident, its score is returned directly, and the VLM is called only for ambiguous cases.
+This underperforms in our cross-domain setting because medical images often yield moderately elevated expert scores even when they are normal.
+A router can therefore suppress VLM consultation on exactly the cases where semantic reasoning is most needed.
+
+\textbf{Score fusion} averages the expert and VLM scores: $\ascore = \frac{1}{2}(\ascore_{\text{expert}} + \ascore_{\text{vlm}})$.
+The fundamental issue is that arithmetic averaging cannot express the conditional statement ``this expert evidence is unreliable for this sample.''
+When the expert and VLM disagree sharply, their average can remain mediocre even if one of the two subsystems is clearly correct.
+
+\textbf{Expert-as-context} avoids both failure modes.
+When the VLM reads ``Patch score: 0.248, Global similarity: 0.864, Assessment: moderate anomaly signal,'' it can reason: the patch expert detects some deviation, but the high global similarity suggests the query is close to the normal distribution.
+The VLM then examines the images directly and makes an informed judgment, discounting the expert when the visual evidence contradicts the quantitative signal.
+This design preserves the VLM's full decision authority while grounding it with evidence it could not compute independently.
+
+\subsection{Family-Adaptive Fusion}
+\label{sec:fusion}
+
+While expert-as-context is the primary integration mechanism, we observe that the \emph{scalar} expert score $\ascore_{\text{expert}}$ carries complementary information whose reliability varies systematically across anomaly families.
+Family-adaptive fusion combines the expert and VLM scores with family-specific weights:
+\begin{equation}
+    \ascore = \alphafam_{\family(\domcode)} \cdot \ascore_{\text{expert}} + (1 - \alphafam_{\family(\domcode)}) \cdot \ascore_{\text{vlm}},
+    \label{eq:fusion}
+\end{equation}
+where $\alphafam_{\family(\domcode)} \in [0,1]$ is a scalar weight for the anomaly family assigned to domain $\domcode$.
+
+\paragraph{Calibration procedure.}
+The fusion weights are tuned on a disjoint calibration pool of 200 items: 20 per domain (10 normal, 10 anomalous), separate from the 1{,}200-item test benchmark.
+For each anomaly family, we pool the calibration items from the domains in that family and perform a grid search over $\alphafam_\family \in \{0.0, 0.05, 0.10, \ldots, 1.0\}$, selecting the value that maximizes AUROC on that family's pooled calibration subset.
+The resulting weights are frozen for all test evaluation.
+
+\paragraph{Calibrated weights and interpretation.}
+The tuned values reveal a clear pattern in expert reliability:
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+    \item \textbf{Local appearance} ($\alphafam = 0.35$): The patch expert is effective at detecting surface defects and texture anomalies, contributing meaningfully alongside the VLM.
+    \item \textbf{Semantic medical} ($\alphafam = 0.05$): The expert is unreliable on medical imagery---subtle pathology often falls within the normal feature distribution---so the VLM dominates.
+    \item \textbf{Semantic scene} ($\alphafam = 0.00$): Scene-level anomalies are entirely semantic (e.g., a car driving on the wrong side), and the expert provides no useful signal.
+    \item \textbf{Logical structural} ($\alphafam = 0.60$): While the expert cannot reason about logical correctness per se, misplaced or missing components produce detectable appearance differences in the patch feature space. The high calibration-set weight reflects this; however, the test-set AUROC for D9 is only marginally affected by fusion (0.792 vs.\ 0.796 without), so this weight should be interpreted cautiously.
+\end{itemize}
+With these calibrated weights, AnomaClaw achieves its best operating point of $0.882$ macro AUROC across all 10 domains.
+The fusion adds no additional model parameters and negligible computation---it is a single weighted average applied after both scores are already computed.

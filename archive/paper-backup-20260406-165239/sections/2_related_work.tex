@@ -1,0 +1,66 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Training-Free Visual Anomaly Detection.}
+A growing body of work tackles anomaly detection without task-specific training by leveraging powerful pretrained representations.
+PatchCore~\cite{roth2022patchcore} introduced a coreset-based memory bank of patch-level features, enabling efficient nearest-neighbor anomaly scoring that remains highly competitive on industrial benchmarks.
+WinCLIP~\cite{jeong2023winclip} extended this idea to the zero-shot setting by composing CLIP-based window-level similarity scores, demonstrating that vision-language pretraining can serve as a strong prior for anomaly detection.
+More recently, self-supervised vision transformers---particularly DINOv2~\cite{oquab2024dinov2}---have provided rich, general-purpose patch features that further improve nearest-neighbor methods, and FoundAD~\cite{li2026foundad} showed that carefully designed feature adaptation strategies can close the gap between training-free and fine-tuned approaches on standard industrial datasets.
+Despite their strong performance on MVTec and VisA, these methods have been evaluated almost exclusively on industrial surfaces and objects; their generalization across medical, retail, road, and logical anomaly domains remains unexplored.
+In AnomaClaw, we adopt DINOv2-based patch features as one expert signal within a broader hybrid system, rather than relying on a single feature-bank detector as the sole decision-maker.
+
+\paragraph{VLM-Based Anomaly Detection.}
+Vision-language models (VLMs) offer semantic reasoning capabilities that purely visual detectors lack, and recent work has begun to exploit this for anomaly detection.
+AnomalyGPT~\cite{gu2024anomalygpt} fine-tunes a large VLM to produce anomaly judgments and localization maps from image-text prompts, while Anomaly-OneVision~\cite{cao2025anomalyonevision} distills anomaly knowledge into a unified VLM capable of handling multiple industrial categories.
+The MMAD benchmark~\cite{jiang2024mmad} formalized VLM-based anomaly detection as a visual question answering task, revealing that even state-of-the-art VLMs struggle with fine-grained defect recognition.
+AD-Copilot~\cite{zhang2026adcopilot} proposed an interactive assistant paradigm where a VLM guides users through the anomaly detection workflow.
+A common limitation across these efforts is the absence of quantitative visual grounding: VLMs can describe anomalies but lack access to precise numerical evidence from specialized detectors.
+Furthermore, existing evaluations remain confined to industrial imagery.
+AnomaClaw addresses both gaps by grounding VLM reasoning with structured expert evidence---patch-level anomaly scores, global similarity, and qualitative assessment---and evaluating across 10 diverse domains spanning industrial, medical, retail, road, and logical anomalies.
+
+\paragraph{Agent-Based Anomaly Detection.}
+Tool-augmented agents have recently been applied to anomaly detection to compensate for VLM perceptual weaknesses.
+AgentIAD~\cite{zhang2025agentiad} equips a VLM with external tools for feature extraction and comparison, training the agent via supervised fine-tuning to decide when and how to invoke each tool.
+EAGLE~\cite{chen2026eagle} takes a different approach by injecting PatchCore-derived visual prompts---such as heatmaps and bounding boxes---directly into the VLM's visual input, guiding a frozen model without additional training.
+AutoIAD~\cite{wei2025autoiad} moves beyond single-agent designs by coordinating multiple specialized agents to automate the entire anomaly detection pipeline, from data preprocessing to result aggregation.
+While these systems demonstrate the value of combining VLMs with specialized detectors, they communicate expert signals through visual overlays or require costly fine-tuning.
+AnomaClaw instead provides expert evidence as structured text summaries, allowing the VLM to selectively attend to the most relevant signals through its native language understanding rather than through modified image inputs.
+\Cref{tab:related_comparison} summarizes how AnomaClaw relates to these systems.
+Moreover, we evaluate across diverse domains rather than restricting to industrial settings, revealing failure modes that domain-specific systems do not encounter.
+
+\begin{table}[t]
+\centering
+\caption{%
+    \textbf{Comparison with tool-augmented VLM methods for anomaly detection.}
+    AnomaClaw is the only system that (i)~communicates expert signals as text rather than visual overlays, (ii)~requires no training or fine-tuning, and (iii)~is evaluated across industrial, medical, and logical domains.
+}
+\label{tab:related_comparison}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Method & Expert Signal & Channel & Training & Cross-Domain & VLM Authority \\
+\midrule
+AgentIAD~\citeyear{zhang2025agentiad}  & PatchCore+CLIP & Tool calls & SFT & No (MVTec) & Agent decides \\
+EAGLE~\citeyear{chen2026eagle}         & PatchCore      & Visual overlay & None & No (MVTec+VisA) & VLM decides \\
+AutoIAD~\citeyear{wei2025autoiad}      & Multi-agent    & Pipeline & None & No (MVTec) & Aggregated \\
+\textbf{AnomaClaw (ours)}              & PatchCore      & \textbf{Text context} & \textbf{None} & \textbf{Yes (10 domains)} & \textbf{VLM decides} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Multi-Agent Debate and Reasoning.}
+Multi-agent debate---where multiple LLM instances critique and refine each other's answers---has shown promise for improving factual accuracy in general visual question answering.
+DMAD~\cite{li2025dmad} applied multi-agent deliberation to anomaly detection, using iterative discussion among VLM agents to reach consensus.
+The M3MAD-Bench benchmark~\cite{liang2026m3mad} systematically studied multi-agent debate for multimodal tasks, identifying ``collective delusion'' as a key failure mode where agents reinforce each other's errors rather than correcting them.
+VipAct~\cite{li2026vipact} proposed a vision-perception-action framework where agents with different roles collaborate through structured dialogue.
+These studies motivate a direct comparison between iterative deliberation and stronger single-pass grounding.
+Our experiments therefore include a multi-round agent baseline and test whether structured expert evidence can recover most of the benefit of debate-style reasoning without its computational overhead.
+
+\paragraph{Cross-Domain Anomaly Detection Benchmarks.}
+The evaluation of VLM-based anomaly detection has been constrained by benchmark scope.
+MMAD~\cite{jiang2024mmad} covers industrial defect detection across MVTec-AD and VisA categories but does not extend beyond manufactured objects and textures.
+ADNet~\cite{li2025adnet} and M3-AD~\cite{chen2025m3ad} broaden coverage to additional industrial categories and introduce multi-class evaluation protocols, yet remain within the industrial domain.
+BMAD~\cite{bao2024bmad} addresses the medical domain by collecting anomaly detection tasks across brain MRI, retinal imaging, and histopathology, but does not consider non-medical settings.
+To the best of our knowledge, the benchmarks reviewed above do not evaluate VLM-based anomaly detection across industrial, medical, retail, road, and logical anomaly domains under one unified protocol.
+Our evaluation framework addresses this gap by curating tasks from 10 domains with standardized few-shot reference sets, enabling a broader study of how VLM-based detectors generalize---and where they fail---across fundamentally different notions of visual anomaly.

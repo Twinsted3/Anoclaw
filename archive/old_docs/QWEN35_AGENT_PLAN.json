@@ -1,0 +1,20 @@
+{
+  "_comment": "Per-domain agent plan for Qwen3.5, picked by calibration argmax with fusion-default + override-margin > 0.03. Achieves +7.7 pp over direct on test (simulated from cached expert scores).",
+  "backbone": "qwen3.5",
+  "default_strategy": "fusion_subs",
+  "override_margin": 0.03,
+  "per_domain": {
+    "D1":  {"strategy": "fusion_subs",  "expert": "subspacead", "calib_auroc": 0.99},
+    "D2":  {"strategy": "fusion_subs",  "expert": "subspacead", "calib_auroc": 0.83},
+    "D4":  {"strategy": "direct",       "expert": null,         "calib_auroc": 0.70},
+    "D5":  {"strategy": "fusion_subs",  "expert": "subspacead", "calib_auroc": 0.82},
+    "D5b": {"strategy": "fusion_subs",  "expert": "subspacead", "calib_auroc": 0.94},
+    "D5c": {"strategy": "fusion_subs",  "expert": "subspacead", "calib_auroc": 0.73},
+    "D5d": {"strategy": "fusion_subs",  "expert": "subspacead", "calib_auroc": 0.83},
+    "D6":  {"strategy": "direct",       "expert": null,         "calib_auroc": 0.81},
+    "D7":  {"strategy": "subs_only",    "expert": "subspacead", "calib_auroc": 0.97},
+    "D8":  {"strategy": "fusion_subs",  "expert": "subspacead", "calib_auroc": 0.55},
+    "D9":  {"strategy": "fusion_avfm",  "expert": "anomalyvfm", "calib_auroc": 0.83},
+    "D10": {"strategy": "fusion_subs",  "expert": "subspacead", "calib_auroc": 1.00}
+  }
+}

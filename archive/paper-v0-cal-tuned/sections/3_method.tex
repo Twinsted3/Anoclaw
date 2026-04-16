@@ -1,0 +1,163 @@
+\section{Method}
+\label{sec:method}
+
+We present AnomalyClaw, a training-free framework for cross-domain visual anomaly detection built on three components: an \emph{extensible expert pool} that provides quantitative grounding, an \emph{adversarial debate engine} that enables self-verification through structured argumentation, and an \emph{autonomous controller} that orchestrates expert selection and debate depth.
+
+\subsection{Problem Formulation}
+\label{sec:formulation}
+
+Given a query image $\query$, a domain code $\domcode$ identifying the inspection context (e.g., \texttt{mvtec\_metal\_nut}, \texttt{brain\_mri}), and a bank of normal images $\bank_\domcode = \{I^n_1, \ldots, I^n_N\}$, the goal is to produce an anomaly verdict $v \in \{\texttt{normal}, \texttt{anomalous}\}$ and a set of anomaly claims with confidence scores.
+The system operates in a \emph{training-free, few-shot} setting: no parameters are learned from anomaly examples, and only $k$ normal references (typically $k \leq 5$) are used per query at inference time.
+
+\subsection{Extensible Expert Pool}
+\label{sec:experts}
+
+The expert pool $\Phi = \{\expert_1, \ldots, \expert_E\}$ is a collection of lightweight analysis modules, each producing structured text evidence about the query image.
+Any expert that takes an image (and optionally reference images) as input and produces a textual report can be integrated without modifying the debate engine.
+
+\paragraph{Patch-level expert.}
+Inspired by PatchCore~\citep{roth2022patchcore}, this expert extracts dense patch tokens using DINOv2~\citep{oquab2024dinov2} at $518 \times 518$ resolution ($37 \times 37$ grid, $M = 1{,}369$ patches per image).
+For each query patch $\patch^q_i$, we compute the cosine distance to its nearest neighbor in the reference patch bank $\mathcal{P}_{\text{ref}} = \bigcup_{I^r \in \refset} \{\patch^r_1, \ldots, \patch^r_M\}$:
+\begin{equation}
+    d_i = 1 - \max_{\patch \in \mathcal{P}_{\text{ref}}} \cos(\patch^q_i, \patch).
+    \label{eq:patch_distance}
+\end{equation}
+The expert anomaly score aggregates the top-$1\%$ most anomalous distances:
+\begin{equation}
+    \ascore_{\text{patch}} = \frac{1}{|\mathcal{T}|} \sum_{i \in \mathcal{T}} d_i, \quad \mathcal{T} = \{i : d_i \geq d_{(0.99M)}\}.
+    \label{eq:expert_score}
+\end{equation}
+The score is converted to a structured text report including the raw distance, global CLS-token similarity, and a qualitative assessment (``very similar to normal'' through ``strong anomaly signal'').
+
+\paragraph{Visual retrieval expert.}
+This module retrieves the $k$ most similar normal images from $\bank_\domcode$ using DINOv2 CLS-token cosine similarity and reports the retrieval scores, providing a global similarity context that complements the patch-level analysis.
+
+\paragraph{Additional experts (extensible).}
+The pool can include texture-statistics experts (Gram matrices, frequency-domain analysis), CLIP-based semantic similarity, or domain-specific modules (e.g., Hounsfield-unit windowing for CT images).
+Each expert follows the same interface: accept image and references, return structured text.
+The autonomous controller (\Cref{sec:controller}) decides which experts to invoke per query.
+
+\subsection{Adversarial Debate Engine}
+\label{sec:debate}
+
+The core of AnomalyClaw is a structured debate between two VLM-based agents with opposing objectives (\Cref{fig:overview}).
+
+\paragraph{Anomaly Proposer ($\proposer$).}
+Given the query image, reference images, domain knowledge, and expert evidence, the Proposer generates a set of anomaly claims $\claim = \{c_1, \ldots, c_n\}$.
+Each claim is a structured record:
+\begin{equation}
+    c_j = (\texttt{id}_j,\; \texttt{location}_j,\; \texttt{appearance}_j,\; \texttt{evidence}_j,\; \confidence_j,\; \texttt{severity}_j),
+    \label{eq:claim}
+\end{equation}
+where $\texttt{location}_j$ specifies the spatial region (bounding box or quadrant), $\texttt{appearance}_j$ describes the visual observation, $\texttt{evidence}_j$ links the claim to specific expert findings, $\confidence_j \in [0,1]$ is the Proposer's confidence, and $\texttt{severity}_j$ is the assessed impact.
+If no anomalies are found, the Proposer outputs a normal profile describing the expected appearance of the object.
+
+\paragraph{Normality Advocate ($\advocate$).}
+For each claim $c_j$, the Advocate generates a counter-argument:
+\begin{equation}
+    a_j = (\texttt{id}_j,\; \refuteconf_j,\; \texttt{counter\_evidence}_j,\; \texttt{likely\_cause}_j),
+    \label{eq:refutation}
+\end{equation}
+where $\refuteconf_j \in [0,1]$ is the Advocate's confidence that the observation is \emph{not} anomalous, $\texttt{counter\_evidence}_j$ provides specific reasons (``lighting reflection matches reference angle,'' ``texture variation is within normal manufacturing tolerance''), and $\texttt{likely\_cause}_j$ attributes the observation to a benign source.
+The Advocate's sole objective is to argue against anomaly claims, ensuring that only robust claims survive.
+
+\paragraph{Claim resolution.}
+After each debate round, claims are resolved by comparing the Proposer's confidence against the Advocate's refutation confidence:
+\begin{equation}
+    \text{status}(c_j) =
+    \begin{cases}
+        \texttt{Valid} & \text{if } \confidence_j \geq \tau_{\text{accept}} \text{ and } \refuteconf_j \leq \tau_{\text{reject}}, \\
+        \texttt{Invalid} & \text{if } \refuteconf_j \geq \tau_{\text{accept}}, \\
+        \texttt{TBD} & \text{otherwise},
+    \end{cases}
+    \label{eq:resolution}
+\end{equation}
+where $\tau_{\text{accept}} = 0.6$ and $\tau_{\text{reject}} = 0.4$ are resolution thresholds.
+Claims with status \texttt{TBD} are carried into the next debate round for re-examination.
+
+\paragraph{Multi-round refinement.}
+When \texttt{TBD} claims remain after the first round, the Proposer and Advocate engage in additional rounds focused exclusively on unresolved claims.
+The Proposer may revise confidence levels based on the Advocate's counter-arguments, and the Advocate may strengthen or weaken its challenges based on new evidence.
+The debate terminates when all claims reach \texttt{Valid} or \texttt{Invalid} status, or when the maximum depth $D$ (controlled by the autonomous controller) is reached.
+
+\begin{algorithm}[t]
+\caption{AnomalyClaw adversarial debate}
+\label{alg:debate}
+\begin{algorithmic}[1]
+\REQUIRE Query image $\query$, domain $\domcode$, normal bank $\bank_\domcode$, expert pool $\Phi$, max depth $D$
+\ENSURE Verdict $v$, claim decisions
+\STATE \textbf{// Expert Evidence Collection}
+\STATE $\evidence \gets \controller.\text{SelectExperts}(\query, \domcode, \Phi)$ \hfill\COMMENT{Autonomous expert selection}
+\STATE $\text{reports} \gets \{\expert(\query, \refset, \bank_\domcode) : \expert \in \evidence\}$
+\STATE \textbf{// Debate Initialization (Round 0)}
+\STATE $\claim \gets \proposer(\query, \refset, \text{reports}, \domcode)$ \hfill\COMMENT{Propose anomaly claims}
+\STATE $\text{rebuttals} \gets \advocate(\query, \refset, \claim)$ \hfill\COMMENT{Challenge claims}
+\STATE $\text{decisions} \gets \text{Resolve}(\claim, \text{rebuttals})$ \hfill\COMMENT{Eq.~\ref{eq:resolution}}
+\STATE \textbf{// Multi-Round Refinement}
+\FOR{$t = 1, \ldots, D-1$}
+    \STATE $\text{TBD} \gets \{c_j : \text{decisions}[j] = \texttt{TBD}\}$
+    \IF{$\text{TBD} = \emptyset$}
+        \STATE \textbf{break} \hfill\COMMENT{All claims resolved}
+    \ENDIF
+    \STATE $\claim' \gets \proposer.\text{Refine}(\text{TBD}, \text{rebuttals})$
+    \STATE $\text{rebuttals}' \gets \advocate.\text{Refine}(\text{TBD}, \claim')$
+    \STATE $\text{decisions} \gets \text{Resolve}(\claim', \text{rebuttals}')$
+\ENDFOR
+\STATE \textbf{// Final Verdict}
+\STATE $v \gets \controller.\text{Verdict}(\text{decisions})$
+\RETURN $v$, decisions
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Why asymmetric debate avoids collective delusion.}
+Symmetric multi-agent debate~\citep{li2025dmad,liang2026m3mad} assigns identical roles to all agents, which can lead to ``collective delusion''---agents reinforcing each other's errors through echo-chamber dynamics.
+AnomalyClaw's asymmetric design avoids this by construction.
+The Advocate's \emph{sole objective} is to argue against anomaly claims; it succeeds by finding convincing counter-evidence, not by agreeing with the Proposer.
+This structural asymmetry ensures that false positives face genuine resistance, while true anomalies that survive the Advocate's challenges are accepted with higher confidence than single-pass judgments.
+
+\subsection{Autonomous Controller}
+\label{sec:controller}
+
+The autonomous controller $\controller$ orchestrates the debate process, making three decisions:
+
+\paragraph{Expert selection.}
+Not all experts are informative for every query.
+The controller first runs a lightweight assessment (e.g., global CLS-token similarity from the retrieval expert) and selects additional experts based on the initial signal:
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+    \item If global similarity is high (query closely matches references), the patch-level expert is likely unnecessary for easy-normal cases.
+    \item If global similarity is ambiguous, all available experts are invoked to provide maximum evidence.
+    \item Domain-specific experts (e.g., CT windowing) are invoked only for relevant domains.
+\end{itemize}
+This adaptive selection reduces computational cost on easy queries while providing comprehensive evidence for difficult ones.
+
+\paragraph{Debate depth control.}
+The controller sets the maximum debate depth $D$ based on the initial assessment:
+\begin{equation}
+    D = \begin{cases}
+        1 & \text{if initial confidence} \geq \tau_{\text{easy}} \text{ (clear case)}, \\
+        D_{\max} & \text{otherwise (ambiguous case)},
+    \end{cases}
+    \label{eq:depth}
+\end{equation}
+where $\tau_{\text{easy}}$ is a confidence threshold (typically 0.8) and $D_{\max}$ is the maximum allowed depth (typically 2--3).
+Easy cases---where the Proposer and Advocate quickly agree---terminate in a single round, saving the cost of additional VLM calls.
+
+\paragraph{Final verdict.}
+The controller produces the final anomaly verdict from the debate outcomes:
+\begin{equation}
+    v = \begin{cases}
+        \texttt{anomalous} & \text{if any claim has status \texttt{Valid}}, \\
+        \texttt{normal} & \text{if all claims are \texttt{Invalid} or no claims proposed}, \\
+        \texttt{uncertain} & \text{if \texttt{TBD} claims remain at depth } D.
+    \end{cases}
+    \label{eq:verdict}
+\end{equation}
+Uncertain cases can be routed to human review or flagged for additional analysis, providing a natural interface for human-in-the-loop deployment.
+
+\subsection{VLM-Agnostic Design}
+\label{sec:vlm_agnostic}
+
+AnomalyClaw is designed to work with any VLM that supports multi-image input and structured (JSON) output.
+The Proposer and Advocate communicate through structured JSON schemas (\Cref{eq:claim,eq:refutation}), and expert evidence is provided as plain text.
+This design avoids dependence on any specific model's capabilities or API format.
+In our experiments (\Cref{sec:experiments}), we evaluate with \tbd{multiple VLM backends} and show consistent improvements across all of them.

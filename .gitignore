@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.venv_qwen35/
+
+# IDE
+.vscode/
+.idea/
+
+# Claude/ARIS sessions
+.claude/
+.aris/
+
+# Data (too large for git)
+MMAD/
+benchmark/data/
+benchmark/retrieval_index/
+experts/AnomalyVFM/checkpoints/
+experts/SubspaceAD/
+
+# Large result files (track selectively)
+benchmark/results/*.json
+!benchmark/results/anomaclaw_v4_qwen35_test.json
+!benchmark/results/anomaclaw_react_skill_d1_test.json
+!benchmark/results/anomaclaw_react_v2_multi.json
+!benchmark/results/anomaclaw_react_v2_d1d10.json
+
+# Build artifacts
+paper/main.aux
+paper/main.bbl
+paper/main.blg
+paper/main.log
+paper/main.out
+paper/main.pdf
+
+# Logs
+logs/
+/tmp/
+test_output/
+*.log

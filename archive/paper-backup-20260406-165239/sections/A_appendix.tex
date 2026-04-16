@@ -1,0 +1,112 @@
+\section{Additional Experimental Details}
+\label{app:details}
+
+\subsection{Benchmark Construction}
+\label{app:benchmark}
+
+Our benchmark draws from 10 established datasets, each contributing one domain. For each domain, we sample 60 normal and 60 anomalous images for the test split, and we reserve a disjoint calibration pool of 10 normal + 10 anomalous images for fusion-weight selection and sensitivity checks. All sampling uses a fixed random seed (42) for reproducibility.
+
+\paragraph{Domain Selection.}
+Our initial data collection covered 12 domains. We excluded two: \textbf{D6 (Digital Forensics)} because it requires detecting manipulation artifacts in compressed images, which is a signal-processing task rather than visual anomaly detection; and \textbf{D8 (Surveillance/Avenue)} because it targets behavioral anomalies in video sequences, which falls outside the scope of appearance-based single-image anomaly detection. The final benchmark comprises the 10 domains below.
+
+\paragraph{Source Datasets.}
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item \textbf{D1 (Industrial Manufacturing)}: MVTec-AD~\citep{bergmann2019mvtec}. 15 categories of manufactured products. We sample across all categories proportionally.
+    \item \textbf{D2 (Retail Products)}: GoodsAD~\citep{liang2023goodsad}. Consumer products with physical damage, opening defects, and surface damage.
+    \item \textbf{D4 (Infrastructure)}: SDNET2018~\citep{dorafshan2018sdnet}. Concrete surface images (deck, pavement, wall) with crack annotations.
+    \item \textbf{D5 (Dermatology)}: Combination of DermaMNIST~\citep{yang2023medmnist} and ISIC dermoscopic images. Melanocytic nevi (normal) vs.\ melanoma and other malignancies.
+    \item \textbf{D5b (Brain MRI)}: BraTS2021~\citep{baid2021brats}. Axial FLAIR slices. Normal slices vs.\ slices containing glioma.
+    \item \textbf{D5c (Liver CT)}: BMAD-Liver~\citep{bao2024bmad}. Axial CT slices of normal liver vs.\ focal lesions.
+    \item \textbf{D5d (GI Endoscopy)}: HyperKvasir~\citep{borgli2020hyperkvasir}. Normal colon mucosa vs.\ polyps and other pathology.
+    \item \textbf{D7 (Road Safety)}: BDD100K~\citep{yu2020bdd100k} (normal driving scenes) and RoadAnomaly21~\citep{lis2019detecting} (scenes with unexpected obstacles).
+    \item \textbf{D9 (Logical Anomaly)}: MVTec-LOCO~\citep{bergmann2022mvtecloco}. Correctly assembled products vs.\ logical errors (wrong count, wrong position, wrong component type).
+    \item \textbf{D10 (Industrial Inspection)}: VisA~\citep{zou2022visa}. PCBs, capsules, candles, etc.\ with surface defects and structural anomalies.
+\end{itemize}
+
+\paragraph{Reference Images.}
+Each test item is paired with 4 normal reference images, except for the DINOv2-Global baseline, which uses 2 random references as described in the main text. In the \emph{baseline} mode, references are randomly sampled from the training set. In all other modes, references are retrieved using DINOv2 visual similarity from a pre-built per-domain index containing all available normal training images.
+
+\subsection{Domain Knowledge Specifications}
+\label{app:domain_knowledge}
+
+Each domain is equipped with a structured knowledge specification provided to the VLM. The specification contains: (1) a domain description, (2) what normal samples look like, (3) specific anomaly criteria to check, and (4) common false positives to avoid flagging. These are hand-crafted based on domain expertise and dataset documentation. An example for D1 (Industrial Manufacturing):
+
+\begin{quote}
+\small
+\textbf{Domain}: Industrial Manufacturing (MVTec-AD). \\
+\textbf{Normal}: Defect-free manufactured products. \\
+\textbf{Anomaly criteria}: Surface defects (scratches, stains, discoloration); structural defects (cracks, breaks, missing parts); contamination (foreign objects, residue). \\
+\textbf{Common false positives}: Lighting variation, slight rotation, normal manufacturing tolerance.
+\end{quote}
+
+\subsection{Patch Expert Implementation Details}
+\label{app:patch_expert}
+
+\paragraph{Feature Extraction.}
+We use DINOv2 ViT-S/14 (\texttt{vit\_small\_patch14\_dinov2.lvd142m}) from the \texttt{timm} library. Input images are resized to $518 \times 518$ pixels (the model's native resolution), producing a $37 \times 37 = 1{,}369$ grid of 384-dimensional patch tokens plus one CLS token. All features are L2-normalized before distance computation.
+
+\paragraph{Memory Bank Construction.}
+For each test item, the reference patch bank is built from the $k=4$ retrieved reference images, yielding $4 \times 1{,}369 = 5{,}476$ patch tokens. If the bank exceeds 20,000 tokens (when using $k > 14$), we randomly subsample to 20,000 for computational efficiency.
+
+\paragraph{Anomaly Score Computation.}
+For each of the 1,369 query patch tokens, we compute cosine similarity against all bank tokens and convert the maximum similarity to a distance: $d_i = 1 - \max_{j} \langle \patch_i^q, \patch_j^r \rangle$. The anomaly score is the mean of the top 1\% of these distances (approximately 14 patches), capturing the most anomalous local regions while remaining robust to noise.
+
+\paragraph{Text Interpretation Generation.}
+The expert generates a structured text summary with three components: (1) the raw mean patch distance $\ascore_{\text{expert}}$ (from Eq.~5 in the main text), presented to the VLM as a numeric value with the annotation ``higher = more different from refs''; (2) the global CLS-token similarity to the best-matching reference; and (3) a qualitative interpretation derived from the sigmoid-calibrated score $\sigma(20 \cdot (d_{\text{raw}} - 0.18))$, binned into five levels: $<0.2$ (very similar to normal), $0.2$--$0.4$ (mostly normal), $0.4$--$0.6$ (ambiguous), $0.6$--$0.8$ (moderate anomaly signal), and $>0.8$ (strong anomaly signal). AUROC is computed on the sigmoid-calibrated continuous value, not the raw distance.
+
+\section{Additional Results}
+\label{app:results}
+
+\subsection{Per-Category Breakdown for Industrial Domains}
+
+Per-category breakdowns for D1 (MVTec-AD) and D10 (VisA) are omitted from this draft; the full version will report them to verify that the domain-level gains are not driven by a small subset of categories.
+
+% [TABLE PLACEHOLDER: Per-category AUROC breakdown for D1 and D10]
+
+\subsection{Sensitivity to Number of References}
+
+We evaluate sensitivity to the number of retrieved references $k \in \{1, 2, 4, 8\}$ on the calibration split. Performance improves from $k=1$ to $k=4$ and plateaus at $k=8$, with $k=4$ providing the best cost-performance tradeoff. The patch expert benefits more from additional references than the VLM, as its memory bank grows linearly with $k$.
+
+% [TABLE PLACEHOLDER: AUROC vs k for expert-only and AnomaClaw]
+
+\subsection{Bootstrap Confidence Intervals}
+\label{app:bootstrap}
+
+All confidence intervals are computed using 10{,}000 bootstrap resamples with a fixed random seed. \Cref{tab:all_cis} reports 95\% CIs for macro-averaged AUROC across the 10 domain-level AUROCs.
+
+\begin{table}[h]
+\centering
+\caption{Bootstrap 95\% confidence intervals for macro-averaged AUROC.}
+\label{tab:all_cis}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Method} & \textbf{Macro AUROC} & \textbf{95\% CI} \\
+\midrule
+DINOv2-Global & 0.653 & --- \\
+DINOv2-PatchNN & 0.661 & --- \\
+PatchCore Expert & 0.831 & [0.751, 0.911] \\
+Retrieval + VLM & 0.866 & [0.808, 0.923] \\
+Multi-Round Agent & 0.873 & [0.817, 0.929] \\
+Expert-Informed VLM & 0.877 & [0.819, 0.934] \\
+\textbf{AnomaClaw (Ours)} & \textbf{0.882} & \textbf{[0.824, 0.937]} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Detailed Failure Analysis: D5c Liver CT}
+\label{app:d5c_failure}
+
+\paragraph{Error Breakdown.}
+On D5c (120 test items: 60 normal, 60 anomalous), AnomaClaw produces:
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+    \item 11 true positives, 49 false negatives (sensitivity = 18.3\%)
+    \item 58 true negatives, 2 false positives (specificity = 96.7\%)
+\end{itemize}
+
+The dominant failure mode is false negatives: the final system consistently under-calls subtle liver lesions. Standalone expert scores are often elevated on these missed cases, indicating partial complementarity between the expert and VLM even though neither subsystem is reliable enough on its own.
+
+\paragraph{Patch Distance Distribution.}
+Normal liver CT images have a mean patch distance of $0.187 \pm 0.069$, while anomalous images have $0.251 \pm 0.071$. The small gap (0.064) and large overlap explain why neither the expert nor the VLM reliably distinguishes these classes. By comparison, D1 (Industrial) has a gap of 0.229 with minimal overlap.
+
+\paragraph{Why Liver CT is Hard.}
+Liver CT lesions are often small relative to the overall slice, hypo- or hyper-dense relative to surrounding parenchyma by only a few Hounsfield units, and may resemble normal hepatic vessels or partial-volume artifacts at the liver boundary. The DINOv2 features, trained on natural images, lack sensitivity to these radiological subtleties.

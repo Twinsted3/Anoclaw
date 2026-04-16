@@ -1,0 +1,67 @@
+{
+  "backbone": "seedvl",
+  "default_strategy": "fusion_subs",
+  "override_margin": 0.03,
+  "per_domain": {
+    "D1": {
+      "strategy": "fusion_subs",
+      "expert": "subspacead",
+      "calib_auroc": 1.0
+    },
+    "D10": {
+      "strategy": "subs_only",
+      "expert": "subspacead",
+      "calib_auroc": 1.0
+    },
+    "D2": {
+      "strategy": "fusion_avfm",
+      "expert": "anomalyvfm",
+      "calib_auroc": 0.94
+    },
+    "D4": {
+      "strategy": "avfm_only",
+      "expert": "anomalyvfm",
+      "calib_auroc": 0.72
+    },
+    "D5": {
+      "strategy": "fusion_subs",
+      "expert": "subspacead",
+      "calib_auroc": 0.87
+    },
+    "D5b": {
+      "strategy": "fusion_subs",
+      "expert": "subspacead",
+      "calib_auroc": 0.9
+    },
+    "D5c": {
+      "strategy": "fusion_subs",
+      "expert": "subspacead",
+      "calib_auroc": 0.71
+    },
+    "D5d": {
+      "strategy": "fusion_subs",
+      "expert": "subspacead",
+      "calib_auroc": 0.73
+    },
+    "D6": {
+      "strategy": "direct",
+      "expert": null,
+      "calib_auroc": 0.765
+    },
+    "D7": {
+      "strategy": "subs_only",
+      "expert": "subspacead",
+      "calib_auroc": 0.97
+    },
+    "D8": {
+      "strategy": "fusion_subs",
+      "expert": "subspacead",
+      "calib_auroc": 0.53
+    },
+    "D9": {
+      "strategy": "fusion_avfm",
+      "expert": "anomalyvfm",
+      "calib_auroc": 0.97
+    }
+  }
+}

@@ -185,17 +185,19 @@ A6. Tool usage distribution per domain (qualitative).
 
 Total: ≈ 6-7 days wall-clock.
 
-## 7. Success criteria
+## 7. Success criteria (conservative)
 
-- **Minimal viable result**: Agent ≥ Expert-fusion on macro AUROC on ≥ 2 of 3 backbones. (If worse everywhere, the "agent" thesis fails and we report honestly.)
-- **Stronger result**: Agent > Expert-fusion with p < 0.05 (paired permutation) on ≥ 1 backbone.
-- **Strongest result**: Agent > Expert-fusion with p < 0.05 on all 3 backbones AND avg turns < 3 (efficient).
+- **Minimal viable result**: Agent macro AUROC > Direct by ≥ 2pp on ≥ 2 of 3 backbones.
+- **Solid result**: Agent > Direct by ≥ 3pp on all 3 backbones. Agent and Expert-fusion comparable (within CI).
+- **Strong result**: Agent > Expert-fusion by any margin on ≥ 1 backbone.
+
+Agent does NOT need to beat Expert-fusion to be publishable — "per-item autonomous tool use matches hand-engineered fusion while adding interpretability and generalizing to novel domains" is a viable thesis. Main fair comparison is Agent vs Direct; Agent vs Fusion is secondary.
 
 ## 8. Open risks
 
 1. **VLM JSON compliance.** 16-tool catalog is big; Qwen may fail to emit valid JSON. Mitigation: schema-constrained decoding if vLLM supports, else retry-on-parse-failure loop (max 2).
 2. **SeedVL cost.** 1418 items × avg ~2.5 turns × SeedVL per-call cost = nontrivial. Mitigation: run agent + fusion + direct in one dispatch, cache all VLM responses, keep K=5 tight.
-3. **GPT-5.4 routing bug.** sub2api routes to gpt-5.1 per PROJECT_INDEX.md. Blocker for GPT experiments. Mitigation: user fixes routing OR we sub in gpt-4o as third backbone.
+3. **GPT-5.4 routing bug.** sub2api routes to gpt-5.1 per PROJECT_INDEX.md. User will fix. **Action**: when P7 reaches GPT-5.4 dispatch, if routing still returns 5.1, pause and remind user to fix sub2api before proceeding.
 4. **Agent worse than fusion.** Honest outcome possible. Mitigation: narrative pivot to "agent is comparable but interpretable" + cost-vs-accuracy Pareto.
 
 ## 9. What this spec does NOT commit to

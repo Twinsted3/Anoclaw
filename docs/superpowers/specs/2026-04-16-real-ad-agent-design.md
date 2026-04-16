@@ -163,7 +163,8 @@ A6. Tool usage distribution per domain (qualitative).
 - **Calibration split used only for**: (a) computing `subs_median` for the Expert-fusion baseline's sigmoid center, (b) `tool_reference_retriever`'s pool. Never for choosing strategies or weights.
 - **Test split**: evaluated exactly once per system × backbone. No re-running after seeing results.
 - **Fixed seeds**: `random.seed(42)`, `np.random.seed(42)`, deterministic VLM temperature=0.
-- **No test-set label leakage**: all label accesses come from `benchmark/manifests_v2/full_manifest.json` filtered by `split`.
+- **No test-set label leakage**: all label accesses come from `benchmark/manifests/full_manifest.json` (v1) filtered by `split`.
+- **Manifest choice**: using v1 not v2 because cached expert scores align with v1 codes (D1/D2/D4/D5/D5b/D5c/D5d/D6/D7/D8/D9/D10 = 12 domains). v2 renumbered and lacks expert caches for D3/D11/D12.
 
 ### 5.4 Statistical tests
 

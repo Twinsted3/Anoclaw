@@ -557,6 +557,34 @@ def get_model_name(backend: str, batch: bool = False) -> str:
     return BACKEND_MODELS[backend]
 
 
+_SERVED_MODEL_SEEN: dict[str, int] = {}
+_SERVED_MODEL_LOG_PATH = os.environ.get("SERVED_MODEL_LOG", "/tmp/served_model.log")
+
+
+def _log_served_model(requested: str, served: str) -> None:
+    """First time we see a (requested, served) pair, emit a stderr line and
+    append to the log file. On subsequent calls just bump the counter.
+    """
+    key = f"{requested}=>{served}"
+    n = _SERVED_MODEL_SEEN.get(key, 0)
+    _SERVED_MODEL_SEEN[key] = n + 1
+    if n == 0:
+        msg = f"[served_model] requested={requested!r} served={served!r} (first time in this process)"
+        print(msg, file=sys.stderr, flush=True)
+        try:
+            import datetime as _dt
+            with open(_SERVED_MODEL_LOG_PATH, "a") as _f:
+                _f.write(f"{_dt.datetime.now().isoformat()} {msg} pid={os.getpid()}\n")
+        except Exception:
+            pass
+
+
+def get_served_model_counts() -> dict[str, int]:
+    """Return a snapshot of observed (requested -> served) model mappings
+    and the number of calls to each. Useful in post-run analysis."""
+    return dict(_SERVED_MODEL_SEEN)
+
+
 def call_llm(client: OpenAI, model: str, messages: list,
              max_tokens: int = 700, temperature: float = 0.0) -> tuple[str, int, int]:
     """Returns (text, input_tokens, output_tokens).
@@ -564,6 +592,10 @@ def call_llm(client: OpenAI, model: str, messages: list,
     chat_template_kwargs={enable_thinking: False} to skip the free-text
     'Thinking Process' prefix which otherwise eats the max_tokens budget
     before any JSON is emitted.
+
+    Side effect: logs the served model id (from resp.model) on first
+    unique (requested, served) pair per process, to SERVED_MODEL_LOG
+    env var (default /tmp/served_model.log).
     """
     kwargs = dict(model=model, messages=messages, max_tokens=max_tokens, temperature=temperature)
     if "qwen3" in str(model).lower() or "Qwen3" in str(model):
@@ -571,6 +603,9 @@ def call_llm(client: OpenAI, model: str, messages: list,
     resp = client.chat.completions.create(**kwargs)
     text = resp.choices[0].message.content or ""
     usage = resp.usage
+    served = getattr(resp, "model", None)
+    if served is not None:
+        _log_served_model(str(model), str(served))
     return text, usage.prompt_tokens, usage.completion_tokens
 
 

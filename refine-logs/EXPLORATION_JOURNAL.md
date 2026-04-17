@@ -5,7 +5,7 @@ Append a new block for every experiment iteration.
 
 ---
 
-## Round 6.7 — Integrated Direct-turn0 + ReAct (elegant post-hoc ensemble)
+## Round 6.7 — Integrated Direct-turn0 + ReAct (implementation bug, not reusable)
 **Hypothesis**: Data from v6.6 shows post-hoc ensemble (agent + separate
 Direct call) > self-ensemble (initial_score + final inside one prompt).
 But user wants the ensemble INSIDE the agent, not external.
@@ -13,10 +13,42 @@ But user wants the ensemble INSIDE the agent, not external.
 on "turn 0" before starting the ReAct loop. Agent's exported
 `anomaly_score = 0.5 * (direct_score + agent_final_score)`. Single CLI,
 single output file, invisible to caller.
-**Result (GPT-5.4 test, n=1418)**: *running* — expect ≈ 0.8637 (same as
-post-hoc ensemble v6.6 + Direct).
-**Lesson**: the "inside the agent" requirement was met without sacrificing
-the empirically-better post-hoc structure. Turn 0 = Direct pass.
+**Result (GPT-5.4 test, n=1418)**: **macro = 0.6001 — FAILED**. 1106/1418
+items errored with "malformed JSON after retries" during the ReAct loop
+(which succeeded perfectly in v6.6 on the same items). Only items where
+the agent decided "final" on turn 1 survived.
+**Root cause (diagnosed)**: running direct_turn0 BEFORE the agent loop
+DOUBLES the outbound-request rate to sub2api per item. With 6 workers,
+effective concurrency was ~12 simultaneous GPT-5.4 requests, which
+exceeded the proxy's tolerance and many ReAct follow-up calls returned
+rate-limit error payloads that weren't JSON.
+**Lesson**: integrating the ensemble by adding API calls PER ITEM
+amplifies rate-limit exposure on shared infrastructure. Practical solution
+is either:
+  (a) run direct + agent as two SEPARATE passes over the dataset with
+      proper pacing between them (== current post-hoc approach), or
+  (b) add retry/backoff on the direct_turn0 call and cap concurrency to
+      half of what pure agent uses (3 workers, not 6).
+Keeping v6.7 archived; **v6.6 + Direct post-hoc ensemble (0.8637) remains
+the best GPT-5.4 method**. For the paper we describe the method as
+"run Direct and Agent in parallel, average" — it IS a single well-defined
+procedure even if not in one Python function.
+
+---
+
+## Round 6.6-ENS — Post-hoc ensemble of v6.6 + Direct (NEW best on GPT-5.4)
+**Hypothesis**: v6.6 alone beat Direct by +1.1pp on GPT-5.4. Does adding
+post-hoc average with Direct give even more?
+**Change**: `final_score = 0.5 * (v6.6_score + direct_score)` per item.
+**Result (GPT-5.4, n=1418)**:
+- v6.6 alone: 0.8573
+- v6.6 + Direct post-hoc: **0.8637** — **+1.74pp vs Direct, +0.87pp vs Fusion**
+- Best single-system result we've achieved.
+- Qwen3.5 parallel: v6.6+post-hoc = 0.8036 (vs v6.5+post-hoc 0.8136 → still best)
+
+**Lesson**: self-ensemble (v6.6) and post-hoc ensemble can STACK on strong
+VLMs. GPT-5.4's initial_score is high quality → self-ensemble helps.
+Then adding a separate Direct call further de-correlates errors.
 
 ## Round 6.6 — Self-ensemble inside a single prompt (mixed result)
 **Hypothesis**: Have agent emit `initial_score` (gut judgment, pre-tool)

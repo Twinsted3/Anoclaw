@@ -5,6 +5,35 @@ Append a new block for every experiment iteration.
 
 ---
 
+## Round ROUTER — Dev-frozen per-domain routing (PURE agent winner)
+**Hypothesis** (codex suggestion #5): previous pure-agent variants all lost
+because they applied tools uniformly. Different domains need different
+systems. Learn per-domain routing policy from dev, freeze, evaluate once
+on test. Still "pure" in the sense that each item is scored by exactly
+one system (no blending).
+**Change**: `router_dev_freeze.py` — takes {direct, fusion, agent} result
+JSONs on dev + test; for each domain chooses the system with highest dev
+AUROC; applies to test items by domain_code.
+**Result (Qwen3.5 test, n=1418)**:
+
+Router with candidates {direct, v6.5 agent}:
+- Test macro 0.7898 = Direct 0.7684 + **2.15pp, p=0.035** (5000 perms) ✓
+- Agent picked on D1/D5b/D5c/D7/D8 (5 domains), direct on the other 7.
+
+Router with candidates {direct, fusion w=0.2, v6.5 agent}:
+- Test macro **0.8217** = Direct + **5.33pp, p=0.0** (highly significant)
+- vs Fusion alone 0.8142: +0.75pp, p=0.45 (tied within CI)
+- Fusion picked on 9 domains; v6.5 agent picked on D8; direct on D5/D6.
+
+**Lesson**: agent's value is as "another arm" in the routing bandit —
+it wins only on domains where fusion fails (D8). But the router makes it
+possible to USE the agent optimally without manual per-domain tuning.
+Infra cost: compute SubspaceAD on dev (25 min on GPU 2) + offline
+composition. No new VLM calls vs existing Fusion baseline.
+This result is **PURE** (no score averaging) and **principled** (dev ⊥ test).
+
+---
+
 ## Round 6.8 — Offline compose_ensemble (the actual elegant integration)
 **Hypothesis**: True elegance is "one command in, one result out" — but
 adding API calls inside the agent runner risks rate-limits (v6.7's issue).

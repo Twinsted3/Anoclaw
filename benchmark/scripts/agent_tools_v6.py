@@ -517,18 +517,30 @@ TOOL_REGISTRY = {
 }
 
 
+PROTECTED_CTX_KEYS = (
+    "query_path", "ref_paths", "item_id", "split",
+    "vlm_client", "vlm_model", "llm_client", "llm_model",
+    "_expert_patches", "_manifest_domain", "index_dir",
+)
+
+
 def dispatch_tool(name: str, args: dict, ctx: dict | None = None) -> dict:
     """Dispatch a tool call. ctx carries session state that tools need but
-    that the VLM shouldn't re-type (query_path, ref_paths, split, clients)."""
+    that the VLM shouldn't re-type (query_path, ref_paths, split, clients).
+
+    PROTECTED_CTX_KEYS are ALWAYS taken from ctx — model-supplied args for
+    those keys are dropped (prevents VLM from redirecting a tool to
+    different item/split by crafting malicious args).
+    """
     if name not in TOOL_REGISTRY:
         return {"error": f"unknown tool {name!r}; must be one of {sorted(TOOL_REGISTRY)}"}
     ctx = ctx or {}
     fn = TOOL_REGISTRY[name]
-    injected = dict(args or {})
-    for k in ("query_path", "ref_paths", "item_id", "split",
-              "vlm_client", "vlm_model", "llm_client", "llm_model",
-              "_expert_patches", "_manifest_domain"):
-        if k in ctx and k not in injected:
+    # Start from sanitized model args: drop protected keys
+    injected = {k: v for k, v in (args or {}).items() if k not in PROTECTED_CTX_KEYS}
+    # Overlay ctx (ctx wins over model args for protected fields)
+    for k in PROTECTED_CTX_KEYS:
+        if k in ctx:
             injected[k] = ctx[k]
     try:
         return fn(**injected)

@@ -53,8 +53,22 @@ class ReActAgent:
 
     # ──────────────────────────────────────────────────────────────────
     def _build_initial_messages(self, query_path: str,
-                                ref_paths: list) -> list:
-        user_parts = [text_msg("NORMAL REFERENCE IMAGES:")]
+                                ref_paths: list,
+                                domain_code: str | None = None,
+                                anchor_text: str | None = None) -> list:
+        """Builder is called with per-item kwargs; no instance mutation.
+        Subclasses override by subclassing, not by monkey-patching.
+
+        Args:
+            domain_code: forwarded for variants that want to inject
+                DOMAIN_CONTEXT[d] at call time.
+            anchor_text: free-form extra preamble (used by anchored
+                variants to pass precomputed expert signals).
+        """
+        user_parts = []
+        if anchor_text:
+            user_parts.append(text_msg(anchor_text))
+        user_parts.append(text_msg("NORMAL REFERENCE IMAGES:"))
         for rp in ref_paths[:4]:
             user_parts.append(img_msg(load_and_encode(rp)))
         user_parts.append(text_msg("QUERY IMAGE:"))
@@ -121,7 +135,8 @@ class ReActAgent:
             "llm_model": self.model,
             "_manifest_domain": domain_code,
         }
-        messages = self._build_initial_messages(query_path, ref_paths)
+        messages = self._build_initial_messages(query_path, ref_paths,
+                                                domain_code=domain_code)
         history, tools_used = [], []
 
         for turn in range(1, self.K + 1):

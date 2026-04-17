@@ -75,7 +75,7 @@ def fuse(direct_score: float, expert_score: float | None,
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", required=True)
-    ap.add_argument("--split", choices=["calibration", "test"], required=True)
+    ap.add_argument("--split", choices=["calibration", "dev", "test"], required=True)
     ap.add_argument("--backend", choices=["qwen3", "seedvl", "gpt"], required=True)
     ap.add_argument("--output_dir", required=True)
     ap.add_argument("--domains", nargs="*", default=None)

@@ -29,24 +29,38 @@ def _load(path: str) -> dict:
     return {x["item_id"]: x for x in data if "item_id" in x}
 
 
+def _valid_score(x):
+    """A score counts only if the record has no error AND has a score."""
+    if not x:
+        return None
+    if x.get("error"):
+        return None
+    s = x.get("anomaly_score")
+    return float(s) if s is not None else None
+
+
 def compose(direct_path: str, agent_path: str, alpha: float = 0.5) -> list:
     d_by = _load(direct_path)
     a_by = _load(agent_path)
     out = []
     for iid in sorted(set(d_by) | set(a_by)):
         dx, ax = d_by.get(iid), a_by.get(iid)
-        d_score = dx.get("anomaly_score") if dx else None
-        a_score = ax.get("anomaly_score") if ax else None
+        d_score = _valid_score(dx)
+        a_score = _valid_score(ax)
         if d_score is not None and a_score is not None:
-            score = alpha * float(d_score) + (1 - alpha) * float(a_score)
+            score = alpha * d_score + (1 - alpha) * a_score
             source = "ensemble"
         elif d_score is not None:
-            score = float(d_score); source = "direct_only"
+            score = d_score
+            source = ("direct_only_agent_errored"
+                      if ax and ax.get("error") else "direct_only")
         elif a_score is not None:
-            score = float(a_score); source = "agent_only"
+            score = a_score
+            source = ("agent_only_direct_errored"
+                      if dx and dx.get("error") else "agent_only")
         else:
             continue
-        base = ax if ax else dx  # prefer agent's metadata (tools, etc.)
+        base = ax if ax else dx
         out.append({
             **{k: base.get(k) for k in ("item_id", "domain_code", "label_gt")},
             "anomaly_score": score,

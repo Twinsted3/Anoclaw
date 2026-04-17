@@ -5,6 +5,46 @@ Append a new block for every experiment iteration.
 
 ---
 
+## Round 6.7 — Integrated Direct-turn0 + ReAct (elegant post-hoc ensemble)
+**Hypothesis**: Data from v6.6 shows post-hoc ensemble (agent + separate
+Direct call) > self-ensemble (initial_score + final inside one prompt).
+But user wants the ensemble INSIDE the agent, not external.
+**Change**: Agent runner now performs a Direct VLM call (`build_prompt_v0`)
+on "turn 0" before starting the ReAct loop. Agent's exported
+`anomaly_score = 0.5 * (direct_score + agent_final_score)`. Single CLI,
+single output file, invisible to caller.
+**Result (GPT-5.4 test, n=1418)**: *running* — expect ≈ 0.8637 (same as
+post-hoc ensemble v6.6 + Direct).
+**Lesson**: the "inside the agent" requirement was met without sacrificing
+the empirically-better post-hoc structure. Turn 0 = Direct pass.
+
+## Round 6.6 — Self-ensemble inside a single prompt (mixed result)
+**Hypothesis**: Have agent emit `initial_score` (gut judgment, pre-tool)
+alongside its action on turn 1, and `final_score` on the last turn. System
+outputs `0.5 * (initial_score + final_score)`. Eliminates external ensemble.
+**Change**: v6.6 prompt adds `initial_score` requirement on turn 1.
+`agent_v6_6.py` captures both scores and computes the blend internally.
+**Result**:
+- GPT-5.4: macro = **0.8573** — beats Direct (+1.1pp), beats Fusion (+0.2pp)
+  (p=0.26 vs Direct, p=0.81 vs Fusion — low power with 12 domains)
+  avg turns = 1.26 (GPT uses tools 26% of items)
+- Qwen3.5: macro = **0.7412** — WORSE than v6.5's 0.7713
+  avg turns = 1.58
+**Why the asymmetry**: GPT-5.4's initial_score is high-quality (it's a
+competent zero-shot scorer). Qwen3.5's initial_score, when it has to SHARE
+prompt space with action/tool selection, gets degraded — Qwen3.5 can't do
+both well at once. Averaging a weak initial with a better final drags the
+better one down.
+**Comparison**:
+- GPT-5.4: v6.6 alone = 0.8573, v6.6 + post-hoc ensemble with Direct = **0.8637**
+- Qwen3.5: v6.6 alone = 0.7412, v6.6 + post-hoc ensemble = 0.8036
+  vs v6.5 + post-hoc = 0.8136 (still best)
+**Lesson**: when asking the VLM to multitask within a turn (judge + route
++ rank), weaker VLMs get confused. Separate the judging call from the
+routing call — v6.7 integrates this.
+
+---
+
 ## Round 6.5-ENS — Post-hoc average ensemble of v6.5 agent + Direct
 **Hypothesis**: v6.5's and Direct's errors are on different items → their average should
 outperform either alone.
@@ -145,8 +185,17 @@ reported "+6.3pp" — most gain is from adding an expert, not from per-domain ro
 
 - **vLLM TP > 1 broken** on this machine (NCCL/P2P issue, see
   `/hdd1/models/MULTI_GPU_ISSUES.md`). Use TP=1 replicas + round-robin LB.
-- **4 replicas on GPU 0-3** at 85% util with 24 workers gives ~18min full test
-  (1418 items × 1 VLM call).
+- **Replica count sweet spot = 2 replicas × 16 workers** (not 4×24 as
+  initially tried):
+  - 4 replicas × 24 workers: 0.31 items/sec for v6.5 agent
+  - 2 replicas × 16 workers: 0.50 items/sec for v6.6 agent (60% faster!)
+  - At 4 replicas, KV-cache contention and thread oversubscription hurt
+    throughput. GPU util was 100% on one replica but only 60% on others.
+  - At 2 replicas, GPUs hover at 55-70% util — headroom exists but adding
+    workers hits the "multi-turn sessions compete for same shard" limit.
+- **Release GPUs when idle**: each replica holds ~41GB VRAM. After each
+  benchmark, `pkill -f Qwen3.5` and `pkill -f vllm_lb` immediately frees
+  GPU 0-3 for other users.
 - **Agent adds ~4x VLM calls per item** (avg 3.22 turn × 1 call + retries).
 - **SeedVL JSON compliance**: ~2% items fail JSON parse after retries; masked to
   score 0.5.

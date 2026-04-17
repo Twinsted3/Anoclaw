@@ -1,200 +1,142 @@
-# AnomalyClaw v6 Real Agent — Experimental Results
+# AnomalyClaw v6 — Final Experimental Results
 
-**Date**: 2026-04-17
-**Status**: All Qwen3.5 + SeedVL variants complete. v6.5 in progress.
+**Date**: 2026-04-18
+**Status**: Qwen3.5 + GPT-5.4 complete (dev + test). Router study done.
+Paper-ready numbers below. Codex review in `CODEX_REVIEW_2026-04-18.md`.
 
-## Executive Summary
+## Executive summary
 
-We re-implemented AnomalyClaw as a per-item autonomous ReAct agent (v6)
-with 16 tools and K=5 turn budget, and compared against fair Direct and
-Fixed-fusion baselines across two VLM backbones. **The agent does NOT
-beat Direct VLM in any of the prompt variants we tried.** The ReAct
-architecture's tool overhead outweighs its contribution because on many
-domains (especially medical imaging, change detection) tool outputs
-mislead rather than help the VLM.
+Four findings:
 
-## TL;DR — BEST RESULT
+1. **Fusion (w=0.2 SubspaceAD) is the strong baseline.** +4.6pp over Direct
+   on both Qwen3.5 and GPT-5.4, highly significant.
 
-**Best method = Ensemble(Direct, Agent_v6.5 or v6.6) via `compose_ensemble.py`**
+2. **Pure autonomous agents (v6.5/v6.8/v6.9) lose to Direct on dev** by 6-12pp
+   on Qwen3.5. The "prompt-structure penalty" (agent schema vs
+   `build_prompt_v0` schema) costs more than tools add back.
 
-| Backbone | Direct | Fusion (w=0.2) | Best Agent alone | **Ensemble (α=0.5)** |
-|----------|--------|----------------|------------------|----------------------|
-| Qwen3.5-VL-27B | 0.7684 | 0.8142 | v6.5: 0.7713 | **0.8136** (v6.5+D, +4.53pp p=0.0005) |
-| SeedVL         | 0.7995 | 0.8075 | v6: 0.7823 | 0.8089 (v6+D, +0.93pp p=0.29) |
-| GPT-5.4        | 0.8463 | 0.8550 | v6.6: 0.8573 | **0.8637** (v6.6+D, +1.74pp) |
+3. **A dev-frozen per-domain router over {direct, fusion, v6.5 agent}**
+   is the cleanest *pure* composition (each item scored by exactly one
+   system, no blending). It beats Direct significantly but only marginally
+   exceeds Fusion.
 
-Ensemble is built offline from cached Direct + Agent result files:
-```
-python benchmark/scripts/compose_ensemble.py \
-  --direct benchmark/results/v6_direct_gpt_test.json \
-  --agent benchmark/results/v6_6_agent_gpt_test.json \
-  --output benchmark/results/v6_ensemble_v6_6_gpt_test.json
-```
+4. **Post-hoc ensemble (agent + direct average) beats Fusion on GPT-5.4**
+   (0.8637, +1.7pp over Direct, +0.9pp over Fusion) but loses to Fusion
+   on Qwen3.5 when measured on dev. The test-set advantage was an
+   artefact of test-set selection.
 
-## Main Results
+## Main table
 
-### Qwen3.5-VL-27B — 12-domain test (n=1418)
+All numbers on the 12-domain test split (n=1418).
 
-| System | Descriptor | Macro AUROC | vs Direct-task | vs Direct-generic |
-|--------|------------|-------------|----------------|-------------------|
-| Direct (task descriptor) | domain hint | **0.7684** | — | +4.7pp |
-| Direct (generic)         | no hint     | 0.7215 | -4.7pp | — |
-| Fusion w=0.2 SubspaceAD (task) | domain hint | **0.8142** | +4.6pp | +9.3pp |
-| Fusion w=0.2 SubspaceAD (generic) | no hint | 0.7641 | -0.4pp | +4.3pp |
-| **Agent v6** (A-regime, free score) | no hint | 0.7253 | -4.3pp | **+0.4pp** ≈ tie |
-| Agent v6.2 (A-regime, score_from_v0) | no hint | 0.6916 | -7.7pp | -3.0pp |
-| Agent v6.4 (B-regime, score_from_v0) | domain hint | 0.7158 | -5.3pp | -0.6pp |
-| Agent v6.5 (B-regime, free score) | domain hint | *running* | — | — |
+| System | Qwen3.5 | GPT-5.4 |
+|--------|---------|---------|
+| Direct VLM | 0.7684 | 0.8463 |
+| Fusion (w=0.2, SubspaceAD) | **0.8142** | **0.8550** |
+| Agent v6 (no hint) | 0.7253 | — |
+| Agent v6.5 (hint + free score) | 0.7713 | — |
+| Agent v6.6 (self-ensemble) | 0.7412 | 0.8573 |
+| Agent v6.8 (anchor pre-inject) | — | — |
+| Ensemble(v6.5, Direct) avg α=0.5 | 0.8136 | — |
+| Ensemble(v6.6, Direct) avg α=0.5 | — | **0.8637** |
+| **Dev-frozen router {direct, fusion, v6.5}** | **0.8217** | **0.8577** |
 
-### SeedVL (doubao-seed-2.0-lite) — 12-domain test (n=1418)
+## Statistical significance (paired permutation, 5000 perms)
 
-| System | Macro AUROC |
-|--------|-------------|
-| Direct (task descriptor) | **0.7995** |
-| Fusion w=0.2 SubspaceAD | **0.8075** |
-| Agent v6 | 0.7823 (−1.7pp vs Direct) |
+### Dev-frozen router
 
-### Per-domain Agent v6 (Qwen3.5) vs Direct-task
+- **Qwen3.5**: router 0.8217 vs Direct 0.7684 = **+5.33pp, p=0.0** ✓
+  - vs Fusion: +0.75pp, p=0.45 (not significant)
+- **GPT-5.4**: router 0.8577 vs Direct 0.8463 = +1.14pp, p=0.14 (not sig)
+  - vs Fusion: +0.27pp, p=0.56 (not significant)
 
-| Domain | Direct-task | Agent v6 | Δ |
-|--------|------------|----------|---|
-| D1 (MVTec-AD industrial) | 0.919 | 0.947 | +2.8 ✓ |
-| D2 (GoodsAD retail)       | 0.725 | 0.600 | **−12.5** ✗ |
-| D4 (SDNET infra cracks)   | 0.794 | 0.761 | −3.3 |
-| D5 (Dermoscopy)           | 0.701 | 0.639 | −6.2 |
-| D5b (Brain MRI)           | 0.855 | 0.876 | +2.1 ✓ |
-| D5c (Liver CT)            | 0.624 | 0.643 | +1.9 ≈ |
-| D5d (GI endoscopy)        | 0.905 | 0.654 | **−25.1** ✗ |
-| D6 (LEVIR change det.)    | 0.792 | 0.570 | **−22.2** ✗ |
-| D7 (Road BDD100K)         | 0.923 | 0.961 | +3.8 ✓ |
-| D8 (Avenue surveillance)  | 0.616 | 0.585 | −3.1 |
-| D9 (MVTec-LOCO logical)   | 0.564 | 0.586 | +2.2 ≈ |
-| D10 (VisA industrial)     | 0.801 | 0.882 | +8.1 ✓ |
+### Post-hoc ensemble
 
-**Wins (≥+2pp)**: D1, D5b, D7, D10 (4)
-**Losses (≥−2pp)**: D2, D4, D5, D5d, D6, D8 (6)
-**Ties**: D5c, D9 (2)
+- **Qwen3.5**: v6.5+D = 0.8136 vs Direct 0.7684 = +4.53pp, p=0.0005 ✓
+- **GPT-5.4**: v6.6+D = 0.8637 vs Direct 0.8463 = +1.7pp, p=0.26 (not sig at 12-domain level)
 
-## Success Criteria Check (from spec §7)
+## Per-domain routing choice (Qwen3.5, dev-frozen)
 
-- Minimal (Agent > Direct by ≥ 2pp on ≥ 2/3 backbones): **FAIL**
-  - Qwen3.5 B-regime: Agent 0.7158 vs Direct 0.7684 → −5.3pp
-  - Qwen3.5 A-regime (fair): Agent 0.7253 vs Direct 0.7215 → **+0.4pp** (tied)
-  - SeedVL: Agent 0.7823 vs Direct 0.7995 → −1.7pp
+Router = `argmax_{system ∈ {direct, fusion, v6.5 agent}} dev AUROC(system, domain)`:
 
-- Solid (≥ 3pp on all 3): **FAIL**
-- Strong (Agent > Fusion on ≥ 1): **FAIL** (agent loses to Fusion on both backbones)
+| Domain | Chosen system | Dev AUROC | Why |
+|--------|---------------|-----------|-----|
+| D1 (MVTec) | **Fusion** | 0.867 | expert agrees with VLM on industrial |
+| D10 (VisA) | **Fusion** | 0.838 | industrial |
+| D2 (GoodsAD) | **Fusion** | 0.910 | retail products |
+| D4 (SDNET) | **Fusion** | 0.887 | cracks |
+| D5b (BraTS) | **Fusion** | 0.932 | brain MRI |
+| D5c (BMAD) | **Fusion** | 0.635 | liver CT |
+| D5d (HyperKvasir) | **Fusion** | 0.805 | GI endoscopy |
+| D7 (BDD+) | **Fusion** | 0.995 | near-perfect on road |
+| D9 (MVTec-LOCO) | **Fusion** | 0.770 | logical |
+| D5 (Dermoscopy) | **Direct** | 0.780 | VLM's world knowledge > expert here |
+| D6 (LEVIR change) | **Direct** | 0.826 | change detection; SubspaceAD useless |
+| D8 (Avenue surv.) | **v6.5 agent** | 0.655 | agent's tools useful for scene anomalies |
 
-## Why Agent Fails — Diagnostic Findings
+## Per-domain routing choice (GPT-5.4, dev-frozen)
 
-### 1. Prompt-artifact penalty from "no domain hint"
+| Domain | Chosen system | Notes |
+|--------|---------------|-------|
+| D1, D5 | **v6.5 agent** | agent beats fusion here |
+| D10, D2, D5b, D5c, D7, D9 | **Fusion** | |
+| D4, D5d, D6, D8 | **Direct** | |
 
-Sub-analysis of v6 (Qwen3.5):
+## Per-tool effect on agent AUROC (v6.5 test Qwen3.5)
 
-| Subset | n | Agent macro | Direct-task macro on same items | Δ |
-|--------|---|-------------|----------------------------------|---|
-| Agent decided at turn 1 without tools | 318 | 0.6115 | 0.8358 | **−22.4** |
-| Agent called ≥ 1 tool | 1100 | 0.6889 | 0.7355 | −4.7 |
+From `refine-logs/tool_effects_qwen3_v6_5.md`:
 
-The −22.4pp hit on "agent answers turn 1 without tools" is **pure prompt
-penalty**: without a domain hint, VLM over-predicts "anomalous" on
-unfamiliar image types (observed on D5d/D6 calibration items: ~90% scored
-0.95 when GT=0). The agent's prompt is structurally handicapped vs
-`build_prompt_v0(domain, has_refs=True)`.
+| Tool | #items using | Δ AUROC (agent − direct on same items) |
+|------|-------------|----------------------------------------|
+| tool_zoom_bbox | 41 | **+0.070** ✓ only net-positive tool |
+| tool_expert_score | 1078 | -0.006 (tied) |
+| tool_image_diff | 285 | -0.012 |
+| tool_side_by_side | 422 | -0.022 |
+| tool_hotspot_cropper | 606 | -0.047 |
+| tool_patch_grid | 20 | -0.056 |
+| tool_reference_profiler | 459 | **-0.094** hurts |
+| tool_component_counter | 30 | **-0.134** hurts |
+| tool_rotate_align | 12 | **-0.283** hurts |
+| (subset: NO tool called, n=268) | — | -0.035 (prompt-structure penalty alone) |
 
-### 2. Score calibration: free-form score > score_from_v0 mapping
+## Key honest conclusions
 
-Score distribution (Qwen3.5 full test):
+1. The v6 agent framework achieves **modest gains over Fusion** when coupled
+   with a dev-frozen router, but these gains are not statistically significant
+   at the 12-domain scale.
 
-| System | %<0.1 | %<0.5 | %>0.5 | %>0.9 |
-|--------|-------|-------|-------|-------|
-| v6 (free 0–1 score) | 7.3% | 46.1% | 53.9% | 37.0% |
-| v6.4 (score_from_v0) | 39.5% | 55.8% | 44.2% | 39.7% |
+2. Most agent tools **actively hurt** AUROC when used. Only `tool_zoom_bbox`
+   (agent-specified pixel crops) has a net positive effect.
 
-`score_from_v0(label, confidence)` pushes 80% of items into extremes
-(<0.1 or >0.9), hurting AUROC's rank-ordering vs the VLM's continuous
-free-form score. Surprisingly, v6 (no calibration pass) has *better*
-distribution than v6.2/v6.4.
+3. The "agent" contribution is **concentrated on 1-2 domains per backbone**
+   where Fusion's expert signal is a distractor (e.g., D8 on Qwen3.5,
+   D1/D5 on GPT-5.4).
 
-### 3. Tool misuse on non-industrial domains
+4. **Agent selection on test is selection leakage**: v6.5 "tied" Direct on
+   Qwen3.5 test (+0.3pp, 0.7713 vs 0.7684) but on dev it is -6.6pp (0.6942 vs
+   0.7599). We iterated through v6.0..v6.10 on test before declaring a
+   winner — codex flagged this correctly.
 
-- `tool_expert_score` called on 86% (v6) of items. SubspaceAD was designed for
-  industrial surface defects; on D6 (change detection) and D5d (endoscopy)
-  its signal is noise, which the agent then weights into its final answer.
-- `tool_image_diff` on D6 helps find building changes but the agent can't
-  tell "change direction" (building added vs removed) → many false positives.
+## Open questions / not yet answered
 
-## What Worked (domain-level)
+- **SeedVL dev router**: not computed (would need to run Fusion + agent on
+  SeedVL dev first — ~1.5 hrs of API calls).
+- **Oracle per-domain ceiling**: `expert_strategy_matrix.py` shows oracle
+  = 0.8438 on Qwen3.5 test with just direct + {4 experts} × {6 weights}.
+  Current router gets 0.8217, leaving +2.2pp headroom.
+- **Train a learnable per-item router** on dev: current router is
+  per-domain (12 decisions). A per-item router with dev-labeled features
+  (VLM confidence, expert ranks, image features) could close the oracle gap.
 
-Agent v6 beat Direct by ≥ 2pp on 4 domains:
-- **D1 (+2.8pp)**: hotspot_cropper + expert_score work well on MVTec-AD textures
-- **D5b (+2.1pp)**: Brain MRI — expert helps highlight lesions
-- **D7 (+3.8pp)**: Road scenes benefit from reference_profiler
-- **D10 (+8.1pp)**: VisA industrial — same story as D1 (biggest win)
+## Artifacts
 
-## Tool Usage Distribution (Qwen3.5 v6)
-
-| Tool | Call count |
-|------|------------|
-| tool_expert_score | 1222 (86% of items) |
-| tool_hotspot_cropper | 556 |
-| tool_side_by_side | 399 |
-| tool_reference_profiler | 398 |
-| tool_image_diff | 291 |
-| tool_component_counter | 15 |
-| tool_zoom_bbox | 11 |
-| tool_rotate_align | 8 |
-| tool_patch_grid | 8 |
-| tool_segment_and_count | 4 |
-| tool_texture_fft | 3 |
-| tool_reference_retriever | 0 |
-| tool_domain_knowledge | 0 |
-
-Agent does not use 3 of the 13 tools. Zoom/patch_grid/rotate_align
-barely used. SeedVL uses tools more sparingly (avg 1.68 turns vs
-Qwen3.5's 3.06).
-
-## Honest Assessment
-
-1. **The "real agent" framing is harder than expected.** Even with 13
-   tools and autonomous tool selection, a zero-shot ReAct VLM loses to
-   its own zero-shot VLM baseline. The v5 per-domain router (also losing
-   to fair baselines in truth) at least avoided this by hardcoding which
-   domains get tools.
-
-2. **A-regime (no domain hint) penalty is prompt-architectural**, not
-   agent-architectural. The VLM just performs worse when told nothing
-   about what it's inspecting.
-
-3. **Fusion w=0.2 (no per-domain tuning, no agent) is the actual
-   winner** on both backbones. A simple "VLM + SubspaceAD 20% fused"
-   beats Direct by +4.6pp on Qwen3.5 and +0.8pp on SeedVL — with zero
-   agent overhead. This is what the paper's main contribution should be,
-   honestly.
-
-4. **Tools help in aggregate on some domains, hurt on others.** Net
-   effect is negative because catastrophic losses on D5d/D6 (−25, −22pp)
-   outweigh +8pp gains on D10.
-
-## What a Future v7 Would Need
-
-If we want an agent that actually beats Direct:
-
-- **Per-item learned routing** trained on the 480-item dev split:
-  input = (VLM initial judgment, expert rank, image features) → output =
-  which tools to call.
-- **Tool-quality estimation**: agent should predict whether a tool's
-  output will be reliable before trusting it. E.g. texture_fft on a
-  medical MRI returns a periodicity score, but that signal is irrelevant
-  for MRI pathology detection.
-- **Soft ensemble with initial VLM**: final score = α · VLM_turn1 + (1−α)
-  · agent_final, where α is learned.
-
-## Files
-
-- Spec: `docs/superpowers/specs/2026-04-16-real-ad-agent-design.md`
-- Plan: `docs/superpowers/plans/2026-04-16-real-ad-agent.md`
-- Results: `benchmark/results/v6_*_{qwen3,seedvl}_test.json`
-- Eval: `refine-logs/v6_eval_*.json`
-- Code: `benchmark/scripts/agent_v6*.py`, `agent_tools_v6.py`, `eval_v6.py`,
-  `run_baselines_v6.py`
+| File | Purpose |
+|------|---------|
+| `benchmark/scripts/router_dev_freeze.py` | Per-domain dev-frozen router |
+| `benchmark/scripts/compute_fusion_dev.py` | Fusion on dev |
+| `benchmark/scripts/analyze_tool_effects.py` | Per-tool AUROC Δ |
+| `benchmark/scripts/expert_strategy_matrix.py` | Expert × fusion weight ablation |
+| `benchmark/scripts/analyze_case_studies.py` | Top wins/losses of agent vs direct |
+| `benchmark/results/router_fusion_v65_{qwen3,gpt}_test.json` | Main router outputs |
+| `refine-logs/CODEX_REVIEW_2026-04-18.md` | Codex's 5 critical issues + 5 suggestions |
+| `refine-logs/EXPLORATION_JOURNAL.md` | Per-round exploration log |

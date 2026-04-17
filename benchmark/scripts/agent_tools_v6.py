@@ -50,12 +50,16 @@ def _pil_to_b64(img: Image.Image, max_side: int = 512, quality: int = 85) -> str
 
 EXPERT_FILES = {
     "subspacead":    {"calibration": "subspacead_calibration.json",
+                      "dev":         "subspacead_dev.json",
                       "test":        "subspacead_test.json"},
     "anomalyvfm":    {"calibration": "anomalyvfm_calibration.json",
+                      "dev":         "anomalyvfm_dev.json",  # may not exist
                       "test":        "anomalyvfm_test.json"},
     "patchknn":      {"calibration": "classical_dinov2_patch_test_all.json",
+                      "dev":         "classical_dinov2_patch_test_all.json",
                       "test":        "classical_dinov2_patch_test_all.json"},
     "dinov2_global": {"calibration": "classical_dinov2_global_test_all.json",
+                      "dev":         "classical_dinov2_global_test_all.json",
                       "test":        "classical_dinov2_global_test_all.json"},
 }
 

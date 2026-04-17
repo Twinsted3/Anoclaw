@@ -49,7 +49,7 @@ _orig_run = mod.ReActAgent.run
 def run_v64(self, item_id, query_path, ref_paths, split, domain_code=None):
     # Override the builder for this run
     original_builder = self._build_initial_messages
-    self._build_initial_messages = lambda qp, rp: _build_init_v64(self, qp, rp, domain_code)
+    self._build_initial_messages = lambda qp, rp, **_kw: _build_init_v64(self, qp, rp, domain_code)
     try:
         result = _orig_run(self, item_id=item_id, query_path=query_path,
                            ref_paths=ref_paths, split=split,

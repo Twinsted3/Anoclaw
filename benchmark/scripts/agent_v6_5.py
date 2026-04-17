@@ -45,7 +45,7 @@ def _build_init_v65(self, query_path, ref_paths, _domain_code):
 _orig_run = mod.ReActAgent.run
 def run_v65(self, item_id, query_path, ref_paths, split, domain_code=None):
     original_builder = self._build_initial_messages
-    self._build_initial_messages = lambda qp, rp: _build_init_v65(self, qp, rp, domain_code)
+    self._build_initial_messages = lambda qp, rp, **_kw: _build_init_v65(self, qp, rp, domain_code)
     try:
         return _orig_run(self, item_id=item_id, query_path=query_path,
                          ref_paths=ref_paths, split=split,

@@ -5,6 +5,26 @@ Append a new block for every experiment iteration.
 
 ---
 
+## Round 6.8 — Offline compose_ensemble (the actual elegant integration)
+**Hypothesis**: True elegance is "one command in, one result out" — but
+adding API calls inside the agent runner risks rate-limits (v6.7's issue).
+The cleanest design is to separate CONCERNS: Direct and Agent are two
+independent passes, then a pure-data composition step.
+**Change**: `benchmark/scripts/compose_ensemble.py` — takes two result
+JSON files and outputs the ensemble. No VLM calls, no concurrency,
+fully deterministic. `anomaly_score = α*direct + (1-α)*agent`. Default
+α=0.5.
+**Result**: reproduces every ensemble number we had, in ~1 second:
+- Qwen3.5 v6.5+D: 0.8136
+- Qwen3.5 v6.6+D: 0.8036
+- SeedVL v6+D:    0.8089
+- GPT-5.4 v6.6+D: **0.8637** (best overall)
+**Lesson**: "integrated" doesn't require a single Python call chain when
+you can separate compute (Direct pass, Agent pass) from composition
+(average scores). The paper method is cleanly described in 3 lines.
+
+---
+
 ## Round 6.7 — Integrated Direct-turn0 + ReAct (implementation bug, not reusable)
 **Hypothesis**: Data from v6.6 shows post-hoc ensemble (agent + separate
 Direct call) > self-ensemble (initial_score + final inside one prompt).

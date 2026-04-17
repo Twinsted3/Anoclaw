@@ -13,6 +13,24 @@ architecture's tool overhead outweighs its contribution because on many
 domains (especially medical imaging, change detection) tool outputs
 mislead rather than help the VLM.
 
+## TL;DR — BEST RESULT
+
+**Best method = Ensemble(Direct, Agent_v6.5 or v6.6) via `compose_ensemble.py`**
+
+| Backbone | Direct | Fusion (w=0.2) | Best Agent alone | **Ensemble (α=0.5)** |
+|----------|--------|----------------|------------------|----------------------|
+| Qwen3.5-VL-27B | 0.7684 | 0.8142 | v6.5: 0.7713 | **0.8136** (v6.5+D, +4.53pp p=0.0005) |
+| SeedVL         | 0.7995 | 0.8075 | v6: 0.7823 | 0.8089 (v6+D, +0.93pp p=0.29) |
+| GPT-5.4        | 0.8463 | 0.8550 | v6.6: 0.8573 | **0.8637** (v6.6+D, +1.74pp) |
+
+Ensemble is built offline from cached Direct + Agent result files:
+```
+python benchmark/scripts/compose_ensemble.py \
+  --direct benchmark/results/v6_direct_gpt_test.json \
+  --agent benchmark/results/v6_6_agent_gpt_test.json \
+  --output benchmark/results/v6_ensemble_v6_6_gpt_test.json
+```
+
 ## Main Results
 
 ### Qwen3.5-VL-27B — 12-domain test (n=1418)

@@ -695,6 +695,16 @@ def dispatch_tool(name: str, args: dict, ctx: dict | None = None) -> dict:
         return {"error": f"unknown tool {name!r}; must be one of {sorted(TOOL_REGISTRY)}"}
     ctx = ctx or {}
     fn = TOOL_REGISTRY[name]
+    # Defensive: VLM sometimes emits args as a string. Try to JSON parse, else ignore.
+    if isinstance(args, str):
+        try:
+            args = json.loads(args) if args.strip() else {}
+            if not isinstance(args, dict):
+                args = {}
+        except Exception:
+            args = {}
+    if args is None:
+        args = {}
     # Start from sanitized model args: drop protected keys
     injected = {k: v for k, v in (args or {}).items() if k not in PROTECTED_CTX_KEYS}
     # Overlay ctx (ctx wins over model args for protected fields)

@@ -20,12 +20,17 @@ import agent_prompt_v75 as _p75  # noqa: E402
 import agent_tools_v7 as _t7  # noqa: E402
 import agent_v6 as mod  # noqa: E402
 
-# Keep only the tools the v7.5 protocol uses
+# Tools cited in v7.5 domain rules
 ALLOWED = {
-    "tool_expert_score",
     "tool_zoom_bbox",
     "tool_image_diff",
+    "tool_patch_grid",
+    "tool_reference_profiler",
+    "tool_reference_retriever",
+    "tool_texture_fft",
+    "tool_hotspot_cropper",
     "tool_side_by_side",
+    "tool_expert_score",  # agent may still probe rank
 }
 
 

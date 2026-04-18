@@ -47,3 +47,45 @@ Reviewer: "The winning system is not v8; it is 0.5 Direct + 0.5 v6.5. ... Can be
 - Continuing to Round 2.
 - Fixes NOT requiring new VLM calls (mostly framing + ablation on existing data) are in.
 - Items requiring rerun (corrected v8 re-inference, GPT test retry) are deferred due to compute budget; will flag in R2.
+
+---
+
+## Round 2 (2026-04-19 07:55 CST — partial, codex credit limit hit)
+
+### Assessment Summary
+- **Score**: not delivered (reviewer hit credit limit before writing verdict)
+- **Reviewer**: Codex GPT-5.4 xhigh (direct repo read)
+- **Status**: critical mid-review finding forced a mechanism correction even without formal score.
+
+### Critical mid-review finding
+
+Codex ran its own post-hoc ablation and found that **my middle-mass claim confounded two variables**: middle-mass AND rank granularity. The controlled test:
+
+| Variant | # unique values | mid-mass | ensemble AUROC |
+|---|---|---|---|
+| v6 original | 49 | 24.0% | 0.8136 |
+| v6 MEDIAN-BIN (mine) | **2** | 0.0% | 0.7915 |
+| **v6 EXTREME-RANK-PRESERVE** (codex) | **49** | **0.0%** | **0.8152** |
+| v6 AFFINE(a=0.25) | 49 | 100% | 0.8154 |
+| v6 AFFINE(a=2.0, clipped) | 49 but many clipped | 2.7% | 0.7886 |
+| Direct (reference) | **11** | 0.0% | 0.7684 (standalone) |
+
+The EXTREME-RANK-PRESERVE variant keeps every unique v6 rank (49 values) but maps them all OUTSIDE [0.2, 0.8]. Ensemble gain is **+4.68 pp** — even higher than v6 original's +4.53 pp. Middle-mass is 0% but rank granularity is preserved.
+
+Meanwhile my median-BIN transformation collapsed 49 ranks to 2, which is why ensemble dropped. **The 2.2pp drop was from rank collapse, not middle-mass loss.**
+
+### What this corrects
+
+- Paper abstract previously claimed middle-zone mass is the mechanism. This is **wrong**: middle-mass is correlated with rank granularity but not causal.
+- The correct mechanism is **rank granularity**: Direct has 11 unique values (coarse bimodal grid); v6 has 49 (fine). Averaging breaks ties in Direct's coarse clusters with real signal.
+
+### Actions taken this round
+
+1. Rewrote abstract "Mechanism" paragraph: middle-mass → rank granularity; explicitly cited v6-EXT-RANK and v6-AFFINE results.
+2. Replaced Table~\ref{tab:score_diversity} with a 9-row variant including EXT-RANK and AFFINE transformations. Added a `# unique` column as the key causal variable.
+3. Updated v8 secondary-contribution paragraph: v8's smaller gain is now explained by rank-granularity collapse (few unique values) instead of middle-mass.
+
+### Pending
+
+Codex reviewer will retry at 08:05 CST (credit limit reset). Round 3 will re-submit the corrected paper and request a final score.
+

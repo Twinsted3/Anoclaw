@@ -66,14 +66,22 @@ average lands right.
 D1 is v8's best domain. Full dev will include D5/D6/D9 which are
 known-harder for the refutation protocol.
 
-### GPT-5.4 dev (full, n=480)
-| System | dev AUROC |
-|---|---|
-| Direct | 0.8153 |
-| **v6.6 self-ensemble** | **0.8242 (+0.9pp)** |
-| v7.5 (domain rules) | 0.7795 (-3.6pp) |
-| v6.6 + 0.5 direct blend | 0.8372 (+2.2pp) |
-| **v6.6 + 0.3/0.7 direct blend** | **0.8379 (+2.3pp)** |
+### GPT-5.4 dev (full, n=480) — updated with v8
+
+| System | dev AUROC | Δ vs Direct |
+|---|---|---|
+| Direct | 0.8153 | — |
+| v6.6 self-ensemble | 0.8242 | +0.9pp |
+| v7.5 (domain rules) | 0.7795 | -3.6pp |
+| **v8 refutation (pure)** | 0.7731 | -4.2pp |
+| direct + v8 (0.6/0.4) | 0.8272 | +1.2pp |
+| direct + v6.6 (0.5) | 0.8372 | +2.2pp |
+| **best triple (0.5 dir + 0.3 v66 + 0.2 v8)** | **0.8388** | **+2.4pp** |
+
+v8 pure underperforms v6.6 on GPT-5.4 because GPT is less over-confident —
+v6.6's self-ensemble is already a correction. Adding v8 as 20% of triple
+blend squeezes an extra +0.16pp. On Qwen3.5 (which IS over-confident) v8
+is the dominant ensemble signal.
 
 v6.6 is already +0.9pp pure (first time any pure agent beats Direct on
 GPT-5.4 dev). Blending with Direct adds another +1.4pp.

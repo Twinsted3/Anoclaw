@@ -35,7 +35,9 @@ def main():
     ap.add_argument("--max_workers", type=int, default=9)
     ap.add_argument("--tools", nargs="*", default=None,
                     help="subset of tools (default: all)")
-    ap.add_argument("--skip_existing", action="store_true", default=True)
+    ap.add_argument("--overwrite", action="store_true",
+                    help="re-run tools even if output file exists "
+                         "(default: skip existing)")
     args = ap.parse_args()
 
     Path(args.out_dir).mkdir(parents=True, exist_ok=True)
@@ -45,7 +47,7 @@ def main():
     t0 = time.time()
     for i, tool in enumerate(tools, 1):
         out = f"{args.out_dir}/{tool}.json"
-        if args.skip_existing and Path(out).exists():
+        if not args.overwrite and Path(out).exists():
             print(f"[{i}/{len(tools)}] skip {tool}: {out} exists", flush=True)
             continue
         cmd = [sys.executable, script,

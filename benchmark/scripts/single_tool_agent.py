@@ -88,14 +88,40 @@ def _extract_tool_desc(tool_name: str) -> str:
     return "\n".join(out).rstrip()
 
 
-def make_restricted_dispatch(allowed_tool: str):
-    """Return a dispatch_tool that routes only `allowed_tool`, else returns error."""
+NEEDS_EXPERT_PATCHES = {"tool_hotspot_cropper", "tool_component_counter"}
+
+
+def make_restricted_dispatch(allowed_tool: str, split: str):
+    """Return a dispatch_tool that routes only `allowed_tool`, else returns error.
+
+    For tools that depend on `_expert_patches` from a prior `tool_expert_score`
+    call (hotspot_cropper, component_counter), the single-tool audit would
+    otherwise always hit "no patches available" — defeating the audit.
+    We seed `_expert_patches` from cached subspacead scores so these tools
+    are exercised with real input.
+    """
     original = tv7.dispatch_tool
+    seed_patches = allowed_tool in NEEDS_EXPERT_PATCHES
+    recs: dict = {}
+    if seed_patches:
+        try:
+            recs_map, _ = tv7._load_expert_scores("subspacead", split)
+            recs = recs_map
+            print(f"[seed] loaded subspacead {split} patches for {len(recs)} items "
+                  f"(for {allowed_tool} audit)", flush=True)
+        except Exception as e:
+            print(f"[seed][WARN] could not load subspacead {split}: {e}", flush=True)
 
     def _dispatch(name: str, args: dict, ctx: dict | None = None) -> dict:
         if name != allowed_tool:
             return {"error": (f"only {allowed_tool} is available in this single-tool "
                               f"run; you called {name}")}
+        if seed_patches and ctx is not None:
+            iid = ctx.get("item_id")
+            rec = recs.get(iid)
+            if rec and rec.get("top_patches"):
+                # Inject patches into ctx so tool picks them up via _expert_patches
+                ctx.setdefault("_expert_patches", rec["top_patches"])
         return original(name, args, ctx)
 
     return _dispatch
@@ -140,7 +166,7 @@ def main():
         output_guide=pv7.TOOL_OUTPUT_GUIDE, tool_desc=tool_desc)
 
     v6.SYSTEM_PROMPT = sp
-    v6.dispatch_tool = make_restricted_dispatch(args.tool)
+    v6.dispatch_tool = make_restricted_dispatch(args.tool, args.split)
 
     agent = v6.ReActAgent(vlm_client=client, vlm_model=model,
                           max_turns=args.max_turns)

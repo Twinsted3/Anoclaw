@@ -454,22 +454,28 @@ def tool_reference_profiler(ref_paths: list[str] | None = None,
     return _wrap_interpretation(out, verdict, disconfirm)
 
 
+import threading as _threading
+
 _RETRIEVAL_CACHE: dict[str, Any] = {}
+_RETRIEVAL_LOCK = _threading.Lock()
 
 
 def _load_retrieval_model_v6(device: str = "cuda"):
     if "model" in _RETRIEVAL_CACHE:
         return _RETRIEVAL_CACHE["model"], _RETRIEVAL_CACHE["transform"]
-    import torch
-    import timm
-    model = timm.create_model("vit_small_patch14_dinov2.lvd142m",
-                              pretrained=True, num_classes=0)
-    model = model.to(device).eval()
-    cfg = timm.data.resolve_data_config(model.pretrained_cfg)
-    transform = timm.data.create_transform(**cfg, is_training=False)
-    _RETRIEVAL_CACHE["model"] = model
-    _RETRIEVAL_CACHE["transform"] = transform
-    return model, transform
+    with _RETRIEVAL_LOCK:
+        if "model" in _RETRIEVAL_CACHE:  # double-check after acquiring lock
+            return _RETRIEVAL_CACHE["model"], _RETRIEVAL_CACHE["transform"]
+        import torch  # noqa: F401
+        import timm
+        model = timm.create_model("vit_small_patch14_dinov2.lvd142m",
+                                  pretrained=True, num_classes=0)
+        model = model.to(device).eval()
+        cfg = timm.data.resolve_data_config(model.pretrained_cfg)
+        transform = timm.data.create_transform(**cfg, is_training=False)
+        _RETRIEVAL_CACHE["model"] = model
+        _RETRIEVAL_CACHE["transform"] = transform
+        return model, transform
 
 
 def tool_reference_retriever(query_path: str, domain_code: str | None = None,
@@ -711,24 +717,34 @@ _KEEP_TOOLS: set[str] | None = None
 def _load_keep_tools() -> set[str]:
     """Load KEEP set from refine-logs/tool_cards/*.md.
 
-    Fallback: if no cards exist or none are KEEP, return all registered tools
-    (single-tool audit runs BEFORE tool cards exist, so they must not be gated).
+    Three states:
+      (a) cards directory missing / empty → treat as audit-not-yet-run,
+          return ALL registered tools (single_tool_agent uses its own
+          restricted dispatch, so this only affects agent_v7 before audit).
+      (b) cards exist and >=1 is KEEP → return that KEEP set.
+      (c) cards exist but zero KEEP → return empty set (no tools allowed);
+          audit has concluded no tool is useful — do NOT silently re-enable
+          everything.
     """
     global _KEEP_TOOLS
     cards = Path(__file__).resolve().parent.parent.parent / "refine-logs" / "tool_cards"
     keep: set[str] = set()
+    cards_present = False
     if cards.exists():
-        for md in cards.glob("*.md"):
+        md_files = list(cards.glob("*.md"))
+        cards_present = len(md_files) > 0
+        for md in md_files:
             try:
                 text = md.read_text()
             except OSError:
                 continue
             if "**Verdict:** KEEP" in text:
                 keep.add(md.stem)
-    if not keep:
-        keep = set(TOOL_REGISTRY.keys())
-    _KEEP_TOOLS = keep
-    return keep
+    if cards_present:
+        _KEEP_TOOLS = keep  # may be empty — that's intentional
+    else:
+        _KEEP_TOOLS = set(TOOL_REGISTRY.keys())  # pre-audit fallback
+    return _KEEP_TOOLS
 
 
 def dispatch_tool_keep_only(name: str, args: dict, ctx: dict | None = None) -> dict:

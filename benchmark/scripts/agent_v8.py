@@ -3,8 +3,9 @@
 Wires agent_prompt_v8.SYSTEM_PROMPT into the v6 ReAct loop, with
 agent_tools_v7 (interpretation wrappers preserved).
 
-Captures the rich per-turn schema (h_normal, h_anomalous, p_a history,
-evidence_supports) into the output for downstream analysis.
+Captures the refutation schema (candidate_features, refutation_verdict,
+remaining_candidate_features, updated_score) plus full turn history
+into the output for downstream audit.
 """
 from __future__ import annotations
 import argparse
@@ -52,8 +53,8 @@ def _build_initial_messages(query_path, ref_paths, max_turns):
     user_parts.append(text_msg("QUERY IMAGE:"))
     user_parts.append(img_msg(load_and_encode(query_path)))
     user_parts.append(text_msg(
-        f"Turn 1/{max_turns}. Generate h_normal, h_anomalous, initial_p_a, "
-        f"diagnostic_question. Then choose action."
+        f"Turn 1/{max_turns}. Output initial_score, candidate_features "
+        f"(up to 3), refutation_target, then action."
     ))
     return [
         {"role": "system", "content": _p8.SYSTEM_PROMPT},
@@ -126,10 +127,11 @@ def _obs_to_text(obs):
 
 def _summarise_action(action):
     """For message history — drop bulky args/stories."""
-    keep_keys = {"action", "tool", "thought", "h_normal", "h_anomalous",
-                 "initial_p_a", "updated_p_a", "evidence_supports",
-                 "evidence_strength", "diagnostic_question",
-                 "confidence", "score"}
+    keep_keys = {"action", "tool", "thought", "initial_score",
+                 "candidate_features", "refutation_target",
+                 "refutation_verdict", "feature_status_update",
+                 "remaining_candidate_features", "updated_score",
+                 "evidence_strength", "confidence", "score"}
     out = {k: v for k, v in action.items() if k in keep_keys and v is not None}
     if "args" in action:
         out["args"] = str(action["args"])[:300]
@@ -270,7 +272,9 @@ def run_v8_item(client, model, item, split, max_turns):
         obs_parts.append(text_msg(
             f"Turn {turn + 1}/{max_turns}. "
             f"{_p8.budget_warning_prompt(remaining)}\n"
-            f"Update p_a based on this evidence. Continue or finalise."))
+            f"Refute the current refutation_target against this evidence. "
+            f"Update remaining_candidate_features and updated_score. "
+            f"Continue or finalise."))
         messages.append({"role": "assistant",
                          "content": json.dumps(_summarise_action(action))})
         messages.append({"role": "user", "content": obs_parts})
@@ -330,6 +334,7 @@ def main():
                 "remaining_features": r.remaining_features,
                 "refutation_verdicts": r.refutation_verdicts,
                 "updated_score": r.updated_score,
+                "history": r.history,  # codex r1 feedback: expose full trace
                 "error": r.error,
             }
         except Exception as e:

@@ -1,0 +1,39 @@
+n=1418
+
+=== Standalone AUROCs ===
+  Direct                                        0.7684
+  v6.5 original                                 0.7713
+  v6.5 BIN (rank-preserving {0.05,0.95})        0.6928
+  v8 original                                   0.6710
+  v8 SOFT (compressed to [0.25,0.75])           0.6710
+  RANDOM middle-mass                            0.4845
+
+=== 0.5 × Direct + 0.5 × X ===
+  0.5 Direct + 0.5 v6.5 original                                 0.8136
+  0.5 Direct + 0.5 v6.5 BIN                                      0.7915
+  0.5 Direct + 0.5 v8 original                                   0.7806
+  0.5 Direct + 0.5 v8 SOFT                                       0.7819
+  0.5 Direct + 0.5 RANDOM middle-mass                            0.7345
+  0.5 Direct + 0.5 v6.5 original * Direct (geomean)              0.8105
+
+=== Middle-zone mass and std ===
+  Direct                                        mean=0.449 std=0.468 mid%=0.0
+  v6.5 original                                 mean=0.528 std=0.373 mid%=24.0
+  v6.5 BIN                                      mean=0.489 std=0.450 mid%=0.0
+  v8 original                                   mean=0.372 std=0.421 mid%=0.4
+  v8 SOFT                                       mean=0.436 std=0.211 mid%=100.0
+  RANDOM                                        mean=0.500 std=0.175 mid%=100.0
+
+=== Rank correlation (Spearman ρ) with Direct ===
+  v6.5 original                                 ρ=0.535
+  v6.5 BIN                                      ρ=0.449
+  v8 original                                   ρ=0.477
+  v8 SOFT                                       ρ=0.477
+  RANDOM                                        ρ=-0.032
+
+=== Per-item error complementarity ===
+  v6.5 original                                 error-cos with Direct = 0.621
+  v6.5 BIN                                      error-cos with Direct = 0.575
+  v8 original                                   error-cos with Direct = 0.594
+  v8 SOFT                                       error-cos with Direct = 0.634
+  RANDOM                                        error-cos with Direct = 0.522

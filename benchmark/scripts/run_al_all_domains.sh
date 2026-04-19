@@ -25,7 +25,8 @@ for D in $DOMAINS; do
         --manifest_dir benchmark/manifests_v2 \
         --domain $D --output $OUT \
         --k $K --fewshot_k 3 \
-        --max_turns 4 --max_workers 6 --backend qwen3 \
+        --max_turns 2 --max_workers 8 --backend qwen3 \
+        --max_test ${AL_MAX_TEST:-40} \
         2>&1 | tee -a /tmp/al_${D}.log
     echo "=== [AL] $D done at $(date +%H:%M:%S) ==="
 done

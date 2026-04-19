@@ -1,8 +1,13 @@
 # AnomalyClaw v8 — Resume Guide
 
-**Last active**: 2026-04-19 ~18:20 CST
-**Status**: v8 iteration + auto-review-loop + cross-benchmark all complete.
-Paper main table is per-domain × 3 backbones; MMAD cross-benchmark subsection added.
+**Last active**: 2026-04-20 ~06:10 CST (overnight autonomous session)
+**Status**: v9 unified agent + MMAD full-type eval + active learning
+pilot + Round 1 adversarial review complete. MMAD label bug fixed (see
+§ MMAD). SeedVL Direct file swapped for consistent v6 provenance
+(gain drops to +0.93pp non-significant). v9 agent does NOT
+systematically beat Direct on MMAD MCQ aggregate. Active learning
+pilot on 4 CrossDomainVAD domains mean Δ +3.5pp (D1 +7.33, D9 +11.11,
+D5 −4.00, D12 −0.44).
 
 ---
 

@@ -59,18 +59,16 @@ def _build_initial_messages(query_path, ref_paths, question, options,
     preamble = _p9.format_task_preamble(question, options)
     preamble_text = preamble["text"]
     if fewshot_context:
-        neighbor_lines = "\n".join(
-            f"  [N{i+1}] label={'ANOMALOUS' if f['label']==1 else 'NORMAL'} "
-            f"similarity={f.get('similarity', 0.0):.2f} — "
-            f"{(f.get('rationale') or '')[:160]}"
-            for i, f in enumerate(fewshot_context)
-        )
+        # Compact injection — no rationale, no similarity — to avoid
+        # confusing the strict JSON schema of the refutation prompt.
+        n_anom = sum(1 for f in fewshot_context if f.get("label") == 1)
+        n_norm = len(fewshot_context) - n_anom
         preamble_text = (
             preamble_text
-            + "\n\nRECENT LABELLED EXAMPLES FROM THIS DOMAIN (use these to "
-              "ground your score; if the query resembles a NORMAL neighbor, "
-              "score low; if it resembles an ANOMALOUS neighbor, score high):"
-              "\n" + neighbor_lines
+            + f"\n\nDomain prior (from {len(fewshot_context)} recent"
+              f" labelled neighbours of this query): {n_anom} were"
+              f" ANOMALOUS, {n_norm} were NORMAL. Use this as a weak prior"
+              f" on what an anomaly in this domain typically looks like."
         )
     user_parts.append(text_msg(preamble_text))
     user_parts.append(text_msg(

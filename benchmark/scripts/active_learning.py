@@ -104,12 +104,20 @@ def main():
                     default="uncertainty")
     ap.add_argument("--skip_passive", action="store_true",
                     help="Reuse existing passive result file if present.")
+    ap.add_argument("--max_test", type=int, default=0,
+                    help="Cap test items for quick pilot (0 = all).")
     args = ap.parse_args()
 
     manifest = json.load(open(os.path.join(args.manifest_dir,
                                            DOMAIN_FILES[args.domain])))
     dev_items = [x for x in manifest if x.get("split") == "dev"]
     test_items = [x for x in manifest if x.get("split") == "test"]
+    if args.max_test > 0:
+        # Stratify roughly 50/50 normal/anomalous
+        normals = [x for x in test_items if x.get("label") == 0]
+        abnormals = [x for x in test_items if x.get("label") == 1]
+        half = args.max_test // 2
+        test_items = normals[:half] + abnormals[:args.max_test - half]
     print(f"[AL] domain={args.domain} dev={len(dev_items)} test={len(test_items)}",
           flush=True)
 

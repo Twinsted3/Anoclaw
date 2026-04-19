@@ -1,15 +1,25 @@
 {
-  "round": 3,
-  "status": "completed",
-  "difficulty": "medium",
-  "reviewer": "codex_exec_xhigh",
-  "final_score": 6.0,
-  "final_verdict": "almost",
+  "round": 1,
+  "status": "in_progress",
+  "difficulty": "nightmare",
+  "reviewer": "codex_exec_gpt54_xhigh",
   "rounds": [
-    {"round": 1, "score": 4.5, "verdict": "not ready", "raw": "review-stage/codex_review_r1_raw.out"},
-    {"round": 2, "score": null, "verdict": "partial (credit limit)", "raw": "review-stage/codex_review_r2_raw.out", "note": "mid-review ablation revealed mid-mass vs rank-granularity confound"},
-    {"round": 3, "score": 6.0, "verdict": "almost", "raw": "review-stage/codex_review_r3_raw.out"}
+    {
+      "round": 1,
+      "score": 5.0,
+      "verdict": "not ready",
+      "raw": "review-stage/codex_v9_review_r1_raw.out",
+      "note": "found MMAD label bug + SeedVL Direct provenance inconsistency; both fixed in this round's commit"
+    }
   ],
-  "pending_experiments": [],
-  "timestamp": "2026-04-19T08:20:00+08:00"
+  "pending_experiments": [
+    "mmad_v9_dev500 (in flight, PID 207516)"
+  ],
+  "pending_fixes": [
+    "paper method section cleanup (v4 router vs v6)",
+    "appendix stale-numbers sweep",
+    "v8 qwen3 test rerun with history capture",
+    "active-learning spec/code alignment"
+  ],
+  "timestamp": "2026-04-19T23:53:00+08:00"
 }

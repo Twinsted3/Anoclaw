@@ -22,35 +22,39 @@ neighbors as few-shot evidence in the agent's system prompt.
 
 ## Protocol (per domain D)
 
+This is a **dev-oracle semi-supervised domain-adaptation** protocol — the
+oracle pool comes from the \emph{dev} split (not test), so it is
+structurally impossible for oracle labels to leak into the test AUROC.
+
 1. **Passive pass** (no oracle):
-   - Run agent v9 on all test items of D. Collect (image, score, rationale,
-     confidence).
-2. **Uncertainty selection**:
-   - Score confusion = |agent_score − 0.5| × weight_uncertainty
-                      + |direct − agent| × weight_disagreement
-                      − confidence/100 × weight_confidence
-   - Pick top-K=10 most confusing items.
-3. **Oracle query** (simulated in experiments via dataset ground truth):
-   - For each selected item, obtain true label y ∈ {0,1}.
-4. **Build per-domain RAG** using the labelled items:
-   - Key: DINOv2 CLS embedding of the item's query image.
-   - Value: (image path, label, agent's rationale after GT correction).
-5. **Active pass**:
-   - For each remaining test item in D, retrieve top-3 nearest labelled
-     neighbors from D's RAG, include their (image, label, rationale) in
-     the agent's turn-1 user message as "RECENT LABELLED EXAMPLES FROM
-     THIS DOMAIN".
+   - Run agent v9 on all test items of D. Collect
+     (image, score, rationale, confidence).
+2. **Uncertainty selection on DEV**:
+   - Run agent v9 on all dev items of D first to obtain dev scores.
+   - Confusion score: $|s_\text{agent} - 0.5|$ (lowest ⇒ most uncertain).
+     Extensions (disagreement-weighted, confidence-weighted) are future
+     work; the current implementation uses only $|s-0.5|$ to keep the
+     MVP simple.
+   - Pick top-$K{=}10$ most confusing dev items.
+3. **Oracle query** (GT label from the manifest's `label` field):
+   - For each selected DEV item, read the ground-truth label $y \in
+     \{0,1\}$ from the manifest. No test labels touched.
+4. **Build per-domain RAG** using the labelled dev items:
+   - Key: DINOv2 CLS embedding of the query image.
+   - Value: (image path, label, agent's rationale at the time of query).
+5. **Active pass on TEST**:
+   - For each test item in D, retrieve top-$3$ nearest DEV neighbours by
+     DINOv2 cosine similarity and inject them as text lines into the
+     agent's turn-1 user message:
+     ``RECENT LABELLED EXAMPLES FROM THIS DOMAIN: [N1] label=…
+     similarity=… — \<rationale\>''. (Future work: pass the neighbour
+     images too; the current MVP uses text-only neighbours.)
    - Agent re-runs v9 with the augmented context; tool calls unchanged.
-6. **Evaluation** on the hold set (test items not selected as oracle):
-   - Metric: per-domain AUROC, before vs after.
-
-## Decoupling from test-set leakage
-
-- Oracle queries use GT labels from the test split — but those items are
-  removed from the metric (hold = test \ seed). This is standard active
-  learning eval.
-- Document in paper: "active protocol leaks labels on 10 items per domain
-  by design; AUROC is computed on the remaining held-out items only".
+6. **Evaluation**: per-domain AUROC on the full test split,
+   \emph{pre} vs \emph{post} active pass. Oracle pool is dev (disjoint
+   from test) so this is not active-learning-with-test-holdout; the right
+   framing is ``semi-supervised domain adaptation with $K$ labelled
+   examples per domain''.
 
 ## Output schema (per-domain RAG entry)
 

@@ -1,5 +1,5 @@
 {
-  "round": 1,
+  "round": 2,
   "status": "in_progress",
   "difficulty": "nightmare",
   "reviewer": "codex_exec_gpt54_xhigh",
@@ -9,17 +9,29 @@
       "score": 5.0,
       "verdict": "not ready",
       "raw": "review-stage/codex_v9_review_r1_raw.out",
-      "note": "found MMAD label bug + SeedVL Direct provenance inconsistency; both fixed in this round's commit"
+      "critical_findings": [
+        "MMAD label bug (GoodsAD substring match)",
+        "SeedVL Direct provenance mismatch",
+        "v4 router vs v6 headline confusion",
+        "v8 reported JSONs missing history",
+        "Tool-cost claim inconsistent with code",
+        "Stale appendix numbers"
+      ]
+    },
+    {
+      "round": 2,
+      "score": null,
+      "verdict": "in_progress",
+      "raw": "review-stage/codex_v9_review_r2_raw.out",
+      "note": "Launched 06:06 after Round 1 fixes + v9 + AL pilot"
     }
   ],
-  "pending_experiments": [
-    "mmad_v9_dev500 (in flight, PID 207516)"
-  ],
   "pending_fixes": [
-    "paper method section cleanup (v4 router vs v6)",
-    "appendix stale-numbers sweep",
-    "v8 qwen3 test rerun with history capture",
-    "active-learning spec/code alignment"
+    "v8 qwen3 test rerun (~3h compute, deferred)"
   ],
-  "timestamp": "2026-04-19T23:53:00+08:00"
+  "experiments_done_this_session": [
+    "mmad_v9_dev500 (n=2302 across 9 types, complete at 03:25)",
+    "active_learning pilot 4 domains D1/D5/D9/D12 (complete at 06:04)"
+  ],
+  "timestamp": "2026-04-20T06:07:00+08:00"
 }

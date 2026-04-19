@@ -1,10 +1,15 @@
 {
-  "round": 1,
-  "status": "in_progress",
+  "round": 3,
+  "status": "completed",
   "difficulty": "medium",
-  "last_score": 4.5,
-  "last_verdict": "not ready",
-  "pending_experiments": [],
   "reviewer": "codex_exec_xhigh",
-  "timestamp": "2026-04-19T07:33:00+08:00"
+  "final_score": 6.0,
+  "final_verdict": "almost",
+  "rounds": [
+    {"round": 1, "score": 4.5, "verdict": "not ready", "raw": "review-stage/codex_review_r1_raw.out"},
+    {"round": 2, "score": null, "verdict": "partial (credit limit)", "raw": "review-stage/codex_review_r2_raw.out", "note": "mid-review ablation revealed mid-mass vs rank-granularity confound"},
+    {"round": 3, "score": 6.0, "verdict": "almost", "raw": "review-stage/codex_review_r3_raw.out"}
+  ],
+  "pending_experiments": [],
+  "timestamp": "2026-04-19T08:20:00+08:00"
 }

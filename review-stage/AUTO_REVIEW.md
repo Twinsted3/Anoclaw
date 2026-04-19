@@ -89,3 +89,77 @@ Meanwhile my median-BIN transformation collapsed 49 ranks to 2, which is why ens
 
 Codex reviewer will retry at 08:05 CST (credit limit reset). Round 3 will re-submit the corrected paper and request a final score.
 
+---
+
+## Round 3 (2026-04-19 08:20 CST — FINAL)
+
+### Assessment Summary
+- **Score**: **6.0 / 10**
+- **Verdict**: **almost** (meets loop termination threshold: score ≥ 6 AND verdict contains "ready" or "almost")
+- **Reviewer**: Codex GPT-5.4 xhigh (direct repo read)
+
+### Reviewer verdict (verbatim)
+
+> **Score: 6.0 / 10**
+>
+> **Verdict: almost, not yet "ready."**
+>
+> The core technical blocker from round 2 is fixed. The new rank-granularity mechanism is supported by the stored ablation: preserving v6 rank while removing all middle-mass keeps the gain (`0.8152`, +4.68 pp), compressing while preserving rank also keeps the gain (`0.8155`, +4.71 pp), and collapsing rank to 2 values cuts the gain (`0.7915`, +2.31 pp). I reran the cheap ablation script and the numbers are consistent with the paper's updated §4 and `refine-logs/rank_granularity_ablation.txt`.
+>
+> Why this reaches 6.0: the main story is now defensible as "score-diverse VLM-agent ensembling," with a real test-set gain over Direct and a controlled mechanism analysis. v8 is now correctly secondary, and `agent_v8.py` no longer has the stale schema terms; it exposes `history` in output JSON at `agent_v8.py:337`.
+>
+> Why it does not reach 6.5-7 yet: the paper is still internally inconsistent outside the updated abstract and experiments.
+>
+> **Minimum remaining fixes for ready** (no new experiment required):
+> 1. Rewrite the stale intro/conclusion framing.
+> 2. Remove the old middle-mass mechanism from Method.
+> 3. Tighten v8 claims (CI touches zero; corrected code not rerun).
+> 4. Foreground strongest-baseline comparison (vs SubspaceAD fusion).
+>
+> **Tightest blocker: global narrative consistency.** No new experiment needed.
+
+### Actions taken this round
+
+All four minimum-fix items addressed without new experiments:
+
+1. **Introduction rewritten** (`paper/sections/1_introduction.tex:26-33`). Contributions list now leads with "Score-diverse VLM-agent ensembling is the headline method" (+4.53 pp on Qwen3.5 test, with CI and significance). Contribution 2 is the rank-granularity mechanism. Contribution 3 is v8 as interpretable variant. Old "Tool×Expert×Strategy framework" moved to contribution 5 (benchmark + framework release).
+
+2. **Method mechanism paragraph fixed** (`paper/sections/3_method.tex:82` and `:102`). The "output bimodality / middle-zone mass" framing was replaced: the target failure is now "coarse rank grid (11 unique values on Qwen3.5)" and the mechanism subsection is rewritten to describe rank-granularity with the EXT-RANK / BIN / AFFINE evidence in-line.
+
+3. **Conclusion rewritten** (`paper/sections/5_conclusion.tex`) to lead with the ensemble method, the rank-granularity mechanism, and the v8 interpretable variant. Limitations are stated honestly: v6 ensemble is ±0 vs fusion on Qwen3.5, v8 CI touches zero, v8 test JSON is pre-schema-fix, GPT-5.4 v8 is dev-only.
+
+4. **v8 significance softened** (`paper/sections/4_experiments.tex:Finding 6`). "Significant" was replaced with "positive-bootstrap rather than strictly significant" because the CI touches zero. Added an explicit note that the schema fix was applied after test-set inference.
+
+5. **Fusion baseline foregrounded** (`paper/sections/4_experiments.tex:Finding 5`). The claim now reads "VLM-only ensemble edges fusion on GPT-5.4 and matches fusion on Qwen3.5, without the SubspaceAD expert", which is the honest positive framing against the strongest simple baseline.
+
+### Final status
+
+- **Score achieved: 6.0/10 "almost"** — meets loop termination threshold.
+- Loop terminates after 3 completed rounds (round 2 was credit-interrupted but delivered the crucial mechanism correction).
+- No further compute-expensive experiments were demanded by the reviewer; the remaining gap from 6.0 → 6.5-7 was entirely narrative consistency, now addressed.
+
+## Method Description (for paper-illustration / downstream use)
+
+AnomalyClaw is a training-free cross-domain VAD system. The main method is a simple arithmetic ensemble of two VLM-based scores on the same query:
+
+1. **Direct score** ($s_{\mathrm{Direct}}$): a single task-anchored-descriptor-prompted VLM call that emits a score in $[0,1]$.
+2. **Agent score** ($s_{\mathrm{agent}}$): a per-item ReAct loop with a 13-tool library (expert probes, visual inspection, reference understanding, structural, semantic) over $K{=}5$ turns. v6 uses free-form deliberation; v8 enforces a three-phase "refutation" protocol (candidate features → refutation tool → remaining candidates → score).
+3. **Ensemble**: $s_{\mathrm{final}} = 0.5\!\cdot\!s_{\mathrm{Direct}} + 0.5\!\cdot\!s_{\mathrm{agent}}$ (for v6) or $0.6\!\cdot\!s_{\mathrm{Direct}} + 0.4\!\cdot\!s_{\mathrm{agent}}$ (for v8), with the weight frozen on dev.
+
+Mechanism: Direct emits $\sim 11$ unique score values (coarse bimodal), agent emits $\sim 49$ (fine-grained). Averaging fills in ties inside Direct's coarse bimodal clusters with the agent's finer signal. Rank granularity is the causal driver; middle-zone mass is correlational.
+
+## Generated Claims (for result-to-claim / paper-plan use)
+
+1. **Primary**: On Qwen3.5-VL-27B test ($n{=}1418$, 12 domains), $0.5\!\cdot\!\mathrm{Direct} + 0.5\!\cdot\!\mathrm{v6\_agent}$ reaches macro AUROC 0.8136, beating Direct-only (0.7684) by +4.53 pp (95% CI [+2.82, +6.31], $P(\Delta>0){=}1.000$). Matches SubspaceAD fusion on Qwen3.5 (±0), edges it on GPT-5.4 (+0.87 pp).
+2. **Mechanism**: Rank granularity (number of unique score values) drives ensemble gain. Rank-preserving removal of middle-mass (+4.68 pp) vs rank-collapsing binarisation (+2.31 pp) cleanly separates the causal from the correlational.
+3. **Interpretable variant**: v8 refutation agent gains +1.28 pp on Qwen3.5 test (CI touches zero, one-sided $P{=}0.962$); provides auditable per-item trace.
+4. **Zero-cost prior**: task-anchored descriptors alone gain +6.4 / +4.1 / +3.2 pp on GPT-5.4 / SeedVL / Qwen3.5 (all significant).
+
+## Next steps (post-loop)
+
+- Compile paper with LaTeX (requires TeXLive, not available locally) and fix any compile errors.
+- Optionally re-run v8 on Qwen3.5 dev+test with the corrected schema to refresh numbers (~3 h of vLLM time).
+- Consider a v9 that designs for a fine rank grid by construction (continuous refutation-strength scores).
+- Submit to a training-free-VAD venue; the 6.0 score + the minimum fixes above should clear the 6.5-7 bar for acceptance.
+
+

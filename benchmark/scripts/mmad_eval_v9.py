@@ -52,6 +52,36 @@ QTYPES_ALL = (
 )
 
 
+def _path_label(key: str) -> int:
+    """Derive anomaly label from MMAD path.
+
+    Check only the immediate defect-type folder (parent of basename),
+    never substring match the whole key — 'good' appears inside
+    'GoodsAD' and would otherwise flip all GoodsAD items to label=0.
+    """
+    parts = key.split("/")
+    if len(parts) < 2:
+        return 1
+    parent = parts[-2].lower()
+    if parent in {"good", "normal", "ok"}:
+        return 0
+    return 1
+
+
+def _ad_label_from_options(qa: dict) -> int | None:
+    """Preferred label for AD questions: use options[Answer] text."""
+    ans = qa.get("Answer")
+    opts = qa.get("Options") or {}
+    if ans not in opts:
+        return None
+    txt = str(opts[ans]).lower()
+    if any(k in txt for k in ("yes", "defect", "there is", "anomal")):
+        return 1
+    if any(k in txt for k in ("no", "normal")):
+        return 0
+    return None
+
+
 def iter_mmad_items(mmad_root: str, qtypes=QTYPES_ALL):
     mmad_json = json.load(open(os.path.join(mmad_root, "mmad.json")))
     for key, v in mmad_json.items():
@@ -62,12 +92,17 @@ def iter_mmad_items(mmad_root: str, qtypes=QTYPES_ALL):
         refs = []
         for t in (v.get("random_templates") or [])[:4]:
             refs.append(os.path.join(mmad_root, t))
+        path_lab = _path_label(key)
         for idx, qa in enumerate(v.get("conversation", [])):
             qt = qa.get("type")
             if qt not in qtypes:
                 continue
-            label_gt = 0 if ("good" in key.lower() or "normal" in key.lower()) \
-                else 1
+            # AD: use options-derived label; others: fall back to path label
+            if qt == "Anomaly Detection":
+                ad_lab = _ad_label_from_options(qa)
+                label_gt = ad_lab if ad_lab is not None else path_lab
+            else:
+                label_gt = path_lab
             yield {
                 "item_id": f"{key}#q{idx}",
                 "image": image_abs,

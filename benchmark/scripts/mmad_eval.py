@@ -64,11 +64,26 @@ def iter_mmad_ad_items(mmad_root: str, only_ad: bool = True):
         for t in (v.get("random_templates") or [])[:4]:
             refs.append(os.path.join(mmad_root, t))
         # Yield each QA turn
+        # Label from immediate parent folder (not full key — "good" is inside
+        # "GoodsAD", which would otherwise flip all GoodsAD items to label=0).
+        _parts = key.split("/")
+        _parent = _parts[-2].lower() if len(_parts) >= 2 else ""
+        path_lab = 0 if _parent in {"good", "normal", "ok"} else 1
         for idx, qa in enumerate(v.get("conversation", [])):
             if only_ad and qa.get("type") != "Anomaly Detection":
                 continue
-            # Binary AD label: anomalous (label=1) unless path contains 'good' or 'normal'
-            label_gt = 0 if ("good" in key.lower() or "normal" in key.lower()) else 1
+            # Prefer options[Answer] text for AD; fall back to path.
+            label_gt = path_lab
+            if qa.get("type") == "Anomaly Detection":
+                ans = qa.get("Answer")
+                opts = qa.get("Options") or {}
+                if ans in opts:
+                    _t = str(opts[ans]).lower()
+                    if any(k in _t for k in ("yes", "defect", "there is",
+                                             "anomal")):
+                        label_gt = 1
+                    elif any(k in _t for k in ("no", "normal")):
+                        label_gt = 0
             yield {
                 "item_id": f"{key}#q{idx}",
                 "image": image_abs,

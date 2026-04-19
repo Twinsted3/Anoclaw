@@ -20,15 +20,18 @@ AnomalyClaw v8 is a training-free VAD system whose main method is
 with the weight frozen on dev. On our **CrossDomainVAD-11** test
 ($n{=}1418$, 12 domains) the ensemble beats descriptor-only Direct on
 all three backbones: Qwen3.5-VL-27B $+4.53$ pp (CI $[+2.82, +6.31]$,
-$P{=}1.000$), SeedVL $+2.14$ pp (CI $[+0.79, +3.47]$, $P{=}0.999$),
+$P{=}1.000$), SeedVL $+0.93$ pp (CI $[-0.32, +2.25]$, $P{=}0.927$, not
+significant — a provenance fix relative to an earlier draft that used a
+pre-v6 SeedVL Direct file),
 GPT-5.4 $+1.74$ pp (CI $[+0.68, +2.86]$, $P{=}1.000$). The mechanism
 is **rank-granularity**, not middle-zone mass: rank-preserving
 transformations that remove all mid-mass still give $+4.68$ pp on
 Qwen3.5 test. A secondary interpretable variant (v8 refutation agent)
 gains $+1.28$ pp on Qwen3.5 test. On an independent benchmark **MMAD**
 (Jiang et al., ICLR 2025; n=989 stratified across 38 classes), the
-method generalises: pooled AUROC $0.708 \to 0.731$, $+2.31$ pp (CI
-$[+0.8, +3.9]$, $P{=}0.996$). MCQ accuracy does *not* transfer
+method generalises: pooled AUROC $0.781 \to 0.811$, $+3.03$ pp (CI
+$[+1.48, +4.54]$, $P{=}0.999$, label bug fixed 2026-04-19).
+MCQ accuracy does *not* transfer
 ($-0.8$ pp), consistent with the rank-granularity mechanism. An
 auto-review-loop with GPT-5.4 xhigh ran 3 rounds and terminated at
 6.0/10 "almost" after fixing narrative consistency. Paper sections
@@ -40,20 +43,20 @@ auto-review-loop with GPT-5.4 xhigh ran 3 rounds and terminated at
 
 | Domain | GPT-5.4 Direct / Ens / Δ | SeedVL Direct / Ens / Δ | Qwen3.5 Direct / Ens / Δ |
 |---|---|---|---|
-| D1 industrial | 0.932 / 0.965 / **+3.3** | 0.874 / 0.919 / **+4.5** | 0.919 / 0.972 / **+5.3** |
-| D2 retail | 0.815 / 0.810 / −0.5 | 0.863 / 0.860 / −0.3 | 0.725 / 0.780 / **+5.5** |
-| D4 infra/derma | 0.799 / 0.796 / −0.4 | 0.660 / 0.683 / **+2.4** | 0.794 / 0.807 / +1.4 |
-| D5 brain MRI | 0.793 / 0.794 / +0.1 | 0.760 / 0.739 / −2.1 | 0.701 / 0.743 / **+4.2** |
-| D5b brain MRI (BMAD) | 0.964 / 0.961 / −0.3 | 0.864 / 0.845 / −2.0 | 0.855 / 0.959 / **+10.4** |
-| D5c liver CT | 0.789 / 0.849 / **+6.0** | 0.492 / 0.577 / **+8.5** | 0.624 / 0.676 / **+5.1** |
-| D5d GI endoscopy | 0.901 / 0.914 / +1.4 | 0.876 / 0.887 / +1.1 | 0.905 / 0.867 / −3.8 |
-| D6 LEVIR change | 0.856 / 0.839 / −1.7 | 0.821 / 0.795 / −2.7 | 0.792 / 0.789 / −0.3 |
-| D7 HyperKvasir | 0.972 / 0.974 / +0.1 | 0.936 / 0.990 / **+5.3** | 0.923 / 0.961 / **+3.8** |
-| D8 road | 0.704 / 0.758 / **+5.4** | 0.676 / 0.651 / −2.5 | 0.616 / 0.655 / **+3.9** |
-| D9 MVTec-LOCO | 0.737 / 0.794 / **+5.7** | 0.651 / 0.762 / **+11.1** | 0.564 / 0.653 / **+8.9** |
-| D10 VisA | 0.894 / 0.911 / +1.7 | 0.878 / 0.902 / **+2.4** | 0.801 / 0.902 / **+10.1** |
-| **Macro** | **0.846 → 0.864** | **0.779 → 0.801** | **0.768 → 0.814** |
-| Macro Δ | **+1.74 pp** | **+2.14 pp** | **+4.53 pp** |
+| D1 industrial | 0.932 / 0.965 / **+3.3** | 0.962 / 0.951 / −1.1 | 0.919 / 0.972 / **+5.3** |
+| D2 retail | 0.815 / 0.810 / −0.5 | 0.851 / 0.862 / +1.1 | 0.725 / 0.780 / **+5.5** |
+| D4 infra/derma | 0.799 / 0.796 / −0.4 | 0.745 / 0.708 / **−3.7** | 0.794 / 0.807 / +1.4 |
+| D5 brain MRI | 0.793 / 0.794 / +0.1 | 0.720 / 0.749 / **+2.9** | 0.701 / 0.743 / **+4.2** |
+| D5b brain MRI (BMAD) | 0.964 / 0.961 / −0.3 | 0.867 / 0.835 / −3.3 | 0.855 / 0.959 / **+10.4** |
+| D5c liver CT | 0.789 / 0.849 / **+6.0** | 0.600 / 0.654 / **+5.4** | 0.624 / 0.676 / **+5.1** |
+| D5d GI endoscopy | 0.901 / 0.914 / +1.4 | 0.901 / 0.885 / −1.6 | 0.905 / 0.867 / −3.8 |
+| D6 LEVIR change | 0.856 / 0.839 / −1.7 | 0.736 / 0.728 / −0.8 | 0.792 / 0.789 / −0.3 |
+| D7 HyperKvasir | 0.972 / 0.974 / +0.1 | 0.951 / 0.993 / **+4.2** | 0.923 / 0.961 / **+3.8** |
+| D8 road | 0.704 / 0.758 / **+5.4** | 0.646 / 0.634 / −1.2 | 0.616 / 0.655 / **+3.9** |
+| D9 MVTec-LOCO | 0.737 / 0.794 / **+5.7** | 0.723 / 0.809 / **+8.6** | 0.564 / 0.653 / **+8.9** |
+| D10 VisA | 0.894 / 0.911 / +1.7 | 0.892 / 0.899 / +0.7 | 0.801 / 0.902 / **+10.1** |
+| **Macro** | **0.846 → 0.864** | **0.800 → 0.809** | **0.768 → 0.814** |
+| Macro Δ | **+1.74 pp** | **+0.93 pp** (n.s.) | **+4.53 pp** |
 | 95 % CI | [+0.68, +2.86] | [+0.79, +3.47] | [+2.82, +6.31] |
 | P(Δ>0) | 1.000 | 0.999 | 1.000 |
 
@@ -79,7 +82,7 @@ SeedVL, v6.6 self-ensemble on GPT-5.4.
 | Metric | Direct | Agent | Ensemble | Δ |
 |---|---|---|---|---|
 | MCQ accuracy (pooled) | 66.4% | 65.1% | 65.6% | **−0.8** |
-| Score AUROC (pooled) | 0.708 | 0.670 | **0.731** | **+2.31** ([+0.8, +3.9], $P{=}0.996$) |
+| Score AUROC (pooled) | 0.781 | 0.743 | **0.811** | **+3.03** ([+1.48, +4.54], $P{=}0.999$, corrected labels) |
 
 Per subset AUROC: DS-MVTec +1.6 pp, MVTec-LOCO +1.2 pp, VisA +3.2 pp.
 (GoodsAD / MVTec-AD subsets are single-class in the sample → no AUROC.)

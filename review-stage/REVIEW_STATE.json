@@ -8,30 +8,25 @@
       "round": 1,
       "score": 5.0,
       "verdict": "not ready",
-      "raw": "review-stage/codex_v9_review_r1_raw.out",
-      "critical_findings": [
-        "MMAD label bug (GoodsAD substring match)",
-        "SeedVL Direct provenance mismatch",
-        "v4 router vs v6 headline confusion",
-        "v8 reported JSONs missing history",
-        "Tool-cost claim inconsistent with code",
-        "Stale appendix numbers"
-      ]
+      "raw": "review-stage/codex_v9_review_r1_raw.out"
     },
     {
       "round": 2,
-      "score": null,
-      "verdict": "in_progress",
+      "score": 5.8,
+      "verdict": "not ready",
       "raw": "review-stage/codex_v9_review_r2_raw.out",
-      "note": "Launched 06:06 after Round 1 fixes + v9 + AL pilot"
+      "delta": "+0.8",
+      "note": "Round 2 blockers mostly addressed; compute-intensive v8 rerun deferred; v4-to-appendix restructure remains future work"
     }
   ],
-  "pending_fixes": [
-    "v8 qwen3 test rerun (~3h compute, deferred)"
+  "pending_fixes_deferred": [
+    "v8 qwen3 test rerun (~3h compute) — compute constraint in this session",
+    "Method section v4-to-appendix full restructure — bigger-than-minimum restructure",
+    "AL extension to all 12 domains × multi-seed × multi-K"
   ],
   "experiments_done_this_session": [
-    "mmad_v9_dev500 (n=2302 across 9 types, complete at 03:25)",
-    "active_learning pilot 4 domains D1/D5/D9/D12 (complete at 06:04)"
+    "mmad_v9_dev500 (n=2302 across 9 types)",
+    "active_learning pilot 4 domains (D1, D5 logical, D9 brain MRI, D12) K=10"
   ],
-  "timestamp": "2026-04-20T06:07:00+08:00"
+  "timestamp": "2026-04-20T06:32:00+08:00"
 }

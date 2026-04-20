@@ -1,23 +1,33 @@
 # AnomalyClaw v8 / v9 — Resume Guide
 
-**Last active**: 2026-04-20 ~16:50 CST (daytime iterative session)
+**Last active**: 2026-04-20 ~20:20 CST
 **Status**: v9 unified agent + MMAD full-type eval + active learning
 pilot + 2-round adversarial review all done overnight. Daytime session
-focused on MMAD Object-* regression — agent had been inappropriately
-running refutation on object-identity questions. Split v9 into 4
-named modes (`anomaly_detection`, `anomaly_analysis`, `object_analysis`,
-`open_qa`) and added ref-skip + tool whitelist for `object_analysis`.
-Flagged and removed a task_type_hint oracle-leakage path (mmad.json's
-"type" field was being fed to the agent — that is cheating). The
-text-only classifier now gets ~90% correct object detection from the
-question+options alone.
+focused on MMAD Object-* regression. Split v9 into 4 named modes
+(`anomaly_detection`, `anomaly_analysis`, `object_analysis`,
+`open_qa`) with text-only classifier (no dataset metadata) routing.
+Flagged and removed a `task_type_hint` oracle-leakage path (earlier
+draft was feeding MMAD's `question_type` to the agent — cheating).
 
-**Last commit**: `2b63b82 v9 modes renamed + task_type_hint removed`.
+**Last commit**: `f8eab7f Object mode: force turn-1 final, tool
+calls coerced`.
 
-**In-flight run** (still running at ~16:50): honest Object-only
-validation `benchmark/results/mmad_v9_obj_honest.json` (n=611 QAs,
-max_turns=3, new mode split, `seed=123`). At ~330/611; ETA ~17:10.
-Results should show whether the Object accuracy regression
+**MMAD mode-split validation outcomes (text-only honest routing)**:
+
+| Mode group | n | Direct | Agent | Δ | Notes |
+|---|---|---|---|---|---|
+| Object-only (force-final) | 611 | 89.8% | 88.2% | **−1.6** | 4 Object types; agent parity with Direct, tool calls net-hurt so we force turn-1 final |
+| Defect-only (partial) | 290 | 74.2% | 71.4% | **−2.8** | run stopped early at 290/880 due to shared vLLM load; per-type n≈72 (noisy). Defect Description +1.4, Classification −2.8, Localization −6.8, Analysis −2.8 |
+| AD subset (from overnight dev500) | 483 | 63.6% direct-acc / 0.759 AUROC | 61.5% / 0.723 AUROC | MCQ −2.1 | Ensemble AUROC +1.65 pp |
+
+**Honest conclusion**: the principled mode split is neutral-to-slightly-negative
+on MMAD MCQ accuracy (per-type deltas noisy; n≈70-150 per type).
+Net effect over dev500 baseline: Object slightly better on parity,
+Defect slightly worse. Paper §4.6 should report this honestly
+rather than pitch the mode split as a gain.
+
+**In-flight run**: none (Defect run stopped at n=290). Results
+landed. Ready for §4.6 paper update with honest numbers.
 (Dev500 had Object Details −4.4 / Classification −3.2) can be fixed
 by the mode split without dataset-type oracle leakage.
 

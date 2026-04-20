@@ -1,21 +1,91 @@
-# AnomalyClaw v8 — Resume Guide
+# AnomalyClaw v8 / v9 — Resume Guide
 
-**Last active**: 2026-04-20 ~06:10 CST (overnight autonomous session)
+**Last active**: 2026-04-20 ~16:50 CST (daytime iterative session)
 **Status**: v9 unified agent + MMAD full-type eval + active learning
-pilot + Round 1 adversarial review complete. MMAD label bug fixed (see
-§ MMAD). SeedVL Direct file swapped for consistent v6 provenance
-(gain drops to +0.93pp non-significant). v9 agent does NOT
-systematically beat Direct on MMAD MCQ aggregate. Active learning
-pilot on 4 CrossDomainVAD domains mean Δ +3.5pp (D1 +7.33, D9 +11.11,
-D5 −4.00, D12 −0.44).
+pilot + 2-round adversarial review all done overnight. Daytime session
+focused on MMAD Object-* regression — agent had been inappropriately
+running refutation on object-identity questions. Split v9 into 4
+named modes (`anomaly_detection`, `anomaly_analysis`, `object_analysis`,
+`open_qa`) and added ref-skip + tool whitelist for `object_analysis`.
+Flagged and removed a task_type_hint oracle-leakage path (mmad.json's
+"type" field was being fed to the agent — that is cheating). The
+text-only classifier now gets ~90% correct object detection from the
+question+options alone.
+
+**Last commit**: `2b63b82 v9 modes renamed + task_type_hint removed`.
+
+**In-flight run** (still running at ~16:50): honest Object-only
+validation `benchmark/results/mmad_v9_obj_honest.json` (n=611 QAs,
+max_turns=3, new mode split, `seed=123`). At ~330/611; ETA ~17:10.
+Results should show whether the Object accuracy regression
+(Dev500 had Object Details −4.4 / Classification −3.2) can be fixed
+by the mode split without dataset-type oracle leakage.
 
 ---
 
 ## How to start the next conversation
 
 ```
-Read RESUME.md, review-stage/AUTO_REVIEW.md, refine-logs/V8_RESULTS.md,
-and paper/sections/4_experiments.tex to catch up.
+Read RESUME.md, review-stage/AUTO_REVIEW.md,
+paper/sections/4_experiments.tex, and
+benchmark/results/mmad_v9_obj_honest.json to catch up on the
+daytime Object-mode experiment outcome.
+```
+
+## Open items — next session
+
+1. **Object validation outcome**: check `mmad_v9_obj_honest.json`
+   when complete (~17:10). If per-type Δ{agent−direct} is ≥0 for all
+   4 Object types, commit the mode split as a paper-worthy fix. If
+   Object Details still regresses, investigate whether (a) Details
+   questions really do benefit from refs, or (b) the classifier
+   mis-routes specific Details patterns.
+2. **Full MMAD run scope**: decided pending. 3-replica throughput is
+   0.15 items/s aggregate (per-replica 0.05 items/s × 3). Full
+   39,670-QA set needs ~73 h. Feasible options:
+      - 5 replicas (add GPUs 6,7) + 2-ref Direct + max_tokens 300
+        → ~20 h overnight.
+      - Stratified n=3000 images (~14K QAs, ~4-5 h).
+      - Split run by type, skip Object-* (26K QAs).
+3. **v8 test rerun with history capture** (Round 1+2 reviewer's
+   unresolved concern, ~3 h compute).
+4. **Method section v4→appendix full restructure** (Round 2
+   reviewer's #5 minimum fix, bigger-than-minimum work deferred).
+5. **verbalized learning direction** (new conversation).
+
+## Mode IDs (v9, from 2026-04-20 pm refactor)
+
+The agent self-identifies one of four modes in turn 1. IDs are
+stable strings used throughout the code:
+
+| ID | 中文 | Trigger | Key behavior |
+|---|---|---|---|
+| `anomaly_detection` | 异常检测模式 | no question, OR binary Yes/No about defect | refutation protocol → anomaly_score (+mcq_answer for Yes/No) |
+| `anomaly_analysis` | 异常分析模式 | 4-way MCQ with defect/anomaly/damage keywords | observe + option_scores; refs are informative |
+| `object_analysis` | 物体分析模式 | 4-way MCQ about object identity/structure/colour/parts | **IGNORE refs** (classifier skips them); tool whitelist {zoom_bbox, domain_knowledge} |
+| `open_qa` | 开放问答 | question, no options | free_text answer |
+
+Classifier is in `agent_prompt_v9.py::_classify_mcq_choice` — reads
+only (question, options) text, not dataset metadata. The LLM is
+free to override by writing a different `mode` in its JSON output.
+
+## Key files touched today
+
+- `benchmark/scripts/agent_prompt_v9.py` — rewritten, 4-mode split
+- `benchmark/scripts/agent_v9.py` — fallback extended to new modes,
+  task_type_hint removed, ref-skip tied to mode_hint
+- `benchmark/scripts/mmad_eval_v9.py` — no longer passes
+  `item["question_type"]` to the agent (oracle leakage fix)
+- `benchmark/results/mmad_v9_obj_honest.json` — in-flight validation
+
+## Recent commits (daytime)
+
+```
+2b63b82 v9 modes renamed + task_type_hint removed (oracle leakage fix)
+848bfb3 v9 mode split: mcq_choice_object ignores refs + tool whitelist
+96056c6 Round 2 closed at 5.8/10 (+0.8 over Round 1); full auto-review
+0b15cf6 Round 2 fixes: AL v2-taxonomy labels, ship relabeled MMAD JSON
+3ef363c AUTO_REVIEW: document Round 1 outcomes
 ```
 
 ## Project state in one paragraph

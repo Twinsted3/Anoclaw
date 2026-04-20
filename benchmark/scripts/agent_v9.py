@@ -49,15 +49,14 @@ class V9Result:
 
 def _build_initial_messages(query_path, ref_paths, question, options,
                             max_turns, fewshot_context=None, rulebook=None):
-    # Pre-classify mode so we can drop refs for `object_analysis` — the
-    # classifier reads only (question, options) text, never dataset
-    # metadata.
+    # Plan B routing: the text classifier emits only a HINT; the LLM may
+    # override it in its JSON `mode` field. Refs are ALWAYS shown so that
+    # the LLM has full information to decide — the prompt tells it "if
+    # you commit to object_analysis, ignore the refs during reasoning".
     preamble = _p9.format_task_preamble(question, options)
-    skip_refs = (preamble.get("mode_hint") in ("mcq_choice_object",
-                                               "object_analysis"))
 
     user_parts = []
-    if ref_paths and not skip_refs:
+    if ref_paths:
         user_parts.append(text_msg("NORMAL REFERENCE IMAGES:"))
         for rp in ref_paths[:4]:
             user_parts.append(img_msg(load_and_encode(rp)))
@@ -83,8 +82,14 @@ def _build_initial_messages(query_path, ref_paths, question, options,
         )
     user_parts.append(text_msg(preamble_text))
     user_parts.append(text_msg(
-        f"Turn 1/{max_turns}. Produce the turn-1 JSON for this mode. "
-        f"mode='{preamble['mode_hint']}' (you may override if confident)."
+        f"Turn 1/{max_turns}. Produce the turn-1 JSON.\n"
+        f"- Classifier HINT: mode='{preamble['mode_hint']}'.\n"
+        f"- You are FREE to override the hint by setting a different "
+        f"`mode` in your JSON if you judge the question differently.\n"
+        f"- If you commit to `object_analysis`, ignore the reference "
+        f"images during reasoning even though you were shown them.\n"
+        f"- If you commit to `anomaly_analysis` or `anomaly_detection`, "
+        f"use the reference images as contrast material."
     ))
     return [
         {"role": "system", "content": _p9.SYSTEM_PROMPT},

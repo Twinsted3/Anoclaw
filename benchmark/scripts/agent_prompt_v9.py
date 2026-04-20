@@ -110,10 +110,18 @@ Goal:
 Protocol:
   - Observe the query together with the refs; the refs give you the
     NORMAL baseline to contrast against.
-  - Call tool_side_by_side, tool_zoom_bbox, or tool_image_diff when a
-    specific region is relevant.
-  - Do NOT run the full refutation protocol; a single targeted
-    observation plus the option-scoring is usually enough.
+  - **Turn 1 default is action="final"**. Populate option_scores and
+    mcq_answer directly.
+  - Call a tool ONLY when uncertain: max(option_scores) < 0.55 AND
+    at least two options within 0.10 of each other.
+  - When you do call a tool, **prefer `tool_zoom_bbox`** (look at one
+    specific region of the query) or `tool_domain_knowledge` (text
+    lookup). **AVOID `tool_side_by_side` and `tool_image_diff`**
+    unless the question explicitly references a specific bbox / region
+    — these tools are designed for refutation (mode 1) and tend to
+    destabilise the option scoring in mode 2.
+  - Do NOT run the full refutation protocol; one targeted observation
+    is enough.
 
 ====================================================================
 MODE 3 · object_analysis     (物体分析模式)

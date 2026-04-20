@@ -48,7 +48,7 @@ class V9Result:
 
 
 def _build_initial_messages(query_path, ref_paths, question, options,
-                            max_turns, fewshot_context=None):
+                            max_turns, fewshot_context=None, rulebook=None):
     # Pre-classify mode so we can drop refs for `object_analysis` — the
     # classifier reads only (question, options) text, never dataset
     # metadata.
@@ -64,6 +64,11 @@ def _build_initial_messages(query_path, ref_paths, question, options,
     user_parts.append(text_msg("QUERY IMAGE:"))
     user_parts.append(img_msg(load_and_encode(query_path)))
     preamble_text = preamble["text"]
+    if rulebook:
+        # Verbalized Self-Evolution rulebook (§5). Prepended to the task
+        # preamble so the agent consults the rulebook BEFORE deciding on
+        # its mode and its candidate features.
+        preamble_text = rulebook.rstrip() + "\n\n" + preamble_text
     if fewshot_context:
         # Compact injection — no rationale, no similarity — to avoid
         # confusing the strict JSON schema of the refutation prompt.
@@ -206,7 +211,8 @@ def _summarise_action(action):
 
 
 def run_v9_item(client, model, item, split, max_turns,
-                question=None, options=None, fewshot_context=None):
+                question=None, options=None, fewshot_context=None,
+                rulebook=None):
     item_id = item["item_id"]
     query_path = item["query_path"]
     ref_paths = item.get("ref_paths", []) or []
@@ -226,7 +232,7 @@ def run_v9_item(client, model, item, split, max_turns,
 
     messages, mode_hint = _build_initial_messages(
         query_path, ref_paths, question, options, max_turns,
-        fewshot_context=fewshot_context)
+        fewshot_context=fewshot_context, rulebook=rulebook)
     history = []
     tools_used = []
     initial_score = None
@@ -241,6 +247,24 @@ def run_v9_item(client, model, item, split, max_turns,
 
     for turn in range(1, max_turns + 1):
         action = _call_with_retry(client, model, messages, mode_hint)
+        # Safety override: object_analysis must not call tools. If the LLM
+        # tries, coerce to final using option_scores argmax or None.
+        if action is not None and mode_hint == "object_analysis" \
+                and action.get("action") == "call_tool":
+            action["action"] = "final"
+            action["tool"] = None
+            action["args"] = None
+            opts = action.get("option_scores") or {}
+            if opts and action.get("mcq_answer") not in ("A", "B", "C", "D"):
+                try:
+                    action["mcq_answer"] = max(opts.items(),
+                                               key=lambda kv: float(kv[1]))[0]
+                except Exception:
+                    pass
+            action["anomaly_score"] = float(action.get("anomaly_score") or 0.5)
+            action["mode"] = "object_analysis"
+            action.setdefault("rationale",
+                              "object_analysis coerced to final (no tool calls allowed)")
         if action is None:
             return V9Result(
                 item_id=item_id, mode=mode_hint, score=0.5,

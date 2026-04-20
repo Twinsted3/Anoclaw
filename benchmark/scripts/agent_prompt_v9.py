@@ -132,12 +132,12 @@ Protocol:
   - The reference images are different normal instances of the same
     product and are IRRELEVANT for identity questions — **ignore them**.
     Focus on the QUERY image alone.
-  - Default action in turn 1 is "final".
-  - Call tool_zoom_bbox when the question points at a specific region
-    ("around the opening", "at the bottom", "on the label"), or
-    tool_domain_knowledge for a text-only product-category lookup.
-  - Do NOT call reference-based probes (tool_side_by_side,
-    tool_image_diff, tool_reference_profiler, tool_reference_retriever).
+  - **action MUST be "final" in turn 1.** Do NOT call any tool in this
+    mode. Empirically, tool calls in object_analysis collapse
+    accuracy by ~15 pp. If a specific region is referenced in the
+    question (e.g. "around the opening"), describe it from your
+    direct look at the query; do not invoke tool_zoom_bbox.
+  - Output visual_evidence, option_scores, mcq_answer all at turn 1.
 
 ====================================================================
 MODE 4 · open_qa             (开放问答)

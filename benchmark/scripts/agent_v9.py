@@ -48,13 +48,13 @@ class V9Result:
 
 
 def _build_initial_messages(query_path, ref_paths, question, options,
-                            max_turns, fewshot_context=None,
-                            task_type_hint=None):
-    # Pre-classify mode so we can drop refs when the question is about
-    # the query object itself (mode `mcq_choice_object`).
-    preamble = _p9.format_task_preamble(question, options,
-                                        task_type_hint=task_type_hint)
-    skip_refs = (preamble.get("mode_hint") == "mcq_choice_object")
+                            max_turns, fewshot_context=None):
+    # Pre-classify mode so we can drop refs for `object_analysis` — the
+    # classifier reads only (question, options) text, never dataset
+    # metadata.
+    preamble = _p9.format_task_preamble(question, options)
+    skip_refs = (preamble.get("mode_hint") in ("mcq_choice_object",
+                                               "object_analysis"))
 
     user_parts = []
     if ref_paths and not skip_refs:
@@ -111,11 +111,15 @@ def _parse_v9_action(text, mode_hint):
         except (TypeError, ValueError):
             parsed["anomaly_score"] = 0.5
 
-        if mode in ("mcq_binary", "mcq_choice"):
+        if mode in ("mcq_binary", "mcq_choice", "mcq_choice_defect",
+                    "mcq_choice_object", "anomaly_detection",
+                    "anomaly_analysis", "object_analysis"):
             letter = parsed.get("mcq_answer")
             if letter not in ("A", "B", "C", "D"):
                 # Fallback 1: argmax of option_scores
-                if mode == "mcq_choice":
+                if mode in ("mcq_choice", "mcq_choice_defect",
+                            "mcq_choice_object", "anomaly_analysis",
+                            "object_analysis"):
                     opt = parsed.get("option_scores") or {}
                     if opt:
                         try:
@@ -202,8 +206,7 @@ def _summarise_action(action):
 
 
 def run_v9_item(client, model, item, split, max_turns,
-                question=None, options=None, fewshot_context=None,
-                task_type_hint=None):
+                question=None, options=None, fewshot_context=None):
     item_id = item["item_id"]
     query_path = item["query_path"]
     ref_paths = item.get("ref_paths", []) or []
@@ -223,8 +226,7 @@ def run_v9_item(client, model, item, split, max_turns,
 
     messages, mode_hint = _build_initial_messages(
         query_path, ref_paths, question, options, max_turns,
-        fewshot_context=fewshot_context,
-        task_type_hint=task_type_hint)
+        fewshot_context=fewshot_context)
     history = []
     tools_used = []
     initial_score = None

@@ -247,10 +247,12 @@ def v9_agent_run(client, model, item, split, max_turns):
         "domain_code": item["class_name"],
     }
     try:
+        # Do NOT pass item["question_type"] — that is a dataset meta-label
+        # and feeding it to the agent would be oracle leakage. The agent
+        # must infer the mode from (question, options) text alone.
         r = v9_mod.run_v9_item(client, model, agent_item, split, max_turns,
                                question=item["question"],
-                               options=item["options"],
-                               task_type_hint=item.get("question_type"))
+                               options=item["options"])
         return {
             "score": r.score,
             "mcq_answer": r.mcq_answer,

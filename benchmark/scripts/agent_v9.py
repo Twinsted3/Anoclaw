@@ -48,15 +48,21 @@ class V9Result:
 
 
 def _build_initial_messages(query_path, ref_paths, question, options,
-                            max_turns, fewshot_context=None):
+                            max_turns, fewshot_context=None,
+                            task_type_hint=None):
+    # Pre-classify mode so we can drop refs when the question is about
+    # the query object itself (mode `mcq_choice_object`).
+    preamble = _p9.format_task_preamble(question, options,
+                                        task_type_hint=task_type_hint)
+    skip_refs = (preamble.get("mode_hint") == "mcq_choice_object")
+
     user_parts = []
-    if ref_paths:
+    if ref_paths and not skip_refs:
         user_parts.append(text_msg("NORMAL REFERENCE IMAGES:"))
         for rp in ref_paths[:4]:
             user_parts.append(img_msg(load_and_encode(rp)))
     user_parts.append(text_msg("QUERY IMAGE:"))
     user_parts.append(img_msg(load_and_encode(query_path)))
-    preamble = _p9.format_task_preamble(question, options)
     preamble_text = preamble["text"]
     if fewshot_context:
         # Compact injection — no rationale, no similarity — to avoid
@@ -196,7 +202,8 @@ def _summarise_action(action):
 
 
 def run_v9_item(client, model, item, split, max_turns,
-                question=None, options=None, fewshot_context=None):
+                question=None, options=None, fewshot_context=None,
+                task_type_hint=None):
     item_id = item["item_id"]
     query_path = item["query_path"]
     ref_paths = item.get("ref_paths", []) or []
@@ -216,7 +223,8 @@ def run_v9_item(client, model, item, split, max_turns,
 
     messages, mode_hint = _build_initial_messages(
         query_path, ref_paths, question, options, max_turns,
-        fewshot_context=fewshot_context)
+        fewshot_context=fewshot_context,
+        task_type_hint=task_type_hint)
     history = []
     tools_used = []
     initial_score = None

@@ -57,18 +57,47 @@ SUPPORTING PROBES:
 
 
 SYSTEM_PROMPT = f"""You are AnomalyClaw, a visual reasoning agent
-specialised in anomaly detection but able to answer four kinds of tasks:
+specialised in anomaly detection but able to answer five kinds of
+tasks:
 
 MODES (inferred from inputs; do NOT ask the user):
-  1. `detection`:    refs present, no question.
-     → refutation protocol; output anomaly_score.
-  2. `mcq_binary`:   refs + question + options like A/B (Yes/No).
-     → refutation protocol; output anomaly_score AND mcq_answer.
-  3. `mcq_choice`:   question + 4 options A/B/C/D (defect type,
-                     location, object class, etc.).
-     → observe + match evidence to options; output mcq_answer.
-  4. `open_ended`:   question, no options.
-     → describe; output free_text.
+  1. `detection`:          refs present, no question.
+       → refutation protocol; output anomaly_score.
+  2. `mcq_binary`:         refs + question + options like A/B (Yes/No).
+       → refutation protocol; output anomaly_score AND mcq_answer.
+  3. `mcq_choice_defect`:  question asks about a DEFECT
+                           (classification, localization, description,
+                           analysis of a defect / damage / crack /
+                           anomaly).
+       → observe + match evidence to options; refs are informative.
+       Output mcq_answer.
+  4. `mcq_choice_object`:  question asks about the QUERY OBJECT itself
+                           (what it is, how many components, colour,
+                           structure, details) — NO anomaly semantics.
+       → **IGNORE the reference images entirely** (they are of other
+       normal instances and only add noise). Answer from the query
+       alone. Tool budget is zero in the typical case; at most one
+       `tool_zoom_bbox` or `tool_domain_knowledge` call if genuinely
+       uncertain. Do NOT run refutation or call `tool_side_by_side`,
+       `tool_image_diff`, `tool_reference_profiler`,
+       `tool_reference_retriever`, `tool_expert_score`,
+       `tool_hotspot_cropper`.
+       Output mcq_answer.
+  5. `open_ended`:         question, no options.
+       → describe; output free_text.
+
+How to pick between mcq_choice_defect and mcq_choice_object when both
+options are descriptive 4-way MCQ:
+  - If the question / options mention defect, anomaly, damage, crack,
+    scratch, contamination, missing part, broken, wrong colour, stain,
+    deformation, misalignment, spot, tear → mode = mcq_choice_defect.
+  - If the question is "what is the object", "how many components",
+    "what colour is the object", "what is the shape", "structure of
+    the object", "details of the object", or the options enumerate
+    object categories / structural counts / colours / shapes →
+    mode = mcq_choice_object. The reference images are irrelevant
+    in this mode because the task is about the query's own identity,
+    not about how it differs from normals.
 
 Every final JSON must contain ALL output fields (use null when NA):
 {{
@@ -126,13 +155,13 @@ For mcq_binary: ALSO map anomaly_score to A/B letter:
   - Answer Yes-letter iff anomaly_score > 0.5, else No-letter.
   - Set mcq_answer = chosen letter.
 
-========= Mode 3: mcq_choice (4-way visual Q&A) =========
+========= Mode 3: mcq_choice_defect (4-way defect Q&A) =========
 
 Refutation does NOT apply. Use observe-match-pick.
 
 Turn 1 (often final):
   Output:
-    mode: "mcq_choice"
+    mode: "mcq_choice_defect"
     anomaly_score: gut estimate of how anomalous the image is (for
       context — MCQ may or may not depend on it)
     visual_evidence: 1-3 concrete observations (string list)
@@ -149,11 +178,37 @@ the question explicitly asks about a specific region.
 Turn 2+: update visual_evidence and option_scores after the tool
 observation; finalise.
 
-Final rules for mcq_choice:
+Final rules for mcq_choice_defect:
   - mcq_answer = argmax(option_scores)
   - Do NOT ensemble with Direct VLM here.
 
-========= Mode 4: open_ended =========
+========= Mode 4: mcq_choice_object (4-way object Q&A) =========
+
+The question is about the query object's IDENTITY / STRUCTURE /
+APPEARANCE — not about defects. Reference images are IRRELEVANT here.
+
+Turn 1 (almost always final):
+  Output:
+    mode: "mcq_choice_object"
+    visual_evidence: 1-2 concrete observations about the QUERY image
+      only (what it looks like, its colour, its parts)
+    option_scores: {{"A": 0..1, "B": 0..1, "C": 0..1, "D": 0..1}}
+      probability each option matches the query
+    mcq_answer: argmax(option_scores)
+    anomaly_score: 0.5 (undefined for this mode; set to 0.5 to
+      satisfy the unified schema)
+
+Tool budget is 0 in the common case. Call a tool only when the query
+requires extreme zoom (tool_zoom_bbox) or external knowledge
+(tool_domain_knowledge, e.g.\ "which product category is this?").
+Do NOT call reference-based tools (side_by_side, image_diff,
+reference_profiler, reference_retriever) in this mode — the refs are
+simply different normal instances of the same product and do not
+help answer the question.
+
+Final rule: mcq_answer = argmax(option_scores). Do not ensemble.
+
+========= Mode 5: open_ended =========
 
 Turn 1: observe the image; write free_text answer (1-2 sentences).
   action="final". Call a tool only if the answer requires counting or
@@ -204,11 +259,56 @@ def budget_warning_prompt(remaining):
     return f"{remaining} turns remaining."
 
 
-def format_task_preamble(question, options):
+_DEFECT_KEYWORDS = (
+    "defect", "anomal", "damage", "crack", "scratch", "contamination",
+    "missing", "broken", "wrong", "stain", "deformation", "misalign",
+    "spot", "tear", "faulty", "hole", "bend", "chip",
+)
+_OBJECT_KEYWORDS = (
+    "what is the object", "what kind of", "what type of object",
+    "how many", "what color", "what colour", "what shape",
+    "what are the object", "structure of the object", "details of the object",
+    "describe the object", "object's structure", "object's details",
+    "which category", "which class", "what category",
+)
+
+
+def _classify_mcq_choice(question: str, options: dict) -> str:
+    """Return 'mcq_choice_defect' or 'mcq_choice_object'.
+
+    Rule: if defect/anomaly vocabulary appears in the question or in any
+    option text, it is a defect question. Otherwise if the question
+    matches object-identity patterns, it is an object question. Default
+    (ambiguous) → defect (safer — agent keeps refs in the prompt).
+    """
+    q = (question or "").lower()
+    opts_txt = " ".join(str(v) for v in (options or {}).values()).lower()
+    blob = q + " || " + opts_txt
+    has_defect = any(k in blob for k in _DEFECT_KEYWORDS)
+    has_object = any(k in q for k in _OBJECT_KEYWORDS)
+    if has_defect and not has_object:
+        return "mcq_choice_defect"
+    if has_object and not has_defect:
+        return "mcq_choice_object"
+    # Both or neither: lean on dataset-specific clue — if the question
+    # text is about "what is" / "how many" / "which" → object.
+    if any(p in q for p in ("what is ", "how many ", "which ", "what colour",
+                            "what color", "what shape")):
+        return "mcq_choice_object"
+    return "mcq_choice_defect"
+
+
+def format_task_preamble(question, options, task_type_hint=None):
     """Build the text block shown to the LLM describing the task.
 
     Returns a dict with 'mode_hint' (string) and 'text' (string to append
     to user turn 1 after the images).
+
+    `task_type_hint` (optional): when the caller already knows the
+    question category (e.g. the MMAD `type` field — "Object Structure",
+    "Defect Classification"), pass it here and the mode hint will be
+    set deterministically. Keyword-based classification is used only
+    as fallback.
     """
     has_q = bool(question)
     has_opt = bool(options)
@@ -226,7 +326,17 @@ def format_task_preamble(question, options):
     if is_binary:
         mode_hint = "mcq_binary"
     elif has_opt:
-        mode_hint = "mcq_choice"
+        if task_type_hint:
+            # Authoritative override from dataset metadata (e.g. MMAD)
+            t = task_type_hint.lower()
+            if "defect" in t or "anomal" in t:
+                mode_hint = "mcq_choice_defect"
+            elif t.startswith("object"):
+                mode_hint = "mcq_choice_object"
+            else:
+                mode_hint = _classify_mcq_choice(question or "", opts)
+        else:
+            mode_hint = _classify_mcq_choice(question or "", opts)
     else:
         mode_hint = "open_ended"
 
@@ -234,10 +344,24 @@ def format_task_preamble(question, options):
     if has_opt:
         opt_str = "OPTIONS:\n" + "\n".join(
             f"  {k}: {v}" for k, v in opts.items())
+
+    extra = ""
+    if mode_hint == "mcq_choice_object":
+        extra = (
+            "\n\nThis is mode `mcq_choice_object` — the question is about "
+            "the QUERY IMAGE's own object identity/structure/appearance, "
+            "NOT about any defect. **IGNORE the reference images entirely "
+            "— they are of other normal instances and only add noise.** "
+            "Answer from the query image alone. Do not call refutation "
+            "tools; default to action='final' in turn 1 with "
+            "option_scores and mcq_answer."
+        )
+
     preamble = (
         f"TASK: {mode_hint}.\n"
         f"QUESTION: {question}\n"
-        f"{opt_str}\n"
+        f"{opt_str}"
+        f"{extra}\n"
         "Use the protocol for this mode. Final JSON must set mode field and"
         " the correct answer field (mcq_answer for MCQ, free_text for open)."
     )

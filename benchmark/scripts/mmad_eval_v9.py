@@ -249,7 +249,8 @@ def v9_agent_run(client, model, item, split, max_turns):
     try:
         r = v9_mod.run_v9_item(client, model, agent_item, split, max_turns,
                                question=item["question"],
-                               options=item["options"])
+                               options=item["options"],
+                               task_type_hint=item.get("question_type"))
         return {
             "score": r.score,
             "mcq_answer": r.mcq_answer,

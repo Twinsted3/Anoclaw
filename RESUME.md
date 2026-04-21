@@ -1,35 +1,52 @@
 # AnomalyClaw v8 / v9 — Resume Guide
 
-**Last active**: 2026-04-20 ~20:20 CST
-**Status**: v9 unified agent + MMAD full-type eval + active learning
-pilot + 2-round adversarial review all done overnight. Daytime session
-focused on MMAD Object-* regression. Split v9 into 4 named modes
-(`anomaly_detection`, `anomaly_analysis`, `object_analysis`,
-`open_qa`) with text-only classifier (no dataset metadata) routing.
-Flagged and removed a `task_type_hint` oracle-leakage path (earlier
-draft was feeding MMAD's `question_type` to the agent — cheating).
+**Last active**: 2026-04-21 ~12:30 CST
+**Status**: v9 MMAD MCQ iteration, 5 validation runs across 4
+routing variants. Settled on **hybrid routing**: Object mode skip
+refs + force turn-1 final, Defect mode always show refs + strict
+tool gate (max_option_score<0.55, avoid side_by_side/image_diff).
+AD mode untouched (anomaly_detection + refutation protocol + v6
+agent ensemble all preserved). 4 modes: `anomaly_detection`,
+`anomaly_analysis`, `object_analysis`, `open_qa`. Text-only
+classifier (no dataset metadata) at 97.1% accuracy on full mmad.json.
 
-**Last commit**: `f8eab7f Object mode: force turn-1 final, tool
-calls coerced`.
+**Last commit**: `7dc534e Hybrid routing: Object skip-refs + Defect Plan-B`.
 
-**MMAD mode-split validation outcomes (text-only honest routing)**:
+**MMAD validation progression (seed=123, same 898-item Object+Defect sample)**:
 
-| Mode group | n | Direct | Agent | Δ | Notes |
+| Variant | Object macro | Defect macro | Overall | Tool calls | Notes |
 |---|---|---|---|---|---|
-| Object-only (force-final) | 611 | 89.8% | 88.2% | **−1.6** | 4 Object types; agent parity with Direct, tool calls net-hurt so we force turn-1 final |
-| Defect-only (partial) | 290 | 74.2% | 71.4% | **−2.8** | run stopped early at 290/880 due to shared vLLM load; per-type n≈72 (noisy). Defect Description +1.4, Classification −2.8, Localization −6.8, Analysis −2.8 |
-| AD subset (from overnight dev500) | 483 | 63.6% direct-acc / 0.759 AUROC | 61.5% / 0.723 AUROC | MCQ −2.1 | Ensemble AUROC +1.65 pp |
+| **dev500** (no mode split, single `mcq_choice`) | −1.5 | ~0 | −0.8 | many | baseline before the split |
+| **force-final** (skip refs for Object, no tools in Object) | −1.6 | N/A | N/A | 3 | Object n=611 only |
+| **Plan B** (always show refs + strict anomaly_analysis) | **−2.1** | **+0.9** | **−0.6** | 71 | refs hurt Object Details/Classification |
+| **Hybrid** (Object skip refs + Defect Plan-B) | **+0.3** ✓ | **−1.5** | **−0.6** | 52 | BEST Object result we've seen |
 
-**Honest conclusion**: the principled mode split is neutral-to-slightly-negative
-on MMAD MCQ accuracy (per-type deltas noisy; n≈70-150 per type).
-Net effect over dev500 baseline: Object slightly better on parity,
-Defect slightly worse. Paper §4.6 should report this honestly
-rather than pitch the mode split as a gain.
+**Per-type breakdown (Hybrid, best variant)**:
 
-**In-flight run**: none (Defect run stopped at n=290). Results
-landed. Ready for §4.6 paper update with honest numbers.
-(Dev500 had Object Details −4.4 / Classification −3.2) can be fixed
-by the mode split without dataset-type oracle leakage.
+| Type | n | Direct | Agent | Δ |
+|---|---|---|---|---|
+| Defect Analysis | 130 | 88.5% | 86.9% | −1.5 |
+| Defect Classification | 131 | 64.1% | 64.9% | +0.8 |
+| Defect Description | 134 | 81.3% | 81.3% | 0.0 |
+| Defect Localization | 132 | 60.6% | 55.3% | **−5.3** |
+| Object Analysis | 92 | 92.4% | 90.2% | −2.2 |
+| Object Classification | 94 | 93.6% | 95.7% | **+2.1** |
+| Object Details | 94 | 89.4% | 88.3% | −1.1 |
+| Object Structure | 91 | 82.4% | 84.6% | **+2.2** |
+
+**Honest conclusions**:
+1. **Hybrid is ≥ dev500 baseline on Object** (macro +0.3 vs −1.5), the clearest single-session gain. 3/4 Object types are positive or flat.
+2. **Defect macro within noise of 0** across variants; single-seed n=130/type has ~4pp σ. Plan B showed +0.9, Hybrid showed −1.5; same underlying pipeline for Defect, so the difference is sampling/vLLM-batching non-determinism at temp=0.
+3. **Defect Localization is the persistent weak spot** (−5.3 in Hybrid, −6.8 in earlier runs, −2.5 in dev500). Likely needs per-type zoom_bbox trigger or separate sub-branch.
+4. **AD subset (CrossDomainVAD-11 & MMAD-AD ensemble)** not touched by this iteration; numbers preserved at overnight levels (MMAD AD AUROC +1.65pp, CrossDomainVAD Qwen3.5 +4.53pp).
+
+**In-flight runs**: none.
+
+**Open optimization directions (next session)**:
+- **A. Multi-seed verification** of Hybrid (3 seeds × n=898 ≈ 5 h on DP-4 vLLM) to collapse Defect noise.
+- **B. Defect Localization sub-routing** — detect "where is the defect" pattern and force `tool_zoom_bbox` call with bbox parsing from the question.
+- **C. Accept Hybrid as final for §4.6** — honest numbers table, move on.
+- **D. Ensemble Plan B + Hybrid** at the mcq_answer level — majority vote / weighted.
 
 ---
 

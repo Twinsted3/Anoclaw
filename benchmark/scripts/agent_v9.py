@@ -49,14 +49,23 @@ class V9Result:
 
 def _build_initial_messages(query_path, ref_paths, question, options,
                             max_turns, fewshot_context=None, rulebook=None):
-    # Plan B routing: the text classifier emits only a HINT; the LLM may
-    # override it in its JSON `mode` field. Refs are ALWAYS shown so that
-    # the LLM has full information to decide — the prompt tells it "if
-    # you commit to object_analysis, ignore the refs during reasoning".
+    # Hybrid routing (from n=898 Plan B validation):
+    # - For anomaly_analysis (Defect MCQ): show refs (Plan B); LLM may
+    #   override mode. Validated Δ +0.9 macro on 4 Defect types.
+    # - For object_analysis (Object MCQ): SKIP refs. Refs are noise for
+    #   identity questions (Object Classification, Details, Analysis).
+    #   Force turn-1 final (coerced in the main loop). Validated Δ −1.6
+    #   macro on 4 Object types. A hybrid (show-refs) version gave −2.1
+    #   because Details/Classification regressed sharply with refs shown.
+    # - Object Structure alone benefitted from refs (+4.4 with, 0 without)
+    #   but Details/Classification dominate the macro; skip-refs is net
+    #   better on Object macro.
     preamble = _p9.format_task_preamble(question, options)
+    skip_refs = (preamble.get("mode_hint") in ("mcq_choice_object",
+                                               "object_analysis"))
 
     user_parts = []
-    if ref_paths:
+    if ref_paths and not skip_refs:
         user_parts.append(text_msg("NORMAL REFERENCE IMAGES:"))
         for rp in ref_paths[:4]:
             user_parts.append(img_msg(load_and_encode(rp)))

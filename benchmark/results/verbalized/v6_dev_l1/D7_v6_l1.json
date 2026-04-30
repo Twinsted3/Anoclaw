@@ -1,0 +1,258 @@
+[
+  {
+    "item_id": "D7_0072",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.935,
+    "direct_score": 0.95,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct artificial structure (rectangular, striped) that is completely absent in all reference images. This feature survives the refutation protocol, confirming the presence of a building change anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D7_0070",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.525,
+    "direct_score": 0.95,
+    "v9_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the suspected anomaly near the pond is a normal terrain feature present in the reference images. No other candidate features were identified. Therefore, the query image is classified as normal.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D7_0031",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.525,
+    "direct_score": 0.95,
+    "v9_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected building change in the lower center was refuted as the structures exist in the reference images. The pond variation is a natural seasonal change. No building anomalies detected.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D7_0003",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.06000000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The segment_and_count analysis revealed a near-uniform change across the image (97% of cells), which is characteristic of global radiometric or lighting differences between satellite captures rather than a specific building change anomaly. No localized defect survived the refutation process.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D7_0013",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.525,
+    "direct_score": 0.95,
+    "v9_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The segment_and_count analysis revealed a high change ratio (32.8%) but identified it as a global lighting/contrast artifact rather than a localized building change. The scattered nature of the top candidate bboxes and the absence of a concentrated structural hotspot support the conclusion that the image is normal.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D7_0039",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.525,
+    "direct_score": 0.95,
+    "v9_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The segment_and_count tool revealed uniform differences across the image, indicative of lighting/contrast shifts rather than specific building changes. No localized anomalies were detected, leading to the conclusion that the query image is not anomalous.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D7_0012",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.935,
+    "direct_score": 0.95,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear building change: two new white rectangular structures are present next to the main house, which are absent in the reference image (where vehicles are seen instead). This confirms an anomaly.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D7_0062",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.45,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The initial visual inspection identified strong candidate features for building changes in the central housing grid. While the top-right field area was confirmed as normal (seasonal variation), the structural differences in the houses remain a valid anomaly signal. The failure of the second verification tool prevents full refutation, but the initial evidence is sufficient to classify the image as anomalous for building change detection.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D7_0048",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.47000000000000003,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows two new buildings in the query image that are completely absent from all reference images, confirming a building change anomaly with high confidence.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D7_0027",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.515,
+    "direct_score": 0.95,
+    "v9_score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The change detection heatmap indicates a global lighting or contrast difference rather than a localized structural anomaly. No specific building change was identified.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  }
+]

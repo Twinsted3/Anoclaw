@@ -13,7 +13,7 @@ from PIL import Image
 def tool_image_diff(query_path: str, ref_path: str, threshold: float = 30) -> dict:
     """Compute absolute pixel difference between query and nearest ref.
     Returns change stats and a text description of where differences are.
-    Useful for change detection (D6 LEVIR) and temporal comparison.
+    Useful for change detection (D4 LEVIR) and temporal comparison.
     """
     q = np.array(Image.open(query_path).convert("RGB").resize((256, 256)))
     r = np.array(Image.open(ref_path).convert("RGB").resize((256, 256)))

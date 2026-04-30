@@ -1,0 +1,2807 @@
+[
+  {
+    "item_id": "D5_0015",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_box",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "After a thorough visual inspection of the query image, no candidate defect features (such as tears, dents, stains, or misprints) were identified. The box appears structurally sound and visually consistent with the normal reference images. Since the candidate feature list is empty and the initial score is low, the image is classified as normal.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0036",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_bottle",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a standard Gatorade bottle with no visible defects, damage, or anomalies. The label is intact, the bottle is upright, and the liquid level and color appear normal. No candidate features for anomalies were identified that would require refutation against the reference images.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0084",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_bottle",
+    "anomaly_score": 0.03500000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays the back of a standard Vita tea bottle. The label is intact with clear text and barcode, the bottle shape is normal, and there are no visible defects such as tears, stains, or deformations. The view is simply the reverse side compared to the references, which is a normal variation.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0053",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.465,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear blue handwritten marking ('354') on the back of the package. Domain rule 2 explicitly states that handwritten markings should be flagged as anomalies. The reference images, showing the front of the package, do not contain this marking, confirming it is not a standard feature of the product packaging. Therefore, the image is anomalous.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0062",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_box",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (a shadow on the bottom-left) was confirmed to be a normal variation present in all reference images. No other defects were found, so the query is classified as normal.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0021",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal product instance. Visual inspection and side-by-side comparison with reference images confirm that all observed features (label design, texture, reflections) are consistent with the normal baseline. No anomalies were detected.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0048",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a package with severe deformation and a torn top edge. The side-by-side comparison with reference images confirms that these features are not present in normal instances of the product, validating the anomaly detection.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0073",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.08,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard cigarette pack with typical light reflections from the plastic wrapping and ambient lighting. No structural defects, tears, stains, or misprints are visible. The candidate features (glare, shadow) are consistent with normal imaging conditions and not indicative of a product defect. The initial low anomaly score is maintained as no defect-like features survived the initial visual inspection.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0051",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.465,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query package has a handwritten marking '332' at the top which is absent in all reference images. Per domain rule 2, handwritten markings are anomalies. The feature survived refutation via side-by-side comparison.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0052",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_box",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model scored the item as normal (rank 0.46), and visual verification of the suggested hotspot via side-by-side comparison confirmed no unique defects compared to the reference images. The item is normal.",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0022",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.08,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard cigarette pack with typical packaging features. The observed glare and shadows are consistent with normal lighting conditions and packaging materials, not defects. No candidate features survived the initial visual inspection as potential anomalies.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0019",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model assigned a very low anomaly score (15.1), and visual inspection via side-by-side comparison confirmed that the queried region contains no defects unique to the query, matching normal packaging variations.",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0035",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "After visual inspection, the query cup noodle container appears normal with no detectable defects. The packaging is intact, labels are properly printed, and there are no visible stains, tears, or deformations. The candidate_features list is empty and initial_score is below 0.3, so I can finalize with a low anomaly score.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0060",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_can",
+    "anomaly_score": 0.95,
+    "direct_score": 0.98,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The attached plastic straw is clearly visible on the query carton but absent from all reference images, confirming it as a packaging anomaly per domain rules.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0071",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_can",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The attached plastic straw is confirmed as an anomaly through side-by-side comparison - it appears only in the query image and is absent from all reference images, violating the normal packaging specification.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0054",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "After visual inspection, the query image shows a normal food container with no visible defects, damage, or contamination. The packaging is intact, the label is clear, and there are no suspicious marks or structural issues. Since no candidate defect features were identified, the anomaly score remains low.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0079",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_box",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a Pocky box that appears structurally normal. There are no visible tears, dents, stains, or missing parts. The packaging is intact, and the text and graphics are clear. Compared to the reference images which show normal instances of the same product, the query does not exhibit any anomalous features. Therefore, the anomaly score is low.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0055",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard green tea bottle with no visible defects. The label is intact, the bottle is upright, and there are no signs of damage, contamination, or missing parts. The appearance is consistent with the normal reference images provided.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0032",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_can",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The attached plastic straw is confirmed as an anomaly through side-by-side comparison with reference images. All references show the same product without any attached straw, and domain rules explicitly flag such attachments as defects.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0007",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_bottle",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query bottle appears normal with no visible defects. The label is intact, the bottle is upright, and there are no signs of contamination or damage. Since no candidate features were identified that look defect-like, and the initial score is low (<0.3), I can finalize with a low anomaly score.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0009",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.05500000000000001,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "A visual inspection of the query image reveals no obvious defects such as dents, tears, stains, or label misalignment. The packaging appears structurally sound and consistent with the normal reference images provided. Since no candidate defect features were identified, the anomaly score is low.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0006",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.48,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.95,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query cigarette pack exhibits a completely different design (logo, text, layout) compared to all provided reference images. The references consistently show one design variant, while the query shows another. Per domain rule 3, packs with completely different graphics are anomalies. The refutation protocol confirms these features are not present in the normal baseline.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0047",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.475,
+    "direct_score": 0.0,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.75,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a dark stain on the label and blue handwritten ink marks, both of which are absent in the normal reference images. These features constitute clear packaging defects (contamination and unauthorized marking).",
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0067",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.03500000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only candidate feature (glare) was confirmed to be a normal lighting artifact present in the reference images. No other anomalies were detected.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0082",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_can",
+    "anomaly_score": 0.05500000000000001,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard Somersby can with no visible defects, damage, or contamination. The label is intact, the can is not dented, and the print quality is clear. Comparing with the reference images, the product appearance is consistent with normal retail packaging. No candidate features for anomaly were identified.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0034",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard, intact package of rice cakes. There are no visible defects such as tears, stains, or misprints. The packaging design, text, and overall appearance are consistent with the normal reference images provided. No candidate features for anomalies were identified.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0010",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a cigarette pack with a 'two red lions' logo, whereas all reference images show the same product with a 'yellow/gold circular swirl' logo. This constitutes a completely different graphic design, which is flagged as an anomaly per domain rule 3. The feature survives refutation as it is not present in any normal reference.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0074",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed the checked region is normal. The only other potential feature (foil crinkle) is a standard variation for this packaging type. No defects found.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0018",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.08,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the initial visual scan. The packaging appears clean, structurally intact, and consistent with the normal reference images. With no suspicious regions to refute, the anomaly score remains low.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0085",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a Lay's chip can with a black label and green imagery. A visual scan reveals no obvious defects such as dents, tears, stains, or misprints. The packaging appears intact and consistent with the normal reference images provided. Since no candidate defect features were identified, the anomaly score remains low.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0025",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_can",
+    "anomaly_score": 0.05,
+    "direct_score": 0.0,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "After a thorough visual inspection of the query image, no candidate defect features (such as dents, scratches, stains, or misprints) were identified. The can appears structurally intact and visually consistent with the normal reference images. Therefore, the anomaly score is low, and the image is classified as normal.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0061",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.455,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.9,
+    "v9_initial_score": 0.75,
+    "v9_updated_score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query box has significantly different text ('SHUANG XI' in English) compared to the reference boxes (Chinese characters '雙喜牌香煙'), which violates the domain rule about different graphics. This indicates a packaging defect or wrong product variant.",
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0017",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a bottle rotated to display the back label. The reference profiler confirms that rotation angle and label visibility are allowed normal variations for this product. No other defects are visible. Therefore, the image is normal.",
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0028",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_can",
+    "anomaly_score": 0.465,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model identified a high-probability anomaly, and the subsequent side-by-side visual check confirmed a distinct black mark on the query can that is completely absent in all normal reference images. This validates the presence of a packaging defect.",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0024",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.3,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query pack's different brand, color, and graphics are explicitly listed as 'allowed_variation' by the reference_profiler. The absence of a visible health warning on the front is likely due to 'text language variation' or design choice, also allowed. No physical defects are observed. Therefore, the pack is normal.",
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0078",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_box",
+    "anomaly_score": 0.085,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard back view of the product packaging. The candidate features identified (glare, shadow) are consistent with normal lighting conditions and not indicative of physical defects like tears, dents, or contamination. The box structure appears intact and matches the expected appearance of a normal product.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0020",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The expert score indicated a normal item (rank 0.00). Visual verification via side_by_side at the suggested hotspot confirmed that the cap and neck region in the query matches the normal references, with no unique defects. All candidate features have been refuted.",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0059",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.05500000000000001,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard instant noodle cup with intact packaging, clear labeling, and no visible defects such as tears, stains, or deformations. The appearance is consistent with the normal reference images, indicating no anomaly.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0069",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model flagged a borderline region, but visual verification via side_by_side confirmed that the feature in that region is consistent with the normal reference images. No unique defect was found.",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0077",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal instant noodle package with typical packaging characteristics (crinkles, folds) that are also present in the reference images. No defects, tears, stains, or contamination are visible. The candidate features identified (crumpling, wrinkles) are normal for this product type and not defect-like.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0002",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.465,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.65,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it is missing the '8 mg' and Chinese text ('中国烟草商标') that are clearly visible in the reference images. This missing text is a definitive packaging defect.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0041",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.52,
+    "direct_score": 0.99,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "Visual inspection and side-by-side comparisons with reference images confirm that the query package is normal. Suspected features like smudges or crinkles were refuted as normal reflections or variations present in the references. No defects were found.",
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0076",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard yogurt cup with no visible defects such as tears, stains, or deformations. The appearance is consistent with the provided normal reference images, indicating the item is normal.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0042",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_can",
+    "anomaly_score": 0.465,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains an attached plastic straw wrapper that is not present in any of the reference images. According to domain rules, attached plastic straw wrappers are flagged as anomalies. The feature survives refutation, confirming this is an anomalous product.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0039",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_bottle",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query bottle appears visually normal with an intact label, proper sealing, and no visible defects or contamination. All candidate features (none identified) have been refuted as the bottle matches the normal appearance shown in the reference images.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0000",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.05500000000000001,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a Lay's chip canister from a side angle. The partial visibility of the logo and the slight curvature of the label are consistent with the cylindrical shape of the canister and the viewing angle, as seen in the reference images (e.g., ref 0 and ref 3). There are no signs of dents, tears, contamination, or other packaging defects. The canister appears to be in normal condition.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0081",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.03500000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model classified the image as normal (rank 0.16), and visual verification of the suggested hotspot region against references confirmed no unique defects. The packaging shows only normal crumpling and print variation.",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0014",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_box",
+    "anomaly_score": 0.05,
+    "direct_score": 0.0,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a product box that appears structurally sound and visually consistent with the reference images. No candidate defect features (such as tears, stains, dents, or misprints) were identified during the initial visual scan. The box is upright, edges are sharp, and graphics are clear. Therefore, the image is classified as normal.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0013",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_bottle",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query bottle is missing the front-facing label (logo and character) that is present in all reference images, while showing the back label instead. Given the identical positioning, this is a confirmed packaging defect.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0011",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_can",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a product label with a celebrity endorsement, which is a complete deviation from the consistent label design (alarm clock icon) seen in all reference images. This significant difference in packaging design is a clear anomaly relative to the established normal baseline.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0058",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "drink_bottle",
+    "anomaly_score": 0.05,
+    "direct_score": 0.0,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a standard back view of the green tea bottle, showing the barcode and nutritional information. This view is consistent with the normal reference images (specifically the back view references). There are no visible defects, damages, or anomalies such as label tears, contamination, or deformation. The bottle is upright and the label is intact. Therefore, the image is classified as normal.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0005",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.9550000000000001,
+    "direct_score": 0.99,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a fundamentally different central logo (shield with Chinese text) compared to the consistent circular logo in all reference images. This violates the rule against 'completely different graphics' relative to the normal baseline, confirming a high-confidence anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0088",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is a normal instance of the 'Shuangxi' cigarette pack, identical to reference 0. No anomalies were detected after comparing against the normal baseline.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0049",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.05,
+    "direct_score": 0.0,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a yellow 'Peel' cigarette pack that appears physically intact, with no visible tears, open flaps, or contamination. The reference images, while showing different brands, establish a baseline of intact packaging. No candidate defect features were identified on the query pack.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0012",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.08,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal front view of the dried fruit package with no visible defects, damage, or anomalies. The packaging is intact, properly sealed, and matches the normal front views in the reference images. No candidate defect features were identified that would require further investigation.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0026",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_box",
+    "anomaly_score": 0.04,
+    "direct_score": 0.0,
+    "v9_score": 0.08,
+    "v9_initial_score": 0.45,
+    "v9_updated_score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (white glare) was refuted via side-by-side comparison as a specular reflection, not a physical defect. No other anomalies were detected.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0178",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.03500000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a product box that appears structurally sound and visually consistent with the provided reference images. No candidate defect features (such as tears, stains, or deformations) were identified during the initial visual inspection. Therefore, the image is classified as normal.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0156",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard Lay's canister with no visible defects such as dents, tears, or contamination. The packaging appears intact and consistent with the normal reference images provided. No candidate features survived initial inspection to warrant further refutation.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0004",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_package",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (crumpling at the top) was confirmed to be a normal variation by comparing it with the reference images. No other defects were found.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0086",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "cigarette_box",
+    "anomaly_score": 0.48,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack with a silver/grey color scheme, whereas all reference images show the same brand with a red/orange color scheme. This constitutes a 'completely different color scheme' as per domain rule 3, which is flagged as an anomaly. The side-by-side comparison confirmed this difference is not present in the normal references.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0066",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.65,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a crumpled and peeling foil seal at the top rim, which is absent in all reference images where the seal is smooth and intact. This confirms a packaging defect.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0155",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard Lay's canister with no visible structural damage, label defects, or contamination. The appearance is consistent with the normal reference images provided, showing typical product presentation on a shelf. No candidate defect features were identified that require refutation.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0016",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "food_bottle",
+    "anomaly_score": 0.05,
+    "direct_score": 0.0,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model's hotspot region was visually verified via side_by_side and found to contain normal printed packaging content (text/graphics) that is also present in the reference images. No defects were observed in this region or elsewhere on the cup. The item is classified as normal.",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0117",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.465,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear structural defect: a cardboard flap protruding from the top of the box. This feature is absent in all reference images, which show clean, sealed packaging. The defect is confirmed via side-by-side comparison.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0120",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.92,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms a large, irregular tear in the yellow label on the left side of the query cup, exposing the black container. This defect is absent in all four reference images, which show intact, continuous labels. The feature is a clear packaging anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0139",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_package",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (a slight crumple at the bottom right) was confirmed to be a normal variation by comparing it with the reference images, which show similar folding. No other defects were found.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0166",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_package",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.75,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a red handwritten stamp on the lower-left corner, which is absent in all reference images. Domain rules explicitly classify handwritten markings as anomalies.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0114",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear tear in the plastic shrink wrap at the top rim, which is absent in all normal reference images. This confirms a packaging defect.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0100",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.48,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a plastic straw and wrapper attached to the milk carton, a feature explicitly absent in all normal reference images. This confirms the presence of a packaging defect/anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0179",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.03500000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a product box that appears structurally sound and visually consistent with the reference images. There are no candidate features that suggest a defect or anomaly. The box is upright, the packaging is intact, and the printed elements are clear. Therefore, the anomaly score is low, indicating a normal product.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0141",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (crinkled foil lid) was confirmed to be a normal characteristic by comparing it with the reference images. No other defects were detected.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0103",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "cigarette_box",
+    "anomaly_score": 0.515,
+    "direct_score": 0.98,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard sealed red cigarette pack with Chinese text. The reference profiler confirms that text language variation is normal. The pack is intact, wrapped, and shows no signs of damage, contamination, or deformation. The open flap seen in one reference is likely a display state, while the query's closed, wrapped state is the standard normal condition for a retail product.",
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0124",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard, undamaged product box. No candidate defect features (tears, dents, stains, misalignment) were identified upon initial inspection. The box structure and print quality appear normal and consistent with the reference images.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0127",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.95,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image clearly shows a jar without a lid, while all reference images show the same product with a pink lid. This missing component is a definitive packaging defect.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0109",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_package",
+    "anomaly_score": 0.52,
+    "direct_score": 0.99,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a standard retail snack package with no visible defects, damage, or anomalies. The packaging is intact, the text is clear, and the overall appearance matches the normal reference images. No candidate features for anomalies were identified.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0105",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_bottle",
+    "anomaly_score": 0.05,
+    "direct_score": 0.0,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The expert_score (19.2, rank 0.17) is well within the normal range for D5 domain, and visual inspection shows no obvious defects, damage, or contamination. The bottle appears intact with proper labeling and upright positioning.",
+    "tools_used": [
+      "tool_expert_score"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0116",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.95,
+    "direct_score": 0.95,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.92,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a dark vertical strip (likely a straw wrapper) attached to the can's label, which is absent in all reference images. This confirms a packaging defect.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0174",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The vertical rectangular mark on the lower part of the query can is a clear defect, as it is absent in all provided normal reference images. The side-by-side comparison successfully refuted the possibility of this being a normal feature.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0147",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.935,
+    "direct_score": 0.95,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model flagged a likely anomaly, and the side-by-side visual check confirmed that the dark vertical mark on the can's lower front is absent in all normal reference images. This feature is a clear defect (scratch/dent/contamination).",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0094",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.65,
+    "v9_updated_score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The only suspected defect (a small tear near the top) was confirmed to be a normal feature present in all reference images. No other anomalies were detected, so the canister is classified as normal.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0110",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "cigarette_box",
+    "anomaly_score": 0.48500000000000004,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette box with an open top flap, which is a structural defect not present in any of the normal reference images. This confirms the anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0171",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard retail product box with no visible structural defects, tears, or contamination. The observed features (shadows, reflections) are consistent with normal lighting conditions and product photography. The box structure appears intact and matches the expected form factor of the reference images.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0125",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_package",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomalies (ink smudge, crease) were refuted by comparison with reference images. The ink smudge is a normal design element, and the crease is a typical packaging artifact. The query image is normal.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0164",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model classified the image as normal (score 22.5). Visual verification of the suggested hotspot via side-by-side comparison confirmed that the features are consistent with the normal reference images, with no unique defects detected.",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0122",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "cigarette_box",
+    "anomaly_score": 0.515,
+    "direct_score": 0.98,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is identical to Reference 0 and Reference 2, confirming that the 'GOLDENLEAF' design is a normal product variant. There are no physical defects or anomalies present.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0135",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.475,
+    "direct_score": 0.0,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a significant packaging defect: a crumpled and torn plastic seal at the top rim. This feature is absent in all reference images, which display smooth, intact seals, confirming the anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0165",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_package",
+    "anomaly_score": 0.03500000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal green foil package with no detectable defects. All potential anomalies (creases, reflections, label integrity) were either visually confirmed as normal or refuted by comparison with reference images. The package structure, seals, and printed elements are intact and consistent with the normal baseline.",
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0142",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_bottle",
+    "anomaly_score": 0.465,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a label tear/damage on the query bottle that is absent in all normal reference images, confirming the presence of an anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0128",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.05500000000000001,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The packaging box appears structurally intact with no visible holes, tears, contamination, or printing defects. The box matches the normal reference images in structure, design, and presentation.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0115",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_package",
+    "anomaly_score": 0.47000000000000003,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a blue handwritten marking ('248') on the packaging, which is absent in all normal reference images. This violates the domain rule flagging handwritten markings as anomalies.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0158",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.95,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a severe structural defect: the top seal of the can is torn and bent, which is not present in any of the normal reference images. This confirms the presence of an anomaly.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0096",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model classified the item as normal (rank 0.21). Visual verification via side_by_side at the suggested hotspot confirmed that the observed features are consistent with normal reference variation. No anomalies detected.",
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0161",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_bottle",
+    "anomaly_score": 0.48,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a bottle with a missing cap, whereas all reference images show bottles with caps intact. This discrepancy confirms a packaging defect.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0154",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "cigarette_box",
+    "anomaly_score": 0.95,
+    "direct_score": 0.98,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.9,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear structural anomaly: the top flap of the cigarette pack is open, whereas all reference images show the same product with a closed top flap. This difference is not a normal variation and constitutes a packaging defect.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0126",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "cigarette_box",
+    "anomaly_score": 0.95,
+    "direct_score": 0.98,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack with an open top flap, which is a structural packaging defect. This feature is absent in all reference images, which show properly sealed packs. Therefore, the query is anomalous.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0111",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.95,
+    "direct_score": 0.98,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The plastic straw wrapper is a clear anomaly confirmed by side-by-side comparison - it appears only in the query image and is absent from all reference images, violating the normal product presentation standard.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0093",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a standard yellow beverage can with no visible defects such as dents, scratches, or label damage. The appearance is consistent with the normal reference images provided. No candidate features for anomalies were identified.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0176",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "cigarette_box",
+    "anomaly_score": 0.485,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous. The side-by-side comparison definitively shows that the query pack is missing the Chinese brand name '芙蓉王' and has an incorrect logo (a spiral pattern instead of the rose flower seen in all normal reference packs).",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0134",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.9550000000000001,
+    "direct_score": 0.99,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a product box with a severe S-shaped bend, which is a clear structural defect. The side-by-side comparison with reference images confirms that this deformation is not present in any normal instance of the product, validating the anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0152",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.05,
+    "direct_score": 0.0,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard back view of a Coca-Cola can with clear text and barcode. No candidate defect features (dents, scratches, contamination) were identified upon initial inspection. The can structure appears intact and the surface is clean, consistent with a normal product.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0098",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_package",
+    "anomaly_score": 0.03500000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The reference profiler confirms the query object is a 'packaged cracker' with expected green/white/beige colors and a rectangular shape. The observed variations (minor rotation, lighting shifts) are explicitly listed as normal. No candidate defect features survived the baseline check, so the image is classified as normal.",
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0104",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_bottle",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only candidate feature (label discoloration) was refuted by the side-by-side comparison, which showed it is a normal variation present in the reference images. No other anomalies were detected.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0151",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only significant candidate feature (a crease near the top) was refuted by comparison with reference images, showing it is a normal variation. No other defects were found, so the product is classified as normal.",
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0131",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.05500000000000001,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.1,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard retail product (instant porridge can) with no visible defects such as dents, tears, stains, or misprints. The label is intact and the container is structurally sound. Comparing with the reference images, the product appearance is consistent with normal instances. No candidate features survived initial inspection.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0175",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "cigarette_box",
+    "anomaly_score": 0.485,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows that the query pack lacks the brand text '黄金叶' and has an incorrect graphic (a large leaf) compared to all reference packs. This is a clear packaging defect/anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0148",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.44,
+    "direct_score": 0.0,
+    "v9_score": 0.88,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "A small, crumpled/peeling sticker fragment is clearly visible on the query can near the '5.0' logo. Side-by-side comparison with reference images confirms this defect is not present in any normal sample, identifying it as a packaging anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0140",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_package",
+    "anomaly_score": 0.085,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal package of dried plums with no significant defects. The slight crumpling at the bottom is typical for flexible packaging and is not considered an anomaly. The package structure, labeling, and overall appearance are consistent with the reference images.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0168",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_bottle",
+    "anomaly_score": 0.075,
+    "direct_score": 0.0,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "After visual inspection, the query bottle shows no obvious defects: the label is complete, the bottle is upright and undamaged, and the liquid appears normal. No candidate features survived initial screening, so the anomaly score remains low.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0136",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.06000000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.1,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate feature (surface glare) was refuted by the side-by-side comparison, which showed similar reflections in the normal reference images. No other defects like tears, dents, or contamination were observed on the packaging. The box appears to be in normal condition.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0113",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "cigarette_box",
+    "anomaly_score": 0.47000000000000003,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows an open top flap on the cigarette pack, which is a structural defect. All reference images show closed top flaps, confirming this is an anomaly. Domain rules explicitly state to flag packs with open top flaps as anomalies.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0150",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_package",
+    "anomaly_score": 0.085,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.15,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a single, intact snack package positioned upright against a pegboard background, consistent with the normal reference images. No candidate defect features (tears, stains, handwritten marks, or structural damage) were identified in the initial visual scan. The package appears clean and undamaged.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0123",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_box",
+    "anomaly_score": 0.475,
+    "direct_score": 0.0,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.92,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear structural defect: a torn and crushed top flap. This feature is absent in all provided reference images, which show intact packaging. The defect is confirmed via side-by-side comparison.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0132",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical white streak/tear on the label near the grape cluster, which is not present in any of the normal reference images. This feature survives refutation and is consistent with a packaging defect (label tear or contamination).",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0177",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "After visual inspection of the query image, no obvious defects, damage, or anomalies are detected. The can appears structurally intact with clear, undamaged labeling. Since no candidate features were identified that could indicate an anomaly, and the initial score is below 0.3, I can confidently conclude this is a normal sample without needing to call any tools.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0129",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.05,
+    "v9_updated_score": null,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a Lay's chip can with intact packaging, clear labeling, and no visible defects such as dents, tears, or contamination. The can's structure is continuous and unbroken, matching the normal references. No candidate features survived initial inspection, so the anomaly score remains low.",
+    "tools_used": [],
+    "n_turns": 1,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0119",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_can",
+    "anomaly_score": 0.48500000000000004,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.92,
+    "v9_initial_score": 0.85,
+    "v9_updated_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a white plastic straw wrapper attached to the carton, which is absent in all reference images. This violates the normal baseline and matches the domain rule flagging attached straws as anomalies.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0149",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_bottle",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "v9_initial_score": 0.95,
+    "v9_updated_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear packaging defect where the label is peeling off the bottle. This feature is absent in all reference images, which show fully intact labels. The refutation protocol confirms this is an anomaly.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0108",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal product with no detectable defects. All initial candidate features (label edge, cap integrity) were refuted by comparison with reference images, confirming they are normal variations. The bottle is intact, properly labeled, and sealed.",
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0172",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "food_bottle",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (top seal irregularity) was confirmed to be a normal variation by comparing it with the reference images. No other defects were found.",
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "n_turns": 2,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  },
+  {
+    "item_id": "D5_0118",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "drink_bottle",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "v9_initial_score": 0.15,
+    "v9_updated_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate feature (label edge irregularity) was confirmed as normal variation via side-by-side comparison. No other defects were found. The bottle appears normal.",
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_side_by_side"
+    ],
+    "n_turns": 3,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ],
+    "error": null
+  }
+]

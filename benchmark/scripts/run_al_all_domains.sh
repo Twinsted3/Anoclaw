@@ -5,7 +5,7 @@
 
 set -e
 K=${1:-10}
-DOMAINS=${AL_DOMAINS:-"D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12"}
+DOMAINS=${AL_DOMAINS:-"D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12"}
 
 export QWEN_API_BASE="http://localhost:8210/v1"
 export QWEN_MODEL="/hdd1/models/Qwen3.5-27B-FP8"

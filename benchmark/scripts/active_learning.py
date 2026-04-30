@@ -38,11 +38,11 @@ from infer import get_client, get_model_name  # noqa: E402
 
 DOMAIN_FILES = {
     "D1": "D1_industrial_manifest.json",
-    "D2": "D2_retail_manifest.json",
-    "D3": "D3_complex_industrial_manifest.json",
-    "D4": "D4_infrastructure_manifest.json",
-    "D5": "D5_logical_manifest.json",
-    "D6": "D6_industrial_3d_manifest.json",
+    "D5": "D5_retail_manifest.json",
+    "D2": "D2_complex_industrial_manifest.json",
+    "D6": "D6_infrastructure_manifest.json",
+    "D3": "D3_logical_manifest.json",
+    "D4": "D4_industrial_3d_manifest.json",
     "D7": "D7_remote_sensing_manifest.json",
     "D8": "D8_dermatology_manifest.json",
     "D9": "D9_brain_mri_manifest.json",

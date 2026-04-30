@@ -1,15 +1,17 @@
 {
   "domain_code": "D5",
-  "n_rules": 5,
+  "n_rules": 6,
   "rules": [
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the query image shows a variation in color (e.g., liquid or wire) or label icon that matches a known product variant described in the reference profiler, trust A (Agent) to correctly identify it as normal.",
+      "text": "If the Agent's rationale explicitly identifies a structural deformation (e.g., 'dent', 'crush', 'open flap') or a foreign object attached to the packaging (e.g., 'straw wrapper') that is absent in references, trust the Agent.",
       "source_items": [
-        "D5_0002",
-        "D5_0055",
-        "D5_0156"
+        "D5_0092",
+        "D5_0097",
+        "D5_0107",
+        "D5_0130",
+        "D5_0137"
       ],
       "confidence": "oracle",
       "id": "D5_meta_a_win_0"
@@ -17,43 +19,41 @@
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the query image contains a subtle, non-structural feature like printed text or markings on a component that is absent in all reference images, trust A (Agent) to detect this as a logical anomaly.",
+      "text": "If the Agent detects a discrepancy in the primary brand logo or central graphic design (e.g., 'sun pattern' vs 'panda logo') compared to the reference, trust the Agent.",
       "source_items": [
-        "D5_0002",
-        "D5_0055",
-        "D5_0156"
+        "D5_0092",
+        "D5_0097",
+        "D5_0107",
+        "D5_0130",
+        "D5_0137"
       ],
       "confidence": "oracle",
       "id": "D5_meta_a_win_1"
     },
     {
-      "type": "meta_b_win",
+      "type": "meta_a_win",
       "category": null,
-      "text": "If the query image shows a clear physical defect such as a torn label, missing object, or extra foreign object, trust B (Direct) to correctly identify it as an anomaly.",
+      "text": "If the Agent identifies a localized surface defect like a 'light patch' or 'stain' on the label that is not present in the reference images, trust the Agent.",
       "source_items": [
-        "D5_0027",
-        "D5_0056",
-        "D5_0114",
-        "D5_0142",
-        "D5_0144",
-        "D5_0145",
-        "D5_0171"
+        "D5_0092",
+        "D5_0097",
+        "D5_0107",
+        "D5_0130",
+        "D5_0137"
       ],
       "confidence": "oracle",
-      "id": "D5_meta_b_win_2"
+      "id": "D5_meta_a_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the query image shows a change in the count of components (e.g., extra washer, missing nut) or a change in the configuration of parts (e.g., number of terminal blocks), trust B (Direct) to detect this as a logical anomaly.",
+      "text": "If the Agent flags a handwritten mark (e.g., price tag) or a standard retail sticker as an anomaly, trust the Direct branch (which likely recognizes these as normal retail markings).",
       "source_items": [
-        "D5_0027",
+        "D5_0033",
+        "D5_0037",
         "D5_0056",
-        "D5_0114",
-        "D5_0142",
-        "D5_0144",
-        "D5_0145",
-        "D5_0171"
+        "D5_0087",
+        "D5_0167"
       ],
       "confidence": "oracle",
       "id": "D5_meta_b_win_3"
@@ -61,23 +61,35 @@
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the query image shows a change in the state of a product (e.g., liquid color change to an unexpected color like milky white) that is not a known variant, trust B (Direct) to identify it as an anomaly.",
+      "text": "If the Agent flags a difference in packaging color or design that corresponds to a different viewing angle (e.g., front vs. back/side) of the same product, trust the Direct branch.",
       "source_items": [
-        "D5_0027",
+        "D5_0033",
+        "D5_0037",
         "D5_0056",
-        "D5_0114",
-        "D5_0142",
-        "D5_0144",
-        "D5_0145",
-        "D5_0171"
+        "D5_0087",
+        "D5_0167"
       ],
       "confidence": "oracle",
       "id": "D5_meta_b_win_4"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the Agent flags a text orientation difference (e.g., 'upside down') that is consistent with the product's standard design or viewing angle, trust the Direct branch.",
+      "source_items": [
+        "D5_0033",
+        "D5_0037",
+        "D5_0056",
+        "D5_0087",
+        "D5_0167"
+      ],
+      "confidence": "oracle",
+      "id": "D5_meta_b_win_5"
     }
   ],
   "meta_origin": {
     "error": null,
-    "n_a_wins": 3,
-    "n_b_wins": 7
+    "n_a_wins": 5,
+    "n_b_wins": 5
   }
 }

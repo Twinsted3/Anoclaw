@@ -7,56 +7,56 @@
       "category": null,
       "text": "If the Agent's rationale explicitly cites a 'reference profiler' or 'allowed variations' to justify a color or label change, trust the Agent.",
       "source_items": [
-        "D5_0002",
-        "D5_0025",
-        "D5_0055",
-        "D5_0107",
-        "D5_0156"
+        "D3_0002",
+        "D3_0025",
+        "D3_0055",
+        "D3_0107",
+        "D3_0156"
       ],
       "confidence": "oracle",
-      "id": "D5_meta_a_win_0"
+      "id": "D3_meta_a_win_0"
     },
     {
       "type": "meta_a_win",
       "category": null,
       "text": "If the anomaly involves a subtle count discrepancy (e.g., one extra washer) or a small foreign marking (e.g., black text on a wire) that the Direct branch misses, trust the Agent.",
       "source_items": [
-        "D5_0002",
-        "D5_0025",
-        "D5_0055",
-        "D5_0107",
-        "D5_0156"
+        "D3_0002",
+        "D3_0025",
+        "D3_0055",
+        "D3_0107",
+        "D3_0156"
       ],
       "confidence": "oracle",
-      "id": "D5_meta_a_win_1"
+      "id": "D3_meta_a_win_1"
     },
     {
       "type": "meta_b_win",
       "category": null,
       "text": "If the Direct branch identifies a missing component (e.g., missing almonds, missing label text) or an extra object (e.g., extra pin, extra block) that the Agent overlooks, trust the Direct branch.",
       "source_items": [
-        "D5_0074",
-        "D5_0091",
-        "D5_0114",
-        "D5_0142",
-        "D5_0145"
+        "D3_0074",
+        "D3_0091",
+        "D3_0114",
+        "D3_0142",
+        "D3_0145"
       ],
       "confidence": "oracle",
-      "id": "D5_meta_b_win_2"
+      "id": "D3_meta_b_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
       "text": "If the Agent claims a significant visual change (like a missing label or different terminal count) is 'allowed' but the Direct branch flags it as a structural violation, trust the Direct branch.",
       "source_items": [
-        "D5_0074",
-        "D5_0091",
-        "D5_0114",
-        "D5_0142",
-        "D5_0145"
+        "D3_0074",
+        "D3_0091",
+        "D3_0114",
+        "D3_0142",
+        "D3_0145"
       ],
       "confidence": "oracle",
-      "id": "D5_meta_b_win_3"
+      "id": "D3_meta_b_win_3"
     },
     {
       "type": "invariant",
@@ -65,7 +65,7 @@
       "text": "The bag contains exactly 2 bolts, 2 hexagonal nuts, and 2 flat washers.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_4"
+      "id": "D3_invariant_4"
     },
     {
       "type": "invariant",
@@ -74,7 +74,7 @@
       "text": "The bag features a vertical resealable zipper strip on the right edge with repeating white recycling symbols.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_5"
+      "id": "D3_invariant_5"
     },
     {
       "type": "invariant",
@@ -83,7 +83,7 @@
       "text": "The hardware components are metallic silver, and the bag is translucent dark grey/black.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_6"
+      "id": "D3_invariant_6"
     },
     {
       "type": "invariant",
@@ -92,7 +92,7 @@
       "text": "Exactly two connector assemblies are present in the image.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_7"
+      "id": "D3_invariant_7"
     },
     {
       "type": "invariant",
@@ -101,7 +101,7 @@
       "text": "Each connector assembly consists of exactly three vertically stacked units.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_8"
+      "id": "D3_invariant_8"
     },
     {
       "type": "invariant",
@@ -110,7 +110,7 @@
       "text": "A single continuous cable connects the two connector assemblies.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_9"
+      "id": "D3_invariant_9"
     },
     {
       "type": "invariant",
@@ -119,7 +119,7 @@
       "text": "The two connector assemblies are positioned on opposite sides of the image.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_10"
+      "id": "D3_invariant_10"
     },
     {
       "type": "invariant",
@@ -128,7 +128,7 @@
       "text": "The connector bodies are orange and the cable is a solid color.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_11"
+      "id": "D3_invariant_11"
     },
     {
       "type": "invariant",
@@ -137,7 +137,7 @@
       "text": "The background is a uniform metallic mesh pattern.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_12"
+      "id": "D3_invariant_12"
     },
     {
       "type": "invariant",
@@ -146,7 +146,7 @@
       "text": "Exactly two distinct rectangular labels are present on the front face of the bottle.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_13"
+      "id": "D3_invariant_13"
     },
     {
       "type": "invariant",
@@ -155,7 +155,7 @@
       "text": "The upper label is positioned in the vertical center of the bottle body, and the lower label is near the base.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_14"
+      "id": "D3_invariant_14"
     },
     {
       "type": "invariant",
@@ -164,7 +164,7 @@
       "text": "The bottle has a clear glass body with a narrow neck and a screw-top cap.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_15"
+      "id": "D3_invariant_15"
     },
     {
       "type": "invariant",
@@ -173,7 +173,7 @@
       "text": "Both labels feature a yellow background with black text or illustrations.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_16"
+      "id": "D3_invariant_16"
     },
     {
       "type": "invariant",
@@ -182,7 +182,7 @@
       "text": "The container is a white, rectangular tray divided into two distinct compartments.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_17"
+      "id": "D3_invariant_17"
     },
     {
       "type": "invariant",
@@ -191,7 +191,7 @@
       "text": "The left compartment contains exactly three whole fruits arranged vertically.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_18"
+      "id": "D3_invariant_18"
     },
     {
       "type": "invariant",
@@ -200,7 +200,7 @@
       "text": "The right compartment is filled with granola in the top half and dried fruit/nuts in the bottom half.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_19"
+      "id": "D3_invariant_19"
     },
     {
       "type": "invariant",
@@ -209,7 +209,7 @@
       "text": "The left compartment contains exactly two oranges and one peach.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_20"
+      "id": "D3_invariant_20"
     },
     {
       "type": "invariant",
@@ -218,7 +218,7 @@
       "text": "The container consists of exactly 15 compartments arranged in a 3x5 grid.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_21"
+      "id": "D3_invariant_21"
     },
     {
       "type": "invariant",
@@ -227,7 +227,7 @@
       "text": "Every compartment contains exactly one pushpin.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_22"
+      "id": "D3_invariant_22"
     },
     {
       "type": "invariant",
@@ -236,7 +236,7 @@
       "text": "Pushpin heads are solid yellow; pins are metallic silver; background is black.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_23"
+      "id": "D3_invariant_23"
     },
     {
       "type": "invariant",
@@ -245,7 +245,7 @@
       "text": "Each pushpin consists of a cylindrical yellow head and a single straight metallic pin.",
       "source_items": [],
       "confidence": "high",
-      "id": "D5_invariant_24"
+      "id": "D3_invariant_24"
     },
     {
       "type": "corrective_fn",
@@ -253,10 +253,10 @@
       "category": "screw_bag",
       "text": "Flag as anomaly if the bag contains loose washers or nuts that are not threaded onto the bolts.",
       "source_items": [
-        "D5_0107"
+        "D3_0107"
       ],
       "confidence": "medium",
-      "id": "D5_corrective_fn_25"
+      "id": "D3_corrective_fn_25"
     },
     {
       "type": "corrective_fn",
@@ -264,10 +264,10 @@
       "category": "splicing_connectors",
       "text": "Flag as anomaly if the image contains only the background mesh with no splicing connectors or cables present.",
       "source_items": [
-        "D5_0167"
+        "D3_0167"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fn_26"
+      "id": "D3_corrective_fn_26"
     },
     {
       "type": "corrective_fp",
@@ -275,12 +275,12 @@
       "category": "splicing_connectors",
       "text": "Do not flag wire color variations (e.g., yellow, blue) as anomalies if the connector structure and count are intact.",
       "source_items": [
-        "D5_0001",
-        "D5_0055",
-        "D5_0074"
+        "D3_0001",
+        "D3_0055",
+        "D3_0074"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fp_27"
+      "id": "D3_corrective_fp_27"
     },
     {
       "type": "corrective_fp",
@@ -288,10 +288,10 @@
       "category": "splicing_connectors",
       "text": "Do not flag a single-wire assembly as an anomaly if the connector housing structure is consistent with the baseline.",
       "source_items": [
-        "D5_0001"
+        "D3_0001"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fp_28"
+      "id": "D3_corrective_fp_28"
     },
     {
       "type": "corrective_fn",
@@ -299,10 +299,10 @@
       "category": "juice_bottle",
       "text": "Flag as anomaly if the main fruit label is completely missing from the bottle surface.",
       "source_items": [
-        "D5_0095"
+        "D3_0095"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fn_29"
+      "id": "D3_corrective_fn_29"
     },
     {
       "type": "corrective_fn",
@@ -310,10 +310,10 @@
       "category": "juice_bottle",
       "text": "Flag as anomaly if the main label shows physical damage, such as tears or cut-off text.",
       "source_items": [
-        "D5_0144"
+        "D3_0144"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fn_30"
+      "id": "D3_corrective_fn_30"
     },
     {
       "type": "corrective_fp",
@@ -321,11 +321,11 @@
       "category": "juice_bottle",
       "text": "Do not flag bottles where the fruit icon and liquid color differ from the reference, provided the label is intact.",
       "source_items": [
-        "D5_0002",
-        "D5_0023"
+        "D3_0002",
+        "D3_0023"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fp_31"
+      "id": "D3_corrective_fp_31"
     },
     {
       "type": "corrective_fn",
@@ -333,10 +333,10 @@
       "category": "breakfast_box",
       "text": "Flag as anomaly if granola/cereal is on the left and fresh fruit is on the right, reversing the standard layout.",
       "source_items": [
-        "D5_0154"
+        "D3_0154"
       ],
       "confidence": "medium",
-      "id": "D5_corrective_fn_32"
+      "id": "D3_corrective_fn_32"
     },
     {
       "type": "corrective_fn",
@@ -344,12 +344,12 @@
       "category": "pushpins",
       "text": "Flag as anomaly if any compartment is completely empty or contains more than two pins.",
       "source_items": [
-        "D5_0172",
-        "D5_0113",
-        "D5_0137"
+        "D3_0172",
+        "D3_0113",
+        "D3_0137"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fn_33"
+      "id": "D3_corrective_fn_33"
     },
     {
       "type": "corrective_fp",
@@ -357,14 +357,14 @@
       "category": "pushpins",
       "text": "Treat random pin orientation and non-centered placement within a compartment as normal variation.",
       "source_items": [
-        "D5_0027",
-        "D5_0046",
-        "D5_0047",
-        "D5_0054",
-        "D5_0035"
+        "D3_0027",
+        "D3_0046",
+        "D3_0047",
+        "D3_0054",
+        "D3_0035"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fp_34"
+      "id": "D3_corrective_fp_34"
     }
   ],
   "meta_origin": {
@@ -372,5 +372,5 @@
     "n_a_wins": 5,
     "n_b_wins": 5
   },
-  "_shuffled_origin": "D5"
+  "_shuffled_origin": "D3"
 }

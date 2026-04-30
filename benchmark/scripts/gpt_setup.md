@@ -52,9 +52,9 @@ python3 benchmark/scripts/infer.py \
     --max_workers 1
 ```
 
-## Cost estimate for full experiment (D1+D2 only):
+## Cost estimate for full experiment (D1+D5 only):
 - Calibration (40 items × 4 variants × 2 backends): ~$5-10 GPT + ~$1 SeedVL
 - Development (80 items × 3 variants × 2 backends): ~$8-15 GPT + ~$2 SeedVL
 - Full test (240 items × 3 variants × 2 backends): ~$20-40 GPT + ~$5 SeedVL
-- Total (D1+D2 only): ~$35-65 GPT
+- Total (D1+D5 only): ~$35-65 GPT
 - With all 8 domains: scale up 4x → ~$140-260 GPT (within $280 budget)

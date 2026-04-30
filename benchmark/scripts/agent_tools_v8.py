@@ -87,7 +87,7 @@ EXPERT_FILES = {
 #
 # Only subspacead offers patch-level localization (48x48 grid with top_patches
 # scores), which is what enables the heatmap + suggested_bbox output. dinov2_*
-# AUROC is slightly higher on D4/D7 but lacks localization, so subspacead
+# AUROC is slightly higher on D6/D7 but lacks localization, so subspacead
 # wins on usable domains.
 #
 # Domains marked available=False: expert_score returns a polite unavailable
@@ -95,14 +95,14 @@ EXPERT_FILES = {
 EXPERT_POLICY = {
     "D1":  {"expert": "subspacead", "auroc": 0.966, "available": True,
             "status": "strong",   "note": "MVTec-AD industrial"},
-    "D2":  {"expert": "subspacead", "auroc": 0.841, "available": True,
+    "D5":  {"expert": "subspacead", "auroc": 0.841, "available": True,
             "status": "strong",   "note": "GoodsAD retail"},
-    "D3":  {"available": False, "reason": "no cached expert score for D3 items"},
-    "D4":  {"expert": "subspacead", "auroc": 0.724, "available": True,
+    "D2":  {"available": False, "reason": "no cached expert score for D2 items"},
+    "D6":  {"expert": "subspacead", "auroc": 0.724, "available": True,
             "status": "moderate", "note": "SDNET concrete; cache covers 80/120"},
-    "D5":  {"expert": "subspacead", "auroc": 0.694, "available": True,
+    "D3":  {"expert": "subspacead", "auroc": 0.694, "available": True,
             "status": "moderate", "note": "MVTec-LOCO logical; cache covers 83/120"},
-    "D6":  {"available": False, "reason": "all experts <0.5 AUROC on 3D-render items"},
+    "D4":  {"available": False, "reason": "all experts <0.5 AUROC on 3D-render items"},
     "D7":  {"expert": "subspacead", "auroc": 0.936, "available": True,
             "status": "strong",   "note": "LEVIR building change"},
     "D8":  {"available": False, "reason": "no reliable expert for dermatology (~0.6 AUROC)"},
@@ -119,9 +119,9 @@ EXPERT_POLICY = {
 # Precomputed 2026-04-22 from per-domain p50/p70 percentiles.
 EXPERT_RANGE_HINTS = {
     "D1":  {"p50": 37.36, "p70": 56.52, "normal_median": 20.00, "anomaly_median": 61.59},
-    "D2":  {"p50": 26.91, "p70": 43.26, "normal_median": 22.40, "anomaly_median": 45.38},
-    "D4":  {"p50": 32.82, "p70": 42.94, "normal_median": 27.13, "anomaly_median": 41.06},
-    "D5":  {"p50": 36.19, "p70": 43.67, "normal_median": 32.91, "anomaly_median": 40.53},
+    "D5":  {"p50": 26.91, "p70": 43.26, "normal_median": 22.40, "anomaly_median": 45.38},
+    "D6":  {"p50": 32.82, "p70": 42.94, "normal_median": 27.13, "anomaly_median": 41.06},
+    "D3":  {"p50": 36.19, "p70": 43.67, "normal_median": 32.91, "anomaly_median": 40.53},
     "D7":  {"p50": 60.08, "p70": 102.79,"normal_median": 43.83, "anomaly_median": 121.82},
     "D9":  {"p50": 22.78, "p70": 27.62, "normal_median": 18.47, "anomaly_median": 26.17},
     "D10": {"p50": 27.14, "p70": 39.68, "normal_median": 18.94, "anomaly_median": 40.03},
@@ -257,9 +257,9 @@ def tool_expert_score(item_id: str, query_path: str | None = None,
     tool_zoom_bbox as a follow-up.
 
     Applicability (EXPERT_POLICY):
-      strong:   D1, D2, D7, D10
-      moderate: D4, D5, D9
-      unavailable: D3, D6, D8, D11, D12
+      strong:   D1, D5, D7, D10
+      moderate: D6, D3, D9
+      unavailable: D2, D4, D8, D11, D12
 
     expert="auto" (recommended) picks the best cached expert for the domain.
     """
@@ -375,7 +375,7 @@ def tool_hotspot_cropper(query_path: str,
     expert's numeric hotspot into direct query-vs-ref visual evidence.
 
     Applicability: any domain where expert_score is available; particularly
-    useful on D1/D2/D10 (clean industrial/medical).
+    useful on D1/D5/D10 (clean industrial/medical).
     """
     patches = patches or _expert_patches or []
     if not patches:
@@ -507,7 +507,7 @@ def tool_patch_grid(query_path: str, rows: int = 3, cols: int = 3, **_) -> dict:
 # Domains where query and refs share the same viewpoint/scale/crop so that
 # pixel-level diff is a meaningful signal. On any other domain the diff is
 # dominated by framing noise, and the agent should use side_by_side instead.
-ALIGNED_DOMAINS = {"D1", "D2", "D5"}
+ALIGNED_DOMAINS = {"D1", "D5", "D3"}
 
 
 def tool_image_diff(query_path: str, ref_path: str | None = None,
@@ -516,7 +516,7 @@ def tool_image_diff(query_path: str, ref_path: str | None = None,
                     _manifest_domain: str | None = None, **_) -> dict:
     """Absolute pixel diff between query and a reference, with stats + mask.
 
-    Specialty: aligned industrial photography (D1 MVTec, D2 GoodsAD, D5
+    Specialty: aligned industrial photography (D1 MVTec, D5 GoodsAD, D3
     MVTec-LOCO). The query and ref must share viewpoint/scale/crop;
     otherwise the diff is dominated by framing noise.
 
@@ -974,7 +974,7 @@ def tool_texture_fft(query_path: str, ref_paths: list[str] | None = None,
     available) a query-vs-ref periodicity delta.
 
     Specialty: detects DISRUPTION of a regular periodic texture. Especially
-    relevant to D4 (SDNET concrete — cracks break the aggregate pattern),
+    relevant to D6 (SDNET concrete — cracks break the aggregate pattern),
     fabric/grid textures, or any domain where 'normal' has a distinctive
     spatial periodicity. Not useful on natural scenes or medical tissue.
 

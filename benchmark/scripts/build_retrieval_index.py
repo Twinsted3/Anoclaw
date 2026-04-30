@@ -109,7 +109,7 @@ if __name__ == "__main__":
     print(f"Loading {MODEL_NAME} on {device}...")
     model, transform = load_model(device)
 
-    domains = ["D1", "D2", "D4", "D5", "D5b", "D5c", "D5d", "D7", "D9", "D10"]
+    domains = ["D1", "D5", "D6", "D3", "D3b", "D3c", "D3d", "D7", "D9", "D10"]
     for dc in domains:
         build_index_for_domain(manifest_path, dc, output_dir, model, transform, device)
 

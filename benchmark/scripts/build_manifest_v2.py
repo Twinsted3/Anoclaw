@@ -7,11 +7,11 @@ code lives in build_manifest.py and is imported here.
 
 Domain mapping (v2):
   D1  MVTec-AD          Industrial Manufacturing
-  D2  GoodsAD           Retail / Product QC
-  D3  VisA              Complex Industrial
-  D4  SDNET2018         Infrastructure / Maintenance
-  D5  MVTec-LOCO        Logical Anomaly
-  D6  MVTec-3D          3D Industrial
+  D5  GoodsAD           Retail / Product QC
+  D2  VisA              Complex Industrial
+  D6  SDNET2018         Infrastructure / Maintenance
+  D3  MVTec-LOCO        Logical Anomaly
+  D4  MVTec-3D          3D Industrial
   D7  LEVIR-CD+         Remote Sensing / Change Detection
   D8  DermaMNIST        Medical — Dermatology
   D9  BraTS2021         Medical — Brain MRI
@@ -50,9 +50,9 @@ from build_manifest import (
 REAL3D_RGB_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/Real3D-AD-RGB")
 
 def build_d6_real3d():
-    """D6: Real3D-AD — 3D product anomaly detection from rendered point cloud RGB views."""
+    """D4: Real3D-AD — 3D product anomaly detection from rendered point cloud RGB views."""
     if not REAL3D_RGB_ROOT.exists():
-        print("  [WARN] D6: Real3D-AD rendered images not found. Run: python benchmark/scripts/render_real3d.py")
+        print("  [WARN] D4: Real3D-AD rendered images not found. Run: python benchmark/scripts/render_real3d.py")
         return []
 
     random.seed(42)
@@ -74,9 +74,9 @@ def build_d6_real3d():
         random.shuffle(normal_imgs)
         for img in normal_imgs[:12]:
             items.append({
-                "item_id": f"D6_{item_idx:04d}",
+                "item_id": f"D4_{item_idx:04d}",
                 "domain": "industrial_3d",
-                "domain_code": "D6",
+                "domain_code": "D4",
                 "query_path": img,
                 "ref_paths": refs,
                 "label": 0,
@@ -92,9 +92,9 @@ def build_d6_real3d():
         random.shuffle(anomaly_imgs)
         for img in anomaly_imgs[:12]:
             items.append({
-                "item_id": f"D6_{item_idx:04d}",
+                "item_id": f"D4_{item_idx:04d}",
                 "domain": "industrial_3d",
-                "domain_code": "D6",
+                "domain_code": "D4",
                 "query_path": img,
                 "ref_paths": refs,
                 "label": 1,
@@ -113,8 +113,8 @@ def build_d6_real3d():
     random.shuffle(normal); random.shuffle(anomaly)
     items = normal[:90] + anomaly[:90]
     for i, item in enumerate(items):
-        item["item_id"] = f"D6_{i:04d}"
-    print(f"  D6: {min(len(normal),90)} normal, {min(len(anomaly),90)} anomaly (Real3D-AD RGB)")
+        item["item_id"] = f"D4_{i:04d}"
+    print(f"  D4: {min(len(normal),90)} normal, {min(len(anomaly),90)} anomaly (Real3D-AD RGB)")
     return assign_split(items)
 
 # ---------------------------------------------------------------------------
@@ -135,7 +135,7 @@ DOMAIN_CONFIG = {
         "reference_type": "few-shot (train/good)",
         "description": "Classic industrial surface inspection across 15 object/texture categories.",
     },
-    "D2": {
+    "D5": {
         "name": "Retail / Product QC",
         "source_dataset": "GoodsAD",
         "anomaly_type": "packaging_defect / contamination",
@@ -143,7 +143,7 @@ DOMAIN_CONFIG = {
         "reference_type": "few-shot (same product)",
         "description": "Retail shelf product anomaly detection with product-matched references.",
     },
-    "D3": {
+    "D2": {
         "name": "Complex Industrial",
         "source_dataset": "VisA",
         "anomaly_type": "defect",
@@ -151,7 +151,7 @@ DOMAIN_CONFIG = {
         "reference_type": "few-shot (train/good)",
         "description": "12-category industrial AD with complex textures and fine-grained defects.",
     },
-    "D4": {
+    "D6": {
         "name": "Infrastructure / Maintenance",
         "source_dataset": "SDNET2018",
         "anomaly_type": "crack",
@@ -159,7 +159,7 @@ DOMAIN_CONFIG = {
         "reference_type": "few-shot (uncracked surface)",
         "description": "Concrete crack detection on decks, walls, and pavement.",
     },
-    "D5": {
+    "D3": {
         "name": "Logical Anomaly",
         "source_dataset": "MVTec-LOCO",
         "anomaly_type": "logical / structural",
@@ -167,7 +167,7 @@ DOMAIN_CONFIG = {
         "reference_type": "few-shot (train/good)",
         "description": "Logical and structural constraint violations beyond surface defects.",
     },
-    "D6": {
+    "D4": {
         "name": "3D Product (RGB)",
         "source_dataset": "Real3D-AD",
         "anomaly_type": "geometric_defect",
@@ -230,16 +230,16 @@ DOMAIN_CONFIG = {
 # ---------------------------------------------------------------------------
 _DOMAIN_MAP = {
     "D1":  (build_d1_industrial,    "D1",  "industrial",        "D1_industrial"),
-    "D2":  (build_d2_retail,        "D2",  "retail",            "D2_retail"),
-    "D3":  (build_d10_visa,         "D10", "complex_industrial","D3_complex_industrial"),
-    "D4":  (build_d4_maintenance,   "D4",  "infrastructure",    "D4_infrastructure"),
-    "D5":  (build_d9_loco,          "D9",  "logical",           "D5_logical"),
-    "D6":  (build_d6_real3d,         "D6",  "industrial_3d",     "D6_industrial_3d"),
-    "D7":  (build_d6_remote_sensing,"D6",  "remote_sensing",    "D7_remote_sensing"),
-    "D8":  (build_d5_medical,       "D5",  "dermatology",       "D8_dermatology"),
-    "D9":  (build_d5b_brain,        "D5b", "brain_mri",         "D9_brain_mri"),
-    "D10": (build_d5c_liver,        "D5c", "liver_ct",          "D10_liver_ct"),
-    "D11": (build_d5d_colon,        "D5d", "gi_endoscopy",      "D11_gi_endoscopy"),
+    "D5":  (build_d2_retail,        "D5",  "retail",            "D5_retail"),
+    "D2":  (build_d10_visa,         "D10", "complex_industrial","D2_complex_industrial"),
+    "D6":  (build_d4_maintenance,   "D6",  "infrastructure",    "D6_infrastructure"),
+    "D3":  (build_d9_loco,          "D9",  "logical",           "D3_logical"),
+    "D4":  (build_d6_real3d,         "D4",  "industrial_3d",     "D4_industrial_3d"),
+    "D7":  (build_d6_remote_sensing,"D4",  "remote_sensing",    "D7_remote_sensing"),
+    "D8":  (build_d5_medical,       "D3",  "dermatology",       "D8_dermatology"),
+    "D9":  (build_d5b_brain,        "D3b", "brain_mri",         "D9_brain_mri"),
+    "D10": (build_d5c_liver,        "D3c", "liver_ct",          "D10_liver_ct"),
+    "D11": (build_d5d_colon,        "D3d", "gi_endoscopy",      "D11_gi_endoscopy"),
     "D12": (build_d7_road,          "D7",  "road_safety",       "D12_road_safety"),
 }
 
@@ -255,7 +255,7 @@ def remap_items(items, old_code, new_code, new_domain_name):
       - domain_code:  old_code -> new_code
       - domain:       -> new_domain_name
       - item_id:      replaces the old_code prefix with new_code
-                       e.g. "D10_0042" -> "D3_0042"
+                       e.g. "D10_0042" -> "D2_0042"
 
     Returns a new list (originals are not mutated).
     """
@@ -266,7 +266,7 @@ def remap_items(items, old_code, new_code, new_domain_name):
         new_item["domain"] = new_domain_name
 
         old_id = new_item["item_id"]
-        # Handle codes like "D5b", "D5c", "D5d" as well as "D10", "D11"
+        # Handle codes like "D3b", "D3c", "D3d" as well as "D10", "D11"
         if old_id.startswith(old_code + "_"):
             suffix = old_id[len(old_code) + 1:]  # everything after "Dxx_"
             new_item["item_id"] = f"{new_code}_{suffix}"

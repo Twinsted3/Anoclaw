@@ -1,15 +1,17 @@
 {
   "domain_code": "D5",
-  "n_rules": 36,
+  "n_rules": 43,
   "rules": [
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the query image shows a variation in color (e.g., liquid or wire) or label icon that matches a known product variant described in the reference profiler, trust A (Agent) to correctly identify it as normal.",
+      "text": "If the Agent's rationale explicitly identifies a structural deformation (e.g., 'dent', 'crush', 'open flap') or a foreign object attached to the packaging (e.g., 'straw wrapper') that is absent in references, trust the Agent.",
       "source_items": [
-        "D5_0002",
-        "D5_0055",
-        "D5_0156"
+        "D5_0092",
+        "D5_0097",
+        "D5_0107",
+        "D5_0130",
+        "D5_0137"
       ],
       "confidence": "oracle",
       "id": "D5_meta_a_win_0"
@@ -17,43 +19,41 @@
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the query image contains a subtle, non-structural feature like printed text or markings on a component that is absent in all reference images, trust A (Agent) to detect this as a logical anomaly.",
+      "text": "If the Agent detects a discrepancy in the primary brand logo or central graphic design (e.g., 'sun pattern' vs 'panda logo') compared to the reference, trust the Agent.",
       "source_items": [
-        "D5_0002",
-        "D5_0055",
-        "D5_0156"
+        "D5_0092",
+        "D5_0097",
+        "D5_0107",
+        "D5_0130",
+        "D5_0137"
       ],
       "confidence": "oracle",
       "id": "D5_meta_a_win_1"
     },
     {
-      "type": "meta_b_win",
+      "type": "meta_a_win",
       "category": null,
-      "text": "If the query image shows a clear physical defect such as a torn label, missing object, or extra foreign object, trust B (Direct) to correctly identify it as an anomaly.",
+      "text": "If the Agent identifies a localized surface defect like a 'light patch' or 'stain' on the label that is not present in the reference images, trust the Agent.",
       "source_items": [
-        "D5_0027",
-        "D5_0056",
-        "D5_0114",
-        "D5_0142",
-        "D5_0144",
-        "D5_0145",
-        "D5_0171"
+        "D5_0092",
+        "D5_0097",
+        "D5_0107",
+        "D5_0130",
+        "D5_0137"
       ],
       "confidence": "oracle",
-      "id": "D5_meta_b_win_2"
+      "id": "D5_meta_a_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the query image shows a change in the count of components (e.g., extra washer, missing nut) or a change in the configuration of parts (e.g., number of terminal blocks), trust B (Direct) to detect this as a logical anomaly.",
+      "text": "If the Agent flags a handwritten mark (e.g., price tag) or a standard retail sticker as an anomaly, trust the Direct branch (which likely recognizes these as normal retail markings).",
       "source_items": [
-        "D5_0027",
+        "D5_0033",
+        "D5_0037",
         "D5_0056",
-        "D5_0114",
-        "D5_0142",
-        "D5_0144",
-        "D5_0145",
-        "D5_0171"
+        "D5_0087",
+        "D5_0167"
       ],
       "confidence": "oracle",
       "id": "D5_meta_b_win_3"
@@ -61,60 +61,63 @@
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the query image shows a change in the state of a product (e.g., liquid color change to an unexpected color like milky white) that is not a known variant, trust B (Direct) to identify it as an anomaly.",
+      "text": "If the Agent flags a difference in packaging color or design that corresponds to a different viewing angle (e.g., front vs. back/side) of the same product, trust the Direct branch.",
       "source_items": [
-        "D5_0027",
+        "D5_0033",
+        "D5_0037",
         "D5_0056",
-        "D5_0114",
-        "D5_0142",
-        "D5_0144",
-        "D5_0145",
-        "D5_0171"
+        "D5_0087",
+        "D5_0167"
       ],
       "confidence": "oracle",
       "id": "D5_meta_b_win_4"
     },
     {
-      "type": "invariant",
-      "subtype": "count",
-      "category": "screw_bag",
-      "text": "The bag contains exactly 2 bolts, 2 hexagonal nuts, and 2 flat washers.",
-      "source_items": [],
-      "confidence": "high",
-      "id": "D5_invariant_5"
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the Agent flags a text orientation difference (e.g., 'upside down') that is consistent with the product's standard design or viewing angle, trust the Direct branch.",
+      "source_items": [
+        "D5_0033",
+        "D5_0037",
+        "D5_0056",
+        "D5_0087",
+        "D5_0167"
+      ],
+      "confidence": "oracle",
+      "id": "D5_meta_b_win_5"
     },
     {
       "type": "invariant",
-      "subtype": "structural",
-      "category": "screw_bag",
-      "text": "The bag features a vertical resealable zipper strip on the right edge with repeating white recycling symbols.",
+      "subtype": "count",
+      "category": "food_package",
+      "text": "Exactly one food package object is present in the image.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_6"
     },
     {
       "type": "invariant",
-      "subtype": "color_palette",
-      "category": "screw_bag",
-      "text": "The hardware components are metallic silver, and the bag is translucent dark grey/black.",
+      "subtype": "spatial_layout",
+      "category": "food_package",
+      "text": "The package is positioned upright on a flat surface against a perforated pegboard background.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_7"
     },
     {
       "type": "invariant",
-      "subtype": "count",
-      "category": "splicing_connectors",
-      "text": "Exactly two connector assemblies are present in the image.",
+      "subtype": "structural",
+      "category": "food_package",
+      "text": "The package exhibits a continuous, sealed boundary with no visible tears or holes.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_8"
     },
     {
       "type": "invariant",
-      "subtype": "count",
-      "category": "splicing_connectors",
-      "text": "Each connector assembly consists of exactly three vertically stacked units.",
+      "subtype": "structural",
+      "category": "food_package",
+      "text": "The package surface displays specular highlights consistent with a glossy plastic material.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_9"
@@ -122,8 +125,8 @@
     {
       "type": "invariant",
       "subtype": "structural",
-      "category": "splicing_connectors",
-      "text": "A single continuous cable connects the two connector assemblies.",
+      "category": "food_box",
+      "text": "The object is a single, rigid, rectangular prism-shaped packaging box.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_10"
@@ -131,35 +134,35 @@
     {
       "type": "invariant",
       "subtype": "spatial_layout",
-      "category": "splicing_connectors",
-      "text": "The two connector assemblies are positioned on opposite sides of the image.",
+      "category": "food_box",
+      "text": "The box is positioned upright on a flat surface against a perforated pegboard background.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_11"
     },
     {
       "type": "invariant",
-      "subtype": "color_palette",
-      "category": "splicing_connectors",
-      "text": "The connector bodies are orange and the cable is a solid color.",
+      "subtype": "structural",
+      "category": "food_box",
+      "text": "The box surface is smooth and continuous, without tears, holes, or missing pieces.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_12"
     },
     {
       "type": "invariant",
-      "subtype": "texture",
-      "category": "splicing_connectors",
-      "text": "The background is a uniform metallic mesh pattern.",
+      "subtype": "count",
+      "category": "drink_can",
+      "text": "Exactly one beverage container is present in the center of the frame.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_13"
     },
     {
       "type": "invariant",
-      "subtype": "count",
-      "category": "juice_bottle",
-      "text": "Exactly two distinct rectangular labels are present on the front face of the bottle.",
+      "subtype": "structural",
+      "category": "drink_can",
+      "text": "The container has a continuous, unbroken vertical boundary with a flat base.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_14"
@@ -167,26 +170,26 @@
     {
       "type": "invariant",
       "subtype": "spatial_layout",
-      "category": "juice_bottle",
-      "text": "The upper label is positioned in the vertical center of the bottle body, and the lower label is near the base.",
+      "category": "drink_can",
+      "text": "The container is positioned upright on a flat surface against a perforated background.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_15"
     },
     {
       "type": "invariant",
-      "subtype": "structural",
-      "category": "juice_bottle",
-      "text": "The bottle has a clear glass body with a narrow neck and a screw-top cap.",
+      "subtype": "count",
+      "category": "cigarette_box",
+      "text": "Exactly one cigarette box is present in the image.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_16"
     },
     {
       "type": "invariant",
-      "subtype": "color_palette",
-      "category": "juice_bottle",
-      "text": "Both labels feature a yellow background with black text or illustrations.",
+      "subtype": "spatial_layout",
+      "category": "cigarette_box",
+      "text": "The cigarette box is positioned vertically upright inside a clear plastic display holder.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_17"
@@ -194,137 +197,131 @@
     {
       "type": "invariant",
       "subtype": "structural",
-      "category": "breakfast_box",
-      "text": "The container is a white, rectangular tray divided into two distinct compartments.",
+      "category": "cigarette_box",
+      "text": "The cigarette box has a rigid, rectangular prism geometry with sharp edges.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_18"
     },
     {
       "type": "invariant",
-      "subtype": "spatial_layout",
-      "category": "breakfast_box",
-      "text": "The left compartment contains exactly three whole fruits arranged vertically.",
+      "subtype": "texture",
+      "category": "cigarette_box",
+      "text": "The surface of the cigarette box is smooth and glossy, showing specular highlights.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_19"
     },
     {
       "type": "invariant",
-      "subtype": "spatial_layout",
-      "category": "breakfast_box",
-      "text": "The right compartment is filled with granola in the top half and dried fruit/nuts in the bottom half.",
+      "subtype": "count",
+      "category": "drink_bottle",
+      "text": "Exactly one drink bottle is present in the image.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_20"
     },
     {
       "type": "invariant",
-      "subtype": "count",
-      "category": "breakfast_box",
-      "text": "The left compartment contains exactly two oranges and one peach.",
+      "subtype": "spatial_layout",
+      "category": "drink_bottle",
+      "text": "The bottle is positioned upright on a flat surface.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_21"
     },
     {
       "type": "invariant",
-      "subtype": "count",
-      "category": "pushpins",
-      "text": "The container consists of exactly 15 compartments arranged in a 3x5 grid.",
+      "subtype": "spatial_layout",
+      "category": "drink_bottle",
+      "text": "The background consists of a perforated pegboard wall.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_22"
     },
     {
       "type": "invariant",
-      "subtype": "count",
-      "category": "pushpins",
-      "text": "Every compartment contains exactly one pushpin.",
+      "subtype": "structural",
+      "category": "drink_bottle",
+      "text": "The bottle has a continuous, unbroken cylindrical body.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_23"
     },
     {
       "type": "invariant",
-      "subtype": "color_palette",
-      "category": "pushpins",
-      "text": "Pushpin heads are solid yellow; pins are metallic silver; background is black.",
+      "subtype": "structural",
+      "category": "drink_bottle",
+      "text": "The bottle is sealed with a cap on top.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_24"
     },
     {
       "type": "invariant",
-      "subtype": "structural",
-      "category": "pushpins",
-      "text": "Each pushpin consists of a cylindrical yellow head and a single straight metallic pin.",
+      "subtype": "count",
+      "category": "food_bottle",
+      "text": "Exactly one food packaging container is present in the image.",
       "source_items": [],
       "confidence": "high",
       "id": "D5_invariant_25"
     },
     {
-      "type": "corrective_fn",
-      "subtype": "anomaly_mode_extension",
-      "category": "screw_bag",
-      "text": "Flag as anomaly if the bag contains loose washers or nuts that are not threaded onto the bolts.",
-      "source_items": [
-        "D5_0107"
-      ],
-      "confidence": "medium",
-      "id": "D5_corrective_fn_26"
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "food_bottle",
+      "text": "The container has a continuous, unbroken cylindrical or tapered body.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D5_invariant_26"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "food_bottle",
+      "text": "The container is positioned upright on a flat surface.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D5_invariant_27"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "food_bottle",
+      "text": "The container is centered horizontally within the frame.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D5_invariant_28"
     },
     {
       "type": "corrective_fn",
       "subtype": "anomaly_mode_extension",
-      "category": "splicing_connectors",
-      "text": "Flag as anomaly if the image contains only the background mesh with no splicing connectors or cables present.",
+      "category": "food_package",
+      "text": "Flag handwritten markings (e.g., price, date) on packaging as anomalies, even if the package structure is intact.",
       "source_items": [
-        "D5_0167"
+        "D5_0170"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fn_27"
+      "id": "D5_corrective_fn_29"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
-      "category": "splicing_connectors",
-      "text": "Do not flag wire color variations (e.g., yellow, blue) as anomalies if the connector structure and count are intact.",
+      "category": "food_package",
+      "text": "Do not flag minor wrinkles, creases, or scuffs on flexible packaging edges as defects if they are consistent with normal handling.",
       "source_items": [
-        "D5_0001",
-        "D5_0055",
-        "D5_0074"
-      ],
-      "confidence": "high",
-      "id": "D5_corrective_fp_28"
-    },
-    {
-      "type": "corrective_fp",
-      "subtype": "normal_tolerance",
-      "category": "splicing_connectors",
-      "text": "Do not flag a single-wire assembly as an anomaly if the connector housing structure is consistent with the baseline.",
-      "source_items": [
+        "D5_0072",
+        "D5_0037",
         "D5_0001"
       ],
       "confidence": "high",
-      "id": "D5_corrective_fp_29"
+      "id": "D5_corrective_fp_30"
     },
     {
       "type": "corrective_fn",
       "subtype": "anomaly_mode_extension",
-      "category": "juice_bottle",
-      "text": "Flag as anomaly if the main fruit label is completely missing from the bottle surface.",
-      "source_items": [
-        "D5_0095"
-      ],
-      "confidence": "high",
-      "id": "D5_corrective_fn_30"
-    },
-    {
-      "type": "corrective_fn",
-      "subtype": "anomaly_mode_extension",
-      "category": "juice_bottle",
-      "text": "Flag as anomaly if the main label shows physical damage, such as tears or cut-off text.",
+      "category": "food_box",
+      "text": "Flag any large, irregular hole or missing material on the top flap or edges of the box as a physical defect.",
       "source_items": [
         "D5_0144"
       ],
@@ -334,35 +331,34 @@
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
-      "category": "juice_bottle",
-      "text": "Do not flag bottles where the fruit icon and liquid color differ from the reference, provided the label is intact.",
+      "category": "food_box",
+      "text": "Do not flag specular glare or bright white reflections on glossy packaging surfaces as defects.",
       "source_items": [
-        "D5_0002",
-        "D5_0023"
+        "D5_0003"
       ],
       "confidence": "high",
       "id": "D5_corrective_fp_32"
     },
     {
-      "type": "corrective_fn",
-      "subtype": "anomaly_mode_extension",
-      "category": "breakfast_box",
-      "text": "Flag as anomaly if granola/cereal is on the left and fresh fruit is on the right, reversing the standard layout.",
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "food_box",
+      "text": "Do not flag standard packaging geometry or slight edge curvature as crushing or deformation.",
       "source_items": [
-        "D5_0154"
+        "D5_0063",
+        "D5_0065"
       ],
-      "confidence": "medium",
-      "id": "D5_corrective_fn_33"
+      "confidence": "high",
+      "id": "D5_corrective_fp_33"
     },
     {
       "type": "corrective_fn",
       "subtype": "anomaly_mode_extension",
-      "category": "pushpins",
-      "text": "Flag as anomaly if any compartment is completely empty or contains more than two pins.",
+      "category": "drink_can",
+      "text": "Flag cartons with attached plastic straw wrappers or straws as anomalies, even if the label print is perfect.",
       "source_items": [
-        "D5_0172",
-        "D5_0113",
-        "D5_0137"
+        "D5_0097",
+        "D5_0092"
       ],
       "confidence": "high",
       "id": "D5_corrective_fn_34"
@@ -370,22 +366,96 @@
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
-      "category": "pushpins",
-      "text": "Treat random pin orientation and non-centered placement within a compartment as normal variation.",
+      "category": "drink_can",
+      "text": "Do not flag minor label smudges or print imperfections if the overall packaging design and text layout match the reference.",
       "source_items": [
-        "D5_0027",
-        "D5_0046",
-        "D5_0047",
-        "D5_0054",
-        "D5_0035"
+        "D5_0031"
       ],
       "confidence": "high",
       "id": "D5_corrective_fp_35"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "drink_can",
+      "text": "Do not flag items as anomalies solely based on different packaging designs if the product type and brand are consistent with the reference set.",
+      "source_items": [
+        "D5_0056"
+      ],
+      "confidence": "high",
+      "id": "D5_corrective_fp_36"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "cigarette_box",
+      "text": "Flag packs with open top flaps or torn cardboard as anomalies, even if the printed face is intact.",
+      "source_items": [
+        "D5_0162",
+        "D5_0169"
+      ],
+      "confidence": "high",
+      "id": "D5_corrective_fn_37"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "cigarette_box",
+      "text": "Flag packs with completely different color schemes or graphics as anomalies, overriding 'design variation' logic.",
+      "source_items": [
+        "D5_0137"
+      ],
+      "confidence": "high",
+      "id": "D5_corrective_fn_38"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "drink_bottle",
+      "text": "Flag bottles with missing labels or exposed dark liquid as anomalies, even if the bottle shape is intact.",
+      "source_items": [
+        "D5_0095"
+      ],
+      "confidence": "medium",
+      "id": "D5_corrective_fn_39"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "drink_bottle",
+      "text": "Do not flag bottles with intact caps and labels as anomalies solely due to slight rotation or perceived misalignment.",
+      "source_items": [
+        "D5_0083"
+      ],
+      "confidence": "medium",
+      "id": "D5_corrective_fp_40"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "food_bottle",
+      "text": "Flag small, high-contrast white spots on dark or purple packaging as defects, even if they appear as minor surface marks.",
+      "source_items": [
+        "D5_0107"
+      ],
+      "confidence": "medium",
+      "id": "D5_corrective_fn_41"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "food_bottle",
+      "text": "Do not flag crinkled or uneven foil seals on the rim of cup noodles as defects if the seal remains intact.",
+      "source_items": [
+        "D5_0068"
+      ],
+      "confidence": "medium",
+      "id": "D5_corrective_fp_42"
     }
   ],
   "meta_origin": {
     "error": null,
-    "n_a_wins": 3,
-    "n_b_wins": 7
+    "n_a_wins": 5,
+    "n_b_wins": 5
   }
 }

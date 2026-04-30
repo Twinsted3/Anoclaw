@@ -50,7 +50,7 @@ RULE D7 (road / driving / dashcam scenes):
   OR CALL `tool_reference_retriever(k=4)`; a low top_similarity (<0.7)
   confirms the query has no match in the normal pool.
 
-RULE D5c (abdominal CT-slice-style images — small oval/elongated tissues):
+RULE D3c (abdominal CT-slice-style images — small oval/elongated tissues):
   IF the query is a 2D CT-style slice with small oval/elongated tissue
   shapes AND Direct's impression is strong anomaly (>0.9) BUT the
   shape/texture difference might just be an anatomical variant,
@@ -64,7 +64,7 @@ RULE D10 (VisA-style sensor modules, candles, small retail products):
   allowed_variation list; if it fits, score 0.05-0.15. If the query has
   a clearly missing/exposed component, score 0.85-0.95.
 
-RULE D5b (brain MRI / medical cross-section):
+RULE D3b (brain MRI / medical cross-section):
   IF the query is a brain MRI or medical imaging slice AND initial
   impression is uncertain,
   THEN CALL `tool_texture_fft` or rely on visual comparison with refs.

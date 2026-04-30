@@ -1,43 +1,34 @@
 {
   "a_wins_rules": [
-    "If the Agent's rationale explicitly identifies a structural deformation (e.g., 'dent', 'crush', 'open flap') or a foreign object attached to the packaging (e.g., 'straw wrapper') that is absent in references, trust the Agent.",
-    "If the Agent detects a discrepancy in the primary brand logo or central graphic design (e.g., 'sun pattern' vs 'panda logo') compared to the reference, trust the Agent.",
-    "If the Agent identifies a localized surface defect like a 'light patch' or 'stain' on the label that is not present in the reference images, trust the Agent."
+    "If the Agent's rationale explicitly cites a 'refutation' step where a suspected defect was compared against reference images and confirmed as a normal variation, trust A."
   ],
   "b_wins_rules": [
-    "If the Agent flags a handwritten mark (e.g., price tag) or a standard retail sticker as an anomaly, trust the Direct branch (which likely recognizes these as normal retail markings).",
-    "If the Agent flags a difference in packaging color or design that corresponds to a different viewing angle (e.g., front vs. back/side) of the same product, trust the Direct branch.",
-    "If the Agent flags a text orientation difference (e.g., 'upside down') that is consistent with the product's standard design or viewing angle, trust the Direct branch."
+    "If the Direct branch identifies a localized physical defect (e.g., chip, crack, break) on the object's surface or edge with a specific bounding box, trust B.",
+    "If the Direct branch identifies a background anomaly (e.g., scratch, mark on the surface) that is distinct from the object itself, trust B.",
+    "If the Direct branch identifies small, high-contrast color artifacts (e.g., red specks) on the object surface, trust B."
   ],
-  "a_evidence": [
-    "D2_0092",
-    "D2_0097",
-    "D2_0107",
-    "D2_0130",
-    "D2_0137"
-  ],
+  "a_evidence": [],
   "b_evidence": [
-    "D2_0033",
-    "D2_0037",
-    "D2_0056",
-    "D2_0087",
-    "D2_0167"
+    "D2_0123",
+    "D2_0131",
+    "D2_0148",
+    "D2_0153"
   ],
-  "raw": "{\n  \"a_wins_rules\": [\n    \"If the Agent's rationale explicitly identifies a structural deformation (e.g., 'dent', 'crush', 'open flap') or a foreign object attached to the packaging (e.g., 'straw wrapper') that is absent in references, trust the Agent.\",\n    \"If the Agent detects a discrepancy in the primary brand logo or central graphic design (e.g., 'sun pattern' vs 'panda logo') compared to the reference, trust the Agent.\",\n    \"If the Agent identifies a localized surface defect like a 'light patch' or 'stain' on the label that is not present in the reference images, trust the Agent.\"\n  ],\n  \"b_wins_rules\": [\n    \"If the Agent flags a handwritten mark (e.g., price tag) or a standard retail sticker as an anomaly, trust the Direct branch (which likely recognizes these as normal retail markings).\",\n    \"If the Agent flags a difference in packaging color or design that corresponds to a different viewing angle (e.g., front vs. back/side) of the same product, trust the Direct branch.\",\n    \"If the Agent flags a text orientation difference (e.g., 'upside down') that is consistent with the product's standard design or viewing angle, trust the Direct branch.\"\n  ]\n}",
+  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If the Agent's rationale explicitly cites a 'refutation' step where a suspected defect was compared against reference images and confirmed as a normal variation, trust A.\"\n  ],\n  \"b_wins_rules\": [\n    \"If the Direct branch identifies a localized physical defect (e.g., chip, crack, break) on the object's surface or edge with a specific bounding box, trust B.\",\n    \"If the Direct branch identifies a background anomaly (e.g., scratch, mark on the surface) that is distinct from the object itself, trust B.\",\n    \"If the Direct branch identifies small, high-contrast color artifacts (e.g., red specks) on the object surface, trust B.\"\n  ]\n}\n```",
   "tokens": {
-    "input": 4812,
-    "output": 283
+    "input": 1853,
+    "output": 170
   },
   "error": null,
   "partition_stats": {
-    "agree_correct": 18,
-    "agree_wrong": 5,
-    "disagree_a_wins_total": 11,
-    "disagree_b_wins_total": 6,
-    "reflected_a": 5,
-    "reflected_b": 5,
+    "agree_correct": 22,
+    "agree_wrong": 14,
+    "disagree_a_wins_total": 0,
+    "disagree_b_wins_total": 4,
+    "reflected_a": 0,
+    "reflected_b": 4,
     "skipped": 0
   },
   "domain_code": "D2",
-  "seconds": 27.7
+  "seconds": 15.4
 }

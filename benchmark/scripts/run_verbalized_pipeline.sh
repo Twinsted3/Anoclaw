@@ -18,7 +18,7 @@ OUT=$ROOT/benchmark/results/verbalized
 PDEV=$OUT/passive_dev
 mkdir -p "$OUT/l1" "$OUT/l2" "$OUT/stack"
 
-DOMAINS=(D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12)
+DOMAINS=(D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12)
 SEED=0
 
 echo "=== Stage 1: L1 rulebooks ==="

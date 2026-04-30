@@ -4,30 +4,25 @@
     {
       "unit": [
         "D6",
-        "fish"
+        "pavement"
       ],
-      "n_refs_seen": 4,
+      "n_refs_seen": 8,
       "rulebook": {
         "invariants": [
           {
-            "type": "count",
-            "statement": "The image contains exactly one single object instance.",
-            "evidence": "All 4 reference images display a solitary fish-shaped point cloud with no other objects present."
-          },
-          {
-            "type": "structural",
-            "statement": "The object exhibits a continuous, closed boundary forming a fish silhouette.",
-            "evidence": "Every reference image shows a complete, unbroken outline of the fish shape without gaps or fragmentation."
-          },
-          {
             "type": "texture",
-            "statement": "The object surface is composed of a uniform, stochastic point cloud pattern.",
-            "evidence": "All 4 images consistently show the object rendered as a dense field of discrete dots rather than a solid surface."
+            "statement": "Surface exhibits a continuous, granular aggregate pattern with no large-scale smooth or uniform regions.",
+            "evidence": "All 8 reference images display a consistent rough, pebbled texture characteristic of concrete or asphalt pavement."
           },
           {
             "type": "color_palette",
-            "statement": "The object features a continuous rainbow gradient transitioning from yellow to purple.",
-            "evidence": "All 4 images display the same spectral color distribution across the object's geometry."
+            "statement": "Surface color is restricted to a monochromatic range of grays, beiges, and light browns.",
+            "evidence": "Every reference image shows a neutral, earthy color palette without vibrant or saturated hues."
+          },
+          {
+            "type": "structural",
+            "statement": "The surface is a single, continuous planar expanse without distinct geometric boundaries or object edges.",
+            "evidence": "All 8 images show an unbounded field of view of the pavement material, lacking distinct objects or structural lines."
           }
         ],
         "confidence": "high"
@@ -36,30 +31,25 @@
     {
       "unit": [
         "D6",
-        "butterflyFish"
+        "wall"
       ],
-      "n_refs_seen": 4,
+      "n_refs_seen": 8,
       "rulebook": {
         "invariants": [
           {
-            "type": "structural",
-            "statement": "The object is a single, continuous point cloud forming a fish-like silhouette.",
-            "evidence": "All 4 reference images display exactly one connected component with no fragmentation or separate floating parts."
-          },
-          {
-            "type": "spatial_layout",
-            "statement": "The object is oriented diagonally with the head pointing towards the bottom-right.",
-            "evidence": "In every reference image, the distinct head shape is located in the lower-right quadrant relative to the tail."
-          },
-          {
             "type": "color_palette",
-            "statement": "The object exhibits a continuous rainbow gradient transitioning from yellow to purple.",
-            "evidence": "All 4 images show a consistent spectral color mapping across the object surface."
+            "statement": "Surface is monochromatic, consisting exclusively of shades of light gray and white.",
+            "evidence": "All 8 reference images display a uniform gray/white concrete surface with no other colors present."
           },
           {
             "type": "texture",
-            "statement": "The surface is composed of a uniform, stochastic distribution of discrete points.",
-            "evidence": "Every reference image renders the object as a point cloud with consistent density and no solid fill."
+            "statement": "Surface exhibits a fine, granular, and speckled texture consistent with concrete.",
+            "evidence": "Every reference image shows a rough, grainy surface pattern with small, scattered dark pits."
+          },
+          {
+            "type": "structural",
+            "statement": "Surface is continuous and planar, lacking any linear discontinuities or deep fissures.",
+            "evidence": "All 8 images show an unbroken surface; no cracks, gaps, or structural breaks are visible in any reference."
           }
         ],
         "confidence": "high"
@@ -68,281 +58,20 @@
     {
       "unit": [
         "D6",
-        "diamond"
+        "deck"
       ],
-      "n_refs_seen": 4,
-      "rulebook": {
-        "invariants": [
-          {
-            "type": "count",
-            "statement": "Exactly one single contiguous object is present in the image.",
-            "evidence": "All 4 reference images display a solitary diamond shape with no other objects or fragments."
-          },
-          {
-            "type": "structural",
-            "statement": "The object boundary is continuous and closed, forming a single enclosed region.",
-            "evidence": "In every reference image, the point cloud forms a complete, unbroken perimeter without gaps or holes."
-          },
-          {
-            "type": "texture",
-            "statement": "The object surface is composed of a dense, uniform distribution of discrete points.",
-            "evidence": "All 4 images show the object rendered as a point cloud with consistent granularity and no solid surfaces."
-          },
-          {
-            "type": "color_palette",
-            "statement": "The object exhibits a smooth vertical color gradient transitioning from yellow/green at the top to blue/purple at the bottom.",
-            "evidence": "Every reference image maintains this specific spectral gradient pattern across the object's height."
-          }
-        ],
-        "confidence": "high"
-      }
-    },
-    {
-      "unit": [
-        "D6",
-        "airplane"
-      ],
-      "n_refs_seen": 4,
+      "n_refs_seen": 8,
       "rulebook": {
         "invariants": [
           {
             "type": "texture",
-            "statement": "The object surface is composed entirely of a discrete, granular point cloud pattern.",
-            "evidence": "All 4 reference images show the airplane geometry rendered as scattered dots rather than a solid mesh or surface."
+            "statement": "Surface exhibits a continuous, granular concrete texture without distinct linear discontinuities.",
+            "evidence": "All 8 reference images show a consistent, rough concrete grain pattern with no visible cracks or sharp breaks."
           },
           {
             "type": "color_palette",
-            "statement": "The object exhibits a continuous spectral gradient ranging from yellow to purple.",
-            "evidence": "Every reference image displays a rainbow-like color mapping (yellow, green, blue, purple) across the object's geometry."
-          },
-          {
-            "type": "structural",
-            "statement": "The object geometry consists of a single connected component with no internal voids or holes.",
-            "evidence": "In all 4 views, the point cloud forms a solid, contiguous shape without any visible gaps or internal cavities."
-          }
-        ],
-        "confidence": "high"
-      }
-    },
-    {
-      "unit": [
-        "D6",
-        "barCandy"
-      ],
-      "n_refs_seen": 4,
-      "rulebook": {
-        "invariants": [
-          {
-            "type": "structural",
-            "statement": "Object consists of a central elongated body with two rounded protrusions at each end.",
-            "evidence": "All 4 reference images display the same continuous geometry with two distinct lobes on the left and two on the right."
-          },
-          {
-            "type": "spatial_layout",
-            "statement": "Object is oriented diagonally from top-left to bottom-right.",
-            "evidence": "In every reference image, the object's major axis is aligned at approximately a 45-degree angle."
-          },
-          {
-            "type": "color_palette",
-            "statement": "Object exhibits a continuous rainbow gradient transitioning from yellow to purple.",
-            "evidence": "All 4 images show a consistent spectral color distribution across the object's length."
-          },
-          {
-            "type": "texture",
-            "statement": "Surface is composed of a dense, uniform distribution of discrete colored points.",
-            "evidence": "Every reference image renders the object as a point cloud with consistent granularity and no solid fills."
-          }
-        ],
-        "confidence": "high"
-      }
-    },
-    {
-      "unit": [
-        "D6",
-        "car"
-      ],
-      "n_refs_seen": 4,
-      "rulebook": {
-        "invariants": [
-          {
-            "type": "structural",
-            "statement": "The object is a single, continuous, irregular 3D volume with a smooth, convex-like outer boundary.",
-            "evidence": "All 4 reference images display a unified, blob-like shape without fragmentation or sharp geometric discontinuities."
-          },
-          {
-            "type": "texture",
-            "statement": "The surface is composed of a dense, uniform distribution of discrete points (point cloud representation).",
-            "evidence": "Every reference image shows the object rendered as a collection of dots with consistent density, lacking solid shading or mesh lines."
-          },
-          {
-            "type": "color_palette",
-            "statement": "The object exhibits a continuous spectral gradient ranging from yellow to green, cyan, and purple.",
-            "evidence": "All 4 images consistently map the object's geometry to a rainbow-like color scale, with yellow at the top-left and purple at the bottom-right."
-          },
-          {
-            "type": "spatial_layout",
-            "statement": "The object is centrally positioned against a uniform, featureless white background.",
-            "evidence": "In all 4 images, the point cloud is isolated in the center with no other objects or background textures present."
-          }
-        ],
-        "confidence": "high"
-      }
-    },
-    {
-      "unit": [
-        "D6",
-        "duck"
-      ],
-      "n_refs_seen": 4,
-      "rulebook": {
-        "invariants": [
-          {
-            "type": "count",
-            "statement": "The object consists of exactly two distinct, overlapping lobes or compartments.",
-            "evidence": "All 4 reference images clearly display a dual-lobed structure (a larger main body and a smaller attached section)."
-          },
-          {
-            "type": "structural",
-            "statement": "The object boundary is continuous and smooth, with no sharp protrusions, holes, or jagged edges.",
-            "evidence": "Every reference image shows a clean, organic outline without geometric defects or interruptions."
-          },
-          {
-            "type": "texture",
-            "statement": "The surface is composed of a uniform, dense distribution of discrete points (point cloud).",
-            "evidence": "All 4 images exhibit a consistent granular texture with no solid surfaces or large empty voids."
-          },
-          {
-            "type": "color_palette",
-            "statement": "The object displays a continuous spectral gradient ranging from purple/blue to green and yellow.",
-            "evidence": "All 4 images utilize the same multi-colored rainbow gradient scheme to represent the object."
-          }
-        ],
-        "confidence": "high"
-      }
-    },
-    {
-      "unit": [
-        "D6",
-        "pacCandy"
-      ],
-      "n_refs_seen": 4,
-      "rulebook": {
-        "invariants": [
-          {
-            "type": "structural",
-            "statement": "The object is a single, continuous, elongated rectangular shape with a diagonal orientation.",
-            "evidence": "All 4 reference images display a unified, unbroken geometric form oriented diagonally from top-left to bottom-right."
-          },
-          {
-            "type": "texture",
-            "statement": "The surface is composed entirely of a dense, granular point-cloud pattern.",
-            "evidence": "Every reference image exhibits a consistent stippled texture with no solid fills or smooth gradients."
-          },
-          {
-            "type": "color_palette",
-            "statement": "The object features a continuous rainbow gradient transitioning from yellow to purple.",
-            "evidence": "All 4 images show the same spectral color progression across the object's length."
-          },
-          {
-            "type": "spatial_layout",
-            "statement": "The object is centered within a uniform white background.",
-            "evidence": "In all 4 images, the object is isolated in the center with no other elements or background noise."
-          }
-        ],
-        "confidence": "high"
-      }
-    },
-    {
-      "unit": [
-        "D6",
-        "candybar"
-      ],
-      "n_refs_seen": 4,
-      "rulebook": {
-        "invariants": [
-          {
-            "type": "structural",
-            "statement": "Object consists of a central elongated body with two distinct rounded protrusions at opposite ends.",
-            "evidence": "All 4 reference images show the same candy-bar geometry with a main body and two end caps."
-          },
-          {
-            "type": "spatial_layout",
-            "statement": "The object is oriented diagonally, extending from the top-left to the bottom-right of the frame.",
-            "evidence": "In every reference image, the candy bar maintains this specific diagonal alignment."
-          },
-          {
-            "type": "color_palette",
-            "statement": "The object surface displays a continuous rainbow gradient transitioning from yellow to purple.",
-            "evidence": "All 4 images exhibit the same spectral color distribution across the object's length."
-          },
-          {
-            "type": "texture",
-            "statement": "The object surface is composed of a dense, uniform distribution of discrete colored points.",
-            "evidence": "Every reference image renders the object as a point cloud with consistent granularity."
-          }
-        ],
-        "confidence": "high"
-      }
-    },
-    {
-      "unit": [
-        "D6",
-        "gemstone"
-      ],
-      "n_refs_seen": 4,
-      "rulebook": {
-        "invariants": [
-          {
-            "type": "count",
-            "statement": "The image contains exactly one single connected object.",
-            "evidence": "All 4 reference images display a solitary point cloud cluster with no other objects present."
-          },
-          {
-            "type": "color_palette",
-            "statement": "The object surface is colored with a continuous gradient ranging from yellow to purple.",
-            "evidence": "Every reference image exhibits a consistent spectral color mapping (yellow/green to blue/purple) across the object."
-          },
-          {
-            "type": "texture",
-            "statement": "The object surface is composed of a dense, uniform distribution of discrete points.",
-            "evidence": "All 4 images show a consistent point-cloud rendering style with no solid surfaces or mesh lines."
-          },
-          {
-            "type": "structural",
-            "statement": "The object forms a single, continuous, closed volume without internal voids or disconnected fragments.",
-            "evidence": "In all views, the point cloud defines a solid, cohesive geometric shape."
-          }
-        ],
-        "confidence": "high"
-      }
-    },
-    {
-      "unit": [
-        "D6",
-        "chicken"
-      ],
-      "n_refs_seen": 4,
-      "rulebook": {
-        "invariants": [
-          {
-            "type": "count",
-            "statement": "The image contains exactly one single connected object.",
-            "evidence": "All 4 reference images display a solitary, unified point cloud cluster with no separate detached objects."
-          },
-          {
-            "type": "texture",
-            "statement": "The object surface is composed of a uniform, stochastic distribution of discrete points.",
-            "evidence": "Every reference image exhibits a consistent granular, point-cloud texture without solid fills or smooth gradients."
-          },
-          {
-            "type": "color_palette",
-            "statement": "The object features a continuous spectral gradient ranging from yellow to purple.",
-            "evidence": "All 4 images show the object colored with a rainbow-like spectrum (yellow, green, blue, purple) rather than a single solid color."
-          },
-          {
-            "type": "structural",
-            "statement": "The object possesses a distinct, smaller protrusion attached to the main body.",
-            "evidence": "In all 4 views, a secondary lobe or appendage is clearly visible extending from the primary mass."
+            "statement": "Surface is dominated by a monochromatic grey color palette with minor natural tonal variations.",
+            "evidence": "Every reference image displays a grey concrete surface; no foreign colors or significant discoloration are present."
           }
         ],
         "confidence": "high"

@@ -1,160 +1,31 @@
 [
   {
-    "item_id": "D6_0042",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "After a thorough visual inspection, no candidate defect features (bulge, sink, contamination) were identified in the query image. The point cloud structure, shape, and color gradient are consistent with the provided normal reference images. Therefore, the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0089",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the query image's features are consistent with the normal reference images. No unique anomaly was detected, so the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0014",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirmed that the observed surface texture and edge irregularities in the query image are consistent with the normal variations in the reference images. No unique defect was identified, so the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "pacCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0025",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the observed features in the query image are consistent with normal variations seen in the reference images. No unique defect-like features were found.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "pacCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0064",
+    "item_id": "D6_0036",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct geometric fold/crease that is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the presence of a geometric defect.",
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower-right quadrant that is not present in the reference images, which only show normal concrete texture variations. This confirms the presence of an anomaly.",
     "label": 0,
     "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0050",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits only variations (texture, color gradient) that are explicitly defined as normal in the reference profile. No geometric defects or unexplained anomalies were found.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "candybar",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0018",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a significant global shape deviation and lobe position mismatch compared to the consistent reference images. This constitutes a geometric defect anomaly as per the domain rules.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "chicken",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
-      "corrective_fp",
+      "corrective_fn",
       "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0001",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the observed point density variation in the query image is consistent with the normal variations seen in the reference images. No unique anomaly was detected, so the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0069",
+    "item_id": "D6_0027",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a distinct deep concave indentation on the right side, which is absent in all reference images that show smooth, convex surfaces. This confirms a geometric defect (sink/dent).",
+    "rationale": "The dark, irregular mark in the lower-right of the query image is a distinct defect not found in the reference images, confirming the presence of an anomaly.",
     "label": 0,
     "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0054",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only observed variation (dot density) is explicitly listed as a normal variation in the reference profile. No other geometric defects are present, so the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0028",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the perceived anomalies (lobe position and shape) are natural variations present in the reference set. The query object is a normal instance of the product.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "chicken",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0047",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The candidate feature (edge irregularity) was refuted by the side-by-side comparison, as similar variations are present in the reference images. No other defect-like features were identified, leading to a conclusion that the query is normal.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0030",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a significant geometric defect (a large, irregular protrusion) that is completely absent in all reference images, which show a smooth, consistent shape. This confirms the presence of an anomaly.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "chicken",
-    "n_rules_injected": 3,
-    "rule_types": [
       "corrective_fn",
-      "corrective_fp",
       "corrective_fp"
     ]
   },
@@ -162,21 +33,10 @@
     "item_id": "D6_0071",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits only dot density variations, which the reference profiler explicitly identifies as a normal allowed variation. No other geometric defects are present, so the image is classified as normal.",
+    "rationale": "The dark speckles observed in the query image are consistent with the natural texture variations present in the reference images. No distinct anomalies such as cracks or significant contamination were found.",
     "label": 0,
     "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0046",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps ('ears') on the upper rear surface that are present in all normal reference images. This geometric defect was confirmed via side-by-side comparison.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "car",
+    "category": "wall",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -184,28 +44,83 @@
     ]
   },
   {
-    "item_id": "D6_0052",
-    "score": 0.15,
+    "item_id": "D6_0024",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The suspected defect (top protrusion) was refuted as a normal anatomical feature present in all reference images. No other clear geometric anomalies were found, and the remaining shape differences are likely due to natural variation or orientation.",
+    "rationale": "The dark speckles observed in the query image are consistent with the natural texture variations found in the reference images. No unique anomalies such as cracks or distinct defects were identified.",
     "label": 0,
     "domain_code": "D6",
-    "category": "chicken",
-    "n_rules_injected": 3,
+    "category": "wall",
+    "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
-      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0011",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate feature (dark irregular patch) was refuted by the side-by-side comparison, which showed similar texture variations in the reference images. No distinct linear cracks were found. The query is normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0062",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the natural speckling and inclusions seen in the reference images. No distinct cracks or anomalous defects were identified that deviate from the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0083",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (dark speckles) observed in the query image are also present in the reference images, indicating they are part of the normal texture variation and not anomalies.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
       "corrective_fp"
     ]
   },
   {
     "item_id": "D6_0026",
-    "score": 0.92,
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the large central void is unique to the query image. The reference images (ref0-ref3) all display solid, continuous structures in the corresponding region, ruling out natural variation. This confirms the presence of a 'large central void' defect.",
+    "rationale": "The query image displays a coarse aggregate concrete texture with scattered dark spots. Comparison with reference images confirms these features are normal variations of the material and not defects. No distinct cracks are present.",
     "label": 0,
     "domain_code": "D6",
-    "category": "airplane",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0075",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The dark irregular patch in the lower-right of the query image is a distinct feature not present in the reference images, indicating a surface anomaly such as a stain or localized degradation.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -214,37 +129,27 @@
     ]
   },
   {
-    "item_id": "D6_0015",
-    "score": 0.08,
+    "item_id": "D6_0014",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The initial candidate defect (surface irregularity) was refuted by the side-by-side comparison, which showed the feature is consistent with normal reference variations. No other anomalies were detected.",
+    "rationale": "The dark speckles observed in the query image are consistent with the natural texture variations present in the reference images. No distinct anomalies such as cracks or large stains were found.",
     "label": 0,
     "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0012",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct geometric defect (a sharp concave indentation) that is not present in any of the reference images, which all display smooth, convex surfaces. This confirms the presence of an anomaly.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
+    "category": "wall",
+    "n_rules_injected": 2,
     "rule_types": [
+      "corrective_fn",
       "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0033",
-    "score": 0.1,
+    "item_id": "D6_0021",
+    "score": 0.88,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the geometric features of the query object, specifically the bottom protrusions, are consistent with the normal variations observed in the reference images. No anomalous defects were found.",
+    "rationale": "The dark, irregular mark in the lower-right of the query image is a distinct defect not present in the reference images, confirming the presence of an anomaly.",
     "label": 0,
     "domain_code": "D6",
-    "category": "airplane",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -253,61 +158,27 @@
     ]
   },
   {
-    "item_id": "D6_0005",
+    "item_id": "D6_0057",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirmed that the observed feature is a normal variation present in the reference set. No anomalies were detected.",
+    "rationale": "The dark spots observed in the query image are identified as 'random dark speckles', which the reference profiler explicitly lists as an allowed variation for this concrete surface. No features survive the refutation protocol; thus, the image is normal.",
     "label": 0,
     "domain_code": "D6",
-    "category": "pacCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0000",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a severe geometric defect: its global shape is a crescent, whereas the reference images and the profiler baseline define the normal object as having 'irregular overlapping lobes'. This topological mismatch is not a minor variation and confirms the presence of an anomaly.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
+    "category": "wall",
+    "n_rules_injected": 2,
     "rule_types": [
+      "corrective_fn",
       "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0072",
+    "item_id": "D6_0080",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits features (edge irregularity, texture density) that are explicitly defined as normal variations by the reference profiler. No defect-like features survive refutation.",
+    "rationale": "The query image displays normal concrete texture variations and aggregate voids that are also present in the reference images. No distinct crack anomalies were identified.",
     "label": 0,
     "domain_code": "D6",
-    "category": "pacCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0073",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct vertical protrusion at the top center that is completely absent in all reference images, which exhibit smooth, rounded surfaces. This confirms the presence of a geometric defect.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0038",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps ('ears') on the upper surface that are consistently present in all normal reference images. This geometric defect was confirmed via side-by-side comparison.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "car",
+    "category": "deck",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -316,177 +187,12 @@
   },
   {
     "item_id": "D6_0056",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison definitively shows a missing section in the lower fin of the query image that is absent in all reference images, confirming a geometric defect.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0017",
-    "score": 0.08,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the observed surface characteristics in the query image are consistent with the natural variations seen in the reference images. No anomalous geometric defect is detected.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0016",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison definitively shows a missing point cluster (hole) in the query's lower-left fin structure that is absent in all reference images, confirming a geometric defect.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0044",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "Both candidate defect features (mid-foot density and heel contour) were refuted by side-by-side comparison with reference images, showing they are consistent with normal product variation. No unique anomaly remains.",
+    "rationale": "The visual features in the query (color and grain variations) are explicitly defined as normal by the reference profiler. No distinct crack-like linear anomalies are present.",
     "label": 0,
     "domain_code": "D6",
-    "category": "fish",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0021",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the query image exhibits no unique geometric defects; all observed features are consistent with the natural variations present in the reference images.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "fish",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0087",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a distinct detached peripheral cluster of points that is not present in any of the reference images, confirming a geometric defect (protrusion/detached mass).",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "airplane",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0051",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a clear fragmentation defect where the two lobes are separated by a large gap. This feature is absent in all reference images, which consistently show a continuous connection between the lobes. The defect survives refutation.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0062",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The initial candidate feature (minor density variation) was successfully refuted by the side-by-side comparison, which showed it is a normal variation present in the reference images. No other anomalies were detected, so the query is classified as normal.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0023",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a distinct structural protrusion at the periphery that is not present in any of the reference images, which show a smooth, continuous surface. This matches the definition of a geometric defect.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "airplane",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0076",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it is missing a distinct lobe structure that is consistently present in all reference images. This constitutes a significant global shape mismatch (missing part defect).",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "chicken",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0013",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a sharp, straight linear edge on the right side, which is a geometric deformation not present in any of the reference images that all exhibit smooth, organic curves. This confirms the presence of an anomaly.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "diamond",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0063",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the query image exhibits no anomalies; all observed features are consistent with the normal variations seen in the reference images.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0003",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a significant geometric defect (a large void/missing area) in the mid-foot region that is not present in any of the normal reference images. This feature survives refutation, confirming the image is anomalous.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "fish",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0043",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps ('ears') on the upper rear surface that are present in all normal reference images. This geometric defect was confirmed via side-by-side comparison.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "car",
+    "category": "deck",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -494,111 +200,142 @@
     ]
   },
   {
-    "item_id": "D6_0048",
+    "item_id": "D6_0055",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a sharp linear crease at the bottom right, which is a geometric defect. This feature is not present in any of the reference images, which show smooth surfaces. Therefore, the query is anomalous.",
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower-right quadrant that is not present in the reference images, which only show normal concrete texture variations. This confirms the presence of an anomaly.",
     "label": 0,
     "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0057",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "The initial candidate defect (a gap in the lower fin) was refuted by the side-by-side comparison, which showed that this feature is also present in the normal reference images. No other anomalies were detected. Therefore, the query image is considered normal.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
+    "category": "pavement",
+    "n_rules_injected": 3,
     "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0035",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a sharp protrusion on the right side that is absent in all reference images, which show smooth contours. This confirms the presence of a geometric defect.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
-    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
       "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0080",
-    "score": 0.92,
+    "item_id": "D6_0087",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the sharp, linear edge on the top-right boundary is unique to the query image. All reference images display a smooth, continuous curve in this region, indicating that the sharp edge is a geometric defect (deformation or cut) and not a natural variation.",
+    "rationale": "The side-by-side comparison demonstrates that the dark spots and texture variations in the query image are consistent with the normal reference images. No unique crack-like anomalies were found.",
     "label": 0,
     "domain_code": "D6",
-    "category": "diamond",
-    "n_rules_injected": 1,
+    "category": "deck",
+    "n_rules_injected": 2,
     "rule_types": [
-      "corrective_fn"
+      "corrective_fn",
+      "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0085",
-    "score": 0.95,
+    "item_id": "D6_0061",
+    "score": 0.88,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct horizontal fold/crease that is absent in all normal reference images, confirming a geometric defect.",
+    "rationale": "The query image contains a distinct dark, irregular patch in the lower-right region that is not present in the reference images. This feature represents a localized surface anomaly (likely contamination or degradation) distinct from the normal concrete texture variations seen in the references.",
     "label": 0,
     "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0011",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits only variations (texture, color gradient) that are explicitly defined as normal in the reference profile. No geometric defects or unexplained anomalies were found.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "candybar",
-    "n_rules_injected": 1,
+    "category": "pavement",
+    "n_rules_injected": 3,
     "rule_types": [
-      "corrective_fn"
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0031",
+    "item_id": "D6_0072",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison refuted the initial candidate features by showing they exist in the normal reference images. The query image exhibits no unique geometric defects or anomalies.",
+    "rationale": "The dark speckles observed in the query image are consistent with the 'random dark speckles' allowed variation identified in the reference images. No distinct cracks or anomalies were found that deviate from the normal baseline.",
     "label": 0,
     "domain_code": "D6",
-    "category": "pacCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0040",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features identified as potential defects were refuted by the side-by-side comparison, which showed they are natural variations of the concrete aggregate texture present in the normal reference images. No distinct cracks were detected.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0017",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The visual features in the query (color and grain variations) are explicitly listed as normal variations by the reference profiler. No distinct crack-like linear defects were identified.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0037",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The dark speckles observed in the query image are consistent with the natural random texture variation seen in the reference images. No distinct cracks or anomalous marks were found that differ from the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0064",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a normal coarse aggregate concrete texture. The side-by-side comparison with reference images confirms that the dark spots and irregularities are consistent with natural material variation and do not constitute cracks.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0000",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower-left region that is not present in the reference images. This feature is consistent with a localized surface defect (e.g., pitting or contamination) and is distinct from the normal concrete texture variations seen in the references.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
   },
   {
     "item_id": "D6_0041",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits the expected irregular oval shape and color gradient of the normal reference objects. No geometric defects such as cracks, bulges, or significant density anomalies were observed that would deviate from the allowed variations (minor rotation, slight deformation, density variation) defined by the reference profiler.",
+    "rationale": "The query image displays a coarse aggregate texture that is explicitly present in one of the normal reference images. The features initially considered as potential defects are confirmed to be normal textural variations. No distinct cracks are detected.",
     "label": 0,
     "domain_code": "D6",
-    "category": "diamond",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0075",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps on the upper surface that are consistently present in all normal reference images. This structural difference is confirmed by the side-by-side comparison.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "car",
+    "category": "deck",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -606,26 +343,70 @@
     ]
   },
   {
-    "item_id": "D6_0084",
-    "score": 0.05,
+    "item_id": "D6_0053",
+    "score": 0.15,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits no geometric defects. Its shape, color gradient, and point cloud texture are consistent with the provided normal reference images, indicating it is a normal instance.",
+    "rationale": "The query image displays a concrete texture with coarse aggregate that is consistent with the normal variation seen in the reference images (particularly reference 1). No distinct linear cracks or other anomalies are visible that would indicate a defect. The initial low anomaly score and lack of candidate features lead to a final decision of normal.",
     "label": 0,
     "domain_code": "D6",
-    "category": "diamond",
-    "n_rules_injected": 1,
+    "category": "deck",
+    "n_rules_injected": 2,
     "rule_types": [
-      "corrective_fn"
+      "corrective_fn",
+      "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0088",
-    "score": 0.92,
+    "item_id": "D6_0078",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a distinct structural protrusion at the top right that is not present in any of the reference images, confirming a geometric defect.",
+    "rationale": "The query image exhibits a coarse aggregate texture with dark spots that are consistent with the normal variation seen in Reference 1. No distinct, anomalous cracks are detected.",
     "label": 0,
     "domain_code": "D6",
-    "category": "airplane",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0025",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a granular texture with color and grain size variations that are explicitly listed as 'allowed variations' in the reference profile. No distinct linear cracks are present, and the observed features are consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0003",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark mark) was compared with reference images and found to be a natural variation in the concrete texture, consistent with the normal baseline. No distinct defects were identified.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0046",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark irregular mark in the lower right that is absent in the reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -635,53 +416,26 @@
   },
   {
     "item_id": "D6_0059",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct geometric protrusion in the upper-left region that is absent in all reference images, confirming a geometric defect anomaly.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "chicken",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0078",
     "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The initial suspicion of a defect in the upper fin-like structure was refuted by the side-by-side comparison, which showed that the feature is consistent with the normal reference images. No other anomalies were detected.",
+    "rationale": "The candidate defect features (dark spots) were successfully refuted by comparing them to the reference images, which show similar speckling as normal variation. No distinct cracks or anomalies were found.",
     "label": 0,
     "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
+    "category": "wall",
+    "n_rules_injected": 2,
     "rule_types": [
-      "corrective_fn"
+      "corrective_fn",
+      "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0034",
-    "score": 0.05,
+    "item_id": "D6_0050",
+    "score": 0.9,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits point density and color variations that are explicitly listed as 'allowed variations' in the reference profile. No other anomalies are detected, so the item is classified as normal.",
+    "rationale": "The query image contains a distinct dark chip/defect on the right side that is absent in all reference images, confirming it as an anomaly.",
     "label": 0,
     "domain_code": "D6",
-    "category": "candybar",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0083",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a distinct structural protrusion not present in any of the normal reference images, confirming a geometric defect.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "airplane",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -690,13 +444,13 @@
     ]
   },
   {
-    "item_id": "D6_0061",
-    "score": 0.92,
+    "item_id": "D6_0028",
+    "score": 0.9,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a distinct elongated protrusion on its left side, which is absent in all reference images. This structural deviation is a clear geometric defect, confirming the image as anomalous.",
+    "rationale": "The side-by-side comparison confirmed that the dark, irregular mark in the query image is a unique defect not present in the reference images, which only show normal texture variations. Therefore, the query is anomalous.",
     "label": 0,
     "domain_code": "D6",
-    "category": "airplane",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -705,92 +459,55 @@
     ]
   },
   {
-    "item_id": "D6_0068",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The suspected contour irregularity was found to be consistent with the reference images. No unique defect was identified in the query image.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0055",
+    "item_id": "D6_0084",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the visual features in the query image, including edge texture and point distribution, are consistent with the normal reference images. No unique anomaly was detected.",
+    "rationale": "The query image exhibits a coarse aggregate texture that is fully consistent with the provided normal reference images. The features initially considered as potential defects were refuted by the side-by-side comparison, which showed them to be common variations in the reference set. Therefore, the image is classified as normal.",
     "label": 0,
     "domain_code": "D6",
-    "category": "pacCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0088",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a coarse granular texture with color and grain size variations that are explicitly listed as normal variations in the reference profile. No distinct linear cracks are detected.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
   },
   {
     "item_id": "D6_0019",
-    "score": 0.05,
+    "score": 0.08,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits only variations (texture density, edge irregularity) that are explicitly defined as normal in the reference profile. No anomalous features remain after refutation.",
+    "rationale": "The dark speckles observed in the query image are consistent with the natural texture variations seen in the reference images. No distinct cracks or anomalies were found that are unique to the query image.",
     "label": 0,
     "domain_code": "D6",
-    "category": "pacCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0022",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only candidate defect feature (surface irregularity at the lower right) was found to be consistent with the reference images, indicating it is a normal variation. No other anomalies were detected.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0066",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a sharp linear fold at the bottom edge, which is a geometric defect. This feature is absent in all reference images, which display smooth surfaces. The refutation protocol confirms this is an anomaly.",
-    "label": 0,
-    "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0156",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits only variations (color gradient, texture) that are explicitly defined as normal in the reference profile. No geometric defects or anomalies were found.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "candybar",
-    "n_rules_injected": 1,
+    "category": "wall",
+    "n_rules_injected": 2,
     "rule_types": [
-      "corrective_fn"
+      "corrective_fn",
+      "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0120",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image's point cloud structure and color gradient are consistent with the reference images. No unique geometric defects or anomalies were found after refuting initial low-confidence candidates.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0144",
+    "item_id": "D6_0051",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the large void in the upper-left region is unique to the query image. The reference images (0-3) all show solid, continuous structures in this area, ruling out natural variation. This missing mass is a clear geometric defect.",
-    "label": 1,
+    "rationale": "The query image contains a distinct dark, irregular patch in the lower-right region that is absent in all reference images, indicating a surface defect or contamination.",
+    "label": 0,
     "domain_code": "D6",
-    "category": "airplane",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -799,41 +516,283 @@
     ]
   },
   {
-    "item_id": "D6_0117",
+    "item_id": "D6_0048",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison refuted the only candidate defect feature, showing it is a normal variation present in the reference images. No anomalies were found in the query image.",
-    "label": 1,
+    "rationale": "The candidate defect (dark spot) was refuted by the side-by-side comparison, which showed similar features in the normal reference images. No other distinct anomalies were identified. The image is classified as normal.",
+    "label": 0,
     "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0135",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query object exhibits a significant global shape mismatch (elongated, twisted) compared to the consistent compact, rounded shape of all reference images. This geometric deviation is a clear anomaly.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "chicken",
-    "n_rules_injected": 3,
+    "category": "wall",
+    "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
-      "corrective_fp",
       "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0139",
+    "item_id": "D6_0043",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The dark speckles and small pits observed in the query image are consistent with the natural texture variations present in the reference images. No unique or distinct crack anomalies were identified.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0004",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower-right region that is not present in the reference images. This feature is inconsistent with the normal concrete texture shown in the references, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0067",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The dark speckles observed in the query image are consistent with the natural texture variations present in the reference images. No unique defects such as cracks or large stains were identified.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0060",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark chip or surface degradation on the right side that is not present in any of the reference images. This feature represents a localized defect consistent with the task's definition of an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0082",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly was refuted by the side-by-side comparison, which showed that the texture and shadows in the query are consistent with the normal variations seen in the reference images. No distinct crack is present.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0081",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a granular texture with color and grain size variations that are explicitly listed as allowed variations in the reference profile. No distinct linear cracks are present, and the observed features are consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0006",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed variations in the query image (color and grain) are explicitly listed as allowed variations in the normal reference profile. No distinct crack-like features were found, so the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0032",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower-right region that is not present in any of the reference images, which show a uniform texture. This feature is identified as an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0047",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image's texture, including small dark spots and color variations, aligns with the allowed variations (color, grain size) of the normal reference images. No distinct crack-like features were found that survive refutation.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0063",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the dark, irregular chip-like defect on the right side of the query image is not present in any of the reference images. The references show consistent concrete textures without this specific type of localized surface degradation, validating the feature as an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0023",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a coarse aggregate texture that is consistent with the normal variations seen in the reference images. No distinct crack anomalies were identified that could not be explained by the natural texture of the concrete.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0065",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect (dark spot) was successfully refuted by finding similar features in the reference images. The query image exhibits normal concrete texture variations and contains no anomalies.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0058",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomalies (dark spots, texture) are present in the normal reference images, indicating they are part of the standard material variation and not defects.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0079",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The dark speckles observed in the query image are consistent with the natural texture variations present in the reference images. No unique anomalies such as cracks or distinct defects were found.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0039",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (dark speckles) are present in the reference images and match the description of normal random texture variation. Therefore, the query image is classified as normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0045",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear crack that is not present in any of the reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0069",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits texture variations (color, grain size) that are explicitly listed as normal in the reference profile. No distinct crack-like anomalies were found that could not be explained by these normal variations.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0008",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the natural texture variations (pitting and aggregate) seen in the reference images. No distinct crack anomalies were identified that deviate from the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0030",
     "score": 0.88,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the query object lacks the distinct protrusion seen in all reference images. This missing structural component is a clear geometric defect, validating the initial hypothesis of an anomaly.",
-    "label": 1,
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower-right region that is not present in the reference images, indicating a surface defect such as a pit or contamination.",
+    "label": 0,
     "domain_code": "D6",
-    "category": "airplane",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -842,13 +801,13 @@
     ]
   },
   {
-    "item_id": "D6_0167",
-    "score": 0.92,
+    "item_id": "D6_0054",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image lacks the two distinct raised bumps on the upper surface that are consistently present in all reference images, confirming a geometric defect.",
-    "label": 1,
+    "rationale": "The query image exhibits scattered dark speckles which are explicitly listed as an allowed variation ('random dark speckles') in the reference profile for this concrete surface. No features survive the refutation protocol, indicating the image is normal.",
+    "label": 0,
     "domain_code": "D6",
-    "category": "car",
+    "category": "wall",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -856,478 +815,30 @@
     ]
   },
   {
-    "item_id": "D6_0114",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a sharp concave indentation on the right lobe that is completely absent in all reference images, which display smooth convex surfaces. This confirms a geometric defect.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0118",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The initial suspicion of a contour bulge was refuted by side-by-side comparison, showing it is a natural variation present in the reference images. No other unique defect features were identified, leading to the conclusion that the query image is normal.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0129",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct circular sink defect in the lower-middle section that is not present in any of the normal reference images. This feature survives refutation, confirming the image is anomalous.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "fish",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0145",
+    "item_id": "D6_0001",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits the expected shape and color gradient of the reference objects. The observed variations fall within the 'allowed variations' (minor texture/color shift) defined by the reference profiler, and no specific defect features survive refutation.",
-    "label": 1,
+    "rationale": "The observed variations in the query image (color and grain size) are explicitly listed as allowed variations in the normal reference profile. No distinct crack-like features were found, so the image is classified as normal.",
+    "label": 0,
     "domain_code": "D6",
-    "category": "candybar",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0123",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison of the primary features (dorsal fin and body) showed no unique defects in the query image compared to the references. The object is consistent with the normal baseline.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0153",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits geometric features and point density distributions that are consistent with the normal reference images. No anomalies such as missing mass, bulges, or structural defects were detected after refuting initial candidate features.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "airplane",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0175",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The initial candidate defect (density variation on the foot) was refuted by the side-by-side comparison, which showed it is a normal variation present in the reference images. No other anomalies were detected.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0116",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison refuted the only candidate defect feature, showing it is a normal variation present in the reference pool. Therefore, the query image is classified as normal.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0171",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a significant gap in the lower fin structure, which is absent in all reference images. This confirms a geometric defect (missing part/sparse density) according to the domain rules.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0097",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query object's shape and surface characteristics are consistent with the normal reference images, particularly Reference 2. No unique anomalies were detected after refutation.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0105",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits only minor texture and color variations which are explicitly listed as allowed variations in the reference profile. No geometric defects or unexplained anomalies were found.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "candybar",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0170",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps ('ears') on the upper rear surface that are present in all normal reference images. This geometric defect was confirmed via side-by-side comparison.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "car",
+    "category": "deck",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
       "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0109",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison of the top-right region shows that the query's shape and texture are consistent with the reference images. No unique defects like bulges, sinks, or tears were found. The observed variations are within the normal range of the reference set.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "diamond",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0147",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a sharp protrusion on the right side that is absent in all reference images, which show smooth contours. This confirms a geometric defect.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0141",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear geometric defect: a missing section (gap) in the lower-left fin structure. This feature is absent in all reference images, which display a continuous solid structure in the same area. Therefore, the query is anomalous.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0143",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a sharp, linear geometric defect separating the object's lobes, which is completely absent in the reference images that show smooth, continuous surfaces. This feature is definitively anomalous.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0093",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct circular depression (sink) in the center of the object. The side-by-side comparison with reference images confirms this feature is absent in all normal samples, identifying it as a geometric defect.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "fish",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0173",
-    "score": 0.08,
-    "mode": "anomaly_detection",
-    "rationale": "The initial candidate defect (surface irregularity) was refuted by the side-by-side comparison, which showed the feature is present in the normal reference images. No other anomalies were detected, so the image is classified as normal.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0162",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image lacks the two distinct raised bumps on the upper surface that are consistently present in all reference images. This absence is a confirmed geometric defect.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "car",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0130",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirmed that the query image's geometry and texture are consistent with the normal reference images. No defects were found.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "diamond",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0099",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps (ears) on the upper surface, which are present in all normal reference images. This is a clear geometric defect.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "car",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0121",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct linear crease/fold that is absent in all normal reference images, confirming a geometric defect.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0115",
-    "score": 0.08,
-    "mode": "anomaly_detection",
-    "rationale": "The suspected anomaly in the center region was refuted by the side-by-side comparison, which showed similar patterns in the reference images. No other defect-like features were identified. The query is classified as normal.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0094",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits variations (texture, color gradient) that are explicitly defined as normal in the reference profile. No defect-like features survive refutation.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "candybar",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0154",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The suspected anomaly (peripheral protrusion) was successfully refuted by observing the same feature in the reference images. The query object is consistent with the normal baseline.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "airplane",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0104",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits no defects; all observed variations (texture, color) fall within the allowed baseline variations defined by the reference profiler.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "candybar",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
     ]
   },
   {
     "item_id": "D6_0142",
-    "score": 0.5,
-    "mode": "anomaly_detection",
-    "rationale": "json parse failed",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "chicken",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0168",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a significant structural defect (a missing gap in the point cloud) that is absent in all reference images, confirming it as an anomaly.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0169",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits variations (texture, color gradient) that are explicitly defined as normal in the reference profile. No defect-like features survive refutation.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "candybar",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0122",
     "score": 0.15,
     "mode": "anomaly_detection",
-    "rationale": "The only candidate defect feature (sparse density in the lower fin) was refuted by the side-by-side comparison, which showed it is a normal variation present in the reference images. No other defect-like features remain, so the query is classified as normal.",
+    "rationale": "The suspected crack-like feature in the query image is also present in the normal reference images, indicating it is a natural variation of the concrete texture and not an anomaly.",
     "label": 1,
     "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0151",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a distinct structural protrusion at the periphery that is not present in any of the reference images, confirming it as a geometric defect anomaly.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "airplane",
-    "n_rules_injected": 3,
+    "category": "deck",
+    "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0113",
-    "score": 0.5,
-    "mode": "anomaly_detection",
-    "rationale": "json parse failed",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "chicken",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0146",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a liver-shaped point cloud with a color gradient and surface texture that are consistent with the provided reference images. No unique geometric defects or anomalies were detected after comparing key regions.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "chicken",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0133",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a sharp, angular edge on the top-right boundary, which is a geometric defect. This feature is absent in all reference images, which exhibit smooth, rounded contours. The refutation protocol confirms this is an anomaly.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "diamond",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0174",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the features initially suspected as defects in the query image are also present in the normal reference images, indicating they are part of the normal product variation. Therefore, the query is classified as normal.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "fish",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0150",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the observed edge irregularity is a natural variation present in the reference images. No unique defect was found, so the query is classified as normal.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0126",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a distinct geometric bulge on the upper-left side that is not present in any of the reference images, which show normal anatomical variations. This confirms a geometric defect.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "chicken",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
       "corrective_fp"
     ]
   },
@@ -1335,38 +846,53 @@
     "item_id": "D6_0152",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear geometric defect characterized by a flat top edge and a sharp angular corner, features that are completely absent in the set of normal reference images which all display smooth, rounded contours. This confirms the presence of an anomaly.",
+    "rationale": "The query image exhibits a distinct linear crack in the lower region that is not present in any of the normal reference images. This feature survives the refutation protocol and is classified as an anomaly.",
     "label": 1,
     "domain_code": "D6",
-    "category": "diamond",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D6_0103",
-    "score": 0.5,
-    "mode": "anomaly_detection",
-    "rationale": "json parse failed",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "chicken",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
-      "corrective_fp",
+      "corrective_fn",
       "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0172",
+    "item_id": "D6_0076",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the natural speckling and texture variations present in the normal reference images. No unique defect features were identified that distinguish the query from the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0034",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits the expected shape, color, and point density variations defined as normal by the reference profiler. No geometric defects like bulges, sinks, or missing mass are detected.",
+    "rationale": "The query image exhibits scattered dark speckles which are explicitly listed as 'allowed variations' (random dark speckles) in the reference profile. No features survive the refutation protocol; the image is consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0167",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark irregular mark that is not present in the reference images, which only show normal concrete texture variations. This feature survives refutation and is classified as an anomaly.",
     "label": 1,
     "domain_code": "D6",
-    "category": "airplane",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -1376,51 +902,27 @@
   },
   {
     "item_id": "D6_0179",
-    "score": 0.1,
+    "score": 0.85,
     "mode": "anomaly_detection",
-    "rationale": "The query object's characteristics (shape, texture, color gradient) are consistent with the natural variation observed in the reference images. No unique defect features were identified that distinguish it as anomalous.",
+    "rationale": "The dark irregular spot in the query image is distinct from the normal concrete texture variations seen in the reference images, indicating a likely anomaly such as a stain or localized degradation.",
     "label": 1,
     "domain_code": "D6",
-    "category": "gemstone",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0160",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear fragmentation defect where the two lobes are separated by a gap. This feature is absent in all reference images, which consistently show a continuous connection between the lobes. Therefore, the query is anomalous.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D6_0096",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a severe global geometric deformation (elongation/stretching) that is not present in any of the reference images, which all share a consistent, compact, and lobe-defined shape. This confirms a geometric defect.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "chicken",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
-      "corrective_fp",
+      "corrective_fn",
       "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0125",
+    "item_id": "D6_0177",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps ('ears') on the upper rear surface that are present in all normal reference images. This geometric defect was confirmed via side-by-side comparison.",
+    "rationale": "The query image contains a distinct, dark, jagged linear crack on the left side that is not present in any of the reference images, which show only normal concrete texture. This confirms the presence of an anomaly.",
     "label": 1,
     "domain_code": "D6",
-    "category": "car",
+    "category": "deck",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -1428,41 +930,432 @@
     ]
   },
   {
-    "item_id": "D6_0095",
-    "score": 0.92,
+    "item_id": "D6_0103",
+    "score": 0.85,
     "mode": "anomaly_detection",
-    "rationale": "The query object exhibits a distinct flat top edge and sharp corner that are absent in all reference images, which show smooth, continuous curves. This geometric deviation confirms the presence of a defect.",
+    "rationale": "The query image contains a distinct dark mark that is not present in the normal reference images, indicating a surface defect or contamination.",
     "label": 1,
     "domain_code": "D6",
-    "category": "diamond",
-    "n_rules_injected": 1,
+    "category": "pavement",
+    "n_rules_injected": 3,
     "rule_types": [
-      "corrective_fn"
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0137",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only small surface speckles, which the reference profiler confirms are a normal allowed variation for this concrete surface. No distinct cracks or other anomalies are present.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0146",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is absent in all normal reference images. The feature survives refutation, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0135",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear, dark, jagged linear crack in the upper region that is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0134",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spot identified in the query image is visually indistinguishable from the natural speckling and pitting observed in the normal reference images. Therefore, it is classified as a normal texture variation, not an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
     ]
   },
   {
     "item_id": "D6_0158",
-    "score": 0.92,
+    "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the large void/missing mass in the upper-left region is unique to the query image. The reference images show continuous, solid structures in the corresponding area, ruling out natural variation. This confirms the presence of a geometric defect (missing mass).",
+    "rationale": "The suspected anomaly (dark spot) is present in the normal reference images as part of the standard surface texture, so it is not considered a defect.",
     "label": 1,
     "domain_code": "D6",
-    "category": "airplane",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0175",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, jagged linear mark that is absent in the normal reference images. This feature satisfies the criteria for a concrete crack and survives the refutation process.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0141",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark spot) is refuted by the reference images, which show identical natural surface indentations. The query image is consistent with the normal baseline.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0154",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark spot) was refuted by the side-by-side comparison, which showed that similar pits and exposed aggregate are present in the normal reference images. Thus, the query image is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0150",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only small surface speckles, which the reference profiler explicitly identifies as a normal allowed variation. No distinct cracks or anomalies were found that deviate from the normal baseline.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0166",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the dark irregular spot in the query image is not present in the reference images, indicating a localized surface defect (anomaly) rather than normal texture variation.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0147",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark mark) was refuted by the side-by-side comparison, which showed similar features in the normal reference images. The query image exhibits only normal texture variations.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0090",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct dark, irregular mark (pitting or stain) that is not present in the reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0104",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear, dark, jagged linear crack that is absent in all provided normal reference images. The refutation protocol confirms this feature is not a normal texture variation, leading to a high anomaly score.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0140",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark linear crack in the top-left corner that is absent in all reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0155",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear, dark, linear crack that is structurally distinct from the random speckling seen in the normal reference images. Since this defect-like feature is absent in all references, the image is classified as anomalous.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0163",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct vertical boundary and exposed aggregate texture that are completely absent in the reference images. This deviation from the uniform smooth concrete baseline confirms the presence of an anomaly, likely surface damage or a repair patch.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0125",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect (dark spot) was identified as a small pit. The side-by-side comparison revealed that similar pits and exposed aggregate are present in the normal reference images. Therefore, the feature is consistent with the normal surface texture and is not an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0130",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct diagonal linear mark that is absent in all reference images, which only show normal speckling. This feature is consistent with a crack and survives the refutation protocol.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0157",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate dark spot in the query image is visually indistinguishable from the normal speckling patterns observed in the reference images. Therefore, it is refuted as an anomaly, and the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0118",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms the dark spot in the query is a distinct anomaly not present in the normal reference textures, which only show diffuse aggregate patterns.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0121",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, thin, dark linear mark that is absent in the reference images, which only show normal concrete texture. This feature matches the definition of a crack anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0171",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular spot that is not present in the reference images, which only show normal concrete texture variations. This feature survives refutation and is classified as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0098",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical crack that is not present in any of the normal reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0133",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The only candidate defect (a dark mark) was refuted by the side-by-side comparison, which showed that similar features exist in the normal reference images. No other anomalies were detected.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0116",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark spot) is refuted as it matches the natural texture variations (small pits/indentations) present in the normal reference images. No distinct defects like cracks are detected.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0138",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark spot and a linear crack that are not present in the normal reference images, confirming the presence of anomalies.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0145",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect (dark mark) was successfully refuted by the side-by-side comparison, which showed similar features in the normal reference images. Therefore, the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0178",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is absent in all normal reference images. The refutation protocol confirms this feature is not a normal variation, leading to a high anomaly score.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
       "corrective_fn",
       "corrective_fp"
     ]
   },
   {
     "item_id": "D6_0106",
-    "score": 0.92,
+    "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a distinct structural protrusion on the right side that is absent in all reference images, confirming a geometric defect.",
+    "rationale": "The suspected anomaly (dark spot) was compared with reference images and found to be a common surface indentation present in normal samples. Therefore, the query image is classified as normal.",
     "label": 1,
     "domain_code": "D6",
-    "category": "airplane",
+    "category": "pavement",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -1471,73 +1364,360 @@
     ]
   },
   {
-    "item_id": "D6_0091",
-    "score": 0.92,
+    "item_id": "D6_0096",
+    "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct hole in the lower-right region that is absent in all reference images, confirming a geometric defect.",
+    "rationale": "The suspected anomaly (dark spot) was refuted by the side-by-side comparison, which showed similar features in the normal reference images. The query surface is consistent with the normal baseline.",
     "label": 1,
     "domain_code": "D6",
-    "category": "fish",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0119",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "After a thorough visual inspection, no candidate defect features (bulge, sink, contamination) were identified in the query image that distinguish it from the normal reference images. The point cloud density, shape, and color gradient appear consistent with the normal baseline. Therefore, the image is classified as normal.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
-  },
-  {
-    "item_id": "D6_0128",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear fragmentation defect where the object is split into two lobes with a visible gap. This feature is absent in all reference images, which show a continuous structure, confirming the anomaly.",
-    "label": 1,
-    "domain_code": "D6",
-    "category": "duck",
-    "n_rules_injected": 1,
+    "category": "pavement",
+    "n_rules_injected": 3,
     "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
       "corrective_fp"
     ]
   },
   {
-    "item_id": "D6_0127",
+    "item_id": "D6_0164",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, thin, jagged linear crack that is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0102",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical crack that is not present in any of the normal reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0111",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack in the bottom-right corner that is absent in all reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0176",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear, continuous vertical crack that is absent in all provided normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0119",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark spot that is not present in the reference images, which show only normal concrete texture. This feature survives refutation and is classified as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0122",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct horizontal linear crack that is not present in any of the reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0113",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, continuous, jagged linear mark on the left side that is absent in all reference images. This feature is consistent with a concrete crack and is not part of the normal texture variation.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0129",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark irregular spot that is not present in the reference images, indicating a localized surface defect such as a pit or stain.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0153",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, thin, dark linear mark (crack) that is not present in any of the normal reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0099",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The only observed variation (dot density) is explicitly listed as a normal allowed variation by the reference profiler. No other geometric defects are present.",
+    "rationale": "The only candidate defect (a dark spot) was refuted by the side-by-side comparison, which showed it is consistent with normal speckling in the reference images. No other anomalies are present.",
     "label": 1,
     "domain_code": "D6",
-    "category": "barCandy",
-    "n_rules_injected": 0,
-    "rule_types": []
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
   },
   {
-    "item_id": "D6_0112",
+    "item_id": "D6_0144",
     "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The initial suspicion of a geometric defect in the midsole was refuted by comparing the query to the reference images, which showed similar natural variations. No other anomalies were detected.",
+    "rationale": "The suspected anomaly (dark spot) was refuted by the side-by-side comparison, which showed similar features in the normal reference images. The query image is consistent with the normal baseline.",
     "label": 1,
     "domain_code": "D6",
-    "category": "fish",
-    "n_rules_injected": 0,
-    "rule_types": []
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
   },
   {
-    "item_id": "D6_0136",
-    "score": 0.95,
+    "item_id": "D6_0124",
+    "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear geometric defect: a missing section in the upper-left fin-like structure. This feature is absent in all reference images, which show a complete and solid structure in that region. Therefore, the query is anomalous.",
+    "rationale": "The query image displays a distinct linear crack that is absent in all provided normal reference images. The feature survives the refutation protocol, confirming the presence of an anomaly.",
     "label": 1,
     "domain_code": "D6",
-    "category": "butterflyFish",
-    "n_rules_injected": 1,
+    "category": "deck",
+    "n_rules_injected": 2,
     "rule_types": [
-      "corrective_fn"
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0148",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only candidate anomaly (a dark spot) was found to be consistent with normal texture variations in the reference images. Therefore, the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0093",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The faint diagonal linear mark identified in the query image is a distinct crack-like feature that is not present in the normal reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0107",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected linear mark, upon close inspection, is a subtle texture variation and not a distinct, jagged crack. It does not meet the criteria for an anomaly and is consistent with normal concrete surface texture.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0105",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear linear crack in the lower region, which is a structural defect. This feature is absent in all provided reference images of normal concrete, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0092",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only small surface speckles, which the reference profiler explicitly categorizes as a normal allowed variation. No features survive the refutation protocol, indicating the surface is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0165",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The only candidate feature (a dark spot) was successfully refuted by showing it is consistent with normal speckling in the reference images. No other anomalies are visible.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0139",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect features (dark speckles) were compared against reference images and found to be consistent with normal texture variations. No distinct anomalies were identified.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0100",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, jagged linear crack that is not present in any of the normal reference images. This feature survives the refutation protocol and is classified as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0162",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (dark speckles) identified in the query image were successfully refuted by the side-by-side comparison, which showed identical features in the normal reference images. Therefore, the query image contains no anomalies.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "wall",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0109",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, jagged linear crack that is not present in any of the normal reference images. This feature is a clear anomaly consistent with concrete cracking.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0114",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (a small dark spot/pit) is present in the reference images as a normal texture variation. Therefore, the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D6_0131",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical linear crack that is not present in any of the normal reference images. The side-by-side comparison successfully refuted the possibility of this being a normal texture variation, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "deck",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
     ]
   }
 ]

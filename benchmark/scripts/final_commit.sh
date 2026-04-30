@@ -24,7 +24,7 @@ Overnight autonomous run: MMAD v9 full-type + active learning pilot
 - MMAD v9 unified agent run on dev (stratified n=500..989) + analysis:
   per-type accuracy for all 9 MMAD question types + per-class
   AD threshold calibration.
-- Active learning pilot on 6 domains (D1, D4, D5, D7, D9, D12) with
+- Active learning pilot on 6 domains (D1, D6, D3, D7, D9, D12) with
   K=10 oracle queries per domain, DINOv2 CLS few-shot retrieval.
 - Paper section 4x_mmad_fulltype.tex updated with numbers.
 - RESUME.md extended with v9 + AL summary.

@@ -4,190 +4,212 @@
     {
       "unit": [
         "D5",
-        "breakfast_box"
+        "cigarette_box"
       ],
       "rulebook": {
         "normal_signature": [
-          "White rectangular container with rounded corners and a central divider",
-          "Left compartment contains exactly three whole fresh fruits (oranges and a peach)",
-          "Right compartment contains a granola layer on top and a dried fruit/nut mix on the bottom",
-          "Dried banana slices are pale yellow and distinct from the brown granola",
-          "Almonds are visible as brown, oval-shaped nuts mixed with the banana slices",
-          "Container is viewed from a top-down perspective against a dark background"
+          "Rectangular hardboard packaging with a glossy, reflective surface finish",
+          "Prominent brand logo or name printed in the upper or central region",
+          "Mandatory health warning text occupying the lower third of the front face",
+          "Intact, sealed cellophane wrapping covering the entire box",
+          "Sharp, well-defined edges and corners with no structural deformation"
         ],
         "hypothesized_anomaly_modes": [
-          "Missing or extra fruit items in the left compartment (e.g., only two oranges or four fruits)",
-          "Contamination of the granola section with fresh fruit or the fresh fruit section with granola",
-          "Structural damage to the container such as cracks, missing dividers, or severe deformation",
-          "Presence of foreign objects or non-food items within the compartments",
-          "Significant discoloration or spoilage of the food items (e.g., blackened fruit or moldy granola)",
-          "Flag as anomaly if granola and dried fruit occupy the left compartment while fresh fruit occupies the right compartment."
+          "Structural crushing or denting of the box corners or sides due to impact",
+          "Tearing or puncturing of the outer cellophane seal exposing the inner cardboard",
+          "Severe surface abrasion or scuffing that obscures the printed brand logo or health warnings",
+          "Peeling or flaking of the printed label layer from the cardboard substrate",
+          "Classify as anomaly if the cigarette pack flap is torn, frayed, or physically damaged, regardless of face orientation.",
+          "Flag as anomaly if the pack face features a large diagonal stripe or landscape graphic instead of the standard solid background with leaf logo.",
+          "Classify cigarette packs with open top flaps or exposed inner packaging as anomalies."
         ],
         "rules": [
-          "if the left compartment does not contain exactly three whole fruits then lean anomaly",
-          "if the right compartment lacks the distinct separation between granola and dried fruit/nut mix then lean anomaly",
-          "if the container is missing the central divider or shows structural cracks then lean anomaly",
-          "if fresh fruit is found inside the granola compartment then lean anomaly",
-          "if the container is not white or the background is not dark then lean anomaly",
-          "if the arrangement matches the three-fruit-left and granola-right pattern then lean normal",
-          "(corrective) Flag as anomaly if granola and dried fruit occupy the left compartment while fresh fruit occupies the right compartment."
+          "if the box exhibits significant crushing, bending, or loss of rectangular geometry then lean anomaly",
+          "if the outer plastic wrapping is torn, missing, or visibly punctured then lean anomaly",
+          "if the brand logo or health warning text is heavily obscured by scuffs, stains, or peeling then lean anomaly",
+          "if the box maintains a rigid rectangular shape with a continuous, glossy surface then lean normal",
+          "if the health warning text is clearly legible and positioned at the bottom then lean normal",
+          "(corrective) Classify as anomaly if the cigarette pack flap is torn, frayed, or physically damaged, regardless of face orientation.",
+          "(corrective) Flag as anomaly if the pack face features a large diagonal stripe or landscape graphic instead of the standard solid background with leaf logo.",
+          "(corrective) Classify cigarette packs with open top flaps or exposed inner packaging as anomalies."
         ]
       }
     },
     {
       "unit": [
         "D5",
-        "juice_bottle"
+        "drink_bottle"
       ],
       "rulebook": {
         "normal_signature": [
-          "Small, clear glass bottle with a cylindrical body and a narrow neck",
-          "Transparent screw-top cap with visible threading",
-          "Two distinct yellow labels: a square upper label with a fruit illustration and a rectangular lower label",
-          "Lower label text explicitly reads '100% Juice' in black font",
-          "Liquid fill level is high, reaching the neck of the bottle",
-          "Background is solid black with no external objects",
-          "Treat variations in label iconography (e.g., fruit type) and liquid color as normal if explicitly permitted by reference data.",
-          "Treat variations in fruit iconography and liquid color as normal if explicitly permitted by the reference profiler."
+          "Single upright plastic beverage bottle centered in the frame",
+          "Opaque or translucent cylindrical body with a printed paper or plastic label",
+          "Screw-top cap (white, green, or blue) securely fastened at the top",
+          "Bottle resting on a white surface against a perforated pegboard background",
+          "Label features legible text and graphics without significant distortion",
+          "Do not flag label rotation or slight misalignment as an anomaly if the bottle is not perfectly front-facing."
         ],
         "hypothesized_anomaly_modes": [
-          "Label defects: The paper labels may be peeling, torn, missing, or have incorrect text/graphics",
-          "Structural damage: The glass bottle may be cracked, chipped, or the cap may be missing or loose",
-          "Content anomalies: The liquid may be spilled, significantly underfilled, or contain visible foreign debris",
-          "Occlusion: The bottle may be partially blocked by an object or the background may be cluttered",
-          "Classify as anomaly if the bottle surface is completely devoid of any label, regardless of allowed content variations.",
-          "Flag as anomaly if the liquid color inside the bottle contradicts the fruit depicted on the label.",
-          "If the label icon depicts a fruit that does not match the liquid's color or implied flavor, classify as anomaly.",
-          "Treat any visible tear, rip, or physical damage to the main product label as a definitive anomaly."
+          "Crushed or dented bottle body indicating physical damage or mishandling",
+          "Missing, loose, or misaligned cap suggesting a seal failure or manufacturing defect",
+          "Torn, peeling, or missing label exposing the plastic underneath",
+          "Severe leakage or spillage causing the bottle to sit in a puddle or appear wet",
+          "Foreign object or debris attached to the exterior of the bottle",
+          "If a drink bottle lacks a visible label or branding on its main body, classify it as an anomaly."
         ],
         "rules": [
-          "if the bottle is missing the upper fruit label or the lower text label then lean anomaly",
-          "if the text on the lower label is not clearly '100% Juice' then lean anomaly",
-          "if the glass bottle shows visible cracks, chips, or the cap is missing then lean anomaly",
-          "if the liquid level is significantly below the neck or the bottle appears empty then lean anomaly",
-          "if the background contains objects other than the bottle or is not solid black then lean anomaly",
-          "if the bottle shape is consistent with a small glass juice container and both labels are intact then lean normal",
-          "(corrective) Classify as anomaly if the bottle surface is completely devoid of any label, regardless of allowed content variations.",
-          "(corrective) Treat variations in label iconography (e.g., fruit type) and liquid color as normal if explicitly permitted by reference data.",
-          "(corrective) Flag as anomaly if the liquid color inside the bottle contradicts the fruit depicted on the label.",
-          "(corrective) Treat variations in fruit iconography and liquid color as normal if explicitly permitted by the reference profiler.",
-          "(corrective) If the label icon depicts a fruit that does not match the liquid's color or implied flavor, classify as anomaly.",
-          "(corrective) Treat any visible tear, rip, or physical damage to the main product label as a definitive anomaly."
+          "if the bottle body shows significant dents, crushing, or deformation then lean anomaly",
+          "if the cap is missing, detached, or visibly loose then lean anomaly",
+          "if the label is torn, peeling, or completely missing then lean anomaly",
+          "if the bottle is lying on its side or tilted at an extreme angle then lean anomaly",
+          "if the bottle is upright with an intact cap and a fully adhered label then lean normal",
+          "if the background is a perforated pegboard and the bottle is centered then lean normal",
+          "(corrective) Do not flag label rotation or slight misalignment as an anomaly if the bottle is not perfectly front-facing.",
+          "(corrective) If a drink bottle lacks a visible label or branding on its main body, classify it as an anomaly."
         ]
       }
     },
     {
       "unit": [
         "D5",
-        "pushpins"
+        "drink_can"
       ],
       "rulebook": {
         "normal_signature": [
-          "Transparent plastic storage box with a 3x5 grid of compartments",
-          "Yellow plastic pushpins with cylindrical heads and sharp metal needles",
-          "Pushpins are contained within the grid compartments",
-          "Black background visible through the transparent box",
-          "Pushpins are oriented randomly within their cells",
-          "Classify as normal if pushpins are intact and present, even if randomly oriented or scattered within container compartments.",
-          "Treat random orientation of pushpins within compartments as normal variation, provided pins are intact and undamaged.",
-          "Classify as normal if pins are intact and fully present, regardless of random orientation or rotation within compartments.",
-          "Treat variations in pushpin orientation (vertical, horizontal, tilted) within a grid cell as normal, provided the pin is intact."
+          "Cylindrical metal container with a smooth, reflective surface",
+          "Sealed top rim with a standard pull-tab opening mechanism",
+          "Flat, stable base allowing the object to stand upright",
+          "Printed label wrapping around the body with legible text and graphics",
+          "Uniform curvature without visible dents or structural deformation",
+          "Do not flag minor surface smudges or dust on labels as defects if the underlying text and graphics remain clear and legible.",
+          "Do not flag items as anomalies solely due to different flavor variants or seasonal packaging designs if the core brand identity and product structure remain consistent."
         ],
         "hypothesized_anomaly_modes": [
-          "Missing pushpin: A compartment is empty or contains significantly fewer pins than the standard distribution",
-          "Foreign object: An item that is not a yellow pushpin (e.g., a different color, shape, or material) is present in the box",
-          "Structural damage: The plastic box is cracked, broken, or the lid is missing",
-          "Component defect: A pushpin is missing its head or the metal needle is bent/broken",
-          "Containment failure: Pushpins are located outside the grid compartments (e.g., on the lid or outside the box)",
-          "Flag as anomaly if any compartment contains more than one pushpin, regardless of orientation or pin condition.",
-          "Flag as anomaly if any compartment contains more than one pushpin, as standard configuration requires exactly one per slot.",
-          "Flag as anomaly if any pushpin is oriented vertically (head-up or head-down) instead of lying flat horizontally."
+          "Structural deformation such as dents, crushing, or bulging caused by impact or pressure buildup",
+          "Corrosion or rust spots indicating material degradation or leakage",
+          "Label defects including peeling, tearing, or missing sections exposing the metal underneath",
+          "Damaged or missing pull-tab mechanism preventing the can from being opened",
+          "Seepage or liquid residue on the exterior surface indicating a breach in the seal",
+          "Flag as anomaly if the can body exhibits significant vertical wrinkling, buckling, or deformation, even if the label print remains intact.",
+          "Flag as anomaly if the carton lacks an attached straw, as this is a required feature for the class.",
+          "If a transparent straw wrapper is attached to the front of the carton, classify as anomaly."
         ],
         "rules": [
-          "if any compartment is completely empty then lean anomaly",
-          "if any object inside the box is not a yellow pushpin then lean anomaly",
-          "if the plastic box structure is cracked or missing parts then lean anomaly",
-          "if a pushpin is missing its yellow head or has a bent needle then lean anomaly",
-          "if pushpins are found outside the grid compartments then lean anomaly",
-          "if the image shows a 3x5 grid of yellow pushpins in a clear box then lean normal",
-          "(corrective) Flag as anomaly if any compartment contains more than one pushpin, regardless of orientation or pin condition.",
-          "(corrective) Classify as normal if pushpins are intact and present, even if randomly oriented or scattered within container compartments.",
-          "(corrective) Treat random orientation of pushpins within compartments as normal variation, provided pins are intact and undamaged.",
-          "(corrective) Flag as anomaly if any compartment contains more than one pushpin, as standard configuration requires exactly one per slot.",
-          "(corrective) Classify as normal if pins are intact and fully present, regardless of random orientation or rotation within compartments.",
-          "(corrective) Flag as anomaly if any pushpin is oriented vertically (head-up or head-down) instead of lying flat horizontally.",
-          "(corrective) Treat variations in pushpin orientation (vertical, horizontal, tilted) within a grid cell as normal, provided the pin is intact."
+          "if the object exhibits significant dents, crushing, or loss of cylindrical shape then lean anomaly",
+          "if the object is a rectangular carton or glass bottle instead of a metal cylinder then lean anomaly",
+          "if the top rim is missing, open, or the pull-tab is detached then lean anomaly",
+          "if the surface shows visible rust, corrosion, or liquid leakage then lean anomaly",
+          "if the object stands upright on a flat base with a smooth, intact metal surface then lean normal",
+          "if the label is fully adhered and wraps continuously around the cylinder then lean normal",
+          "(corrective) Flag as anomaly if the can body exhibits significant vertical wrinkling, buckling, or deformation, even if the label print remains intact.",
+          "(corrective) Flag as anomaly if the carton lacks an attached straw, as this is a required feature for the class.",
+          "(corrective) Do not flag minor surface smudges or dust on labels as defects if the underlying text and graphics remain clear and legible.",
+          "(corrective) If a transparent straw wrapper is attached to the front of the carton, classify as anomaly.",
+          "(corrective) Do not flag items as anomalies solely due to different flavor variants or seasonal packaging designs if the core brand identity and product structure remain consistent."
         ]
       }
     },
     {
       "unit": [
         "D5",
-        "screw_bag"
+        "food_bottle"
       ],
       "rulebook": {
         "normal_signature": [
-          "Transparent resealable plastic bag containing a hardware set",
-          "Set includes exactly two hexagonal head bolts",
-          "Set includes exactly two hexagonal nuts",
-          "Set includes exactly two flat washers",
-          "Right edge features a vertical strip of white recycling symbols and text",
-          "Hardware components are metallic and silver in color"
+          "Cylindrical or tapered cup-shaped container with a distinct lid",
+          "Surface covered in printed branding, nutritional labels, or graphics",
+          "Lid is sealed with a plastic film or foil layer",
+          "Container sits upright on a flat surface",
+          "Background features a white pegboard with a grid of holes",
+          "Do not flag minor foil lid tears or crinkles as anomalies if they are consistent with standard packaging variations seen in reference images."
         ],
         "hypothesized_anomaly_modes": [
-          "Missing components: The bag contains fewer than the standard four small parts (nuts/washers) or fewer than two bolts.",
-          "Foreign object contamination: Presence of non-hardware items such as paper scraps, dust clumps, or debris inside the bag.",
-          "Component damage: Visible bending of bolt threads, cracked nuts, or deformed washers indicating manufacturing defects.",
-          "Packaging failure: The bag is torn, punctured, or the resealable strip is detached or missing.",
-          "Flag as anomaly if the bag contains loose hardware components (bolts, nuts, washers) instead of a single fastener assembly."
+          "Structural deformation: The container body is crushed, dented, or bent, compromising its cylindrical shape.",
+          "Seal failure: The plastic film or foil lid is torn, punctured, or missing, exposing the contents.",
+          "Label damage: The printed surface is significantly scratched, peeled, or obscured, making branding unreadable.",
+          "Foreign object contamination: Presence of non-package items (e.g., dirt, other food) on the surface or lid.",
+          "Treat any small, irregular white mark or scuff on the printed label surface as a defect, even if the mark is tiny."
         ],
         "rules": [
-          "if the count of hexagonal head bolts is not exactly two then lean anomaly",
-          "if the count of hexagonal nuts is not exactly two then lean anomaly",
-          "if the count of flat washers is not exactly two then lean anomaly",
-          "if any object inside the bag is not a bolt, nut, or washer then lean anomaly",
-          "if the vertical strip of recycling symbols is missing from the right edge then lean anomaly",
-          "if the bag material shows visible tears or holes then lean anomaly",
-          "if the hardware components appear bent, cracked, or severely deformed then lean anomaly",
-          "if the image shows exactly two bolts, two nuts, and two washers in an intact bag then lean normal",
-          "(corrective) Flag as anomaly if the bag contains loose hardware components (bolts, nuts, washers) instead of a single fastener assembly."
+          "if the container body is visibly crushed, dented, or bent out of shape then lean anomaly",
+          "if the lid seal is torn, punctured, or completely missing then lean anomaly",
+          "if the printed label is heavily scratched, peeled, or obscured then lean anomaly",
+          "if the container is a standard cup shape with an intact lid and clear graphics then lean normal",
+          "if the container is upright and the background is a pegboard then lean normal",
+          "(corrective) Do not flag minor foil lid tears or crinkles as anomalies if they are consistent with standard packaging variations seen in reference images.",
+          "(corrective) Treat any small, irregular white mark or scuff on the printed label surface as a defect, even if the mark is tiny."
         ]
       }
     },
     {
       "unit": [
         "D5",
-        "splicing_connectors"
+        "food_box"
       ],
       "rulebook": {
         "normal_signature": [
-          "Two distinct clusters of splicing connectors positioned horizontally on opposite sides",
-          "Connectors feature orange bodies with transparent protective caps",
-          "A single continuous colored cable connects the two connector clusters",
-          "Connectors are arranged in a vertical stack (2 to 4 units high) per side",
-          "Background is a consistent metallic diamond-pattern mesh",
-          "Treat wire color variations as normal if the reference profiler explicitly lists color as an allowed variation for the product class.",
-          "Treat wire color variation as a normal attribute for splicing connectors, regardless of connector housing color.",
-          "Do not flag single-wire assemblies as anomalies if the connector housing is intact and the wire is properly seated."
+          "Rectangular prism packaging with sharp, well-defined edges and corners",
+          "Surface features high-resolution printed graphics, brand logos, and nutritional text",
+          "Packaging material appears rigid and maintains structural integrity without deformation",
+          "Background consists of a white pegboard with a uniform grid of circular holes",
+          "Boxes are positioned upright on a flat, reflective white surface",
+          "Do not classify a box as crushed if the deformation is limited to minor edge warping or slight corner compression without structural collapse.",
+          "Treat specular highlights and glare on glossy packaging surfaces as normal lighting artifacts, not defects.",
+          "Treat upright food boxes with standard vertical text and clear branding as normal, even if the image is cropped or the box is narrow."
         ],
         "hypothesized_anomaly_modes": [
-          "Missing connector: One or more units in the vertical stack are absent, breaking the expected symmetry or count",
-          "Cable disconnection: The connecting cable is severed, missing, or not inserted into the connector ports",
-          "Structural damage: The transparent protective caps are cracked, missing, or the orange housing is deformed",
-          "Foreign object intrusion: Debris or non-cable objects are present on the mesh or obstructing the connectors",
-          "If the image contains a uniform mesh pattern instead of the expected splicing connectors, classify as anomaly."
+          "Structural deformation such as crushed corners, dented sides, or flattened faces due to mishandling",
+          "Surface damage including deep creases, tears, or peeling labels that obscure printed information",
+          "Sealing failure where the box flaps are open, unglued, or the packaging is visibly compromised",
+          "Contamination or staining on the packaging surface (e.g., grease, water spots, or dirt)",
+          "Classify as anomaly if the box top flap exhibits a large, irregular hole or physical tear."
         ],
         "rules": [
-          "if the image shows a single continuous cable linking two distinct connector groups then lean normal",
-          "if the connector groups are missing entirely or reduced to a single unit per side then lean anomaly",
-          "if the connecting cable is absent, broken, or disconnected from the orange housing then lean anomaly",
-          "if the transparent caps on the connectors are missing or visibly shattered then lean anomaly",
-          "if the background mesh is obscured by foreign objects or the connectors are not resting on the mesh then lean anomaly",
-          "if the connectors are arranged in a vertical stack with uniform spacing then lean normal",
-          "(corrective) Treat wire color variations as normal if the reference profiler explicitly lists color as an allowed variation for the product class.",
-          "(corrective) If the image contains a uniform mesh pattern instead of the expected splicing connectors, classify as anomaly.",
-          "(corrective) Treat wire color variation as a normal attribute for splicing connectors, regardless of connector housing color.",
-          "(corrective) Do not flag single-wire assemblies as anomalies if the connector housing is intact and the wire is properly seated."
+          "if the box edges are bent, crushed, or the corners are rounded due to impact then lean anomaly",
+          "if the printed surface shows deep creases, tears, or missing label sections then lean anomaly",
+          "if the box flaps are open or the structural seal is broken then lean anomaly",
+          "if the box maintains a rigid rectangular shape with intact, sharp edges then lean normal",
+          "if the printed graphics and text are clear, flat, and free of physical distortion then lean normal",
+          "(corrective) Do not classify a box as crushed if the deformation is limited to minor edge warping or slight corner compression without structural collapse.",
+          "(corrective) Treat specular highlights and glare on glossy packaging surfaces as normal lighting artifacts, not defects.",
+          "(corrective) Treat upright food boxes with standard vertical text and clear branding as normal, even if the image is cropped or the box is narrow.",
+          "(corrective) Classify as anomaly if the box top flap exhibits a large, irregular hole or physical tear."
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D5",
+        "food_package"
+      ],
+      "rulebook": {
+        "normal_signature": [
+          "Flexible, sealed foil or plastic packaging containing dry food products",
+          "Prominent printed branding, flavor text, and nutritional information labels",
+          "Visible barcode and QR codes on the packaging surface",
+          "Intact heat-sealed edges and crimped tops/bottoms",
+          "Background consists of a white perforated pegboard shelf",
+          "Classify minor surface creases, wrinkles, or slight scuffs on flexible packaging as normal unless they compromise structural integrity or legibility.",
+          "Classify surface wrinkles, creases, and minor seal folds on flexible food packaging as normal manufacturing or handling artifacts.",
+          "Treat minor wrinkling at package seals and slight creases on edges as normal handling variations, not defects."
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural breach: Tears, punctures, or unsealed edges compromising the vacuum or air-tight seal",
+          "Content failure: Visible leakage of food particles or liquid, or a completely deflated/empty package indicating spoilage or loss",
+          "Labeling defect: Missing, torn, or illegible barcode and nutritional labels preventing product identification",
+          "Severe deformation: Crushing or crushing that obscures the primary branding or suggests physical damage to the contents",
+          "Flag packages where the transparent window is obscured by dark, irregular, or non-uniform contents that deviate from the standard product appearance."
+        ],
+        "rules": [
+          "if the package shows visible tears, holes, or open seams then lean anomaly",
+          "if the package is completely deflated, crushed, or leaking contents then lean anomaly",
+          "if the barcode or primary branding is missing, torn off, or illegible then lean anomaly",
+          "if the package is standing or lying flat with intact seals and legible text then lean normal",
+          "if the package shows standard crinkling or inflation consistent with a sealed snack bag then lean normal",
+          "(corrective) Classify minor surface creases, wrinkles, or slight scuffs on flexible packaging as normal unless they compromise structural integrity or legibility.",
+          "(corrective) Classify surface wrinkles, creases, and minor seal folds on flexible food packaging as normal manufacturing or handling artifacts.",
+          "(corrective) Flag packages where the transparent window is obscured by dark, irregular, or non-uniform contents that deviate from the standard product appearance.",
+          "(corrective) Treat minor wrinkling at package seals and slight creases on edges as normal handling variations, not defects."
         ]
       }
     }

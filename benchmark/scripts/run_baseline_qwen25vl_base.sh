@@ -5,7 +5,7 @@
 # and IAD-R1 (Qwen2.5-VL + GRPO).
 set -u
 GPU=${GPU:-0}
-DOMAINS=${DOMAINS:-"D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12"}
+DOMAINS=${DOMAINS:-"D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12"}
 SHOTS=${SHOTS:-4}
 OUT=/hdd1/jiangxi/AD-Agent/benchmark/results/baselines/qwen25vl_base_${SHOTS}shot
 MAN=/hdd1/jiangxi/AD-Agent/benchmark/manifests_v2

@@ -5,243 +5,279 @@
   "use_l1_context": false,
   "selection_frac": 0.5,
   "selection_ids": [
-    "D2_0001",
-    "D2_0003",
-    "D2_0031",
-    "D2_0037",
-    "D2_0056",
-    "D2_0063",
-    "D2_0065",
-    "D2_0068",
-    "D2_0072",
-    "D2_0083",
+    "D2_0000",
+    "D2_0004",
+    "D2_0025",
+    "D2_0030",
+    "D2_0038",
+    "D2_0049",
+    "D2_0052",
+    "D2_0057",
+    "D2_0058",
+    "D2_0079",
     "D2_0092",
-    "D2_0095",
-    "D2_0097",
-    "D2_0107",
-    "D2_0137",
-    "D2_0144",
-    "D2_0162",
-    "D2_0169",
-    "D2_0170",
-    "D2_0173"
+    "D2_0093",
+    "D2_0096",
+    "D2_0099",
+    "D2_0116",
+    "D2_0131",
+    "D2_0150",
+    "D2_0164",
+    "D2_0174",
+    "D2_0177"
   ],
   "validation_ids": [
-    "D2_0023",
-    "D2_0027",
-    "D2_0029",
+    "D2_0013",
+    "D2_0017",
+    "D2_0022",
+    "D2_0028",
     "D2_0033",
-    "D2_0038",
+    "D2_0035",
     "D2_0044",
-    "D2_0057",
-    "D2_0080",
-    "D2_0087",
-    "D2_0089",
+    "D2_0070",
+    "D2_0081",
+    "D2_0084",
+    "D2_0102",
+    "D2_0104",
     "D2_0112",
-    "D2_0130",
-    "D2_0133",
-    "D2_0143",
-    "D2_0145",
-    "D2_0146",
-    "D2_0153",
-    "D2_0159",
-    "D2_0163",
-    "D2_0167"
+    "D2_0123",
+    "D2_0132",
+    "D2_0135",
+    "D2_0141",
+    "D2_0148",
+    "D2_0152",
+    "D2_0153"
   ],
   "units": [
     {
       "unit": [
         "D2",
-        "food_package"
+        "chewinggum"
       ],
-      "k": 4,
+      "k": 1,
       "rules": [
         {
           "rule_type": "normal_tolerance",
-          "text": "Classify minor surface creases, wrinkles, or slight scuffs on flexible packaging as normal unless they compromise structural integrity or legibility.",
-          "justification": "The agent incorrectly flagged natural handling artifacts (wrinkles, scuffs) on a flexible bag as anomalies. This rule explicitly tolerates these common, non-defective features to prevent false positives.",
-          "from_item": "D2_0072"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Classify surface wrinkles, creases, and minor seal folds on flexible food packaging as normal manufacturing or handling artifacts.",
-          "justification": "The agent incorrectly flagged natural packaging wrinkles and creases as defects. This rule explicitly defines these common physical characteristics as normal, preventing false positives on flexible items.",
-          "from_item": "D2_0001"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag packages where the transparent window is obscured by dark, irregular, or non-uniform contents that deviate from the standard product appearance.",
-          "justification": "The agent dismissed the anomaly because the logo was intact. This rule forces inspection of the product visibility through the window, catching the dark, irregular contents that constitute the actual defect.",
-          "from_item": "D2_0170"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Treat minor wrinkling at package seals and slight creases on edges as normal handling variations, not defects.",
-          "justification": "The agent flagged natural handling artifacts (wrinkles, creases) as potential defects. This rule explicitly categorizes these common features as normal, preventing false positives.",
-          "from_item": "D2_0037"
+          "text": "If the object is a solid, intact bar with smooth surfaces and no visible defects, classify as normal regardless of background texture.",
+          "justification": "The agent likely overpredicted the anomaly score due to the high-contrast, textured background. This rule clarifies that background noise should not trigger an anomaly flag if the object itself is structurally sound.",
+          "from_item": "D2_0038"
         }
       ]
     },
     {
       "unit": [
         "D2",
-        "food_box"
+        "cashew"
       ],
-      "k": 4,
+      "k": 1,
       "rules": [
         {
-          "rule_type": "normal_tolerance",
-          "text": "Do not classify a box as crushed if the deformation is limited to minor edge warping or slight corner compression without structural collapse.",
-          "justification": "The agent incorrectly flagged minor edge warping as severe crushing. This rule clarifies that slight deformations are acceptable normal variations, preventing false positives on structurally intact boxes.",
-          "from_item": "D2_0063"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Treat specular highlights and glare on glossy packaging surfaces as normal lighting artifacts, not defects.",
-          "justification": "The agent flagged a reflection on the glossy box as a potential anomaly. This rule explicitly categorizes such lighting effects as normal, preventing false positives on shiny surfaces.",
-          "from_item": "D2_0003"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Treat upright food boxes with standard vertical text and clear branding as normal, even if the image is cropped or the box is narrow.",
-          "justification": "The agent likely flagged the narrow, cropped view of the standard product packaging as anomalous. This rule clarifies that such framing does not constitute a defect for this class.",
-          "from_item": "D2_0065"
-        },
-        {
           "rule_type": "anomaly_mode_extension",
-          "text": "Classify as anomaly if the box top flap exhibits a large, irregular hole or physical tear.",
-          "justification": "The agent initially detected the hole but failed to maintain the high anomaly score. This rule explicitly defines flap damage as a definitive anomaly, preventing future refutation of such clear defects.",
-          "from_item": "D2_0144"
+          "text": "Flag cashews with a significantly reduced curvature or flattened 'C' shape as anomalies, even if surface texture appears normal.",
+          "justification": "The agent dismissed the item as normal based on surface texture, missing the subtle but critical deviation in the overall curvature which constitutes the anomaly.",
+          "from_item": "D2_0099"
         }
       ]
     },
     {
       "unit": [
         "D2",
-        "drink_can"
+        "macaroni1"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify as normal if all components share consistent shape, color, and texture, even if lighting or shadows vary slightly.",
+          "justification": "The agent hesitated due to lighting variations. This rule clarifies that minor illumination differences are acceptable for normal items, provided the physical components themselves are defect-free and consistent.",
+          "from_item": "D2_0079"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if any piece exhibits a visible notch, chip, or missing segment on the rim, even if the overall shape remains intact.",
+          "justification": "The agent missed the subtle rim defects (notches) on the pieces. This rule explicitly targets rim integrity, forcing the agent to detect these specific structural anomalies.",
+          "from_item": "D2_0150"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "If objects are identical in shape, color, and texture with no visible defects, classify as normal regardless of initial uncertainty.",
+          "justification": "The agent hesitated despite the image showing four identical, defect-free pieces. This rule reinforces that visual uniformity and lack of damage confirm normality, overriding uncertainty.",
+          "from_item": "D2_0025"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "If components are structurally intact, uniformly colored, and lack visible defects like cracks or chips, classify as normal regardless of minor score fluctuations.",
+          "justification": "The agent hesitated despite the image showing four perfect, defect-free components. This rule reinforces that structural integrity and color uniformity are sufficient for a normal classification, overriding minor uncertainty.",
+          "from_item": "D2_0052"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D2",
+        "candle"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Treat small, localized reddish or discolored spots on the candle wax surface as anomalies.",
+          "justification": "The agent initially detected reddish spots but failed to confirm them, leading to a low score. This rule explicitly defines such discolorations as defects, ensuring they are correctly flagged as anomalies.",
+          "from_item": "D2_0131"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Treat minor wick alignment variations and slight surface texture differences as normal manufacturing tolerances for candles.",
+          "justification": "The agent incorrectly flagged natural wick alignment and texture variations as anomalies. This rule explicitly defines these common features as acceptable, preventing false positives on normal items.",
+          "from_item": "D2_0000"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D2",
+        "capsules"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Treat minor variations in capsule orientation, spacing, or lighting reflections as normal if shape, color, and texture remain consistent with the reference set.",
+          "justification": "The agent's uncertainty likely stemmed from over-sensitivity to natural variations in capsule arrangement or lighting. This rule explicitly defines these common visual differences as acceptable, preventing false anomaly flags for normal items.",
+          "from_item": "D2_0004"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if any capsule exhibits a distinct white or opaque spot on its surface, indicating a defect or foreign material.",
+          "justification": "The agent missed a visible white spot on one capsule, classifying it as normal. This rule explicitly targets such surface discolorations to prevent underprediction.",
+          "from_item": "D2_0116"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D2",
+        "pcb2"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the U3 component (left side) exhibits significant surface contamination, smudging, or residue obscuring the component body.",
+          "justification": "The agent incorrectly dismissed the heavy smudge on U3 as a reflection. This rule explicitly defines surface contamination on components as an anomaly, preventing future dismissal of similar defects.",
+          "from_item": "D2_0096"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag as anomaly if all components are present and correctly placed, even if the board appears clean or lacks visible defects.",
+          "justification": "The agent hesitated despite the board being defect-free. This rule clarifies that a lack of visible defects combined with correct component placement confirms a normal state, preventing false positives on clean boards.",
+          "from_item": "D2_0058"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D2",
+        "pipe_fryum"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify as anomaly if a distinct, localized brownish spot is present on the surface, deviating from the uniform speckled texture.",
+          "justification": "The agent initially detected the spot but lowered the score due to uncertainty. This rule explicitly defines localized discoloration as a definitive anomaly, preventing future underprediction.",
+          "from_item": "D2_0093"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify any distinct surface crack or perforation hole on the object body as an anomaly.",
+          "justification": "The agent initially detected these defects but lowered the score. This rule explicitly mandates that visible cracks and holes are anomalies, preventing future underprediction.",
+          "from_item": "D2_0177"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D2",
+        "pcb3"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag as anomaly if all components (pins, IC, potentiometer, LEDs) are present and correctly placed, even if the background color is non-standard.",
+          "justification": "The agent's uncertainty likely stemmed from the green background deviating from standard reference images. This rule clarifies that background color variations should not trigger anomaly scores when the module itself is structurally intact.",
+          "from_item": "D2_0049"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D2",
+        "pcb1"
       ],
       "k": 5,
       "rules": [
         {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag as anomaly if the can body exhibits significant vertical wrinkling, buckling, or deformation, even if the label print remains intact.",
-          "justification": "The agent missed the severe structural deformation (buckling) on the can's side, focusing only on print quality. This rule explicitly targets physical shape defects.",
-          "from_item": "D2_0173"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag as anomaly if the carton lacks an attached straw, as this is a required feature for the class.",
-          "justification": "The agent incorrectly refuted the anomaly due to a false positive detection of a straw. This rule explicitly defines the absence of a straw as the anomaly condition, correcting the logic.",
-          "from_item": "D2_0097"
+          "rule_type": "normal_tolerance",
+          "text": "Treat minor surface smudges or discoloration on transducer meshes as normal variations unless accompanied by physical damage or structural deformation.",
+          "justification": "The agent incorrectly flagged a surface smudge on the mesh as a potential defect. This rule clarifies that such superficial marks are acceptable normal variations for this class, preventing false positives.",
+          "from_item": "D2_0057"
         },
         {
           "rule_type": "normal_tolerance",
-          "text": "Do not flag minor surface smudges or dust on labels as defects if the underlying text and graphics remain clear and legible.",
-          "justification": "The agent incorrectly flagged a minor smudge as a defect. This rule clarifies that superficial imperfections do not constitute anomalies when the label's informational content is intact.",
-          "from_item": "D2_0031"
+          "text": "Treat minor surface scratches on the PCB substrate and slight discoloration on transducer meshes as normal manufacturing variations.",
+          "justification": "The agent incorrectly flagged common surface imperfections as anomalies. This rule explicitly defines these specific visual artifacts as acceptable normal variations, preventing false positives.",
+          "from_item": "D2_0030"
         },
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "If a transparent straw wrapper is attached to the front of the carton, classify as anomaly.",
-          "justification": "The agent initially detected the wrapper but failed to confirm it. This rule explicitly defines the attached wrapper as a defect, ensuring the anomaly is correctly identified.",
+          "text": "Flag as anomaly if the module is rotated 180 degrees relative to the reference, causing text to appear upside down.",
+          "justification": "The agent incorrectly dismissed the 180-degree rotation as a minor variation. This rule explicitly defines this specific orientation flip as an anomaly, correcting the false negative.",
+          "from_item": "D2_0164"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the module is rotated 90 degrees such that the pin headers point downwards.",
+          "justification": "The agent incorrectly dismissed the downward pin orientation as a valid rotation. This rule explicitly defines this specific orientation as an anomaly, correcting the false negative.",
+          "from_item": "D2_0174"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the HC-SR04 module is rotated 180 degrees, placing the pins at the bottom instead of the top.",
+          "justification": "The agent initially detected the orientation defect but lowered its score. This rule explicitly defines the 180-degree rotation as a definitive anomaly, ensuring high confidence for this specific defect.",
           "from_item": "D2_0092"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Do not flag items as anomalies solely due to different flavor variants or seasonal packaging designs if the core brand identity and product structure remain consistent.",
-          "justification": "The agent incorrectly identified a standard flavor variant (blueberry) as an anomaly because its design differed from the reference set. This rule clarifies that design variations for different flavors are normal.",
-          "from_item": "D2_0056"
-        }
-      ]
-    },
-    {
-      "unit": [
-        "D2",
-        "cigarette_box"
-      ],
-      "k": 3,
-      "rules": [
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Classify as anomaly if the cigarette pack flap is torn, frayed, or physically damaged, regardless of face orientation.",
-          "justification": "The agent missed the physical damage on the top flap, incorrectly assuming the back view was sufficient for a normal classification. This rule explicitly flags structural defects.",
-          "from_item": "D2_0169"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag as anomaly if the pack face features a large diagonal stripe or landscape graphic instead of the standard solid background with leaf logo.",
-          "justification": "The agent initially detected the design mismatch but was uncertain. This rule explicitly defines the specific visual deviation (diagonal stripe/landscape) as a definitive anomaly, preventing future hesitation on similar design variations.",
-          "from_item": "D2_0137"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Classify cigarette packs with open top flaps or exposed inner packaging as anomalies.",
-          "justification": "The agent initially detected the open flap but lowered the score. This rule explicitly defines the open state as an anomaly, ensuring high confidence for this defect type.",
-          "from_item": "D2_0162"
-        }
-      ]
-    },
-    {
-      "unit": [
-        "D2",
-        "drink_bottle"
-      ],
-      "k": 2,
-      "rules": [
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Do not flag label rotation or slight misalignment as an anomaly if the bottle is not perfectly front-facing.",
-          "justification": "The agent incorrectly flagged the label's apparent rotation as a defect. This rule clarifies that such visual shifts are normal artifacts of the bottle's orientation, not physical damage.",
-          "from_item": "D2_0083"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "If a drink bottle lacks a visible label or branding on its main body, classify it as an anomaly.",
-          "justification": "The agent initially detected the missing label but lowered the score. This rule reinforces that the absence of a label is a definitive anomaly for this class, preventing uncertainty.",
-          "from_item": "D2_0095"
-        }
-      ]
-    },
-    {
-      "unit": [
-        "D2",
-        "food_bottle"
-      ],
-      "k": 2,
-      "rules": [
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Do not flag minor foil lid tears or crinkles as anomalies if they are consistent with standard packaging variations seen in reference images.",
-          "justification": "The agent initially flagged a lid tear as a defect (score 0.65). The rule clarifies that such minor packaging imperfections are normal variations, preventing false positives when reference images show similar features.",
-          "from_item": "D2_0068"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Treat any small, irregular white mark or scuff on the printed label surface as a defect, even if the mark is tiny.",
-          "justification": "The agent initially flagged the mark but then refuted it. This rule reinforces that small surface imperfections on labels are valid anomalies, preventing the agent from dismissing them as noise.",
-          "from_item": "D2_0107"
         }
       ]
     }
   ],
   "coverage": {
-    "D2 / food_package": {
-      "food_package": 4
+    "D2 / chewinggum": {
+      "chewinggum": 1
     },
-    "D2 / food_box": {
-      "food_box": 4
+    "D2 / cashew": {
+      "cashew": 1
     },
-    "D2 / drink_can": {
-      "drink_can": 5
+    "D2 / macaroni1": {
+      "macaroni1": 4
     },
-    "D2 / cigarette_box": {
-      "cigarette_box": 3
+    "D2 / candle": {
+      "candle": 2
     },
-    "D2 / drink_bottle": {
-      "drink_bottle": 2
+    "D2 / capsules": {
+      "capsules": 2
     },
-    "D2 / food_bottle": {
-      "food_bottle": 2
+    "D2 / pcb2": {
+      "pcb2": 2
+    },
+    "D2 / pipe_fryum": {
+      "pipe_fryum": 2
+    },
+    "D2 / pcb3": {
+      "pcb3": 1
+    },
+    "D2 / pcb1": {
+      "pcb1": 5
     }
   }
 }

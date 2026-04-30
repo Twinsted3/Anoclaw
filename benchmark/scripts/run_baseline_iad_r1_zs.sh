@@ -4,7 +4,7 @@
 # Matches the official inference script's --few_shot_model 0 default.
 set -u
 GPU=${GPU:-0}
-DOMAINS=${DOMAINS:-"D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12"}
+DOMAINS=${DOMAINS:-"D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12"}
 OUT=/hdd1/jiangxi/AD-Agent/benchmark/results/baselines/iad_r1_zeroshot
 MAN=/hdd1/jiangxi/AD-Agent/benchmark/manifests_v2
 MODEL='/hdd1/jiangxi/IAD-R1-checkpoints/IAD-R1(Qwen2.5-VL-Instruct-7B)'

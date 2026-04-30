@@ -7,7 +7,7 @@
   "splits": {
     "calibration": {"items_per_domain": 20, "purpose": "threshold tuning, hyperparameter selection"},
     "dev": {"items_per_domain": 40, "purpose": "method development, prompt iteration"},
-    "test": {"items_per_domain": 120, "purpose": "final evaluation, reported in paper", "note": "D6 has 98 test items due to source data limitation"}
+    "test": {"items_per_domain": 120, "purpose": "final evaluation, reported in paper", "note": "D4 has 98 test items due to source data limitation"}
   },
   "domains": [
     {
@@ -23,8 +23,8 @@
       "descriptor": "industrial manufacturing product (metal part, plastic component, or textured surface). Normal = defect-free product matching the reference items. Anomaly = physical defects such as scratches, dents, cracks, contamination, missing components, misalignment, or color/texture deviation from the references."
     },
     {
-      "id": "D02",
-      "old_id": "D2",
+      "id": "D5",
+      "old_id": "D5",
       "name": "Retail Product Inspection",
       "source_dataset": "GoodsAD",
       "n_items": 180,
@@ -35,8 +35,8 @@
       "descriptor": "packaged consumer good photographed in a product-inspection setting. Normal = defect-free packaged product matching the reference item in shape, label, and colour. Anomaly = physical defect such as broken or deformed packaging, torn label, missing logo/text, surface dents, contamination, or a missing component."
     },
     {
-      "id": "D03",
-      "old_id": "D4",
+      "id": "D2",
+      "old_id": "D6",
       "name": "Infrastructure Inspection",
       "source_dataset": "SDNET2018",
       "n_items": 180,
@@ -47,8 +47,8 @@
       "descriptor": "concrete or infrastructure surface such as a bridge deck, wall, or pavement. Normal = intact surface with typical weathering, stains, joints, and minor discoloration. Anomaly = cracks, spalling, exposed rebar, or structural damage (NOT shadows, surface stains, or normal construction joints)."
     },
     {
-      "id": "D04",
-      "old_id": "D5",
+      "id": "D6",
+      "old_id": "D3",
       "name": "Dermoscopy",
       "source_dataset": "DermaMNIST",
       "n_items": 180,
@@ -59,8 +59,8 @@
       "descriptor": "dermoscopic image of a skin lesion. Normal = benign mole (melanocytic nevus). Anomaly = malignant melanoma (irregular borders, asymmetric shape, color variation, large diameter)."
     },
     {
-      "id": "D05",
-      "old_id": "D5b",
+      "id": "D3",
+      "old_id": "D3b",
       "name": "Brain MRI",
       "source_dataset": "BraTS2021",
       "n_items": 180,
@@ -71,8 +71,8 @@
       "descriptor": "axial brain MRI slice from the BraTS2021 glioma dataset. Normal = brain slice with no visible pathology (structurally symmetric, normal tissue intensities). Anomaly = visible brain pathology such as glioma tumour, hyperintense lesion, mass effect, midline shift, or oedema."
     },
     {
-      "id": "D06",
-      "old_id": "D5c",
+      "id": "D4",
+      "old_id": "D3c",
       "name": "Liver CT",
       "source_dataset": "BMAD-Liver",
       "n_items": 180,
@@ -84,7 +84,7 @@
     },
     {
       "id": "D07",
-      "old_id": "D5d",
+      "old_id": "D3d",
       "name": "GI Endoscopy",
       "source_dataset": "HyperKvasir",
       "n_items": 180,
@@ -96,7 +96,7 @@
     },
     {
       "id": "D08",
-      "old_id": "D6",
+      "old_id": "D4",
       "name": "Remote Sensing Change Detection",
       "source_dataset": "LEVIR-CD+",
       "n_items": 158,

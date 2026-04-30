@@ -7,56 +7,56 @@
       "category": null,
       "text": "If Branch B identifies a 'uniform' or 'smooth' texture as an anomaly due to deviation from coarse references, but Branch A explicitly cites 'grain size' or 'color variation' as an allowed variation in the reference profiler, trust A.",
       "source_items": [
-        "D4_0031",
-        "D4_0044",
-        "D4_0049",
-        "D4_0070",
-        "D4_0086"
+        "D6_0031",
+        "D6_0044",
+        "D6_0049",
+        "D6_0070",
+        "D6_0086"
       ],
       "confidence": "oracle",
-      "id": "D4_meta_a_win_0"
+      "id": "D6_meta_a_win_0"
     },
     {
       "type": "meta_a_win",
       "category": null,
       "text": "If Branch B flags a specific localized feature (e.g., 'vertical linear defect', 'chip', 'dark spot') as an anomaly, but Branch A successfully refutes it by demonstrating the feature exists in the normal reference images, trust A.",
       "source_items": [
-        "D4_0031",
-        "D4_0044",
-        "D4_0049",
-        "D4_0070",
-        "D4_0086"
+        "D6_0031",
+        "D6_0044",
+        "D6_0049",
+        "D6_0070",
+        "D6_0086"
       ],
       "confidence": "oracle",
-      "id": "D4_meta_a_win_1"
+      "id": "D6_meta_a_win_1"
     },
     {
       "type": "meta_b_win",
       "category": null,
       "text": "If Branch A flags a 'dark irregular mark' or 'high-contrast spot' as an anomaly, but Branch B identifies the feature as a 'shadow' or 'typical aggregate/pore' consistent with the reference texture, trust B.",
       "source_items": [
-        "D4_0009",
-        "D4_0015",
-        "D4_0016",
-        "D4_0066",
-        "D4_0074"
+        "D6_0009",
+        "D6_0015",
+        "D6_0016",
+        "D6_0066",
+        "D6_0074"
       ],
       "confidence": "oracle",
-      "id": "D4_meta_b_win_2"
+      "id": "D6_meta_b_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
       "text": "If Branch A claims a feature is unique to the query image based on visual comparison, but Branch B asserts the texture is 'uniform' and 'consistent' with references without identifying a specific defect, trust B.",
       "source_items": [
-        "D4_0009",
-        "D4_0015",
-        "D4_0016",
-        "D4_0066",
-        "D4_0074"
+        "D6_0009",
+        "D6_0015",
+        "D6_0016",
+        "D6_0066",
+        "D6_0074"
       ],
       "confidence": "oracle",
-      "id": "D4_meta_b_win_3"
+      "id": "D6_meta_b_win_3"
     },
     {
       "type": "invariant",
@@ -65,7 +65,7 @@
       "text": "Surface exhibits a continuous, granular aggregate pattern with no large-scale smooth or uniform regions.",
       "source_items": [],
       "confidence": "high",
-      "id": "D4_invariant_4"
+      "id": "D6_invariant_4"
     },
     {
       "type": "invariant",
@@ -74,7 +74,7 @@
       "text": "Surface color is restricted to a monochromatic range of grays, beiges, and light browns.",
       "source_items": [],
       "confidence": "high",
-      "id": "D4_invariant_5"
+      "id": "D6_invariant_5"
     },
     {
       "type": "invariant",
@@ -83,7 +83,7 @@
       "text": "The surface is a single, continuous planar expanse without distinct geometric boundaries or object edges.",
       "source_items": [],
       "confidence": "high",
-      "id": "D4_invariant_6"
+      "id": "D6_invariant_6"
     },
     {
       "type": "invariant",
@@ -92,7 +92,7 @@
       "text": "Surface is monochromatic, consisting exclusively of shades of light gray and white.",
       "source_items": [],
       "confidence": "high",
-      "id": "D4_invariant_7"
+      "id": "D6_invariant_7"
     },
     {
       "type": "invariant",
@@ -101,7 +101,7 @@
       "text": "Surface exhibits a fine, granular, and speckled texture consistent with concrete.",
       "source_items": [],
       "confidence": "high",
-      "id": "D4_invariant_8"
+      "id": "D6_invariant_8"
     },
     {
       "type": "invariant",
@@ -110,7 +110,7 @@
       "text": "Surface is continuous and planar, lacking any linear discontinuities or deep fissures.",
       "source_items": [],
       "confidence": "high",
-      "id": "D4_invariant_9"
+      "id": "D6_invariant_9"
     },
     {
       "type": "invariant",
@@ -119,7 +119,7 @@
       "text": "Surface exhibits a continuous, granular concrete texture without distinct linear discontinuities.",
       "source_items": [],
       "confidence": "high",
-      "id": "D4_invariant_10"
+      "id": "D6_invariant_10"
     },
     {
       "type": "invariant",
@@ -128,7 +128,7 @@
       "text": "Surface is dominated by a monochromatic grey color palette with minor natural tonal variations.",
       "source_items": [],
       "confidence": "high",
-      "id": "D4_invariant_11"
+      "id": "D6_invariant_11"
     },
     {
       "type": "corrective_fn",
@@ -136,11 +136,11 @@
       "category": "pavement",
       "text": "Flag distinct linear discontinuities (cracks) and localized surface degradation (pitting, exposed aggregate) regardless of background texture.",
       "source_items": [
-        "D4_0101",
-        "D4_0160"
+        "D6_0101",
+        "D6_0160"
       ],
       "confidence": "high",
-      "id": "D4_corrective_fn_12"
+      "id": "D6_corrective_fn_12"
     },
     {
       "type": "corrective_fn",
@@ -148,11 +148,11 @@
       "category": "pavement",
       "text": "Flag isolated dark spots or irregular marks that are distinct from the surrounding aggregate pattern, even if small.",
       "source_items": [
-        "D4_0169",
-        "D4_0174"
+        "D6_0169",
+        "D6_0174"
       ],
       "confidence": "high",
-      "id": "D4_corrective_fn_13"
+      "id": "D6_corrective_fn_13"
     },
     {
       "type": "corrective_fp",
@@ -160,11 +160,11 @@
       "category": "pavement",
       "text": "Do not flag scattered small indentations or grain density fluctuations if they are consistent with the reference surface texture.",
       "source_items": [
-        "D4_0066",
-        "D4_0010"
+        "D6_0066",
+        "D6_0010"
       ],
       "confidence": "high",
-      "id": "D4_corrective_fp_14"
+      "id": "D6_corrective_fp_14"
     },
     {
       "type": "corrective_fp",
@@ -172,10 +172,10 @@
       "category": "pavement",
       "text": "Do not flag dark irregular marks if they appear to be shadows or natural aggregate variations matching the reference profile.",
       "source_items": [
-        "D4_0009"
+        "D6_0009"
       ],
       "confidence": "high",
-      "id": "D4_corrective_fp_15"
+      "id": "D6_corrective_fp_15"
     },
     {
       "type": "corrective_fn",
@@ -183,10 +183,10 @@
       "category": "wall",
       "text": "Flag distinct, isolated dark irregular marks that are significantly larger or darker than the background speckling.",
       "source_items": [
-        "D4_0094"
+        "D6_0094"
       ],
       "confidence": "high",
-      "id": "D4_corrective_fn_16"
+      "id": "D6_corrective_fn_16"
     },
     {
       "type": "corrective_fp",
@@ -194,13 +194,13 @@
       "category": "wall",
       "text": "Do not flag scattered, small dark speckles or spots if they are consistent with the random texture variation seen in reference images.",
       "source_items": [
-        "D4_0052",
-        "D4_0074",
-        "D4_0018",
-        "D4_0038"
+        "D6_0052",
+        "D6_0074",
+        "D6_0018",
+        "D6_0038"
       ],
       "confidence": "high",
-      "id": "D4_corrective_fp_17"
+      "id": "D6_corrective_fp_17"
     },
     {
       "type": "corrective_fn",
@@ -208,12 +208,12 @@
       "category": "deck",
       "text": "Flag thin, dark, jagged linear marks as cracks even if they appear faint or short against the concrete texture.",
       "source_items": [
-        "D4_0091",
-        "D4_0123",
-        "D4_0095"
+        "D6_0091",
+        "D6_0123",
+        "D6_0095"
       ],
       "confidence": "high",
-      "id": "D4_corrective_fn_18"
+      "id": "D6_corrective_fn_18"
     },
     {
       "type": "corrective_fp",
@@ -221,12 +221,12 @@
       "category": "deck",
       "text": "Do not flag global coarse aggregate texture or multi-colored particle distribution as anomalies if no distinct linear cracks are present.",
       "source_items": [
-        "D4_0022",
-        "D4_0049",
-        "D4_0070"
+        "D6_0022",
+        "D6_0049",
+        "D6_0070"
       ],
       "confidence": "high",
-      "id": "D4_corrective_fp_19"
+      "id": "D6_corrective_fp_19"
     }
   ],
   "meta_origin": {
@@ -234,5 +234,5 @@
     "n_a_wins": 5,
     "n_b_wins": 5
   },
-  "_shuffled_origin": "D4"
+  "_shuffled_origin": "D6"
 }

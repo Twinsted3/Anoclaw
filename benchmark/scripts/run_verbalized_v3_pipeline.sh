@@ -14,7 +14,7 @@ L1=$OUT/v3_l1
 L2=$OUT/v3_l2
 mkdir -p "$L1" "$L2"
 
-DOMAINS=(D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12)
+DOMAINS=(D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12)
 
 echo "=== Stage 1: L1 v3 invariant extraction ==="
 for D in "${DOMAINS[@]}"; do

@@ -4,178 +4,375 @@
     {
       "unit": [
         "D2",
-        "food_package"
+        "pcb4"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "normal_signature": [
-          "Flexible, sealed foil or plastic packaging containing dry food products",
-          "Prominent printed branding, flavor text, and nutritional information labels",
-          "Visible barcode and QR codes on the packaging surface",
-          "Intact heat-sealed edges and crimped tops/bottoms",
-          "Background consists of a white perforated pegboard shelf"
+          "Small square blue PCB with a silver USB Type-C connector on the left edge",
+          "Black integrated circuit (IC) chip labeled TC4056A located on the right side",
+          "Four silver plated through-holes at the corners labeled IN+, IN-, BAT+, BAT-",
+          "White silkscreen text and component outlines clearly visible on the blue substrate",
+          "Rectangular surface-mount resistors and capacitors arranged in a specific grid pattern",
+          "Clean, unblemished solder joints on all visible components"
         ],
         "hypothesized_anomaly_modes": [
-          "Structural breach: Tears, punctures, or unsealed edges compromising the vacuum or air-tight seal",
-          "Content failure: Visible leakage of food particles or liquid, or a completely deflated/empty package indicating spoilage or loss",
-          "Labeling defect: Missing, torn, or illegible barcode and nutritional labels preventing product identification",
-          "Severe deformation: Crushing or crushing that obscures the primary branding or suggests physical damage to the contents"
+          "Missing or displaced components (e.g., missing IC chip, resistor, or capacitor) due to manufacturing defects",
+          "Physical damage to the PCB substrate such as cracks, scratches, or delamination",
+          "Defective or misaligned USB Type-C connector (e.g., bent pins, loose housing, or missing metal shell)",
+          "Soldering defects including cold joints, bridging, or insufficient solder on component leads",
+          "Contamination or foreign objects (e.g., dust, debris, or flux residue) obscuring component labels or traces"
         ],
         "rules": [
-          "if the package shows visible tears, holes, or open seams then lean anomaly",
-          "if the package is completely deflated, crushed, or leaking contents then lean anomaly",
-          "if the barcode or primary branding is missing, torn off, or illegible then lean anomaly",
-          "if the package is standing or lying flat with intact seals and legible text then lean normal",
-          "if the package shows standard crinkling or inflation consistent with a sealed snack bag then lean normal"
+          "if the USB Type-C connector is missing, broken, or significantly misaligned then lean anomaly",
+          "if the black IC chip is missing or the text TC4056A is not visible then lean anomaly",
+          "if the PCB substrate shows visible cracks, chips, or severe discoloration then lean anomaly",
+          "if any of the four corner mounting holes are missing or deformed then lean anomaly",
+          "if the white silkscreen labels (IN+, IN-, BAT+, BAT-) are completely absent or illegible then lean anomaly",
+          "if the board contains the standard layout of components (IC, resistors, capacitors) and the USB port is intact then lean normal"
         ]
       }
     },
     {
       "unit": [
         "D2",
-        "food_box"
+        "fryum"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "normal_signature": [
-          "Rectangular prism packaging with sharp, well-defined edges and corners",
-          "Surface features high-resolution printed graphics, brand logos, and nutritional text",
-          "Packaging material appears rigid and maintains structural integrity without deformation",
-          "Background consists of a white pegboard with a uniform grid of circular holes",
-          "Boxes are positioned upright on a flat, reflective white surface"
+          "Object is a circular, peach-colored plastic component with a wheel-like structure.",
+          "Six distinct radial spokes connect the central hub to the outer rim.",
+          "A single, small, circular hole is centered in the hub.",
+          "The object is placed on a green, textured, grid-patterned background.",
+          "The outer rim is continuous and unbroken.",
+          "The spoke geometry is symmetrical with uniform spacing."
         ],
         "hypothesized_anomaly_modes": [
-          "Structural deformation such as crushed corners, dented sides, or flattened faces due to mishandling",
-          "Surface damage including deep creases, tears, or peeling labels that obscure printed information",
-          "Sealing failure where the box flaps are open, unglued, or the packaging is visibly compromised",
-          "Contamination or staining on the packaging surface (e.g., grease, water spots, or dirt)"
+          "Structural fracture: A spoke or section of the rim is broken or missing, compromising the wheel's integrity.",
+          "Manufacturing defect: The central hub hole is missing, misshapen, or obstructed, preventing proper assembly.",
+          "Material contamination: Presence of foreign debris, discoloration, or surface blemishes on the plastic body.",
+          "Geometric deformation: The object is warped, bent, or significantly non-circular, indicating a molding failure.",
+          "Missing component: The object is a partial fragment rather than a complete wheel."
         ],
         "rules": [
-          "if the box edges are bent, crushed, or the corners are rounded due to impact then lean anomaly",
-          "if the printed surface shows deep creases, tears, or missing label sections then lean anomaly",
-          "if the box flaps are open or the structural seal is broken then lean anomaly",
-          "if the box maintains a rigid rectangular shape with intact, sharp edges then lean normal",
-          "if the printed graphics and text are clear, flat, and free of physical distortion then lean normal"
+          "if the object has fewer than six spokes or a broken rim then lean anomaly",
+          "if the central hub hole is missing, filled, or irregularly shaped then lean anomaly",
+          "if the object is not circular or appears warped/bent then lean anomaly",
+          "if the object is peach-colored and has six intact spokes on a green background then lean normal",
+          "if there is visible foreign debris or significant discoloration on the object surface then lean anomaly"
         ]
       }
     },
     {
       "unit": [
         "D2",
-        "drink_can"
+        "chewinggum"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "normal_signature": [
-          "Cylindrical metal container with a smooth, reflective surface",
-          "Sealed top rim with a standard pull-tab opening mechanism",
-          "Flat, stable base allowing the object to stand upright",
-          "Printed label wrapping around the body with legible text and graphics",
-          "Uniform curvature without visible dents or structural deformation"
+          "Single, solid rectangular block with rounded corners",
+          "Uniform matte white or off-white surface color",
+          "Smooth texture with no visible cracks, chips, or foreign debris",
+          "Centered placement on a dark, textured fabric background",
+          "Consistent lighting with soft shadows indicating a 3D form"
         ],
         "hypothesized_anomaly_modes": [
-          "Structural deformation such as dents, crushing, or bulging caused by impact or pressure buildup",
-          "Corrosion or rust spots indicating material degradation or leakage",
-          "Label defects including peeling, tearing, or missing sections exposing the metal underneath",
-          "Damaged or missing pull-tab mechanism preventing the can from being opened",
-          "Seepage or liquid residue on the exterior surface indicating a breach in the seal"
+          "Structural fracture or cracking due to brittleness or impact",
+          "Surface contamination or foreign object inclusion (e.g., dirt, hair, or other particles)",
+          "Melting or deformation caused by heat exposure, altering the rectangular geometry",
+          "Color inconsistency or staining indicating chemical reaction or age"
         ],
         "rules": [
-          "if the object exhibits significant dents, crushing, or loss of cylindrical shape then lean anomaly",
-          "if the object is a rectangular carton or glass bottle instead of a metal cylinder then lean anomaly",
-          "if the top rim is missing, open, or the pull-tab is detached then lean anomaly",
-          "if the surface shows visible rust, corrosion, or liquid leakage then lean anomaly",
-          "if the object stands upright on a flat base with a smooth, intact metal surface then lean normal",
-          "if the label is fully adhered and wraps continuously around the cylinder then lean normal"
+          "if the object exhibits visible cracks, splits, or missing chunks then lean anomaly",
+          "if the object surface contains distinct foreign particles or debris then lean anomaly",
+          "if the object shape is distorted, melted, or lacks the standard rectangular geometry then lean anomaly",
+          "if the object displays significant discoloration or non-uniform staining then lean anomaly",
+          "if the object is a solid, intact white block with rounded corners on a dark background then lean normal"
         ]
       }
     },
     {
       "unit": [
         "D2",
-        "cigarette_box"
+        "macaroni2"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "normal_signature": [
-          "Rectangular hardboard packaging with a glossy, reflective surface finish",
-          "Prominent brand logo or name printed in the upper or central region",
-          "Mandatory health warning text occupying the lower third of the front face",
-          "Intact, sealed cellophane wrapping covering the entire box",
-          "Sharp, well-defined edges and corners with no structural deformation"
+          "Four distinct macaroni pieces present in every image",
+          "Uniform pale yellow coloration with visible concentric ridges",
+          "Consistent C-shaped or crescent geometry with a smooth inner curve",
+          "Solid, intact structure with no visible cracks or fragmentation",
+          "Placed on a textured green background"
         ],
         "hypothesized_anomaly_modes": [
-          "Structural crushing or denting of the box corners or sides due to impact",
-          "Tearing or puncturing of the outer cellophane seal exposing the inner cardboard",
-          "Severe surface abrasion or scuffing that obscures the printed brand logo or health warnings",
-          "Peeling or flaking of the printed label layer from the cardboard substrate"
+          "Structural breakage: A piece is snapped in half or has a jagged fracture line",
+          "Missing component: One or more of the four macaroni pieces is absent from the frame",
+          "Foreign object intrusion: A non-macaroni item (e.g., debris, different pasta shape) is present",
+          "Severe deformation: A piece is crushed, flattened, or twisted out of its natural C-shape",
+          "Surface contamination: Presence of dark spots, mold, or discoloration on the pasta surface"
         ],
         "rules": [
-          "if the box exhibits significant crushing, bending, or loss of rectangular geometry then lean anomaly",
-          "if the outer plastic wrapping is torn, missing, or visibly punctured then lean anomaly",
-          "if the brand logo or health warning text is heavily obscured by scuffs, stains, or peeling then lean anomaly",
-          "if the box maintains a rigid rectangular shape with a continuous, glossy surface then lean normal",
-          "if the health warning text is clearly legible and positioned at the bottom then lean normal"
+          "if the count of macaroni pieces is not exactly four then lean anomaly",
+          "if any piece exhibits a sharp fracture line or is split into multiple fragments then lean anomaly",
+          "if any piece is significantly flattened or lacks the characteristic hollow C-shape then lean anomaly",
+          "if any object in the image is not a yellow macaroni piece then lean anomaly",
+          "if all four pieces are intact, yellow, and C-shaped then lean normal"
         ]
       }
     },
     {
       "unit": [
         "D2",
-        "drink_bottle"
+        "cashew"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "normal_signature": [
-          "Single upright plastic beverage bottle centered in the frame",
-          "Opaque or translucent cylindrical body with a printed paper or plastic label",
-          "Screw-top cap (white, green, or blue) securely fastened at the top",
-          "Bottle resting on a white surface against a perforated pegboard background",
-          "Label features legible text and graphics without significant distortion"
+          "Single, isolated cashew nut centered in the frame",
+          "Distinct kidney or crescent shape with a smooth, continuous outer curve",
+          "Uniform creamy beige to light golden-brown coloration",
+          "Smooth, matte surface texture without visible cracks or holes",
+          "Placed against a dark, textured, non-reflective background",
+          "Intact structure with no missing segments or broken edges"
         ],
         "hypothesized_anomaly_modes": [
-          "Crushed or dented bottle body indicating physical damage or mishandling",
-          "Missing, loose, or misaligned cap suggesting a seal failure or manufacturing defect",
-          "Torn, peeling, or missing label exposing the plastic underneath",
-          "Severe leakage or spillage causing the bottle to sit in a puddle or appear wet",
-          "Foreign object or debris attached to the exterior of the bottle"
+          "Structural fracture or breakage splitting the nut into multiple pieces",
+          "Surface discoloration indicating mold, rot, or excessive burning",
+          "Foreign object contamination such as shell fragments or debris attached to the nut",
+          "Severe deformation or crushing altering the characteristic kidney shape",
+          "Presence of a second nut or overlapping objects in the frame"
         ],
         "rules": [
-          "if the bottle body shows significant dents, crushing, or deformation then lean anomaly",
-          "if the cap is missing, detached, or visibly loose then lean anomaly",
-          "if the label is torn, peeling, or completely missing then lean anomaly",
-          "if the bottle is lying on its side or tilted at an extreme angle then lean anomaly",
-          "if the bottle is upright with an intact cap and a fully adhered label then lean normal",
-          "if the background is a perforated pegboard and the bottle is centered then lean normal"
+          "if the object is split into two or more distinct pieces then lean anomaly",
+          "if the surface contains dark spots, green fuzz, or black char marks then lean anomaly",
+          "if the object is flattened, crushed, or lacks the characteristic crescent curvature then lean anomaly",
+          "if there are foreign particles or shell fragments attached to the nut surface then lean anomaly",
+          "if the object is a single, intact, kidney-shaped nut with uniform color then lean normal",
+          "if the background is a consistent dark texture with no other objects present then lean normal"
         ]
       }
     },
     {
       "unit": [
         "D2",
-        "food_bottle"
+        "macaroni1"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "normal_signature": [
-          "Cylindrical or tapered cup-shaped container with a distinct lid",
-          "Surface covered in printed branding, nutritional labels, or graphics",
-          "Lid is sealed with a plastic film or foil layer",
-          "Container sits upright on a flat surface",
-          "Background features a white pegboard with a grid of holes"
+          "Four distinct macaroni pieces arranged in a 2x2 grid",
+          "Uniform light orange/tan coloration with concentric ridges",
+          "Consistent C-shaped or semi-circular geometry with open ends",
+          "Placement on a textured dark green background",
+          "Intact edges with no visible fragmentation or chipping"
         ],
         "hypothesized_anomaly_modes": [
-          "Structural deformation: The container body is crushed, dented, or bent, compromising its cylindrical shape.",
-          "Seal failure: The plastic film or foil lid is torn, punctured, or missing, exposing the contents.",
-          "Label damage: The printed surface is significantly scratched, peeled, or obscured, making branding unreadable.",
-          "Foreign object contamination: Presence of non-package items (e.g., dirt, other food) on the surface or lid."
+          "Structural breakage: A piece is snapped in half or has a large chunk missing, compromising the C-shape.",
+          "Foreign object contamination: Presence of non-macaroni debris (e.g., metal shavings, dust clumps) on the surface.",
+          "Color deviation: Significant discoloration such as dark burn marks, mold spots, or bleaching on the pasta surface.",
+          "Deformation: A piece is crushed, flattened, or twisted out of its standard tubular shape.",
+          "Count anomaly: The image contains fewer or more than four pieces, or pieces are overlapping."
         ],
         "rules": [
-          "if the container body is visibly crushed, dented, or bent out of shape then lean anomaly",
-          "if the lid seal is torn, punctured, or completely missing then lean anomaly",
-          "if the printed label is heavily scratched, peeled, or obscured then lean anomaly",
-          "if the container is a standard cup shape with an intact lid and clear graphics then lean normal",
-          "if the container is upright and the background is a pegboard then lean normal"
+          "if the image contains exactly four distinct macaroni pieces then lean normal",
+          "if any piece exhibits a sharp fracture line or is missing a significant portion of its arc then lean anomaly",
+          "if the background contains high-contrast foreign objects or debris not part of the texture then lean anomaly",
+          "if any piece shows dark spots, blackening, or non-uniform color patches then lean anomaly",
+          "if the pieces are arranged in a scattered or overlapping manner rather than a grid then lean anomaly",
+          "if the pieces maintain a smooth, continuous C-shape with consistent ridges then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "candle"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Four circular tea-light candles arranged in a 2x2 grid",
+          "Uniform off-white or cream-colored wax surface",
+          "Single, centered, unburnt wick on each candle",
+          "Smooth, continuous circular perimeter for each candle",
+          "Consistent lighting casting soft shadows to the right"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural deformation: The wax body is cracked, melted, or chipped, breaking the circular symmetry.",
+          "Wick failure: The wick is missing, broken, displaced from the center, or already burnt down.",
+          "Foreign contamination: Presence of dust, debris, or foreign objects on the wax surface or background.",
+          "Missing object: One or more candles are absent from the expected 2x2 grid configuration.",
+          "Color defect: Discoloration, staining, or significant color variation inconsistent with the uniform wax tone."
+        ],
+        "rules": [
+          "if the image contains exactly four distinct circular objects in a grid pattern then lean normal",
+          "if any candle shows a visible crack, chip, or irregular edge then lean anomaly",
+          "if any wick is missing, broken, or significantly off-center then lean anomaly",
+          "if there are visible foreign particles or debris on the wax surface then lean anomaly",
+          "if the number of candles is not four then lean anomaly",
+          "if the wax surface shows significant discoloration or staining then lean anomaly"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "capsules"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Uniform translucent lime-green coloration",
+          "Smooth, glossy, capsule-shaped geometry",
+          "Intact surface with no visible cracks or chips",
+          "Consistent size and aspect ratio across instances",
+          "Homogeneous internal texture without foreign inclusions"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural fracture or cracking of the capsule shell",
+          "Surface contamination or foreign debris adhering to the object",
+          "Color deviation indicating material inconsistency or oxidation",
+          "Deformation or crushing of the capsule shape",
+          "Presence of internal voids or air bubbles disrupting translucency"
+        ],
+        "rules": [
+          "if the object exhibits a jagged edge, crack, or missing segment then lean anomaly",
+          "if the object contains a dark spot, speck, or foreign particle on its surface then lean anomaly",
+          "if the object color is significantly darker, lighter, or a different hue than lime-green then lean anomaly",
+          "if the object shape is flattened, crushed, or irregularly distorted then lean anomaly",
+          "if the object maintains a smooth, glossy, and uniform green capsule shape then lean normal",
+          "if the object shows consistent translucency and size relative to neighbors then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "pcb2"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Rectangular blue PCB with 'HC-SR04' printed in white on the top-left corner",
+          "Three vertical male header pins protruding from the top edge labeled Gnd, Trig, Echo",
+          "Three primary black integrated circuits (ICs) mounted horizontally: U1 (right), U2 (center), U3 (left)",
+          "Two silver cylindrical crystal oscillators (Y1, Y2) located near the bottom edge",
+          "Four silver mounting holes positioned at the corners of the board",
+          "White silkscreen labels for resistors (R1-R6) and capacitors (C1-C6) arranged in columns"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Missing or unpopulated ICs (U1, U2, or U3) resulting in empty solder pads",
+          "Bent, broken, or misaligned header pins on the top connector",
+          "Physical damage to the PCB substrate such as cracks, burns, or delamination",
+          "Displaced or missing surface-mount components (resistors/capacitors) or crystal oscillators",
+          "Contamination or corrosion obscuring the white silkscreen text or traces"
+        ],
+        "rules": [
+          "if the board lacks the three vertical header pins at the top edge then lean anomaly",
+          "if any of the three main black ICs (U1, U2, U3) are missing or replaced by empty pads then lean anomaly",
+          "if the 'HC-SR04' text is missing, illegible, or replaced by different text then lean anomaly",
+          "if the board shape is not a rectangle or the blue solder mask is significantly damaged then lean anomaly",
+          "if the three header pins are present and upright and the three main ICs are populated then lean normal",
+          "if the four corner mounting holes are visible and the board is free of large cracks then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "pipe_fryum"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Rectangular cross-section with a consistent aspect ratio",
+          "Uniform beige or light tan coloration throughout the surface",
+          "Fine, granular texture resembling dried pasta or extruded dough",
+          "Solid, continuous structure with no visible internal voids",
+          "Clean, sharp edges with no significant chipping or deformation"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural fracture or breakage resulting in missing segments or jagged edges",
+          "Surface contamination such as dark spots, foreign debris, or discoloration",
+          "Extrusion defects causing warping, twisting, or irregular cross-sectional geometry",
+          "Hollowing or internal voids visible through the translucent material",
+          "Excessive surface roughness or pitting deviating from the standard granular texture"
+        ],
+        "rules": [
+          "if the object has a broken edge or is missing a corner then lean anomaly",
+          "if the object is significantly warped, twisted, or bent then lean anomaly",
+          "if there are distinct dark spots or foreign objects on the surface then lean anomaly",
+          "if the object shows a hollow center or internal void then lean anomaly",
+          "if the object maintains a solid rectangular shape with uniform beige color then lean normal",
+          "if the surface texture is consistent and granular without large pits then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "pcb3"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Rectangular blue PCB with a 3-pin female header on the left side",
+          "Black cylindrical photoresistor sensor on the right side",
+          "Clear LED indicator adjacent to the photoresistor",
+          "Blue square potentiometer with a cross-shaped adjustment slot in the center",
+          "Black 8-pin integrated circuit (IC) chip located centrally",
+          "White silkscreen text including 'OUT GND VCC' and Chinese characters"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Missing or detached photoresistor sensor, rendering the module unable to detect light",
+          "Broken or bent header pins on the left side, preventing electrical connection",
+          "Displaced or missing IC chip, causing circuit failure",
+          "Cracked or missing potentiometer, preventing sensitivity adjustment",
+          "Physical damage to the PCB substrate such as cracks or delamination"
+        ],
+        "rules": [
+          "if the black cylindrical photoresistor is missing or replaced by a different component then lean anomaly",
+          "if the 3-pin female header is missing, broken, or has fewer than 3 pins then lean anomaly",
+          "if the blue square potentiometer is missing or the cross-slot is not visible then lean anomaly",
+          "if the black IC chip is missing or the component count is significantly different then lean anomaly",
+          "if the PCB is physically cracked or the blue solder mask is extensively damaged then lean anomaly",
+          "if the clear LED is present next to the photoresistor then lean normal",
+          "if the white silkscreen text 'OUT GND VCC' is clearly visible on the left then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "pcb1"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Blue rectangular PCB with 'HC-SR04' printed in white text",
+          "Two large circular ultrasonic transducers with black mesh grilles",
+          "Four vertical male header pins protruding from the top edge",
+          "White circular rings surrounding the transducer grilles",
+          "Four mounting holes located at the corners of the board",
+          "Small beige rectangular component centered between transducers"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Missing or bent header pins preventing electrical connection",
+          "Cracked or detached transducer mesh grilles affecting sensor function",
+          "Physical damage to the PCB such as cracks, burns, or delamination",
+          "Missing or illegible text labels indicating manufacturing defect",
+          "Discoloration or corrosion on the solder points or pins"
+        ],
+        "rules": [
+          "if the four header pins are missing, bent, or not aligned vertically then lean anomaly",
+          "if the black mesh grilles on the transducers are cracked, torn, or missing then lean anomaly",
+          "if the 'HC-SR04' text is missing, faded, or illegible then lean anomaly",
+          "if the PCB shows visible cracks, burn marks, or significant discoloration then lean anomaly",
+          "if the board has the standard blue color, intact pins, and clear text then lean normal",
+          "if the two transducers are symmetric and the white rings are intact then lean normal"
         ]
       }
     }

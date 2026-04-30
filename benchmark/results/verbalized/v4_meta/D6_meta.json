@@ -1,43 +1,41 @@
 {
   "a_wins_rules": [
-    "If Branch B cites 'orientation change', 'rotation', or 'viewing angle' as the primary evidence for an anomaly, trust Branch A (Agent), as these are often normal variations in 3D point cloud data.",
-    "If Branch B identifies a 'missing section', 'void', or 'collapsed protrusion' that Branch A explicitly refutes by noting the feature exists in the reference set (natural variation), trust Branch A.",
-    "If Branch B claims a 'deformation' or 'bending' that Branch A identifies as a consistent structural feature across references, trust Branch A."
+    "If Branch B identifies a 'uniform' or 'smooth' texture as an anomaly due to deviation from coarse references, but Branch A explicitly cites 'grain size' or 'color variation' as an allowed variation in the reference profiler, trust A.",
+    "If Branch B flags a specific localized feature (e.g., 'vertical linear defect', 'chip', 'dark spot') as an anomaly, but Branch A successfully refutes it by demonstrating the feature exists in the normal reference images, trust A."
   ],
   "b_wins_rules": [
-    "If Branch A identifies a specific structural defect like a 'fold', 'crease', or 'twist' that is visually distinct from the smooth surfaces in the references, trust Branch B (Direct) if it flags the image as anomalous.",
-    "If Branch A's rationale contains a 'json parse failed' error or is otherwise malformed, trust Branch B (Direct).",
-    "If Branch A classifies a query as 'normal' despite the object having a grossly distorted, irregular, or 'folded' shape compared to the flat/elongated references, trust Branch B."
+    "If Branch A flags a 'dark irregular mark' or 'high-contrast spot' as an anomaly, but Branch B identifies the feature as a 'shadow' or 'typical aggregate/pore' consistent with the reference texture, trust B.",
+    "If Branch A claims a feature is unique to the query image based on visual comparison, but Branch B asserts the texture is 'uniform' and 'consistent' with references without identifying a specific defect, trust B."
   ],
   "a_evidence": [
-    "D6_0007",
-    "D6_0008",
+    "D6_0031",
+    "D6_0044",
+    "D6_0049",
     "D6_0070",
-    "D6_0082"
+    "D6_0086"
   ],
   "b_evidence": [
-    "D6_0020",
-    "D6_0029",
-    "D6_0036",
-    "D6_0090",
-    "D6_0098",
-    "D6_0164"
+    "D6_0009",
+    "D6_0015",
+    "D6_0016",
+    "D6_0066",
+    "D6_0074"
   ],
-  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If Branch B cites 'orientation change', 'rotation', or 'viewing angle' as the primary evidence for an anomaly, trust Branch A (Agent), as these are often normal variations in 3D point cloud data.\",\n    \"If Branch B identifies a 'missing section', 'void', or 'collapsed protrusion' that Branch A explicitly refutes by noting the feature exists in the reference set (natural variation), trust Branch A.\",\n    \"If Branch B claims a 'deformation' or 'bending' that Branch A identifies as a consistent structural feature across references, trust Branch A.\"\n  ],\n  \"b_wins_rules\": [\n    \"If Branch A identifies a specific structural defect like a 'fold', 'crease', or 'twist' that is visually distinct from the smooth surfaces in the references, trust Branch B (Direct) if it flags the image as anomalous.\",\n    \"If Branch A's rationale contains a 'json parse failed' error or is otherwise malformed, trust Branch B (Direct).\",\n    \"If Branch A classifies a query as 'normal' despite the object having a grossly distorted, irregular, or 'folded' shape compared to the flat/elongated references, trust Branch B.\"\n  ]\n}\n```",
+  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If Branch B identifies a 'uniform' or 'smooth' texture as an anomaly due to deviation from coarse references, but Branch A explicitly cites 'grain size' or 'color variation' as an allowed variation in the reference profiler, trust A.\",\n    \"If Branch B flags a specific localized feature (e.g., 'vertical linear defect', 'chip', 'dark spot') as an anomaly, but Branch A successfully refutes it by demonstrating the feature exists in the normal reference images, trust A.\"\n  ],\n  \"b_wins_rules\": [\n    \"If Branch A flags a 'dark irregular mark' or 'high-contrast spot' as an anomaly, but Branch B identifies the feature as a 'shadow' or 'typical aggregate/pore' consistent with the reference texture, trust B.\",\n    \"If Branch A claims a feature is unique to the query image based on visual comparison, but Branch B asserts the texture is 'uniform' and 'consistent' with references without identifying a specific defect, trust B.\"\n  ]\n}\n```",
   "tokens": {
-    "input": 4908,
-    "output": 281
+    "input": 2754,
+    "output": 235
   },
   "error": null,
   "partition_stats": {
-    "agree_correct": 13,
-    "agree_wrong": 16,
-    "disagree_a_wins_total": 4,
-    "disagree_b_wins_total": 7,
-    "reflected_a": 4,
-    "reflected_b": 6,
+    "agree_correct": 20,
+    "agree_wrong": 5,
+    "disagree_a_wins_total": 9,
+    "disagree_b_wins_total": 6,
+    "reflected_a": 5,
+    "reflected_b": 5,
     "skipped": 0
   },
   "domain_code": "D6",
-  "seconds": 24.3
+  "seconds": 19.2
 }

@@ -19,13 +19,13 @@ from agent_tools_v6 import _load_expert_scores  # noqa: E402
 def main():
     manifest = Path("/hdd1/jiangxi/AD-Agent/benchmark/manifests/full_manifest.json")
     items = json.load(open(manifest))
-    # 5 items: 2 D1 + 2 D2 + 1 D4 from calibration (fast, already have expert cache)
+    # 5 items: 2 D1 + 2 D5 + 1 D6 from calibration (fast, already have expert cache)
     sample = []
-    for dom in ("D1", "D2", "D4"):
+    for dom in ("D1", "D5", "D6"):
         for x in items:
             if x.get("split") == "calibration" and x.get("domain_code") == dom:
                 sample.append(x)
-                if sum(1 for s in sample if s["domain_code"] == dom) >= (2 if dom != "D4" else 1):
+                if sum(1 for s in sample if s["domain_code"] == dom) >= (2 if dom != "D6" else 1):
                     break
     print(f"Sampled {len(sample)} items: {[x['item_id'] for x in sample]}")
 

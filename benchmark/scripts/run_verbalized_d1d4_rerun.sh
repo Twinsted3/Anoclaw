@@ -1,6 +1,6 @@
 #!/bin/bash
-# Rerun L2 + stack for D1-D4 after the tuple-bug fix.
-# Assumes main pipeline has completed (or at least passive_dev D1-D4 is
+# Rerun L2 + stack for D1-D6 after the tuple-bug fix.
+# Assumes main pipeline has completed (or at least passive_dev D1-D6 is
 # real data, and l1/D[1-4]_l1.json exist).
 set -u
 export QWEN_API_BASE=${QWEN_API_BASE:-http://localhost:8200/v1}
@@ -12,9 +12,9 @@ SCR=$ROOT/benchmark/scripts/verbalized_learning.py
 MAN=$ROOT/benchmark/manifests_v2
 OUT=$ROOT/benchmark/results/verbalized
 
-DOMAINS=(D1 D2 D3 D4)
+DOMAINS=(D1 D5 D2 D6)
 
-echo "=== L2 rerun: D1-D4 ==="
+echo "=== L2 rerun: D1-D6 ==="
 for D in "${DOMAINS[@]}"; do
     M=$(ls "$MAN/${D}_"*.json | head -1)
     P="$OUT/passive_dev/${D}_passive_dev.json"
@@ -31,7 +31,7 @@ for D in "${DOMAINS[@]}"; do
 done
 
 echo "=== Stack: all 12 ==="
-for D in D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12; do
+for D in D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12; do
     L1="$OUT/l1/${D}_l1.json"
     L2="$OUT/l2/${D}_l2.json"
     S="$OUT/stack/${D}_l1l2.json"
@@ -46,4 +46,4 @@ for D in D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12; do
     python3 "$SCR" stack --l1 "$L1" --l2 "$L2" --out "$S" || echo "[warn] $D stack failed"
 done
 
-echo "=== D1-D4 rerun + stack done ==="
+echo "=== D1-D6 rerun + stack done ==="

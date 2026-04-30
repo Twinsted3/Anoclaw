@@ -5,156 +5,147 @@
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If Branch A's rationale explicitly cites specific reference images (e.g., 'consistent with Ref2') to refute anomaly features like color variegation or border irregularity, trust A.",
+      "text": "If Branch B (Direct) claims a 'hyperintense' or 'bright' lesion but the query image visually lacks a distinct, high-contrast bright mass compared to the reference images, trust A (Agent).",
       "source_items": [
-        "D8_0006",
-        "D8_0011",
-        "D8_0049",
-        "D8_0051",
-        "D8_0129"
+        "D9_0049",
+        "D9_0064",
+        "D9_0066",
+        "D9_0077",
+        "D9_0122"
       ],
       "confidence": "oracle",
-      "id": "D8_meta_a_win_0"
+      "id": "D9_meta_a_win_0"
     },
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If Branch B claims a lesion is anomalous solely because it is a pigmented spot on 'clear' skin, but the provided normal references also contain pigmented nevi, trust A.",
+      "text": "If Branch B (Direct) identifies a 'dark' or 'elongated' lesion in the white matter that appears visually consistent with normal sulcal or ventricular structures in the reference images, trust A (Agent).",
       "source_items": [
-        "D8_0006",
-        "D8_0011",
-        "D8_0049",
-        "D8_0051",
-        "D8_0129"
+        "D9_0049",
+        "D9_0064",
+        "D9_0066",
+        "D9_0077",
+        "D9_0122"
       ],
       "confidence": "oracle",
-      "id": "D8_meta_a_win_1"
+      "id": "D9_meta_a_win_1"
     },
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If Branch A's rationale contains a 'json parse failed' error but Branch B confidently classifies the image as 'normal' based on matching reference morphology, trust A (indicating a likely anomaly).",
+      "text": "If Branch A (Agent) explicitly cites 'normal allowed variations' or 'refutation' of defect-like features in its rationale, trust A (Agent).",
       "source_items": [
-        "D8_0006",
-        "D8_0011",
-        "D8_0049",
-        "D8_0051",
-        "D8_0129"
+        "D9_0049",
+        "D9_0064",
+        "D9_0066",
+        "D9_0077",
+        "D9_0122"
       ],
       "confidence": "oracle",
-      "id": "D8_meta_a_win_2"
+      "id": "D9_meta_a_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If Branch B's rationale states the query image is 'identical' to a provided normal reference image, trust B.",
+      "text": "If Branch A (Agent) claims a 'focal hyperintense lesion' or 'ring-enhancing lesion' but the query image appears structurally symmetrical and lacks a distinct bright or ring-shaped anomaly compared to references, trust B (Direct).",
       "source_items": [
-        "D8_0015",
-        "D8_0053",
-        "D8_0056",
-        "D8_0068",
-        "D8_0127"
+        "D9_0014",
+        "D9_0060"
       ],
       "confidence": "oracle",
-      "id": "D8_meta_b_win_3"
+      "id": "D9_meta_b_win_3"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If Branch A's rationale contains a 'json parse failed' error and Branch B classifies the image as 'normal' citing standard benign features (e.g., reticular pattern, symmetry), trust B.",
+      "text": "If Branch A (Agent) identifies a lesion in the 'periventricular white matter' that is not visually distinguishable from normal tissue texture in the reference images, trust B (Direct).",
       "source_items": [
-        "D8_0015",
-        "D8_0053",
-        "D8_0056",
-        "D8_0068",
-        "D8_0127"
+        "D9_0014",
+        "D9_0060"
       ],
       "confidence": "oracle",
-      "id": "D8_meta_b_win_4"
-    },
-    {
-      "type": "meta_b_win",
-      "category": null,
-      "text": "If Branch B identifies classic melanoma indicators (significant asymmetry, jagged borders, chaotic color) that are explicitly absent in the normal reference set, trust B.",
-      "source_items": [
-        "D8_0015",
-        "D8_0053",
-        "D8_0056",
-        "D8_0068",
-        "D8_0127"
-      ],
-      "confidence": "oracle",
-      "id": "D8_meta_b_win_5"
+      "id": "D9_meta_b_win_4"
     },
     {
       "type": "invariant",
-      "subtype": "count",
+      "subtype": "spatial_layout",
       "category": null,
-      "text": "The image contains exactly one primary skin lesion or pigmented area.",
+      "text": "The brain tissue is centrally located within the image frame, surrounded by a black background.",
       "source_items": [],
       "confidence": "high",
-      "id": "D8_invariant_6"
-    },
-    {
-      "type": "invariant",
-      "subtype": "color_palette",
-      "category": null,
-      "text": "The lesion is composed exclusively of brown, tan, or reddish-brown pigmentation.",
-      "source_items": [],
-      "confidence": "high",
-      "id": "D8_invariant_7"
+      "id": "D9_invariant_5"
     },
     {
       "type": "invariant",
       "subtype": "structural",
       "category": null,
-      "text": "The lesion boundary is continuous and lacks sharp, jagged, or angular edges.",
+      "text": "The brain cross-section exhibits a continuous, roughly oval or circular outer boundary.",
       "source_items": [],
       "confidence": "high",
-      "id": "D8_invariant_8"
+      "id": "D9_invariant_6"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": null,
+      "text": "The image consists of a grayscale palette (black background, gray/white tissue) with no other colors.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D9_invariant_7"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": null,
+      "text": "The brain tissue displays a granular, heterogeneous texture with visible internal structures.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D9_invariant_8"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
       "category": null,
-      "text": "Do not flag lesions with homogeneous dark pigmentation and smooth borders as anomalies.",
+      "text": "Do not flag mild asymmetry in lateral ventricle size or shape as a tumor anomaly.",
       "source_items": [
-        "D8_0000",
-        "D8_0020",
-        "D8_0068"
+        "D9_0066",
+        "D9_0056",
+        "D9_0049"
       ],
       "confidence": "high",
-      "id": "D8_corrective_fp_9"
+      "id": "D9_corrective_fp_9"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
       "category": null,
-      "text": "Do not flag lesions with a central dark blotch or focal hyperpigmentation if the overall border is regular.",
+      "text": "Ignore subtle periventricular hyperintensities or signal variations that lack distinct mass effect or borders.",
       "source_items": [
-        "D8_0049",
-        "D8_0053"
+        "D9_0066",
+        "D9_0014",
+        "D9_0049"
       ],
       "confidence": "high",
-      "id": "D8_corrective_fp_10"
+      "id": "D9_corrective_fp_10"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
       "category": null,
-      "text": "Do not flag diffuse erythema or pinkish background color as a defect in the absence of other malignant features.",
+      "text": "Do not classify global image blurriness, noise, or low contrast as structural brain anomalies.",
       "source_items": [
-        "D8_0071",
-        "D8_0059"
+        "D9_0003",
+        "D9_0044",
+        "D9_0077"
       ],
       "confidence": "high",
-      "id": "D8_corrective_fp_11"
+      "id": "D9_corrective_fp_11"
     }
   ],
   "meta_origin": {
     "error": null,
     "n_a_wins": 5,
-    "n_b_wins": 5
+    "n_b_wins": 2
   },
-  "_shuffled_origin": "D8"
+  "_shuffled_origin": "D9"
 }

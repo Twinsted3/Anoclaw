@@ -1,41 +1,43 @@
 {
   "a_wins_rules": [
-    "If the Agent's rationale explicitly cites a 'reference profiler' or 'allowed variations' to justify a color or label change, trust the Agent.",
-    "If the anomaly involves a subtle count discrepancy (e.g., one extra washer) or a small foreign marking (e.g., black text on a wire) that the Direct branch misses, trust the Agent."
+    "If the query image shows a physical defect (tear, scratch, crush, or peeling seal) that is absent in the reference images, trust A (Agent).",
+    "If the query image shows a structural state change (e.g., open flap vs. closed flap) that differs from the reference images, trust A (Agent).",
+    "If the query image shows a different product variant (different logo, text, or design) compared to the reference images, trust A (Agent)."
   ],
   "b_wins_rules": [
-    "If the Direct branch identifies a missing component (e.g., missing almonds, missing label text) or an extra object (e.g., extra pin, extra block) that the Agent overlooks, trust the Direct branch.",
-    "If the Agent claims a significant visual change (like a missing label or different terminal count) is 'allowed' but the Direct branch flags it as a structural violation, trust the Direct branch."
+    "If the query image shows a handwritten mark (e.g., price tag) on the packaging, trust B (Direct) as it is likely a normal retail marking.",
+    "If the query image shows a different angle or side of the same product (e.g., front vs. back) compared to the reference images, trust B (Direct).",
+    "If the query image shows the product in a different orientation (e.g., upside down) but with no physical defects, trust B (Direct)."
   ],
   "a_evidence": [
-    "D5_0002",
-    "D5_0025",
-    "D5_0055",
+    "D5_0068",
+    "D5_0092",
+    "D5_0097",
     "D5_0107",
-    "D5_0156"
+    "D5_0130",
+    "D5_0137"
   ],
   "b_evidence": [
-    "D5_0074",
-    "D5_0091",
-    "D5_0114",
-    "D5_0142",
-    "D5_0145"
+    "D5_0037",
+    "D5_0056",
+    "D5_0063",
+    "D5_0087"
   ],
-  "raw": "{\n  \"a_wins_rules\": [\n    \"If the Agent's rationale explicitly cites a 'reference profiler' or 'allowed variations' to justify a color or label change, trust the Agent.\",\n    \"If the anomaly involves a subtle count discrepancy (e.g., one extra washer) or a small foreign marking (e.g., black text on a wire) that the Direct branch misses, trust the Agent.\"\n  ],\n  \"b_wins_rules\": [\n    \"If the Direct branch identifies a missing component (e.g., missing almonds, missing label text) or an extra object (e.g., extra pin, extra block) that the Agent overlooks, trust the Direct branch.\",\n    \"If the Agent claims a significant visual change (like a missing label or different terminal count) is 'allowed' but the Direct branch flags it as a structural violation, trust the Direct branch.\"\n  ]\n}",
+  "raw": "{\n  \"a_wins_rules\": [\n    \"If the query image shows a physical defect (tear, scratch, crush, or peeling seal) that is absent in the reference images, trust A (Agent).\",\n    \"If the query image shows a structural state change (e.g., open flap vs. closed flap) that differs from the reference images, trust A (Agent).\",\n    \"If the query image shows a different product variant (different logo, text, or design) compared to the reference images, trust A (Agent).\"\n  ],\n  \"b_wins_rules\": [\n    \"If the query image shows a handwritten mark (e.g., price tag) on the packaging, trust B (Direct) as it is likely a normal retail marking.\",\n    \"If the query image shows a different angle or side of the same product (e.g., front vs. back) compared to the reference images, trust B (Direct).\",\n    \"If the query image shows the product in a different orientation (e.g., upside down) but with no physical defects, trust B (Direct).\"\n  ]\n}",
   "tokens": {
-    "input": 3633,
-    "output": 192
+    "input": 4781,
+    "output": 240
   },
   "error": null,
   "partition_stats": {
-    "agree_correct": 19,
-    "agree_wrong": 10,
-    "disagree_a_wins_total": 5,
-    "disagree_b_wins_total": 6,
-    "reflected_a": 5,
-    "reflected_b": 5,
+    "agree_correct": 21,
+    "agree_wrong": 7,
+    "disagree_a_wins_total": 8,
+    "disagree_b_wins_total": 4,
+    "reflected_a": 6,
+    "reflected_b": 4,
     "skipped": 0
   },
   "domain_code": "D5",
-  "seconds": 18.0
+  "seconds": 21.9
 }

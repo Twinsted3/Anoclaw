@@ -4,403 +4,190 @@
     {
       "unit": [
         "D3",
-        "candle"
+        "breakfast_box"
       ],
       "rulebook": {
         "normal_signature": [
-          "Four circular tea-light candles arranged in a 2x2 grid",
-          "Uniform off-white or cream-colored wax surface",
-          "Single, centered, unburnt wick on each candle",
-          "Smooth, continuous circular perimeter for each candle",
-          "Consistent lighting casting soft shadows to the right",
-          "Treat minor wick alignment variations and slight surface texture differences as normal manufacturing tolerances for candles."
+          "White rectangular container with rounded corners and a central divider",
+          "Left compartment contains exactly three whole fresh fruits (oranges and a peach)",
+          "Right compartment contains a granola layer on top and a dried fruit/nut mix on the bottom",
+          "Dried banana slices are pale yellow and distinct from the brown granola",
+          "Almonds are visible as brown, oval-shaped nuts mixed with the banana slices",
+          "Container is viewed from a top-down perspective against a dark background"
         ],
         "hypothesized_anomaly_modes": [
-          "Structural deformation: The wax body is cracked, melted, or chipped, breaking the circular symmetry.",
-          "Wick failure: The wick is missing, broken, displaced from the center, or already burnt down.",
-          "Foreign contamination: Presence of dust, debris, or foreign objects on the wax surface or background.",
-          "Missing object: One or more candles are absent from the expected 2x2 grid configuration.",
-          "Color defect: Discoloration, staining, or significant color variation inconsistent with the uniform wax tone.",
-          "Treat small, localized reddish or discolored spots on the candle wax surface as anomalies."
+          "Missing or extra fruit items in the left compartment (e.g., only two oranges or four fruits)",
+          "Contamination of the granola section with fresh fruit or the fresh fruit section with granola",
+          "Structural damage to the container such as cracks, missing dividers, or severe deformation",
+          "Presence of foreign objects or non-food items within the compartments",
+          "Significant discoloration or spoilage of the food items (e.g., blackened fruit or moldy granola)",
+          "Flag as anomaly if granola and dried fruit occupy the left compartment while fresh fruit occupies the right compartment."
         ],
         "rules": [
-          "if the image contains exactly four distinct circular objects in a grid pattern then lean normal",
-          "if any candle shows a visible crack, chip, or irregular edge then lean anomaly",
-          "if any wick is missing, broken, or significantly off-center then lean anomaly",
-          "if there are visible foreign particles or debris on the wax surface then lean anomaly",
-          "if the number of candles is not four then lean anomaly",
-          "if the wax surface shows significant discoloration or staining then lean anomaly",
-          "(corrective) Treat small, localized reddish or discolored spots on the candle wax surface as anomalies.",
-          "(corrective) Treat minor wick alignment variations and slight surface texture differences as normal manufacturing tolerances for candles."
+          "if the left compartment does not contain exactly three whole fruits then lean anomaly",
+          "if the right compartment lacks the distinct separation between granola and dried fruit/nut mix then lean anomaly",
+          "if the container is missing the central divider or shows structural cracks then lean anomaly",
+          "if fresh fruit is found inside the granola compartment then lean anomaly",
+          "if the container is not white or the background is not dark then lean anomaly",
+          "if the arrangement matches the three-fruit-left and granola-right pattern then lean normal",
+          "(corrective) Flag as anomaly if granola and dried fruit occupy the left compartment while fresh fruit occupies the right compartment."
         ]
       }
     },
     {
       "unit": [
         "D3",
-        "capsules"
+        "juice_bottle"
       ],
       "rulebook": {
         "normal_signature": [
-          "Uniform translucent lime-green coloration",
-          "Smooth, glossy, capsule-shaped geometry",
-          "Intact surface with no visible cracks or chips",
-          "Consistent size and aspect ratio across instances",
-          "Homogeneous internal texture without foreign inclusions",
-          "Treat minor variations in capsule orientation, spacing, or lighting reflections as normal if shape, color, and texture remain consistent with the reference set."
+          "Small, clear glass bottle with a cylindrical body and a narrow neck",
+          "Transparent screw-top cap with visible threading",
+          "Two distinct yellow labels: a square upper label with a fruit illustration and a rectangular lower label",
+          "Lower label text explicitly reads '100% Juice' in black font",
+          "Liquid fill level is high, reaching the neck of the bottle",
+          "Background is solid black with no external objects",
+          "Treat variations in label iconography (e.g., fruit type) and liquid color as normal if explicitly permitted by reference data.",
+          "Treat variations in fruit iconography and liquid color as normal if explicitly permitted by the reference profiler."
         ],
         "hypothesized_anomaly_modes": [
-          "Structural fracture or cracking of the capsule shell",
-          "Surface contamination or foreign debris adhering to the object",
-          "Color deviation indicating material inconsistency or oxidation",
-          "Deformation or crushing of the capsule shape",
-          "Presence of internal voids or air bubbles disrupting translucency",
-          "Flag as anomaly if any capsule exhibits a distinct white or opaque spot on its surface, indicating a defect or foreign material."
+          "Label defects: The paper labels may be peeling, torn, missing, or have incorrect text/graphics",
+          "Structural damage: The glass bottle may be cracked, chipped, or the cap may be missing or loose",
+          "Content anomalies: The liquid may be spilled, significantly underfilled, or contain visible foreign debris",
+          "Occlusion: The bottle may be partially blocked by an object or the background may be cluttered",
+          "Classify as anomaly if the bottle surface is completely devoid of any label, regardless of allowed content variations.",
+          "Flag as anomaly if the liquid color inside the bottle contradicts the fruit depicted on the label.",
+          "If the label icon depicts a fruit that does not match the liquid's color or implied flavor, classify as anomaly.",
+          "Treat any visible tear, rip, or physical damage to the main product label as a definitive anomaly."
         ],
         "rules": [
-          "if the object exhibits a jagged edge, crack, or missing segment then lean anomaly",
-          "if the object contains a dark spot, speck, or foreign particle on its surface then lean anomaly",
-          "if the object color is significantly darker, lighter, or a different hue than lime-green then lean anomaly",
-          "if the object shape is flattened, crushed, or irregularly distorted then lean anomaly",
-          "if the object maintains a smooth, glossy, and uniform green capsule shape then lean normal",
-          "if the object shows consistent translucency and size relative to neighbors then lean normal",
-          "(corrective) Treat minor variations in capsule orientation, spacing, or lighting reflections as normal if shape, color, and texture remain consistent with the reference set.",
-          "(corrective) Flag as anomaly if any capsule exhibits a distinct white or opaque spot on its surface, indicating a defect or foreign material."
+          "if the bottle is missing the upper fruit label or the lower text label then lean anomaly",
+          "if the text on the lower label is not clearly '100% Juice' then lean anomaly",
+          "if the glass bottle shows visible cracks, chips, or the cap is missing then lean anomaly",
+          "if the liquid level is significantly below the neck or the bottle appears empty then lean anomaly",
+          "if the background contains objects other than the bottle or is not solid black then lean anomaly",
+          "if the bottle shape is consistent with a small glass juice container and both labels are intact then lean normal",
+          "(corrective) Classify as anomaly if the bottle surface is completely devoid of any label, regardless of allowed content variations.",
+          "(corrective) Treat variations in label iconography (e.g., fruit type) and liquid color as normal if explicitly permitted by reference data.",
+          "(corrective) Flag as anomaly if the liquid color inside the bottle contradicts the fruit depicted on the label.",
+          "(corrective) Treat variations in fruit iconography and liquid color as normal if explicitly permitted by the reference profiler.",
+          "(corrective) If the label icon depicts a fruit that does not match the liquid's color or implied flavor, classify as anomaly.",
+          "(corrective) Treat any visible tear, rip, or physical damage to the main product label as a definitive anomaly."
         ]
       }
     },
     {
       "unit": [
         "D3",
-        "cashew"
+        "pushpins"
       ],
       "rulebook": {
         "normal_signature": [
-          "Single, isolated cashew nut centered in the frame",
-          "Distinct kidney or crescent shape with a smooth, continuous outer curve",
-          "Uniform creamy beige to light golden-brown coloration",
-          "Smooth, matte surface texture without visible cracks or holes",
-          "Placed against a dark, textured, non-reflective background",
-          "Intact structure with no missing segments or broken edges"
+          "Transparent plastic storage box with a 3x5 grid of compartments",
+          "Yellow plastic pushpins with cylindrical heads and sharp metal needles",
+          "Pushpins are contained within the grid compartments",
+          "Black background visible through the transparent box",
+          "Pushpins are oriented randomly within their cells",
+          "Classify as normal if pushpins are intact and present, even if randomly oriented or scattered within container compartments.",
+          "Treat random orientation of pushpins within compartments as normal variation, provided pins are intact and undamaged.",
+          "Classify as normal if pins are intact and fully present, regardless of random orientation or rotation within compartments.",
+          "Treat variations in pushpin orientation (vertical, horizontal, tilted) within a grid cell as normal, provided the pin is intact."
         ],
         "hypothesized_anomaly_modes": [
-          "Structural fracture or breakage splitting the nut into multiple pieces",
-          "Surface discoloration indicating mold, rot, or excessive burning",
-          "Foreign object contamination such as shell fragments or debris attached to the nut",
-          "Severe deformation or crushing altering the characteristic kidney shape",
-          "Presence of a second nut or overlapping objects in the frame",
-          "Flag cashews with a significantly reduced curvature or flattened 'C' shape as anomalies, even if surface texture appears normal."
+          "Missing pushpin: A compartment is empty or contains significantly fewer pins than the standard distribution",
+          "Foreign object: An item that is not a yellow pushpin (e.g., a different color, shape, or material) is present in the box",
+          "Structural damage: The plastic box is cracked, broken, or the lid is missing",
+          "Component defect: A pushpin is missing its head or the metal needle is bent/broken",
+          "Containment failure: Pushpins are located outside the grid compartments (e.g., on the lid or outside the box)",
+          "Flag as anomaly if any compartment contains more than one pushpin, regardless of orientation or pin condition.",
+          "Flag as anomaly if any compartment contains more than one pushpin, as standard configuration requires exactly one per slot.",
+          "Flag as anomaly if any pushpin is oriented vertically (head-up or head-down) instead of lying flat horizontally."
         ],
         "rules": [
-          "if the object is split into two or more distinct pieces then lean anomaly",
-          "if the surface contains dark spots, green fuzz, or black char marks then lean anomaly",
-          "if the object is flattened, crushed, or lacks the characteristic crescent curvature then lean anomaly",
-          "if there are foreign particles or shell fragments attached to the nut surface then lean anomaly",
-          "if the object is a single, intact, kidney-shaped nut with uniform color then lean normal",
-          "if the background is a consistent dark texture with no other objects present then lean normal",
-          "(corrective) Flag cashews with a significantly reduced curvature or flattened 'C' shape as anomalies, even if surface texture appears normal."
+          "if any compartment is completely empty then lean anomaly",
+          "if any object inside the box is not a yellow pushpin then lean anomaly",
+          "if the plastic box structure is cracked or missing parts then lean anomaly",
+          "if a pushpin is missing its yellow head or has a bent needle then lean anomaly",
+          "if pushpins are found outside the grid compartments then lean anomaly",
+          "if the image shows a 3x5 grid of yellow pushpins in a clear box then lean normal",
+          "(corrective) Flag as anomaly if any compartment contains more than one pushpin, regardless of orientation or pin condition.",
+          "(corrective) Classify as normal if pushpins are intact and present, even if randomly oriented or scattered within container compartments.",
+          "(corrective) Treat random orientation of pushpins within compartments as normal variation, provided pins are intact and undamaged.",
+          "(corrective) Flag as anomaly if any compartment contains more than one pushpin, as standard configuration requires exactly one per slot.",
+          "(corrective) Classify as normal if pins are intact and fully present, regardless of random orientation or rotation within compartments.",
+          "(corrective) Flag as anomaly if any pushpin is oriented vertically (head-up or head-down) instead of lying flat horizontally.",
+          "(corrective) Treat variations in pushpin orientation (vertical, horizontal, tilted) within a grid cell as normal, provided the pin is intact."
         ]
       }
     },
     {
       "unit": [
         "D3",
-        "chewinggum"
+        "screw_bag"
       ],
       "rulebook": {
         "normal_signature": [
-          "Single, solid rectangular block with rounded corners",
-          "Uniform matte white or off-white surface color",
-          "Smooth texture with no visible cracks, chips, or foreign debris",
-          "Centered placement on a dark, textured fabric background",
-          "Consistent lighting with soft shadows indicating a 3D form",
-          "If the object is a solid, intact bar with smooth surfaces and no visible defects, classify as normal regardless of background texture."
+          "Transparent resealable plastic bag containing a hardware set",
+          "Set includes exactly two hexagonal head bolts",
+          "Set includes exactly two hexagonal nuts",
+          "Set includes exactly two flat washers",
+          "Right edge features a vertical strip of white recycling symbols and text",
+          "Hardware components are metallic and silver in color"
         ],
         "hypothesized_anomaly_modes": [
-          "Structural fracture or cracking due to brittleness or impact",
-          "Surface contamination or foreign object inclusion (e.g., dirt, hair, or other particles)",
-          "Melting or deformation caused by heat exposure, altering the rectangular geometry",
-          "Color inconsistency or staining indicating chemical reaction or age"
+          "Missing components: The bag contains fewer than the standard four small parts (nuts/washers) or fewer than two bolts.",
+          "Foreign object contamination: Presence of non-hardware items such as paper scraps, dust clumps, or debris inside the bag.",
+          "Component damage: Visible bending of bolt threads, cracked nuts, or deformed washers indicating manufacturing defects.",
+          "Packaging failure: The bag is torn, punctured, or the resealable strip is detached or missing.",
+          "Flag as anomaly if the bag contains loose hardware components (bolts, nuts, washers) instead of a single fastener assembly."
         ],
         "rules": [
-          "if the object exhibits visible cracks, splits, or missing chunks then lean anomaly",
-          "if the object surface contains distinct foreign particles or debris then lean anomaly",
-          "if the object shape is distorted, melted, or lacks the standard rectangular geometry then lean anomaly",
-          "if the object displays significant discoloration or non-uniform staining then lean anomaly",
-          "if the object is a solid, intact white block with rounded corners on a dark background then lean normal",
-          "(corrective) If the object is a solid, intact bar with smooth surfaces and no visible defects, classify as normal regardless of background texture."
+          "if the count of hexagonal head bolts is not exactly two then lean anomaly",
+          "if the count of hexagonal nuts is not exactly two then lean anomaly",
+          "if the count of flat washers is not exactly two then lean anomaly",
+          "if any object inside the bag is not a bolt, nut, or washer then lean anomaly",
+          "if the vertical strip of recycling symbols is missing from the right edge then lean anomaly",
+          "if the bag material shows visible tears or holes then lean anomaly",
+          "if the hardware components appear bent, cracked, or severely deformed then lean anomaly",
+          "if the image shows exactly two bolts, two nuts, and two washers in an intact bag then lean normal",
+          "(corrective) Flag as anomaly if the bag contains loose hardware components (bolts, nuts, washers) instead of a single fastener assembly."
         ]
       }
     },
     {
       "unit": [
         "D3",
-        "fryum"
+        "splicing_connectors"
       ],
       "rulebook": {
         "normal_signature": [
-          "Object is a circular, peach-colored plastic component with a wheel-like structure.",
-          "Six distinct radial spokes connect the central hub to the outer rim.",
-          "A single, small, circular hole is centered in the hub.",
-          "The object is placed on a green, textured, grid-patterned background.",
-          "The outer rim is continuous and unbroken.",
-          "The spoke geometry is symmetrical with uniform spacing."
+          "Two distinct clusters of splicing connectors positioned horizontally on opposite sides",
+          "Connectors feature orange bodies with transparent protective caps",
+          "A single continuous colored cable connects the two connector clusters",
+          "Connectors are arranged in a vertical stack (2 to 4 units high) per side",
+          "Background is a consistent metallic diamond-pattern mesh",
+          "Treat wire color variations as normal if the reference profiler explicitly lists color as an allowed variation for the product class.",
+          "Treat wire color variation as a normal attribute for splicing connectors, regardless of connector housing color.",
+          "Do not flag single-wire assemblies as anomalies if the connector housing is intact and the wire is properly seated."
         ],
         "hypothesized_anomaly_modes": [
-          "Structural fracture: A spoke or section of the rim is broken or missing, compromising the wheel's integrity.",
-          "Manufacturing defect: The central hub hole is missing, misshapen, or obstructed, preventing proper assembly.",
-          "Material contamination: Presence of foreign debris, discoloration, or surface blemishes on the plastic body.",
-          "Geometric deformation: The object is warped, bent, or significantly non-circular, indicating a molding failure.",
-          "Missing component: The object is a partial fragment rather than a complete wheel."
+          "Missing connector: One or more units in the vertical stack are absent, breaking the expected symmetry or count",
+          "Cable disconnection: The connecting cable is severed, missing, or not inserted into the connector ports",
+          "Structural damage: The transparent protective caps are cracked, missing, or the orange housing is deformed",
+          "Foreign object intrusion: Debris or non-cable objects are present on the mesh or obstructing the connectors",
+          "If the image contains a uniform mesh pattern instead of the expected splicing connectors, classify as anomaly."
         ],
         "rules": [
-          "if the object has fewer than six spokes or a broken rim then lean anomaly",
-          "if the central hub hole is missing, filled, or irregularly shaped then lean anomaly",
-          "if the object is not circular or appears warped/bent then lean anomaly",
-          "if the object is peach-colored and has six intact spokes on a green background then lean normal",
-          "if there is visible foreign debris or significant discoloration on the object surface then lean anomaly"
-        ]
-      }
-    },
-    {
-      "unit": [
-        "D3",
-        "macaroni1"
-      ],
-      "rulebook": {
-        "normal_signature": [
-          "Four distinct macaroni pieces arranged in a 2x2 grid",
-          "Uniform light orange/tan coloration with concentric ridges",
-          "Consistent C-shaped or semi-circular geometry with open ends",
-          "Placement on a textured dark green background",
-          "Intact edges with no visible fragmentation or chipping",
-          "Classify as normal if all components share consistent shape, color, and texture, even if lighting or shadows vary slightly.",
-          "If objects are identical in shape, color, and texture with no visible defects, classify as normal regardless of initial uncertainty.",
-          "If components are structurally intact, uniformly colored, and lack visible defects like cracks or chips, classify as normal regardless of minor score fluctuations."
-        ],
-        "hypothesized_anomaly_modes": [
-          "Structural breakage: A piece is snapped in half or has a large chunk missing, compromising the C-shape.",
-          "Foreign object contamination: Presence of non-macaroni debris (e.g., metal shavings, dust clumps) on the surface.",
-          "Color deviation: Significant discoloration such as dark burn marks, mold spots, or bleaching on the pasta surface.",
-          "Deformation: A piece is crushed, flattened, or twisted out of its standard tubular shape.",
-          "Count anomaly: The image contains fewer or more than four pieces, or pieces are overlapping.",
-          "Flag as anomaly if any piece exhibits a visible notch, chip, or missing segment on the rim, even if the overall shape remains intact."
-        ],
-        "rules": [
-          "if the image contains exactly four distinct macaroni pieces then lean normal",
-          "if any piece exhibits a sharp fracture line or is missing a significant portion of its arc then lean anomaly",
-          "if the background contains high-contrast foreign objects or debris not part of the texture then lean anomaly",
-          "if any piece shows dark spots, blackening, or non-uniform color patches then lean anomaly",
-          "if the pieces are arranged in a scattered or overlapping manner rather than a grid then lean anomaly",
-          "if the pieces maintain a smooth, continuous C-shape with consistent ridges then lean normal",
-          "(corrective) Classify as normal if all components share consistent shape, color, and texture, even if lighting or shadows vary slightly.",
-          "(corrective) Flag as anomaly if any piece exhibits a visible notch, chip, or missing segment on the rim, even if the overall shape remains intact.",
-          "(corrective) If objects are identical in shape, color, and texture with no visible defects, classify as normal regardless of initial uncertainty.",
-          "(corrective) If components are structurally intact, uniformly colored, and lack visible defects like cracks or chips, classify as normal regardless of minor score fluctuations."
-        ]
-      }
-    },
-    {
-      "unit": [
-        "D3",
-        "macaroni2"
-      ],
-      "rulebook": {
-        "normal_signature": [
-          "Four distinct macaroni pieces present in every image",
-          "Uniform pale yellow coloration with visible concentric ridges",
-          "Consistent C-shaped or crescent geometry with a smooth inner curve",
-          "Solid, intact structure with no visible cracks or fragmentation",
-          "Placed on a textured green background"
-        ],
-        "hypothesized_anomaly_modes": [
-          "Structural breakage: A piece is snapped in half or has a jagged fracture line",
-          "Missing component: One or more of the four macaroni pieces is absent from the frame",
-          "Foreign object intrusion: A non-macaroni item (e.g., debris, different pasta shape) is present",
-          "Severe deformation: A piece is crushed, flattened, or twisted out of its natural C-shape",
-          "Surface contamination: Presence of dark spots, mold, or discoloration on the pasta surface"
-        ],
-        "rules": [
-          "if the count of macaroni pieces is not exactly four then lean anomaly",
-          "if any piece exhibits a sharp fracture line or is split into multiple fragments then lean anomaly",
-          "if any piece is significantly flattened or lacks the characteristic hollow C-shape then lean anomaly",
-          "if any object in the image is not a yellow macaroni piece then lean anomaly",
-          "if all four pieces are intact, yellow, and C-shaped then lean normal"
-        ]
-      }
-    },
-    {
-      "unit": [
-        "D3",
-        "pcb1"
-      ],
-      "rulebook": {
-        "normal_signature": [
-          "Blue rectangular PCB with 'HC-SR04' printed in white text",
-          "Two large circular ultrasonic transducers with black mesh grilles",
-          "Four vertical male header pins protruding from the top edge",
-          "White circular rings surrounding the transducer grilles",
-          "Four mounting holes located at the corners of the board",
-          "Small beige rectangular component centered between transducers",
-          "Treat minor surface smudges or discoloration on transducer meshes as normal variations unless accompanied by physical damage or structural deformation.",
-          "Treat minor surface scratches on the PCB substrate and slight discoloration on transducer meshes as normal manufacturing variations."
-        ],
-        "hypothesized_anomaly_modes": [
-          "Missing or bent header pins preventing electrical connection",
-          "Cracked or detached transducer mesh grilles affecting sensor function",
-          "Physical damage to the PCB such as cracks, burns, or delamination",
-          "Missing or illegible text labels indicating manufacturing defect",
-          "Discoloration or corrosion on the solder points or pins",
-          "Flag as anomaly if the module is rotated 180 degrees relative to the reference, causing text to appear upside down.",
-          "Flag as anomaly if the module is rotated 90 degrees such that the pin headers point downwards.",
-          "Flag as anomaly if the HC-SR04 module is rotated 180 degrees, placing the pins at the bottom instead of the top."
-        ],
-        "rules": [
-          "if the four header pins are missing, bent, or not aligned vertically then lean anomaly",
-          "if the black mesh grilles on the transducers are cracked, torn, or missing then lean anomaly",
-          "if the 'HC-SR04' text is missing, faded, or illegible then lean anomaly",
-          "if the PCB shows visible cracks, burn marks, or significant discoloration then lean anomaly",
-          "if the board has the standard blue color, intact pins, and clear text then lean normal",
-          "if the two transducers are symmetric and the white rings are intact then lean normal",
-          "(corrective) Treat minor surface smudges or discoloration on transducer meshes as normal variations unless accompanied by physical damage or structural deformation.",
-          "(corrective) Treat minor surface scratches on the PCB substrate and slight discoloration on transducer meshes as normal manufacturing variations.",
-          "(corrective) Flag as anomaly if the module is rotated 180 degrees relative to the reference, causing text to appear upside down.",
-          "(corrective) Flag as anomaly if the module is rotated 90 degrees such that the pin headers point downwards.",
-          "(corrective) Flag as anomaly if the HC-SR04 module is rotated 180 degrees, placing the pins at the bottom instead of the top."
-        ]
-      }
-    },
-    {
-      "unit": [
-        "D3",
-        "pcb2"
-      ],
-      "rulebook": {
-        "normal_signature": [
-          "Rectangular blue PCB with 'HC-SR04' printed in white on the top-left corner",
-          "Three vertical male header pins protruding from the top edge labeled Gnd, Trig, Echo",
-          "Three primary black integrated circuits (ICs) mounted horizontally: U1 (right), U2 (center), U3 (left)",
-          "Two silver cylindrical crystal oscillators (Y1, Y2) located near the bottom edge",
-          "Four silver mounting holes positioned at the corners of the board",
-          "White silkscreen labels for resistors (R1-R6) and capacitors (C1-C6) arranged in columns",
-          "Do not flag as anomaly if all components are present and correctly placed, even if the board appears clean or lacks visible defects."
-        ],
-        "hypothesized_anomaly_modes": [
-          "Missing or unpopulated ICs (U1, U2, or U3) resulting in empty solder pads",
-          "Bent, broken, or misaligned header pins on the top connector",
-          "Physical damage to the PCB substrate such as cracks, burns, or delamination",
-          "Displaced or missing surface-mount components (resistors/capacitors) or crystal oscillators",
-          "Contamination or corrosion obscuring the white silkscreen text or traces",
-          "Flag as anomaly if the U3 component (left side) exhibits significant surface contamination, smudging, or residue obscuring the component body."
-        ],
-        "rules": [
-          "if the board lacks the three vertical header pins at the top edge then lean anomaly",
-          "if any of the three main black ICs (U1, U2, U3) are missing or replaced by empty pads then lean anomaly",
-          "if the 'HC-SR04' text is missing, illegible, or replaced by different text then lean anomaly",
-          "if the board shape is not a rectangle or the blue solder mask is significantly damaged then lean anomaly",
-          "if the three header pins are present and upright and the three main ICs are populated then lean normal",
-          "if the four corner mounting holes are visible and the board is free of large cracks then lean normal",
-          "(corrective) Flag as anomaly if the U3 component (left side) exhibits significant surface contamination, smudging, or residue obscuring the component body.",
-          "(corrective) Do not flag as anomaly if all components are present and correctly placed, even if the board appears clean or lacks visible defects."
-        ]
-      }
-    },
-    {
-      "unit": [
-        "D3",
-        "pcb3"
-      ],
-      "rulebook": {
-        "normal_signature": [
-          "Rectangular blue PCB with a 3-pin female header on the left side",
-          "Black cylindrical photoresistor sensor on the right side",
-          "Clear LED indicator adjacent to the photoresistor",
-          "Blue square potentiometer with a cross-shaped adjustment slot in the center",
-          "Black 8-pin integrated circuit (IC) chip located centrally",
-          "White silkscreen text including 'OUT GND VCC' and Chinese characters",
-          "Do not flag as anomaly if all components (pins, IC, potentiometer, LEDs) are present and correctly placed, even if the background color is non-standard."
-        ],
-        "hypothesized_anomaly_modes": [
-          "Missing or detached photoresistor sensor, rendering the module unable to detect light",
-          "Broken or bent header pins on the left side, preventing electrical connection",
-          "Displaced or missing IC chip, causing circuit failure",
-          "Cracked or missing potentiometer, preventing sensitivity adjustment",
-          "Physical damage to the PCB substrate such as cracks or delamination"
-        ],
-        "rules": [
-          "if the black cylindrical photoresistor is missing or replaced by a different component then lean anomaly",
-          "if the 3-pin female header is missing, broken, or has fewer than 3 pins then lean anomaly",
-          "if the blue square potentiometer is missing or the cross-slot is not visible then lean anomaly",
-          "if the black IC chip is missing or the component count is significantly different then lean anomaly",
-          "if the PCB is physically cracked or the blue solder mask is extensively damaged then lean anomaly",
-          "if the clear LED is present next to the photoresistor then lean normal",
-          "if the white silkscreen text 'OUT GND VCC' is clearly visible on the left then lean normal",
-          "(corrective) Do not flag as anomaly if all components (pins, IC, potentiometer, LEDs) are present and correctly placed, even if the background color is non-standard."
-        ]
-      }
-    },
-    {
-      "unit": [
-        "D3",
-        "pcb4"
-      ],
-      "rulebook": {
-        "normal_signature": [
-          "Small square blue PCB with a silver USB Type-C connector on the left edge",
-          "Black integrated circuit (IC) chip labeled TC4056A located on the right side",
-          "Four silver plated through-holes at the corners labeled IN+, IN-, BAT+, BAT-",
-          "White silkscreen text and component outlines clearly visible on the blue substrate",
-          "Rectangular surface-mount resistors and capacitors arranged in a specific grid pattern",
-          "Clean, unblemished solder joints on all visible components"
-        ],
-        "hypothesized_anomaly_modes": [
-          "Missing or displaced components (e.g., missing IC chip, resistor, or capacitor) due to manufacturing defects",
-          "Physical damage to the PCB substrate such as cracks, scratches, or delamination",
-          "Defective or misaligned USB Type-C connector (e.g., bent pins, loose housing, or missing metal shell)",
-          "Soldering defects including cold joints, bridging, or insufficient solder on component leads",
-          "Contamination or foreign objects (e.g., dust, debris, or flux residue) obscuring component labels or traces"
-        ],
-        "rules": [
-          "if the USB Type-C connector is missing, broken, or significantly misaligned then lean anomaly",
-          "if the black IC chip is missing or the text TC4056A is not visible then lean anomaly",
-          "if the PCB substrate shows visible cracks, chips, or severe discoloration then lean anomaly",
-          "if any of the four corner mounting holes are missing or deformed then lean anomaly",
-          "if the white silkscreen labels (IN+, IN-, BAT+, BAT-) are completely absent or illegible then lean anomaly",
-          "if the board contains the standard layout of components (IC, resistors, capacitors) and the USB port is intact then lean normal"
-        ]
-      }
-    },
-    {
-      "unit": [
-        "D3",
-        "pipe_fryum"
-      ],
-      "rulebook": {
-        "normal_signature": [
-          "Rectangular cross-section with a consistent aspect ratio",
-          "Uniform beige or light tan coloration throughout the surface",
-          "Fine, granular texture resembling dried pasta or extruded dough",
-          "Solid, continuous structure with no visible internal voids",
-          "Clean, sharp edges with no significant chipping or deformation"
-        ],
-        "hypothesized_anomaly_modes": [
-          "Structural fracture or breakage resulting in missing segments or jagged edges",
-          "Surface contamination such as dark spots, foreign debris, or discoloration",
-          "Extrusion defects causing warping, twisting, or irregular cross-sectional geometry",
-          "Hollowing or internal voids visible through the translucent material",
-          "Excessive surface roughness or pitting deviating from the standard granular texture",
-          "Classify as anomaly if a distinct, localized brownish spot is present on the surface, deviating from the uniform speckled texture.",
-          "Classify any distinct surface crack or perforation hole on the object body as an anomaly."
-        ],
-        "rules": [
-          "if the object has a broken edge or is missing a corner then lean anomaly",
-          "if the object is significantly warped, twisted, or bent then lean anomaly",
-          "if there are distinct dark spots or foreign objects on the surface then lean anomaly",
-          "if the object shows a hollow center or internal void then lean anomaly",
-          "if the object maintains a solid rectangular shape with uniform beige color then lean normal",
-          "if the surface texture is consistent and granular without large pits then lean normal",
-          "(corrective) Classify as anomaly if a distinct, localized brownish spot is present on the surface, deviating from the uniform speckled texture.",
-          "(corrective) Classify any distinct surface crack or perforation hole on the object body as an anomaly."
+          "if the image shows a single continuous cable linking two distinct connector groups then lean normal",
+          "if the connector groups are missing entirely or reduced to a single unit per side then lean anomaly",
+          "if the connecting cable is absent, broken, or disconnected from the orange housing then lean anomaly",
+          "if the transparent caps on the connectors are missing or visibly shattered then lean anomaly",
+          "if the background mesh is obscured by foreign objects or the connectors are not resting on the mesh then lean anomaly",
+          "if the connectors are arranged in a vertical stack with uniform spacing then lean normal",
+          "(corrective) Treat wire color variations as normal if the reference profiler explicitly lists color as an allowed variation for the product class.",
+          "(corrective) If the image contains a uniform mesh pattern instead of the expected splicing connectors, classify as anomaly.",
+          "(corrective) Treat wire color variation as a normal attribute for splicing connectors, regardless of connector housing color.",
+          "(corrective) Do not flag single-wire assemblies as anomalies if the connector housing is intact and the wire is properly seated."
         ]
       }
     }

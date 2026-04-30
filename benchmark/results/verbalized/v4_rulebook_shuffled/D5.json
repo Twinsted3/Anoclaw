@@ -1,144 +1,160 @@
 {
   "domain_code": "D5",
-  "n_rules": 11,
+  "n_rules": 12,
   "rules": [
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the query image contains a distinct, dark, irregular defect or ulceration with surrounding exudate that is clearly absent in all normal reference images, trust A (Agent).",
+      "text": "If Branch A's rationale explicitly cites specific reference images (e.g., 'consistent with Ref2') to refute anomaly features like color variegation or border irregularity, trust A.",
       "source_items": [
-        "D11_0055",
-        "D11_0075",
-        "D11_0165"
+        "D8_0006",
+        "D8_0011",
+        "D8_0049",
+        "D8_0051",
+        "D8_0129"
       ],
       "confidence": "oracle",
-      "id": "D11_meta_a_win_0"
+      "id": "D8_meta_a_win_0"
     },
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If Branch B identifies 'inflammation' or 'granular texture' as pathology, but Branch A explicitly refutes this by attributing the appearance to normal mucus, debris, or fold variation consistent with references, trust A (Agent).",
+      "text": "If Branch B claims a lesion is anomalous solely because it is a pigmented spot on 'clear' skin, but the provided normal references also contain pigmented nevi, trust A.",
       "source_items": [
-        "D11_0055",
-        "D11_0075",
-        "D11_0165"
+        "D8_0006",
+        "D8_0011",
+        "D8_0049",
+        "D8_0051",
+        "D8_0129"
       ],
       "confidence": "oracle",
-      "id": "D11_meta_a_win_1"
+      "id": "D8_meta_a_win_1"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch A's rationale contains a 'json parse failed' error but Branch B confidently classifies the image as 'normal' based on matching reference morphology, trust A (indicating a likely anomaly).",
+      "source_items": [
+        "D8_0006",
+        "D8_0011",
+        "D8_0049",
+        "D8_0051",
+        "D8_0129"
+      ],
+      "confidence": "oracle",
+      "id": "D8_meta_a_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the query image displays a clear anatomical landmark such as the gastroesophageal junction (Z-line), pylorus, or haustral folds with regular convergence, and Branch A flags it as anomalous due to color variation or minor texture differences, trust B (Direct).",
+      "text": "If Branch B's rationale states the query image is 'identical' to a provided normal reference image, trust B.",
       "source_items": [
-        "D11_0012",
-        "D11_0038",
-        "D11_0044",
-        "D11_0046",
-        "D11_0066",
-        "D11_0073",
-        "D11_0088"
+        "D8_0015",
+        "D8_0053",
+        "D8_0056",
+        "D8_0068",
+        "D8_0127"
       ],
       "confidence": "oracle",
-      "id": "D11_meta_b_win_2"
+      "id": "D8_meta_b_win_3"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If Branch A identifies a 'mass', 'plaque', or 'pigmentation' as an anomaly, but the visual evidence shows these features are consistent with normal anatomical structures (e.g., rugal folds, Z-line transition) or procedural artifacts (e.g., endoscope tip, foam) seen in references, trust B (Direct).",
+      "text": "If Branch A's rationale contains a 'json parse failed' error and Branch B classifies the image as 'normal' citing standard benign features (e.g., reticular pattern, symmetry), trust B.",
       "source_items": [
-        "D11_0012",
-        "D11_0038",
-        "D11_0044",
-        "D11_0046",
-        "D11_0066",
-        "D11_0073",
-        "D11_0088"
+        "D8_0015",
+        "D8_0053",
+        "D8_0056",
+        "D8_0068",
+        "D8_0127"
       ],
       "confidence": "oracle",
-      "id": "D11_meta_b_win_3"
+      "id": "D8_meta_b_win_4"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch B identifies classic melanoma indicators (significant asymmetry, jagged borders, chaotic color) that are explicitly absent in the normal reference set, trust B.",
+      "source_items": [
+        "D8_0015",
+        "D8_0053",
+        "D8_0056",
+        "D8_0068",
+        "D8_0127"
+      ],
+      "confidence": "oracle",
+      "id": "D8_meta_b_win_5"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": null,
+      "text": "The image contains exactly one primary skin lesion or pigmented area.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D8_invariant_6"
     },
     {
       "type": "invariant",
       "subtype": "color_palette",
       "category": null,
-      "text": "Mucosal surface is dominated by continuous pink, salmon, or light orange hues.",
+      "text": "The lesion is composed exclusively of brown, tan, or reddish-brown pigmentation.",
       "source_items": [],
       "confidence": "high",
-      "id": "D11_invariant_4"
-    },
-    {
-      "type": "invariant",
-      "subtype": "texture",
-      "category": null,
-      "text": "Surface texture is smooth or exhibits regular, continuous folds (rugae) without disruption.",
-      "source_items": [],
-      "confidence": "high",
-      "id": "D11_invariant_5"
+      "id": "D8_invariant_7"
     },
     {
       "type": "invariant",
       "subtype": "structural",
       "category": null,
-      "text": "No distinct, protruding, or sessile masses (polyps) are present on the mucosal surface.",
+      "text": "The lesion boundary is continuous and lacks sharp, jagged, or angular edges.",
       "source_items": [],
       "confidence": "high",
-      "id": "D11_invariant_6"
-    },
-    {
-      "type": "invariant",
-      "subtype": "structural",
-      "category": null,
-      "text": "No open, crater-like defects (ulcers) with raised or necrotic borders are visible.",
-      "source_items": [],
-      "confidence": "high",
-      "id": "D11_invariant_7"
+      "id": "D8_invariant_8"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
       "category": null,
-      "text": "Do not flag diffuse mucosal erythema or reddish hue as an ulcer if the surface texture remains smooth and intact.",
+      "text": "Do not flag lesions with homogeneous dark pigmentation and smooth borders as anomalies.",
       "source_items": [
-        "D11_0015",
-        "D11_0076"
+        "D8_0000",
+        "D8_0020",
+        "D8_0068"
       ],
       "confidence": "high",
-      "id": "D11_corrective_fp_8"
+      "id": "D8_corrective_fp_9"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
       "category": null,
-      "text": "Do not flag the Z-line (squamocolumnar junction) or gastric folds as a polypoid mass if they follow natural anatomical convergence.",
+      "text": "Do not flag lesions with a central dark blotch or focal hyperpigmentation if the overall border is regular.",
       "source_items": [
-        "D11_0038",
-        "D11_0073",
-        "D11_0076"
+        "D8_0049",
+        "D8_0053"
       ],
       "confidence": "high",
-      "id": "D11_corrective_fp_9"
+      "id": "D8_corrective_fp_10"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
       "category": null,
-      "text": "Do not flag dark shadows, specular reflections, or bile staining as pigmented lesions or plaques.",
+      "text": "Do not flag diffuse erythema or pinkish background color as a defect in the absence of other malignant features.",
       "source_items": [
-        "D11_0012",
-        "D11_0044",
-        "D11_0052",
-        "D11_0066",
-        "D11_0080"
+        "D8_0071",
+        "D8_0059"
       ],
       "confidence": "high",
-      "id": "D11_corrective_fp_10"
+      "id": "D8_corrective_fp_11"
     }
   ],
   "meta_origin": {
     "error": null,
-    "n_a_wins": 3,
-    "n_b_wins": 7
+    "n_a_wins": 5,
+    "n_b_wins": 5
   },
-  "_shuffled_origin": "D11"
+  "_shuffled_origin": "D8"
 }

@@ -15,7 +15,7 @@ mkdir -p "$OUT_DIR"
 MANIFEST_DIR=/hdd1/jiangxi/AD-Agent/benchmark/manifests_v2
 SCRIPT=/hdd1/jiangxi/AD-Agent/benchmark/scripts/agent_v9.py
 
-DOMAINS=(D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12)
+DOMAINS=(D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12)
 for D in "${DOMAINS[@]}"; do
     MANIFEST=$(ls "$MANIFEST_DIR/${D}_"*.json 2>/dev/null | head -1)
     if [ -z "$MANIFEST" ]; then

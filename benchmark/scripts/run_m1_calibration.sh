@@ -18,7 +18,7 @@ mkdir -p "$RESULTS"
 BACKEND=${1:-seedvl}
 SPLIT=calibration
 WORKERS=4
-DOMAINS="D1 D2"   # Start with available domains only
+DOMAINS="D1 D5"   # Start with available domains only
 
 run_variant() {
     local backend=$1

@@ -1,40 +1,40 @@
 [
   {
-    "item_id": "D5_0016",
+    "item_id": "D5_0019",
     "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The only observed difference is the fruit icon and liquid color, which the task rules explicitly exclude as anomalies. The label is intact with no physical damage, tears, or missing text. Therefore, the bottle is normal.",
+    "rationale": "The query image displays a cigarette pack that appears visually normal with no detectable defects, damage, or contamination. The packaging is intact, and the graphics are clear and aligned. Since no candidate defect features were identified, the anomaly score remains low.",
     "label": 0,
     "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0071",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout observed in all reference images: fresh fruit is on the left and granola is on the right. The specific anomaly rule (granola on left, fruit on right) is not violated. No other structural or logical anomalies are present.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
       "corrective_fn"
     ]
   },
   {
-    "item_id": "D5_0060",
-    "score": 0.05,
+    "item_id": "D5_0084",
+    "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "Although the wire color differs (blue vs red), the task rules explicitly state that wire color variations should not be flagged as anomalies if the connector structure and count are intact. The structure is consistent with the references, so the image is normal.",
+    "rationale": "The query image displays the back of a standard Vita tea bottle. The label is intact, the text is legible, the barcode is clear, and the bottle shape is normal. There are no visible signs of defects, damage, or contamination. The difference in view (back vs front) compared to references is expected for a rotated object and does not constitute an anomaly.",
     "label": 0,
     "domain_code": "D5",
-    "category": "splicing_connectors",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0015",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the top edge of the query box is structurally normal and consistent with the reference images, refuting the initial suspicion of a defect. No other anomalies are visible.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_box",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -43,13 +43,27 @@
     ]
   },
   {
-    "item_id": "D5_0040",
-    "score": 0.92,
+    "item_id": "D5_0021",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a blue wire, whereas all reference images show orange wires. Domain knowledge confirms that wire color is a critical attribute for logical correctness in splicing connectors, and a mismatch indicates a wiring error. Therefore, the image is anomalous.",
+    "rationale": "The query image shows no anomalies. The side-by-side comparison with reference images confirms that the packaging is normal, with no defects, damage, or contamination present.",
     "label": 0,
     "domain_code": "D5",
-    "category": "splicing_connectors",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0052",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard Nabati box with no physical defects. The observed edge curvature is a normal variation allowed by the reference profile. No anomalies detected.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_box",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -58,16 +72,29 @@
     ]
   },
   {
-    "item_id": "D5_0062",
-    "score": 0.05,
+    "item_id": "D5_0048",
+    "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The query bottle exhibits a banana label and whitish liquid, which are explicitly listed as allowed variations (fruit label variation, liquid color variation) by the reference profiler. The label is intact and not missing or damaged, so no anomaly is detected.",
+    "rationale": "The apparent defect (crushing) is present in all reference images, indicating it is a normal variation for this product batch rather than an anomaly.",
     "label": 0,
     "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
+    "category": "food_package",
+    "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0036",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query bottle displays a misspelled brand name 'GATGRADE' on the label, which is absent in all reference images showing correct branding. This confirms a packaging defect.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
       "corrective_fn",
       "corrective_fp"
     ]
@@ -76,10 +103,10 @@
     "item_id": "D5_0051",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The candidate anomalies (empty compartments) are present in the reference images, indicating they are normal variations for this product. No compartments contain more than two pins. Therefore, the query image is normal.",
+    "rationale": "The query image shows the back of the package, which is free of any visible defects such as handwritten marks, tears, or stains. The reference images show a defect (handwriting) on the front, but the query image itself is normal.",
     "label": 0,
     "domain_code": "D5",
-    "category": "pushpins",
+    "category": "food_package",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -87,28 +114,114 @@
     ]
   },
   {
-    "item_id": "D5_0069",
-    "score": 0.1,
+    "item_id": "D5_0062",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query bottle differs from references in fruit icon and liquid color, but the domain rules explicitly state this is not an anomaly if the label is intact. The label is intact, so the bottle is normal.",
+    "rationale": "The query image shows a standard HeHui box with no physical defects. Observed shadows and reflections are confirmed as allowed lighting variations by the reference profiler.",
     "label": 0,
     "domain_code": "D5",
-    "category": "juice_bottle",
+    "category": "food_box",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0053",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a blue handwritten marking ('354') on the packaging. The reference profiler indicates that normal variations for this product are limited to rotation, lighting, and crinkling. Since handwritten markings are not an allowed variation and are explicitly flagged as anomalies by domain rules, the package is definitively anomalous.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
       "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0047",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query package exhibits a blue handwritten marking on the label, which is absent in all reference images. Per domain rules, handwritten markings are classified as anomalies. The refutation protocol confirms this feature is not a normal variation.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0073",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0060",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains an attached plastic straw, which is a packaging defect according to domain rules. This feature is absent in all reference images, confirming the anomaly.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0071",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains attached straws and plastic wrapper which are absent in all reference images. Per domain rule 1, this constitutes a packaging defect/anomaly.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
       "corrective_fp"
     ]
   },
   {
     "item_id": "D5_0022",
-    "score": 0.05,
+    "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The candidate feature (empty compartments) was successfully refuted by observing the same feature in the reference images. No other anomalies were detected, so the image is classified as normal.",
+    "rationale": "The query image displays a significantly different packaging design (circular logo, English text) compared to the reference images (square logo, Chinese text), indicating a wrong product variant or packaging defect.",
     "label": 0,
     "domain_code": "D5",
-    "category": "pushpins",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0055",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The bottle, cap, and label appear intact and consistent with the normal reference images. Therefore, the anomaly score is low and the result is final.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_bottle",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -116,163 +229,141 @@
     ]
   },
   {
-    "item_id": "D5_0065",
-    "score": 0.05,
+    "item_id": "D5_0079",
+    "score": 0.15,
     "mode": "anomaly_detection",
-    "rationale": "The candidate anomaly (loose nuts and washers) was found in all reference images, confirming it is a normal variation of the product packaging. No other anomalies were detected.",
+    "rationale": "The candidate features identified (shadow and reflection) are consistent with normal lighting conditions and packaging properties, not defects. The box structure appears intact and matches the expected appearance of a normal product. No anomalies were found that survived initial inspection.",
     "label": 0,
     "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0006",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The candidate anomaly features (empty compartments) were observed in the reference images, refuting them as defects. No other structural anomalies (like >2 pins per compartment) were detected. Therefore, the query is normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0058",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The initial suspicion of an anomaly due to loose parts was refuted by the reference images, which all show the same loose configuration. Therefore, the query image is normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0049",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows loose nuts and washers, which initially seemed anomalous based on the domain rule hint. However, the reference images (normal baseline) all exhibit the same configuration of loose components. The reference profiler confirms that variations in the position of hardware are allowed. Since the query matches the normal references, it is not anomalous.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0019",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query bottle's different fruit icon and liquid color are explicitly listed as allowed variations by the reference profiler. No physical defects like missing labels or tears are present, so the bottle is normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0036",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains loose nuts and washers, which was initially flagged as a potential anomaly. However, the side-by-side comparison with reference images shows that all normal samples also contain loose parts. Therefore, this configuration is the normal baseline, and the query is not anomalous.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0064",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout (fruit left, granola right) consistent with the reference images. No layout reversal or surface defects are observed.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0043",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references (fruit on the left, granola on the right). The specific anomaly rule regarding layout reversal is not triggered. No other defects are visible.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0039",
-    "score": 0.85,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a structural anomaly: the connectors have 2 ports instead of the 3 ports seen in all reference images. While the wire color difference is an allowed variation, the missing port is a structural deviation not covered by the allowed variations, indicating a defect or non-conforming assembly.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
+    "category": "food_box",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
       "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0032",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains attached plastic straws which are not present in any reference image. According to domain rule 1, this constitutes a packaging defect/anomaly that should be flagged.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0006",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query pack exhibits a completely different logo and text layout compared to the reference packs, which is a clear packaging anomaly.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0035",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard instant noodle cup. The only potential anomaly, a slightly uneven foil seal, is explicitly excluded from being a defect by domain rules as long as it is intact, which it is. No other defects like stains or tears are present.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0054",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a standard cylindrical container with intact labeling and no visible signs of damage, contamination, or deformation. The features observed (text, graphics, barcode) are consistent with the normal reference images provided. No candidate defect features were identified.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0067",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays Chinese characters ('黄鹤楼') on the main brand label, whereas all reference images show the English text 'HUANGHELOU' in the same position. This significant discrepancy in the primary branding, relative to the provided normal references, indicates a packaging defect or a different product variant, classifying it as an anomaly.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0010",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a cigarette pack with a completely different central logo (two lions) compared to the reference images (yellow spiral). This difference in graphic design is a clear packaging anomaly, indicating a wrong product or design variation that should be flagged.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0009",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard, undamaged product that matches the appearance of the reference images. No defects, contamination, or anomalies were detected.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
       "corrective_fp"
     ]
   },
   {
     "item_id": "D5_0061",
-    "score": 0.1,
+    "score": 0.95,
     "mode": "anomaly_detection",
-    "rationale": "The query bottle has a different fruit icon and liquid color compared to the references, but the label is intact and there are no structural anomalies. According to the task rules, this is not considered an anomaly.",
+    "rationale": "The query image displays 'SHUANG XI' text, whereas all reference images show '雙喜牌香煙'. This significant and consistent difference in text content and language indicates a packaging defect or incorrect product variant.",
     "label": 0,
     "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0038",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout (fruit left, granola right) consistent with the reference images. The specific logical anomaly defined (reversed layout) is not present. No other defects are visible.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
       "corrective_fn"
     ]
   },
   {
-    "item_id": "D5_0063",
-    "score": 0.92,
+    "item_id": "D5_0074",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a completely empty compartment (top row, 3rd column), which violates the domain rule that compartments should not be empty. The reference images confirm that this position normally contains pins, so the empty slot is a confirmed structural anomaly.",
+    "rationale": "The only potential anomaly, a crinkle on the foil seal, was found to be a normal variation present in the reference images and is explicitly excluded by domain rules. No other defects were detected.",
     "label": 0,
     "domain_code": "D5",
-    "category": "pushpins",
+    "category": "food_bottle",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -280,81 +371,13 @@
     ]
   },
   {
-    "item_id": "D5_0011",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The candidate anomaly feature (loose washers) was successfully refuted because the same feature is present in all provided reference images, indicating it is a normal characteristic of this product packaging.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0029",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a single-wire assembly, whereas the reference baseline (confirmed by profiler) consists of three-wire assemblies. The profiler explicitly lists allowed variations (color, rotation, tension) but excludes wire count changes. Therefore, the missing wires constitute a structural anomaly.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0045",
+    "item_id": "D5_0007",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The candidate anomaly (loose nuts/washers) was refuted because the reference images also show the same configuration. The 'loose' state is a normal variation for this hardware kit, not a defect.",
+    "rationale": "No defect-like features were identified in the query image. The bottle appears normal with intact packaging and labeling, consistent with the reference images.",
     "label": 0,
     "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0042",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout (fruit left, granola right) consistent with the reference images. The potential anomaly of a reversed layout is not present. No other defects are visible.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0030",
-    "score": 0.9,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a compartment with 3 pins, which violates the domain rule of having no more than two pins per compartment. This feature is not present in the reference images, confirming it as an anomaly.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0004",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains empty compartments, which initially seemed anomalous. However, the side-by-side comparison with normal reference images revealed that empty compartments are a common and normal feature in this dataset. Therefore, the query is classified as normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "pushpins",
+    "category": "drink_bottle",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -363,53 +386,311 @@
   },
   {
     "item_id": "D5_0020",
-    "score": 0.05,
+    "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The query image shows loose hardware components, which matches the normal baseline established by the reference images. The candidate features (loose parts) are refuted as they are consistent with the reference set.",
+    "rationale": "No candidate defect features were identified in the query image. The bottle, cap, and label appear intact and consistent with the normal reference images. Therefore, the image is classified as normal.",
     "label": 0,
     "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
     "rule_types": [
-      "corrective_fn"
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0082",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate feature (minor label crease/shadow) by showing it is consistent with normal variations in the reference images. No anomalies were detected.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
     ]
   },
   {
     "item_id": "D5_0028",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query bottle exhibits a different fruit icon and liquid color compared to references, but the reference profiler explicitly lists these as allowed normal variations. The label is intact with no physical damage, so no anomaly is present.",
+    "rationale": "The query image shows a standard product label consistent with the reference images. No defects, contamination, or anomalies were detected after refuting initial candidate features against the normal baseline.",
     "label": 0,
     "domain_code": "D5",
-    "category": "juice_bottle",
+    "category": "drink_can",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0034",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features identified (crinkling and glare) are consistent with normal handling and lighting conditions for flexible packaging, as seen in the reference images. No actual defects like tears, stains, or misprints are present.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0025",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The can's appearance (logo, text, surface condition) is consistent with the normal reference images provided. Therefore, the item is classified as normal.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0024",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a 'Peel' cigarette pack that appears physically intact and sealed. No defects such as tears, open flaps, or contamination are visible. The reference images, while showing different brands, confirm the expected state of a normal, sealed product. With no candidate defect features identified, the anomaly score remains low.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0017",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal bottle rotated to display the back/side panel. The reference profiler confirms that rotation and label visibility changes are allowed variations, and no physical defects are present.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0018",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate features (slight shadow/discoloration and minor scuff marks) were refuted by the side-by-side comparison, as they are present in the reference images. No unique defects were found in the query image, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0041",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with reference images confirms that the minor wrinkles and seal characteristics on the query package are normal variations and not defects. No anomalies were detected.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0085",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the white patch on the top rim is a defect not present in the normal reference images. The anomaly is a clear packaging defect.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0069",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (lid rim irregularity) was found to be a common feature in the reference images, consistent with normal manufacturing variation. Therefore, the product is classified as normal.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0078",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (bright spot on top edge) was refuted by side-by-side comparison with reference images, which showed similar reflections. The packaging is normal.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_box",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0081",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "Side-by-side comparisons with reference images confirm that the observed crumpling and creases are consistent with normal handling variations and not defects. No unique anomalies like tears, stains, or misprints were found.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0013",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows the back of the bottle, which is a normal variation (rotation) explicitly allowed by the reference profile. No defects are present.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0059",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly, slight crinkling on the foil seal, was confirmed to be a normal feature by comparing it with the reference images. No other defects were found.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0002",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks the '8mg' and '中国烟草商标' text present in the reference images and displays different health warning text at the bottom. These are clear packaging defects or version mismatches.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0042",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains an attached plastic straw wrapper, which is absent in all reference images. Per domain rule 1, this is classified as a packaging defect/anomaly.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0077",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query package shows severe deformation and a twisted seal that are not present in the reference images, indicating a clear packaging defect.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0076",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear handwritten blue mark ('269') on the packaging, which is absent in all reference images. This is a definitive packaging defect/contamination.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
       "corrective_fn",
       "corrective_fp"
     ]
   },
   {
     "item_id": "D5_0005",
-    "score": 0.1,
+    "score": 0.95,
     "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references (fresh fruit on the left, granola on the right). The specific anomaly rule (reversed layout) is not triggered. No other defects are visible.",
+    "rationale": "The query image shows a cigarette pack with a completely different logo and text ('大重九' with a shield) compared to the reference images ('9.9' with a laurel wreath). This violates the domain rule to flag packs with completely different graphics as anomalies.",
     "label": 0,
     "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
     "rule_types": [
+      "corrective_fn",
       "corrective_fn"
     ]
   },
   {
-    "item_id": "D5_0044",
-    "score": 0.15,
+    "item_id": "D5_0039",
+    "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The query image shows a structurally sound assembly with 2 connectors on each side and an intact cable. The blue color is explicitly allowed as a non-anomaly per rule 2. No structural defects or missing components are present.",
+    "rationale": "No candidate defect features were identified in the query image. The bottle, cap, and label appear intact and consistent with the normal reference images. Therefore, the anomaly score is low and the result is final.",
     "label": 0,
     "domain_code": "D5",
-    "category": "splicing_connectors",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0011",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a packaging design (celebrity endorsement) that is completely different from the reference images (alarm clock icon). The reference profiler confirms that only minor variations like lighting or rotation are allowed. Since the design mismatch is not an allowed variation, the query is flagged as anomalous.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "drink_can",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -418,166 +699,41 @@
     ]
   },
   {
-    "item_id": "D5_0068",
+    "item_id": "D5_0088",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image shows loose nuts and washers, which initially seemed anomalous based on the domain rule. However, the reference images confirm that this is the normal configuration for this product. Since the feature is present in the normal references, it is not an anomaly.",
+    "rationale": "The query image shows a pristine cigarette pack with no visible defects. The reference images are of different brands and thus irrelevant for defect comparison. No anomalies detected.",
     "label": 0,
     "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
     "rule_types": [
+      "corrective_fn",
       "corrective_fn"
     ]
   },
   {
-    "item_id": "D5_0070",
-    "score": 0.1,
+    "item_id": "D5_0058",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The only difference between query and references is the fruit icon and liquid color, which the task rules explicitly exclude from being flagged as anomalies. The label is intact with no physical damage or missing text, so the bottle is normal.",
+    "rationale": "The query image displays the back of a green tea bottle with a complete and legible nutrition label. This view is consistent with the normal reference images provided. There are no visible defects such as missing labels, tears, contamination, or deformation. The bottle and cap appear intact and normal.",
     "label": 0,
     "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
     "rule_types": [
-      "corrective_fn",
       "corrective_fn",
       "corrective_fp"
     ]
   },
   {
-    "item_id": "D5_0026",
+    "item_id": "D5_0000",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The only difference between the query and references is the cable color (blue vs orange). The reference profiler explicitly states that wire color variation is an allowed variation, and the structural components are identical. Therefore, the image is normal.",
+    "rationale": "The side-by-side comparison refuted the only candidate defect feature, showing it is consistent with normal product variation seen in the reference images. No anomalies were detected.",
     "label": 0,
     "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0052",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "The only difference from references is cable color (blue vs orange), which domain rules explicitly state should not be flagged as anomaly. Connector structure and count are consistent with normal references.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0017",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references (fresh fruit on the left, granola on the right). The specific anomaly rule (reversed layout) is not triggered. No other defects are visible.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0082",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references (fresh fruit on the left, granola on the right). The specific anomaly rule (reversed layout) is not triggered. No other defects are visible.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0048",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query bottle's label is intact with no physical damage, and the difference in fruit icon and liquid color is explicitly allowed by domain rules. No structural or logical anomalies are detected.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0012",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows loose nuts and washers, which was initially suspected as an anomaly. However, the side-by-side comparison with reference images reveals that all normal reference samples also contain loose, unthreaded nuts and washers. Since this feature is consistent with the normal baseline, the query is determined to be normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0075",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image differs from references only in fruit icon and liquid color, which the task rules explicitly define as non-anomalous variations. The label is intact with no physical damage, so the image is normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0084",
-    "score": 0.5,
-    "mode": "anomaly_detection",
-    "rationale": "json parse failed",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0080",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references (fresh fruit on the left, granola on the right). The specific structural anomaly rule (reversed layout) is not triggered, and no other defects are visible.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0067",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "Both candidate anomalies (empty compartments) were found to be present in the reference images at the same locations, indicating they are normal variations rather than defects.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "pushpins",
+    "category": "food_bottle",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -588,10 +744,10 @@
     "item_id": "D5_0014",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The only difference is the wire color (blue vs orange). Domain rule 2 explicitly states that wire color variations should not be flagged as anomalies if the connector structure is intact, which it is.",
+    "rationale": "The query image shows a product that is visually consistent with the normal reference images. The initial candidate for a defect was refuted by the side-by-side comparison, which showed similar features in the references. No anomalies were detected.",
     "label": 0,
     "domain_code": "D5",
-    "category": "splicing_connectors",
+    "category": "food_box",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -600,13 +756,13 @@
     ]
   },
   {
-    "item_id": "D5_0053",
+    "item_id": "D5_0004",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains empty compartments, which initially seemed anomalous based on the domain rule. However, the refutation protocol confirmed that the reference images also contain empty compartments, establishing this as a normal variation for this dataset. No other structural anomalies (like >2 pins per compartment) were found. Thus, the image is normal.",
+    "rationale": "The only potential anomaly (wrinkles) was refuted by the reference images, which show similar natural variations. No other defects were found.",
     "label": 0,
     "domain_code": "D5",
-    "category": "pushpins",
+    "category": "food_package",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -614,16 +770,58 @@
     ]
   },
   {
-    "item_id": "D5_0076",
-    "score": 0.1,
+    "item_id": "D5_0049",
+    "score": 0.5,
     "mode": "anomaly_detection",
-    "rationale": "The query bottle's label is intact, and the difference in fruit icon and liquid color is explicitly allowed by the task rules. No structural or logical anomalies are detected.",
+    "rationale": "json parse failed",
     "label": 0,
     "domain_code": "D5",
-    "category": "juice_bottle",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0026",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (bright white patch) is identified as a specular reflection on the glossy surface, which is a normal artifact and not a defect. No other anomalies are present.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_box",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0086",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "Although the query pack (silver) differs in color from the reference packs (red), the reference profiler explicitly lists 'silver, red, gold' as expected colors for this product. This confirms the query is a valid color variant, not a defect.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0016",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The apparent defect (crinkled seal) is present in the reference images, indicating it is a normal variation for this product. No other anomalies were detected.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
       "corrective_fn",
       "corrective_fp"
     ]
@@ -632,10 +830,10 @@
     "item_id": "D5_0066",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The initial candidate feature (empty compartments) was successfully refuted by the side-by-side comparison, which showed that this is a normal variation present in the reference images. No other anomalies were detected.",
+    "rationale": "The initial candidate defect (uneven wrapper at the bottom) was refuted by the side-by-side tool, which showed the same feature in all reference images. The crinkled foil seal is also a known non-defect. No other anomalies were found, so the product is normal.",
     "label": 0,
     "domain_code": "D5",
-    "category": "pushpins",
+    "category": "food_bottle",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -643,265 +841,27 @@
     ]
   },
   {
-    "item_id": "D5_0085",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image differs from the references in fruit icon and liquid color, but the domain rules explicitly state this is not an anomaly if the label is intact. The label is intact with no physical damage, so the image is normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0081",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The only observed difference is the fruit icon and liquid color, which the task rules explicitly exclude as anomalies. The label is intact with no physical damage, tears, or missing text. Therefore, the query is normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0050",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a different fruit icon and liquid color compared to references, but the label is intact. According to task rule [corrective_fp], this is not considered an anomaly.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0008",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains loose washers, which violates the domain rule requiring washers to be threaded onto bolts. The reference images confirm that the normal state has threaded washers, so the loose washers in the query are a confirmed anomaly.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0073",
-    "score": 0.5,
-    "mode": "anomaly_detection",
-    "rationale": "json parse failed",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0059",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout (fruit left, granola right) consistent with all reference images. The specific logical anomaly rule (reversed layout) is not triggered. No other defects are visible.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0072",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a blue cable, but the reference profiler confirms that wire color variation is an allowed normal variation. The structural components are intact and consistent with the baseline, so the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0024",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only potential anomalies identified were empty compartments. The refutation protocol confirmed that empty compartments are present in the reference images, making them a normal variation for this product. No other structural violations (e.g., >2 pins per cell) were observed.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0034",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains the same components (bolts and washers) in the same state (loose) as the reference images. The reference profiler explicitly lists 'position of hardware inside' as an allowed variation, confirming that the arrangement and loose state of the washers are normal for this product. The candidate feature 'loose washers' is refuted by the reference baseline.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0000",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows compartments with 1 or 2 pins, which is consistent with the normal reference images. No empty or overfilled compartments were found, and random pin orientation is a normal variation. Thus, the image is normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0077",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a hardware kit with loose bolts, nuts, and washers. This configuration is identical to the reference images, and the reference profiler explicitly lists 'position of hardware inside' as an allowed variation. Therefore, the loose state is normal, and no anomaly is detected.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0007",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references (fresh fruit on the left, granola on the right). The specific anomaly rule (reversed layout) is not triggered. No other defects are visible.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0078",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "No anomalies detected: the label is intact, the fruit icon (cherry) matches the liquid color (red), and there are no physical defects. This is a normal variation within the product line.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0018",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The candidate anomaly (empty compartment) was refuted because the reference images, which define the normal baseline, also contain empty or sparsely populated compartments. Thus, the query image is normal.",
-    "label": 0,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0131",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that random pin orientation and placement are normal variations present in the reference images. A full scan of the query image reveals no compartments that are completely empty or contain more than two pins. Therefore, no structural or logical anomalies are detected.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0123",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison reveals that the suspected 'speck' is a very subtle variation in liquid clarity, not a distinct foreign object or structural defect. The label is intact, and the feature does not meet the threshold for a clear anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0176",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly is the blue cable color, but domain rules explicitly state that wire color variations are not anomalies if the structure is intact. The connector structure and count are consistent with the reference images. Therefore, the image is normal.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0110",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references: fresh fruit is on the left and granola is on the right. The specific anomaly condition (granola on left, fruit on right) is not met. No other structural or logical anomalies are visible.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0175",
+    "item_id": "D5_0012",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image shows a single-wire assembly, whereas the reference baseline and profiler confirm that the normal configuration has three wires. Since 'wire count variation' is not listed as an allowed variation, this structural difference is classified as an anomaly.",
+    "rationale": "The query image contains distinct blue handwritten markings on the packaging label. The reference profiler confirms that such markings are not part of the normal allowed variations (which are limited to view angle, lighting, and rotation). According to domain rules, handwritten markings are considered defects. Therefore, the package is anomalous.",
+    "label": 0,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0178",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal egg roll box. The only potential anomaly (glare) is a common lighting effect on glossy surfaces and is explicitly excluded from being a defect by domain rules. No other defects are present.",
     "label": 1,
     "domain_code": "D5",
-    "category": "splicing_connectors",
+    "category": "food_box",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -910,71 +870,56 @@
     ]
   },
   {
-    "item_id": "D5_0108",
-    "score": 0.1,
+    "item_id": "D5_0103",
+    "score": 0.95,
     "mode": "anomaly_detection",
-    "rationale": "The query image shows a bottle with a different fruit icon and liquid color compared to the references, but the label is intact and there are no structural anomalies. According to the task rules, this is not considered an anomaly.",
+    "rationale": "The query image shows a clear packaging defect (open top flap) that is absent in all reference images, confirming the anomaly.",
     "label": 1,
     "domain_code": "D5",
-    "category": "juice_bottle",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0156",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate defect (a potential scuff) was refuted by comparing the query image with reference images, which showed similar variations. No other anomalies were detected. The product appears to be in normal condition.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0117",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a protruding cardboard flap at the top, which is absent in all reference images showing a sealed, flat top. This indicates a packaging defect (e.g., unsealed or damaged box).",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_box",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
-      "corrective_fn",
+      "corrective_fp",
       "corrective_fp"
     ]
   },
   {
     "item_id": "D5_0155",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear physical defect (a torn label) that is absent in all reference images, confirming it as an anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0090",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout observed in all reference images (fruit on the left, granola on the right). No structural or logical anomalies are detected.",
+    "rationale": "The side-by-side comparison confirms that the query image does not contain any unique defects. The observed features are consistent with normal variations seen in the reference images. Therefore, the product is classified as normal.",
     "label": 1,
     "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0093",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "No anomalies detected - the label is intact with proper text and icon, and the liquid color matches the cherry icon logically. Per domain rule 3, fruit/liquid color differences from references are not anomalies when labels are intact.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0152",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "Visual inspection confirms that all compartments contain either one or two pins, with no empty compartments or overcrowded compartments. This adheres to the domain rules, so the image is normal.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "pushpins",
+    "category": "food_bottle",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -982,41 +927,472 @@
     ]
   },
   {
-    "item_id": "D5_0134",
-    "score": 0.1,
+    "item_id": "D5_0139",
+    "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query bottle has an intact label with a cherry icon and matching red liquid. No missing label, physical damage, or logical inconsistency is present. Per domain rule 3, differing fruit/liquid from references is acceptable if the label is intact, which it is.",
+    "rationale": "The only potential anomaly (bottom edge crumple) was refuted by the reference images, which show identical handling marks. The package is normal.",
     "label": 1,
     "domain_code": "D5",
-    "category": "juice_bottle",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0114",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a torn and peeling plastic seal on the rim, a defect not observed in any of the normal reference images. This confirms the presence of a packaging anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0120",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a severe packaging defect (torn label) that is absent in all reference images, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0100",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains an attached plastic straw and wrapper, which is absent in all reference images. This constitutes a packaging defect/anomaly per domain rules.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_can",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0141",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly, a crinkled foil seal, is present in the reference images and is explicitly excluded from being a defect by domain rules if the seal is intact. Therefore, the product is classified as normal.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0166",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query package contains a red handwritten mark on the lower-left corner, which is absent in all reference images. Per domain rules, handwritten markings are classified as anomalies.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0116",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays the back of a product can with clear, undamaged labeling and no visible physical defects such as dents, tears, or contamination. The reference images confirm the product type and show a clean front, supporting the conclusion that the item is normal.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0179",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct hole or missing material at the top center of the box, which is absent in all reference images. This is a clear packaging defect.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_box",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0124",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified. The packaging appears normal with only standard glossy reflections, which are explicitly excluded from being flagged as defects.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_box",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0127",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a jar with a missing lid, which is a clear packaging defect confirmed by the absence of this feature in all reference images.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0105",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query bottle is missing the front label graphics (logo, text, illustration) that are clearly visible on all reference bottles in the same orientation. This is a definitive packaging defect.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0174",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical rectangular mark or dent on the lower body that is not present in any of the normal reference images, confirming it as a packaging defect.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0147",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a plastic straw wrapper attached to the can, which is a clear anomaly not present in the normal reference images. This violates the packaging standard.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0109",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query package exhibits a blue handwritten marking on the front label, which is absent in all reference images. Per domain rules, handwritten markings are classified as anomalies.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0094",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear vertical crease on the packaging that is not present in any of the normal reference images. This structural deformation is a confirmed packaging defect.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0125",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (wrinkles, edge shape) observed in the query are also present in the reference images, indicating they are normal variations and not defects. No other anomalies were detected.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0110",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query pack has an open top flap while all reference packs are closed. According to domain rule 1, open top flaps are considered packaging defects, making this an anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0164",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the slight curvature observed on the query box is also present in the reference images, indicating it is a normal variation and not a defect. No other anomalies were found.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_box",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0165",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate defect feature. The query image shows no anomalies relative to the normal reference images; all observed features are consistent with normal product variation.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0171",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (a slight crease) was refuted by the side-by-side comparison, as it is present in the normal reference images. No other defects were found, so the product is classified as normal.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_box",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0135",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The crumpled plastic seal, initially suspected as a defect, is confirmed to be a normal variation by its presence in the reference images. Therefore, the product is not anomalous.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0115",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a blue handwritten marking ('248') on the packaging, which is absent in all reference images. According to domain rules, such markings are considered anomalies.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0096",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features identified (shadows and reflections) are consistent with normal lighting conditions and glossy packaging, not defects. No physical damage, tears, or contamination is visible on the box. The product appears normal.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_box",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0142",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear label defect (peeling/tearing) on the right side that is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the bottle is anomalous.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
       "corrective_fn",
       "corrective_fp"
     ]
   },
   {
     "item_id": "D5_0122",
-    "score": 0.05,
+    "score": 0.95,
     "mode": "anomaly_detection",
-    "rationale": "The candidate anomaly feature (loose nuts/washers) was found in all reference images, indicating it is a normal state for this product class. No other anomalies were detected.",
+    "rationale": "The query image exhibits a clear structural defect: a torn and open top flap. This feature is absent in all reference images, which show intact packaging. Therefore, the query is definitively anomalous.",
     "label": 1,
     "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
     "rule_types": [
+      "corrective_fn",
       "corrective_fn"
     ]
   },
   {
-    "item_id": "D5_0105",
-    "score": 0.85,
+    "item_id": "D5_0128",
+    "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a structural anomaly: the connectors have 2 positions instead of the 3 positions seen in all reference images. While the blue cable color is an allowed variation, the reduction in connector count is a structural deviation not listed as an allowed variation, making it a logical/structural anomaly.",
+    "rationale": "The query image exhibits a large, irregular hole in the top flap of the packaging, which is absent in all reference images. This confirms a physical packaging defect.",
     "label": 1,
     "domain_code": "D5",
-    "category": "splicing_connectors",
+    "category": "food_box",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0154",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear packaging defect (open and torn top flap) that is absent in the reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0161",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a bottle with a missing cap, whereas all reference images show bottles with intact caps. This deviation is a clear packaging defect, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0158",
+    "score": 0.98,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a torn plastic lid, a clear packaging defect. This anomaly was confirmed by comparing the query against reference images, which all show intact lids. The defect is not a normal variation.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0126",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows an open top flap, which is a defect according to domain rules. This feature is not present in the reference images, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0111",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The plastic straw wrapper attached to the query carton is confirmed as an anomaly since it appears only in the query image and is absent from all reference images, violating the standard packaging presentation.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0176",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because the central logo is missing the rose flower graphic that is clearly present in all reference images. This is a significant visual defect or product mismatch.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0134",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a box with severe structural deformation (bending), which is absent in all reference images showing normal, straight boxes. This confirms the presence of a packaging defect.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_box",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -1026,81 +1402,12 @@
   },
   {
     "item_id": "D5_0151",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query bottle is structurally anomalous because it is empty despite being labeled '100% Juice', whereas all reference images show filled bottles. This violates the logical constraint that a juice bottle must contain liquid.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0126",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a structural anomaly: it contains only one wire, whereas all reference images consistently show three wires. This deviation from the established normal pattern (3 wires) constitutes a logical/structural anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0116",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image displays loose nuts and washers, which initially seemed anomalous based on the domain rule. However, the reference images confirm that this loose configuration is the standard normal state for this product. Therefore, no anomaly is detected.",
+    "rationale": "The potential defect of surface dust was refuted by the reference images, which show similar marks. No other anomalies were detected, so the product is classified as normal.",
     "label": 1,
     "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0103",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references (fruit on the left, granola on the right). The specific structural anomaly rule (reversed layout) is not triggered, and no other defects are visible.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0132",
-    "score": 0.9,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side check confirmed the bag seal is normal, refuting a packaging defect. However, the query image clearly contains a loose bolt and unassembled hardware, which is a structural/logical anomaly compared to the assembled units in the reference images. This violates the domain rule regarding loose parts.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0169",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The potential anomaly of empty compartments was refuted by observing the same feature in the reference images. No other structural violations (like >2 pins per compartment) were detected. Therefore, the image is classified as normal.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "pushpins",
+    "category": "food_bottle",
     "n_rules_injected": 2,
     "rule_types": [
       "corrective_fn",
@@ -1108,159 +1415,13 @@
     ]
   },
   {
-    "item_id": "D5_0101",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the query image is missing the second connector block on the right side, which is present in all reference images. This is a clear structural anomaly (missing part) and not a normal variation.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0138",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear structural anomaly: the granola compartment is empty, which contradicts the normal baseline established by all reference images where this compartment is consistently filled.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0177",
+    "item_id": "D5_0152",
     "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The candidate anomaly (loose washers/nuts) was refuted because the reference images, which define the normal state, also display loose washers and nuts. Therefore, the query image is consistent with the normal baseline.",
+    "rationale": "No candidate defect features were identified on the query image. The can appears to be in normal condition with clear printing and no physical damage, consistent with a normal product.",
     "label": 1,
     "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0153",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a loose green washer in the top-left corner that is not threaded onto a bolt, violating the domain rule that all washers/nuts must be assembled. This feature is not present in the reference images where all parts are assembled.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0136",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout observed in the reference images: fresh fruit is on the left compartment and granola/nuts are on the right. No structural or logical anomalies (such as layout reversal) are detected.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0143",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because the bottom-right compartment, which contains dried fruit and nuts in all reference images, is completely empty in the query. This is a clear structural anomaly (missing component).",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0165",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a loose washer not threaded onto a bolt, which is a structural anomaly compared to the reference images where all parts are properly assembled.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0133",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references (fresh fruit on the left, granola on the right). The specific anomaly rule (reversed layout) is not triggered. No other defects are visible.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0179",
-    "score": 0.5,
-    "mode": "anomaly_detection",
-    "rationale": "json parse failed",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0140",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows compartments with 1 or 2 pins, which matches the normal variation seen in the reference images. No compartments are empty or contain more than two pins, satisfying the domain rules for a normal state.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0109",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout seen in the references (fruit on the left, granola on the right). The specific anomaly rule (granola on left, fruit on right) is not triggered. No other defects are visible.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0159",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only difference is the wire color (blue vs orange). Domain rule 2 explicitly states that wire color variations should not be flagged as anomalies if the connector structure is intact, which it is.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
+    "category": "drink_can",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -1269,389 +1430,13 @@
     ]
   },
   {
-    "item_id": "D5_0160",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a bottle with a green fruit icon and yellow liquid. While this differs from the reference images, the reference profiler explicitly states that variations in the 'label fruit icon' are allowed. Therefore, this is not an anomaly but a permitted variation.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0139",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a blue wire instead of orange, but the reference profiler confirms that wire color variation is an allowed normal variation. The structural components are intact and consistent with the baseline. Thus, no anomaly is detected.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0166",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains loose washers, which violates the domain rule requiring washers to be threaded onto bolts. The reference images confirm that the normal state has threaded washers, so the loose washers in the query are a confirmed anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0127",
+    "item_id": "D5_0093",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image is missing the second connector block required by the normal baseline ('two vertical blocks connected by a horizontal wire'). This structural absence is a clear anomaly.",
+    "rationale": "The query image contains a distinct silver/white patch on the upper right side of the can, which is absent in all reference images. This confirms a packaging defect or contamination anomaly.",
     "label": 1,
     "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0164",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The candidate anomaly (loose nuts/washers) was refuted by the reference profiler, which explicitly lists 'position of hardware inside' as an allowed variation. Thus, the query is normal.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0161",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image adheres to the domain rules: no compartments are empty, and no compartment contains more than two pins. The observed variations (1 or 2 pins per compartment) are consistent with the reference images.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0124",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays loose nuts and washers, whereas the reference images show them assembled on the bolts. This violates the domain rule that flags loose components as anomalies, confirming the query is anomalous.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0117",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query bottle has a different fruit icon and liquid color compared to the references, but the label is intact and there are no structural anomalies. According to the task rules, this is not considered an anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0099",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains loose washers, which is a structural anomaly as per the domain rule. The reference images show the correct configuration with washers threaded onto the bolts, confirming the query is anomalous.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0158",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout observed in the reference images (fruit on the left, granola on the right). No structural or logical anomalies, such as a layout reversal, are detected.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0102",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The only difference between the query and references is the cable color (blue vs orange). Domain rule [corrective_fp] explicitly states not to flag wire color variations if the connector structure is intact. The structure is intact, so this is a normal variation.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0129",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it contains a green washer (color anomaly) and loose nuts/washers (structural anomaly), both of which are absent in the normal reference images where hardware is silver and assembled.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0120",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms the anomaly: the query image (leftmost crop) shows a loose wire with no connector on the left side, whereas all reference images (ref0-ref3) clearly show a complete assembly with a connector block on both ends. This missing component is a definitive structural anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0170",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains completely empty compartments in the bottom right, whereas the reference images show pins in these same locations. This violates the structural rule that compartments should not be empty, confirming a logical anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0092",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct dark, burnt patch on the granola that is not present in any of the reference images, confirming it as an anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0112",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows loose hardware components. The reference profiler explicitly lists 'position of hardware inside' as an allowed variation, and the reference images themselves show loose components. Therefore, the loose state is normal for this product, and no anomaly is detected.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0128",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image clearly violates the domain rule by containing a loose washer and unthreaded nuts, which are absent in the normal reference images where all parts are assembled.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0111",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only observed difference (blue wire) is explicitly listed as an allowed variation by the reference profiler. The structural integrity matches the baseline, so the image is normal.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0100",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The potential anomaly of empty compartments was refuted by the reference images, which show the same pattern. No other structural violations (e.g., >2 pins per compartment) were found. The query is normal.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0149",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a bottle with a different fruit icon and liquid color compared to the references, but the label is intact and there are no structural anomalies. According to the task rules, this is not considered an anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "juice_bottle",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0125",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains loose washers, which is a structural anomaly according to the domain rule. The reference images confirm that the normal state has washers threaded onto the bolts, refuting the possibility that loose washers are a normal variation.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0097",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly (an empty compartment) was found to be a normal variation present in the reference images. No other defects were observed.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0146",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains an empty compartment in the top-left corner, whereas all reference images show a pin in that location. This violates the rule against empty compartments and is confirmed as an anomaly.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "pushpins",
-    "n_rules_injected": 2,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0163",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image follows the standard layout observed in the reference images: fresh fruit on the left and granola on the right. The specific anomaly condition (granola on left, fruit on right) is not met. No other structural or logical defects are visible.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "breakfast_box",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0157",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a structural anomaly: it has only one connector on the right side, while all reference images show three. This deviation from the normal 3-to-3 configuration is confirmed by the side-by-side comparison.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0115",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a blue wire instead of orange, but the reference profiler explicitly allows 'wire color variation'. The structural components (connectors, ports) are intact and consistent with the normal baseline. Therefore, no anomaly is detected.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
-    "n_rules_injected": 3,
-    "rule_types": [
-      "corrective_fn",
-      "corrective_fp",
-      "corrective_fp"
-    ]
-  },
-  {
-    "item_id": "D5_0178",
-    "score": 0.95,
-    "mode": "anomaly_detection",
-    "rationale": "The query image violates the domain rule by containing loose nuts that are not threaded onto the bolts, which is a clear logical/structural anomaly compared to the reference images where nuts are assembled.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
-    "rule_types": [
-      "corrective_fn"
-    ]
-  },
-  {
-    "item_id": "D5_0118",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it is missing the connecting wire that is present in all reference images, violating the expected structural assembly of the product.",
-    "label": 1,
-    "domain_code": "D5",
-    "category": "splicing_connectors",
+    "category": "drink_can",
     "n_rules_injected": 3,
     "rule_types": [
       "corrective_fn",
@@ -1663,13 +1448,272 @@
     "item_id": "D5_0104",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image shows loose nuts and washers, which was initially flagged as a potential anomaly. However, the reference images and the reference profiler confirm that loose parts are the standard configuration for this hardware kit, and variations in position are allowed. Thus, the query is normal.",
+    "rationale": "The query image shows a normal product with no detectable anomalies. The label and cap are intact and match the reference images perfectly.",
     "label": 1,
     "domain_code": "D5",
-    "category": "screw_bag",
-    "n_rules_injected": 1,
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
     "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0175",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query pack displays a completely different main face graphic (large leaf) compared to the reference packs (brand text and icons). This violates the expected design consistency and is flagged as an anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
       "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0098",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected orange spot was refuted by the side-by-side tool, which showed it exists in normal reference images. The remaining feature (crumpled seal) is a minor handling artifact consistent with normal variation. Therefore, the package is normal.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0148",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a foreign sticker on the can's shoulder that is absent in all reference images, confirming a packaging anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0140",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The package shows no significant defects. The minor wrinkles observed are consistent with normal handling of flexible packaging and do not constitute an anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0113",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack with an open top flap, which is a packaging defect. The reference images show the same product with the flap closed, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "cigarette_box",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D5_0132",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a vertical white streak/tear on the grape illustration in the query image that is absent in all reference images. This confirms a packaging defect (scratch/tear/contamination) on the query can.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0136",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (bright glare) was refuted by the side-by-side tool, which showed it is a normal specular reflection on the glossy surface. No other defects were observed.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_box",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0131",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a product consistent with the reference images. No unique defects, damage, or contamination were identified. All observed variations are within the normal range of appearance for this product.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0108",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The bottle, cap, and label appear intact and consistent with the normal reference images. Since the candidate feature list is empty and the initial score is low, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0123",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a torn and bent top flap on the Oreo box, which is a clear physical defect. The side-by-side comparison with reference images confirms that this damage is not present in normal instances, validating the anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_box",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0168",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows the back of the bottle, which is a normal view of the product. There are no signs of damage, missing labels, or contamination. The variation in label content (barcode vs. front graphic) is expected and not an anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0119",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a white plastic straw wrapper attached to the right side of the carton, which is absent in all reference images. According to domain rule 1, attached plastic straw wrappers are considered packaging defects, making this an anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0150",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the date code and barcode are standard printed elements, consistent with the reference images. No defects such as handwritten markings, tears, or contamination were found. The package is normal.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_package",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0172",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected defect (slight deformation) was compared against reference images and found to be a common variation, thus refuting the anomaly hypothesis. No other defects were observed.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0149",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a label peeling off the bottle, which is a clear packaging defect. This feature is not present in any of the reference images, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0118",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard Kirin FIRE coffee bottle. Comparison with reference images confirms that the label, cap, and overall appearance are normal, with no defects or anomalies detected.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0129",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows the query can has a damaged, crinkled top seal, which is absent in all reference images. This is a clear packaging defect.",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "food_bottle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D5_0177",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D5",
+    "category": "drink_can",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp",
+      "corrective_fp"
     ]
   }
 ]

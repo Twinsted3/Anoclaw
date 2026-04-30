@@ -1,18 +1,16 @@
 {
   "domain_code": "D2",
-  "n_rules": 6,
+  "n_rules": 5,
   "rules": [
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the query image shows a physical defect (tear, scratch, crush, or peeling seal) that is absent in the reference images, trust A (Agent).",
+      "text": "If the query image shows a rigid object (like a PCB) that is rotated 180 degrees relative to the reference images, causing text labels and pin headers to appear inverted or upside down, trust A (Agent).",
       "source_items": [
-        "D2_0068",
         "D2_0092",
-        "D2_0097",
-        "D2_0107",
-        "D2_0130",
-        "D2_0137"
+        "D2_0132",
+        "D2_0152",
+        "D2_0174"
       ],
       "confidence": "oracle",
       "id": "D2_meta_a_win_0"
@@ -20,42 +18,42 @@
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the query image shows a structural state change (e.g., open flap vs. closed flap) that differs from the reference images, trust A (Agent).",
+      "text": "If the query image shows a component (like an LED) that is physically bent, tilted, or deformed compared to the upright components in the reference images, trust A (Agent).",
       "source_items": [
-        "D2_0068",
         "D2_0092",
-        "D2_0097",
-        "D2_0107",
-        "D2_0130",
-        "D2_0137"
+        "D2_0132",
+        "D2_0152",
+        "D2_0174"
       ],
       "confidence": "oracle",
       "id": "D2_meta_a_win_1"
     },
     {
-      "type": "meta_a_win",
+      "type": "meta_b_win",
       "category": null,
-      "text": "If the query image shows a different product variant (different logo, text, or design) compared to the reference images, trust A (Agent).",
+      "text": "If the query image contains small, localized surface defects such as chips, breaks, or contamination spots (e.g., red specks) on the object itself, trust B (Direct).",
       "source_items": [
-        "D2_0068",
-        "D2_0092",
-        "D2_0097",
-        "D2_0107",
-        "D2_0130",
-        "D2_0137"
+        "D2_0030",
+        "D2_0033",
+        "D2_0044",
+        "D2_0123",
+        "D2_0131",
+        "D2_0153"
       ],
       "confidence": "oracle",
-      "id": "D2_meta_a_win_2"
+      "id": "D2_meta_b_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the query image shows a handwritten mark (e.g., price tag) on the packaging, trust B (Direct) as it is likely a normal retail marking.",
+      "text": "If the query image shows a defect on the background surface (e.g., a scratch or mark) rather than on the object, trust B (Direct).",
       "source_items": [
-        "D2_0037",
-        "D2_0056",
-        "D2_0063",
-        "D2_0087"
+        "D2_0030",
+        "D2_0033",
+        "D2_0044",
+        "D2_0123",
+        "D2_0131",
+        "D2_0153"
       ],
       "confidence": "oracle",
       "id": "D2_meta_b_win_3"
@@ -63,33 +61,22 @@
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the query image shows a different angle or side of the same product (e.g., front vs. back) compared to the reference images, trust B (Direct).",
+      "text": "If the query image appears visually identical to the reference images with no obvious orientation changes or deformations, trust B (Direct) to avoid false positives from minor lighting or texture variations.",
       "source_items": [
-        "D2_0037",
-        "D2_0056",
-        "D2_0063",
-        "D2_0087"
+        "D2_0030",
+        "D2_0033",
+        "D2_0044",
+        "D2_0123",
+        "D2_0131",
+        "D2_0153"
       ],
       "confidence": "oracle",
       "id": "D2_meta_b_win_4"
-    },
-    {
-      "type": "meta_b_win",
-      "category": null,
-      "text": "If the query image shows the product in a different orientation (e.g., upside down) but with no physical defects, trust B (Direct).",
-      "source_items": [
-        "D2_0037",
-        "D2_0056",
-        "D2_0063",
-        "D2_0087"
-      ],
-      "confidence": "oracle",
-      "id": "D2_meta_b_win_5"
     }
   ],
   "meta_origin": {
     "error": null,
-    "n_a_wins": 6,
-    "n_b_wins": 4
+    "n_a_wins": 4,
+    "n_b_wins": 6
   }
 }

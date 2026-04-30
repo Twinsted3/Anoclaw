@@ -31,7 +31,7 @@ import agent_v9 as v9_mod  # noqa: E402
 from infer import get_client, get_model_name  # noqa: E402
 
 
-MULTI_CLASS_DOMAINS = {"D1", "D2", "D3", "D4", "D5", "D6"}
+MULTI_CLASS_DOMAINS = {"D1", "D5", "D2", "D6", "D3", "D4"}
 
 DOMAIN_CONFIG_PATH = "/hdd1/jiangxi/AD-Agent/benchmark/manifests_v2/domain_config.json"
 

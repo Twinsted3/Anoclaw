@@ -84,7 +84,7 @@ Rule *content* is the mechanism, not the additional call.
 8. **Earlier evaluation and negative results.** Design-exploration findings (descriptors dominate, debate hurts, calibration-router ≈ fusion on 2/3 backbones). Framed as 'what we tried before the ensemble insight arrived.'
 9. **Cross-benchmark transfer.** MMAD AD subset paragraph.
 10. **Semi-supervised controller extension.** 480-label rulebook, four-way ablation, CI-excludes-zero evidence.
-11. **Discussion and limitations.** D6 3D and D10 Liver-CT floors; weak-backbone tool-usage refinement as future work; controller transfer to other backbones.
+11. **Discussion and limitations.** D4 3D and D10 Liver-CT floors; weak-backbone tool-usage refinement as future work; controller transfer to other backbones.
 
 ## Figure Inventory (reuse from current paper, re-captioned)
 

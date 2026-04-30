@@ -1,17 +1,18 @@
 {
   "domain_code": "D5",
-  "n_rules": 4,
+  "n_rules": 6,
   "rules": [
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the Agent's rationale explicitly cites a 'reference profiler' or 'allowed variations' to justify a color or label change, trust the Agent.",
+      "text": "If the query image shows a physical defect (tear, scratch, crush, or peeling seal) that is absent in the reference images, trust A (Agent).",
       "source_items": [
-        "D5_0002",
-        "D5_0025",
-        "D5_0055",
+        "D5_0068",
+        "D5_0092",
+        "D5_0097",
         "D5_0107",
-        "D5_0156"
+        "D5_0130",
+        "D5_0137"
       ],
       "confidence": "oracle",
       "id": "D5_meta_a_win_0"
@@ -19,49 +20,76 @@
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the anomaly involves a subtle count discrepancy (e.g., one extra washer) or a small foreign marking (e.g., black text on a wire) that the Direct branch misses, trust the Agent.",
+      "text": "If the query image shows a structural state change (e.g., open flap vs. closed flap) that differs from the reference images, trust A (Agent).",
       "source_items": [
-        "D5_0002",
-        "D5_0025",
-        "D5_0055",
+        "D5_0068",
+        "D5_0092",
+        "D5_0097",
         "D5_0107",
-        "D5_0156"
+        "D5_0130",
+        "D5_0137"
       ],
       "confidence": "oracle",
       "id": "D5_meta_a_win_1"
     },
     {
-      "type": "meta_b_win",
+      "type": "meta_a_win",
       "category": null,
-      "text": "If the Direct branch identifies a missing component (e.g., missing almonds, missing label text) or an extra object (e.g., extra pin, extra block) that the Agent overlooks, trust the Direct branch.",
+      "text": "If the query image shows a different product variant (different logo, text, or design) compared to the reference images, trust A (Agent).",
       "source_items": [
-        "D5_0074",
-        "D5_0091",
-        "D5_0114",
-        "D5_0142",
-        "D5_0145"
+        "D5_0068",
+        "D5_0092",
+        "D5_0097",
+        "D5_0107",
+        "D5_0130",
+        "D5_0137"
       ],
       "confidence": "oracle",
-      "id": "D5_meta_b_win_2"
+      "id": "D5_meta_a_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the Agent claims a significant visual change (like a missing label or different terminal count) is 'allowed' but the Direct branch flags it as a structural violation, trust the Direct branch.",
+      "text": "If the query image shows a handwritten mark (e.g., price tag) on the packaging, trust B (Direct) as it is likely a normal retail marking.",
       "source_items": [
-        "D5_0074",
-        "D5_0091",
-        "D5_0114",
-        "D5_0142",
-        "D5_0145"
+        "D5_0037",
+        "D5_0056",
+        "D5_0063",
+        "D5_0087"
       ],
       "confidence": "oracle",
       "id": "D5_meta_b_win_3"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a different angle or side of the same product (e.g., front vs. back) compared to the reference images, trust B (Direct).",
+      "source_items": [
+        "D5_0037",
+        "D5_0056",
+        "D5_0063",
+        "D5_0087"
+      ],
+      "confidence": "oracle",
+      "id": "D5_meta_b_win_4"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows the product in a different orientation (e.g., upside down) but with no physical defects, trust B (Direct).",
+      "source_items": [
+        "D5_0037",
+        "D5_0056",
+        "D5_0063",
+        "D5_0087"
+      ],
+      "confidence": "oracle",
+      "id": "D5_meta_b_win_5"
     }
   ],
   "meta_origin": {
     "error": null,
-    "n_a_wins": 5,
-    "n_b_wins": 5
+    "n_a_wins": 6,
+    "n_b_wins": 4
   }
 }

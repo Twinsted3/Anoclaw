@@ -53,8 +53,8 @@ import agent_v12_mmad as v12_mmad_mod  # noqa: E402
 MMAD_DATASET_TO_DCODE = {
     "DS-MVTec":   "D1",   # MVTec-AD subset, expert_score AUROC 0.97
     "MVTec-AD":   "D1",
-    "GoodsAD":    "D2",   # expert_score AUROC 0.84
-    "MVTec-LOCO": "D5",   # expert_score AUROC 0.69
+    "GoodsAD":    "D5",   # expert_score AUROC 0.84
+    "MVTec-LOCO": "D3",   # expert_score AUROC 0.69
     # "VisA":     None    # intentionally unmapped — class_name passes through
 }
 
@@ -79,7 +79,7 @@ def v9_agent_run(client, model, item, split, max_turns,
 
     Args:
       use_dataset_dcode: if True, map item['dataset'] to a CrossDomainVAD-11
-        D-code (D1/D2/D5) so tool_expert_score can be invoked. VisA stays
+        D-code (D1/D5/D3) so tool_expert_score can be invoked. VisA stays
         on its class_name (no expert). Default False — preserves the
         legacy "class_name as domain_code" behaviour from earlier runs.
     """

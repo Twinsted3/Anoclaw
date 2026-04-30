@@ -76,7 +76,7 @@ def tool_visual_retrieval(query_image_path, domain_code, k=4,
 # ─── Tool 2: Domain Knowledge ────────────────────────────────────────────────
 
 # manifests_v2 taxonomy (2026-04-21). Keys correspond to benchmark/manifests_v2/domain_config.json:
-# D1=MVTec-AD, D2=GoodsAD, D3=VisA, D4=SDNET, D5=MVTec-LOCO, D6=Real3D-AD, D7=LEVIR-CD+,
+# D1=MVTec-AD, D5=GoodsAD, D2=VisA, D6=SDNET, D3=MVTec-LOCO, D4=Real3D-AD, D7=LEVIR-CD+,
 # D8=DermaMNIST, D9=BraTS, D10=BMAD-Liver, D11=HyperKvasir, D12=BDD100K+RoadAnomaly21.
 DOMAIN_KNOWLEDGE = {
     "D1": {
@@ -94,7 +94,7 @@ DOMAIN_KNOWLEDGE = {
             "Normal manufacturing tolerance in dimensions",
         ],
     },
-    "D2": {
+    "D5": {
         "domain": "Retail Products (GoodsAD)",
         "normal": "Intact consumer products (bottles, cans, boxes, packages)",
         "anomaly_criteria": [
@@ -109,7 +109,7 @@ DOMAIN_KNOWLEDGE = {
             "Slight color differences due to lighting",
         ],
     },
-    "D3": {
+    "D2": {
         "domain": "Industrial Inspection (VisA)",
         "normal": "Defect-free manufactured items (PCBs, capsules, candles, etc.)",
         "anomaly_criteria": [
@@ -123,7 +123,7 @@ DOMAIN_KNOWLEDGE = {
             "Lighting artifacts or reflections",
         ],
     },
-    "D4": {
+    "D6": {
         "domain": "Infrastructure Maintenance (SDNET2018)",
         "normal": "Intact concrete surfaces (deck, pavement, wall)",
         "anomaly_criteria": [
@@ -138,7 +138,7 @@ DOMAIN_KNOWLEDGE = {
             "Shadows from nearby objects",
         ],
     },
-    "D5": {
+    "D3": {
         "domain": "Logical Anomaly (MVTec-LOCO)",
         "normal": "Correctly assembled products with right parts in right positions",
         "anomaly_criteria": [
@@ -153,7 +153,7 @@ DOMAIN_KNOWLEDGE = {
             "Color variation in same-type components",
         ],
     },
-    "D6": {
+    "D4": {
         "domain": "3D Product — rendered point cloud (Real3D-AD)",
         "normal": "Geometrically intact product matching reference shape (no bulge, sink, hole, or added material)",
         "anomaly_criteria": [

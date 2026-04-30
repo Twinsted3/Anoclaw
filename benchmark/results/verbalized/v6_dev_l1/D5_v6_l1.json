@@ -1,0 +1,491 @@
+[
+  {
+    "item_id": "D5_0021",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "screw_bag",
+    "anomaly_score": 0.085,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly 2 bolts, 2 hexagonal nuts, and 2 flat washers, which matches the normal configuration defined in the domain rules and observed in the reference images. No logical or structural anomalies are detected.",
+    "n_turns": 1,
+    "tools_used": [],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0046",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "pushpins",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image violates the invariant rule that every compartment must contain exactly one pushpin. The bottom-right compartment clearly contains two pushpins, whereas all reference images show exactly one pushpin per compartment. This is a definitive logical anomaly.",
+    "n_turns": 1,
+    "tools_used": [],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0027",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "pushpins",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a compartment with no pushpin, violating the invariant that every compartment must contain exactly one pushpin. This defect was confirmed by comparing the specific region against all reference images, which all show a pushpin in that location.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0031",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "breakfast_box",
+    "anomaly_score": 0.030000000000000006,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image adheres to the normal structural rules (3 fruits, granola/dried fruit layout). The reference profiler confirms that variations in fruit arrangement are normal. No anomalies detected.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0002",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "juice_bottle",
+    "anomaly_score": 0.03500000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The reference profiler explicitly lists 'label fruit icon change' and 'liquid color variation' as allowed normal variations. The query's differences (cherry icon, red liquid) match these allowed variations, so no anomaly is present.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0079",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "breakfast_box",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The reference profiler explicitly lists 'fruit arrangement order' as an allowed variation, refuting the only potential anomaly candidate. The structural layout of the tray and its contents matches the normal baseline, confirming the image is not anomalous.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0056",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "screw_bag",
+    "anomaly_score": 0.05500000000000001,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly 2 bolts, 2 hexagonal nuts, and 2 flat washers, which matches the normal count rule. No missing parts or incorrect component types are observed. The bag structure is also normal. Therefore, the image is classified as normal.",
+    "n_turns": 1,
+    "tools_used": [],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0035",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "pushpins",
+    "anomaly_score": 0.48,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image violates the logical constraint that every compartment must contain exactly one pushpin. The bottom-right compartment has two pins, and the adjacent one is empty. This configuration is not present in any of the normal reference images, confirming a definite anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0023",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "juice_bottle",
+    "anomaly_score": 0.47000000000000003,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image (leftmost crop) displays a banana icon, whereas the reference images (ref0, ref1, ref2) consistently display an orange icon. This mismatch in the label graphic constitutes a logical anomaly (wrong part/identity violation) relative to the established normal baseline.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0001",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "splicing_connectors",
+    "anomaly_score": 0.565,
+    "direct_score": 0.98,
+    "v9_score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image satisfies all three stated invariants: exactly two connector assemblies are present, each assembly consists of exactly three vertically stacked units, and a single continuous cable connects them. No candidate defect-like features were identified that would violate these structural rules. The configuration matches the normal pattern seen in the reference images.",
+    "n_turns": 1,
+    "tools_used": [],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0025",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "splicing_connectors",
+    "anomaly_score": 0.95,
+    "direct_score": 0.98,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a structural anomaly: each connector assembly has only 2 stacked units, while the normal baseline established by the reference images consistently shows 3 stacked units. This deviation is not an allowed variation.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_reference_profiler",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0055",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "splicing_connectors",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The reference profiler confirms that wire color variation is an allowed normal variation in this domain. The query image matches the expected structure (two blocks, three units each, connected by a wire) and the blue wire color is explicitly listed as a normal variation. No other candidate features were identified. Therefore, the image is normal.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0074",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "splicing_connectors",
+    "anomaly_score": 0.08,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the structural invariants: two connector assemblies, each with three stacked units, connected by a single continuous cable. The orange cable color is consistent with most references, and the presence of a blue cable in one reference suggests color variation is normal. No logical or structural anomalies are detected.",
+    "n_turns": 1,
+    "tools_used": [],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0037",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "breakfast_box",
+    "anomaly_score": 0.03500000000000001,
+    "direct_score": 0.020000000000000018,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the normal baseline defined by the reference images. The fruit arrangement order is an explicitly allowed variation, and no other logical or structural anomalies are present.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0033",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "splicing_connectors",
+    "anomaly_score": 0.95,
+    "direct_score": 0.98,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image violates the structural invariant requiring three stacked units per connector assembly. The side-by-side comparison proves the query has only one unit on the left (and visually one on the right), while all normal references have three. This is a clear logical/structural anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0054",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "pushpins",
+    "anomaly_score": 0.48,
+    "direct_score": 0.010000000000000009,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image violates the invariant rule that every compartment must contain exactly one pushpin. The bottom-right compartment clearly contains two pushpins, a defect not present in any reference image.",
+    "n_turns": 1,
+    "tools_used": [],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0015",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "breakfast_box",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image adheres to all structural rules: it contains exactly three fruits in the left compartment and the correct food layout in the right. The specific arrangement of fruits is an allowed variation according to the reference baseline. Therefore, the image is normal.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0047",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "pushpins",
+    "anomaly_score": 0.46,
+    "direct_score": 0.0,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a compartment with no pushpin, violating the invariant that every compartment must contain exactly one pushpin. This defect was confirmed by comparing the specific region against all reference images, which all show a pushpin in that location.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0167",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "category": "splicing_connectors",
+    "anomaly_score": 0.525,
+    "direct_score": 1.0,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The reference profiler confirms that wire color variation is an allowed normal variation in this domain. The query image matches the expected structure (two blocks, three units each, single connecting wire) and only differs in wire color (blue vs orange), which is explicitly listed as a normal variation. No structural or logical anomalies are present.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D5_0089",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "category": "breakfast_box",
+    "anomaly_score": 0.025,
+    "direct_score": 0.0,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The reference profiler explicitly lists 'fruit arrangement order' as an allowed variation, refuting the initial suspicion. All other observed features (fruit count, compartment contents) align with the normal baseline. Therefore, the query image is normal.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  }
+]

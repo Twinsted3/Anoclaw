@@ -4,25 +4,30 @@
     {
       "unit": [
         "D5",
-        "screw_bag"
+        "food_package"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "invariants": [
           {
             "type": "count",
-            "statement": "The bag contains exactly 2 bolts, 2 hexagonal nuts, and 2 flat washers.",
-            "evidence": "Every reference image displays a consistent set of 6 hardware items: two threaded bolts, two hex nuts, and two circular washers."
+            "statement": "Exactly one food package object is present in the image.",
+            "evidence": "All 8 reference images show a single, isolated package centered in the frame."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The package is positioned upright on a flat surface against a perforated pegboard background.",
+            "evidence": "Every reference image features the same white pegboard with circular holes as the background."
           },
           {
             "type": "structural",
-            "statement": "The bag features a vertical resealable zipper strip on the right edge with repeating white recycling symbols.",
-            "evidence": "All 8 images show the specific packaging design with the zipper and symbols aligned vertically on the right side."
+            "statement": "The package exhibits a continuous, sealed boundary with no visible tears or holes.",
+            "evidence": "All 8 reference images show intact packaging with continuous edges and no physical damage."
           },
           {
-            "type": "color_palette",
-            "statement": "The hardware components are metallic silver, and the bag is translucent dark grey/black.",
-            "evidence": "Across all images, the bolts, nuts, and washers maintain a uniform silver metallic appearance against the dark bag background."
+            "type": "structural",
+            "statement": "The package surface displays specular highlights consistent with a glossy plastic material.",
+            "evidence": "All 8 reference images show light reflections on the crinkled surface of the bags."
           }
         ],
         "confidence": "high"
@@ -31,40 +36,84 @@
     {
       "unit": [
         "D5",
-        "splicing_connectors"
+        "food_box"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "structural",
+            "statement": "The object is a single, rigid, rectangular prism-shaped packaging box.",
+            "evidence": "All 8 reference images display a box with straight edges, sharp corners, and a consistent 3D rectangular geometry."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The box is positioned upright on a flat surface against a perforated pegboard background.",
+            "evidence": "Every reference image shows the box standing vertically on a white shelf with a white pegboard wall behind it."
+          },
+          {
+            "type": "structural",
+            "statement": "The box surface is smooth and continuous, without tears, holes, or missing pieces.",
+            "evidence": "All 8 images show intact packaging with no visible physical damage or structural discontinuities."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D5",
+        "drink_can"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "invariants": [
           {
             "type": "count",
-            "statement": "Exactly two connector assemblies are present in the image.",
-            "evidence": "All 8 reference images show exactly two distinct connector blocks."
-          },
-          {
-            "type": "count",
-            "statement": "Each connector assembly consists of exactly three vertically stacked units.",
-            "evidence": "Every connector block in all 8 images is composed of a stack of three identical units."
+            "statement": "Exactly one beverage container is present in the center of the frame.",
+            "evidence": "All 8 reference images show a single isolated product (can or carton) with no other objects."
           },
           {
             "type": "structural",
-            "statement": "A single continuous cable connects the two connector assemblies.",
-            "evidence": "In all 8 images, a single wire links the left and right connector stacks."
+            "statement": "The container has a continuous, unbroken vertical boundary with a flat base.",
+            "evidence": "Every reference image shows a structurally intact container standing upright without tears, holes, or deformities."
           },
           {
             "type": "spatial_layout",
-            "statement": "The two connector assemblies are positioned on opposite sides of the image.",
-            "evidence": "In all 8 images, one assembly is on the left and the other is on the right."
+            "statement": "The container is positioned upright on a flat surface against a perforated background.",
+            "evidence": "All 8 images consistently show the product standing vertically on a white shelf with a pegboard wall behind it."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D5",
+        "cigarette_box"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "Exactly one cigarette box is present in the image.",
+            "evidence": "All 8 reference images show a single box centered in the frame."
           },
           {
-            "type": "color_palette",
-            "statement": "The connector bodies are orange and the cable is a solid color.",
-            "evidence": "All 8 images show orange plastic bodies; cables are either yellow, orange, or blue."
+            "type": "spatial_layout",
+            "statement": "The cigarette box is positioned vertically upright inside a clear plastic display holder.",
+            "evidence": "In every reference image, the box stands vertically and is supported by a transparent plastic rack at the bottom."
+          },
+          {
+            "type": "structural",
+            "statement": "The cigarette box has a rigid, rectangular prism geometry with sharp edges.",
+            "evidence": "All 8 boxes maintain a consistent rectangular shape with defined corners and straight edges."
           },
           {
             "type": "texture",
-            "statement": "The background is a uniform metallic mesh pattern.",
-            "evidence": "All 8 images feature the same silver wire mesh background."
+            "statement": "The surface of the cigarette box is smooth and glossy, showing specular highlights.",
+            "evidence": "All 8 images show light reflections (glare) on the packaging, indicating a smooth, wrapped surface."
           }
         ],
         "confidence": "high"
@@ -73,30 +122,35 @@
     {
       "unit": [
         "D5",
-        "juice_bottle"
+        "drink_bottle"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "invariants": [
           {
             "type": "count",
-            "statement": "Exactly two distinct rectangular labels are present on the front face of the bottle.",
-            "evidence": "All 8 reference images show one upper label with a fruit icon and one lower label with text."
+            "statement": "Exactly one drink bottle is present in the image.",
+            "evidence": "All 8 reference images show a single bottle centered in the frame."
           },
           {
             "type": "spatial_layout",
-            "statement": "The upper label is positioned in the vertical center of the bottle body, and the lower label is near the base.",
-            "evidence": "In every image, the fruit label is centrally located and the text label is at the bottom."
+            "statement": "The bottle is positioned upright on a flat surface.",
+            "evidence": "In every reference image, the bottle stands vertically with its base resting on the white surface."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The background consists of a perforated pegboard wall.",
+            "evidence": "All 8 images feature a consistent background of a white pegboard with a grid of holes."
           },
           {
             "type": "structural",
-            "statement": "The bottle has a clear glass body with a narrow neck and a screw-top cap.",
-            "evidence": "All 8 images display the same bottle geometry: cylindrical body, tapered neck, and threaded cap."
+            "statement": "The bottle has a continuous, unbroken cylindrical body.",
+            "evidence": "Every reference image shows a structurally intact bottle without visible cracks, dents, or deformations."
           },
           {
-            "type": "color_palette",
-            "statement": "Both labels feature a yellow background with black text or illustrations.",
-            "evidence": "Every reference image shows the upper and lower labels sharing a consistent yellow color scheme."
+            "type": "structural",
+            "statement": "The bottle is sealed with a cap on top.",
+            "evidence": "All 8 bottles have a screw cap (white, green, or blue) securely attached to the neck."
           }
         ],
         "confidence": "high"
@@ -105,62 +159,30 @@
     {
       "unit": [
         "D5",
-        "breakfast_box"
-      ],
-      "n_refs_seen": 8,
-      "rulebook": {
-        "invariants": [
-          {
-            "type": "structural",
-            "statement": "The container is a white, rectangular tray divided into two distinct compartments.",
-            "evidence": "All 8 reference images show the same white tray with a central divider creating a left and right section."
-          },
-          {
-            "type": "spatial_layout",
-            "statement": "The left compartment contains exactly three whole fruits arranged vertically.",
-            "evidence": "Every reference image displays a vertical stack of three fruits (two oranges, one peach) in the left section."
-          },
-          {
-            "type": "spatial_layout",
-            "statement": "The right compartment is filled with granola in the top half and dried fruit/nuts in the bottom half.",
-            "evidence": "In all 8 images, the granola occupies the upper portion of the right compartment, while banana chips and almonds occupy the lower portion."
-          },
-          {
-            "type": "count",
-            "statement": "The left compartment contains exactly two oranges and one peach.",
-            "evidence": "Across all 8 images, the fruit count is consistently two oranges and one peach, regardless of their vertical order."
-          }
-        ],
-        "confidence": "high"
-      }
-    },
-    {
-      "unit": [
-        "D5",
-        "pushpins"
+        "food_bottle"
       ],
       "n_refs_seen": 8,
       "rulebook": {
         "invariants": [
           {
             "type": "count",
-            "statement": "The container consists of exactly 15 compartments arranged in a 3x5 grid.",
-            "evidence": "All 8 reference images show a clear 3-row by 5-column grid structure."
-          },
-          {
-            "type": "count",
-            "statement": "Every compartment contains exactly one pushpin.",
-            "evidence": "In all 8 reference images, every single one of the 15 compartments holds exactly one pushpin."
-          },
-          {
-            "type": "color_palette",
-            "statement": "Pushpin heads are solid yellow; pins are metallic silver; background is black.",
-            "evidence": "All 8 reference images consistently show yellow heads and silver pins against a black background."
+            "statement": "Exactly one food packaging container is present in the image.",
+            "evidence": "All 8 reference images show a single isolated product container."
           },
           {
             "type": "structural",
-            "statement": "Each pushpin consists of a cylindrical yellow head and a single straight metallic pin.",
-            "evidence": "All pushpins visible in all 8 reference images share this specific geometric structure."
+            "statement": "The container has a continuous, unbroken cylindrical or tapered body.",
+            "evidence": "Every reference image displays a structurally intact container with no visible tears or deformations."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The container is positioned upright on a flat surface.",
+            "evidence": "In all 8 images, the product stands vertically on a white shelf."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The container is centered horizontally within the frame.",
+            "evidence": "All reference images are composed with the product in the central region."
           }
         ],
         "confidence": "high"

@@ -207,7 +207,7 @@ def _get_product_refs(train_good_dir, product_id, n=10):
 
 
 def build_d2_retail(max_per_cat=15):
-    """D2: GoodsAD — retail shelf/product anomaly. Refs matched by product ID."""
+    """D5: GoodsAD — retail shelf/product anomaly. Refs matched by product ID."""
     categories = [d for d in GOODSAD_ROOT.iterdir() if d.is_dir()]
     items = []
     item_idx = 0
@@ -237,9 +237,9 @@ def build_d2_retail(max_per_cat=15):
             pid = _get_goodsad_product_id(img)
             refs = _get_product_refs(train_good, pid) if train_good.exists() else []
             items.append({
-                "item_id": f"D2_{item_idx:04d}",
+                "item_id": f"D5_{item_idx:04d}",
                 "domain": "retail",
-                "domain_code": "D2",
+                "domain_code": "D5",
                 "query_path": str(img),
                 "ref_paths": refs,
                 "label": 0,
@@ -253,9 +253,9 @@ def build_d2_retail(max_per_cat=15):
             pid = _get_goodsad_product_id(img)
             refs = _get_product_refs(train_good, pid) if train_good.exists() else []
             items.append({
-                "item_id": f"D2_{item_idx:04d}",
+                "item_id": f"D5_{item_idx:04d}",
                 "domain": "retail",
-                "domain_code": "D2",
+                "domain_code": "D5",
                 "query_path": str(img),
                 "ref_paths": refs,
                 "label": 1,
@@ -271,7 +271,7 @@ def build_d2_retail(max_per_cat=15):
     random.shuffle(normal); random.shuffle(anomaly)
     items = normal[:90] + anomaly[:90]
     for i, item in enumerate(items):
-        item["item_id"] = f"D2_{i:04d}"
+        item["item_id"] = f"D5_{i:04d}"
     return assign_split(items)
 
 
@@ -286,9 +286,9 @@ LEVIR_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/LEVIR-CD")
 
 
 def build_d3_screening():
-    """D3: PIDray — X-ray prohibited item detection (anomalous=contains weapon/prohibited item)."""
+    """D2: PIDray — X-ray prohibited item detection (anomalous=contains weapon/prohibited item)."""
     if not PIDRAY_ROOT.exists():
-        print("  [WARN] D3: PIDray not found. Run: bash benchmark/scripts/download_datasets.sh pidray")
+        print("  [WARN] D2: PIDray not found. Run: bash benchmark/scripts/download_datasets.sh pidray")
         return []
 
     # PIDray: xray_easy*, xray_hard*, xray_hidden* are anomalous (with prohibited items)
@@ -300,7 +300,7 @@ def build_d3_screening():
             anomaly_imgs.extend(imgs)
 
     if not anomaly_imgs:
-        print("  [WARN] D3: No PIDray images found")
+        print("  [WARN] D2: No PIDray images found")
         return []
 
     random.shuffle(anomaly_imgs)
@@ -315,15 +315,15 @@ def build_d3_screening():
     # PRACTICAL FIX: Download SIXray-10 negatives or use ImageNet X-ray proxies.
     # For now: use 90 from PIDray as anomalous only. Skip normal (unbalanced but honest).
     # Flag: needs normal X-ray sourcing.
-    print(f"  [NOTE] D3: Using {len(anomaly_imgs)} PIDray anomaly images (no normal X-ray available yet)")
+    print(f"  [NOTE] D2: Using {len(anomaly_imgs)} PIDray anomaly images (no normal X-ray available yet)")
     # Create balanced set by treating some as "less anomalous" if we have enough variety
     # For benchmark correctness, we only include items we can label correctly
     items = []
     for i, img in enumerate(anomaly_imgs):
         items.append({
-            "item_id": f"D3_{i:04d}",
+            "item_id": f"D2_{i:04d}",
             "domain": "screening",
-            "domain_code": "D3",
+            "domain_code": "D2",
             "query_path": str(img),
             "ref_paths": [],  # No reference for X-ray (zero-shot domain)
             "label": 1,
@@ -333,16 +333,16 @@ def build_d3_screening():
             "split": None,
         })
 
-    # Since we only have anomalous, we need to skip D3 or accept imbalanced
+    # Since we only have anomalous, we need to skip D2 or accept imbalanced
     # Return empty to skip — will revisit when we have normal X-rays
-    print("  [SKIP] D3: Cannot build balanced manifest without normal X-ray images. Skipping for now.")
+    print("  [SKIP] D2: Cannot build balanced manifest without normal X-ray images. Skipping for now.")
     return []
 
 
 def build_d4_maintenance():
-    """D4: SDNET2018 — concrete crack detection (anomalous=cracked)."""
+    """D6: SDNET2018 — concrete crack detection (anomalous=cracked)."""
     if not SDNET_ROOT.exists():
-        print("  [WARN] D4: SDNET2018 not found. Run: bash benchmark/scripts/download_datasets.sh sdnet")
+        print("  [WARN] D6: SDNET2018 not found. Run: bash benchmark/scripts/download_datasets.sh sdnet")
         return []
 
     # Structure: D/CD (deck cracked), D/UD (deck uncracked), W/CW, W/UW, P/CP, P/UP
@@ -375,9 +375,9 @@ def build_d4_maintenance():
             random.shuffle(imgs)
             for img in imgs[:60]:  # cap per subdir
                 items.append({
-                    "item_id": f"D4_{item_idx:04d}",
+                    "item_id": f"D6_{item_idx:04d}",
                     "domain": "maintenance",
-                    "domain_code": "D4",
+                    "domain_code": "D6",
                     "query_path": str(img),
                     "ref_paths": refs,
                     "label": label,
@@ -394,13 +394,13 @@ def build_d4_maintenance():
     random.shuffle(normal); random.shuffle(anomaly)
     items = normal[:90] + anomaly[:90]
     for i, item in enumerate(items):
-        item["item_id"] = f"D4_{i:04d}"
-    print(f"  D4: {len(normal)} normal, {len(anomaly)} anomaly images available")
+        item["item_id"] = f"D6_{i:04d}"
+    print(f"  D6: {len(normal)} normal, {len(anomaly)} anomaly images available")
     return assign_split(items)
 
 
 def build_d5_medical():
-    """D5: DermaMNIST — skin lesion anomaly detection (normal=melanocytic nevi, anomaly=melanoma).
+    """D3: DermaMNIST — skin lesion anomaly detection (normal=melanocytic nevi, anomaly=melanoma).
 
     Uses MedMNIST DermaMNIST 224x224 dataset (ISIC skin dermoscopy images).
     Compatible with BMAD/UniMMAD medical AD evaluation protocol.
@@ -413,7 +413,7 @@ def build_d5_medical():
     DERMAMNIST_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST")
     npz_path = DERMAMNIST_ROOT / "dermamnist_224.npz"
     if not npz_path.exists():
-        print("  [WARN] D5: DermaMNIST not found. Run: pip install medmnist && download.")
+        print("  [WARN] D3: DermaMNIST not found. Run: pip install medmnist && download.")
         return []
 
     data = np.load(str(npz_path))
@@ -444,7 +444,7 @@ def build_d5_medical():
                 anomaly_imgs.append(str(img_path))
 
     if not normal_imgs or not anomaly_imgs:
-        print(f"  [WARN] D5: Insufficient DermaMNIST images (normal={len(normal_imgs)}, anomaly={len(anomaly_imgs)})")
+        print(f"  [WARN] D3: Insufficient DermaMNIST images (normal={len(normal_imgs)}, anomaly={len(anomaly_imgs)})")
         return []
 
     random.shuffle(normal_imgs)
@@ -455,15 +455,15 @@ def build_d5_medical():
     normal_imgs = normal_imgs[:90]
     anomaly_imgs = anomaly_imgs[:90]
 
-    print(f"  D5: {len(normal_imgs)} normal (nevi), {len(anomaly_imgs)} anomaly (melanoma) — DermaMNIST")
+    print(f"  D3: {len(normal_imgs)} normal (nevi), {len(anomaly_imgs)} anomaly (melanoma) — DermaMNIST")
 
     items = []
     for i, img in enumerate(normal_imgs):
         refs = random.sample(refs_pool, min(10, len(refs_pool)))
         items.append({
-            "item_id": f"D5_{i:04d}",
+            "item_id": f"D3_{i:04d}",
             "domain": "medical",
-            "domain_code": "D5",
+            "domain_code": "D3",
             "query_path": img,
             "ref_paths": refs,
             "label": 0,
@@ -475,9 +475,9 @@ def build_d5_medical():
     for j, img in enumerate(anomaly_imgs):
         refs = random.sample(refs_pool, min(10, len(refs_pool)))
         items.append({
-            "item_id": f"D5_{90+j:04d}",
+            "item_id": f"D3_{90+j:04d}",
             "domain": "medical",
-            "domain_code": "D5",
+            "domain_code": "D3",
             "query_path": img,
             "ref_paths": refs,
             "label": 1,
@@ -488,18 +488,18 @@ def build_d5_medical():
         })
 
     for i, item in enumerate(items):
-        item["item_id"] = f"D5_{i:04d}"
+        item["item_id"] = f"D3_{i:04d}"
     return assign_split(items)
 
 
 def build_d6_remote_sensing():
-    """D6: LEVIR-CD+ — satellite building change detection (anomalous=changed/damaged buildings).
+    """D4: LEVIR-CD+ — satellite building change detection (anomalous=changed/damaged buildings).
 
     Uses pyarrow to directly read parquet files — avoids datasets library compatibility issues.
     Note: LEVIR-CD+ has ~79 no-change and ~906 changed samples total; uses all 79 normal + 79 anomaly.
     """
     if not LEVIR_ROOT.exists():
-        print("  [WARN] D6: LEVIR-CD not found. Run: bash benchmark/scripts/download_datasets.sh xbd")
+        print("  [WARN] D4: LEVIR-CD not found. Run: bash benchmark/scripts/download_datasets.sh xbd")
         return []
 
     try:
@@ -508,12 +508,12 @@ def build_d6_remote_sensing():
         from PIL import Image
         import io
     except ImportError:
-        print("  [WARN] D6: pyarrow or PIL not available")
+        print("  [WARN] D4: pyarrow or PIL not available")
         return []
 
     parquet_files = sorted(LEVIR_ROOT.rglob("*.parquet"))
     if not parquet_files:
-        print("  [WARN] D6: LEVIR-CD parquet files not found (still downloading?)")
+        print("  [WARN] D4: LEVIR-CD parquet files not found (still downloading?)")
         return []
 
     img_dir = LEVIR_ROOT / "extracted_images"
@@ -566,7 +566,7 @@ def build_d6_remote_sensing():
             break
 
     if not normal_samples:
-        print(f"  [WARN] D6: No no-change LEVIR-CD samples found")
+        print(f"  [WARN] D4: No no-change LEVIR-CD samples found")
         return []
 
     random.shuffle(normal_samples); random.shuffle(anomaly_samples)
@@ -575,14 +575,14 @@ def build_d6_remote_sensing():
     normal_samples = normal_samples[:n_balanced]
     anomaly_samples = anomaly_samples[:n_balanced]
 
-    print(f"  D6: {len(normal_samples)} no-change, {len(anomaly_samples)} changed images (LEVIR-CD+)")
+    print(f"  D4: {len(normal_samples)} no-change, {len(anomaly_samples)} changed images (LEVIR-CD+)")
 
     items = []
     for i, s in enumerate(normal_samples):
         items.append({
-            "item_id": f"D6_{i:04d}",
+            "item_id": f"D4_{i:04d}",
             "domain": "remote_sensing",
-            "domain_code": "D6",
+            "domain_code": "D4",
             "query_path": s["img2"],
             "ref_paths": [s["img1"]],
             "label": 0,
@@ -593,9 +593,9 @@ def build_d6_remote_sensing():
         })
     for j, s in enumerate(anomaly_samples):
         items.append({
-            "item_id": f"D6_{n_balanced+j:04d}",
+            "item_id": f"D4_{n_balanced+j:04d}",
             "domain": "remote_sensing",
-            "domain_code": "D6",
+            "domain_code": "D4",
             "query_path": s["img2"],
             "ref_paths": [s["img1"]],
             "label": 1,
@@ -606,7 +606,7 @@ def build_d6_remote_sensing():
         })
 
     for i, item in enumerate(items):
-        item["item_id"] = f"D6_{i:04d}"
+        item["item_id"] = f"D4_{i:04d}"
     return assign_split(items)
 
 
@@ -1125,13 +1125,13 @@ def _build_bmad_domain(domain_code, domain_name, source_dataset, category, root,
 
 
 def build_d5b_brain():
-    return _build_bmad_domain("D5b", "medical_brain", "BraTS2021", "brain_mri", BRAIN_ROOT)
+    return _build_bmad_domain("D3b", "medical_brain", "BraTS2021", "brain_mri", BRAIN_ROOT)
 
 def build_d5c_liver():
-    return _build_bmad_domain("D5c", "medical_liver", "BMAD-Liver", "liver_ct", LIVER_ROOT)
+    return _build_bmad_domain("D3c", "medical_liver", "BMAD-Liver", "liver_ct", LIVER_ROOT)
 
 def build_d5d_colon():
-    """D5d: Hyper-Kvasir — colon endoscopy anomaly detection."""
+    """D3d: Hyper-Kvasir — colon endoscopy anomaly detection."""
     labeled_dir = HYPER_ROOT / "labeled-images"
     if not labeled_dir.exists():
         # Try to extract
@@ -1143,7 +1143,7 @@ def build_d5d_colon():
                 with zipfile.ZipFile(str(zip_path), 'r') as zf:
                     zf.extractall(str(HYPER_ROOT))
             except Exception as e:
-                print(f"  [WARN] D5d: Failed to extract Hyper-Kvasir: {e}")
+                print(f"  [WARN] D3d: Failed to extract Hyper-Kvasir: {e}")
                 return []
             labeled_dir = HYPER_ROOT / "labeled-images"
         if not labeled_dir.exists():
@@ -1153,7 +1153,7 @@ def build_d5d_colon():
                     labeled_dir = candidate
                     break
     if not labeled_dir.exists():
-        print(f"  [WARN] D5d: Hyper-Kvasir labeled-images not found")
+        print(f"  [WARN] D3d: Hyper-Kvasir labeled-images not found")
         return []
 
     # Hyper-Kvasir structure: labeled-images/lower-gi-tract/pathological-findings/... and .../normal/...
@@ -1176,7 +1176,7 @@ def build_d5d_colon():
 
     random.shuffle(normal_imgs); random.shuffle(anomaly_imgs)
     if not normal_imgs or not anomaly_imgs:
-        print(f"  [WARN] D5d: Insufficient Hyper-Kvasir images (normal={len(normal_imgs)}, anomaly={len(anomaly_imgs)})")
+        print(f"  [WARN] D3d: Insufficient Hyper-Kvasir images (normal={len(normal_imgs)}, anomaly={len(anomaly_imgs)})")
         return []
 
     ref_pool = normal_imgs[:20]
@@ -1187,20 +1187,20 @@ def build_d5d_colon():
     for i, img in enumerate(normal_imgs):
         refs = random.sample(ref_pool, min(10, len(ref_pool)))
         items.append({
-            "item_id": f"D5d_{i:04d}", "domain": "medical_colon", "domain_code": "D5d",
+            "item_id": f"D3d_{i:04d}", "domain": "medical_colon", "domain_code": "D3d",
             "query_path": img, "ref_paths": refs, "label": 0, "anomaly_type": None,
             "source_dataset": "HyperKvasir", "category": "endoscopy", "split": None,
         })
     for j, img in enumerate(anomaly_imgs):
         refs = random.sample(ref_pool, min(10, len(ref_pool)))
         items.append({
-            "item_id": f"D5d_{90+j:04d}", "domain": "medical_colon", "domain_code": "D5d",
+            "item_id": f"D3d_{90+j:04d}", "domain": "medical_colon", "domain_code": "D3d",
             "query_path": img, "ref_paths": refs, "label": 1, "anomaly_type": "pathology",
             "source_dataset": "HyperKvasir", "category": "endoscopy", "split": None,
         })
     for i, item in enumerate(items):
-        item["item_id"] = f"D5d_{i:04d}"
-    print(f"  D5d: {len(normal_imgs)} normal, {len(anomaly_imgs)} anomaly — HyperKvasir")
+        item["item_id"] = f"D3d_{i:04d}"
+    print(f"  D3d: {len(normal_imgs)} normal, {len(anomaly_imgs)} anomaly — HyperKvasir")
     return assign_split(items)
 
 
@@ -1214,39 +1214,39 @@ def build_all():
     domain_stats["D1"] = len(d1)
     save_domain(d1, "D1_industrial")
 
-    print("Building D2: Retail (GoodsAD)...")
+    print("Building D5: Retail (GoodsAD)...")
     d2 = build_d2_retail()
     all_items.extend(d2)
-    domain_stats["D2"] = len(d2)
-    save_domain(d2, "D2_retail")
+    domain_stats["D5"] = len(d2)
+    save_domain(d2, "D5_retail")
 
-    print("Building D3: Screening (PIDray)...")
+    print("Building D2: Screening (PIDray)...")
     d3 = build_d3_screening()
     all_items.extend(d3)
-    domain_stats["D3"] = len(d3)
+    domain_stats["D2"] = len(d3)
     if d3:
-        save_domain(d3, "D3_screening")
+        save_domain(d3, "D2_screening")
 
-    print("Building D4: Maintenance (SDNET2018)...")
+    print("Building D6: Maintenance (SDNET2018)...")
     d4 = build_d4_maintenance()
     all_items.extend(d4)
-    domain_stats["D4"] = len(d4)
+    domain_stats["D6"] = len(d4)
     if d4:
-        save_domain(d4, "D4_maintenance")
+        save_domain(d4, "D6_maintenance")
 
-    print("Building D5: Medical (CheXpert)...")
+    print("Building D3: Medical (CheXpert)...")
     d5 = build_d5_medical()
     all_items.extend(d5)
-    domain_stats["D5"] = len(d5)
+    domain_stats["D3"] = len(d5)
     if d5:
-        save_domain(d5, "D5_medical")
+        save_domain(d5, "D3_medical")
 
-    print("Building D6: Remote Sensing (LEVIR-CD+)...")
+    print("Building D4: Remote Sensing (LEVIR-CD+)...")
     d6 = build_d6_remote_sensing()
     all_items.extend(d6)
-    domain_stats["D6"] = len(d6)
+    domain_stats["D4"] = len(d6)
     if d6:
-        save_domain(d6, "D6_remote_sensing")
+        save_domain(d6, "D4_remote_sensing")
 
     print("Building D7: Road (RoadAnomaly21 + BDD100K)...")
     d7 = build_d7_road()
@@ -1283,26 +1283,26 @@ def build_all():
     if d11:
         save_domain(d11, "D11_mvtec3d")
 
-    print("Building D5b: Medical/Brain (BraTS2021)...")
+    print("Building D3b: Medical/Brain (BraTS2021)...")
     d5b = build_d5b_brain()
     all_items.extend(d5b)
-    domain_stats["D5b"] = len(d5b)
+    domain_stats["D3b"] = len(d5b)
     if d5b:
-        save_domain(d5b, "D5b_brain")
+        save_domain(d5b, "D3b_brain")
 
-    print("Building D5c: Medical/Liver (BMAD-Liver)...")
+    print("Building D3c: Medical/Liver (BMAD-Liver)...")
     d5c = build_d5c_liver()
     all_items.extend(d5c)
-    domain_stats["D5c"] = len(d5c)
+    domain_stats["D3c"] = len(d5c)
     if d5c:
-        save_domain(d5c, "D5c_liver")
+        save_domain(d5c, "D3c_liver")
 
-    print("Building D5d: Medical/Colon (HyperKvasir)...")
+    print("Building D3d: Medical/Colon (HyperKvasir)...")
     d5d = build_d5d_colon()
     all_items.extend(d5d)
-    domain_stats["D5d"] = len(d5d)
+    domain_stats["D3d"] = len(d5d)
     if d5d:
-        save_domain(d5d, "D5d_colon")
+        save_domain(d5d, "D3d_colon")
 
     # Save combined manifest
     with open(MANIFEST_DIR / "full_manifest.json", "w") as f:

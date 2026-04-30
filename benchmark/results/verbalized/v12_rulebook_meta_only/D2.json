@@ -1,95 +1,58 @@
 {
   "domain_code": "D2",
-  "n_rules": 6,
+  "n_rules": 4,
   "rules": [
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the Agent's rationale explicitly identifies a structural deformation (e.g., 'dent', 'crush', 'open flap') or a foreign object attached to the packaging (e.g., 'straw wrapper') that is absent in references, trust the Agent.",
-      "source_items": [
-        "D2_0092",
-        "D2_0097",
-        "D2_0107",
-        "D2_0130",
-        "D2_0137"
-      ],
+      "text": "If the Agent's rationale explicitly cites a 'refutation' step where a suspected defect was compared against reference images and confirmed as a normal variation, trust A.",
+      "source_items": [],
       "confidence": "oracle",
       "id": "D2_meta_a_win_0"
     },
     {
-      "type": "meta_a_win",
+      "type": "meta_b_win",
       "category": null,
-      "text": "If the Agent detects a discrepancy in the primary brand logo or central graphic design (e.g., 'sun pattern' vs 'panda logo') compared to the reference, trust the Agent.",
+      "text": "If the Direct branch identifies a localized physical defect (e.g., chip, crack, break) on the object's surface or edge with a specific bounding box, trust B.",
       "source_items": [
-        "D2_0092",
-        "D2_0097",
-        "D2_0107",
-        "D2_0130",
-        "D2_0137"
+        "D2_0123",
+        "D2_0131",
+        "D2_0148",
+        "D2_0153"
       ],
       "confidence": "oracle",
-      "id": "D2_meta_a_win_1"
-    },
-    {
-      "type": "meta_a_win",
-      "category": null,
-      "text": "If the Agent identifies a localized surface defect like a 'light patch' or 'stain' on the label that is not present in the reference images, trust the Agent.",
-      "source_items": [
-        "D2_0092",
-        "D2_0097",
-        "D2_0107",
-        "D2_0130",
-        "D2_0137"
-      ],
-      "confidence": "oracle",
-      "id": "D2_meta_a_win_2"
+      "id": "D2_meta_b_win_1"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the Agent flags a handwritten mark (e.g., price tag) or a standard retail sticker as an anomaly, trust the Direct branch (which likely recognizes these as normal retail markings).",
+      "text": "If the Direct branch identifies a background anomaly (e.g., scratch, mark on the surface) that is distinct from the object itself, trust B.",
       "source_items": [
-        "D2_0033",
-        "D2_0037",
-        "D2_0056",
-        "D2_0087",
-        "D2_0167"
+        "D2_0123",
+        "D2_0131",
+        "D2_0148",
+        "D2_0153"
+      ],
+      "confidence": "oracle",
+      "id": "D2_meta_b_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the Direct branch identifies small, high-contrast color artifacts (e.g., red specks) on the object surface, trust B.",
+      "source_items": [
+        "D2_0123",
+        "D2_0131",
+        "D2_0148",
+        "D2_0153"
       ],
       "confidence": "oracle",
       "id": "D2_meta_b_win_3"
-    },
-    {
-      "type": "meta_b_win",
-      "category": null,
-      "text": "If the Agent flags a difference in packaging color or design that corresponds to a different viewing angle (e.g., front vs. back/side) of the same product, trust the Direct branch.",
-      "source_items": [
-        "D2_0033",
-        "D2_0037",
-        "D2_0056",
-        "D2_0087",
-        "D2_0167"
-      ],
-      "confidence": "oracle",
-      "id": "D2_meta_b_win_4"
-    },
-    {
-      "type": "meta_b_win",
-      "category": null,
-      "text": "If the Agent flags a text orientation difference (e.g., 'upside down') that is consistent with the product's standard design or viewing angle, trust the Direct branch.",
-      "source_items": [
-        "D2_0033",
-        "D2_0037",
-        "D2_0056",
-        "D2_0087",
-        "D2_0167"
-      ],
-      "confidence": "oracle",
-      "id": "D2_meta_b_win_5"
     }
   ],
   "meta_origin": {
     "error": null,
-    "n_a_wins": 5,
-    "n_b_wins": 5
+    "n_a_wins": 0,
+    "n_b_wins": 4
   }
 }

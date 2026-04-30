@@ -20,7 +20,7 @@ ROOT=/hdd1/jiangxi/AD-Agent
 SCR=$ROOT/benchmark/scripts/verbalized_learning.py
 MAN=$ROOT/benchmark/manifests_v2
 OUT=$ROOT/benchmark/results/verbalized
-DOMAINS=(D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12)
+DOMAINS=(D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12)
 
 for VARIANT in l1 l2 l1l2; do
     mkdir -p "$OUT/eval_$VARIANT"

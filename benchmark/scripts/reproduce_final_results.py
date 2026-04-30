@@ -15,13 +15,13 @@ from pathlib import Path
 from sklearn.metrics import roc_auc_score
 
 RESULTS_DIR = Path(__file__).parent.parent / "results" / "v4"
-KEEP_DOMAINS = ['D1', 'D2', 'D4', 'D5', 'D5b', 'D5c', 'D5d', 'D7', 'D9', 'D10']
+KEEP_DOMAINS = ['D1', 'D5', 'D6', 'D3', 'D3b', 'D3c', 'D3d', 'D7', 'D9', 'D10']
 
 ANOMALY_FAMILY = {
-    "D1": "local_appearance", "D2": "local_appearance",
-    "D4": "local_appearance", "D10": "local_appearance",
-    "D5": "semantic_medical", "D5b": "semantic_medical",
-    "D5c": "semantic_medical", "D5d": "semantic_medical",
+    "D1": "local_appearance", "D5": "local_appearance",
+    "D6": "local_appearance", "D10": "local_appearance",
+    "D3": "semantic_medical", "D3b": "semantic_medical",
+    "D3c": "semantic_medical", "D3d": "semantic_medical",
     "D7": "semantic_scene",
     "D9": "logical_structural",
 }

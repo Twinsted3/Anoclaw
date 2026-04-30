@@ -12,7 +12,7 @@ Usage:
       --backend seedvl \
       --variant v1_normal_first \
       --output benchmark/results/seedvl_v1_calibration.json \
-      --domains D1 D2 \
+      --domains D1 D5 \
       --max_workers 4
 
 Output JSON per item:
@@ -51,9 +51,9 @@ SYSTEM_INSPECTOR = "You are a visual anomaly inspector. Return JSON only. No ext
 SYSTEM_REFUTER = "You are an anomaly refuter. Return JSON only. No extra text."
 
 # manifests_v2 taxonomy (2026-04-21). D1-D12 codes follow benchmark/manifests_v2/domain_config.json.
-# Legacy v1 keys (D5b/c/d for BraTS/Liver/Kvasir subsplits, D5=Derma, D6=LEVIR, D7=road, D8=Avenue,
+# Legacy v1 keys (D3b/c/d for BraTS/Liver/Kvasir subsplits, D3=Derma, D4=LEVIR, D7=road, D8=Avenue,
 # D9=MVTec-LOCO, D10=VisA) are intentionally NOT present — the prose has been remapped to v2 codes
-# (D3=VisA, D5=MVTec-LOCO, D6=Real3D-AD, D7=LEVIR, D8=Derma, D9=BraTS, D10=Liver, D11=Kvasir, D12=road).
+# (D2=VisA, D3=MVTec-LOCO, D4=Real3D-AD, D7=LEVIR, D8=Derma, D9=BraTS, D10=Liver, D11=Kvasir, D12=road).
 # For v1 reproducibility, consult saved result files under benchmark/results/ rather than re-running.
 DOMAIN_CONTEXT = {
     "D1": (
@@ -62,7 +62,7 @@ DOMAIN_CONTEXT = {
         "Anomaly = physical defects such as scratches, dents, cracks, contamination, "
         "missing components, misalignment, or color/texture deviation from the references."
     ),
-    "D2": (
+    "D5": (
         "packaged consumer good photographed in a product-inspection setting (food box, drink bottle, "
         "drink can, cigarette box, food package, etc., from the GoodsAD dataset). "
         "Normal = defect-free packaged product matching the reference item in shape, label, and colour. "
@@ -70,7 +70,7 @@ DOMAIN_CONTEXT = {
         "torn label, missing logo/text, surface dents, contamination, or a missing component "
         "(NOT simply a different brand, lighting, or pose — focus on within-category physical defects)."
     ),
-    "D3": (
+    "D2": (
         "industrial manufacturing product from the VisA benchmark (candle, capsules, cashew, chewing gum, "
         "fryum, macaroni, PCB, pipe fryum, etc.). "
         "Normal = defect-free product matching the reference items of the same category. "
@@ -78,13 +78,13 @@ DOMAIN_CONTEXT = {
         "discoloration, melting, broken shape, or foreign inclusions (similar to MVTec-AD but on a "
         "different object set)."
     ),
-    "D4": (
+    "D6": (
         "concrete or infrastructure surface such as a bridge deck, wall, or pavement. "
         "Normal = intact surface with typical weathering, stains, joints, and minor discoloration. "
         "Anomaly = cracks, spalling, exposed rebar, or structural damage "
         "(NOT shadows, surface stains, or normal construction joints)."
     ),
-    "D5": (
+    "D3": (
         "image from the MVTec-LOCO logical-anomaly benchmark (breakfast box, juice bottle, pushpins, "
         "screw bag, splicing connectors, etc.). "
         "Normal = structurally correct composition matching the reference: all expected components present, "
@@ -94,7 +94,7 @@ DOMAIN_CONTEXT = {
         "The anomaly may be subtle: look at component identities and relative positions, not only at "
         "surface texture."
     ),
-    "D6": (
+    "D4": (
         "rendered view of a 3D industrial product from the Real3D-AD benchmark (airplane, candy bar, "
         "chicken, diamond, duck, fish, gemstone, seahorse, shell, starfish, toffee, etc.). The query "
         "is a 2D rendering of a 3D point-cloud scan; surface detail is sparse/dotted because the "
@@ -1754,7 +1754,7 @@ def run_agent_v1(client, model, item, max_tokens=700) -> dict:
     v0_conf = float(v0_parsed.get("confidence", 0.5))
 
     # Phase 2: EXPERT — load pre-computed expert results from cache.
-    # Multi-expert: SubspaceAD for most domains, DINOv2 patch evidence for D4.
+    # Multi-expert: SubspaceAD for most domains, DINOv2 patch evidence for D6.
     global _subspacead_cache, _dinov2_patch_cache
     try:
         _subspacead_cache
@@ -1789,7 +1789,7 @@ def run_agent_v1(client, model, item, max_tokens=700) -> dict:
             _dinov2_patch_cache = {}
 
     # Select expert based on domain
-    DINOV2_DOMAINS = {"D4"}  # domains where DINOv2-PatchNN > SubspaceAD
+    DINOV2_DOMAINS = {"D6"}  # domains where DINOv2-PatchNN > SubspaceAD
     if item["domain_code"] in DINOV2_DOMAINS:
         pe = _dinov2_patch_cache.get(item["item_id"], {})
         if pe and not pe.get("error"):
@@ -1836,7 +1836,7 @@ def run_agent_v1(client, model, item, max_tokens=700) -> dict:
             pe_cal = _dinov2_patch_cache or {}
             by_dom = {}
             for k, v in pe_cal.items():
-                dc = k.split('_')[0]  # e.g., "D4" from "D4_0049"
+                dc = k.split('_')[0]  # e.g., "D6" from "D6_0049"
                 gs = v.get("global_score")
                 if gs is not None:
                     by_dom.setdefault(dc, []).append(gs)
@@ -2433,7 +2433,7 @@ def main():
     parser.add_argument("--variant", required=True, choices=list(VARIANT_FNS.keys()))
     parser.add_argument("--output", required=True)
     parser.add_argument("--domains", nargs="*", default=None,
-                        help="Filter to specific domain codes, e.g. D1 D2")
+                        help="Filter to specific domain codes, e.g. D1 D5")
     parser.add_argument("--max_workers", type=int, default=4)
     parser.add_argument("--max_items", type=int, default=None,
                         help="Limit total items (for testing)")

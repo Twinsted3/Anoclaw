@@ -1,41 +1,41 @@
 {
   "a_wins_rules": [
-    "If Branch B identifies a 'missing section' or 'void' as the anomaly, but the query image contains a natural concavity or hole that is also present in the reference images, trust A (Agent) as it correctly identifies this as normal anatomical variation.",
-    "If Branch B flags a specific protrusion or appendage as 'missing' or 'altered', but the query image clearly shows a similar feature in a different position or orientation consistent with the reference set, trust A (Agent) for its ability to account for pose variation.",
-    "If the query image shows a smooth, continuous surface where Branch B claims a 'concave indentation' or 'depression', and the reference images show similar surface undulations, trust A (Agent) to avoid false positives on normal geometry."
+    "If the query image contains a high-contrast, geometrically distinct defect (such as a sharp linear crack, a deep circular pit, or a dark hole) that is clearly absent in the normal reference images, trust A (Agent).",
+    "If Branch B (Direct) claims the image is 'normal' while citing 'uniform texture' or 'consistent patterns' despite the presence of a visually obvious structural break or void, trust A (Agent)."
   ],
   "b_wins_rules": [
-    "If the query image exhibits a drastic change in overall topology (e.g., a compact object appearing elongated, folded, or flattened) compared to the reference images, trust B (Direct) as it detects major structural deformations that A may dismiss as normal variation.",
-    "If the query image shows a significant loss of volume or a collapsed section that fundamentally alters the object's silhouette compared to the references, trust B (Direct) as it is more sensitive to gross breakage or deformation.",
-    "If the query image lacks characteristic anatomical features (e.g., chambers, vessels, distinct lobes) present in the reference images, resulting in an irregular or amorphous shape, trust B (Direct) to identify the object as deformed."
+    "If the query image displays a uniform granular or stucco-like texture where dark spots or irregularities are consistent with the natural aggregate variation seen in the normal reference images, trust B (Direct).",
+    "If Branch A (Agent) identifies a 'defect' based on a dark mark or shadow that lacks a sharp structural boundary (e.g., a crack edge) and resembles the background noise of the reference set, trust B (Direct)."
   ],
   "a_evidence": [
-    "D6_0008",
-    "D6_0067",
-    "D6_0081"
+    "D6_0070",
+    "D6_0127",
+    "D6_0132",
+    "D6_0159",
+    "D6_0160"
   ],
   "b_evidence": [
-    "D6_0090",
-    "D6_0101",
-    "D6_0159",
-    "D6_0177",
-    "D6_0178"
+    "D6_0009",
+    "D6_0010",
+    "D6_0015",
+    "D6_0022",
+    "D6_0066"
   ],
-  "raw": "{\n  \"a_wins_rules\": [\n    \"If Branch B identifies a 'missing section' or 'void' as the anomaly, but the query image contains a natural concavity or hole that is also present in the reference images, trust A (Agent) as it correctly identifies this as normal anatomical variation.\",\n    \"If Branch B flags a specific protrusion or appendage as 'missing' or 'altered', but the query image clearly shows a similar feature in a different position or orientation consistent with the reference set, trust A (Agent) for its ability to account for pose variation.\",\n    \"If the query image shows a smooth, continuous surface where Branch B claims a 'concave indentation' or 'depression', and the reference images show similar surface undulations, trust A (Agent) to avoid false positives on normal geometry.\"\n  ],\n  \"b_wins_rules\": [\n    \"If the query image exhibits a drastic change in overall topology (e.g., a compact object appearing elongated, folded, or flattened) compared to the reference images, trust B (Direct) as it detects major structural deformations that A may dismiss as normal variation.\",\n    \"If the query image shows a significant loss of volume or a collapsed section that fundamentally alters the object's silhouette compared to the references, trust B (Direct) as it is more sensitive to gross breakage or deformation.\",\n    \"If the query image lacks characteristic anatomical features (e.g., chambers, vessels, distinct lobes) present in the reference images, resulting in an irregular or amorphous shape, trust B (Direct) to identify the object as deformed.\"\n  ]\n}",
+  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If the query image contains a high-contrast, geometrically distinct defect (such as a sharp linear crack, a deep circular pit, or a dark hole) that is clearly absent in the normal reference images, trust A (Agent).\",\n    \"If Branch B (Direct) claims the image is 'normal' while citing 'uniform texture' or 'consistent patterns' despite the presence of a visually obvious structural break or void, trust A (Agent).\"\n  ],\n  \"b_wins_rules\": [\n    \"If the query image displays a uniform granular or stucco-like texture where dark spots or irregularities are consistent with the natural aggregate variation seen in the normal reference images, trust B (Direct).\",\n    \"If Branch A (Agent) identifies a 'defect' based on a dark mark or shadow that lacks a sharp structural boundary (e.g., a crack edge) and resembles the background noise of the reference set, trust B (Direct).\"\n  ]\n}\n```",
   "tokens": {
-    "input": 4086,
-    "output": 348
+    "input": 2753,
+    "output": 223
   },
   "error": null,
   "partition_stats": {
-    "agree_correct": 17,
-    "agree_wrong": 15,
-    "disagree_a_wins_total": 3,
-    "disagree_b_wins_total": 5,
-    "reflected_a": 3,
+    "agree_correct": 19,
+    "agree_wrong": 8,
+    "disagree_a_wins_total": 6,
+    "disagree_b_wins_total": 7,
+    "reflected_a": 5,
     "reflected_b": 5,
     "skipped": 0
   },
   "domain_code": "D6",
-  "seconds": 32.9
+  "seconds": 22.1
 }

@@ -4,7 +4,7 @@ including a shuffled-rules negative control.
 Regimes:
   blend:    0.5 * v9 + 0.5 * direct (v10)
   no-rules: Controller, empty rulebook
-  shuffled: Controller, wrong-domain rulebook (D1↔D7, D2↔D8, ..., D6↔D12)
+  shuffled: Controller, wrong-domain rulebook (D1↔D7, D5↔D8, ..., D4↔D12)
   meta:     Controller, routing rules only
   full:     Controller, routing + domain rules
 

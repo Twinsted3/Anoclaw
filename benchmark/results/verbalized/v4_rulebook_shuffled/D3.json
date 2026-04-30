@@ -1,151 +1,144 @@
 {
   "domain_code": "D3",
-  "n_rules": 12,
+  "n_rules": 11,
   "rules": [
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If Branch B (Direct) claims a 'hyperintense' or 'bright' lesion but the query image visually lacks a distinct, high-contrast bright mass compared to the reference images, trust A (Agent).",
+      "text": "If the query image contains a distinct, dark, irregular defect or ulceration with surrounding exudate that is clearly absent in all normal reference images, trust A (Agent).",
       "source_items": [
-        "D9_0049",
-        "D9_0064",
-        "D9_0066",
-        "D9_0077",
-        "D9_0122"
+        "D11_0055",
+        "D11_0075",
+        "D11_0165"
       ],
       "confidence": "oracle",
-      "id": "D9_meta_a_win_0"
+      "id": "D11_meta_a_win_0"
     },
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If Branch B (Direct) identifies a 'dark' or 'elongated' lesion in the white matter that appears visually consistent with normal sulcal or ventricular structures in the reference images, trust A (Agent).",
+      "text": "If Branch B identifies 'inflammation' or 'granular texture' as pathology, but Branch A explicitly refutes this by attributing the appearance to normal mucus, debris, or fold variation consistent with references, trust A (Agent).",
       "source_items": [
-        "D9_0049",
-        "D9_0064",
-        "D9_0066",
-        "D9_0077",
-        "D9_0122"
+        "D11_0055",
+        "D11_0075",
+        "D11_0165"
       ],
       "confidence": "oracle",
-      "id": "D9_meta_a_win_1"
-    },
-    {
-      "type": "meta_a_win",
-      "category": null,
-      "text": "If Branch A (Agent) explicitly cites 'normal allowed variations' or 'refutation' of defect-like features in its rationale, trust A (Agent).",
-      "source_items": [
-        "D9_0049",
-        "D9_0064",
-        "D9_0066",
-        "D9_0077",
-        "D9_0122"
-      ],
-      "confidence": "oracle",
-      "id": "D9_meta_a_win_2"
+      "id": "D11_meta_a_win_1"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If Branch A (Agent) claims a 'focal hyperintense lesion' or 'ring-enhancing lesion' but the query image appears structurally symmetrical and lacks a distinct bright or ring-shaped anomaly compared to references, trust B (Direct).",
+      "text": "If the query image displays a clear anatomical landmark such as the gastroesophageal junction (Z-line), pylorus, or haustral folds with regular convergence, and Branch A flags it as anomalous due to color variation or minor texture differences, trust B (Direct).",
       "source_items": [
-        "D9_0014",
-        "D9_0060"
+        "D11_0012",
+        "D11_0038",
+        "D11_0044",
+        "D11_0046",
+        "D11_0066",
+        "D11_0073",
+        "D11_0088"
       ],
       "confidence": "oracle",
-      "id": "D9_meta_b_win_3"
+      "id": "D11_meta_b_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If Branch A (Agent) identifies a lesion in the 'periventricular white matter' that is not visually distinguishable from normal tissue texture in the reference images, trust B (Direct).",
+      "text": "If Branch A identifies a 'mass', 'plaque', or 'pigmentation' as an anomaly, but the visual evidence shows these features are consistent with normal anatomical structures (e.g., rugal folds, Z-line transition) or procedural artifacts (e.g., endoscope tip, foam) seen in references, trust B (Direct).",
       "source_items": [
-        "D9_0014",
-        "D9_0060"
+        "D11_0012",
+        "D11_0038",
+        "D11_0044",
+        "D11_0046",
+        "D11_0066",
+        "D11_0073",
+        "D11_0088"
       ],
       "confidence": "oracle",
-      "id": "D9_meta_b_win_4"
-    },
-    {
-      "type": "invariant",
-      "subtype": "spatial_layout",
-      "category": null,
-      "text": "The brain tissue is centrally located within the image frame, surrounded by a black background.",
-      "source_items": [],
-      "confidence": "high",
-      "id": "D9_invariant_5"
-    },
-    {
-      "type": "invariant",
-      "subtype": "structural",
-      "category": null,
-      "text": "The brain cross-section exhibits a continuous, roughly oval or circular outer boundary.",
-      "source_items": [],
-      "confidence": "high",
-      "id": "D9_invariant_6"
+      "id": "D11_meta_b_win_3"
     },
     {
       "type": "invariant",
       "subtype": "color_palette",
       "category": null,
-      "text": "The image consists of a grayscale palette (black background, gray/white tissue) with no other colors.",
+      "text": "Mucosal surface is dominated by continuous pink, salmon, or light orange hues.",
       "source_items": [],
       "confidence": "high",
-      "id": "D9_invariant_7"
+      "id": "D11_invariant_4"
     },
     {
       "type": "invariant",
       "subtype": "texture",
       "category": null,
-      "text": "The brain tissue displays a granular, heterogeneous texture with visible internal structures.",
+      "text": "Surface texture is smooth or exhibits regular, continuous folds (rugae) without disruption.",
       "source_items": [],
       "confidence": "high",
-      "id": "D9_invariant_8"
+      "id": "D11_invariant_5"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": null,
+      "text": "No distinct, protruding, or sessile masses (polyps) are present on the mucosal surface.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D11_invariant_6"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": null,
+      "text": "No open, crater-like defects (ulcers) with raised or necrotic borders are visible.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D11_invariant_7"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
       "category": null,
-      "text": "Do not flag mild asymmetry in lateral ventricle size or shape as a tumor anomaly.",
+      "text": "Do not flag diffuse mucosal erythema or reddish hue as an ulcer if the surface texture remains smooth and intact.",
       "source_items": [
-        "D9_0066",
-        "D9_0056",
-        "D9_0049"
+        "D11_0015",
+        "D11_0076"
       ],
       "confidence": "high",
-      "id": "D9_corrective_fp_9"
+      "id": "D11_corrective_fp_8"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
       "category": null,
-      "text": "Ignore subtle periventricular hyperintensities or signal variations that lack distinct mass effect or borders.",
+      "text": "Do not flag the Z-line (squamocolumnar junction) or gastric folds as a polypoid mass if they follow natural anatomical convergence.",
       "source_items": [
-        "D9_0066",
-        "D9_0014",
-        "D9_0049"
+        "D11_0038",
+        "D11_0073",
+        "D11_0076"
       ],
       "confidence": "high",
-      "id": "D9_corrective_fp_10"
+      "id": "D11_corrective_fp_9"
     },
     {
       "type": "corrective_fp",
       "subtype": "normal_tolerance",
       "category": null,
-      "text": "Do not classify global image blurriness, noise, or low contrast as structural brain anomalies.",
+      "text": "Do not flag dark shadows, specular reflections, or bile staining as pigmented lesions or plaques.",
       "source_items": [
-        "D9_0003",
-        "D9_0044",
-        "D9_0077"
+        "D11_0012",
+        "D11_0044",
+        "D11_0052",
+        "D11_0066",
+        "D11_0080"
       ],
       "confidence": "high",
-      "id": "D9_corrective_fp_11"
+      "id": "D11_corrective_fp_10"
     }
   ],
   "meta_origin": {
     "error": null,
-    "n_a_wins": 5,
-    "n_b_wins": 2
+    "n_a_wins": 3,
+    "n_b_wins": 7
   },
-  "_shuffled_origin": "D9"
+  "_shuffled_origin": "D11"
 }

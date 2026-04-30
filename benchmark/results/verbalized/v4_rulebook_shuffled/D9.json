@@ -7,71 +7,71 @@
       "category": null,
       "text": "If the query image shows a rigid object (like a PCB) that is rotated 180 degrees relative to the reference images, causing text labels and pin headers to appear inverted or upside down, trust A (Agent).",
       "source_items": [
-        "D3_0092",
-        "D3_0132",
-        "D3_0152",
-        "D3_0174"
+        "D2_0092",
+        "D2_0132",
+        "D2_0152",
+        "D2_0174"
       ],
       "confidence": "oracle",
-      "id": "D3_meta_a_win_0"
+      "id": "D2_meta_a_win_0"
     },
     {
       "type": "meta_a_win",
       "category": null,
       "text": "If the query image shows a component (like an LED) that is physically bent, tilted, or deformed compared to the upright components in the reference images, trust A (Agent).",
       "source_items": [
-        "D3_0092",
-        "D3_0132",
-        "D3_0152",
-        "D3_0174"
+        "D2_0092",
+        "D2_0132",
+        "D2_0152",
+        "D2_0174"
       ],
       "confidence": "oracle",
-      "id": "D3_meta_a_win_1"
+      "id": "D2_meta_a_win_1"
     },
     {
       "type": "meta_b_win",
       "category": null,
       "text": "If the query image contains small, localized surface defects such as chips, breaks, or contamination spots (e.g., red specks) on the object itself, trust B (Direct).",
       "source_items": [
-        "D3_0030",
-        "D3_0033",
-        "D3_0044",
-        "D3_0123",
-        "D3_0131",
-        "D3_0153"
+        "D2_0030",
+        "D2_0033",
+        "D2_0044",
+        "D2_0123",
+        "D2_0131",
+        "D2_0153"
       ],
       "confidence": "oracle",
-      "id": "D3_meta_b_win_2"
+      "id": "D2_meta_b_win_2"
     },
     {
       "type": "meta_b_win",
       "category": null,
       "text": "If the query image shows a defect on the background surface (e.g., a scratch or mark) rather than on the object, trust B (Direct).",
       "source_items": [
-        "D3_0030",
-        "D3_0033",
-        "D3_0044",
-        "D3_0123",
-        "D3_0131",
-        "D3_0153"
+        "D2_0030",
+        "D2_0033",
+        "D2_0044",
+        "D2_0123",
+        "D2_0131",
+        "D2_0153"
       ],
       "confidence": "oracle",
-      "id": "D3_meta_b_win_3"
+      "id": "D2_meta_b_win_3"
     },
     {
       "type": "meta_b_win",
       "category": null,
       "text": "If the query image appears visually identical to the reference images with no obvious orientation changes or deformations, trust B (Direct) to avoid false positives from minor lighting or texture variations.",
       "source_items": [
-        "D3_0030",
-        "D3_0033",
-        "D3_0044",
-        "D3_0123",
-        "D3_0131",
-        "D3_0153"
+        "D2_0030",
+        "D2_0033",
+        "D2_0044",
+        "D2_0123",
+        "D2_0131",
+        "D2_0153"
       ],
       "confidence": "oracle",
-      "id": "D3_meta_b_win_4"
+      "id": "D2_meta_b_win_4"
     },
     {
       "type": "invariant",
@@ -80,7 +80,7 @@
       "text": "A silver USB Type-C connector is located on the left edge of the blue PCB.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_5"
+      "id": "D2_invariant_5"
     },
     {
       "type": "invariant",
@@ -89,7 +89,7 @@
       "text": "A black integrated circuit (IC) chip is located in the center-right area of the board.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_6"
+      "id": "D2_invariant_6"
     },
     {
       "type": "invariant",
@@ -98,7 +98,7 @@
       "text": "Four circular mounting holes are located at the four corners of the PCB.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_7"
+      "id": "D2_invariant_7"
     },
     {
       "type": "invariant",
@@ -107,7 +107,7 @@
       "text": "The PCB substrate is blue, with silver metallic components and white silkscreen text.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_8"
+      "id": "D2_invariant_8"
     },
     {
       "type": "invariant",
@@ -116,7 +116,7 @@
       "text": "The PCB has a rectangular shape with a continuous, unbroken boundary.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_9"
+      "id": "D2_invariant_9"
     },
     {
       "type": "invariant",
@@ -125,7 +125,7 @@
       "text": "The object contains exactly six radial spokes connecting the center to the rim.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_10"
+      "id": "D2_invariant_10"
     },
     {
       "type": "invariant",
@@ -134,7 +134,7 @@
       "text": "The object contains exactly one circular hole at the geometric center.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_11"
+      "id": "D2_invariant_11"
     },
     {
       "type": "invariant",
@@ -143,7 +143,7 @@
       "text": "The object exhibits 6-fold rotational symmetry (C6) around the central axis.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_12"
+      "id": "D2_invariant_12"
     },
     {
       "type": "invariant",
@@ -152,7 +152,7 @@
       "text": "The object is a uniform light beige or pale orange color.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_13"
+      "id": "D2_invariant_13"
     },
     {
       "type": "invariant",
@@ -161,7 +161,7 @@
       "text": "The object has a continuous circular outer rim enclosing the spokes.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_14"
+      "id": "D2_invariant_14"
     },
     {
       "type": "invariant",
@@ -170,7 +170,7 @@
       "text": "Exactly one single object is present in the image.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_15"
+      "id": "D2_invariant_15"
     },
     {
       "type": "invariant",
@@ -179,7 +179,7 @@
       "text": "The object is centered horizontally and vertically within the frame.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_16"
+      "id": "D2_invariant_16"
     },
     {
       "type": "invariant",
@@ -188,7 +188,7 @@
       "text": "The object is solid white or off-white; the background is solid black.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_17"
+      "id": "D2_invariant_17"
     },
     {
       "type": "invariant",
@@ -197,7 +197,7 @@
       "text": "The object has a rectangular shape with rounded corners.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_18"
+      "id": "D2_invariant_18"
     },
     {
       "type": "invariant",
@@ -206,7 +206,7 @@
       "text": "The object surface is smooth and uniform without visible patterns.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_19"
+      "id": "D2_invariant_19"
     },
     {
       "type": "invariant",
@@ -215,7 +215,7 @@
       "text": "Exactly four macaroni pieces are present in every image.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_20"
+      "id": "D2_invariant_20"
     },
     {
       "type": "invariant",
@@ -224,7 +224,7 @@
       "text": "Each object is a curved, C-shaped pasta segment with a concave inner edge.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_21"
+      "id": "D2_invariant_21"
     },
     {
       "type": "invariant",
@@ -233,7 +233,7 @@
       "text": "Objects are pale yellow; background is solid green.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_22"
+      "id": "D2_invariant_22"
     },
     {
       "type": "invariant",
@@ -242,7 +242,7 @@
       "text": "Objects have a smooth surface with fine concentric ridges.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_23"
+      "id": "D2_invariant_23"
     },
     {
       "type": "invariant",
@@ -251,7 +251,7 @@
       "text": "Exactly one single cashew nut is present in the image.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_24"
+      "id": "D2_invariant_24"
     },
     {
       "type": "invariant",
@@ -260,7 +260,7 @@
       "text": "The object exhibits a continuous, kidney-bean or crescent shape with a central concave indentation.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_25"
+      "id": "D2_invariant_25"
     },
     {
       "type": "invariant",
@@ -269,7 +269,7 @@
       "text": "The object surface is a uniform light golden-tan color without dark spots or discoloration.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_26"
+      "id": "D2_invariant_26"
     },
     {
       "type": "invariant",
@@ -278,7 +278,7 @@
       "text": "The object surface is smooth and solid, lacking cracks, holes, or rough patches.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_27"
+      "id": "D2_invariant_27"
     },
     {
       "type": "invariant",
@@ -287,7 +287,7 @@
       "text": "The object is centered on a dark, textured background.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_28"
+      "id": "D2_invariant_28"
     },
     {
       "type": "invariant",
@@ -296,7 +296,7 @@
       "text": "There are exactly four macaroni pieces present in the image.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_29"
+      "id": "D2_invariant_29"
     },
     {
       "type": "invariant",
@@ -305,7 +305,7 @@
       "text": "The four macaroni pieces are arranged in a 2x2 grid formation.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_30"
+      "id": "D2_invariant_30"
     },
     {
       "type": "invariant",
@@ -314,7 +314,7 @@
       "text": "Each macaroni piece has a continuous, smooth, C-shaped tubular geometry.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_31"
+      "id": "D2_invariant_31"
     },
     {
       "type": "invariant",
@@ -323,7 +323,7 @@
       "text": "The macaroni pieces are a uniform light orange/beige color.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_32"
+      "id": "D2_invariant_32"
     },
     {
       "type": "invariant",
@@ -332,7 +332,7 @@
       "text": "The background is a solid green surface with a fine, regular grid texture.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_33"
+      "id": "D2_invariant_33"
     },
     {
       "type": "invariant",
@@ -341,7 +341,7 @@
       "text": "There are exactly four circular objects present in the image.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_34"
+      "id": "D2_invariant_34"
     },
     {
       "type": "invariant",
@@ -350,7 +350,7 @@
       "text": "The four objects are arranged in a 2x2 grid pattern.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_35"
+      "id": "D2_invariant_35"
     },
     {
       "type": "invariant",
@@ -359,7 +359,7 @@
       "text": "Each object is a solid circle with a single vertical slit in the center.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_36"
+      "id": "D2_invariant_36"
     },
     {
       "type": "invariant",
@@ -368,7 +368,7 @@
       "text": "The objects are a uniform light cream color against a dark background.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_37"
+      "id": "D2_invariant_37"
     },
     {
       "type": "invariant",
@@ -377,7 +377,7 @@
       "text": "All objects are smooth, elongated capsules with rounded ends and continuous boundaries.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_38"
+      "id": "D2_invariant_38"
     },
     {
       "type": "invariant",
@@ -386,7 +386,7 @@
       "text": "Objects are translucent green with a distinct bright specular highlight on the surface.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_39"
+      "id": "D2_invariant_39"
     },
     {
       "type": "invariant",
@@ -395,7 +395,7 @@
       "text": "The background is a uniform, fine-grained grey fabric texture.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_40"
+      "id": "D2_invariant_40"
     },
     {
       "type": "invariant",
@@ -404,7 +404,7 @@
       "text": "The PCB has exactly four silver mounting holes, one in each corner.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_41"
+      "id": "D2_invariant_41"
     },
     {
       "type": "invariant",
@@ -413,7 +413,7 @@
       "text": "The PCB features exactly three black integrated circuits (chips) mounted on the surface.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_42"
+      "id": "D2_invariant_42"
     },
     {
       "type": "invariant",
@@ -422,7 +422,7 @@
       "text": "There is a single 4-pin male header connector located at the top center edge.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_43"
+      "id": "D2_invariant_43"
     },
     {
       "type": "invariant",
@@ -431,7 +431,7 @@
       "text": "The text 'HC-SR04' is printed in white on the top-left area of the board.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_44"
+      "id": "D2_invariant_44"
     },
     {
       "type": "invariant",
@@ -440,7 +440,7 @@
       "text": "The PCB substrate is a solid blue color with white silkscreen text and silver solder pads.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_45"
+      "id": "D2_invariant_45"
     },
     {
       "type": "invariant",
@@ -449,7 +449,7 @@
       "text": "The PCB has a rectangular shape with rounded corners.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_46"
+      "id": "D2_invariant_46"
     },
     {
       "type": "invariant",
@@ -458,7 +458,7 @@
       "text": "Exactly one single object is present in the image.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_47"
+      "id": "D2_invariant_47"
     },
     {
       "type": "invariant",
@@ -467,7 +467,7 @@
       "text": "The object is centered horizontally and vertically within the frame.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_48"
+      "id": "D2_invariant_48"
     },
     {
       "type": "invariant",
@@ -476,7 +476,7 @@
       "text": "The object is a uniform beige/tan color against a solid black background.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_49"
+      "id": "D2_invariant_49"
     },
     {
       "type": "invariant",
@@ -485,7 +485,7 @@
       "text": "The object surface exhibits a consistent fine-grained, porous texture.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_50"
+      "id": "D2_invariant_50"
     },
     {
       "type": "invariant",
@@ -494,7 +494,7 @@
       "text": "The object has a rectangular geometry with rounded corners.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_51"
+      "id": "D2_invariant_51"
     },
     {
       "type": "invariant",
@@ -503,7 +503,7 @@
       "text": "The module has exactly three metal pins protruding from the left edge.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_52"
+      "id": "D2_invariant_52"
     },
     {
       "type": "invariant",
@@ -512,7 +512,7 @@
       "text": "There is exactly one black cylindrical phototransistor on the right side.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_53"
+      "id": "D2_invariant_53"
     },
     {
       "type": "invariant",
@@ -521,7 +521,7 @@
       "text": "There is exactly one clear/translucent LED on the right side.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_54"
+      "id": "D2_invariant_54"
     },
     {
       "type": "invariant",
@@ -530,7 +530,7 @@
       "text": "A blue square potentiometer is located in the bottom-center of the PCB.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_55"
+      "id": "D2_invariant_55"
     },
     {
       "type": "invariant",
@@ -539,7 +539,7 @@
       "text": "A black integrated circuit (IC) chip is located in the top-center of the PCB.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_56"
+      "id": "D2_invariant_56"
     },
     {
       "type": "invariant",
@@ -548,7 +548,7 @@
       "text": "The PCB substrate is blue, and the background is solid green.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_57"
+      "id": "D2_invariant_57"
     },
     {
       "type": "invariant",
@@ -557,7 +557,7 @@
       "text": "The module contains exactly two circular ultrasonic transducers.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_58"
+      "id": "D2_invariant_58"
     },
     {
       "type": "invariant",
@@ -566,7 +566,7 @@
       "text": "The module has exactly four metal pin connectors.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_59"
+      "id": "D2_invariant_59"
     },
     {
       "type": "invariant",
@@ -575,7 +575,7 @@
       "text": "The four metal pins are located at the top edge of the PCB.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_60"
+      "id": "D2_invariant_60"
     },
     {
       "type": "invariant",
@@ -584,7 +584,7 @@
       "text": "The two transducers are positioned symmetrically on the left and right sides.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_61"
+      "id": "D2_invariant_61"
     },
     {
       "type": "invariant",
@@ -593,7 +593,7 @@
       "text": "The printed circuit board (PCB) is blue.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_62"
+      "id": "D2_invariant_62"
     },
     {
       "type": "invariant",
@@ -602,7 +602,7 @@
       "text": "The transducer surfaces feature a fine black mesh pattern.",
       "source_items": [],
       "confidence": "high",
-      "id": "D3_invariant_63"
+      "id": "D2_invariant_63"
     },
     {
       "type": "corrective_fp",
@@ -610,10 +610,10 @@
       "category": "chewinggum",
       "text": "Do not flag uniform white rectangular bars with smooth surfaces and rounded edges as anomalies.",
       "source_items": [
-        "D3_0038"
+        "D2_0038"
       ],
       "confidence": "low",
-      "id": "D3_corrective_fp_64"
+      "id": "D2_corrective_fp_64"
     },
     {
       "type": "corrective_fn",
@@ -621,10 +621,10 @@
       "category": "cashew",
       "text": "Flag subtle surface discoloration or dark spots on the cashew body, even if small or near the edge.",
       "source_items": [
-        "D3_0099"
+        "D2_0099"
       ],
       "confidence": "low",
-      "id": "D3_corrective_fn_65"
+      "id": "D2_corrective_fn_65"
     },
     {
       "type": "corrective_fn",
@@ -632,10 +632,10 @@
       "category": "macaroni1",
       "text": "Flag items where the C-shaped component has a visibly jagged, broken, or irregular edge profile instead of a smooth curve.",
       "source_items": [
-        "D3_0150"
+        "D2_0150"
       ],
       "confidence": "high",
-      "id": "D3_corrective_fn_66"
+      "id": "D2_corrective_fn_66"
     },
     {
       "type": "corrective_fp",
@@ -643,12 +643,12 @@
       "category": "macaroni1",
       "text": "Do not flag items where the C-shaped components exhibit smooth, continuous edges and consistent surface texture, even if minor lighting variations exist.",
       "source_items": [
-        "D3_0052",
-        "D3_0079",
-        "D3_0025"
+        "D2_0052",
+        "D2_0079",
+        "D2_0025"
       ],
       "confidence": "high",
-      "id": "D3_corrective_fp_67"
+      "id": "D2_corrective_fp_67"
     },
     {
       "type": "corrective_fn",
@@ -656,10 +656,10 @@
       "category": "candle",
       "text": "Flag small, high-contrast colored spots (e.g., red) on the white wax surface as defects.",
       "source_items": [
-        "D3_0131"
+        "D2_0131"
       ],
       "confidence": "medium",
-      "id": "D3_corrective_fn_68"
+      "id": "D2_corrective_fn_68"
     },
     {
       "type": "corrective_fp",
@@ -667,10 +667,10 @@
       "category": "candle",
       "text": "Ignore subtle surface texture variations and minor wick alignment differences as normal manufacturing tolerances.",
       "source_items": [
-        "D3_0000"
+        "D2_0000"
       ],
       "confidence": "medium",
-      "id": "D3_corrective_fp_69"
+      "id": "D2_corrective_fp_69"
     },
     {
       "type": "corrective_fn",
@@ -678,10 +678,10 @@
       "category": "capsules",
       "text": "Flag capsules with a distinct, localized white or opaque spot on the surface as anomalies.",
       "source_items": [
-        "D3_0116"
+        "D2_0116"
       ],
       "confidence": "medium",
-      "id": "D3_corrective_fn_70"
+      "id": "D2_corrective_fn_70"
     },
     {
       "type": "corrective_fp",
@@ -689,10 +689,10 @@
       "category": "capsules",
       "text": "Treat high-intensity specular highlights and elongated reflections on the capsule surface as normal features.",
       "source_items": [
-        "D3_0004"
+        "D2_0004"
       ],
       "confidence": "medium",
-      "id": "D3_corrective_fp_71"
+      "id": "D2_corrective_fp_71"
     },
     {
       "type": "corrective_fn",
@@ -700,10 +700,10 @@
       "category": "pcb2",
       "text": "Flag high-contrast white smudges or residue on the blue PCB surface near component U3 as anomalies.",
       "source_items": [
-        "D3_0096"
+        "D2_0096"
       ],
       "confidence": "medium",
-      "id": "D3_corrective_fn_72"
+      "id": "D2_corrective_fn_72"
     },
     {
       "type": "corrective_fp",
@@ -711,10 +711,10 @@
       "category": "pcb2",
       "text": "Accept minor variations in solder joint brightness and slight misalignment of the U3 component as normal manufacturing tolerance.",
       "source_items": [
-        "D3_0058"
+        "D2_0058"
       ],
       "confidence": "medium",
-      "id": "D3_corrective_fp_73"
+      "id": "D2_corrective_fp_73"
     },
     {
       "type": "corrective_fn",
@@ -722,10 +722,10 @@
       "category": "pipe_fryum",
       "text": "Flag distinct localized discolorations (brownish spots) on the surface as anomalies, even if the surrounding texture is uniform.",
       "source_items": [
-        "D3_0093"
+        "D2_0093"
       ],
       "confidence": "medium",
-      "id": "D3_corrective_fn_74"
+      "id": "D2_corrective_fn_74"
     },
     {
       "type": "corrective_fn",
@@ -733,10 +733,10 @@
       "category": "pipe_fryum",
       "text": "Detect structural discontinuities such as central cracks or holes as anomalies, regardless of the object's overall shape or material appearance.",
       "source_items": [
-        "D3_0177"
+        "D2_0177"
       ],
       "confidence": "medium",
-      "id": "D3_corrective_fn_75"
+      "id": "D2_corrective_fn_75"
     },
     {
       "type": "corrective_fp",
@@ -744,10 +744,10 @@
       "category": "pcb3",
       "text": "Do not flag the black cylindrical phototransistor or clear LED lens as defects; these are standard components on this sensor module.",
       "source_items": [
-        "D3_0049"
+        "D2_0049"
       ],
       "confidence": "medium",
-      "id": "D3_corrective_fp_76"
+      "id": "D2_corrective_fp_76"
     },
     {
       "type": "corrective_fn",
@@ -755,12 +755,12 @@
       "category": "pcb1",
       "text": "Flag 180-degree module rotation as anomaly if pins are at the bottom, overriding 'minor rotation' tolerance.",
       "source_items": [
-        "D3_0174",
-        "D3_0092",
-        "D3_0164"
+        "D2_0174",
+        "D2_0092",
+        "D2_0164"
       ],
       "confidence": "high",
-      "id": "D3_corrective_fn_77"
+      "id": "D2_corrective_fn_77"
     },
     {
       "type": "corrective_fp",
@@ -768,11 +768,11 @@
       "category": "pcb1",
       "text": "Treat minor discoloration or smudges on the transducer mesh as normal variations.",
       "source_items": [
-        "D3_0057",
-        "D3_0030"
+        "D2_0057",
+        "D2_0030"
       ],
       "confidence": "high",
-      "id": "D3_corrective_fp_78"
+      "id": "D2_corrective_fp_78"
     }
   ],
   "meta_origin": {
@@ -780,5 +780,5 @@
     "n_a_wins": 4,
     "n_b_wins": 6
   },
-  "_shuffled_origin": "D3"
+  "_shuffled_origin": "D2"
 }

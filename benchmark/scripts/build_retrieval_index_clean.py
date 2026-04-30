@@ -1,6 +1,6 @@
 """Rebuild retrieval indices with strict train-only clean normal pool.
 
-Codex discovered that the old indices (D5/D5d/D7) include normal images
+Codex discovered that the old indices (D3/D3d/D7) include normal images
 from the test and dev splits, causing tool_reference_retriever to
 self-match a query at similarity ~1.0. This contaminates evaluation.
 

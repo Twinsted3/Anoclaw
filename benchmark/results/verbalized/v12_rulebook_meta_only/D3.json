@@ -1,37 +1,43 @@
 {
   "domain_code": "D3",
-  "n_rules": 4,
+  "n_rules": 5,
   "rules": [
     {
       "type": "meta_a_win",
       "category": null,
-      "text": "If the Agent's rationale explicitly cites a 'refutation' step where a suspected defect was compared against reference images and confirmed as a normal variation, trust A.",
-      "source_items": [],
+      "text": "If the query image shows a variation in color (e.g., liquid or wire) or label icon that matches a known product variant described in the reference profiler, trust A (Agent) to correctly identify it as normal.",
+      "source_items": [
+        "D3_0002",
+        "D3_0055",
+        "D3_0156"
+      ],
       "confidence": "oracle",
       "id": "D3_meta_a_win_0"
     },
     {
-      "type": "meta_b_win",
+      "type": "meta_a_win",
       "category": null,
-      "text": "If the Direct branch identifies a localized physical defect (e.g., chip, crack, break) on the object's surface or edge with a specific bounding box, trust B.",
+      "text": "If the query image contains a subtle, non-structural feature like printed text or markings on a component that is absent in all reference images, trust A (Agent) to detect this as a logical anomaly.",
       "source_items": [
-        "D3_0123",
-        "D3_0131",
-        "D3_0148",
-        "D3_0153"
+        "D3_0002",
+        "D3_0055",
+        "D3_0156"
       ],
       "confidence": "oracle",
-      "id": "D3_meta_b_win_1"
+      "id": "D3_meta_a_win_1"
     },
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the Direct branch identifies a background anomaly (e.g., scratch, mark on the surface) that is distinct from the object itself, trust B.",
+      "text": "If the query image shows a clear physical defect such as a torn label, missing object, or extra foreign object, trust B (Direct) to correctly identify it as an anomaly.",
       "source_items": [
-        "D3_0123",
-        "D3_0131",
-        "D3_0148",
-        "D3_0153"
+        "D3_0027",
+        "D3_0056",
+        "D3_0114",
+        "D3_0142",
+        "D3_0144",
+        "D3_0145",
+        "D3_0171"
       ],
       "confidence": "oracle",
       "id": "D3_meta_b_win_2"
@@ -39,20 +45,39 @@
     {
       "type": "meta_b_win",
       "category": null,
-      "text": "If the Direct branch identifies small, high-contrast color artifacts (e.g., red specks) on the object surface, trust B.",
+      "text": "If the query image shows a change in the count of components (e.g., extra washer, missing nut) or a change in the configuration of parts (e.g., number of terminal blocks), trust B (Direct) to detect this as a logical anomaly.",
       "source_items": [
-        "D3_0123",
-        "D3_0131",
-        "D3_0148",
-        "D3_0153"
+        "D3_0027",
+        "D3_0056",
+        "D3_0114",
+        "D3_0142",
+        "D3_0144",
+        "D3_0145",
+        "D3_0171"
       ],
       "confidence": "oracle",
       "id": "D3_meta_b_win_3"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a change in the state of a product (e.g., liquid color change to an unexpected color like milky white) that is not a known variant, trust B (Direct) to identify it as an anomaly.",
+      "source_items": [
+        "D3_0027",
+        "D3_0056",
+        "D3_0114",
+        "D3_0142",
+        "D3_0144",
+        "D3_0145",
+        "D3_0171"
+      ],
+      "confidence": "oracle",
+      "id": "D3_meta_b_win_4"
     }
   ],
   "meta_origin": {
     "error": null,
-    "n_a_wins": 0,
-    "n_b_wins": 4
+    "n_a_wins": 3,
+    "n_b_wins": 7
   }
 }

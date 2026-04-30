@@ -2,7 +2,7 @@
 # Sequential overnight pipeline.
 # Phase A: MMAD dev (989) → analyze → thresholds
 # Phase B: MMAD test (1500) → final per-type accuracy with tuned thresholds
-# Phase C: Active learning on 6 pilot domains (D1, D4, D5, D7, D9, D12)
+# Phase C: Active learning on 6 pilot domains (D1, D6, D3, D7, D9, D12)
 # Phase D: Summarize AL and update paper drafts
 #
 # Usage: overnight_pipeline.sh
@@ -53,7 +53,7 @@ $PY benchmark/scripts/mmad_analyze.py \
 
 echo "[$(stamp)] === Phase C: Active Learning pilot (6 domains) ==="
 mkdir -p $RESULTS/active_learning
-PILOT_DOMS="D1 D4 D5 D7 D9 D12"
+PILOT_DOMS="D1 D6 D3 D7 D9 D12"
 for D in $PILOT_DOMS; do
   OUT=$RESULTS/active_learning/al_qwen35_${D}.json
   if [ -f "$OUT" ]; then echo "skip $D"; continue; fi

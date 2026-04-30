@@ -17,8 +17,8 @@ import numpy as np
 RESULT_DIR = "result/experiments"
 DOMAINS = [f"D{i}" for i in range(1, 13)]
 DOMAIN_NAMES = {
-    "D1": "MVTec", "D2": "Goods", "D3": "VisA", "D4": "SDNET",
-    "D5": "LOCO", "D6": "Real3D", "D7": "LEVIR", "D8": "Derm",
+    "D1": "MVTec", "D5": "Goods", "D2": "VisA", "D6": "SDNET",
+    "D3": "LOCO", "D4": "Real3D", "D7": "LEVIR", "D8": "Derm",
     "D9": "Brain", "D10": "Liver", "D11": "GI", "D12": "Road"
 }
 

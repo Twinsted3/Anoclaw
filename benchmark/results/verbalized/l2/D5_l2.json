@@ -6,138 +6,111 @@
   "selection_frac": 0.5,
   "selection_ids": [
     "D5_0001",
-    "D5_0002",
-    "D5_0023",
-    "D5_0027",
-    "D5_0035",
-    "D5_0046",
-    "D5_0047",
-    "D5_0054",
-    "D5_0055",
-    "D5_0074",
-    "D5_0091",
-    "D5_0095",
-    "D5_0107",
-    "D5_0113",
-    "D5_0137",
-    "D5_0144",
-    "D5_0154",
-    "D5_0167",
-    "D5_0171",
-    "D5_0172"
-  ],
-  "validation_ids": [
-    "D5_0010",
-    "D5_0015",
-    "D5_0021",
-    "D5_0025",
+    "D5_0003",
     "D5_0031",
-    "D5_0033",
     "D5_0037",
     "D5_0056",
-    "D5_0079",
+    "D5_0063",
+    "D5_0065",
+    "D5_0068",
+    "D5_0072",
+    "D5_0083",
+    "D5_0092",
+    "D5_0095",
+    "D5_0097",
+    "D5_0107",
+    "D5_0137",
+    "D5_0144",
+    "D5_0162",
+    "D5_0169",
+    "D5_0170",
+    "D5_0173"
+  ],
+  "validation_ids": [
+    "D5_0023",
+    "D5_0027",
+    "D5_0029",
+    "D5_0033",
+    "D5_0038",
+    "D5_0044",
+    "D5_0057",
+    "D5_0080",
+    "D5_0087",
     "D5_0089",
-    "D5_0114",
-    "D5_0119",
-    "D5_0121",
-    "D5_0142",
+    "D5_0112",
+    "D5_0130",
+    "D5_0133",
+    "D5_0143",
     "D5_0145",
-    "D5_0147",
-    "D5_0148",
-    "D5_0150",
-    "D5_0156",
-    "D5_0162"
+    "D5_0146",
+    "D5_0153",
+    "D5_0159",
+    "D5_0163",
+    "D5_0167"
   ],
   "units": [
     {
       "unit": [
         "D5",
-        "screw_bag"
-      ],
-      "k": 1,
-      "rules": [
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag as anomaly if the bag contains loose hardware components (bolts, nuts, washers) instead of a single fastener assembly.",
-          "justification": "The agent incorrectly assumed loose parts were normal variation. This rule explicitly defines the presence of unattached components as an anomaly, correcting the underprediction.",
-          "from_item": "D5_0107"
-        }
-      ]
-    },
-    {
-      "unit": [
-        "D5",
-        "splicing_connectors"
+        "food_package"
       ],
       "k": 4,
       "rules": [
         {
           "rule_type": "normal_tolerance",
-          "text": "Treat wire color variations as normal if the reference profiler explicitly lists color as an allowed variation for the product class.",
-          "justification": "The agent initially flagged the wire color difference as a defect. This rule ensures that when the profiler confirms color is a valid variation, the agent correctly classifies the item as normal.",
-          "from_item": "D5_0074"
+          "text": "Classify minor surface creases, wrinkles, or slight scuffs on flexible packaging as normal unless they compromise structural integrity or legibility.",
+          "justification": "The agent incorrectly flagged natural handling artifacts (wrinkles, scuffs) on a flexible bag as anomalies. This rule explicitly tolerates these common, non-defective features to prevent false positives.",
+          "from_item": "D5_0072"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify surface wrinkles, creases, and minor seal folds on flexible food packaging as normal manufacturing or handling artifacts.",
+          "justification": "The agent incorrectly flagged natural packaging wrinkles and creases as defects. This rule explicitly defines these common physical characteristics as normal, preventing false positives on flexible items.",
+          "from_item": "D5_0001"
         },
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "If the image contains a uniform mesh pattern instead of the expected splicing connectors, classify as anomaly.",
-          "justification": "The agent initially detected the missing object but was refuted. This rule explicitly defines the mesh pattern as an anomaly mode, preventing refutation when the expected object is absent.",
-          "from_item": "D5_0167"
+          "text": "Flag packages where the transparent window is obscured by dark, irregular, or non-uniform contents that deviate from the standard product appearance.",
+          "justification": "The agent dismissed the anomaly because the logo was intact. This rule forces inspection of the product visibility through the window, catching the dark, irregular contents that constitute the actual defect.",
+          "from_item": "D5_0170"
         },
         {
           "rule_type": "normal_tolerance",
-          "text": "Treat wire color variation as a normal attribute for splicing connectors, regardless of connector housing color.",
-          "justification": "The agent initially flagged the blue wire as an anomaly due to color mismatch with orange references. This rule explicitly defines wire color as a tolerated variation, preventing false positives.",
-          "from_item": "D5_0055"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Do not flag single-wire assemblies as anomalies if the connector housing is intact and the wire is properly seated.",
-          "justification": "The agent incorrectly assumed a fixed 3-wire structure. This rule clarifies that single-wire variants are valid normal configurations, preventing false positives based on wire count alone.",
-          "from_item": "D5_0001"
+          "text": "Treat minor wrinkling at package seals and slight creases on edges as normal handling variations, not defects.",
+          "justification": "The agent flagged natural handling artifacts (wrinkles, creases) as potential defects. This rule explicitly categorizes these common features as normal, preventing false positives.",
+          "from_item": "D5_0037"
         }
       ]
     },
     {
       "unit": [
         "D5",
-        "juice_bottle"
+        "food_box"
       ],
-      "k": 6,
+      "k": 4,
       "rules": [
         {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Classify as anomaly if the bottle surface is completely devoid of any label, regardless of allowed content variations.",
-          "justification": "The agent initially detected the missing label but lowered the score due to uncertainty. This rule explicitly defines total label absence as a definitive anomaly, overriding content variation tolerances.",
-          "from_item": "D5_0095"
+          "rule_type": "normal_tolerance",
+          "text": "Do not classify a box as crushed if the deformation is limited to minor edge warping or slight corner compression without structural collapse.",
+          "justification": "The agent incorrectly flagged minor edge warping as severe crushing. This rule clarifies that slight deformations are acceptable normal variations, preventing false positives on structurally intact boxes.",
+          "from_item": "D5_0063"
         },
         {
           "rule_type": "normal_tolerance",
-          "text": "Treat variations in label iconography (e.g., fruit type) and liquid color as normal if explicitly permitted by reference data.",
-          "justification": "The agent initially flagged the banana icon and white liquid as anomalies. This rule clarifies that such visual differences are acceptable normal variations when validated by reference profilers, preventing false positives.",
-          "from_item": "D5_0023"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag as anomaly if the liquid color inside the bottle contradicts the fruit depicted on the label.",
-          "justification": "The agent hesitated despite clear visual evidence of white liquid in a bottle labeled with an orange. This rule explicitly links liquid color to label content to resolve such semantic inconsistencies.",
-          "from_item": "D5_0171"
+          "text": "Treat specular highlights and glare on glossy packaging surfaces as normal lighting artifacts, not defects.",
+          "justification": "The agent flagged a reflection on the glossy box as a potential anomaly. This rule explicitly categorizes such lighting effects as normal, preventing false positives on shiny surfaces.",
+          "from_item": "D5_0003"
         },
         {
           "rule_type": "normal_tolerance",
-          "text": "Treat variations in fruit iconography and liquid color as normal if explicitly permitted by the reference profiler.",
-          "justification": "The agent initially flagged the cherry icon and red liquid as defects. This rule clarifies that such variations are acceptable when validated by the reference profiler, preventing false positives.",
-          "from_item": "D5_0002"
+          "text": "Treat upright food boxes with standard vertical text and clear branding as normal, even if the image is cropped or the box is narrow.",
+          "justification": "The agent likely flagged the narrow, cropped view of the standard product packaging as anomalous. This rule clarifies that such framing does not constitute a defect for this class.",
+          "from_item": "D5_0065"
         },
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "If the label icon depicts a fruit that does not match the liquid's color or implied flavor, classify as anomaly.",
-          "justification": "The agent hesitated despite the clear mismatch between the cherry icon and the red liquid. This rule explicitly flags such semantic inconsistencies as anomalies, preventing future uncertainty.",
-          "from_item": "D5_0091"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Treat any visible tear, rip, or physical damage to the main product label as a definitive anomaly.",
-          "justification": "The agent initially detected the torn label but lowered its score. This rule reinforces that physical label damage is a critical defect, ensuring high anomaly scores for such cases.",
+          "text": "Classify as anomaly if the box top flap exhibits a large, irregular hole or physical tear.",
+          "justification": "The agent initially detected the hole but failed to maintain the high anomaly score. This rule explicitly defines flap damage as a definitive anomaly, preventing future refutation of such clear defects.",
           "from_item": "D5_0144"
         }
       ]
@@ -145,91 +118,130 @@
     {
       "unit": [
         "D5",
-        "breakfast_box"
+        "drink_can"
       ],
-      "k": 1,
+      "k": 5,
       "rules": [
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "Flag as anomaly if granola and dried fruit occupy the left compartment while fresh fruit occupies the right compartment.",
-          "justification": "The agent correctly identified the layout inversion but failed to commit to the anomaly label. This rule explicitly defines the observed left-right swap as a definitive defect, preventing future uncertainty.",
-          "from_item": "D5_0154"
+          "text": "Flag as anomaly if the can body exhibits significant vertical wrinkling, buckling, or deformation, even if the label print remains intact.",
+          "justification": "The agent missed the severe structural deformation (buckling) on the can's side, focusing only on print quality. This rule explicitly targets physical shape defects.",
+          "from_item": "D5_0173"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the carton lacks an attached straw, as this is a required feature for the class.",
+          "justification": "The agent incorrectly refuted the anomaly due to a false positive detection of a straw. This rule explicitly defines the absence of a straw as the anomaly condition, correcting the logic.",
+          "from_item": "D5_0097"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag minor surface smudges or dust on labels as defects if the underlying text and graphics remain clear and legible.",
+          "justification": "The agent incorrectly flagged a minor smudge as a defect. This rule clarifies that superficial imperfections do not constitute anomalies when the label's informational content is intact.",
+          "from_item": "D5_0031"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If a transparent straw wrapper is attached to the front of the carton, classify as anomaly.",
+          "justification": "The agent initially detected the wrapper but failed to confirm it. This rule explicitly defines the attached wrapper as a defect, ensuring the anomaly is correctly identified.",
+          "from_item": "D5_0092"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag items as anomalies solely due to different flavor variants or seasonal packaging designs if the core brand identity and product structure remain consistent.",
+          "justification": "The agent incorrectly identified a standard flavor variant (blueberry) as an anomaly because its design differed from the reference set. This rule clarifies that design variations for different flavors are normal.",
+          "from_item": "D5_0056"
         }
       ]
     },
     {
       "unit": [
         "D5",
-        "pushpins"
+        "cigarette_box"
       ],
-      "k": 8,
+      "k": 3,
       "rules": [
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "Flag as anomaly if any compartment contains more than one pushpin, regardless of orientation or pin condition.",
-          "justification": "The agent incorrectly classified the image as normal because it focused on orientation and pin integrity. The actual anomaly is the presence of multiple pins in several compartments, which violates the expected one-pin-per-compartment rule.",
-          "from_item": "D5_0113"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Classify as normal if pushpins are intact and present, even if randomly oriented or scattered within container compartments.",
-          "justification": "The agent hesitated due to the disorganized arrangement of pins. This rule clarifies that random orientation within a container is a normal variation, not an anomaly.",
-          "from_item": "D5_0047"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Treat random orientation of pushpins within compartments as normal variation, provided pins are intact and undamaged.",
-          "justification": "The agent flagged the varied pin orientations as a potential anomaly. This rule clarifies that orientation is irrelevant to the defect status, resolving the false positive.",
-          "from_item": "D5_0046"
+          "text": "Classify as anomaly if the cigarette pack flap is torn, frayed, or physically damaged, regardless of face orientation.",
+          "justification": "The agent missed the physical damage on the top flap, incorrectly assuming the back view was sufficient for a normal classification. This rule explicitly flags structural defects.",
+          "from_item": "D5_0169"
         },
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "Flag as anomaly if any compartment contains more than one pushpin, as standard configuration requires exactly one per slot.",
-          "justification": "The agent missed the anomaly because it focused on missing or damaged pins. This rule explicitly defines overcrowding (multiple pins per slot) as a defect, correcting the oversight.",
-          "from_item": "D5_0172"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Classify as normal if pushpins are intact and present, even if randomly oriented or scattered within container compartments.",
-          "justification": "The agent hesitated due to the disordered arrangement of pins. This rule clarifies that random orientation within a container is a normal variation, not an anomaly.",
-          "from_item": "D5_0035"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Classify as normal if pins are intact and fully present, regardless of random orientation or rotation within compartments.",
-          "justification": "The agent overpredicted anomaly (0.5) due to random pin orientations. This rule clarifies that orientation variance is acceptable for intact pins, reducing false positives.",
-          "from_item": "D5_0027"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag as anomaly if any pushpin is oriented vertically (head-up or head-down) instead of lying flat horizontally.",
-          "justification": "The agent missed the anomaly because it focused on object presence rather than orientation. The vertical pins in the top-right and bottom-right compartments deviate from the standard horizontal layout.",
+          "text": "Flag as anomaly if the pack face features a large diagonal stripe or landscape graphic instead of the standard solid background with leaf logo.",
+          "justification": "The agent initially detected the design mismatch but was uncertain. This rule explicitly defines the specific visual deviation (diagonal stripe/landscape) as a definitive anomaly, preventing future hesitation on similar design variations.",
           "from_item": "D5_0137"
         },
         {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify cigarette packs with open top flaps or exposed inner packaging as anomalies.",
+          "justification": "The agent initially detected the open flap but lowered the score. This rule explicitly defines the open state as an anomaly, ensuring high confidence for this defect type.",
+          "from_item": "D5_0162"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D5",
+        "drink_bottle"
+      ],
+      "k": 2,
+      "rules": [
+        {
           "rule_type": "normal_tolerance",
-          "text": "Treat variations in pushpin orientation (vertical, horizontal, tilted) within a grid cell as normal, provided the pin is intact.",
-          "justification": "The agent's uncertainty likely stemmed from the non-uniform orientation of pins. This rule explicitly defines orientation variance as a normal characteristic, preventing false anomaly flags for intact pins.",
-          "from_item": "D5_0054"
+          "text": "Do not flag label rotation or slight misalignment as an anomaly if the bottle is not perfectly front-facing.",
+          "justification": "The agent incorrectly flagged the label's apparent rotation as a defect. This rule clarifies that such visual shifts are normal artifacts of the bottle's orientation, not physical damage.",
+          "from_item": "D5_0083"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If a drink bottle lacks a visible label or branding on its main body, classify it as an anomaly.",
+          "justification": "The agent initially detected the missing label but lowered the score. This rule reinforces that the absence of a label is a definitive anomaly for this class, preventing uncertainty.",
+          "from_item": "D5_0095"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D5",
+        "food_bottle"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag minor foil lid tears or crinkles as anomalies if they are consistent with standard packaging variations seen in reference images.",
+          "justification": "The agent initially flagged a lid tear as a defect (score 0.65). The rule clarifies that such minor packaging imperfections are normal variations, preventing false positives when reference images show similar features.",
+          "from_item": "D5_0068"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Treat any small, irregular white mark or scuff on the printed label surface as a defect, even if the mark is tiny.",
+          "justification": "The agent initially flagged the mark but then refuted it. This rule reinforces that small surface imperfections on labels are valid anomalies, preventing the agent from dismissing them as noise.",
+          "from_item": "D5_0107"
         }
       ]
     }
   ],
   "coverage": {
-    "D5 / screw_bag": {
-      "screw_bag": 1
+    "D5 / food_package": {
+      "food_package": 4
     },
-    "D5 / splicing_connectors": {
-      "splicing_connectors": 4
+    "D5 / food_box": {
+      "food_box": 4
     },
-    "D5 / juice_bottle": {
-      "juice_bottle": 6
+    "D5 / drink_can": {
+      "drink_can": 5
     },
-    "D5 / breakfast_box": {
-      "breakfast_box": 1
+    "D5 / cigarette_box": {
+      "cigarette_box": 3
     },
-    "D5 / pushpins": {
-      "pushpins": 8
+    "D5 / drink_bottle": {
+      "drink_bottle": 2
+    },
+    "D5 / food_bottle": {
+      "food_bottle": 2
     }
   }
 }

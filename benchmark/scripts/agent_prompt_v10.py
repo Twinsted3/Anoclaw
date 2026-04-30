@@ -77,7 +77,7 @@ Each tool has a SPECIALTY — match the tool to what you actually need.
   tool_image_diff(ref_idx=0..3)
     SPECIALTY: strict pixel diff query-vs-ref N. Returns a change mask +
     change_percent.
-    APPLICABLE: D1 (MVTec-AD), D2 (GoodsAD), D5 (MVTec-LOCO) only —
+    APPLICABLE: D1 (MVTec-AD), D5 (GoodsAD), D3 (MVTec-LOCO) only —
     aligned industrial photography.
     OTHER DOMAINS: the tool refuses. Use side_by_side instead.
 
@@ -93,9 +93,9 @@ Each tool has a SPECIALTY — match the tool to what you actually need.
     overlay on the query, and a suggested_bbox_256 around the hotspot
     cluster.
     AVAILABLE domains (auto picks subspacead):
-      strong:   D1 (AUROC 0.97), D2 (0.84), D7 (0.94), D10 (0.89)
-      moderate: D4 (0.72), D5 (0.69), D9 (0.70)
-      unavailable: D3, D6, D8, D11, D12 — the tool says so and returns
+      strong:   D1 (AUROC 0.97), D5 (0.84), D7 (0.94), D10 (0.89)
+      moderate: D6 (0.72), D3 (0.69), D9 (0.70)
+      unavailable: D2, D4, D8, D11, D12 — the tool says so and returns
                    available=False.
     WHEN: you want an independent score + a concrete bbox to inspect.
     STANDARD FOLLOW-UP: tool_side_by_side(bbox=expert.suggested_bbox_256)
@@ -125,7 +125,7 @@ Each tool has a SPECIALTY — match the tool to what you actually need.
   tool_texture_fft()
     SPECIALTY: periodicity disruption. Returns a log-magnitude spectrum
     image and query-vs-ref periodicity delta.
-    BEST DOMAINS: D4 concrete (cracks break aggregate periodicity),
+    BEST DOMAINS: D6 concrete (cracks break aggregate periodicity),
     fabric/grid/lattice textures. NOT useful for natural scenes or
     medical tissue.
 
@@ -145,8 +145,8 @@ REFUTATION_LADDER = """REFUTATION LADDER (pick the lowest rung that resolves you
   L1. reference_profiler()      — cheap, text: "what is normal here?"
   L2. side_by_side(bbox)        — visual query-vs-refs at a specific region.
   L3. expert_score()            — numeric 2nd opinion + heatmap +
-                                   suggested_bbox. Applicable: D1,D2,D4,D5,
-                                   D7,D9,D10. Skip on D3,D6,D8,D11,D12.
+                                   suggested_bbox. Applicable: D1,D5,D6,D3,
+                                   D7,D9,D10. Skip on D2,D4,D8,D11,D12.
                                    Standard follow-up: L2 at that bbox.
   L4. reference_retriever(k=4)  — pull 4 extra normal images (actually
                                    visible) when refs look too narrow.
@@ -154,8 +154,8 @@ REFUTATION_LADDER = """REFUTATION LADDER (pick the lowest rung that resolves you
   L6. segment_and_count         — coarse change heatmap to LOCATE region
                                    before picking a bbox.
       component_counter         — is expert hotspot localised or diffuse.
-      texture_fft               — periodicity disruption (D4 concrete etc).
-  L7. image_diff / rotate_align — ONLY on D1,D2,D5 (aligned industrial).
+      texture_fft               — periodicity disruption (D6 concrete etc).
+  L7. image_diff / rotate_align — ONLY on D1,D5,D3 (aligned industrial).
                                    Tool refuses elsewhere.
 
 Rule: most items need ONE tool. The typical failure is stopping at L2
@@ -323,21 +323,21 @@ DOMAIN_HINTS = {
             "expert_score → side_by_side(bbox=suggested_bbox_256). "
             "image_diff / rotate_align are also applicable (refs are aligned "
             "photographs of the same item)."),
-    "D2":  ("D2 — GoodsAD (retail, mostly aligned). expert_score STRONG "
+    "D5":  ("D5 — GoodsAD (retail, mostly aligned). expert_score STRONG "
             "(AUROC 0.84). expert_score → side_by_side is the standard pipeline. "
             "image_diff applicable when refs look tightly cropped."),
-    "D3":  ("D3 — complex industrial. expert_score is NOT available for this "
+    "D2":  ("D2 — complex industrial. expert_score is NOT available for this "
             "domain. Rely on side_by_side + reference_profiler; consider "
             "reference_retriever when refs look narrow."),
-    "D4":  ("D4 — SDNET concrete cracks. expert_score MODERATE (AUROC 0.72). "
+    "D6":  ("D6 — SDNET concrete cracks. expert_score MODERATE (AUROC 0.72). "
             "texture_fft can detect crack-induced disruption of the aggregate "
             "pattern — useful when no candidate bbox is obvious. image_diff NOT "
             "applicable (different photographs)."),
-    "D5":  ("D5 — MVTec-LOCO logical. expert_score MODERATE (AUROC 0.69). "
+    "D3":  ("D3 — MVTec-LOCO logical. expert_score MODERATE (AUROC 0.69). "
             "image_diff applicable (aligned). Anomalies here are often LOGICAL "
             "(wrong count / wrong part) — reference_profiler helps define the "
             "correct configuration before scoring."),
-    "D6":  ("D6 — Real3D-AD point-cloud renders. expert_score NOT reliable "
+    "D4":  ("D4 — Real3D-AD point-cloud renders. expert_score NOT reliable "
             "(all experts <0.5 AUROC here). Prefer side_by_side at multiple "
             "viewpoints and reference_retriever."),
     "D7":  ("D7 — LEVIR aerial building change. expert_score STRONG "

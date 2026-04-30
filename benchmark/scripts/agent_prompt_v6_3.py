@@ -2,7 +2,7 @@
 
 Key idea: in A-regime the VLM has no domain info. If it decides too early,
 it defaults to "anomalous" on unfamiliar image types (observed failure mode
-on D5d/D6 where 90% of items got score~0.95).
+on D3d/D4 where 90% of items got score~0.95).
 
 v6.3 forces the agent to *describe* what the reference images show as part
 of its first-turn thought, and explicitly warns that unfamiliar image types

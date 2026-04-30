@@ -1,9 +1,9 @@
 #!/bin/bash
 # AD-Copilot 4-shot variant: ensemble P(Yes) across 4 (ref_i,query) passes.
-# Sharded across GPUs by domain list (e.g. GPU=0 DOMAINS="D1 D2 D3 D4").
+# Sharded across GPUs by domain list (e.g. GPU=0 DOMAINS="D1 D5 D2 D6").
 set -u
 GPU=${GPU:-0}
-DOMAINS=${DOMAINS:-"D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12"}
+DOMAINS=${DOMAINS:-"D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12"}
 OUT=/hdd1/jiangxi/AD-Agent/benchmark/results/baselines/ad_copilot_4shot
 MAN=/hdd1/jiangxi/AD-Agent/benchmark/manifests_v2
 MODEL=${MODEL:-/hdd1/jiangxi/AD-Copilot/AD-Copilot}

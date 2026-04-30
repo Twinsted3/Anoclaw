@@ -4,113 +4,103 @@
   "k": 10,
   "selection_frac": 0.5,
   "selection_ids": [
-    "D3_0000",
-    "D3_0004",
-    "D3_0025",
-    "D3_0030",
-    "D3_0038",
-    "D3_0049",
-    "D3_0052",
-    "D3_0057",
-    "D3_0058",
-    "D3_0079",
-    "D3_0092",
-    "D3_0093",
-    "D3_0096",
-    "D3_0099",
-    "D3_0116",
-    "D3_0131",
-    "D3_0150",
-    "D3_0164",
-    "D3_0174",
-    "D3_0177"
+    "D3_0001",
+    "D3_0002",
+    "D3_0023",
+    "D3_0027",
+    "D3_0035",
+    "D3_0046",
+    "D3_0047",
+    "D3_0054",
+    "D3_0055",
+    "D3_0074",
+    "D3_0091",
+    "D3_0095",
+    "D3_0107",
+    "D3_0113",
+    "D3_0137",
+    "D3_0144",
+    "D3_0154",
+    "D3_0167",
+    "D3_0171",
+    "D3_0172"
   ],
   "validation_ids": [
-    "D3_0013",
-    "D3_0017",
-    "D3_0022",
-    "D3_0028",
+    "D3_0010",
+    "D3_0015",
+    "D3_0021",
+    "D3_0025",
+    "D3_0031",
     "D3_0033",
-    "D3_0035",
-    "D3_0044",
-    "D3_0070",
-    "D3_0081",
-    "D3_0084",
-    "D3_0102",
-    "D3_0104",
-    "D3_0112",
-    "D3_0123",
-    "D3_0132",
-    "D3_0135",
-    "D3_0141",
+    "D3_0037",
+    "D3_0056",
+    "D3_0079",
+    "D3_0089",
+    "D3_0114",
+    "D3_0119",
+    "D3_0121",
+    "D3_0142",
+    "D3_0145",
+    "D3_0147",
     "D3_0148",
-    "D3_0152",
-    "D3_0153"
+    "D3_0150",
+    "D3_0156",
+    "D3_0162"
   ],
   "units": [
     {
       "unit": [
         "D3",
-        "chewinggum"
-      ],
-      "k": 1,
-      "rules": [
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Do not flag uniform white rectangular bars with smooth surfaces and rounded edges as anomalies.",
-          "covers_items": [
-            "D3_0038"
-          ],
-          "justification": "The agent incorrectly flagged a standard, defect-free white bar. The rule reinforces that the specific geometry (rounded rectangle) and uniform texture are normal characteristics for this class.",
-          "side": "FP"
-        }
-      ],
-      "confidence": "low"
-    },
-    {
-      "unit": [
-        "D3",
-        "cashew"
+        "screw_bag"
       ],
       "k": 1,
       "rules": [
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "Flag subtle surface discoloration or dark spots on the cashew body, even if small or near the edge.",
+          "text": "Flag as anomaly if the bag contains loose washers or nuts that are not threaded onto the bolts.",
           "covers_items": [
-            "D3_0099"
+            "D3_0107"
           ],
-          "justification": "The agent missed a 'slight darker spot' on the lower right edge, indicating a need to lower the threshold for detecting minor color variations on the nut surface.",
+          "justification": "The agent failed to detect the structural anomaly of loose hardware. The presence of unthreaded washers and nuts indicates a missing assembly step or incorrect packaging, which is a logical defect.",
           "side": "FN"
         }
       ],
-      "confidence": "low"
+      "confidence": "medium"
     },
     {
       "unit": [
         "D3",
-        "macaroni1"
+        "splicing_connectors"
       ],
       "k": 4,
       "rules": [
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "Flag items where the C-shaped component has a visibly jagged, broken, or irregular edge profile instead of a smooth curve.",
+          "text": "Flag as anomaly if the image contains only the background mesh with no splicing connectors or cables present.",
           "covers_items": [
-            "D3_0150"
+            "D3_0167"
           ],
-          "justification": "The agent missed the anomaly in D3_0150 because it focused on the overall shape and color, failing to detect the specific geometric defect (a jagged break) on the rim of the top-left piece.",
+          "justification": "The agent failed to detect the complete absence of the target object (wired terminal blocks). The image shows only the background mesh, which is a structural anomaly (missing object) compared to the baseline.",
           "side": "FN"
         },
         {
           "rule_type": "normal_tolerance",
-          "text": "Do not flag items where the C-shaped components exhibit smooth, continuous edges and consistent surface texture, even if minor lighting variations exist.",
+          "text": "Do not flag wire color variations (e.g., yellow, blue) as anomalies if the connector structure and count are intact.",
           "covers_items": [
-            "D3_0052",
-            "D3_0079",
-            "D3_0025"
+            "D3_0001",
+            "D3_0055",
+            "D3_0074"
           ],
-          "justification": "The agent incorrectly flagged these normal items, likely due to over-sensitivity to minor lighting or texture variations. The common pattern is that all components in these images have perfectly smooth, unbroken edges.",
+          "justification": "The agent incorrectly flagged items with different wire colors (yellow, blue) as anomalies. The reference profiler explicitly lists wire color variation as an allowed variation, so these should be treated as normal.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag a single-wire assembly as an anomaly if the connector housing structure is consistent with the baseline.",
+          "covers_items": [
+            "D3_0001"
+          ],
+          "justification": "The agent flagged a single yellow wire as a 'missing conductor' defect. However, the item is labeled normal, indicating that single-wire configurations are valid variants for this class.",
           "side": "FP"
         }
       ],
@@ -119,130 +109,56 @@
     {
       "unit": [
         "D3",
-        "candle"
+        "juice_bottle"
       ],
-      "k": 2,
+      "k": 6,
       "rules": [
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "Flag small, high-contrast colored spots (e.g., red) on the white wax surface as defects.",
+          "text": "Flag as anomaly if the main fruit label is completely missing from the bottle surface.",
           "covers_items": [
-            "D3_0131"
+            "D3_0095"
           ],
-          "justification": "The agent missed distinct reddish discolorations on the candle edges, likely filtering them out as noise or shadows due to their small size.",
+          "justification": "The agent failed to detect the total absence of the label, likely confusing 'label variation' with 'label presence'. Missing structural components are anomalies.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the main label shows physical damage, such as tears or cut-off text.",
+          "covers_items": [
+            "D3_0144"
+          ],
+          "justification": "The agent missed physical defects (tears, damage) on the label, treating them as normal variations. Structural integrity violations must be flagged.",
           "side": "FN"
         },
         {
           "rule_type": "normal_tolerance",
-          "text": "Ignore subtle surface texture variations and minor wick alignment differences as normal manufacturing tolerances.",
+          "text": "Do not flag bottles where the fruit icon and liquid color differ from the reference, provided the label is intact.",
           "covers_items": [
-            "D3_0000"
+            "D3_0002",
+            "D3_0023"
           ],
-          "justification": "The agent incorrectly flagged natural surface grain and slight wick positioning shifts as anomalies, indicating a need to increase tolerance for these specific features.",
+          "justification": "The agent incorrectly flagged valid variations (cherry/red, banana/white) as anomalies. The domain allows for different fruit types and corresponding liquid colors.",
           "side": "FP"
         }
       ],
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "unit": [
         "D3",
-        "capsules"
-      ],
-      "k": 2,
-      "rules": [
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag capsules with a distinct, localized white or opaque spot on the surface as anomalies.",
-          "covers_items": [
-            "D3_0116"
-          ],
-          "justification": "The agent missed a clear surface defect (a white spot) on one capsule, likely due to the defect being small and contrasting with the green background.",
-          "side": "FN"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Treat high-intensity specular highlights and elongated reflections on the capsule surface as normal features.",
-          "covers_items": [
-            "D3_0004"
-          ],
-          "justification": "The agent likely misclassified strong lighting reflections on the glossy surface as defects; these are expected visual artifacts for this material.",
-          "side": "FP"
-        }
-      ],
-      "confidence": "medium"
-    },
-    {
-      "unit": [
-        "D3",
-        "pcb2"
-      ],
-      "k": 2,
-      "rules": [
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag high-contrast white smudges or residue on the blue PCB surface near component U3 as anomalies.",
-          "covers_items": [
-            "D3_0096"
-          ],
-          "justification": "The agent dismissed a distinct white smudge near U3 as a reflection. This specific visual artifact (white residue on blue) is a defect, not a lighting artifact, and requires explicit detection.",
-          "side": "FN"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Accept minor variations in solder joint brightness and slight misalignment of the U3 component as normal manufacturing tolerance.",
-          "covers_items": [
-            "D3_0058"
-          ],
-          "justification": "The agent flagged a normal board, likely due to over-sensitivity to minor visual noise or slight component placement variances that fall within acceptable industrial tolerances.",
-          "side": "FP"
-        }
-      ],
-      "confidence": "medium"
-    },
-    {
-      "unit": [
-        "D3",
-        "pipe_fryum"
-      ],
-      "k": 2,
-      "rules": [
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag distinct localized discolorations (brownish spots) on the surface as anomalies, even if the surrounding texture is uniform.",
-          "covers_items": [
-            "D3_0093"
-          ],
-          "justification": "The agent missed a clear brownish spot on the left side, likely dismissing it due to the otherwise uniform speckled texture. This indicates a need to prioritize localized color deviations over global texture consistency.",
-          "side": "FN"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Detect structural discontinuities such as central cracks or holes as anomalies, regardless of the object's overall shape or material appearance.",
-          "covers_items": [
-            "D3_0177"
-          ],
-          "justification": "The agent failed to identify a central crack and hole. This suggests the model may be under-weighting structural defects in favor of texture analysis, requiring a specific rule for physical breaks.",
-          "side": "FN"
-        }
-      ],
-      "confidence": "medium"
-    },
-    {
-      "unit": [
-        "D3",
-        "pcb3"
+        "breakfast_box"
       ],
       "k": 1,
       "rules": [
         {
-          "rule_type": "normal_tolerance",
-          "text": "Do not flag the black cylindrical phototransistor or clear LED lens as defects; these are standard components on this sensor module.",
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if granola/cereal is on the left and fresh fruit is on the right, reversing the standard layout.",
           "covers_items": [
-            "D3_0049"
+            "D3_0154"
           ],
-          "justification": "The agent incorrectly identified the standard optical components (phototransistor and LED) as anomalies. These parts are integral to the module's function and should be treated as normal features.",
-          "side": "FP"
+          "justification": "The agent missed a clear structural inversion where the granola and dried fruit occupy the left compartment instead of the right, violating the expected spatial arrangement.",
+          "side": "FN"
         }
       ],
       "confidence": "medium"
@@ -250,29 +166,32 @@
     {
       "unit": [
         "D3",
-        "pcb1"
+        "pushpins"
       ],
-      "k": 5,
+      "k": 8,
       "rules": [
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "Flag 180-degree module rotation as anomaly if pins are at the bottom, overriding 'minor rotation' tolerance.",
+          "text": "Flag as anomaly if any compartment is completely empty or contains more than two pins.",
           "covers_items": [
-            "D3_0174",
-            "D3_0092",
-            "D3_0164"
+            "D3_0172",
+            "D3_0113",
+            "D3_0137"
           ],
-          "justification": "The agent incorrectly applied a 'minor rotation' tolerance to a 180-degree flip. This specific orientation (pins at bottom) is a distinct defect class for this product, not a normal variation.",
+          "justification": "The agent missed structural count violations. D3_0172 has an empty cell, while D3_0113 and D3_0137 have cells with three pins, violating the expected 1-2 pin density.",
           "side": "FN"
         },
         {
           "rule_type": "normal_tolerance",
-          "text": "Treat minor discoloration or smudges on the transducer mesh as normal variations.",
+          "text": "Treat random pin orientation and non-centered placement within a compartment as normal variation.",
           "covers_items": [
-            "D3_0057",
-            "D3_0030"
+            "D3_0027",
+            "D3_0046",
+            "D3_0047",
+            "D3_0054",
+            "D3_0035"
           ],
-          "justification": "The agent flagged subtle mesh discolorations as defects. These are consistent with normal manufacturing variations or lighting artifacts seen in reference images.",
+          "justification": "The agent incorrectly flagged intact pins with varying angles or positions as defects. These items are structurally normal and consistent with the reference set.",
           "side": "FP"
         }
       ],

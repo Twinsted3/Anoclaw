@@ -11,8 +11,8 @@ Three-regime learning ladder over CrossDomainVAD-11:
   L1+L2 stacked    - concatenated rulebook (with dedup); oracle budget
                      is still K (L2 budget only).
 
-Rulebook granularity: per-class for multi-class domains (D1,D2,D3,D4,
-D5,D6), per-domain for single-class domains (D7..D12). The lookup key
+Rulebook granularity: per-class for multi-class domains (D1,D5,D2,D6,
+D3,D4), per-domain for single-class domains (D7..D12). The lookup key
 is (domain_code, category) read from the manifest.
 
 All test items are STRICTLY held out of the rulebook-construction
@@ -61,11 +61,11 @@ from infer import (  # noqa: E402
 
 DOMAIN_FILES = {
     "D1": "D1_industrial_manifest.json",
-    "D2": "D2_retail_manifest.json",
-    "D3": "D3_complex_industrial_manifest.json",
-    "D4": "D4_infrastructure_manifest.json",
-    "D5": "D5_logical_manifest.json",
-    "D6": "D6_industrial_3d_manifest.json",
+    "D5": "D5_retail_manifest.json",
+    "D2": "D2_complex_industrial_manifest.json",
+    "D6": "D6_infrastructure_manifest.json",
+    "D3": "D3_logical_manifest.json",
+    "D4": "D4_industrial_3d_manifest.json",
     "D7": "D7_remote_sensing_manifest.json",
     "D8": "D8_dermatology_manifest.json",
     "D9": "D9_brain_mri_manifest.json",
@@ -74,7 +74,7 @@ DOMAIN_FILES = {
     "D12": "D12_road_safety_manifest.json",
 }
 
-MULTI_CLASS_DOMAINS = {"D1", "D2", "D3", "D4", "D5", "D6"}
+MULTI_CLASS_DOMAINS = {"D1", "D5", "D2", "D6", "D3", "D4"}
 
 
 # ---------------------------------------------------------------------------

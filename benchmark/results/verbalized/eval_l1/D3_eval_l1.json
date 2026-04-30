@@ -1,1082 +1,1082 @@
 [
   {
-    "item_id": "D3_0034",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains all expected components (3-pin header, IC, potentiometer, LED, photoresistor) in their correct positions with no visible damage or defects. The candidate features list is empty as no anomalies were detected, leading to a low anomaly score and a final 'normal' verdict.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb3"
-  },
-  {
-    "item_id": "D3_0008",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The suspected defect (faint line) was found in the reference images, confirming it is a normal feature. All pieces are intact and match the normal signature.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0086",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits all characteristics of a normal sample: rectangular shape, uniform color, and consistent granular texture. No candidate defect features were identified to warrant further refutation.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0031",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirmed that the suspected anomalies are actually natural variations present in the reference images. The query image contains four intact, normally shaped macaroni pieces with no defects.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "macaroni1"
-  },
-  {
-    "item_id": "D3_0064",
-    "score": 0.85,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a foreign particle (dark speck) on the surface of the bottom-left candle, which is confirmed by side-by-side comparison to be absent in the normal reference images. This constitutes a contamination anomaly.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "candle"
-  },
-  {
-    "item_id": "D3_0074",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a standard HC-SR04 module. Comparison with reference images confirms that the transducer mesh, white rings, and overall board layout are normal. The pins are intact and the text is legible. No anomalies were detected.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb1"
-  },
-  {
-    "item_id": "D3_0015",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a set of green capsules that are visually consistent with the normal reference images. There are no candidate features suggesting defects such as cracks, contamination, or deformation. The initial low anomaly score is maintained as no suspicious features were found to require refutation.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "capsules"
-  },
-  {
-    "item_id": "D3_0037",
-    "score": 0.5,
-    "mode": "anomaly_detection",
-    "rationale": "json parse failed",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0073",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal signature perfectly: all expected components (3-pin header, IC, potentiometer, LED, photoresistor) are present and intact. No candidate defect features were identified, so the anomaly score remains low.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb3"
-  },
-  {
-    "item_id": "D3_0050",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly (edge irregularity) was refuted by finding the same feature in the reference images. The query image contains four intact, normal macaroni pieces.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0007",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits no anomalies. All observed features (texture, color, shape) are consistent with the normal reference images, and no defect-like characteristics survived the refutation process.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0069",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison with reference images confirms that the query object is normal. The initially suspected defects (spoke irregularity and surface gloss variation) are present as natural variations in the reference set, thus they are refuted as anomalies.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "fryum"
-  },
-  {
     "item_id": "D3_0016",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly (a minor edge irregularity) was refuted by finding the same feature in the reference images. The query image contains four intact, normal-looking macaroni pieces, consistent with the normal signature.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0054",
     "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The query image displays a single, intact cashew nut with uniform color and smooth texture, matching the normal signature. No candidate anomaly features (cracks, discoloration, foreign objects) were identified, so the initial low anomaly score is confirmed.",
+    "rationale": "The query bottle matches all normal signature criteria: intact labels with correct text, no structural damage, proper fill level, and clean background. The different fruit illustration (cherry vs orange/banana in refs) is a normal product variation, not a defect.",
     "label": 0,
     "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0046",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a single, intact cashew nut with uniform color and shape, consistent with the provided normal reference images. No anomalies such as cracks, discoloration, or foreign objects were detected.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0061",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains all expected components (3-pin header, IC, potentiometer, LED, photoresistor) in their correct positions with no visible damage or defects. The candidate features list is empty as no anomalies were detected, leading to a low anomaly score and a final 'normal' verdict.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb3"
-  },
-  {
-    "item_id": "D3_0006",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a normal white block with no visible defects, cracks, or deformations. It matches the normal signature and reference images perfectly, so no candidate features for anomaly were identified.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0082",
-    "score": 0.5,
-    "mode": "anomaly_detection",
-    "rationale": "json parse failed",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb1"
-  },
-  {
-    "item_id": "D3_0024",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays green capsules that are uniform in color, shape, and surface quality, matching the normal reference images. No defects such as cracks, contamination, or deformation are present.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "capsules"
-  },
-  {
-    "item_id": "D3_0056",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly (an edge irregularity) was successfully refuted by finding the same feature in the reference images. The query image contains four intact, normal-looking macaroni pieces.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0059",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The suspected anomaly (missing 'HW-168' text) was refuted by the side-by-side tool, which showed that reference images also lack this text. This confirms the feature is a normal variation. No other defects were found.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb4"
-  },
-  {
-    "item_id": "D3_0045",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly (discoloration) was refuted by the reference images, showing it is a normal variation. All other structural elements match the normal signature.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb2"
-  },
-  {
-    "item_id": "D3_0039",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "After a thorough visual inspection, no candidate features resembling defects (such as cracks, contamination, or deformation) were identified in the query image. The capsules exhibit the expected uniform lime-green color, smooth glossy surface, and intact capsule shape consistent with the normal reference images. Therefore, the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "capsules"
-  },
-  {
-    "item_id": "D3_0089",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal signature perfectly: all expected components (3-pin header, IC, potentiometer, LED, photoresistor) are present and intact. No candidate defect features were identified, so the anomaly score remains low.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb3"
-  },
-  {
-    "item_id": "D3_0063",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits all characteristics of a normal sample: a solid, intact white block with rounded corners on a dark background. No candidate defect features (cracks, stains, deformation) were identified, so the anomaly score remains low.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0001",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a single, intact cashew nut with the expected kidney shape and uniform beige color. All observed characteristics align with the normal reference profile, and any minor differences are accounted for as allowed variations (lighting, rotation). No anomalies were detected.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0026",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a normal instance of the object: a solid, intact white rectangular block with rounded corners on a dark background. No candidate defect features (cracks, contamination, deformation, discoloration) were identified. The object matches the normal signature perfectly, so the anomaly score is low.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0080",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a single, intact cashew nut with a smooth surface and uniform color, consistent with the normal reference images. No defects such as cracks, discoloration, or foreign objects are observed. The candidate features (texture, edge) appear normal and do not require further refutation.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0020",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a normal cashew nut. The side-by-side comparison with reference images confirms that the nut's shape, color, and texture are consistent with the normal class, and no unique anomalies are present.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0076",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits no anomalies. Its texture, color, and shape are consistent with the normal reference images, and all initial candidate features were refuted by the side-by-side comparison.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
+    "category": "juice_bottle"
   },
   {
     "item_id": "D3_0071",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image strictly adheres to the normal signature: three whole fruits (two oranges, one peach) in the left compartment and a distinct granola/dried fruit mix in the right compartment. No candidate anomaly features were identified, and the arrangement matches the reference images and rulebook definition of a normal instance.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0062",
     "score": 0.15,
     "mode": "anomaly_detection",
-    "rationale": "The query image displays a pasta piece that aligns perfectly with the normal signature: rectangular shape, uniform beige color, and consistent granular texture. No candidate features indicative of defects (breaks, warping, contamination) were found upon initial inspection, and the low initial anomaly score suggests it is normal. Therefore, no further refutation is needed.",
+    "rationale": "The query bottle has all required components: both labels present, correct text '100% Juice', intact glass structure, proper cap, high fill level, and clean black background. The different fruit illustration (cherry vs orange/banana in refs) is not a defect per the domain rules - only label presence and text correctness matter. No actual anomalies detected.",
     "label": 0,
     "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0009",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays green capsules that are consistent in color, shape, and surface quality with the reference images. All observed variations (rotation, spacing, reflections) are explicitly defined as normal in the reference profile. No anomalies such as cracks, contamination, or deformation were found.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "capsules"
-  },
-  {
-    "item_id": "D3_0019",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirmed that the features initially flagged as potential defects are actually consistent with the natural variations seen in the reference images. No unique anomalies were detected, so the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "macaroni1"
-  },
-  {
-    "item_id": "D3_0072",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a normal rectangular pasta shape with a granular texture and uniform beige color. Side-by-side comparison with reference images confirms that these features are consistent with the normal baseline and no anomalies such as breaks, contamination, or warping are present.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0078",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "The only observed difference is the silkscreen text ('FC-75' vs 'HW-168'), which is a normal labeling variation and not a physical defect. All functional components are present and intact, so the board is classified as normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb4"
-  },
-  {
-    "item_id": "D3_0060",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the query image is structurally identical to the reference images. Any minor visual differences are consistent with normal manufacturing tolerances and lighting conditions, leading to a conclusion that the object is normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "fryum"
-  },
-  {
-    "item_id": "D3_0012",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a pasta piece that aligns perfectly with the normal signature: rectangular shape, uniform color, and consistent texture. No candidate defect features were identified that would require refutation against the reference images.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0018",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays four tea-light candles that are structurally intact, with centered wicks and uniform surfaces. The side-by-side comparison confirmed that any minor visual variations are consistent with the normal reference images, leading to a conclusion that the image is normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "candle"
-  },
-  {
-    "item_id": "D3_0036",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains four intact macaroni pieces with standard geometry. The apparent edge irregularity was refuted by comparing it to reference images, which show similar natural variations. Therefore, the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0011",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal signature perfectly: all expected components (3-pin header, IC, potentiometer, LED, photoresistor) are present and undamaged. No candidate defect features were identified, so the anomaly score remains low.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb3"
-  },
-  {
-    "item_id": "D3_0048",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a white rectangular block that matches the normal signature in shape, color, and texture. No candidate defect features (cracks, contamination, deformation) were identified upon initial inspection, and the object is consistent with the provided reference images. Therefore, it is classified as normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0021",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits no unique defects. All observed features, including minor geometric and textural variations, are consistent with the normal reference samples. Therefore, the object is classified as normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "fryum"
-  },
-  {
-    "item_id": "D3_0032",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a single, intact cashew nut with normal morphology and surface characteristics. Comparison with reference images confirms that any minor textural variations are within the normal range, and no anomalies are present.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0067",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a pasta piece that aligns perfectly with the normal signature: rectangular shape, uniform beige color, and consistent granular texture. No hypothesized anomalies such as fractures, contamination, or warping are present. The candidate features (texture, edges) are consistent with the reference images, leading to a low anomaly score.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0023",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a single, intact cashew nut with uniform color and smooth texture, matching the normal signature. No candidate defect features were identified that require refutation.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0055",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal signature perfectly: all expected components (3-pin header, IC, potentiometer, LED, photoresistor) are present and intact. No candidate defect features were identified, so the anomaly score remains low.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb3"
-  },
-  {
-    "item_id": "D3_0043",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a set of green capsules that are visually consistent with the normal reference images. There are no candidate features suggesting defects such as cracks, contamination, or deformation. The initial low anomaly score is maintained as no suspicious features were found to require refutation.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "capsules"
-  },
-  {
-    "item_id": "D3_0003",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the query image contains no anomalies. All observed features, including minor surface textures and lighting shadows, are consistent with the normal reference images. The query is classified as normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "candle"
+    "category": "juice_bottle"
   },
   {
     "item_id": "D3_0040",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains four intact macaroni pieces with standard geometry and coloration. Side-by-side comparison with reference images confirms that all observed features are consistent with the normal baseline, and no unique defects or anomalies are present.",
+    "rationale": "The only observed difference (blue vs orange cable) is explicitly listed as an allowed variation by the reference profiler. No other anomalies are present.",
     "label": 0,
     "domain_code": "D3",
-    "category": "macaroni1"
+    "category": "splicing_connectors"
   },
   {
-    "item_id": "D3_0014",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly (missing 'HW-168' text) is refuted because the reference set contains both boards with and without this text, proving it is a normal variation. All other components and the PCB structure are intact and match the normal signature.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb4"
-  },
-  {
-    "item_id": "D3_0053",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal signature defined in the rulebook and the reference images. All critical components (ICs, pins, crystals, label) are present and intact. No defects, missing parts, or damage are observed.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb2"
-  },
-  {
-    "item_id": "D3_0062",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a single, intact cashew nut with uniform color and smooth texture, matching the normal signature. No candidate defect features were identified that require refutation.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0002",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal signature perfectly: it has the correct PCB layout, all three ICs (U1, U2, U3) are present, the header pins are straight and populated, and the silkscreen text is clear. No candidate defect features were identified that survived a visual check against the reference images.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "pcb2"
-  },
-  {
-    "item_id": "D3_0005",
+    "item_id": "D3_0060",
     "score": 0.15,
     "mode": "anomaly_detection",
-    "rationale": "The query image displays a pasta piece that aligns perfectly with the normal signature: rectangular shape, uniform color, and consistent texture. No candidate defect features were identified that would require refutation against the reference images.",
+    "rationale": "The query image matches the normal signature defined in the rules: two connector clusters with orange bodies and transparent caps, connected by a continuous cable on a mesh background. No missing parts, disconnections, or structural damage are visible. The slight variation in cable color (orange vs blue in one ref) is a normal variation, not a defect.",
     "label": 0,
     "domain_code": "D3",
-    "category": "pipe_fryum"
+    "category": "splicing_connectors"
   },
   {
     "item_id": "D3_0051",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a set of green capsules that are visually consistent with the normal reference images. There are no candidate features suggesting defects such as cracks, contamination, or deformation. The initial low anomaly score is maintained as no suspicious features were found to require refutation.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "capsules"
-  },
-  {
-    "item_id": "D3_0068",
-    "score": 0.15,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a set of green capsules that are visually consistent with the normal reference images. All objects exhibit the expected uniform color, smooth glossy surface, and intact capsule shape. No candidate features resembling defects (cracks, contamination, deformation) were identified. Therefore, the image is classified as normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "capsules"
-  },
-  {
-    "item_id": "D3_0075",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a single, intact cashew nut with uniform color and shape, matching the normal reference images. No anomalies such as cracks, discoloration, or foreign objects were detected.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0041",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison with reference images confirms that the query object's features, including spoke shape and surface texture, are consistent with normal samples. No unique defects were found.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "fryum"
-  },
-  {
-    "item_id": "D3_0010",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirmed that the subtle features initially flagged as potential anomalies are actually present in the normal reference images. No unique defects were found, so the query is classified as normal.",
-    "label": 0,
-    "domain_code": "D3",
-    "category": "candle"
-  },
-  {
-    "item_id": "D3_0077",
     "score": 0.5,
     "mode": "anomaly_detection",
     "rationale": "json parse failed",
     "label": 0,
     "domain_code": "D3",
-    "category": "pcb1"
+    "category": "pushpins"
   },
   {
-    "item_id": "D3_0120",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal signature perfectly: it has the correct PCB layout, all three ICs (U1, U2, U3) are present, the header pins are straight and populated, and the silkscreen text is clear. No candidate defect features were identified that survived a visual check against the reference images.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb2"
-  },
-  {
-    "item_id": "D3_0140",
+    "item_id": "D3_0069",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison confirms that the transducer components in the query image are identical to the normal reference images. The board is simply rotated, which is not a defect. No anomalies were found.",
-    "label": 1,
+    "rationale": "The query image exhibits a different fruit icon and liquid color compared to the references, but the reference profiler confirms these are allowed variations. No other defects are present, so the image is classified as normal.",
+    "label": 0,
     "domain_code": "D3",
-    "category": "pcb1"
+    "category": "juice_bottle"
   },
   {
-    "item_id": "D3_0168",
+    "item_id": "D3_0058",
     "score": 0.15,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains four intact macaroni pieces with normal geometry and coloration, matching the reference baseline. No structural defects, missing parts, or foreign objects are observed. The candidate features identified are minor variations or artifacts that do not constitute anomalies.",
-    "label": 1,
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rules. The packaging is intact, and no damage or foreign objects are visible. The arrangement differs slightly from the references, but the component count and condition are normal.",
+    "label": 0,
     "domain_code": "D3",
-    "category": "macaroni2"
+    "category": "screw_bag"
   },
   {
-    "item_id": "D3_0163",
-    "score": 0.92,
+    "item_id": "D3_0065",
+    "score": 0.5,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear brownish stain and surface irregularity that is absent in all reference images, confirming it as an anomaly consistent with surface contamination or discoloration.",
-    "label": 1,
+    "rationale": "json parse failed",
+    "label": 0,
     "domain_code": "D3",
-    "category": "chewinggum"
+    "category": "screw_bag"
   },
   {
-    "item_id": "D3_0091",
-    "score": 0.85,
+    "item_id": "D3_0022",
+    "score": 0.5,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a small dark speck in the top-left corner that is not present in any of the reference images. This foreign debris on the surface violates the 'normal_signature' of a clean, uniform background and matches the 'hypothesized_anomaly_mode' of surface contamination. Therefore, the image is anomalous.",
-    "label": 1,
+    "rationale": "json parse failed",
+    "label": 0,
     "domain_code": "D3",
-    "category": "capsules"
+    "category": "pushpins"
   },
   {
-    "item_id": "D3_0166",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear defect: the white silkscreen text (e.g., 'HW-168') is significantly faded or missing compared to the crisp text visible on all reference boards. This is not a normal variation and indicates a manufacturing defect.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb4"
-  },
-  {
-    "item_id": "D3_0146",
+    "item_id": "D3_0006",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image exhibits all characteristics of a normal instance: six intact spokes, a clear central hole, a continuous rim, and correct coloration. No candidate defect features were identified that would require refutation against the reference images.",
-    "label": 1,
+    "rationale": "The only potential anomaly (low pin count in one cell) was refuted by the reference images, which demonstrate that such variation is normal. No other defects were found.",
+    "label": 0,
     "domain_code": "D3",
-    "category": "fryum"
+    "category": "pushpins"
   },
   {
-    "item_id": "D3_0173",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear brownish stain and surface irregularity in the center that is absent in all reference images. This feature survives the refutation protocol, confirming the object is anomalous.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0119",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct dark spot (surface contamination) that is absent in all reference images. This feature survives refutation and confirms the object is anomalous.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0142",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query object exhibits surface scratches that are clearly visible in the side-by-side comparison and are absent in all reference images, confirming an anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0137",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct white patch on the nut's surface that is not present in any of the reference images. Since this feature was not found in the normal reference pool, it is identified as an anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0139",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear structural fracture (broken rim and spoke) that is absent in all reference images, which are structurally intact. This confirms the presence of an anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "fryum"
-  },
-  {
-    "item_id": "D3_0105",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains visible foreign debris on the bottom-right candle, which is absent in all reference images. This confirms the presence of an anomaly (contamination).",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "candle"
-  },
-  {
-    "item_id": "D3_0106",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct white scratch or contamination mark in the top-right region that is absent in all normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb2"
-  },
-  {
-    "item_id": "D3_0175",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query object exhibits a clear structural defect (a chip at the bottom-left corner) that is absent in all reference images, confirming it as an anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0118",
+    "item_id": "D3_0039",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The initial candidate feature (edge irregularity) was refuted by the side-by-side tool, which showed similar features in the normal reference images. The query image contains four intact macaroni pieces consistent with the normal signature.",
-    "label": 1,
+    "rationale": "The only observed difference (blue cable vs orange) is explicitly listed as an allowed variation by the reference profiler. No other defects are present.",
+    "label": 0,
     "domain_code": "D3",
-    "category": "macaroni2"
+    "category": "splicing_connectors"
   },
   {
-    "item_id": "D3_0133",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct foreign particle (grey spot) on the surface, which is absent in all reference images. This confirms the presence of an anomaly (surface contamination).",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0167",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The potential defects identified (surface line, shape variation) were refuted by the reference images, which show similar natural variations. The query image contains four intact, normal macaroni pieces.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0129",
+    "item_id": "D3_0036",
     "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal signature perfectly: all expected components (3-pin header, IC, potentiometer, LED, photoresistor) are present and intact. No candidate defect features were identified, so the anomaly score remains low.",
-    "label": 1,
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rules. The packaging is intact, and no damage or foreign objects are visible. The arrangement of parts differs from the references, but the component count and condition are normal.",
+    "label": 0,
     "domain_code": "D3",
-    "category": "pcb3"
+    "category": "screw_bag"
   },
   {
-    "item_id": "D3_0162",
-    "score": 0.95,
+    "item_id": "D3_0049",
+    "score": 0.5,
     "mode": "anomaly_detection",
-    "rationale": "The query image is anomalous because it is missing the 4th header pin (VCC) at the top connector, a feature consistently present in all reference images. This constitutes a missing component defect.",
-    "label": 1,
+    "rationale": "json parse failed",
+    "label": 0,
     "domain_code": "D3",
-    "category": "pcb2"
+    "category": "screw_bag"
   },
   {
-    "item_id": "D3_0130",
+    "item_id": "D3_0019",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a different fruit label and liquid color compared to the references, but the reference profiler explicitly identifies these as allowed variations. No structural defects or missing labels are present, confirming the item is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0043",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits in the left compartment and the correct granola/dried fruit arrangement in the right. No candidate defect features were identified, so the anomaly score remains low.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0064",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits in the left compartment and the correct granola/dried fruit arrangement in the right. No candidate defect features were identified, so the anomaly score remains low.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0061",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only observed difference (banana vs. orange label) is explicitly listed as an allowed variation by the reference profiler. No other anomalies are present.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0038",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits in the left compartment and the correct granola/dried fruit arrangement in the right. No candidate defect features were identified, so the anomaly score remains low.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0029",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified; the query matches the normal signature (continuous cable, symmetric connector stacks, intact caps) and aligns with the reference pool. With an empty candidate list and low initial score, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0030",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the normal signature: a 3x5 grid of yellow pushpins in a transparent box with no visible defects, missing parts, or foreign objects. The arrangement and appearance of the pins are consistent with the provided reference images, indicating a normal instance.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0011",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rulebook. The packaging is intact, and no foreign objects or damage are visible. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0063",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only allowed variations (pin orientation and density) as confirmed by the reference profiler. No anomalies such as missing pins, foreign objects, or structural damage are present.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0045",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the domain rules. The packaging is intact with the required recycling strip. No anomalies were detected.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0020",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0068",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rulebook. The packaging is intact with the required recycling strip. No defects, missing parts, or foreign objects are visible. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0004",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0042",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits on the left, granola and dried fruit mix on the right, with no structural damage or foreign objects. No candidate anomaly features were identified.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0028",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a different fruit icon and liquid color compared to the references, but the reference profiler explicitly lists these as allowed variations. No structural defects or label errors are present, so the item is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0044",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only observed difference (blue cable vs orange) is explicitly listed as an allowed variation by the reference profiler. No other anomalies are present.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0026",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only observed difference is the cable color (blue vs orange). The reference profiler explicitly states that wire color variation is a normal allowed variation. Therefore, the query image is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0012",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0005",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits on the left, granola and dried fruit mix on the right, with no structural damage or foreign objects. No candidate anomaly features were identified.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0017",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three whole fruits (two oranges, one peach) in the left compartment and a granola/dried fruit mix in the right compartment. No candidate anomaly features were identified, and the arrangement is consistent with the reference images and domain rules.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0052",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only observed difference is the cable color (blue vs orange). The reference profiler explicitly states that wire color variation is a normal allowed variation. Therefore, the query image is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0048",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query bottle has all required components: both labels present, correct text '100% Juice', intact glass structure, proper cap, high fill level, and clean black background. The different fruit illustration (cherry vs orange/banana in refs) is not a defect per the domain rules - only label presence and text correctness matter. No anomalies detected.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0070",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct white circular mark and silkscreen smudge near the USB connector that are absent in all reference images. This confirms the presence of a defect (contamination or damage), leading to a high anomaly score.",
-    "label": 1,
+    "rationale": "The query image contains a clear text defect on the lower label ('Juicee' vs 'Juice'), which violates the normal signature and is not present in the reference images.",
+    "label": 0,
     "domain_code": "D3",
-    "category": "pcb4"
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0082",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits on the left, granola and dried fruit mix on the right, and an intact white container. No anomalies were detected.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0084",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains three washers, violating the rule that a normal set must have exactly two. This anomaly was confirmed by comparing against reference images which all show the correct count of two washers.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0067",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard arrangement of yellow pushpins in a grid box. The specific feature that raised suspicion (a compartment with only one pin) was confirmed to be a normal variation by comparing it with the reference images. No other defects were found.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0075",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a banana label and white liquid, which the reference profiler identifies as allowed variations ('label fruit icon change', 'liquid color variation'). No structural defects or missing labels are present, so the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0073",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rulebook. The packaging is intact with the required recycling strip. No defects, missing parts, or foreign objects are visible. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0080",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits in the left compartment and the correct granola/dried fruit arrangement in the right. No candidate defect features were identified, so the anomaly score remains low.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0053",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0066",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0014",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0076",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The visual differences (banana label, white liquid) are explicitly listed as allowed variations in the reference profile, confirming the query is a normal instance of the product.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0008",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the domain rules. The packaging is intact with the required recycling strip. No defects, missing parts, or foreign objects are observed.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0085",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear text defect ('Juioe' vs 'Juice') on the lower label that is absent in all reference images, confirming the bottle is anomalous.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0081",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a banana label and white liquid, which are explicitly listed as allowed variations ('fruit label variation', 'liquid color variation') by the reference profiler. No structural defects or missing labels are present. Therefore, the image is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0024",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (a compartment with a single pin) was refuted by comparing it with reference images, which show the same variation. No other defects were found, so the image is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0050",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The visual differences (banana label, white liquid) are explicitly listed as allowed variations by the reference profiler, and the bottle structure and text labels are intact and correct. Thus, the image is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0072",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only observed difference (blue cable vs orange) is explicitly listed as an allowed variation by the reference profiler. No structural defects or missing parts are present.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0000",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits variations in pin orientation and density, which are explicitly listed as allowed variations in the reference profiler. No other anomalies such as missing pins, foreign objects, or structural damage are observed. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0077",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rulebook. The packaging is intact with the required recycling strip. No defects, missing parts, or foreign objects are observed.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0034",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it contains only one flat washer, whereas the normal reference images and the domain rulebook specify that a standard set must contain exactly two flat washers. This missing component is confirmed by the side-by-side comparison.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0059",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits in the left compartment and the correct granola/dried fruit arrangement in the right. No candidate defect features were identified, so the anomaly score remains low.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0007",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits in the left compartment and the correct granola/dried fruit arrangement in the right. No candidate defect features were identified, so the anomaly score remains low.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0018",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0078",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a different fruit label (cherry) and liquid color (red) compared to the references, but the reference profiler explicitly lists 'fruit label variation' and 'liquid color variation' as allowed normal variations. No structural defects or label errors are present. Thus, the image is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "juice_bottle"
   },
   {
     "item_id": "D3_0176",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct yellow triangular foreign object and a different IC chip model (TP5100 vs TC4056A) compared to the normal reference images. The side-by-side comparison confirmed the yellow mark is not a normal variation, leading to a high anomaly score.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb4"
-  },
-  {
-    "item_id": "D3_0103",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query object exhibits distinct dark spots and surface bumps on its left side that are completely absent in all normal reference images. This confirms the presence of a material contamination or surface defect anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "fryum"
-  },
-  {
-    "item_id": "D3_0179",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly (edge irregularity) was refuted by the reference images, which show the same feature. The query image contains four intact, normally shaped macaroni pieces with no defects.",
+    "rationale": "The only observed difference (blue cable vs orange) is explicitly listed as an allowed variation by the reference profiler. No structural defects or missing parts are present.",
     "label": 1,
     "domain_code": "D3",
-    "category": "macaroni1"
+    "category": "splicing_connectors"
   },
   {
-    "item_id": "D3_0107",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a white bar of soap with minor surface texture variations and lighting shadows. The reference profiler explicitly lists these as allowed variations for this class. No structural defects, contamination, or deformations were found. Thus, the object is normal.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0125",
-    "score": 0.85,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains two small dark spots on the cashew surface which are not present in any of the reference images. This feature survives refutation and indicates an anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0136",
-    "score": 0.85,
-    "mode": "anomaly_detection",
-    "rationale": "The query object exhibits a small circular mark on its surface that is absent in all reference images. Since the references establish the normal appearance as clean and uniform, this unique feature is identified as an anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0154",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The only suspected anomaly (an edge irregularity) was found to be a natural variation present in the reference images. All other features (count, shape, color) are normal. Therefore, the image is classified as normal.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0165",
+    "item_id": "D3_0123",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a clear anomaly: foreign debris on the bottom-right candle. This feature was successfully refuted against the reference images, which show clean surfaces, confirming the defect.",
+    "rationale": "The query image contains a visible dark blue spot in the liquid, which is absent in all reference images. This indicates contamination or a foreign object, confirming the image is anomalous.",
     "label": 1,
     "domain_code": "D3",
-    "category": "candle"
+    "category": "juice_bottle"
   },
   {
-    "item_id": "D3_0156",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a structural defect (a chip on the rim of the top-left candle) that is absent in all reference images, confirming the sample is anomalous.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "candle"
-  },
-  {
-    "item_id": "D3_0160",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains four intact macaroni pieces with the expected shape and color, matching the normal signature. No candidate defect features were identified that require refutation.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0143",
+    "item_id": "D3_0131",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image shows a standard light sensor module with all components (photoresistor, header, potentiometer, IC, LED) present and correctly assembled. Side-by-side comparison confirmed the photoresistor is normal, and visual inspection confirms the rest of the board matches the reference images. No anomalies detected.",
+    "rationale": "The only potential anomaly identified (a compartment with a single pin) was confirmed to be a normal variation by comparing it with the reference images. No other defects were found.",
     "label": 1,
     "domain_code": "D3",
-    "category": "pcb3"
+    "category": "pushpins"
   },
   {
-    "item_id": "D3_0115",
+    "item_id": "D3_0175",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The initial candidate feature (edge irregularity) was refuted by the side-by-side tool, which showed the same feature in the reference images. No other anomalies were detected, confirming the query image is normal.",
+    "rationale": "The query image exhibits a yellow cable and a 2-unit stack configuration. The reference profiler confirms that wire color variation and minor tension/shape variations are normal. No structural defects or missing components are present.",
     "label": 1,
     "domain_code": "D3",
-    "category": "macaroni1"
+    "category": "splicing_connectors"
   },
   {
-    "item_id": "D3_0128",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a single, intact cashew nut with a smooth surface and uniform color, consistent with the normal reference images. No defects such as cracks, discoloration, or foreign objects are observed. The candidate features (texture, edge) appear normal and do not require further refutation.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0172",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct dark brown spot on the surface, which is absent in all reference images. This confirms the presence of a surface contamination anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0098",
+    "item_id": "D3_0108",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly (a rim irregularity) was successfully refuted by showing it exists in the normal reference images. The query image contains four intact macaroni pieces with no defects.",
+    "rationale": "The only observed difference (banana vs. orange label) is explicitly listed as an allowed variation by the reference profiler. No other anomalies are present.",
     "label": 1,
     "domain_code": "D3",
-    "category": "macaroni1"
-  },
-  {
-    "item_id": "D3_0126",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits bent and misaligned header pins at the J1 connector, a defect not present in any of the reference images which all show straight, vertical pins. This confirms the presence of an anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb2"
+    "category": "juice_bottle"
   },
   {
     "item_id": "D3_0155",
-    "score": 0.15,
+    "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The initial suspicion of a defect on the potentiometer was refuted by comparing it with the reference images, which show similar variations. All other key components (IC, photoresistor, LED, header) are present and appear normal. Therefore, the query image is classified as normal.",
+    "rationale": "The query image exhibits a clear label defect (tear/peeling) that is not present in any of the reference images, confirming the bottle is anomalous.",
     "label": 1,
     "domain_code": "D3",
-    "category": "pcb3"
+    "category": "juice_bottle"
   },
   {
     "item_id": "D3_0110",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image depicts a normal cashew nut that matches the reference baseline in shape, color, and integrity. No anomalies were detected, and all potential defect features were refuted.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0117",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The refutation protocol confirmed that all candidate features (edge irregularities) are consistent with the normal reference images. The query image contains four intact, correctly shaped macaroni pieces with no unique defects.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0122",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison definitively shows a structural defect (a chip) on the bottom edge of the query object that is absent in all normal reference images. This confirms the object is anomalous.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "chewinggum"
-  },
-  {
-    "item_id": "D3_0138",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison definitively shows a material protrusion on the query object that is absent in all reference images, confirming an anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "fryum"
-  },
-  {
-    "item_id": "D3_0134",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a normal object. The initial suspicion of surface texture variation was refuted by the side-by-side comparison, which revealed that similar variations exist in all reference images, confirming them as normal manufacturing characteristics. No unique defects were found.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "fryum"
-  },
-  {
-    "item_id": "D3_0124",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison definitively shows a white, crusty residue on the query PCB that is absent in all normal reference images. This confirms the presence of contamination, classifying the board as anomalous.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb4"
-  },
-  {
-    "item_id": "D3_0097",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The initial suspicion of a defect on the bottom-left piece was refuted by side-by-side comparison with reference images, showing it is a normal variation. No other anomalies (breakage, missing parts, foreign objects) are present. The image is normal.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "macaroni2"
-  },
-  {
-    "item_id": "D3_0151",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal reference images in all critical aspects: component presence, alignment, and board integrity. No anomalies were detected.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb2"
-  },
-  {
-    "item_id": "D3_0178",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image exhibits a clear structural defect: a missing triangular corner segment. This feature is absent in all reference images, which show intact rectangular shapes. Therefore, the object is anomalous.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0127",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison definitively shows the query object has a filled/obstructed central hub, whereas all reference images display a clean, open hole. This matches the 'Manufacturing defect' mode in the rulebook, confirming the object is anomalous.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "fryum"
-  },
-  {
-    "item_id": "D3_0171",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The side-by-side comparison definitively shows that the middle pin of the 3-pin header is bent in the query image, whereas all reference images show straight pins. This physical deformation is a clear anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb3"
-  },
-  {
-    "item_id": "D3_0169",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a standard light sensor module. All critical components (3-pin header, IC, potentiometer, LED, photoresistor) are present and correctly placed. The side-by-side comparison confirmed the photoresistor is normal. No defects, cracks, or missing parts were found. The image is normal.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb3"
-  },
-  {
-    "item_id": "D3_0149",
-    "score": 0.92,
-    "mode": "anomaly_detection",
-    "rationale": "The query image contains a small dark spot on the cashew surface that is absent in all reference images. This feature survives refutation and indicates an anomaly.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "cashew"
-  },
-  {
-    "item_id": "D3_0144",
     "score": 0.1,
     "mode": "anomaly_detection",
-    "rationale": "The query image displays a single, intact cashew nut with uniform color and smooth edges, consistent with the normal reference images. No defects such as cracks, discoloration, or foreign objects are visible. The slight texture variation is within normal range.",
+    "rationale": "The query image perfectly matches the normal signature: three fruits in the left compartment and the correct granola/dried fruit arrangement in the right. No candidate defect features were identified, so the anomaly score remains low.",
     "label": 1,
     "domain_code": "D3",
-    "category": "cashew"
+    "category": "breakfast_box"
   },
   {
-    "item_id": "D3_0095",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The only candidate anomaly (rim irregularity) was refuted by the side-by-side tool, which showed the same feature in normal reference images. No other defects were observed.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "candle"
-  },
-  {
-    "item_id": "D3_0147",
+    "item_id": "D3_0105",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The only potential anomaly identified (a variation in internal texture) was found to be a normal characteristic present in the reference images. No other defects were observed, so the query image is classified as normal.",
+    "rationale": "The only observed difference (blue vs. orange cable) is explicitly listed as an allowed variation by the reference profiler. No structural defects or missing components are present.",
     "label": 1,
     "domain_code": "D3",
-    "category": "capsules"
-  },
-  {
-    "item_id": "D3_0161",
-    "score": 0.08,
-    "mode": "anomaly_detection",
-    "rationale": "The initial suspicion of a defect due to texture and a linear mark was refuted by the side-by-side comparison, which showed these features are present in normal reference samples. Therefore, the query object is normal.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pipe_fryum"
-  },
-  {
-    "item_id": "D3_0121",
-    "score": 0.1,
-    "mode": "anomaly_detection",
-    "rationale": "The query image displays a set of green capsules that are visually consistent with the normal reference images. There are no candidate features suggesting defects such as cracks, contamination, or deformation. The initial score is low, and with no candidate features to refute, the image is classified as normal.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "capsules"
+    "category": "splicing_connectors"
   },
   {
     "item_id": "D3_0090",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a clearly damaged USB Type-C connector (bent and cracked), which is a significant defect not present in any of the normal reference images. This confirms the board is anomalous.",
+    "rationale": "The query image contains an orange peel fragment in the left compartment, which is absent in all normal reference images. This violates the normal signature of containing exactly three whole fresh fruits, confirming the image as anomalous.",
     "label": 1,
     "domain_code": "D3",
-    "category": "pcb4"
+    "category": "breakfast_box"
   },
   {
-    "item_id": "D3_0158",
-    "score": 0.05,
-    "mode": "anomaly_detection",
-    "rationale": "The query image shows a standard HC-SR04 module that is physically identical to the reference images, merely rotated 180 degrees. No defects such as missing pins, damaged mesh, or PCB damage are present.",
-    "label": 1,
-    "domain_code": "D3",
-    "category": "pcb1"
-  },
-  {
-    "item_id": "D3_0111",
+    "item_id": "D3_0126",
     "score": 0.92,
     "mode": "anomaly_detection",
-    "rationale": "The query image contains a distinct surface defect (irregular patch) on the right side that is absent in all reference images, confirming the object is anomalous.",
+    "rationale": "The query image is anomalous because it lacks the expected vertical stack of connectors (showing only one per side), which is not listed as an allowed variation in the reference profile. The cable color difference is a valid normal variation.",
     "label": 1,
     "domain_code": "D3",
-    "category": "chewinggum"
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0122",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the domain rules. The packaging is intact with the required recycling strip. No anomalies were detected.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0177",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rules. The packaging is intact, and no foreign objects or damage are visible. The component count and condition are consistent with the reference images, indicating a normal sample.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0152",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a standard 3x5 grid of yellow pushpins. All compartments are occupied, and no foreign objects or damaged components are visible. The variations in pin orientation and density are explicitly listed as normal variations by the reference profiler. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0134",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a banana label and white liquid, which the reference profiler explicitly identifies as allowed variations ('fruit label variation', 'liquid color variation'). No structural defects or missing labels are present. Thus, the image is normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0093",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear text defect on the lower label ('Juioe' instead of 'Juice'), which is not present in any of the reference images. This confirms the bottle is anomalous.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0151",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows an empty bottle, whereas all reference images show bottles filled with liquid. This deviation from the normal 'high fill level' signature confirms the image is anomalous.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0169",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0132",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0116",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains the exact number of components specified in the normal signature (2 bolts, 2 nuts, 2 washers) within an intact bag. The reference profiler confirms that variations in component arrangement are normal. Therefore, no anomaly is detected.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0138",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because the right compartment is missing the granola layer that is consistently present in all reference images. The side-by-side comparison definitively refutes the possibility that this is a normal variation.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0103",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0101",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it is missing the right-side connector cluster, which is present in all reference images. This confirms a 'Missing connector' defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0143",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because the bottom-right compartment, which should contain dried banana slices and almonds according to the normal signature and reference images, is completely empty.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0179",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it contains only one hexagonal nut, whereas the normal reference images and the domain rulebook specify that a complete set must contain exactly two hexagonal nuts. This missing component is clearly visible and confirmed by the side-by-side comparison.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0153",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous due to the presence of a foreign green object in the top-left corner and an extra washer (3 instead of 2), both of which are absent in the normal reference images.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0165",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains three flat washers, violating the domain rule that specifies exactly two. This anomaly is confirmed by the side-by-side comparison with reference images, which all show the correct count of two washers.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0136",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a visible blemish on the top orange in the left compartment, which is not present in any of the reference images showing normal, unblemished fruit. This deviation confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0160",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (green fruit icon) is explicitly covered by the 'fruit label variation' allowed variation rule. All other features match the normal signature.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0133",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits on the left, granola and dried fruit mix on the right, with no structural damage or foreign objects. No candidate anomaly features were identified.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0140",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard 3x5 grid of yellow pushpins with no missing pins, foreign objects, or damage. Variations in pin orientation and density are confirmed as normal by the reference profiler. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0124",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rulebook. The packaging is intact, and no defects or foreign objects are observed. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0164",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rules. The packaging is intact with the required recycling strip. No anomalies were detected.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0109",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image perfectly matches the normal signature: three fruits on the left, granola and dried fruit mix on the right, with no structural damage or foreign objects. No candidate anomaly features were identified.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0166",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rules. The packaging is intact, and no damage or foreign objects are visible. The arrangement of parts differs from the references, but the component count and condition are normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0139",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only observed difference is the cable color (blue vs orange). The reference profiler explicitly states that wire color variation is a normal allowed variation. Therefore, the query image is normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0127",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it is missing the entire right-side cluster of connectors, a component that is consistently present in all reference images. The cable in the query also terminates without connecting to this missing cluster.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
   },
   {
     "item_id": "D3_0159",
     "score": 0.05,
     "mode": "anomaly_detection",
-    "rationale": "The query image matches the normal signature perfectly: four intact candles with centered wicks and smooth surfaces, consistent with the reference images. No defects were found.",
+    "rationale": "The observed blue cable color is explicitly listed as an allowed variation by the reference profiler, refuting the initial anomaly hypothesis. No other defects are present.",
     "label": 1,
     "domain_code": "D3",
-    "category": "candle"
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0161",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard storage box with yellow pushpins. The initial suspicion of a missing pin in one compartment was refuted by comparing it with reference images, which show similar random distributions of pin counts (0-2 pins) per cell. No other anomalies such as foreign objects, damage, or broken components are present. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0099",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature. The bag is intact, and the arrangement is a normal variation of position. No anomalies detected.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0117",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a bottle with a banana label and white liquid, which deviates significantly from the reference images that all show an orange label and yellow liquid. This difference in product identity (fruit type and liquid color) constitutes a clear anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0112",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains three washers, whereas the domain rulebook strictly requires exactly two. The reference profiler confirms that component count variation is not an allowed normal variation, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0129",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a green component (likely a washer or ring) which is not present in any of the reference images. The domain rulebook specifies that normal hardware components are silver. This foreign colored object is a definitive anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0158",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial suspicion of a defect (a bruise on an orange) was refuted by comparing the query image with the reference images, which showed similar natural variations. No other anomalies were found, so the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0170",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial suspicion of an empty compartment in the bottom-right cell was refuted by the side-by-side tool, which confirmed the presence of a pushpin. No other anomalies (foreign objects, damage) were detected. The image is consistent with the normal reference set.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0120",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it is missing the left-side connector cluster, a feature present in all reference images and required by the domain rules.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0102",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly, the blue cable color, is explicitly listed as an allowed variation by the reference profiler. All other features (connector count, arrangement, lack of damage) are consistent with the normal signature. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0092",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, clumpy patch in the granola section that is not present in any of the normal reference images. This feature has survived refutation and is confirmed as an anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "breakfast_box"
+  },
+  {
+    "item_id": "D3_0128",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains an extra C-shaped metal fragment not present in any of the normal reference images. This violates the rule that the bag should contain exactly two bolts, two nuts, and two washers, indicating a defect (broken part) or contamination.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0100",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only allowed variations (pin orientation and density) as confirmed by the reference profiler. No anomalous features such as missing pins, foreign objects, or structural damage were found.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0111",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed blue cable color is explicitly listed as an allowed variation by the reference profiler, refuting the initial anomaly hypothesis. No other defects are present.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0125",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers in an intact bag with the correct packaging markings, matching the normal signature perfectly. No candidate defect features were identified to warrant refutation.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0157",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear anomaly: the right-side connector stack is missing two units compared to the consistent three-unit stacks seen in all reference images. This deviation from the normal signature confirms the presence of a defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0115",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (blue cable vs orange in refs) is explicitly allowed per the reference profiler. All structural elements match the normal signature.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0146",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows that the top-left compartment in the query image is empty, while all reference images contain a pushpin in that location. This confirms a 'Missing pushpin' anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0104",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rules. The packaging is intact, and no damage or foreign objects are visible. The arrangement differs from the references, but the component count and condition are normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0097",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard 3x5 grid of yellow pushpins with no missing pins, foreign objects, or damage. Variations in pin orientation and density are confirmed as normal by the reference profiler. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pushpins"
+  },
+  {
+    "item_id": "D3_0178",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains exactly two bolts, two nuts, and two washers, matching the normal signature defined in the rules. The packaging is intact with no visible defects or foreign objects. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "screw_bag"
+  },
+  {
+    "item_id": "D3_0149",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed differences (banana label, white liquid) are explicitly listed as allowed variations by the reference profiler. No structural or text defects are present, so the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "juice_bottle"
+  },
+  {
+    "item_id": "D3_0118",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a blue cable instead of orange, but the reference profiler explicitly allows for wire color variation. The structural components (connectors, arrangement, connection) are intact and match the normal baseline. Thus, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "splicing_connectors"
+  },
+  {
+    "item_id": "D3_0163",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image strictly adheres to the normal signature: three fruits on the left, granola and dried fruit mix on the right, with no visible defects or anomalies. No candidate features survived initial inspection to warrant refutation.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "breakfast_box"
   }
 ]

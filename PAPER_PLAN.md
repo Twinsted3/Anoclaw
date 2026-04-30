@@ -24,7 +24,7 @@
 | **F (extension)** — A 480-label semi-supervised Controller extension closes the remaining gap on the weakest-ensemble backbone. | §6 Table: Qwen3.5 passive ensemble 0.7333 → Controller full 0.7539 ($+2.05$ pp, CI $[+0.41, +3.67]$, $P{=}0.995$). Four-way ablation (no-rules/shuffled/meta-only/full) shows rule *content* is the mechanism. | ✅ supported | §6 |
 
 **Not reported (withheld):**
-- Specialty-aware catalog on GPT-5.4 (sub-API outage blocked D5–D12 on the retry run). The partial Qwen3.5 + SeedVL evidence is retained as an Appendix-level mechanism check, not a headline finding.
+- Specialty-aware catalog on GPT-5.4 (sub-API outage blocked D3–D12 on the retry run). The partial Qwen3.5 + SeedVL evidence is retained as an Appendix-level mechanism check, not a headline finding.
 - Transfer of the Controller extension to GPT-5.4 and SeedVL. Mentioned as future work.
 
 ---
@@ -136,7 +136,7 @@ Opens with: *The headline in §4 is an outcome; this section reports how the age
 
 ### §7 Discussion and Conclusion (0.5 pages)
 - **What the parallel-branch primitive generalises.** The same pattern (always-on Direct, refutation agent, single-invocation fixed blend) should work for any training-free VLM task whose base prompt has usable signal but whose multi-turn agent is backbone-brittle — OCR-heavy document inspection, medical screening, satellite change detection.
-- **Limitations (one paragraph).** (a) Three floor domains: D6 Real3D-AD, D10 Liver CT, D4 SDNET-Direct-only; modality mismatch and item-level similarity. (b) Ensemble weight $\alpha{=}0.5$ fixed — a 20-item calibration selector is an obvious extension. (c) Tool-usage refinement on weak backbones (Qwen3.5 refutation agent $-4.46$ pp deficit localises to specific tools on specific domains). (d) Controller extension is a single-backbone case study.
+- **Limitations (one paragraph).** (a) Three floor domains: D4 Real3D-AD, D10 Liver CT, D6 SDNET-Direct-only; modality mismatch and item-level similarity. (b) Ensemble weight $\alpha{=}0.5$ fixed — a 20-item calibration selector is an obvious extension. (c) Tool-usage refinement on weak backbones (Qwen3.5 refutation agent $-4.46$ pp deficit localises to specific tools on specific domains). (d) Controller extension is a single-backbone case study.
 - **Closing.** For training-free cross-domain VAD, the right architectural primitive is not a pure autonomous agent but an *ensemble-aware* agent whose Direct branch is always invoked. The surprising part is that this primitive *must* exist even when the agent itself is the better estimator — because 'the agent is better' is backbone-dependent and unobservable at deployment time.
 
 ---

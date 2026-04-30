@@ -40,9 +40,9 @@ download_roadanomaly() {
     echo "  Register and download val images (~1GB subset needed)"
 }
 
-# ─── D4: SDNET2018 ───────────────────────────────────────────────────────────
+# ─── D6: SDNET2018 ───────────────────────────────────────────────────────────
 download_sdnet() {
-    echo "=== D4: SDNET2018 ==="
+    echo "=== D6: SDNET2018 ==="
     mkdir -p "$DATA_DIR/SDNET2018"
     cd "$DATA_DIR/SDNET2018"
     # Mendeley Data (direct)
@@ -52,9 +52,9 @@ download_sdnet() {
     [ -f SDNET2018.zip ] && unzip -q SDNET2018.zip && echo "SDNET2018: OK"
 }
 
-# ─── D3: PIDray ──────────────────────────────────────────────────────────────
+# ─── D2: PIDray ──────────────────────────────────────────────────────────────
 download_pidray() {
-    echo "=== D3: PIDray (X-ray baggage) ==="
+    echo "=== D2: PIDray (X-ray baggage) ==="
     mkdir -p "$DATA_DIR/PIDray"
     cd "$DATA_DIR/PIDray"
     # Official GitHub: https://github.com/bywang2018/security-dataset
@@ -67,16 +67,16 @@ try:
     snapshot_download(repo_id='SIXray/SIXray', repo_type='dataset',
                       local_dir='/hdd1/jiangxi/AD-Agent/benchmark/data/SIXray',
                       endpoint='https://hf-mirror.com')
-    print('SIXray downloaded as D3 fallback')
+    print('SIXray downloaded as D2 fallback')
 except Exception as e:
     print(f'SIXray download failed: {e}')
     print('Try: HF_ENDPOINT=https://hf-mirror.com huggingface-cli download ...')
 " 2>/dev/null || echo "  [WARN] PIDray/SIXray: manual download needed"
 }
 
-# ─── D5: CheXpert (NIH ChestXray14 is large; use CheXpert-small as fallback) ─
+# ─── D3: CheXpert (NIH ChestXray14 is large; use CheXpert-small as fallback) ─
 download_medical() {
-    echo "=== D5: Medical Chest X-ray ==="
+    echo "=== D3: Medical Chest X-ray ==="
     mkdir -p "$DATA_DIR/CheXpert"
     cd "$DATA_DIR/CheXpert"
     # CheXpert-small (direct from Stanford)
@@ -96,9 +96,9 @@ except Exception as e:
 "
 }
 
-# ─── D6: xBD (xView2 Building Damage) ────────────────────────────────────────
+# ─── D4: xBD (xView2 Building Damage) ────────────────────────────────────────
 download_xbd() {
-    echo "=== D6: xBD Remote Sensing ==="
+    echo "=== D4: xBD Remote Sensing ==="
     echo "  [INFO] xBD requires registration at https://xview2.org/"
     echo "  After download, place at: $DATA_DIR/xBD/"
     echo "  Alternative: use LEVIR-CD (change detection) as proxy"
@@ -109,14 +109,14 @@ try:
     snapshot_download(repo_id='LEVIR/LEVIR-CD', repo_type='dataset',
                       local_dir='/hdd1/jiangxi/AD-Agent/benchmark/data/LEVIR-CD',
                       endpoint='https://hf-mirror.com')
-    print('LEVIR-CD downloaded as D6 fallback')
+    print('LEVIR-CD downloaded as D4 fallback')
 except Exception as e:
     print(f'LEVIR-CD: {e}')
 "
 }
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
-echo "Starting dataset downloads (D1/D2 already available via MMAD)..."
+echo "Starting dataset downloads (D1/D5 already available via MMAD)..."
 echo "Using direct links first; set USE_PROXY=1 to enable proxy"
 echo ""
 
@@ -132,11 +132,11 @@ if [ -z "${1}" ]; then
     echo ""
     echo "Status of domains:"
     echo "  D1 Industrial:   READY (MVTec-AD in MMAD)"
-    echo "  D2 Retail:       READY (GoodsAD in MMAD)"
-    echo "  D3 Screening:    NEEDS DOWNLOAD (PIDray or SIXray)"
-    echo "  D4 Maintenance:  NEEDS DOWNLOAD (SDNET2018)"
-    echo "  D5 Medical:      NEEDS DOWNLOAD (CheXpert-small)"
-    echo "  D6 RemoteSens:   NEEDS DOWNLOAD (xBD or LEVIR-CD)"
+    echo "  D5 Retail:       READY (GoodsAD in MMAD)"
+    echo "  D2 Screening:    NEEDS DOWNLOAD (PIDray or SIXray)"
+    echo "  D6 Maintenance:  NEEDS DOWNLOAD (SDNET2018)"
+    echo "  D3 Medical:      NEEDS DOWNLOAD (CheXpert-small)"
+    echo "  D4 RemoteSens:   NEEDS DOWNLOAD (xBD or LEVIR-CD)"
     echo "  D7 Road:         NEEDS DOWNLOAD (RoadAnomaly21 + BDD100K)"
     echo "  D8 Surveillance: NEEDS DOWNLOAD (Avenue)"
 fi

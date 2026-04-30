@@ -4,125 +4,152 @@
   "k": 10,
   "selection_frac": 0.5,
   "selection_ids": [
-    "D4_0009",
+    "D4_0002",
+    "D4_0006",
     "D4_0010",
-    "D4_0018",
-    "D4_0022",
-    "D4_0038",
-    "D4_0049",
-    "D4_0052",
-    "D4_0066",
+    "D4_0027",
+    "D4_0037",
+    "D4_0053",
+    "D4_0067",
     "D4_0070",
     "D4_0074",
-    "D4_0091",
-    "D4_0094",
-    "D4_0095",
+    "D4_0081",
+    "D4_0090",
+    "D4_0092",
+    "D4_0098",
     "D4_0101",
-    "D4_0123",
-    "D4_0127",
-    "D4_0160",
-    "D4_0169",
-    "D4_0172",
-    "D4_0174"
+    "D4_0124",
+    "D4_0138",
+    "D4_0159",
+    "D4_0176",
+    "D4_0177",
+    "D4_0178"
   ],
   "validation_ids": [
-    "D4_0013",
-    "D4_0015",
-    "D4_0016",
+    "D4_0007",
+    "D4_0008",
+    "D4_0009",
     "D4_0020",
-    "D4_0031",
-    "D4_0033",
-    "D4_0044",
-    "D4_0073",
-    "D4_0085",
+    "D4_0029",
+    "D4_0036",
+    "D4_0040",
+    "D4_0079",
+    "D4_0082",
     "D4_0086",
+    "D4_0107",
     "D4_0110",
-    "D4_0112",
-    "D4_0115",
-    "D4_0126",
-    "D4_0128",
+    "D4_0111",
     "D4_0132",
-    "D4_0143",
-    "D4_0159",
-    "D4_0161",
-    "D4_0168"
+    "D4_0140",
+    "D4_0148",
+    "D4_0149",
+    "D4_0157",
+    "D4_0164",
+    "D4_0165"
   ],
   "units": [
     {
       "unit": [
         "D4",
-        "pavement"
+        "butterflyFish"
       ],
-      "k": 7,
+      "k": 1,
       "rules": [
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "Flag distinct linear discontinuities (cracks) and localized surface degradation (pitting, exposed aggregate) regardless of background texture.",
+          "text": "Flag sparse point density or gaps in protruding fin-like structures as defects.",
           "covers_items": [
-            "D4_0101",
-            "D4_0160"
+            "D4_0092"
           ],
-          "justification": "The agent missed clear structural cracks and severe pitting, likely confusing them with general texture. These are distinct geometric defects, not texture noise.",
+          "justification": "The agent missed a defect in a fin-like protrusion because it dismissed the sparse point density as texture irregularity. Protrusions are critical geometric features where density gaps indicate material loss.",
           "side": "FN"
-        },
-        {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag isolated dark spots or irregular marks that are distinct from the surrounding aggregate pattern, even if small.",
-          "covers_items": [
-            "D4_0169",
-            "D4_0174"
-          ],
-          "justification": "The agent dismissed distinct dark spots as 'natural variation' or 'shadows'. These items show localized anomalies that break the surface continuity.",
-          "side": "FN"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Do not flag scattered small indentations or grain density fluctuations if they are consistent with the reference surface texture.",
-          "covers_items": [
-            "D4_0066",
-            "D4_0010"
-          ],
-          "justification": "The agent over-flagged natural surface roughness and aggregate distribution as defects. These are inherent to the material, not anomalies.",
-          "side": "FP"
-        },
-        {
-          "rule_type": "normal_tolerance",
-          "text": "Do not flag dark irregular marks if they appear to be shadows or natural aggregate variations matching the reference profile.",
-          "covers_items": [
-            "D4_0009"
-          ],
-          "justification": "The agent flagged a dark mark as an anomaly, but it was a normal feature of the textured surface (likely a shadow or aggregate).",
-          "side": "FP"
         }
       ],
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "unit": [
         "D4",
-        "wall"
+        "diamond"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag distinct linear cracks or tears in the point cloud, even if the overall shape appears intact.",
+          "covers_items": [
+            "D4_0177"
+          ],
+          "justification": "The agent failed to detect a clear linear crack in the lower-right quadrant, likely dismissing it due to the lack of global shape deformation.",
+          "side": "FN"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D4",
+        "airplane"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag items with large central voids or missing mass in the main body as anomalies.",
+          "covers_items": [
+            "D4_0090",
+            "D4_0098"
+          ],
+          "justification": "The agent missed anomalies characterized by significant missing mass or voids in the center of the structure, likely due to a failure to recognize global density deficits as defects.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag items with distinct structural protrusions or detached clusters at the periphery as anomalies.",
+          "covers_items": [
+            "D4_0178"
+          ],
+          "justification": "The agent failed to detect a clear protrusion (detached cluster) at the top of the structure, indicating a need to prioritize peripheral shape deviations.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag natural density variations or minor voids in the center of the main body as anomalies.",
+          "covers_items": [
+            "D4_0002"
+          ],
+          "justification": "The agent incorrectly flagged a normal item due to a perceived 'central void', suggesting it is over-sensitive to natural density fluctuations in the core of the point cloud.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D4",
+        "car"
       ],
       "k": 5,
       "rules": [
         {
           "rule_type": "anomaly_mode_extension",
-          "text": "Flag distinct, isolated dark irregular marks that are significantly larger or darker than the background speckling.",
+          "text": "Flag as anomaly if the upper surface lacks the two distinct raised bumps (ears) present in normal references.",
           "covers_items": [
-            "D4_0094"
+            "D4_0176",
+            "D4_0101"
           ],
-          "justification": "The agent missed a clear anomaly because it was a single, isolated dark mark rather than a crack. The rule distinguishes these 'blotches' from the fine, random speckling allowed in the reference.",
+          "justification": "The agent missed anomalies where the defining 'bump' features on the top surface were missing. The agent's reasoning correctly identified the missing bumps but failed to output a high anomaly score, suggesting a threshold issue for missing structural features.",
           "side": "FN"
         },
         {
           "rule_type": "normal_tolerance",
-          "text": "Do not flag scattered, small dark speckles or spots if they are consistent with the random texture variation seen in reference images.",
+          "text": "Do not flag as anomaly if the object is a complete car body with standard point density variations.",
           "covers_items": [
-            "D4_0052",
-            "D4_0074",
-            "D4_0018",
-            "D4_0038"
+            "D4_0070",
+            "D4_0053",
+            "D4_0081"
           ],
-          "justification": "The agent consistently over-flagged normal concrete surfaces by misidentifying inherent random dark speckles as defects. The reference profiler explicitly lists these as allowed variations.",
+          "justification": "The agent falsely flagged normal car bodies due to perceived 'missing sections' or 'density irregularities'. These are likely artifacts of the point cloud rendering or normal geometric curvature, not actual defects.",
           "side": "FP"
         }
       ],
@@ -131,34 +158,80 @@
     {
       "unit": [
         "D4",
-        "deck"
+        "duck"
       ],
-      "k": 8,
+      "k": 2,
       "rules": [
         {
-          "rule_type": "anomaly_mode_extension",
-          "text": "Flag thin, dark, jagged linear marks as cracks even if they appear faint or short against the concrete texture.",
-          "covers_items": [
-            "D4_0091",
-            "D4_0123",
-            "D4_0095"
-          ],
-          "justification": "The agent missed clear structural cracks (D4_0091, D4_0095) and dark linear marks (D4_0123) because they were subtle or short. These distinct linear features are definitive anomalies regardless of their prominence.",
-          "side": "FN"
-        },
-        {
           "rule_type": "normal_tolerance",
-          "text": "Do not flag global coarse aggregate texture or multi-colored particle distribution as anomalies if no distinct linear cracks are present.",
+          "text": "Do not flag the object as fragmented if the two lobes are connected by a continuous, albeit thin, bridge of points.",
           "covers_items": [
-            "D4_0022",
-            "D4_0049",
-            "D4_0070"
+            "D4_0010",
+            "D4_0074"
           ],
-          "justification": "The agent incorrectly flagged natural concrete surface variations (coarse texture, color variance) as anomalies. These are inherent material properties, not defects, and should be ignored unless accompanied by a crack.",
+          "justification": "The agent incorrectly identified the natural 'neck' or constriction of the duck shape as a structural break. The point cloud is continuous across the gap, indicating a single object rather than a defect.",
           "side": "FP"
         }
       ],
       "confidence": "high"
+    },
+    {
+      "unit": [
+        "D4",
+        "candybar"
+      ],
+      "k": 3,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag items with subtle point density variations or color gradient shifts as anomalies, even if the overall shape appears intact.",
+          "covers_items": [
+            "D4_0138",
+            "D4_0124"
+          ],
+          "justification": "The agent missed anomalies in both items because it relied on gross shape matching. The ground truth indicates that subtle textural defects (density/color) are valid anomalies in this class.",
+          "side": "FN"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D4",
+        "chicken"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag global shape mismatches or silhouette deviations as anomalies, even if local surface texture appears normal.",
+          "covers_items": [
+            "D4_0159"
+          ],
+          "justification": "The agent missed the anomaly in D4_0159 because it focused on local features (color, lobe) but failed to recognize the overall silhouette mismatch as a defect.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag natural anatomical protrusions (lobes) or global orientation shifts as defects if they match reference shapes.",
+          "covers_items": [
+            "D4_0067",
+            "D4_0037"
+          ],
+          "justification": "The agent incorrectly flagged natural structural variations (top protrusion, lobe) and orientation differences as anomalies, failing to recognize them as normal biological variance.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Ignore sharp color gradients or lines that follow the object's natural curvature, as they are likely rendering artifacts.",
+          "covers_items": [
+            "D4_0006"
+          ],
+          "justification": "The agent misidentified a sharp curved line (likely a lighting or rendering artifact) as a defect, whereas it is a common visual feature in these point cloud renderings.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "medium"
     }
   ]
 }

@@ -1,0 +1,98 @@
+{
+  "D1": {
+    "name": "Industrial Manufacturing",
+    "source_dataset": "MVTec-AD",
+    "anomaly_type": "surface_defect / structural",
+    "modality": "RGB",
+    "reference_type": "few-shot (train/good)",
+    "description": "Classic industrial surface inspection across 15 object/texture categories."
+  },
+  "D2": {
+    "name": "Retail / Product QC",
+    "source_dataset": "GoodsAD",
+    "anomaly_type": "packaging_defect / contamination",
+    "modality": "RGB",
+    "reference_type": "few-shot (same product)",
+    "description": "Retail shelf product anomaly detection with product-matched references."
+  },
+  "D3": {
+    "name": "Complex Industrial",
+    "source_dataset": "VisA",
+    "anomaly_type": "defect",
+    "modality": "RGB",
+    "reference_type": "few-shot (train/good)",
+    "description": "12-category industrial AD with complex textures and fine-grained defects."
+  },
+  "D4": {
+    "name": "Infrastructure / Maintenance",
+    "source_dataset": "SDNET2018",
+    "anomaly_type": "crack",
+    "modality": "RGB",
+    "reference_type": "few-shot (uncracked surface)",
+    "description": "Concrete crack detection on decks, walls, and pavement."
+  },
+  "D5": {
+    "name": "Logical Anomaly",
+    "source_dataset": "MVTec-LOCO",
+    "anomaly_type": "logical / structural",
+    "modality": "RGB",
+    "reference_type": "few-shot (train/good)",
+    "description": "Logical and structural constraint violations beyond surface defects."
+  },
+  "D6": {
+    "name": "3D Product (RGB)",
+    "source_dataset": "Real3D-AD",
+    "anomaly_type": "geometric_defect",
+    "modality": "rendered point cloud",
+    "reference_type": "few-shot (template renders)",
+    "description": "3D product anomaly detection from rendered point cloud views (bulge, sink, contamination)."
+  },
+  "D7": {
+    "name": "Remote Sensing / Change Detection",
+    "source_dataset": "LEVIR-CD+",
+    "anomaly_type": "building_change",
+    "modality": "satellite RGB",
+    "reference_type": "temporal pair (before image)",
+    "description": "Satellite building change detection between temporal image pairs."
+  },
+  "D8": {
+    "name": "Medical \u2014 Dermatology",
+    "source_dataset": "DermaMNIST",
+    "anomaly_type": "melanoma",
+    "modality": "dermoscopy RGB",
+    "reference_type": "few-shot (benign nevi)",
+    "description": "Skin lesion anomaly detection: melanocytic nevi (normal) vs melanoma."
+  },
+  "D9": {
+    "name": "Medical \u2014 Brain MRI",
+    "source_dataset": "BraTS2021",
+    "anomaly_type": "pathology (tumor)",
+    "modality": "MRI slice",
+    "reference_type": "few-shot (healthy slices)",
+    "description": "Brain MRI anomaly detection from BMAD benchmark (BraTS2021 slices)."
+  },
+  "D10": {
+    "name": "Medical \u2014 Liver CT",
+    "source_dataset": "BMAD-Liver",
+    "anomaly_type": "pathology",
+    "modality": "CT slice",
+    "reference_type": "few-shot (healthy slices)",
+    "description": "Liver CT anomaly detection from BMAD benchmark."
+  },
+  "D11": {
+    "name": "Medical \u2014 GI Endoscopy",
+    "source_dataset": "HyperKvasir",
+    "anomaly_type": "pathology (polyp/ulcer)",
+    "modality": "endoscopy RGB",
+    "reference_type": "few-shot (normal mucosa)",
+    "description": "GI tract endoscopy anomaly detection: normal mucosa vs polyps/ulcers."
+  },
+  "D12": {
+    "name": "Road Safety",
+    "source_dataset": "BDD100K + RoadAnomaly21",
+    "anomaly_type": "road_obstacle",
+    "modality": "dashcam RGB",
+    "reference_type": "few-shot (normal road scenes)",
+    "description": "Road scene anomaly detection: normal driving vs unexpected obstacles."
+  }
+}

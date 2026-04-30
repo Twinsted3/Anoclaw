@@ -1,0 +1,3122 @@
+[
+  {
+    "item_id": "D6_0042",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference images in overall silhouette, orientation, point density, and smooth color gradient from yellow/green on the left to blue/purple on the right, with no obvious missing region, deformation, or extra structure.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 83
+    },
+    "latency_sec": 4.41,
+    "error": null
+  },
+  {
+    "item_id": "D6_0064",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same curved sheet-like point cloud structure and normal color/height gradient seen in the references, with no clear holes, breaks, foreign objects, or deformation beyond viewpoint variation.",
+        "confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 75
+    },
+    "latency_sec": 5.64,
+    "error": null
+  },
+  {
+    "item_id": "D6_0050",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, point density, and smooth color gradient. No missing parts, extra blobs, distortions, or unusual sparse/dense regions are apparent.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 73
+    },
+    "latency_sec": 8.85,
+    "error": null
+  },
+  {
+    "item_id": "D6_0089",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, point distribution, and smooth color gradient. No obvious deformation, missing region, extra structure, or abnormal density pattern is visible.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 71
+    },
+    "latency_sec": 9.78,
+    "error": null
+  },
+  {
+    "item_id": "D6_0018",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 0,
+    "anomaly_score": 0.07999999999999996,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query point cloud matches the reference object shape, density pattern, and color gradient/orientation variation seen across normal examples, with no obvious missing region, extra structure, or deformation beyond normal pose differences.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 77
+    },
+    "latency_sec": 3.62,
+    "error": null
+  },
+  {
+    "item_id": "D6_0069",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing/partial lobe structure",
+        "evidence": "The normal references show a multi-lobed overlapping shape, while the query shows only a single bean-like lobe with the upper/right overlapping portion absent.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 75
+    },
+    "latency_sec": 3.37,
+    "error": null
+  },
+  {
+    "item_id": "D6_0014",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query matches the reference shape, orientation, and smooth color gradient distribution. Point cloud density and boundary contours are consistent with normal variation seen across the reference images.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 68
+    },
+    "latency_sec": 8.22,
+    "error": null
+  },
+  {
+    "item_id": "D6_0001",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query image matches the reference shape, orientation, point distribution, and smooth color gradient. No missing parts, extra protrusions, or structural distortions are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 70
+    },
+    "latency_sec": 3.83,
+    "error": null
+  },
+  {
+    "item_id": "D6_0028",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / abnormal protrusion",
+        "evidence": "Compared with the normal references, the query shape is much flatter and wider, with an unusual central protruding lobe and altered overall silhouette not seen in the reference views.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 79
+    },
+    "latency_sec": 3.64,
+    "error": null
+  },
+  {
+    "item_id": "D6_0025",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same elongated diagonal point-cloud shape, color gradient, and overall boundary structure as the normal references, with only minor variation in point density and edge roughness consistent with normal examples.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 76
+    },
+    "latency_sec": 15.04,
+    "error": null
+  },
+  {
+    "item_id": "D6_0054",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query image matches the reference shape, orientation, point distribution, and smooth color gradient. No missing regions, extra structures, or obvious deformations are visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 69
+    },
+    "latency_sec": 5.94,
+    "error": null
+  },
+  {
+    "item_id": "D6_0047",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same folded sheet-like point cloud structure, color gradient, and overall geometric variation seen in the normal references. Differences appear consistent with viewpoint/pose changes rather than damage or missing regions.",
+        "confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 77
+    },
+    "latency_sec": 4.22,
+    "error": null
+  },
+  {
+    "item_id": "D6_0030",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing-lobe configuration change",
+        "evidence": "The query outline differs substantially from the normal references: it has two small top protrusions and a broad rightward extension, while the references show a smoother main body with a distinct small right-side lobe and different overall silhouette.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 92
+    },
+    "latency_sec": 5.58,
+    "error": null
+  },
+  {
+    "item_id": "D6_0052",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing-right-region with protruding edge",
+        "evidence": "Compared with the normal references, the query has a noticeably altered silhouette: the right side is truncated/sparser and forms a sharp outward protruding tail, while the overall contour is more angular and asymmetric than the normal examples.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 93
+    },
+    "latency_sec": 4.09,
+    "error": null
+  },
+  {
+    "item_id": "D6_0071",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query image matches the reference shape, orientation, point-cloud density, and smooth color gradient from yellow/green at the upper-left to blue/purple at the lower-right, with no visible deformation, missing region, or extra artifact.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 83
+    },
+    "latency_sec": 4.79,
+    "error": null
+  },
+  {
+    "item_id": "D6_0026",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, and point-cloud color gradient closely. No clear missing parts, extra structures, or deformation beyond normal viewpoint variation are visible.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 70
+    },
+    "latency_sec": 3.84,
+    "error": null
+  },
+  {
+    "item_id": "D6_0012",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 0,
+    "anomaly_score": 0.07999999999999996,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same three-lobed dotted structure and color gradient as the normal references, with similar overlaps, contour cut-ins, and overall point distribution. Differences appear consistent with normal variation in orientation and sampling density.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 80
+    },
+    "latency_sec": 4.31,
+    "error": null
+  },
+  {
+    "item_id": "D6_0005",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference pattern: same elongated curved shape, similar point density, and consistent color gradient from yellow/green on the left to blue/purple on the right. No obvious structural deformation, missing region, or extra cluster is visible beyond normal variation.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 89
+    },
+    "latency_sec": 4.48,
+    "error": null
+  },
+  {
+    "item_id": "D6_0015",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference images in overall silhouette, orientation, dotted texture, and smooth color gradient from yellow/green on the upper-left to blue/purple on the lower-right. No clear structural deformation, missing region, or extra artifact is visible.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 87
+    },
+    "latency_sec": 5.74,
+    "error": null
+  },
+  {
+    "item_id": "D6_0046",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query image matches the reference shape, point-cloud density, and color gradient pattern overall. Visible internal contour lines and outer silhouette are consistent with normal variation seen across the reference images.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 73
+    },
+    "latency_sec": 8.86,
+    "error": null
+  },
+  {
+    "item_id": "D6_0033",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape and point-cloud structure from a similar viewpoint, with consistent contours, appendage positions, and normal color gradient distribution. No missing parts, deformations, or extra structures are visible.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 79
+    },
+    "latency_sec": 4.56,
+    "error": null
+  },
+  {
+    "item_id": "D6_0072",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "truncated/missing lower-right portion",
+        "evidence": "Compared with the normal references, the query point cloud has a noticeably shortened lower-right end with a narrow vertical protrusion and missing outer contour in the bottom-right region.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 79
+    },
+    "latency_sec": 4.13,
+    "error": null
+  },
+  {
+    "item_id": "D6_0000",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation/protrusion",
+        "evidence": "The query shape has an unusual extended rightward protrusion and a sharper, more irregular contour than the normal references, which show smoother rounded lobes without this tail-like extension.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 79
+    },
+    "latency_sec": 6.02,
+    "error": null
+  },
+  {
+    "item_id": "D6_0073",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 0,
+    "anomaly_score": 0.09999999999999998,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape family: a two-lobed dotted form with the same overall contour, upper notch/protrusion, and lower-right inward cut. Differences appear consistent with normal pose/rotation and point density variation rather than damage or a missing/extra region.",
+        "confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 91
+    },
+    "latency_sec": 8.19,
+    "error": null
+  },
+  {
+    "item_id": "D6_0038",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, pose, point distribution, and color gradient overall. Minor local variation in point density and contour appears consistent with normal sample-to-sample variation seen across the references.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 76
+    },
+    "latency_sec": 3.73,
+    "error": null
+  },
+  {
+    "item_id": "D6_0044",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "truncated/missing lower portion",
+        "evidence": "Compared with the normal references, the query shape is cut off along the bottom edge with a large missing lower-left and lower-central area, making the silhouette noticeably incomplete.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 78
+    },
+    "latency_sec": 5.4,
+    "error": null
+  },
+  {
+    "item_id": "D6_0021",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, point-cloud density, and overall color gradient/orientation. Minor variation in point placement appears consistent with normal sample-to-sample noise.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 70
+    },
+    "latency_sec": 4.88,
+    "error": null
+  },
+  {
+    "item_id": "D6_0017",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation/truncation",
+        "evidence": "The query point cloud is noticeably narrower and more triangular than the normal references, lacking the broader pentagonal/sheet-like extent and showing a strongly tapered right side.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 76
+    },
+    "latency_sec": 6.59,
+    "error": null
+  },
+  {
+    "item_id": "D6_0056",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "truncation / missing lower-right portion",
+        "evidence": "Compared with the normal references, the query shape is cut off on the right and bottom-right side, with the pointed tail/end missing and an abrupt vertical-ish edge; overall silhouette is noticeably incomplete.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 86
+    },
+    "latency_sec": 9.7,
+    "error": null
+  },
+  {
+    "item_id": "D6_0016",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing lower-right region",
+        "evidence": "Compared with the normal references, the query shape has a noticeably truncated lower-right tail and a more irregular, eroded bottom edge, with reduced point coverage in that region.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 80
+    },
+    "latency_sec": 7.68,
+    "error": null
+  },
+  {
+    "item_id": "D6_0087",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing/sparse point cloud structure",
+        "evidence": "The query shape matches the general object pose of the references, but large regions are noticeably faint and incomplete, especially the upper-left and right side, with substantially reduced point density compared to the normal examples.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 85
+    },
+    "latency_sec": 4.96,
+    "error": null
+  },
+  {
+    "item_id": "D6_0013",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.85,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / orientation mismatch",
+        "evidence": "The query object is noticeably tilted and has a thicker, flattened lower-left edge compared with the normal references, which show a more upright shape without this pronounced bottom-left banding.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 79
+    },
+    "latency_sec": 4.2,
+    "error": null
+  },
+  {
+    "item_id": "D6_0051",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / protrusion",
+        "evidence": "The query has an unusual extended protrusion on the right side and a more open, distorted overlap compared with the compact rounded shapes in the normal references.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 74
+    },
+    "latency_sec": 5.69,
+    "error": null
+  },
+  {
+    "item_id": "D6_0062",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shape, outline, point density, and color gradient closely match the normal references, with only minor variation consistent with normal sample-to-sample differences.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 68
+    },
+    "latency_sec": 3.74,
+    "error": null
+  },
+  {
+    "item_id": "D6_0076",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same overall point-cloud shape, color gradient, and expected protrusions/contours as the normal references, with differences consistent with viewpoint variation rather than structural defect.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 73
+    },
+    "latency_sec": 3.48,
+    "error": null
+  },
+  {
+    "item_id": "D6_0003",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing/eroded lower-left region",
+        "evidence": "Compared with the normal references, the query shows a clear loss of points and shape truncation in the lower-left portion, with a larger inner gap/opening and reduced lower boundary extent.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 83
+    },
+    "latency_sec": 4.27,
+    "error": null
+  },
+  {
+    "item_id": "D6_0063",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, point-cloud density, and smooth color gradient from yellow/green on the left to blue/purple on the right. No extra structures, missing regions, or obvious distortions are visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 83
+    },
+    "latency_sec": 5.81,
+    "error": null
+  },
+  {
+    "item_id": "D6_0043",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.07999999999999996,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query point-cloud shape, outline, and internal banding closely match the normal references, with only minor pose or density variation and no clear missing region, deformation, or extra structure.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 74
+    },
+    "latency_sec": 3.84,
+    "error": null
+  },
+  {
+    "item_id": "D6_0023",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference object shape and viewpoint closely, with the same main body, side protrusions, and lower extension. No clear missing part, extra structure, or deformation is visible beyond normal point-cloud variation.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 80
+    },
+    "latency_sec": 7.86,
+    "error": null
+  },
+  {
+    "item_id": "D6_0048",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "surface deformation / fold-like protrusion",
+        "evidence": "The query shows an unusual sharp folded/protruding structure at the lower-right edge and stronger internal crease-like lines compared with the smoother normal references.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 75
+    },
+    "latency_sec": 4.24,
+    "error": null
+  },
+  {
+    "item_id": "D6_0057",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / truncated lower-left region",
+        "evidence": "Compared with the normal references, the query shape is missing part of the lower-left contour and appears cut off/eroded there, with a sparser, irregular boundary in that region.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 83
+    },
+    "latency_sec": 5.37,
+    "error": null
+  },
+  {
+    "item_id": "D6_0085",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "deformation / folded or indented shape",
+        "evidence": "Compared with the normal references, the query shows a pronounced horizontal inward crease across the middle and a boxier lower section with stronger side indentations, altering the expected smooth overall surface shape.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 84
+    },
+    "latency_sec": 6.75,
+    "error": null
+  },
+  {
+    "item_id": "D6_0035",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / protruding extension",
+        "evidence": "The query shape differs from the normal references by having a pronounced rightward tail-like protrusion and a more elongated, asymmetric outline instead of the compact overlapping lobes seen in the normal images.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 83
+    },
+    "latency_sec": 4.43,
+    "error": null
+  },
+  {
+    "item_id": "D6_0011",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference images in overall shape, orientation, point distribution, and smooth color gradient from yellow/green on the left to blue/purple on the right. No clear missing regions, extra structures, or distortions are visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 85
+    },
+    "latency_sec": 4.14,
+    "error": null
+  },
+  {
+    "item_id": "D6_0031",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, point density, and smooth color gradient from yellow/green to blue/purple. Minor variation in point placement appears consistent with normal sample-to-sample scatter.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 77
+    },
+    "latency_sec": 4.35,
+    "error": null
+  },
+  {
+    "item_id": "D6_0084",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 0,
+    "anomaly_score": 0.07999999999999996,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same point-cloud object shape, color gradient, and overall contour variation seen in the normal references, with no obvious deformation, missing region, or extra structure.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 72
+    },
+    "latency_sec": 3.2,
+    "error": null
+  },
+  {
+    "item_id": "D6_0041",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same speckled rounded polygon shape, color gradient, and overall point distribution as the normal references. Variations in rotation and outline are consistent with the reference set, with no clear missing region, distortion, or foreign artifact.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 86
+    },
+    "latency_sec": 10.55,
+    "error": null
+  },
+  {
+    "item_id": "D6_0088",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape and point-cloud structure from a similar viewpoint, with consistent appendages and normal color/normal-map gradient distribution. Differences appear limited to minor sparsity/noise.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 75
+    },
+    "latency_sec": 7.47,
+    "error": null
+  },
+  {
+    "item_id": "D6_0075",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, point-cloud density, internal contour lines, and overall color gradient. Minor variation appears consistent with normal pose/view differences seen across the references.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 71
+    },
+    "latency_sec": 10.43,
+    "error": null
+  },
+  {
+    "item_id": "D6_0059",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing-right-lobe truncation",
+        "evidence": "Compared with the normal references, the query has a noticeably altered silhouette: the right side appears cut off/flattened instead of rounded, and the upper protrusion is sharper and more separated than in the normal examples.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 91
+    },
+    "latency_sec": 6.54,
+    "error": null
+  },
+  {
+    "item_id": "D6_0068",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference images in overall shape, orientation, point distribution, and smooth color gradient from yellow/green on the left to blue/purple on the right. No missing regions, extra structures, or obvious distortions are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 85
+    },
+    "latency_sec": 4.05,
+    "error": null
+  },
+  {
+    "item_id": "D6_0078",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing upper-right protrusion",
+        "evidence": "Compared with the normal references, the query silhouette lacks the small upper-right bump/protrusion and shows a smoother, altered right edge while the rest of the point cloud pattern is similar.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 84
+    },
+    "latency_sec": 4.96,
+    "error": null
+  },
+  {
+    "item_id": "D6_0061",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same overall point-cloud object structure, color gradient, and protrusion layout as the normal references, with differences consistent with viewpoint/rotation rather than damage or missing parts.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 74
+    },
+    "latency_sec": 11.03,
+    "error": null
+  },
+  {
+    "item_id": "D6_0034",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, point density, and smooth color gradient pattern. No missing parts, extra structures, or noticeable distortions are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 69
+    },
+    "latency_sec": 6.4,
+    "error": null
+  },
+  {
+    "item_id": "D6_0022",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shape, orientation, point distribution, and color gradient closely match the normal reference images with no clear deformation, missing region, or extra structure beyond normal variation.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 70
+    },
+    "latency_sec": 3.63,
+    "error": null
+  },
+  {
+    "item_id": "D6_0083",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.10999999999999999,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same point-cloud object structure and color-gradient pattern as the normal references, with a consistent elongated body and side protrusions. Differences appear due to viewpoint/partial sparsity rather than missing or extra parts.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 81
+    },
+    "latency_sec": 7.14,
+    "error": null
+  },
+  {
+    "item_id": "D6_0055",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference pattern in overall elongated shape, diagonal orientation, color gradient from yellow/green to blue/purple, and similar scalloped edges. No clear structural distortion, missing region, or foreign artifact is visible.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 82
+    },
+    "latency_sec": 4.5,
+    "error": null
+  },
+  {
+    "item_id": "D6_0066",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "deformed/folded shape with missing upper-right surface density",
+        "evidence": "The query shows a pronounced folded/overlapping lower-left edge and a sparse, partially missing upper-right region compared with the normal references, which have a more uniformly filled pentagonal sheet shape.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 89
+    },
+    "latency_sec": 9.27,
+    "error": null
+  },
+  {
+    "item_id": "D6_0156",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference images in overall shape, orientation, point-cloud density, and smooth color gradient from yellow/green on the left to blue/purple on the right, with no obvious missing parts, deformations, or extra structures.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 85
+    },
+    "latency_sec": 3.99,
+    "error": null
+  },
+  {
+    "item_id": "D6_0120",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 0,
+    "anomaly_score": 0.09999999999999998,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query point cloud matches the normal references in overall pentagonal cloth-like shape, point distribution, and color gradient. The visible diagonal crease/indentation on the right side is also present in one normal reference view, with no clear missing region, extra structure, or major deformation beyond normal variation.",
+        "confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 96
+    },
+    "latency_sec": 8.1,
+    "error": null
+  },
+  {
+    "item_id": "D6_0019",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same elongated point-cloud shape, diagonal orientation, and smooth yellow-to-purple color gradient as the normal references, with only minor variation in point density and contour that is consistent with the reference set.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 79
+    },
+    "latency_sec": 12.21,
+    "error": null
+  },
+  {
+    "item_id": "D6_0144",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "partial structure missing / incomplete point cloud",
+        "evidence": "Compared with the normal references, the query shows a noticeably truncated object with sparse or missing points in the upper-left and central body region, giving an incomplete silhouette while the lower diagonal band remains.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 84
+    },
+    "latency_sec": 7.7,
+    "error": null
+  },
+  {
+    "item_id": "D6_0117",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "truncated/missing lower-right portion",
+        "evidence": "Compared with the normal references, the query shape is cut off along the lower-right and bottom edge, with missing point cloud area and an irregular abrupt boundary.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 77
+    },
+    "latency_sec": 5.1,
+    "error": null
+  },
+  {
+    "item_id": "D6_0139",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.10999999999999999,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the same point-cloud object class and overall shape seen in the normal references, with similar smooth contours, appendage positions, and color gradient distribution. No clear missing parts, extra structures, or deformation beyond viewpoint variation are visible.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 85
+    },
+    "latency_sec": 4.85,
+    "error": null
+  },
+  {
+    "item_id": "D6_0167",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, point distribution, and color gradient closely match the normal references, with no clear missing regions, extra structures, or major deformation beyond typical variation.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 68
+    },
+    "latency_sec": 3.83,
+    "error": null
+  },
+  {
+    "item_id": "D6_0135",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing-upper-region",
+        "evidence": "The query point cloud has a noticeably different silhouette from the references: the top-left/upper region is sparse or truncated, and the overall contour appears more wedge-like with a sharper rightward extension than the rounded normal examples.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 89
+    },
+    "latency_sec": 14.27,
+    "error": null
+  },
+  {
+    "item_id": "D6_0114",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing boundary segment",
+        "evidence": "Compared with the normal references, the query shape has a noticeably distorted upper contour with a flat/clipped top region and an unusual rightward protrusion, altering the expected smooth lobed outline.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 83
+    },
+    "latency_sec": 7.07,
+    "error": null
+  },
+  {
+    "item_id": "D6_0118",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, color gradient, and point-cloud density pattern. No clear deformation, missing region, extra structure, or abnormal distribution is visible.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 71
+    },
+    "latency_sec": 7.69,
+    "error": null
+  },
+  {
+    "item_id": "D6_0123",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query image matches the reference shape, orientation, point distribution, and smooth color gradient. No clear structural distortion, missing region, or extra artifact is visible beyond normal variation.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 72
+    },
+    "latency_sec": 5.53,
+    "error": null
+  },
+  {
+    "item_id": "D6_0129",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "truncation/missing lower-right portion",
+        "evidence": "Compared with the normal references, the query shape is cut off on the lower-right side and lacks the full rounded contour and tip seen in the references.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 77
+    },
+    "latency_sec": 5.73,
+    "error": null
+  },
+  {
+    "item_id": "D6_0153",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the same object shape, pose, and point-cloud color/normal gradient seen in the normal references, especially the angled view in the third and fourth reference images. No missing parts, extra structures, or clear distortions are visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 86
+    },
+    "latency_sec": 7.85,
+    "error": null
+  },
+  {
+    "item_id": "D6_0145",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, point density, and smooth color gradient. No missing regions, extra protrusions, distortions, or unusual scatter patterns are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 72
+    },
+    "latency_sec": 4.52,
+    "error": null
+  },
+  {
+    "item_id": "D6_0171",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "truncation/missing lower-right region",
+        "evidence": "Compared with the normal references, the query shape is cut off in the lower-right portion and has a flatter, shortened right edge with missing point structure in that area.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 80
+    },
+    "latency_sec": 3.28,
+    "error": null
+  },
+  {
+    "item_id": "D6_0175",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shape, point distribution, orientation, and smooth color gradient closely match the normal reference images. No clear structural deformation, missing region, or extra artifact is visible.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 71
+    },
+    "latency_sec": 5.35,
+    "error": null
+  },
+  {
+    "item_id": "D6_0116",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, point distribution, and smooth color gradient. No clear deformation, missing region, extra structure, or localized artifact is visible beyond normal variation.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 73
+    },
+    "latency_sec": 5.52,
+    "error": null
+  },
+  {
+    "item_id": "D6_0097",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation/folded structure",
+        "evidence": "The query point cloud is much narrower and elongated than the normal references, with a pronounced folded/curled lower section and missing broad flat surface seen in normal examples.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 78
+    },
+    "latency_sec": 3.19,
+    "error": null
+  },
+  {
+    "item_id": "D6_0105",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query point-cloud shape, orientation, outline, and color gradient closely match the normal reference images, with no obvious deformation, missing region, or extra structure.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 69
+    },
+    "latency_sec": 3.1,
+    "error": null
+  },
+  {
+    "item_id": "D6_0109",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 0,
+    "anomaly_score": 0.07999999999999996,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same speckled blob structure, color gradient, and overall shape variation seen across the normal references. Its orientation differs, but no clear defect, missing region, or extra structure is visible.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 79
+    },
+    "latency_sec": 4.0,
+    "error": null
+  },
+  {
+    "item_id": "D6_0170",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 1,
+    "anomaly_score": 0.85,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing top-center protrusion",
+        "evidence": "Compared with the normal references, the query shows a noticeably altered outer contour, especially a reduced or flattened top-center bump and a more irregular left/front edge while the internal line pattern is also slightly shifted.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 87
+    },
+    "latency_sec": 7.61,
+    "error": null
+  },
+  {
+    "item_id": "D6_0147",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / protruding tail-like extension",
+        "evidence": "The query shape differs from the normal references by having an unusual elongated rightward protrusion and a more distorted contour, whereas the normal examples remain compact and rounded without this extended appendage.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 84
+    },
+    "latency_sec": 7.55,
+    "error": null
+  },
+  {
+    "item_id": "D6_0141",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "truncated/missing lower portion",
+        "evidence": "Compared with the normal references, the query shape is cut off along the lower-left to lower-middle area, with a substantial missing bottom portion and altered contour.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 76
+    },
+    "latency_sec": 4.38,
+    "error": null
+  },
+  {
+    "item_id": "D6_0143",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape/deformation",
+        "evidence": "The query shape differs markedly from the normal references: it has a large open notch on the right side, a separated-looking lower-right lobe, and a bottom protrusion, whereas the normal examples show more compact overlapping rounded forms without this pronounced missing section.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 93
+    },
+    "latency_sec": 4.42,
+    "error": null
+  },
+  {
+    "item_id": "D6_0099",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, pose, point density, and color gradient pattern. Visible internal contour lines and overall outline are consistent with normal variation seen across the reference images.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 72
+    },
+    "latency_sec": 3.44,
+    "error": null
+  },
+  {
+    "item_id": "D6_0093",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing/eroded upper-left and upper-center contour",
+        "evidence": "Compared with the normal references, the query shows a noticeable inward cut/flattening along the top-left to top-center edge, with reduced point density and a deformed silhouette in that region while the rest of the shape is largely consistent.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 96
+    },
+    "latency_sec": 4.25,
+    "error": null
+  },
+  {
+    "item_id": "D6_0173",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, point density, and smooth color gradient from yellow/green on the left to blue/purple on the right. No clear structural deformation, missing region, or unexpected artifact is visible.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 82
+    },
+    "latency_sec": 5.25,
+    "error": null
+  },
+  {
+    "item_id": "D6_0130",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / irregular boundary",
+        "evidence": "The query object is noticeably more elongated and asymmetric than the normal references, with a rougher right edge and a distinct notch/indentation near the lower-right boundary that is not seen in the normal examples.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 85
+    },
+    "latency_sec": 6.58,
+    "error": null
+  },
+  {
+    "item_id": "D6_0162",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shape, point distribution, outline, and internal ridge patterns are consistent with the normal reference images. Minor variation in pose/noise appears within the normal range.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 70
+    },
+    "latency_sec": 8.51,
+    "error": null
+  },
+  {
+    "item_id": "D6_0121",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same folded sheet-like point cloud structure, color gradient, and edge/crease pattern seen in the normal references, especially matching the tilted folded configuration in the fourth reference. No clear missing region, deformation, or extraneous structure is visible.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 88
+    },
+    "latency_sec": 4.41,
+    "error": null
+  },
+  {
+    "item_id": "D6_0115",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "folded/bent shape deformation",
+        "evidence": "The query shows a pronounced folded or doubled lower-left edge and a stronger curled front-right corner, unlike the flatter single-sheet surfaces seen in the normal references.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 76
+    },
+    "latency_sec": 3.43,
+    "error": null
+  },
+  {
+    "item_id": "D6_0154",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same point-cloud object structure, proportions, and smooth surface continuity as the normal references, viewed from a different angle. No missing parts, extra protrusions, breaks, or deformations are apparent.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 80
+    },
+    "latency_sec": 9.36,
+    "error": null
+  },
+  {
+    "item_id": "D6_0142",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing-left-lobe with altered contour",
+        "evidence": "Compared with the normal references, the query has a noticeably different silhouette: the upper-left rounded lobe is reduced or absent, the top edge is sharper and more peaked, and the overall contour is more compact with a pronounced lower-right protrusion.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 98
+    },
+    "latency_sec": 4.01,
+    "error": null
+  },
+  {
+    "item_id": "D6_0094",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query image matches the reference pattern: same overall dotted capsule-like shape, similar left and right protrusions, and consistent diagonal color gradient from yellow/green to blue/purple with no clear structural defect or missing region.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 80
+    },
+    "latency_sec": 9.01,
+    "error": null
+  },
+  {
+    "item_id": "D6_0168",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing lower-right portion",
+        "evidence": "Compared with the normal references, the query outline is truncated at the lower-right tip and the overall shape appears shortened with missing point cloud coverage in that region.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 77
+    },
+    "latency_sec": 4.06,
+    "error": null
+  },
+  {
+    "item_id": "D6_0104",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference images in overall shape, orientation, point density, and smooth color gradient from yellow/green on the left to blue/purple on the right. No obvious deformation, missing region, or extra structure is visible.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 84
+    },
+    "latency_sec": 8.91,
+    "error": null
+  },
+  {
+    "item_id": "D6_0122",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / left-lower contour distortion",
+        "evidence": "Compared with the normal references, the query shows a noticeably altered left-lower edge with an extended protruding/open notch region and a different overall contour, while the normal examples keep a smoother, more consistent outline there.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 90
+    },
+    "latency_sec": 5.26,
+    "error": null
+  },
+  {
+    "item_id": "D6_0169",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query point-cloud shape, outline, orientation, and color gradient closely match the normal reference images, with only minor variation in point density consistent with normal examples.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 69
+    },
+    "latency_sec": 6.3,
+    "error": null
+  },
+  {
+    "item_id": "D6_0113",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same overall point-cloud shape, color gradient, and right-side protrusion seen across the normal references. Variations in orientation and internal point density are consistent with the reference set.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 76
+    },
+    "latency_sec": 6.31,
+    "error": null
+  },
+  {
+    "item_id": "D6_0080",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape/deformation",
+        "evidence": "The query object has a noticeably different outline and orientation from the normal references, with a more elongated oval form and an unusual pointed/protruding lower-left edge not seen in the normal examples.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 80
+    },
+    "latency_sec": 123.96,
+    "error": null
+  },
+  {
+    "item_id": "D6_0133",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same speckled rounded shape and smooth color gradient seen in the normal references, with no obvious structural deformation, missing region, or extra artifact beyond rotation/orientation differences.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 75
+    },
+    "latency_sec": 6.36,
+    "error": null
+  },
+  {
+    "item_id": "D6_0146",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 0,
+    "anomaly_score": 0.09999999999999998,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same point-cloud object with consistent overall shape, density, and color gradient as the normal references, viewed from a comparable angle. No clear structural deformation, missing region, or extra artifact is visible beyond normal pose variation.",
+        "confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 84
+    },
+    "latency_sec": 3.76,
+    "error": null
+  },
+  {
+    "item_id": "D6_0151",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference object shape, orientation, and point-cloud color gradient. The visible fins/protrusions and overall silhouette are consistent with the normal examples, with only minor variation in point density.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 77
+    },
+    "latency_sec": 3.49,
+    "error": null
+  },
+  {
+    "item_id": "D6_0174",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing/eroded lower-left region",
+        "evidence": "Compared with the normal references, the query shows a clear loss of points and shape deformation in the lower-left portion, with a larger gap/indentation and sparser structure extending inward.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 83
+    },
+    "latency_sec": 4.53,
+    "error": null
+  },
+  {
+    "item_id": "D6_0126",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / different silhouette",
+        "evidence": "The query silhouette is blockier and more rectangular with two pronounced side protrusions, which does not match the smoother rounded profiles and right-side lobe seen across the normal references.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 79
+    },
+    "latency_sec": 7.29,
+    "error": null
+  },
+  {
+    "item_id": "D6_0150",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same irregular sheet-like point cloud structure, overall shape, and smooth normal-color gradient as the references, with no obvious holes, breaks, extra parts, or localized color discontinuities beyond viewpoint variation.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 80
+    },
+    "latency_sec": 12.14,
+    "error": null
+  },
+  {
+    "item_id": "D6_0103",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing/eroded upper-left region",
+        "evidence": "Compared with the normal references, the query matches the general pose of the 4th reference but shows a large sparse/absent area in the upper-left/top portion of the object, with disrupted point distribution and incomplete contour.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 91
+    },
+    "latency_sec": 11.27,
+    "error": null
+  },
+  {
+    "item_id": "D6_0152",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 0,
+    "anomaly_score": 0.10999999999999999,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same speckled oval-like object with consistent overall shape, point distribution, and normal color gradient seen in the references. No obvious deformation, missing region, or extra structure is present.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 78
+    },
+    "latency_sec": 10.2,
+    "error": null
+  },
+  {
+    "item_id": "D6_0172",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query point cloud matches the same overall object shape and orientation patterns seen in the normal references, with consistent contours, appendage positions, and color-gradient distribution. No clear missing part, deformation, or extra structure is visible.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 82
+    },
+    "latency_sec": 7.85,
+    "error": null
+  },
+  {
+    "item_id": "D6_0095",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same rounded irregular blob of multicolored point cloud seen in the normal references, with consistent overall shape, boundary smoothness, and color gradient distribution. No clear structural defect, missing region, or foreign artifact is visible.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 85
+    },
+    "latency_sec": 5.55,
+    "error": null
+  },
+  {
+    "item_id": "D6_0179",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "deformed/partial shape with missing-right-edge scatter",
+        "evidence": "The query point cloud is more triangular and skewed than the normal references, with a pronounced left vertical edge, a sharper top peak, and a sparse/frayed right side rather than the fuller pentagonal/quadrilateral surfaces seen in normal examples.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 98
+    },
+    "latency_sec": 9.62,
+    "error": null
+  },
+  {
+    "item_id": "D6_0160",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape separation / disconnected lobes",
+        "evidence": "The normal references show overlapping, connected rounded forms, while the query shows two clearly distinct lobes joined only by a narrow bridge, creating an unusually separated structure.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 77
+    },
+    "latency_sec": 9.03,
+    "error": null
+  },
+  {
+    "item_id": "D6_0125",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, point density, and internal contour lines. Minor variation in pose and dot distribution appears consistent with normal sample-to-sample differences.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 69
+    },
+    "latency_sec": 3.28,
+    "error": null
+  },
+  {
+    "item_id": "D6_0158",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing/eroded upper-left body region",
+        "evidence": "Compared with the normal references, the query shows a large absent or heavily faded portion in the upper-left/top area of the object, giving an incomplete silhouette while the lower and right protrusions remain visible.",
+        "confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 87
+    },
+    "latency_sec": 6.91,
+    "error": null
+  },
+  {
+    "item_id": "D6_0096",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "partial/misaligned shape with missing upper-right region",
+        "evidence": "The query shape is more elongated and tilted than the normal references, with a noticeably sparse/missing upper-right portion and irregular point distribution compared to the fuller reference outlines.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 82
+    },
+    "latency_sec": 14.58,
+    "error": null
+  },
+  {
+    "item_id": "D6_0091",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "internal hole/void near lower-right region",
+        "evidence": "Compared with the normal references, the query shows a distinct oval empty gap inside the shape near the lower-right interior, which is not present in the reference images.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 79
+    },
+    "latency_sec": 7.52,
+    "error": null
+  },
+  {
+    "item_id": "D6_0106",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 0,
+    "anomaly_score": 0.13,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the same point-cloud object and color-gradient structure seen in the normal references, with a plausible rotated viewpoint and no obvious missing parts, extra structures, or distortions.",
+        "confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 73
+    },
+    "latency_sec": 10.99,
+    "error": null
+  },
+  {
+    "item_id": "D6_0128",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing upper-right lobe",
+        "evidence": "The query shape differs from the normal references by lacking the rounded upper-right lobe and instead shows a separated smaller right-side blob with a large open notch between the two regions.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 82
+    },
+    "latency_sec": 6.06,
+    "error": null
+  },
+  {
+    "item_id": "D6_0119",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, point density, and smooth color gradient. No clear structural deformation, missing region, or extra artifact is visible beyond normal variation.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 71
+    },
+    "latency_sec": 5.09,
+    "error": null
+  },
+  {
+    "item_id": "D6_0136",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing upper contour segment",
+        "evidence": "Compared with the normal references, the query shows a noticeable disruption on the upper-left to upper-middle contour: the top ridge is more broken and indented, with a missing/eroded-looking segment near the central upper protrusion. Overall silhouette differs from the smoother continuous outline in the references.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 104
+    },
+    "latency_sec": 5.92,
+    "error": null
+  },
+  {
+    "item_id": "D6_0127",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query image matches the reference shape, orientation, point density, and smooth color gradient. No clear structural distortion, missing region, or extra artifact is visible beyond normal variation.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 72
+    },
+    "latency_sec": 3.17,
+    "error": null
+  },
+  {
+    "item_id": "D6_0112",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "baseline",
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "top-edge protrusion/deformation",
+        "evidence": "Compared with the normal references, the query shows an extra rounded bump/protrusion on the upper central edge between the two top peaks, altering the silhouette while the rest of the shape is broadly similar.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1648,
+      "output": 85
+    },
+    "latency_sec": 15.69,
+    "error": null
+  }
+]

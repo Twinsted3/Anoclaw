@@ -145,8 +145,8 @@ def run_benchmark(manifest_path, split, output_path, checkpoint_path=None,
         items = json.load(f)
     items = [x for x in items
              if (split == "all" or x.get("split") == split)
-             and (domains is None or x["domain_code"] in domains)
-             and x["domain_code"] != "D8"]
+             and (domains is None or x["domain_code"] in domains)]
+    # v2: D8 is DermaMNIST (not Avenue surveillance), so no exclusion.
 
     tool = AnomalyVFMTool(checkpoint_path=checkpoint_path, device=device)
     results = []

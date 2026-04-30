@@ -11,6 +11,7 @@ class VisualContext:
     full_frames: list
     region_pixels: list
     tube: dict
+    few_shot_frames: list = None  # 用于few-shot学习的参考图片
 
 # Function to encode image as base64
 def encode_image(frame_rgb, fmt=".jpg", jpeg_quality=95):
@@ -57,8 +58,20 @@ def extract_frames_forensics(base64_str)->list:
     return frames_rgb_list
 
 
-def load_visual_ctx(rgb_frames:list):
-    return VisualContext(full_frames=rgb_frames, region_pixels=[], tube={"":[]})
+def load_visual_ctx(rgb_frames:list, few_shot_frames:list=None):
+    """
+    加载视觉上下文
+    
+    Args:
+        rgb_frames: 查询图片的RGB帧列表
+        few_shot_frames: few-shot参考图片的RGB帧列表（可选）
+    """
+    return VisualContext(
+        full_frames=rgb_frames, 
+        region_pixels=[], 
+        tube={"":[]},
+        few_shot_frames=few_shot_frames
+    )
 
 
 def find_last_json(chat_history:list):

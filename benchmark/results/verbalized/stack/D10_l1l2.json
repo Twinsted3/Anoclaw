@@ -1,0 +1,54 @@
+{
+  "domain": "D10",
+  "units": [
+    {
+      "unit": [
+        "D10"
+      ],
+      "rulebook": {
+        "normal_signature": [
+          "Single, isolated, contiguous white region against a pure black background",
+          "Granular, stippled texture filling the interior of the shape",
+          "Organic, irregular, and smooth boundary contours",
+          "Absence of internal voids or holes within the white mass",
+          "No external artifacts, noise, or secondary objects in the frame",
+          "Do not flag images as anomalous if the entire object exhibits a uniform, high-frequency speckled texture, even if it appears noisy or grainy.",
+          "Do not flag an object as anomalous solely based on extreme size reduction if the object retains the correct class-specific texture and shape.",
+          "Do not flag small, isolated, textured objects as anomalies if they lack complex internal voids or irregular morphology.",
+          "Classify isolated, textured, elongated objects on a uniform dark background as normal if no distinct structural defects are present.",
+          "Do not classify small, isolated dark voids within the central region of the object as anomalies if the surrounding texture remains consistent."
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural fragmentation: The object breaks into multiple disconnected components or islands.",
+          "Internal cavitation: The presence of black holes or voids within the white region, indicating missing material.",
+          "Surface erosion: The texture becomes sparse, patchy, or non-uniform, deviating from the dense stippled pattern.",
+          "Geometric deformation: The object exhibits unnatural sharp angles, straight lines, or extreme elongation inconsistent with the organic class shape.",
+          "Contamination: Appearance of foreign objects or noise clusters in the black background area.",
+          "Classify objects as anomalies if they appear fragmented, lack coherent structure, or exhibit irregular, non-organic shapes compared to reference samples.",
+          "If a single object exhibits high internal fragmentation or speckled texture, classify as anomaly regardless of reference tolerance for component separation.",
+          "Flag objects with high-frequency granular or speckled texture patterns as anomalies, even if their global shape and size match the normal profile.",
+          "Flag as anomaly if a distinct, high-contrast dark spot or void is embedded within the textured object body.",
+          "Flag as anomaly if a distinct, high-contrast dark spot is embedded within the object's textured body, regardless of shape variations."
+        ],
+        "rules": [
+          "if the white region consists of multiple disconnected components then lean anomaly",
+          "if there are black holes or voids inside the white region then lean anomaly",
+          "if the texture is sparse, patchy, or significantly non-uniform then lean anomaly",
+          "if the object has sharp geometric edges or straight lines then lean anomaly",
+          "if there are any white pixels in the black background area then lean anomaly",
+          "if the object is a single contiguous mass with uniform granular texture then lean normal",
+          "(corrective) Do not flag images as anomalous if the entire object exhibits a uniform, high-frequency speckled texture, even if it appears noisy or grainy.",
+          "(corrective) Classify objects as anomalies if they appear fragmented, lack coherent structure, or exhibit irregular, non-organic shapes compared to reference samples.",
+          "(corrective) If a single object exhibits high internal fragmentation or speckled texture, classify as anomaly regardless of reference tolerance for component separation.",
+          "(corrective) Flag objects with high-frequency granular or speckled texture patterns as anomalies, even if their global shape and size match the normal profile.",
+          "(corrective) Flag as anomaly if a distinct, high-contrast dark spot or void is embedded within the textured object body.",
+          "(corrective) Do not flag an object as anomalous solely based on extreme size reduction if the object retains the correct class-specific texture and shape.",
+          "(corrective) Do not flag small, isolated, textured objects as anomalies if they lack complex internal voids or irregular morphology.",
+          "(corrective) Flag as anomaly if a distinct, high-contrast dark spot is embedded within the object's textured body, regardless of shape variations.",
+          "(corrective) Classify isolated, textured, elongated objects on a uniform dark background as normal if no distinct structural defects are present.",
+          "(corrective) Do not classify small, isolated dark voids within the central region of the object as anomalies if the surrounding texture remains consistent."
+        ]
+      }
+    }
+  ]
+}

@@ -50,6 +50,11 @@ from openai import OpenAI
 SYSTEM_INSPECTOR = "You are a visual anomaly inspector. Return JSON only. No extra text."
 SYSTEM_REFUTER = "You are an anomaly refuter. Return JSON only. No extra text."
 
+# manifests_v2 taxonomy (2026-04-21). D1-D12 codes follow benchmark/manifests_v2/domain_config.json.
+# Legacy v1 keys (D5b/c/d for BraTS/Liver/Kvasir subsplits, D5=Derma, D6=LEVIR, D7=road, D8=Avenue,
+# D9=MVTec-LOCO, D10=VisA) are intentionally NOT present — the prose has been remapped to v2 codes
+# (D3=VisA, D5=MVTec-LOCO, D6=Real3D-AD, D7=LEVIR, D8=Derma, D9=BraTS, D10=Liver, D11=Kvasir, D12=road).
+# For v1 reproducibility, consult saved result files under benchmark/results/ rather than re-running.
 DOMAIN_CONTEXT = {
     "D1": (
         "industrial manufacturing product (metal part, plastic component, or textured surface). "
@@ -66,10 +71,12 @@ DOMAIN_CONTEXT = {
         "(NOT simply a different brand, lighting, or pose — focus on within-category physical defects)."
     ),
     "D3": (
-        "X-ray baggage or parcel screening image. "
-        "Normal = typical clothing, electronics, food, or toiletries in an unremarkable arrangement. "
-        "Anomaly = prohibited or dangerous items such as knives, firearms, explosives, sharp tools, "
-        "or other contraband."
+        "industrial manufacturing product from the VisA benchmark (candle, capsules, cashew, chewing gum, "
+        "fryum, macaroni, PCB, pipe fryum, etc.). "
+        "Normal = defect-free product matching the reference items of the same category. "
+        "Anomaly = physical defects: scratches, dents, cracks, chips, missing parts, contamination, "
+        "discoloration, melting, broken shape, or foreign inclusions (similar to MVTec-AD but on a "
+        "different object set)."
     ),
     "D4": (
         "concrete or infrastructure surface such as a bridge deck, wall, or pavement. "
@@ -78,11 +85,29 @@ DOMAIN_CONTEXT = {
         "(NOT shadows, surface stains, or normal construction joints)."
     ),
     "D5": (
-        "dermoscopic image of a skin lesion. "
-        "Normal = benign mole (melanocytic nevus). "
-        "Anomaly = malignant melanoma (irregular borders, asymmetric shape, color variation, large diameter)."
+        "image from the MVTec-LOCO logical-anomaly benchmark (breakfast box, juice bottle, pushpins, "
+        "screw bag, splicing connectors, etc.). "
+        "Normal = structurally correct composition matching the reference: all expected components present, "
+        "in the right count, position, colour, and arrangement. "
+        "Anomaly = LOGICAL anomaly (missing/added/swapped component, wrong count, wrong colour pairing, "
+        "misplaced sub-item) or STRUCTURAL anomaly (physical damage to a component). "
+        "The anomaly may be subtle: look at component identities and relative positions, not only at "
+        "surface texture."
     ),
     "D6": (
+        "rendered view of a 3D industrial product from the Real3D-AD benchmark (airplane, candy bar, "
+        "chicken, diamond, duck, fish, gemstone, seahorse, shell, starfish, toffee, etc.). The query "
+        "is a 2D rendering of a 3D point-cloud scan; surface detail is sparse/dotted because the "
+        "modality is geometry, not photography. "
+        "Normal = geometrically intact product matching the reference shape — no bulges, sinks, holes, "
+        "or added material. "
+        "Anomaly = geometric defect visible in the 3D shape: bulge (outward protrusion), sink (inward "
+        "depression), hole (missing material), contamination (added foreign material on the surface), "
+        "or overall asymmetry vs the reference renders. "
+        "IMPORTANT: focus on SHAPE-level discrepancy vs the references, not on photographic texture — "
+        "the point-cloud rendering intentionally has low surface detail."
+    ),
+    "D7": (
         "bi-temporal remote sensing tile pair from a building change-detection benchmark "
         "(LEVIR-CD+). The reference image is the earlier capture of the same geographic location; "
         "the query image is a later capture of the SAME location. "
@@ -96,59 +121,38 @@ DOMAIN_CONTEXT = {
         "ARE the anomaly if they imply buildings/roads exist in the query where none existed in the reference; "
         "do NOT rationalise them as 'normal urban growth'."
     ),
-    "D7": (
-        "road or traffic scene photograph. "
-        "Normal = typical road surface, vehicles, pedestrians, and infrastructure. "
-        "Anomaly = unexpected obstacles on or near the roadway such as fallen objects, animals, "
-        "construction debris, or out-of-place items that pose a driving hazard."
-    ),
     "D8": (
-        "surveillance camera frame from the Avenue pedestrian walkway dataset. "
-        "Normal = pedestrians walking at normal pace in the expected direction along the walkway. "
-        "Anomaly = abnormal behaviour or out-of-place objects: running, throwing objects, loitering, "
-        "wrong-direction motion, bicycles/skateboards/vehicles on a pedestrian-only path, dropped objects, "
-        "or people in unusual postures. Subtle; focus on motion/object-type violations rather than "
-        "appearance defects."
+        "dermoscopic image of a skin lesion. "
+        "Normal = benign mole (melanocytic nevus). "
+        "Anomaly = malignant melanoma (irregular borders, asymmetric shape, color variation, large diameter)."
     ),
     "D9": (
-        "image from the MVTec-LOCO logical-anomaly benchmark (breakfast box, juice bottle, pushpins, "
-        "screw bag, splicing connectors, etc.). "
-        "Normal = structurally correct composition matching the reference: all expected components present, "
-        "in the right count, position, colour, and arrangement. "
-        "Anomaly = LOGICAL anomaly (missing/added/swapped component, wrong count, wrong colour pairing, "
-        "misplaced sub-item) or STRUCTURAL anomaly (physical damage to a component). "
-        "The anomaly may be subtle: look at component identities and relative positions, not only at "
-        "surface texture."
-    ),
-    "D10": (
-        "industrial manufacturing product from the VisA benchmark (candle, capsules, cashew, chewing gum, "
-        "fryum, macaroni, PCB, pipe fryum, etc.). "
-        "Normal = defect-free product matching the reference items of the same category. "
-        "Anomaly = physical defects: scratches, dents, cracks, chips, missing parts, contamination, "
-        "discoloration, melting, broken shape, or foreign inclusions (similar to MVTec-AD but on a "
-        "different object set)."
-    ),
-    "D5b": (
         "axial brain MRI slice from the BraTS2021 glioma dataset. "
         "Normal = brain slice with no visible pathology (structurally symmetric, normal tissue intensities). "
         "Anomaly = visible brain pathology such as glioma tumour, hyperintense lesion, mass effect, "
         "midline shift, or oedema. Focus on focal intensity abnormalities and loss of symmetry relative "
         "to the reference normal brain slices."
     ),
-    "D5c": (
+    "D10": (
         "axial abdominal CT slice centred on the liver, from BMAD-Liver. "
         "Normal = liver parenchyma of uniform density without focal lesions. "
         "Anomaly = liver pathology such as tumour, metastasis, abscess, cyst, or focal hypodense/hyperdense "
         "lesion visibly different from the surrounding parenchyma. Focus on focal intensity changes; "
         "lesion location can be anywhere within the liver."
     ),
-    "D5d": (
+    "D11": (
         "gastrointestinal endoscopy frame from HyperKvasir. "
         "Normal = normal mucosa (clean pink/red tissue, no polyps, no ulcers, no bleeding, no visible "
         "pathology). "
         "Anomaly = pathological finding such as polyp, ulcer, hemorrhoid, cancerous tissue, inflammation, "
         "or bleeding. Look for focal mucosal abnormalities of colour or shape relative to the normal "
         "reference frames."
+    ),
+    "D12": (
+        "road or traffic scene photograph. "
+        "Normal = typical road surface, vehicles, pedestrians, and infrastructure. "
+        "Anomaly = unexpected obstacles on or near the roadway such as fallen objects, animals, "
+        "construction debris, or out-of-place items that pose a driving hazard."
     ),
 }
 
@@ -444,13 +448,20 @@ def extract_json(text: str) -> Optional[dict]:
             return json.loads(m.group(1).strip())
         except Exception:
             pass
-    # Find first { ... }
-    m = re.search(r"\{[\s\S]*\}", text)
-    if m:
+    # Find the first complete JSON object. Some backbones (notably GPT-5.4
+    # on complex multi-turn prompts) emit the same JSON object twice
+    # concatenated with no delimiter; raw_decode stops at the first valid
+    # object.
+    dec = json.JSONDecoder()
+    for i, ch in enumerate(text):
+        if ch != "{":
+            continue
         try:
-            return json.loads(m.group(0))
+            obj, _ = dec.raw_decode(text[i:])
+            if isinstance(obj, dict):
+                return obj
         except Exception:
-            pass
+            continue
     return None
 
 
@@ -597,9 +608,23 @@ def call_llm(client: OpenAI, model: str, messages: list,
     unique (requested, served) pair per process, to SERVED_MODEL_LOG
     env var (default /tmp/served_model.log).
     """
+    # Allow CALL_LLM_TEMPERATURE env var to globally override (used for T-sweep experiments).
+    _t_override = os.environ.get("CALL_LLM_TEMPERATURE")
+    if _t_override is not None:
+        try:
+            temperature = float(_t_override)
+        except ValueError:
+            pass
     kwargs = dict(model=model, messages=messages, max_tokens=max_tokens, temperature=temperature)
     if "qwen3" in str(model).lower() or "Qwen3" in str(model):
         kwargs["extra_body"] = {"chat_template_kwargs": {"enable_thinking": False}}
+    # GPT-5.x models have been observed to emit the same JSON object twice
+    # back-to-back on complex multi-image prompts (see extract_json). Asking
+    # for json_object response_format prevents the duplicate echo and also
+    # enforces parseability.
+    mlow = str(model).lower()
+    if mlow.startswith("gpt-5") or mlow.startswith("gpt-4") or mlow.startswith("o"):
+        kwargs["response_format"] = {"type": "json_object"}
     resp = client.chat.completions.create(**kwargs)
     text = resp.choices[0].message.content or ""
     usage = resp.usage

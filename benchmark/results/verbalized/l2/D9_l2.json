@@ -1,0 +1,126 @@
+{
+  "domain": "D9",
+  "seed": 0,
+  "k": 10,
+  "use_l1_context": false,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D9_0003",
+    "D9_0014",
+    "D9_0044",
+    "D9_0049",
+    "D9_0056",
+    "D9_0060",
+    "D9_0064",
+    "D9_0066",
+    "D9_0067",
+    "D9_0077",
+    "D9_0091",
+    "D9_0096",
+    "D9_0097",
+    "D9_0099",
+    "D9_0104",
+    "D9_0122",
+    "D9_0141",
+    "D9_0160",
+    "D9_0166",
+    "D9_0169"
+  ],
+  "validation_ids": [
+    "D9_0016",
+    "D9_0028",
+    "D9_0037",
+    "D9_0047",
+    "D9_0051",
+    "D9_0053",
+    "D9_0058",
+    "D9_0076",
+    "D9_0083",
+    "D9_0086",
+    "D9_0100",
+    "D9_0101",
+    "D9_0103",
+    "D9_0107",
+    "D9_0128",
+    "D9_0129",
+    "D9_0130",
+    "D9_0133",
+    "D9_0146",
+    "D9_0149"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D9"
+      ],
+      "k": 10,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not classify symmetric periventricular hyperintensities as anomalies if they appear bilaterally in the same anatomical region.",
+          "justification": "The agent falsely identified a symmetric, bilateral feature as a unilateral defect. This rule prevents flagging normal symmetric anatomical variations as anomalies.",
+          "from_item": "D9_0064"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "If ventricle morphology is symmetric and tissue texture is uniform, classify as normal even if subtle periventricular hyperintensities are present.",
+          "justification": "The agent overpredicted anomaly (0.5) on a normal case due to uncertainty about subtle periventricular features. This rule clarifies that such features are acceptable in normal scans when global symmetry and texture are preserved.",
+          "from_item": "D9_0014"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if a large, heterogeneous mass with irregular borders and significant mass effect is present.",
+          "justification": "The agent underpredicted a clear case of a large, space-occupying lesion. This rule explicitly targets the visual features of such masses to ensure high-confidence detection.",
+          "from_item": "D9_0091"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If a focal hyperintense lesion is detected in the posterior hemisphere, override refutation and classify as anomaly.",
+          "justification": "The agent initially detected the lesion but lowered the score due to refutation. This rule ensures that specific high-value features like posterior hyperintensities are not dismissed, correcting the underprediction.",
+          "from_item": "D9_0097"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "If initial visual inspection finds no candidate anomalous features, cap the final anomaly score at 0.25 to reflect high confidence in normality.",
+          "justification": "The agent correctly identified no anomalies but output a high uncertainty score (0.5). This rule forces a lower score when visual evidence strongly supports a normal classification, preventing false uncertainty.",
+          "from_item": "D9_0067"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If a large hyperintense mass is detected in the cerebral hemisphere, immediately classify as anomaly regardless of initial uncertainty.",
+          "justification": "The agent initially detected the mass but lowered its score due to uncertainty. This rule forces a high anomaly score when such a distinct, large mass is present, preventing underprediction.",
+          "from_item": "D9_0099"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If a large, irregular hyperintense mass with surrounding edema is detected, override any refutation and classify as anomaly.",
+          "justification": "The agent initially detected the mass and edema but incorrectly refuted them, leading to a low score. This rule ensures such distinct pathological features are prioritized over refutation logic.",
+          "from_item": "D9_0104"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If a focal hyperintense lesion is detected in the periventricular region and absent in normal references, classify as anomaly.",
+          "justification": "The agent correctly identified the lesion but failed to commit to the anomaly class. This rule explicitly links the specific feature (periventricular hyperintensity) to the anomaly label, preventing uncertainty.",
+          "from_item": "D9_0122"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag dark, fluid-filled ventricular structures in the brain's center as anomalies; these are normal anatomical features.",
+          "justification": "The agent incorrectly identified the normal lateral ventricles as a defect. This rule explicitly defines this common anatomical structure as a normal variant to prevent false positives.",
+          "from_item": "D9_0077"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not classify symmetric, bilateral ring-like hyperintensities in deep brain structures as anomalies; these are normal anatomical features.",
+          "justification": "The agent falsely identified symmetric deep brain structures as a unilateral lesion. This rule clarifies that such bilateral symmetry indicates normal anatomy, preventing false positives.",
+          "from_item": "D9_0060"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "D9": {
+      "brain_mri": 10
+    }
+  }
+}

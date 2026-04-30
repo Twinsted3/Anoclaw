@@ -1,0 +1,5282 @@
+[
+  {
+    "item_id": "D5_0024",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.85,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.89
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.883
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.882
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.862
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "asymmetric pigmented lesion / possible melanoma",
+        "evidence": "Query lesion is darker than the normal references, with marked asymmetry, multilobulated shape, and uneven pigment distribution including a very dark central area.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 77
+    },
+    "latency_sec": 9.98,
+    "error": null
+  },
+  {
+    "item_id": "D5_0084",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.816
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.798
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.798
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.787
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The query lesion appears asymmetric with a jagged, uneven border and marked dark color variation, making it look less uniform than the visually similar normal reference lesions.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 120
+    },
+    "latency_sec": 11.55,
+    "error": null
+  },
+  {
+    "item_id": "D5_0074",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.867
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.845
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.819
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.803
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small symmetric pigmented lesion with fairly uniform brown-purple coloration and soft borders, visually consistent with the provided normal reference lesions.",
+        "confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 89
+    },
+    "latency_sec": 12.23,
+    "error": null
+  },
+  {
+    "item_id": "D5_0052",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.29000000000000004,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.836
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.805
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.798
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.776
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query lesion is a small pink-red macule with diffuse, fairly symmetric pigmentation and soft borders, visually matching the benign-appearing reference examples without clear melanoma-specific asymmetry, atypical network, or multiple distinct colors.",
+        "confidence": 0.71
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 81
+    },
+    "latency_sec": 3.67,
+    "error": null
+  },
+  {
+    "item_id": "D5_0019",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.13,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.893
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.875
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.834
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion closely matches the visually similar normal references in overall oval shape, symmetric appearance, and homogeneous brown pigmentation with a few darker central foci but no clear atypical border irregularity or striking color variegation beyond the references.",
+        "confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 84
+    },
+    "latency_sec": 4.83,
+    "error": null
+  },
+  {
+    "item_id": "D5_0078",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.85,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.859
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.853
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.844
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.834
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / possible melanoma",
+        "evidence": "The query lesion shows asymmetric shape, indistinct and uneven borders, and variegated pigmentation with a darker central area and irregular peripheral extension compared with the normal references.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 80
+    },
+    "latency_sec": 3.88,
+    "error": null
+  },
+  {
+    "item_id": "D5_0083",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.602
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.563
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.558
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.51
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "possible melanoma / heavily pigmented atypical melanocytic lesion",
+        "evidence": "Query lesion is markedly darker than the normal references, with blue-black homogeneous pigmentation, peripheral radial streaking/irregular border, and less typical benign pigment network pattern.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 140
+    },
+    "latency_sec": 6.13,
+    "error": null
+  },
+  {
+    "item_id": "D5_0002",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.895
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.892
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.886
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion closely matches the visually similar normal references, especially reference 1, with a small symmetric bilobed dark brown appearance and no obvious atypical structural differences.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 86
+    },
+    "latency_sec": 3.5,
+    "error": null
+  },
+  {
+    "item_id": "D5_0069",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.29000000000000004,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.922
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.913
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.905
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.897
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion is a small pigmented macule with fairly symmetric overall shape, limited color variation, and appearance similar to the visually matched normal reference lesions.",
+        "confidence": 0.71
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 68
+    },
+    "latency_sec": 21.19,
+    "error": null
+  },
+  {
+    "item_id": "D5_0043",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.17000000000000004,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.835
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.823
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.817
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.814
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query lesion is a small symmetric oval brown nevus with fairly regular borders and relatively uniform pigmentation, without clear atypical structures compared with the visually similar normal references.",
+        "confidence": 0.83
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 69
+    },
+    "latency_sec": 3.88,
+    "error": null
+  },
+  {
+    "item_id": "D5_0023",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.18000000000000005,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.939
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.929
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.905
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.902
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small symmetric brown lesion with fairly regular shape and relatively uniform pigmentation, similar in appearance to the visually similar normal reference lesions.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 61
+    },
+    "latency_sec": 4.24,
+    "error": null
+  },
+  {
+    "item_id": "D5_0042",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.29000000000000004,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.907
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.858
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.858
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.853
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion is a small brown pigmented spot with relatively smooth borders and fairly uniform coloration, visually similar to the provided normal reference lesions. No clear strong asymmetry, marked border irregularity, or multiple atypical colors are evident.",
+        "confidence": 0.71
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 84
+    },
+    "latency_sec": 3.92,
+    "error": null
+  },
+  {
+    "item_id": "D5_0006",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.20999999999999996,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.935
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.908
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.893
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion closely matches the visually similar normal references in overall shape, brown pigmentation, and mild border irregularity without showing distinctly new asymmetry, extreme color variegation, or other obvious abnormal structures relative to the references.",
+        "confidence": 0.79
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 82
+    },
+    "latency_sec": 3.57,
+    "error": null
+  },
+  {
+    "item_id": "D5_0022",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.18999999999999995,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.932
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.916
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.894
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.886
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Light brown lesion with relatively uniform pigmentation and soft, non-sharply demarcated borders, visually consistent with the provided normal reference images and without obvious malignant-specific structures.",
+        "confidence": 0.81
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 99
+    },
+    "latency_sec": 5.02,
+    "error": null
+  },
+  {
+    "item_id": "D5_0005",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.908
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03368.jpg",
+          0.904
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.904
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion closely matches the visually similar normal reference images in overall pigmentation, asymmetric but benign-appearing blotchy structure, and border characteristics, with no distinct additional anomalous features compared with the references.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 102
+    },
+    "latency_sec": 4.63,
+    "error": null
+  },
+  {
+    "item_id": "D5_0048",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.31000000000000005,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.917
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.913
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.912
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.91
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small pigmented lesion with appearance similar to the provided normal references: comparable brown coloration, limited size, and only mild asymmetry/edge irregularity without clear alarming structural differences.",
+        "confidence": 0.69
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 160
+    },
+    "latency_sec": 6.83,
+    "error": null
+  },
+  {
+    "item_id": "D5_0025",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.927
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.902
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.883
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "Query lesion shows asymmetry, irregular and somewhat blurred borders, and variegated dark brown pigmentation with an atypical structure compared with the normal references.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 78
+    },
+    "latency_sec": 7.92,
+    "error": null
+  },
+  {
+    "item_id": "D5_0050",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.896
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.854
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.844
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.844
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / possible melanoma-pattern atypia",
+        "evidence": "The query lesion appears more asymmetric than the normal references, with a broader uneven shape, irregular scalloped borders, and greater color heterogeneity including darker peripheral clods and a lighter pink central area.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 128
+    },
+    "latency_sec": 7.22,
+    "error": null
+  },
+  {
+    "item_id": "D5_0020",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.9
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.899
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.882
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The lesion appears fairly symmetric with a mostly smooth, regular border and relatively homogeneous dark brown-red pigmentation, which is consistent with the visually similar normal reference lesions.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 128
+    },
+    "latency_sec": 8.21,
+    "error": null
+  },
+  {
+    "item_id": "D5_0059",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.10999999999999999,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.869
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.833
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.829
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.827
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion is small, round, symmetric, and uniformly light brown with smooth, well-defined borders. It lacks marked asymmetry, irregular pigmentation, or atypical structures compared with the similar normal references.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 78
+    },
+    "latency_sec": 4.63,
+    "error": null
+  },
+  {
+    "item_id": "D5_0001",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.883
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.878
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.865
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion closely matches the visually similar normal reference images in overall color, diffuse brown-red pigmentation, and soft irregular borders, without a distinctly atypical feature standing out relative to those normal samples.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 103
+    },
+    "latency_sec": 4.11,
+    "error": null
+  },
+  {
+    "item_id": "D5_0064",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.09999999999999998,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.86
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.859
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.854
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.837
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The lesion appears small, oval, and fairly symmetric with a relatively uniform light-brown pigmentation and smooth, fading borders, resembling the normal reference samples without clear atypical structures.",
+        "confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 107
+    },
+    "latency_sec": 5.27,
+    "error": null
+  },
+  {
+    "item_id": "D5_0007",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.21999999999999997,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.841
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.793
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_val_00061.jpg",
+          0.792
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query closely matches the most similar normal reference, showing a light-brown patch with mild asymmetry and diffuse borders but no clearly atypical structures, marked color variegation, or strong malignant features.",
+        "confidence": 0.78
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 77
+    },
+    "latency_sec": 4.38,
+    "error": null
+  },
+  {
+    "item_id": "D5_0056",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.841
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.839
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.836
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.831
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "amelanotic/pink lesion with irregular structure",
+        "evidence": "Query shows a predominantly pink structureless lesion with ill-defined asymmetric borders and focal darker reddish areas, unlike the reference normal pigmented lesions which are more consistently melanocytic and organized.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 84
+    },
+    "latency_sec": 5.8,
+    "error": null
+  },
+  {
+    "item_id": "D5_0029",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.67,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.928
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.928
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.91
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.893
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The query shows a darker, more asymmetric central pigmented cluster with uneven structure and a small inferior extension, appearing more irregular than the visually similar normal references.",
+        "confidence": 0.67
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 180
+    },
+    "latency_sec": 6.96,
+    "error": null
+  },
+  {
+    "item_id": "D5_0088",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.24,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.879
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.843
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.842
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.833
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small pigmented lesion with fairly uniform brown coloration and soft borders, visually consistent with the provided normal reference lesions without clear malignant-specific structures.",
+        "confidence": 0.76
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 102
+    },
+    "latency_sec": 6.25,
+    "error": null
+  },
+  {
+    "item_id": "D5_0012",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.878
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.874
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.869
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion closely matches the retrieved normal references in overall oval shape, symmetric appearance, smooth border, and relatively uniform brown pigmentation without clear atypical structures.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 92
+    },
+    "latency_sec": 3.79,
+    "error": null
+  },
+  {
+    "item_id": "D5_0026",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.828
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_val_00061.jpg",
+          0.802
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.789
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.768
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "pigmented lesion with central blue-black blotch / possible melanoma",
+        "evidence": "The query lesion shows a relatively symmetric round shape but has a conspicuous central dark blue-black focus with surrounding gray-purple pigmentation, giving a structureless and atypical appearance unlike the more uniformly brown normal references.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 142
+    },
+    "latency_sec": 7.09,
+    "error": null
+  },
+  {
+    "item_id": "D5_0082",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.804
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.795
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.788
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.787
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "blue-gray structureless pigmented lesion",
+        "evidence": "Query lesion appears as a small asymmetric blue-gray/purple homogeneous spot with indistinct borders, differing from the brown benign-appearing reference nevi.",
+        "confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 76
+    },
+    "latency_sec": 5.37,
+    "error": null
+  },
+  {
+    "item_id": "D5_0054",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.12,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.747
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.72
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.712
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.701
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small brown lesion with fairly symmetric overall shape, mostly uniform pigmentation, and smooth/regular borders; appearance is closely consistent with the visually similar normal reference lesions.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 120
+    },
+    "latency_sec": 5.05,
+    "error": null
+  },
+  {
+    "item_id": "D5_0033",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.27,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.921
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.907
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.901
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.897
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion is a small brown pigmented spot with fairly symmetric shape, relatively smooth fading borders, and homogeneous central pigmentation. It appears similar in overall pattern and color to the retrieved normal reference lesions, without clear extreme asymmetry, multiple striking colors, or obvious malignant structures.",
+        "confidence": 0.73
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 92
+    },
+    "latency_sec": 3.87,
+    "error": null
+  },
+  {
+    "item_id": "D5_0036",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.83,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.712
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.711
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.683
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.664
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "pigmented lesion with dark central blotch / possible melanoma",
+        "evidence": "Compared with the normal references, the query lesion is more uniformly round but shows a prominent very dark central area, stronger black-brown pigmentation, and a more structureless appearance, which is atypical for the provided normal samples.",
+        "confidence": 0.83
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 165
+    },
+    "latency_sec": 5.81,
+    "error": null
+  },
+  {
+    "item_id": "D5_0060",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.769
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.767
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.758
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.753
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small symmetric brown lesion with fairly regular borders and relatively uniform pigmentation, broadly similar to the benign reference nevi.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 59
+    },
+    "latency_sec": 3.49,
+    "error": null
+  },
+  {
+    "item_id": "D5_0016",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.919
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.892
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.878
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion closely matches the visually similar normal references in color, shape, and pigment distribution. It appears as a small symmetric brown macule without clear atypical structures or marked asymmetry.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 75
+    },
+    "latency_sec": 4.06,
+    "error": null
+  },
+  {
+    "item_id": "D5_0034",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.15000000000000002,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.805
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.794
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.79
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.766
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small, round, symmetric, well-circumscribed dark brown lesion with uniform overall appearance and no obvious irregular border, marked color variegation, or asymmetry compared with the normal references.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 76
+    },
+    "latency_sec": 3.52,
+    "error": null
+  },
+  {
+    "item_id": "D5_0039",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.22999999999999998,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.832
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.824
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.754
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.735
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The lesion is a light-brown, relatively homogeneous pigmented patch with soft borders and no clear melanoma-specific warning signs such as strong asymmetry, multiple atypical colors, blue-white veil, streaks, or marked structural irregularity. Its appearance is broadly consistent with the visually similar normal reference lesions.",
+        "confidence": 0.77
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 168
+    },
+    "latency_sec": 6.27,
+    "error": null
+  },
+  {
+    "item_id": "D5_0041",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.83,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.79
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.776
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.759
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.747
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion",
+        "evidence": "Query lesion appears asymmetric with uneven pigmentation, a darker focal area at the upper edge, and a lobulated/irregular border compared with the more uniform normal references.",
+        "confidence": 0.83
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 78
+    },
+    "latency_sec": 3.8,
+    "error": null
+  },
+  {
+    "item_id": "D5_0086",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.935
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.931
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.924
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03368.jpg",
+          0.918
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small symmetric brown lesion with fairly uniform color and smooth, regular borders, similar in appearance to the retrieved normal references.",
+        "confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 60
+    },
+    "latency_sec": 3.2,
+    "error": null
+  },
+  {
+    "item_id": "D5_0013",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_val_00061.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.792
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.766
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.695
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query closely matches one of the visually similar normal references, showing a small, symmetric reddish-brown spot on pink skin with fairly uniform color and no obvious irregular border or atypical dermoscopic structures.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 77
+    },
+    "latency_sec": 6.92,
+    "error": null
+  },
+  {
+    "item_id": "D5_0003",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.878
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.876
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.875
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion closely matches the visually similar normal references, especially reference 1, with a small symmetric brown pigmentation pattern and no clear atypical structures or marked asymmetry.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 95
+    },
+    "latency_sec": 3.98,
+    "error": null
+  },
+  {
+    "item_id": "D5_0031",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.20999999999999996,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.942
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.873
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.818
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.804
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Lesion appears faint and fairly symmetric with a diffuse light-brown center, soft borders, and no strong asymmetry, atypical pigment network, blue-white veil, ulceration, or markedly irregular structures compared with the similar normal references.",
+        "confidence": 0.79
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 138
+    },
+    "latency_sec": 5.14,
+    "error": null
+  },
+  {
+    "item_id": "D5_0028",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.12,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.883
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.853
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.847
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.834
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The lesion appears relatively symmetric and oval with a fairly uniform dark-brown pigmentation and smooth, gradually fading borders, resembling the provided normal reference patterns.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 95
+    },
+    "latency_sec": 4.73,
+    "error": null
+  },
+  {
+    "item_id": "D5_0073",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.68,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.811
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.809
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.803
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Compared with the visually similar normal references, the query shows stronger diffuse erythema, asymmetric structure, and uneven darker pigmented areas without a clearly uniform benign pattern.",
+        "confidence": 0.68
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 158
+    },
+    "latency_sec": 8.62,
+    "error": null
+  },
+  {
+    "item_id": "D5_0062",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.844
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.799
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.798
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.793
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small, symmetric, well-circumscribed pigmented lesion with fairly uniform brown color and no obvious irregular border or marked color variegation; appearance is similar to the normal reference images.",
+        "confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 75
+    },
+    "latency_sec": 3.55,
+    "error": null
+  },
+  {
+    "item_id": "D5_0072",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.21999999999999997,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.824
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.804
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.779
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.759
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small symmetric brown lesion with fairly regular shape, central darker pigmentation, and smooth fading borders, visually similar to the normal reference nevi.",
+        "confidence": 0.78
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 64
+    },
+    "latency_sec": 3.77,
+    "error": null
+  },
+  {
+    "item_id": "D5_0070",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.79,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.682
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.677
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.671
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.647
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "Query lesion is much smaller but shows a very dark center with irregular, spiculated/starburst-like borders and asymmetrical pigment distribution compared with the smoother, more homogeneous normal references.",
+        "confidence": 0.79
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 84
+    },
+    "latency_sec": 3.8,
+    "error": null
+  },
+  {
+    "item_id": "D5_0075",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.8,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.889
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.868
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.867
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion",
+        "evidence": "The query lesion appears more asymmetric and structurally disorganized than the similar normal references, with irregular borders and heterogeneous gray-brown pigmentation/clods.",
+        "confidence": 0.8
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 74
+    },
+    "latency_sec": 3.45,
+    "error": null
+  },
+  {
+    "item_id": "D5_0008",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.15000000000000002,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.841
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.805
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.789
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion closely matches the most similar normal reference, showing a symmetric reddish-brown patch with relatively uniform pigmentation and soft borders, without clear atypical structures or strong asymmetry compared with the provided normal examples.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 79
+    },
+    "latency_sec": 3.86,
+    "error": null
+  },
+  {
+    "item_id": "D5_0044",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.7,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.901
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.9
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.898
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.884
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "multifocal / satellite pigmentation",
+        "evidence": "The query shows two distinct pigmented foci separated by lighter skin, with asymmetry and irregular overall structure compared with the more single-cluster appearance of the normal reference images.",
+        "confidence": 0.7
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 139
+    },
+    "latency_sec": 5.99,
+    "error": null
+  },
+  {
+    "item_id": "D5_0049",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.8,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.838
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.826
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00241.jpg",
+          0.772
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.726
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / melanoma-suspect pattern",
+        "evidence": "The query lesion appears more asymmetric than the normal references, with an irregular poorly defined border, heterogeneous reddish-brown pigmentation, and a darker central area with uneven peripheral extensions.",
+        "confidence": 0.8
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 169
+    },
+    "latency_sec": 5.96,
+    "error": null
+  },
+  {
+    "item_id": "D5_0080",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.883
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.861
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The query lesion appears elongated and asymmetric with uneven, blotchy pigmentation and ill-defined borders compared with the more compact and regular-looking normal references.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 72
+    },
+    "latency_sec": 4.06,
+    "error": null
+  },
+  {
+    "item_id": "D5_0087",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.35,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.75
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.746
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.737
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03368.jpg",
+          0.736
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small, faint brown lesion with relatively symmetric elongated shape, mild color variation, and smooth/blurry borders; appears less irregular and less dark than the similar reference lesions.",
+        "confidence": 0.65
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 70
+    },
+    "latency_sec": 3.89,
+    "error": null
+  },
+  {
+    "item_id": "D5_0038",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.859
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.842
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.826
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.825
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "vascular/red lesion",
+        "evidence": "Query lesion is predominantly red-purple with clustered lacuna-like areas and asymmetric surrounding pink-red halo, unlike the brown pigmented normal references.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 69
+    },
+    "latency_sec": 6.47,
+    "error": null
+  },
+  {
+    "item_id": "D5_0055",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.22999999999999998,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.524
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.512
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.484
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.479
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Symmetric pigmented lesion with fairly uniform brown coloration and regular overall structure, similar in appearance to the normal reference nevi.",
+        "confidence": 0.77
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 62
+    },
+    "latency_sec": 3.66,
+    "error": null
+  },
+  {
+    "item_id": "D5_0018",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.15000000000000002,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          1.0
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.888
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.876
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.871
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query lesion closely matches the visually similar normal references in size, brown pigmentation, and mildly irregular but symmetric blotchy shape without clear additional alarming structures.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 66
+    },
+    "latency_sec": 4.02,
+    "error": null
+  },
+  {
+    "item_id": "D5_0058",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.28,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.907
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.88
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.878
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.875
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Lesion appears broadly similar to the visually matched normal references: a small pigmented lesion with mild asymmetry, soft/indistinct borders, and fairly uniform light-to-medium brown coloration without clear extreme variegation, ulceration, or sharply atypical structures.",
+        "confidence": 0.72
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 177
+    },
+    "latency_sec": 7.13,
+    "error": null
+  },
+  {
+    "item_id": "D5_0045",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.29000000000000004,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.929
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.904
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.901
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.898
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Lesion appears small and fairly symmetric with a soft, relatively uniform light-brown pigmentation pattern and no clear signs of marked asymmetry, sharp irregular borders, or strong color variegation compared with the similar normal references.",
+        "confidence": 0.71
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 120
+    },
+    "latency_sec": 5.2,
+    "error": null
+  },
+  {
+    "item_id": "D5_0065",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.29000000000000004,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_val_00061.jpg",
+          0.688
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.683
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.665
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.636
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The lesion appears small and similar in color and structure to the visually matched normal references, with a relatively limited brown pigmentation pattern and no clearly striking atypical dermoscopic features.",
+        "confidence": 0.71
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 109
+    },
+    "latency_sec": 6.08,
+    "error": null
+  },
+  {
+    "item_id": "D5_0068",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.922
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.908
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.905
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.904
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion",
+        "evidence": "Query lesion shows asymmetry, irregular/angular borders, and variegated brown pigmentation with a darker central area compared with the retrieved normal references.",
+        "confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 73
+    },
+    "latency_sec": 5.47,
+    "error": null
+  },
+  {
+    "item_id": "D5_0144",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.83,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.722
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.715
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.687
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.679
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The query lesion appears asymmetric with uneven brown pigmentation, ill-defined irregular borders, and focal surrounding erythema, making it look more atypical than the referenced normal samples.",
+        "confidence": 0.83
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 78
+    },
+    "latency_sec": 3.68,
+    "error": null
+  },
+  {
+    "item_id": "D5_0040",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.15000000000000002,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.81
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.802
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.797
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.78
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small brown lesion with overall regular appearance, limited color variation, and morphology similar to the provided normal reference images; no strong signs of marked asymmetry, atypical border irregularity, or striking multicolor pattern.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 114
+    },
+    "latency_sec": 6.34,
+    "error": null
+  },
+  {
+    "item_id": "D5_0095",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.797
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.767
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.72
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.687
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "asymmetric irregular pigmented lesion suspicious for melanoma",
+        "evidence": "Query lesion shows marked asymmetry, irregular/notched borders, variegated pigmentation with very dark black area and uneven brown tones, unlike the more uniform normal references.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 81
+    },
+    "latency_sec": 3.83,
+    "error": null
+  },
+  {
+    "item_id": "D5_0094",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.889
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.875
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.867
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.866
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "The query lesion appears more asymmetric than the normal references, with irregular borders and noticeable color variation including dark brown to bluish-purple areas, which is more suspicious than the retrieved normal samples.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 154
+    },
+    "latency_sec": 6.28,
+    "error": null
+  },
+  {
+    "item_id": "D5_0103",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.07999999999999996,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.744
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.735
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.733
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.73
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion is small, symmetric, round, and well-circumscribed with fairly uniform dark brown pigmentation. It lacks obvious asymmetry, irregular border distortion, or marked color variegation compared with the more heterogeneous reference lesions.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 84
+    },
+    "latency_sec": 4.86,
+    "error": null
+  },
+  {
+    "item_id": "D5_0154",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.845
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.835
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.832
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.831
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "pigmented lesion with marked asymmetry/irregular pigmentation",
+        "evidence": "Compared with the normal references, the query shows a very dark black-blue central area, clear asymmetry, irregular borders, and heterogeneous pigmentation with uneven structure.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 115
+    },
+    "latency_sec": 5.19,
+    "error": null
+  },
+  {
+    "item_id": "D5_0110",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.786
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.736
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.728
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.694
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / possible melanoma",
+        "evidence": "Query lesion is markedly darker than the normal references, with asymmetric multi-lobulated shape, irregular/notched borders, and heterogeneous pigmentation with dense black-brown central clods.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 82
+    },
+    "latency_sec": 4.14,
+    "error": null
+  },
+  {
+    "item_id": "D5_0116",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.867
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.84
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.825
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.807
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion with asymmetry and color variegation",
+        "evidence": "The lesion is markedly asymmetric, has uneven/ill-defined borders, and shows multiple colors including brown, pink, and a central whitish structureless area, making it less regular than the normal references.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 138
+    },
+    "latency_sec": 5.28,
+    "error": null
+  },
+  {
+    "item_id": "D5_0093",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.83
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.784
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.771
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.75
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "Query lesion appears asymmetric with irregular, non-uniform structure and multiple brown tones, plus a darker eccentric focus and less smooth border compared with the normal references.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 79
+    },
+    "latency_sec": 4.49,
+    "error": null
+  },
+  {
+    "item_id": "D5_0126",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.831
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.814
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.81
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.801
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Asymmetric lesion with heterogeneous pigmentation, including multiple dark blue-black clods/blotches and an irregular indistinct border, appearing more chaotic than the visually similar normal references.",
+        "confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 119
+    },
+    "latency_sec": 4.75,
+    "error": null
+  },
+  {
+    "item_id": "D5_0138",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.704
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.691
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.659
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.653
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / melanoma-suspect pattern",
+        "evidence": "Marked asymmetry, uneven and ill-defined borders, multiple shades of brown to black, and irregular clumped/pseudopod-like peripheral structures unlike the more uniform normal references.",
+        "confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 128
+    },
+    "latency_sec": 5.95,
+    "error": null
+  },
+  {
+    "item_id": "D5_0163",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.899
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.885
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.883
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Query lesion is darker than the normal references, with marked asymmetry, uneven borders, and heterogeneous pigmentation including a very dark central area.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 71
+    },
+    "latency_sec": 3.94,
+    "error": null
+  },
+  {
+    "item_id": "D5_0122",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.888
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.876
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.868
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "asymmetric pigmented lesion",
+        "evidence": "The query lesion appears less symmetric than the normal references, with irregular borders, uneven internal pigmentation, and focal bright white areas/clods that make the structure more heterogeneous.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 137
+    },
+    "latency_sec": 7.23,
+    "error": null
+  },
+  {
+    "item_id": "D5_0174",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.86,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.877
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.859
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.851
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.835
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "asymmetric pigmented lesion",
+        "evidence": "The query lesion is darker and more compact than the normal references, with noticeable asymmetry, irregular border, and uneven pigmentation including a very dark central area.",
+        "confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 75
+    },
+    "latency_sec": 3.15,
+    "error": null
+  },
+  {
+    "item_id": "D5_0148",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.767
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.745
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.713
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.703
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "Query lesion shows marked asymmetry, irregular ill-defined borders, heterogeneous dark brown to black pigmentation, and a central darker structure unlike the more uniform normal references.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 79
+    },
+    "latency_sec": 4.05,
+    "error": null
+  },
+  {
+    "item_id": "D5_0170",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.848
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.779
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.765
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.743
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / melanoma-suspicious",
+        "evidence": "Query lesion is markedly asymmetric with irregular, notched borders and heterogeneous pigmentation, including a very dark central-clustered area and surrounding lighter brown structure, unlike the more uniform normal references.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 87
+    },
+    "latency_sec": 3.8,
+    "error": null
+  },
+  {
+    "item_id": "D5_0152",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.938
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.879
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.864
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The query lesion is darker and more asymmetric than the normal references, with uneven pigmentation including a central blue-gray area and less regular border/shape.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 73
+    },
+    "latency_sec": 3.85,
+    "error": null
+  },
+  {
+    "item_id": "D5_0097",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.85,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.875
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.775
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.75
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.75
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion",
+        "evidence": "The query lesion appears asymmetric with uneven dark pigmentation, a central darker blotch, and irregular blurred borders compared with the more benign-appearing reference samples.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 76
+    },
+    "latency_sec": 3.66,
+    "error": null
+  },
+  {
+    "item_id": "D5_0157",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.69,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.874
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.832
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.828
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.813
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "asymmetry/irregular border and color variegation",
+        "evidence": "The query lesion appears more asymmetric than the normal references, with a less regular outline and uneven pigmentation showing pink-red and darker brown areas distributed irregularly.",
+        "confidence": 0.69
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 133
+    },
+    "latency_sec": 6.09,
+    "error": null
+  },
+  {
+    "item_id": "D5_0113",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.73,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.875
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.86
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.845
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.81
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The lesion appears asymmetric with uneven, ill-defined borders and noticeable color variation, including a darker focal area in the upper-right portion compared with the more uniformly benign-looking reference images.",
+        "confidence": 0.73
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 146
+    },
+    "latency_sec": 5.76,
+    "error": null
+  },
+  {
+    "item_id": "D5_0129",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.67,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.894
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.86
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.842
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.841
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The query lesion appears more asymmetric and poorly circumscribed than the normal references, with uneven light-to-dark brown pigmentation and a disorganized internal structure rather than a compact, uniform benign pattern.",
+        "confidence": 0.67
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 151
+    },
+    "latency_sec": 7.02,
+    "error": null
+  },
+  {
+    "item_id": "D5_0118",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.81,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.868
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.83
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.825
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.82
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion",
+        "evidence": "The query lesion appears more asymmetric than the normal references, with an irregular/star-like border, uneven internal pigmentation, and a distinct central whitish structureless area not seen in the similar normal samples.",
+        "confidence": 0.81
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 183
+    },
+    "latency_sec": 7.83,
+    "error": null
+  },
+  {
+    "item_id": "D5_0111",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.815
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.786
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.784
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.758
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "asymmetric pigmented lesion with irregular focal pigmentation",
+        "evidence": "The query lesion shows noticeable asymmetry, a pink inflamed background, and an eccentric dark brown focal area/clod that differs from the more uniformly benign-appearing reference lesions.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 139
+    },
+    "latency_sec": 5.22,
+    "error": null
+  },
+  {
+    "item_id": "D5_0105",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.12,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.884
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.845
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.815
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.813
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small, compact pigmented lesion with fairly regular round shape, symmetric appearance, and relatively uniform brown coloration; overall similar to the visually matched normal reference lesions.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 123
+    },
+    "latency_sec": 5.5,
+    "error": null
+  },
+  {
+    "item_id": "D5_0159",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.68,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.812
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.78
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.74
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.737
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Compared with the similar normal references, the query shows a less uniform pigment pattern with several darker focal blotches on the left side and a somewhat irregular internal structure, making it look atypical rather than evenly benign.",
+        "confidence": 0.68
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 126
+    },
+    "latency_sec": 6.38,
+    "error": null
+  },
+  {
+    "item_id": "D5_0140",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.85,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.888
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.86
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.839
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.765
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / possible melanoma",
+        "evidence": "Query lesion shows asymmetry, scattered multiple brown clods, uneven distribution of pigment, and a more irregular fragmented pattern than the visually similar normal references.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 77
+    },
+    "latency_sec": 7.04,
+    "error": null
+  },
+  {
+    "item_id": "D5_0120",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.778
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.772
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.756
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.737
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The lesion is asymmetric with uneven, ill-defined borders and heterogeneous coloration, including a pink-red background with a darker focal area, which differs from the more regular benign reference patterns.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 132
+    },
+    "latency_sec": 5.3,
+    "error": null
+  },
+  {
+    "item_id": "D5_0134",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.821
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.806
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.802
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.722
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion",
+        "evidence": "The lesion shows an irregular clustered dark-brown structure with asymmetry, uneven distribution of pigment, and less uniform shape/pattern than the visually similar normal references.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 141
+    },
+    "latency_sec": 6.4,
+    "error": null
+  },
+  {
+    "item_id": "D5_0178",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.638
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.619
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.618
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.615
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "non-melanocytic lesion / possible squamous cell carcinoma in situ or irritated keratinizing lesion",
+        "evidence": "Query lesion is markedly different from the normal pigmented reference nevi: it is pink-white, largely structureless, scaly/crusted, and lacks a regular symmetric melanocytic pigment network.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 98
+    },
+    "latency_sec": 4.01,
+    "error": null
+  },
+  {
+    "item_id": "D5_0142",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.68,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.839
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.808
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.795
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.781
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Compared with the normal references, the query shows a more ill-defined and asymmetric light-brown/pink lesion with uneven pigmentation and a patchy network/structureless pattern rather than a more uniform benign-appearing pattern.",
+        "confidence": 0.68
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 202
+    },
+    "latency_sec": 7.41,
+    "error": null
+  },
+  {
+    "item_id": "D5_0092",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.797
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.733
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.717
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.689
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / melanoma-suspicious",
+        "evidence": "Compared with the normal references, the query lesion shows marked asymmetry, irregular poorly defined borders, and heterogeneous pigmentation with a darker eccentric area and surrounding lighter structureless zone.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 84
+    },
+    "latency_sec": 5.64,
+    "error": null
+  },
+  {
+    "item_id": "D5_0135",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.853
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.826
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.819
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.783
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Query lesion shows a very dark central focus with asymmetric surrounding brown pigmentation and uneven structure compared with the normal reference patterns.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 67
+    },
+    "latency_sec": 4.26,
+    "error": null
+  },
+  {
+    "item_id": "D5_0153",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.889
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.868
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.855
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.844
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "Query lesion is more irregular than the normal references, with a lobulated/asymmetric border, heterogeneous dark brown to purple coloration, and uneven internal structure.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 78
+    },
+    "latency_sec": 3.49,
+    "error": null
+  },
+  {
+    "item_id": "D5_0101",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.22999999999999998,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.912
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.882
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.881
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.878
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query lesion is a symmetric brown macule with fairly uniform pigmentation and a regular reticular/globular pattern, closely resembling the visually similar normal reference lesions without clear atypical structures, marked asymmetry, or multiple discordant colors.",
+        "confidence": 0.77
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 84
+    },
+    "latency_sec": 3.47,
+    "error": null
+  },
+  {
+    "item_id": "D5_0165",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.778
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.771
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.752
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03368.jpg",
+          0.752
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "Query lesion shows marked asymmetry, irregular poorly defined borders, and variegated dark brown to black pigmentation with blotchy/clumped structure, more heterogeneous than the normal references.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 83
+    },
+    "latency_sec": 5.83,
+    "error": null
+  },
+  {
+    "item_id": "D5_0100",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.842
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.822
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.82
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.811
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / possible melanoma",
+        "evidence": "Query lesion is more asymmetric than the normal references, with uneven borders, variegated pigmentation including darker and lighter brown-gray areas, and central whitish shiny/regression-like structure.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 83
+    },
+    "latency_sec": 3.97,
+    "error": null
+  },
+  {
+    "item_id": "D5_0090",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.21999999999999997,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.896
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.894
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.886
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.864
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The lesion appears similar to the provided normal references: a small brown melanocytic lesion with overall symmetric pigmentation, soft/gradual borders, and no clear signs of marked asymmetry, multiple atypical colors, or sharply irregular structure.",
+        "confidence": 0.78
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 122
+    },
+    "latency_sec": 5.41,
+    "error": null
+  },
+  {
+    "item_id": "D5_0161",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.823
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.801
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.791
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.788
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "suspicious pigmented lesion / possible melanoma",
+        "evidence": "Marked asymmetry, irregular poorly defined borders, and pronounced color variegation with dark brown-black areas plus blue-white/gray structure. The lesion appears more heterogeneous and atypical than the normal reference samples.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 140
+    },
+    "latency_sec": 7.1,
+    "error": null
+  },
+  {
+    "item_id": "D5_0147",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.81,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.775
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.766
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.745
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.741
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Query lesion shows asymmetry, uneven pigmentation with darker central area, and less regular borders compared with the visually similar normal references.",
+        "confidence": 0.81
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 69
+    },
+    "latency_sec": 3.58,
+    "error": null
+  },
+  {
+    "item_id": "D5_0175",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.866
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.814
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.812
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.808
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Small symmetric pigmented lesion with overall regular round shape, fairly well-defined borders, and relatively uniform brown coloration. Appearance is consistent with benign nevus and less irregular than anomalous patterns.",
+        "confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 74
+    },
+    "latency_sec": 4.25,
+    "error": null
+  },
+  {
+    "item_id": "D5_0128",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.747
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.731
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.719
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.711
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "suspicious pigmented lesion / melanoma-like pattern",
+        "evidence": "Marked asymmetry, irregular poorly defined borders, strong color variegation with a large blue-black structureless central area, and focal whitish regression/ulceration-like change. These features are more atypical than the normal reference lesions.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 152
+    },
+    "latency_sec": 5.47,
+    "error": null
+  },
+  {
+    "item_id": "D5_0160",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.83,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.859
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.852
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.851
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01505.jpg",
+          0.813
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Query lesion appears asymmetric with uneven, poorly defined borders and variegated pink-brown pigmentation compared with the more regular normal references.",
+        "confidence": 0.83
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 70
+    },
+    "latency_sec": 3.54,
+    "error": null
+  },
+  {
+    "item_id": "D5_0173",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.896
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.861
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.859
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.852
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / possible melanoma",
+        "evidence": "Query lesion is darker than the normal references, with marked asymmetry, irregular borders, and heterogeneous pigmentation including very dark blue-black areas.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 74
+    },
+    "latency_sec": 3.9,
+    "error": null
+  },
+  {
+    "item_id": "D5_0106",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 0,
+    "anomaly_score": 0.18000000000000005,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.814
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.803
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.768
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.738
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query lesion is a small symmetric teardrop-shaped brown nevus with smooth, regular borders and fairly homogeneous pigmentation, without striking asymmetry, atypical multiple colors, or disruptive structures compared with the visually similar normal references.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 81
+    },
+    "latency_sec": 7.55,
+    "error": null
+  },
+  {
+    "item_id": "D5_0132",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.764
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.731
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.725
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.722
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / possible melanoma",
+        "evidence": "Query lesion shows marked asymmetry, focal very dark clod/starburst-like pigmentation on one side, uneven color distribution, and indistinct irregular borders compared with the more uniform normal references.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 84
+    },
+    "latency_sec": 6.27,
+    "error": null
+  },
+  {
+    "item_id": "D5_0109",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.85,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.74
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.609
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.588
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00241.jpg",
+          0.578
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "The query lesion appears more asymmetric and disorganized than the normal references, with irregular pink-white structureless areas, uneven pigmentation, and a darker eccentric focus suggesting atypical dermoscopic architecture.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 159
+    },
+    "latency_sec": 7.53,
+    "error": null
+  },
+  {
+    "item_id": "D5_0121",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.845
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.842
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.818
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.809
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "Query lesion shows asymmetry, irregular borders, variegated pigmentation with a dark reticular/clod pattern, and appears more structurally disorganized than the similar normal reference lesions.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 84
+    },
+    "latency_sec": 4.28,
+    "error": null
+  },
+  {
+    "item_id": "D5_0091",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.833
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03512.jpg",
+          0.819
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.766
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.764
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The query lesion shows asymmetry, uneven dark pigmentation with multiple focal black areas, and irregular ill-defined borders compared with the more uniform normal references.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 73
+    },
+    "latency_sec": 3.16,
+    "error": null
+  },
+  {
+    "item_id": "D5_0124",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.68,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.805
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.726
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.714
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.709
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "asymmetric pigmented lesion",
+        "evidence": "Lesion shows notable asymmetry, an irregular multilobulated border, and uneven pigmentation with darker central/clumped areas compared with the more uniform normal references.",
+        "confidence": 0.68
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 225
+    },
+    "latency_sec": 6.38,
+    "error": null
+  },
+  {
+    "item_id": "D5_0168",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05549.jpg",
+          0.896
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.873
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.871
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.861
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "suspicious pigmented lesion with asymmetry/irregular pigmentation",
+        "evidence": "The query lesion is elongated and asymmetric with uneven dark brown to black pigmentation, a central darker area, and irregular borders compared with the more uniform normal references.",
+        "confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 83
+    },
+    "latency_sec": 4.01,
+    "error": null
+  },
+  {
+    "item_id": "D5_0133",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.722
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.72
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.716
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.703
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / possible melanoma",
+        "evidence": "Query lesion is more asymmetric than the normal references, with irregular jagged borders, variegated brown-black coloration, and central dark/clod-like areas suggesting atypical melanocytic structure.",
+        "confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 85
+    },
+    "latency_sec": 5.35,
+    "error": null
+  },
+  {
+    "item_id": "D5_0143",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.798
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01944.jpg",
+          0.795
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.792
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.782
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Query lesion is small but shows asymmetric shape, uneven/dark central pigmentation, and a jagged star-like border compared with the more regular normal references.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 74
+    },
+    "latency_sec": 3.88,
+    "error": null
+  },
+  {
+    "item_id": "D5_0151",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.712
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.636
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.614
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.611
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Query lesion shows asymmetric shape, multiple brown-to-dark blue/black tones, and a focal darker structure unlike the more uniform normal references.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 71
+    },
+    "latency_sec": 5.43,
+    "error": null
+  },
+  {
+    "item_id": "D5_0169",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00241.jpg",
+          0.704
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.68
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.676
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.673
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "highly irregular pigmented lesion / suspicious melanoma pattern",
+        "evidence": "Marked asymmetry, very irregular scalloped borders, multiple colors (dark black, brown, pink-purple), and uneven internal structure compared with the more uniform reference lesions.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 115
+    },
+    "latency_sec": 5.19,
+    "error": null
+  },
+  {
+    "item_id": "D5_0141",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.79,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.831
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06568.jpg",
+          0.808
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.798
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03880.jpg",
+          0.798
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion with central hypopigmented/scar-like area",
+        "evidence": "The query shows an asymmetric lesion with uneven brown pigmentation concentrated at the periphery and a prominent central pink-white structureless area, making it less uniform and less well-circumscribed than the normal reference examples.",
+        "confidence": 0.79
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 164
+    },
+    "latency_sec": 6.61,
+    "error": null
+  },
+  {
+    "item_id": "D5_0102",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.89
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.82
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.79
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.764
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The query lesion shows asymmetric shape, uneven brown pigmentation, and ill-defined irregular borders compared with the similar normal references.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 67
+    },
+    "latency_sec": 7.25,
+    "error": null
+  },
+  {
+    "item_id": "D5_0098",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.911
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06224.jpg",
+          0.902
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.892
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01082.jpg",
+          0.88
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "Query lesion is asymmetric with an uneven, multi-lobulated shape, variegated pink-brown to darker purple pigmentation, and less uniform structure than the normal reference lesions.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 79
+    },
+    "latency_sec": 5.59,
+    "error": null
+  },
+  {
+    "item_id": "D5_0171",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.81,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.899
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.867
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.854
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00741.jpg",
+          0.85
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion / possible melanoma",
+        "evidence": "Asymmetric lesion with irregular, ill-defined borders and variegated brown pigmentation; structure appears more chaotic than the visually similar normal references.",
+        "confidence": 0.81
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 74
+    },
+    "latency_sec": 5.05,
+    "error": null
+  },
+  {
+    "item_id": "D5_0137",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_02818.jpg",
+          0.8
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.797
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.793
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.779
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "atypical pigmented lesion / possible melanoma",
+        "evidence": "Query lesion is more asymmetric than the normal references, with irregular scalloped borders, variegated brown-pink coloration, and multiple darker clods/globules creating a disorganized structure.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 86
+    },
+    "latency_sec": 3.37,
+    "error": null
+  },
+  {
+    "item_id": "D5_0139",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_05741.jpg",
+          0.802
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_test_01005.jpg",
+          0.796
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_03154.jpg",
+          0.791
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_00347.jpg",
+          0.786
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "dark melanocytic lesion with irregular border/asymmetry",
+        "evidence": "The query lesion is much darker and more compact than the similar normal references, with noticeable asymmetry, uneven/irregular edges, and central dark pigmentation.",
+        "confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 81
+    },
+    "latency_sec": 3.9,
+    "error": null
+  },
+  {
+    "item_id": "D5_0096",
+    "domain": "medical",
+    "domain_code": "D5",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "DermaMNIST",
+    "category": "skin_lesion",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_04772.jpg",
+          0.902
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_06961.jpg",
+          0.856
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_train_01429.jpg",
+          0.842
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST/dermamnist_images/derm_val_00061.jpg",
+          0.819
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "irregular pigmented lesion",
+        "evidence": "The query lesion shows a small very dark central focus with irregular, spiculated margins and asymmetric surrounding light-brown pigmentation, unlike the more uniform normal references.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 436,
+      "output": 76
+    },
+    "latency_sec": 4.75,
+    "error": null
+  }
+]

@@ -1,0 +1,1550 @@
+[
+  {
+    "item_id": "D3_0031",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The components exhibit smooth edges and consistent texture, matching the normal reference images. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "macaroni1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0074",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the reference images perfectly in terms of component layout, pin orientation, and silkscreen. No candidate defect features were identified, so the anomaly score remains low.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0037",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the initial inspection. The query image matches the normal reference images in terms of object shape, color, and surface texture. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0064",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison successfully refuted the possibility of the dark spot being a normal variation. The spot is a clear defect unique to the query image, leading to a high anomaly score.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "candle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0008",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays four yellow crescent-shaped objects that are visually identical to the reference images in terms of shape, color, and integrity. Any minor differences in position or orientation are within the allowed variations for normal instances. No defects were found.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0034",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0015",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly, bright white reflections, is confirmed as a normal feature ('lighting reflection shift') by the reference profiler. No other defects are present.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0069",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query object's features, including surface texture and edge shape, are consistent with the normal reference images. No unique anomalies were detected.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0016",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays four objects that are visually consistent with the provided normal reference images. No candidate defect features (such as cracks, chips, or discoloration) were identified upon initial inspection. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0050",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the features initially considered as potential defects (edge irregularities) are present in the reference images as well, indicating they are normal variations. No unique anomalies were detected in the query image.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0007",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only allowed variations (texture, lighting) compared to the reference baseline. No anomalous features such as cracks, holes, or distinct discolorations were detected.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0086",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The speckled texture observed in the query image is consistent with the natural surface texture variations seen in the reference images. No unique defects were identified, so the object is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0082",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "After a thorough visual inspection, the query image of the HC-SR04 module appears identical to the normal reference images. All components (transducers, pins, labels) are present, correctly oriented, and show no signs of damage, contamination, or misalignment. No candidate defect features were identified, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0006",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a uniform white rectangular bar with smooth surfaces and rounded edges, matching the reference images perfectly. No candidate defect features were identified, and the domain rule explicitly advises against flagging such uniform bars as anomalies. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0046",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no defects. All observed features (shape, color, texture, lighting) align with the normal baseline defined by the reference images and the profiler's allowed variations.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0073",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard LDR sensor module. The side-by-side comparison confirmed that the components (LED, phototransistor, IC, potentiometer, pins) are identical to the normal reference images. The slight color cast is attributed to lighting conditions, not a defect. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0059",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is consistent with the normal reference images. The only potential anomaly (missing text) was refuted as a normal variation. No other defects were found.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb4",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0054",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal cashew nut with no detectable defects. All observed features are consistent with the reference baseline and allowed variations.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0001",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "After visual inspection, no candidate defect features (such as dark spots, cracks, or discoloration) were identified on the query cashew that distinguish it from the normal reference images. The surface texture and color appear consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0061",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the provided normal reference images. No candidate defect features were identified during initial inspection. The components (LED, phototransistor, potentiometer, IC) are standard for this module type and show no signs of damage or misalignment.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0024",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows green capsules that are visually consistent with the normal reference images. Observed variations in highlights and color are typical specular reflections and manufacturing tolerances, not defects. No anomalies were found after refutation.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0056",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (a chipped edge on one part) was successfully refuted by observing the same feature in the normal reference images. Therefore, the query image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0045",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (white specks) was successfully refuted by observing the same feature in the reference images. No other defects were identified. The sample is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb2",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0020",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with reference images shows that the query cashew exhibits no unique defects. Any observed variations are consistent with natural variations seen in the normal reference samples, leading to a conclusion that the query is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0063",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a white bar of soap that matches the normal reference profile. The observed surface texture variations are explicitly listed as allowed variations, and no other defects are present. Therefore, the image is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0080",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified on the query cashew that distinguish it from the normal reference images. The surface appears clean and consistent with the reference set, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0076",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image's surface texture is consistent with the normal variations seen in the reference images (specifically Ref 0 and Ref 1). No distinct defects such as cracks, holes, or abnormal discolorations were detected. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0019",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "After comparing the query image with the reference images, no defects such as jagged edges, breaks, or irregularities were found. All components in the query image exhibit smooth, continuous edges and consistent surface texture, matching the normal baseline. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "macaroni1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0039",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the visual features initially flagged as potential anomalies (highlights, color variations) are consistent with the normal reference images. No unique defect-like features (such as spots, cracks, or deformations) were found in the query image. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0026",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually indistinguishable from the normal reference images. All potential defect-like features were found to be present in the reference pool, confirming the object is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0060",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually indistinguishable from the normal reference images in terms of structure, color, and surface quality. No anomalies were detected.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0089",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the initially suspicious soldering on the pin headers is consistent with the normal variation observed in the reference images. No other anomalies were detected, leading to a conclusion that the query image is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0072",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query object exhibits surface texture variation, which the reference profiler explicitly lists as an allowed variation. No other defect-like features (cracks, holes, discolorations) are present. Thus, the object is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0071",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected defects (banding and texture irregularities) were found to be present in the normal reference images, indicating they are natural variations rather than anomalies. No other defect-like features were identified.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0009",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains only normal variations (specular highlights, random rotation) allowed by the reference baseline. No distinct defects like opaque spots, cracks, or deformations are present.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0018",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only minor texture and lighting variations, which are explicitly defined as normal allowed variations by the reference profiler. No anomalous features were found.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "candle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0078",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct text label 'FC-75' in the top-left corner, which is absent in all reference images (showing 'HW-168' or blank). This deviation from the normal reference pattern constitutes a clear anomaly.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb4",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0036",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential defect identified (an edge irregularity) was confirmed to be present in the normal reference images, indicating it is a standard feature. No other anomalies were detected.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0014",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (missing text) was refuted by the reference images, which show natural variation in labeling. The query image is structurally identical to the normal references.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb4",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0021",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is normal. Side-by-side comparison confirms that all observed features, including minor texture and color variations, are consistent with the reference images and represent natural product variation rather than defects.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0012",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image's surface texture is consistent with the allowed variations in the reference images, and no distinct defects were found.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0011",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the potential anomaly (shadow/reflection) is a natural variation present in the reference images. No other defects were found.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0067",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "After comparing the query image with the reference images, no distinct defect-like features (such as discolorations, cracks, or holes) were identified. The texture and appearance of the query object are consistent with the normal variations seen in the reference pool, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0040",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The components exhibit smooth edges and consistent texture, matching the normal reference images. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "macaroni1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0032",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with reference images shows that the query cashew's surface characteristics are consistent with normal variation. No unique anomalies were detected, leading to a final anomaly score of 0.05.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0048",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually indistinguishable from the normal reference images. The side-by-side comparison confirms that any perceived texture variations are consistent with the normal population, leading to a conclusion of no anomaly.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0003",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the reference baseline perfectly. All observed variations (lighting, minor texture) are explicitly allowed. No defect-like features remain after refutation.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "candle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0043",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified. The observed bright spots are consistent with normal specular highlights on the capsule surfaces, as confirmed by comparison with reference images and domain rules. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0062",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "After visual inspection, no candidate defect features (such as dark spots, cracks, or discoloration) were identified on the query cashew that distinguish it from the normal reference images. The surface texture and color appear consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0053",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct white smudge on the PCB surface that is not present in any of the reference images. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb2",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0023",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image is normal. All observed features, such as surface texture and shadows, are consistent with the reference images and represent natural variations rather than defects.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0005",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a surface texture that is explicitly listed as an allowed variation in the reference profile. No other anomalies such as cracks, holes, or distinct discolorations are present. The object is normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0041",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually indistinguishable from the normal reference images. No candidate defect features were identified that would require refutation. The object's structure, color, and surface appear normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0055",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the potentiometer and surrounding components are consistent with the reference images. No unique defects were found, and the remaining potential feature (soldering shine) is a common normal variation. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0002",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate defect (white specks) was refuted by the side-by-side comparison, showing they are present in normal reference images. No other significant anomalies were found. The query image is consistent with the normal references.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb2",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0075",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal cashew nut. All observed characteristics (shape, color, texture) align with the reference baseline and allowed variations. No anomalies were detected.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0077",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image appears visually identical to the reference images, showing a standard, undamaged HC-SR04 ultrasonic sensor module. No candidate defect features were identified that would require refutation. The pins are straight, the PCB is clean, and all components are present and correctly oriented.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "pcb1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0010",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The candles appear consistent with the normal reference images, showing no signs of defects like spots, cracks, or deformations. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "candle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0051",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate feature, showing it to be a normal specular highlight consistent with the reference images. No other anomalies are visible, so the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0168",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays four yellow crescent-shaped pieces consistent with the reference images. No defects such as cracks, chips, or discoloration are present. Observed variations in rotation and spacing are within the allowed range defined by the reference profiler, confirming the image is normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0068",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only normal variations (specular highlights, random rotation) allowed by the reference baseline. No distinct defects like opaque spots, cracks, or deformations were found.",
+    "label": 0,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0140",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a 180-degree rotation with pins at the bottom, which is explicitly defined as an anomaly by the domain rules, overriding the 'minor rotation' tolerance mentioned in the reference profiler.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0163",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear surface defect (stain and irregularity) that is absent in all reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0120",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (white smudge near U3) was found to be present in the reference images, indicating it is a normal variation. No other defects were observed. Therefore, the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb2",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0173",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The brownish stain is a clear defect unique to the query image, confirmed by side-by-side comparison with reference images showing no such feature.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0166",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks the 'HW-168' text label clearly visible in the reference images, and it exhibits a surface scratch near the USB port. These features are not present in the normal reference set.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb4",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0091",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows green capsules with variations in rotation, spacing, and lighting reflections, all of which are confirmed as normal by the reference profiler. No distinct defects like white spots, cracks, or deformations are present. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0119",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark spot in the top-right corner that is absent in all reference images, confirming it as a defect anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0142",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly identified (surface texture variation) was refuted by the reference profiler, which lists it as an allowed variation. No other defects are present, so the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0146",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query object is structurally and texturally consistent with the reference images. All initially suspected irregularities were found to be common variations across the normal samples, leading to a conclusion that the object is normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0137",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct white patch on the cashew surface that is not present in any of the normal reference images. This feature survives the refutation protocol and is identified as a defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0139",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear structural defect: a broken segment on the top-right spoke. This feature is absent in all reference images, which show intact spokes, confirming the query is anomalous.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0105",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear defect (surface contamination) on the bottom-right candle that is not found in any of the normal reference images, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "candle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0175",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear physical defect (a chip on the bottom-left corner) that is not present in any of the reference images, which all show intact, smooth edges. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0106",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct white scratch on the PCB surface near the U1 component, which is absent in all reference images. This confirms the presence of a defect anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb2",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0118",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "After refuting the initial candidate features through comparison with reference images, no definitive anomalies remain. The query image is consistent with the normal reference set.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0167",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly identified (a faint mark on the bottom-right part) was refuted by the side-by-side comparison, which showed similar features in the reference images. No other defects were found, so the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0133",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark circular spot on the surface of the white bar, which is not present in any of the reference images. This feature is a clear anomaly relative to the normal baseline.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0162",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a high-contrast white smudge near component U3 that is not present in the reference images, confirming it as a defect anomaly (contamination/residue).",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb2",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0176",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains distinct foreign material (yellow residue and a black blob) that are completely absent in the reference images, confirming the presence of defects.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb4",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0103",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains distinct dark spots and surface bumps on the left rim that are absent in all reference images. The side-by-side comparison definitively refutes the possibility of these being normal variations, confirming the presence of a defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0179",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The only candidate defect feature (edge irregularity) was successfully refuted by showing it exists in the normal reference images. No other anomalies were detected, so the query is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0129",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the observed features (reflections on the phototransistor) are consistent with the normal reference images. No unique defects were identified, and the remaining candidate feature (soldering shine) is a normal variation. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0130",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large white circular spot near the USB port and a different label ('FC-75') compared to the references ('HW-168'). These features are not present in the reference images and indicate contamination and/or a labeling defect. The tool calls confirmed normal regions but did not refute the primary anomaly candidates.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb4",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0107",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a white bar of soap with surface characteristics (texture, lighting) that are explicitly listed as allowed variations in the reference profile. No anomalous features survive the refutation process.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0125",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains two distinct dark spots on the cashew surface which are completely absent in the reference images. The side-by-side comparison refutes the possibility of these being normal variations, confirming them as defects.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0136",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a small circular mark on the right side of the bar that is absent in all normal reference images. This feature survives the refutation protocol, indicating a defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0143",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows that the clear LED on the query module is misaligned (tilted upwards), while all reference modules show the LED mounted horizontally. This confirms the presence of a defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0165",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear defect: a cluster of dark specks on the bottom-right candle. This feature is absent in all reference images, confirming it is an anomaly and not a normal manufacturing variation.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "candle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0154",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows four parts that are visually identical to the normal reference images. Side-by-side comparison confirmed that apparent edge variations are present in the reference set and are not defects. No anomalies were detected.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0115",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear defect: a chip on the edge of the bottom-left component. This feature is absent in all reference images, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0160",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows no defects. All observed features, including minor surface marks and color variations, are consistent with the normal reference images, indicating the parts are within acceptable manufacturing tolerances.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0156",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear defect: a chip on the rim of the top-left candle. This feature is absent in all reference images, which show only smooth, intact candles. Therefore, the image is anomalous.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "candle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0128",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with reference images shows that the query cashew exhibits no unique defects. The observed surface texture is consistent with normal variations seen in the reference set, leading to a conclusion that the item is normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0110",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the features initially flagged as potential anomalies (texture variation, edge irregularity) are present in the normal reference images. Therefore, the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0098",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate feature (edge irregularity) was successfully refuted by observing it in the reference images. No other anomalies were detected, so the query is classified as normal.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0155",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear anomaly: the potentiometer has a flathead screw, whereas all reference images show a Phillips screw. This is a definitive component defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0172",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct brownish spot that is absent in all reference images, confirming it as an anomaly according to the domain rules for localized discolorations.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0117",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct surface hole on the bottom-right object that is not present in any of the reference images, confirming it as a defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0126",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct white smudge on the PCB surface near component U3 that is not present in any of the reference images. Additionally, the header pins appear bent compared to the straight pins in the references. These features confirm the presence of anomalies.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb2",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0134",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly identified (a slight surface irregularity) was found to be a normal variation present in the reference images. No other defects were observed.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0122",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear chip defect on the bottom edge that is absent in all reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0138",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protrusion on the outer rim that is absent in all reference images, confirming it as a manufacturing defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0124",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a visible white residue on the IC package that is absent in all reference images, confirming it as a defect anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb4",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0151",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a high-contrast white smudge on the PCB surface that is absent in all reference images, confirming it as a defect anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb2",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0171",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a bent bottom pin, a physical deformation not observed in any of the normal reference images. This confirms the presence of a defect.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0097",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows four yellow crescent-shaped pasta pieces. Comparison with reference images confirms that any minor variations in shape or edge are within the allowed natural variations (rotation, position). No defects such as cracks, breaks, or contamination are present.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "macaroni2",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0178",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct triangular chip at the top-right corner, which is absent in all reference images. This structural discontinuity is confirmed as an anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0127",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear defect: a rough, debris-filled central hole that is absent in all reference images, which show clean, smooth holes. This feature survives refutation, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "fryum",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0169",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard electronic sensor module. The observed features, such as minor color variations and component reflections, are consistent with the allowed variations (lighting shift, reflection) identified in the reference profiler. No defects were found.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb3",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0149",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a dark spot on the cashew surface that is absent in all reference images, confirming it as a defect anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0095",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows four tea light candles that appear visually consistent with the normal reference images. No obvious defects such as cracks, stains, or deformations are present. Minor variations in surface texture and wick alignment are within normal manufacturing tolerances.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "candle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0090",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits clear white residue/contamination not present in any reference images, confirming an anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb4",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D3_0147",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate defect (texture variation) was successfully refuted by the side-by-side comparison, which showed the same feature in normal reference images. No other anomalies were detected.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0161",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows no anomalies. Its surface texture is consistent with the natural variations observed in the reference images, and no defects such as cracks, holes, or discolorations are present.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pipe_fryum",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0144",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a structural defect (a chip on the left tip) that is not present in any of the reference images, confirming the sample is anomalous.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "cashew",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D3_0121",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate defect, showing it is a normal specular highlight consistent with the reference images. No anomalies are detected.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "capsules",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0158",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a 180-degree rotation (pins at bottom) compared to the reference images (pins at top). This specific orientation error is explicitly defined as an anomaly by the domain rules, overriding the general 'minor rotation' tolerance.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "pcb1",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0111",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct surface defect (a rough, discolored patch) that is absent in all reference images, which show smooth, uniform surfaces. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "chewinggum",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D3_0159",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "Side-by-side comparisons of multiple regions confirm that all observed features in the query image, including wick shapes and surface textures, are consistent with the normal variations present in the reference images. No defects were found.",
+    "label": 1,
+    "domain_code": "D3",
+    "category": "candle",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  }
+]

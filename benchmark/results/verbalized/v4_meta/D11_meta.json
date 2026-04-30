@@ -1,0 +1,41 @@
+{
+  "a_wins_rules": [
+    "If the query image contains a distinct, dark, irregular defect or ulceration with surrounding exudate that is clearly absent in all normal reference images, trust A (Agent).",
+    "If Branch B identifies 'inflammation' or 'granular texture' as pathology, but Branch A explicitly refutes this by attributing the appearance to normal mucus, debris, or fold variation consistent with references, trust A (Agent)."
+  ],
+  "b_wins_rules": [
+    "If the query image displays a clear anatomical landmark such as the gastroesophageal junction (Z-line), pylorus, or haustral folds with regular convergence, and Branch A flags it as anomalous due to color variation or minor texture differences, trust B (Direct).",
+    "If Branch A identifies a 'mass', 'plaque', or 'pigmentation' as an anomaly, but the visual evidence shows these features are consistent with normal anatomical structures (e.g., rugal folds, Z-line transition) or procedural artifacts (e.g., endoscope tip, foam) seen in references, trust B (Direct)."
+  ],
+  "a_evidence": [
+    "D11_0055",
+    "D11_0075",
+    "D11_0165"
+  ],
+  "b_evidence": [
+    "D11_0012",
+    "D11_0038",
+    "D11_0044",
+    "D11_0046",
+    "D11_0066",
+    "D11_0073",
+    "D11_0088"
+  ],
+  "raw": "{\n  \"a_wins_rules\": [\n    \"If the query image contains a distinct, dark, irregular defect or ulceration with surrounding exudate that is clearly absent in all normal reference images, trust A (Agent).\",\n    \"If Branch B identifies 'inflammation' or 'granular texture' as pathology, but Branch A explicitly refutes this by attributing the appearance to normal mucus, debris, or fold variation consistent with references, trust A (Agent).\"\n  ],\n  \"b_wins_rules\": [\n    \"If the query image displays a clear anatomical landmark such as the gastroesophageal junction (Z-line), pylorus, or haustral folds with regular convergence, and Branch A flags it as anomalous due to color variation or minor texture differences, trust B (Direct).\",\n    \"If Branch A identifies a 'mass', 'plaque', or 'pigmentation' as an anomaly, but the visual evidence shows these features are consistent with normal anatomical structures (e.g., rugal folds, Z-line transition) or procedural artifacts (e.g., endoscope tip, foam) seen in references, trust B (Direct).\"\n  ]\n}",
+  "tokens": {
+    "input": 4406,
+    "output": 250
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 21,
+    "agree_wrong": 6,
+    "disagree_a_wins_total": 3,
+    "disagree_b_wins_total": 10,
+    "reflected_a": 3,
+    "reflected_b": 7,
+    "skipped": 0
+  },
+  "domain_code": "D11",
+  "seconds": 22.7
+}

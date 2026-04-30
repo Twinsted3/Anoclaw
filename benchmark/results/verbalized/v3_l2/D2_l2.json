@@ -1,0 +1,243 @@
+{
+  "domain": "D2",
+  "seed": 0,
+  "k": 10,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D2_0001",
+    "D2_0003",
+    "D2_0031",
+    "D2_0037",
+    "D2_0056",
+    "D2_0063",
+    "D2_0065",
+    "D2_0068",
+    "D2_0072",
+    "D2_0083",
+    "D2_0092",
+    "D2_0095",
+    "D2_0097",
+    "D2_0107",
+    "D2_0137",
+    "D2_0144",
+    "D2_0162",
+    "D2_0169",
+    "D2_0170",
+    "D2_0173"
+  ],
+  "validation_ids": [
+    "D2_0023",
+    "D2_0027",
+    "D2_0029",
+    "D2_0033",
+    "D2_0038",
+    "D2_0044",
+    "D2_0057",
+    "D2_0080",
+    "D2_0087",
+    "D2_0089",
+    "D2_0112",
+    "D2_0130",
+    "D2_0133",
+    "D2_0143",
+    "D2_0145",
+    "D2_0146",
+    "D2_0153",
+    "D2_0159",
+    "D2_0163",
+    "D2_0167"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D2",
+        "food_package"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag handwritten markings (e.g., price, date) on packaging as anomalies, even if the package structure is intact.",
+          "covers_items": [
+            "D2_0170"
+          ],
+          "justification": "The agent missed the anomaly in D2_0170 because it focused on structural defects. The actual anomaly is a handwritten price/date mark, which is a contamination/defect in retail QC but was ignored.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag minor wrinkles, creases, or scuffs on flexible packaging edges as defects if they are consistent with normal handling.",
+          "covers_items": [
+            "D2_0072",
+            "D2_0037",
+            "D2_0001"
+          ],
+          "justification": "All three FP items were flagged for minor surface imperfections (wrinkles, creases) on flexible bags. These are common artifacts of handling and storage, not manufacturing defects.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D2",
+        "food_box"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag any large, irregular hole or missing material on the top flap or edges of the box as a physical defect.",
+          "covers_items": [
+            "D2_0144"
+          ],
+          "justification": "The agent missed a clear structural failure (a large hole) on the top flap. This is a definitive physical defect distinct from minor wear or printing errors.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag specular glare or bright white reflections on glossy packaging surfaces as defects.",
+          "covers_items": [
+            "D2_0003"
+          ],
+          "justification": "The agent incorrectly identified a light reflection on the glossy box surface as an anomaly. Glare is a common optical artifact in retail photography, not a product defect.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag standard packaging geometry or slight edge curvature as crushing or deformation.",
+          "covers_items": [
+            "D2_0063",
+            "D2_0065"
+          ],
+          "justification": "The agent over-flagged items as 'crushed' or 'deformed' likely due to perspective distortion or the natural shape of the packaging, rather than actual structural damage.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D2",
+        "drink_can"
+      ],
+      "k": 5,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag cartons with attached plastic straw wrappers or straws as anomalies, even if the label print is perfect.",
+          "covers_items": [
+            "D2_0097",
+            "D2_0092"
+          ],
+          "justification": "The agent missed anomalies where a straw or wrapper was physically attached to the carton. These are distinct physical defects not present in reference images, regardless of label quality.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag minor label smudges or print imperfections if the overall packaging design and text layout match the reference.",
+          "covers_items": [
+            "D2_0031"
+          ],
+          "justification": "The agent incorrectly flagged a normal item due to a minor smudge. If the design matches the reference, minor print artifacts should be tolerated as normal variation.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag items as anomalies solely based on different packaging designs if the product type and brand are consistent with the reference set.",
+          "covers_items": [
+            "D2_0056"
+          ],
+          "justification": "The agent flagged a normal item because the design differed from the reference. Different designs within the same product category are normal variations, not defects.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D2",
+        "cigarette_box"
+      ],
+      "k": 3,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag packs with open top flaps or torn cardboard as anomalies, even if the printed face is intact.",
+          "covers_items": [
+            "D2_0162",
+            "D2_0169"
+          ],
+          "justification": "The agent missed physical damage (open flap, torn cardboard) because it focused on the printed face or orientation. Structural integrity is a valid defect.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag packs with completely different color schemes or graphics as anomalies, overriding 'design variation' logic.",
+          "covers_items": [
+            "D2_0137"
+          ],
+          "justification": "The agent hesitated on a pack with a yellow diagonal stripe vs red reference. Drastic visual mismatches in color/graphic are anomalies, not variations.",
+          "side": "FN"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D2",
+        "drink_bottle"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag bottles with missing labels or exposed dark liquid as anomalies, even if the bottle shape is intact.",
+          "covers_items": [
+            "D2_0095"
+          ],
+          "justification": "The agent failed to recognize that the absence of a label and the visibility of dark liquid are definitive signs of a packaging defect or wrong fill, distinct from normal product variations.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag bottles with intact caps and labels as anomalies solely due to slight rotation or perceived misalignment.",
+          "covers_items": [
+            "D2_0083"
+          ],
+          "justification": "The agent incorrectly identified a normal bottle as defective because the label appeared rotated. This is a common artifact of product placement on shelves and should be tolerated.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D2",
+        "food_bottle"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag small, high-contrast white spots on dark or purple packaging as defects, even if they appear as minor surface marks.",
+          "covers_items": [
+            "D2_0107"
+          ],
+          "justification": "The agent missed a small white mark on the purple cup because it was subtle. On dark backgrounds, even tiny white spots are likely defects (scratches or residue) and should be flagged.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag crinkled or uneven foil seals on the rim of cup noodles as defects if the seal remains intact.",
+          "covers_items": [
+            "D2_0068"
+          ],
+          "justification": "The agent flagged a 'tear' on the lid, but the reference showed similar crinkling. Foil seals on these products often have natural manufacturing wrinkles that are not defects.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "method": "vlm_direct",
+  "backend": "qwen25vl",
+  "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "tag": "vlm_direct_qwen25vl",
+  "domains": [
+    "D1",
+    "D2",
+    "D3",
+    "D4",
+    "D5",
+    "D6",
+    "D7",
+    "D8",
+    "D9",
+    "D10",
+    "D11",
+    "D12"
+  ],
+  "total_items": 1418,
+  "completed": 1418,
+  "errors": 0,
+  "elapsed_seconds": 889.7,
+  "workers": 4,
+  "macro_auroc": 0.5326,
+  "micro_auroc": 0.5258,
+  "domain_aurocs": {
+    "D1": 0.5837,
+    "D10": 0.4121,
+    "D11": 0.7422,
+    "D12": 0.3579,
+    "D2": 0.5,
+    "D3": 0.5333,
+    "D4": 0.5925,
+    "D5": 0.4833,
+    "D6": 0.5,
+    "D7": 0.5102,
+    "D8": 0.6096,
+    "D9": 0.5667
+  },
+  "method_kwargs": {}
+}

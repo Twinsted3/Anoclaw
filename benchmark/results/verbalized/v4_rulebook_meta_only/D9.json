@@ -1,0 +1,75 @@
+{
+  "domain_code": "D9",
+  "n_rules": 5,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B (Direct) claims a 'hyperintense' or 'bright' lesion but the query image visually lacks a distinct, high-contrast bright mass compared to the reference images, trust A (Agent).",
+      "source_items": [
+        "D9_0049",
+        "D9_0064",
+        "D9_0066",
+        "D9_0077",
+        "D9_0122"
+      ],
+      "confidence": "oracle",
+      "id": "D9_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B (Direct) identifies a 'dark' or 'elongated' lesion in the white matter that appears visually consistent with normal sulcal or ventricular structures in the reference images, trust A (Agent).",
+      "source_items": [
+        "D9_0049",
+        "D9_0064",
+        "D9_0066",
+        "D9_0077",
+        "D9_0122"
+      ],
+      "confidence": "oracle",
+      "id": "D9_meta_a_win_1"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch A (Agent) explicitly cites 'normal allowed variations' or 'refutation' of defect-like features in its rationale, trust A (Agent).",
+      "source_items": [
+        "D9_0049",
+        "D9_0064",
+        "D9_0066",
+        "D9_0077",
+        "D9_0122"
+      ],
+      "confidence": "oracle",
+      "id": "D9_meta_a_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch A (Agent) claims a 'focal hyperintense lesion' or 'ring-enhancing lesion' but the query image appears structurally symmetrical and lacks a distinct bright or ring-shaped anomaly compared to references, trust B (Direct).",
+      "source_items": [
+        "D9_0014",
+        "D9_0060"
+      ],
+      "confidence": "oracle",
+      "id": "D9_meta_b_win_3"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch A (Agent) identifies a lesion in the 'periventricular white matter' that is not visually distinguishable from normal tissue texture in the reference images, trust B (Direct).",
+      "source_items": [
+        "D9_0014",
+        "D9_0060"
+      ],
+      "confidence": "oracle",
+      "id": "D9_meta_b_win_4"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 5,
+    "n_b_wins": 2
+  }
+}

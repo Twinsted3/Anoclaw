@@ -1,0 +1,91 @@
+{
+  "domain": "D12",
+  "seed": 0,
+  "k": 10,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D12_0017",
+    "D12_0020",
+    "D12_0032",
+    "D12_0039",
+    "D12_0045",
+    "D12_0054",
+    "D12_0060",
+    "D12_0064",
+    "D12_0068",
+    "D12_0075",
+    "D12_0094",
+    "D12_0100",
+    "D12_0101",
+    "D12_0103",
+    "D12_0116",
+    "D12_0125",
+    "D12_0162",
+    "D12_0174",
+    "D12_0175",
+    "D12_0178"
+  ],
+  "validation_ids": [
+    "D12_0022",
+    "D12_0025",
+    "D12_0029",
+    "D12_0034",
+    "D12_0041",
+    "D12_0042",
+    "D12_0046",
+    "D12_0069",
+    "D12_0077",
+    "D12_0078",
+    "D12_0104",
+    "D12_0107",
+    "D12_0110",
+    "D12_0118",
+    "D12_0136",
+    "D12_0137",
+    "D12_0152",
+    "D12_0156",
+    "D12_0165",
+    "D12_0173"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D12"
+      ],
+      "k": 10,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Ignore dark, elongated shadows or debris-like shapes on the road surface if they are consistent with low-light conditions or road texture.",
+          "covers_items": [
+            "D12_0075",
+            "D12_0017"
+          ],
+          "justification": "The agent falsely identified dark road textures and shadows as physical debris or obstacles. In low-light or high-contrast scenes, these visual artifacts are common and should be tolerated as normal.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag pedestrians standing on sidewalks or near curbs as road obstacles unless they are clearly stepping into the active driving lane.",
+          "covers_items": [
+            "D12_0054",
+            "D12_0064"
+          ],
+          "justification": "The agent misclassified pedestrians on the sidewalk (D12_0054) and parked cars (D12_0064) as anomalies. These are standard urban features and do not constitute road obstacles unless they encroach on the drivable path.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Treat bright reflections, billboards, or light bars on vehicles as normal environmental features rather than defects or anomalies.",
+          "covers_items": [
+            "D12_0060",
+            "D12_0020"
+          ],
+          "justification": "The agent flagged a billboard reflection and license plate illumination as anomalies. These are expected visual elements in night driving and should not be treated as road defects.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    }
+  ]
+}

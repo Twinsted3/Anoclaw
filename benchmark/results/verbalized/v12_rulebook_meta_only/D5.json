@@ -1,0 +1,83 @@
+{
+  "domain_code": "D5",
+  "n_rules": 5,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image shows a variation in color (e.g., liquid or wire) or label icon that matches a known product variant described in the reference profiler, trust A (Agent) to correctly identify it as normal.",
+      "source_items": [
+        "D5_0002",
+        "D5_0055",
+        "D5_0156"
+      ],
+      "confidence": "oracle",
+      "id": "D5_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image contains a subtle, non-structural feature like printed text or markings on a component that is absent in all reference images, trust A (Agent) to detect this as a logical anomaly.",
+      "source_items": [
+        "D5_0002",
+        "D5_0055",
+        "D5_0156"
+      ],
+      "confidence": "oracle",
+      "id": "D5_meta_a_win_1"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a clear physical defect such as a torn label, missing object, or extra foreign object, trust B (Direct) to correctly identify it as an anomaly.",
+      "source_items": [
+        "D5_0027",
+        "D5_0056",
+        "D5_0114",
+        "D5_0142",
+        "D5_0144",
+        "D5_0145",
+        "D5_0171"
+      ],
+      "confidence": "oracle",
+      "id": "D5_meta_b_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a change in the count of components (e.g., extra washer, missing nut) or a change in the configuration of parts (e.g., number of terminal blocks), trust B (Direct) to detect this as a logical anomaly.",
+      "source_items": [
+        "D5_0027",
+        "D5_0056",
+        "D5_0114",
+        "D5_0142",
+        "D5_0144",
+        "D5_0145",
+        "D5_0171"
+      ],
+      "confidence": "oracle",
+      "id": "D5_meta_b_win_3"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a change in the state of a product (e.g., liquid color change to an unexpected color like milky white) that is not a known variant, trust B (Direct) to identify it as an anomaly.",
+      "source_items": [
+        "D5_0027",
+        "D5_0056",
+        "D5_0114",
+        "D5_0142",
+        "D5_0144",
+        "D5_0145",
+        "D5_0171"
+      ],
+      "confidence": "oracle",
+      "id": "D5_meta_b_win_4"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 3,
+    "n_b_wins": 7
+  }
+}

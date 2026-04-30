@@ -1,0 +1,36 @@
+{
+  "domain": "D9",
+  "units": [
+    {
+      "unit": [
+        "D9"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "spatial_layout",
+            "statement": "The brain tissue is centrally located within the image frame, surrounded by a black background.",
+            "evidence": "All 8 reference images show the brain cross-section centered against a uniform black void."
+          },
+          {
+            "type": "structural",
+            "statement": "The brain cross-section exhibits a continuous, roughly oval or circular outer boundary.",
+            "evidence": "Every reference image displays a single, connected brain mass with a closed perimeter."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The image consists of a grayscale palette (black background, gray/white tissue) with no other colors.",
+            "evidence": "All 8 images are monochromatic medical scans without color saturation."
+          },
+          {
+            "type": "texture",
+            "statement": "The brain tissue displays a granular, heterogeneous texture with visible internal structures.",
+            "evidence": "All 8 images show internal variations in intensity (gray matter/white matter/CSF) rather than a solid uniform block."
+          }
+        ],
+        "confidence": "high"
+      }
+    }
+  ]
+}

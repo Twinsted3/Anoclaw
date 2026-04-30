@@ -1,0 +1,67 @@
+{
+  "domain_code": "D4",
+  "n_rules": 4,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B identifies a 'uniform' or 'smooth' texture as an anomaly due to deviation from coarse references, but Branch A explicitly cites 'grain size' or 'color variation' as an allowed variation in the reference profiler, trust A.",
+      "source_items": [
+        "D4_0031",
+        "D4_0044",
+        "D4_0049",
+        "D4_0070",
+        "D4_0086"
+      ],
+      "confidence": "oracle",
+      "id": "D4_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B flags a specific localized feature (e.g., 'vertical linear defect', 'chip', 'dark spot') as an anomaly, but Branch A successfully refutes it by demonstrating the feature exists in the normal reference images, trust A.",
+      "source_items": [
+        "D4_0031",
+        "D4_0044",
+        "D4_0049",
+        "D4_0070",
+        "D4_0086"
+      ],
+      "confidence": "oracle",
+      "id": "D4_meta_a_win_1"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch A flags a 'dark irregular mark' or 'high-contrast spot' as an anomaly, but Branch B identifies the feature as a 'shadow' or 'typical aggregate/pore' consistent with the reference texture, trust B.",
+      "source_items": [
+        "D4_0009",
+        "D4_0015",
+        "D4_0016",
+        "D4_0066",
+        "D4_0074"
+      ],
+      "confidence": "oracle",
+      "id": "D4_meta_b_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch A claims a feature is unique to the query image based on visual comparison, but Branch B asserts the texture is 'uniform' and 'consistent' with references without identifying a specific defect, trust B.",
+      "source_items": [
+        "D4_0009",
+        "D4_0015",
+        "D4_0016",
+        "D4_0066",
+        "D4_0074"
+      ],
+      "confidence": "oracle",
+      "id": "D4_meta_b_win_3"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 5,
+    "n_b_wins": 5
+  }
+}

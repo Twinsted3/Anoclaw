@@ -1,0 +1,195 @@
+{
+  "domain": "D5",
+  "units": [
+    {
+      "unit": [
+        "D5",
+        "breakfast_box"
+      ],
+      "rulebook": {
+        "normal_signature": [
+          "White rectangular container with rounded corners and a central divider",
+          "Left compartment contains exactly three whole fresh fruits (oranges and a peach)",
+          "Right compartment contains a granola layer on top and a dried fruit/nut mix on the bottom",
+          "Dried banana slices are pale yellow and distinct from the brown granola",
+          "Almonds are visible as brown, oval-shaped nuts mixed with the banana slices",
+          "Container is viewed from a top-down perspective against a dark background"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Missing or extra fruit items in the left compartment (e.g., only two oranges or four fruits)",
+          "Contamination of the granola section with fresh fruit or the fresh fruit section with granola",
+          "Structural damage to the container such as cracks, missing dividers, or severe deformation",
+          "Presence of foreign objects or non-food items within the compartments",
+          "Significant discoloration or spoilage of the food items (e.g., blackened fruit or moldy granola)",
+          "Flag as anomaly if granola and dried fruit occupy the left compartment while fresh fruit occupies the right compartment."
+        ],
+        "rules": [
+          "if the left compartment does not contain exactly three whole fruits then lean anomaly",
+          "if the right compartment lacks the distinct separation between granola and dried fruit/nut mix then lean anomaly",
+          "if the container is missing the central divider or shows structural cracks then lean anomaly",
+          "if fresh fruit is found inside the granola compartment then lean anomaly",
+          "if the container is not white or the background is not dark then lean anomaly",
+          "if the arrangement matches the three-fruit-left and granola-right pattern then lean normal",
+          "(corrective) Flag as anomaly if granola and dried fruit occupy the left compartment while fresh fruit occupies the right compartment."
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D5",
+        "juice_bottle"
+      ],
+      "rulebook": {
+        "normal_signature": [
+          "Small, clear glass bottle with a cylindrical body and a narrow neck",
+          "Transparent screw-top cap with visible threading",
+          "Two distinct yellow labels: a square upper label with a fruit illustration and a rectangular lower label",
+          "Lower label text explicitly reads '100% Juice' in black font",
+          "Liquid fill level is high, reaching the neck of the bottle",
+          "Background is solid black with no external objects",
+          "Treat variations in label iconography (e.g., fruit type) and liquid color as normal if explicitly permitted by reference data.",
+          "Treat variations in fruit iconography and liquid color as normal if explicitly permitted by the reference profiler."
+        ],
+        "hypothesized_anomaly_modes": [
+          "Label defects: The paper labels may be peeling, torn, missing, or have incorrect text/graphics",
+          "Structural damage: The glass bottle may be cracked, chipped, or the cap may be missing or loose",
+          "Content anomalies: The liquid may be spilled, significantly underfilled, or contain visible foreign debris",
+          "Occlusion: The bottle may be partially blocked by an object or the background may be cluttered",
+          "Classify as anomaly if the bottle surface is completely devoid of any label, regardless of allowed content variations.",
+          "Flag as anomaly if the liquid color inside the bottle contradicts the fruit depicted on the label.",
+          "If the label icon depicts a fruit that does not match the liquid's color or implied flavor, classify as anomaly.",
+          "Treat any visible tear, rip, or physical damage to the main product label as a definitive anomaly."
+        ],
+        "rules": [
+          "if the bottle is missing the upper fruit label or the lower text label then lean anomaly",
+          "if the text on the lower label is not clearly '100% Juice' then lean anomaly",
+          "if the glass bottle shows visible cracks, chips, or the cap is missing then lean anomaly",
+          "if the liquid level is significantly below the neck or the bottle appears empty then lean anomaly",
+          "if the background contains objects other than the bottle or is not solid black then lean anomaly",
+          "if the bottle shape is consistent with a small glass juice container and both labels are intact then lean normal",
+          "(corrective) Classify as anomaly if the bottle surface is completely devoid of any label, regardless of allowed content variations.",
+          "(corrective) Treat variations in label iconography (e.g., fruit type) and liquid color as normal if explicitly permitted by reference data.",
+          "(corrective) Flag as anomaly if the liquid color inside the bottle contradicts the fruit depicted on the label.",
+          "(corrective) Treat variations in fruit iconography and liquid color as normal if explicitly permitted by the reference profiler.",
+          "(corrective) If the label icon depicts a fruit that does not match the liquid's color or implied flavor, classify as anomaly.",
+          "(corrective) Treat any visible tear, rip, or physical damage to the main product label as a definitive anomaly."
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D5",
+        "pushpins"
+      ],
+      "rulebook": {
+        "normal_signature": [
+          "Transparent plastic storage box with a 3x5 grid of compartments",
+          "Yellow plastic pushpins with cylindrical heads and sharp metal needles",
+          "Pushpins are contained within the grid compartments",
+          "Black background visible through the transparent box",
+          "Pushpins are oriented randomly within their cells",
+          "Classify as normal if pushpins are intact and present, even if randomly oriented or scattered within container compartments.",
+          "Treat random orientation of pushpins within compartments as normal variation, provided pins are intact and undamaged.",
+          "Classify as normal if pins are intact and fully present, regardless of random orientation or rotation within compartments.",
+          "Treat variations in pushpin orientation (vertical, horizontal, tilted) within a grid cell as normal, provided the pin is intact."
+        ],
+        "hypothesized_anomaly_modes": [
+          "Missing pushpin: A compartment is empty or contains significantly fewer pins than the standard distribution",
+          "Foreign object: An item that is not a yellow pushpin (e.g., a different color, shape, or material) is present in the box",
+          "Structural damage: The plastic box is cracked, broken, or the lid is missing",
+          "Component defect: A pushpin is missing its head or the metal needle is bent/broken",
+          "Containment failure: Pushpins are located outside the grid compartments (e.g., on the lid or outside the box)",
+          "Flag as anomaly if any compartment contains more than one pushpin, regardless of orientation or pin condition.",
+          "Flag as anomaly if any compartment contains more than one pushpin, as standard configuration requires exactly one per slot.",
+          "Flag as anomaly if any pushpin is oriented vertically (head-up or head-down) instead of lying flat horizontally."
+        ],
+        "rules": [
+          "if any compartment is completely empty then lean anomaly",
+          "if any object inside the box is not a yellow pushpin then lean anomaly",
+          "if the plastic box structure is cracked or missing parts then lean anomaly",
+          "if a pushpin is missing its yellow head or has a bent needle then lean anomaly",
+          "if pushpins are found outside the grid compartments then lean anomaly",
+          "if the image shows a 3x5 grid of yellow pushpins in a clear box then lean normal",
+          "(corrective) Flag as anomaly if any compartment contains more than one pushpin, regardless of orientation or pin condition.",
+          "(corrective) Classify as normal if pushpins are intact and present, even if randomly oriented or scattered within container compartments.",
+          "(corrective) Treat random orientation of pushpins within compartments as normal variation, provided pins are intact and undamaged.",
+          "(corrective) Flag as anomaly if any compartment contains more than one pushpin, as standard configuration requires exactly one per slot.",
+          "(corrective) Classify as normal if pins are intact and fully present, regardless of random orientation or rotation within compartments.",
+          "(corrective) Flag as anomaly if any pushpin is oriented vertically (head-up or head-down) instead of lying flat horizontally.",
+          "(corrective) Treat variations in pushpin orientation (vertical, horizontal, tilted) within a grid cell as normal, provided the pin is intact."
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D5",
+        "screw_bag"
+      ],
+      "rulebook": {
+        "normal_signature": [
+          "Transparent resealable plastic bag containing a hardware set",
+          "Set includes exactly two hexagonal head bolts",
+          "Set includes exactly two hexagonal nuts",
+          "Set includes exactly two flat washers",
+          "Right edge features a vertical strip of white recycling symbols and text",
+          "Hardware components are metallic and silver in color"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Missing components: The bag contains fewer than the standard four small parts (nuts/washers) or fewer than two bolts.",
+          "Foreign object contamination: Presence of non-hardware items such as paper scraps, dust clumps, or debris inside the bag.",
+          "Component damage: Visible bending of bolt threads, cracked nuts, or deformed washers indicating manufacturing defects.",
+          "Packaging failure: The bag is torn, punctured, or the resealable strip is detached or missing.",
+          "Flag as anomaly if the bag contains loose hardware components (bolts, nuts, washers) instead of a single fastener assembly."
+        ],
+        "rules": [
+          "if the count of hexagonal head bolts is not exactly two then lean anomaly",
+          "if the count of hexagonal nuts is not exactly two then lean anomaly",
+          "if the count of flat washers is not exactly two then lean anomaly",
+          "if any object inside the bag is not a bolt, nut, or washer then lean anomaly",
+          "if the vertical strip of recycling symbols is missing from the right edge then lean anomaly",
+          "if the bag material shows visible tears or holes then lean anomaly",
+          "if the hardware components appear bent, cracked, or severely deformed then lean anomaly",
+          "if the image shows exactly two bolts, two nuts, and two washers in an intact bag then lean normal",
+          "(corrective) Flag as anomaly if the bag contains loose hardware components (bolts, nuts, washers) instead of a single fastener assembly."
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D5",
+        "splicing_connectors"
+      ],
+      "rulebook": {
+        "normal_signature": [
+          "Two distinct clusters of splicing connectors positioned horizontally on opposite sides",
+          "Connectors feature orange bodies with transparent protective caps",
+          "A single continuous colored cable connects the two connector clusters",
+          "Connectors are arranged in a vertical stack (2 to 4 units high) per side",
+          "Background is a consistent metallic diamond-pattern mesh",
+          "Treat wire color variations as normal if the reference profiler explicitly lists color as an allowed variation for the product class.",
+          "Treat wire color variation as a normal attribute for splicing connectors, regardless of connector housing color.",
+          "Do not flag single-wire assemblies as anomalies if the connector housing is intact and the wire is properly seated."
+        ],
+        "hypothesized_anomaly_modes": [
+          "Missing connector: One or more units in the vertical stack are absent, breaking the expected symmetry or count",
+          "Cable disconnection: The connecting cable is severed, missing, or not inserted into the connector ports",
+          "Structural damage: The transparent protective caps are cracked, missing, or the orange housing is deformed",
+          "Foreign object intrusion: Debris or non-cable objects are present on the mesh or obstructing the connectors",
+          "If the image contains a uniform mesh pattern instead of the expected splicing connectors, classify as anomaly."
+        ],
+        "rules": [
+          "if the image shows a single continuous cable linking two distinct connector groups then lean normal",
+          "if the connector groups are missing entirely or reduced to a single unit per side then lean anomaly",
+          "if the connecting cable is absent, broken, or disconnected from the orange housing then lean anomaly",
+          "if the transparent caps on the connectors are missing or visibly shattered then lean anomaly",
+          "if the background mesh is obscured by foreign objects or the connectors are not resting on the mesh then lean anomaly",
+          "if the connectors are arranged in a vertical stack with uniform spacing then lean normal",
+          "(corrective) Treat wire color variations as normal if the reference profiler explicitly lists color as an allowed variation for the product class.",
+          "(corrective) If the image contains a uniform mesh pattern instead of the expected splicing connectors, classify as anomaly.",
+          "(corrective) Treat wire color variation as a normal attribute for splicing connectors, regardless of connector housing color.",
+          "(corrective) Do not flag single-wire assemblies as anomalies if the connector housing is intact and the wire is properly seated."
+        ]
+      }
+    }
+  ]
+}

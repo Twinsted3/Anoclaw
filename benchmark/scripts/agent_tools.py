@@ -75,6 +75,9 @@ def tool_visual_retrieval(query_image_path, domain_code, k=4,
 
 # ─── Tool 2: Domain Knowledge ────────────────────────────────────────────────
 
+# manifests_v2 taxonomy (2026-04-21). Keys correspond to benchmark/manifests_v2/domain_config.json:
+# D1=MVTec-AD, D2=GoodsAD, D3=VisA, D4=SDNET, D5=MVTec-LOCO, D6=Real3D-AD, D7=LEVIR-CD+,
+# D8=DermaMNIST, D9=BraTS, D10=BMAD-Liver, D11=HyperKvasir, D12=BDD100K+RoadAnomaly21.
 DOMAIN_KNOWLEDGE = {
     "D1": {
         "domain": "Industrial Manufacturing (MVTec-AD)",
@@ -106,6 +109,20 @@ DOMAIN_KNOWLEDGE = {
             "Slight color differences due to lighting",
         ],
     },
+    "D3": {
+        "domain": "Industrial Inspection (VisA)",
+        "normal": "Defect-free manufactured items (PCBs, capsules, candles, etc.)",
+        "anomaly_criteria": [
+            "Surface defects: scratches, cracks, discoloration",
+            "Structural anomalies: bent pins, missing solder, misalignment",
+            "Contamination: foreign particles, excess adhesive",
+        ],
+        "common_false_positives": [
+            "Normal manufacturing variation in appearance",
+            "Slight positional differences",
+            "Lighting artifacts or reflections",
+        ],
+    },
     "D4": {
         "domain": "Infrastructure Maintenance (SDNET2018)",
         "normal": "Intact concrete surfaces (deck, pavement, wall)",
@@ -122,6 +139,53 @@ DOMAIN_KNOWLEDGE = {
         ],
     },
     "D5": {
+        "domain": "Logical Anomaly (MVTec-LOCO)",
+        "normal": "Correctly assembled products with right parts in right positions",
+        "anomaly_criteria": [
+            "LOGICAL: wrong count (extra/missing items)",
+            "LOGICAL: wrong arrangement or position of parts",
+            "LOGICAL: wrong type of component in a slot",
+            "STRUCTURAL: physical damage to any component",
+        ],
+        "common_false_positives": [
+            "Slight position variation within tolerance",
+            "Different viewing angle showing same correct assembly",
+            "Color variation in same-type components",
+        ],
+    },
+    "D6": {
+        "domain": "3D Product — rendered point cloud (Real3D-AD)",
+        "normal": "Geometrically intact product matching reference shape (no bulge, sink, hole, or added material)",
+        "anomaly_criteria": [
+            "Bulge: outward protrusion on the 3D surface vs reference shape",
+            "Sink: inward depression or dent",
+            "Hole: missing material / perforation through the surface",
+            "Contamination: foreign bumps or added material on the surface",
+            "Asymmetry / deformation relative to reference renders",
+        ],
+        "common_false_positives": [
+            "Low surface detail inherent to point-cloud rendering",
+            "Viewpoint rotation vs reference (same shape, different angle)",
+            "Dotted / sparse texture from point-cloud density variation",
+        ],
+    },
+    "D7": {
+        "domain": "Remote Sensing / Building Change (LEVIR-CD+)",
+        "normal": "No building change between reference (earlier) and query (later) aerial tiles of the same location",
+        "anomaly_criteria": [
+            "New construction: buildings present in query that are absent in reference",
+            "Building demolition: buildings in reference removed in query",
+            "Roof replacement or expansion of an existing building footprint",
+            "Road or warehouse extension into previously open ground",
+        ],
+        "common_false_positives": [
+            "Seasonal / radiometric differences (lighting, vegetation colour)",
+            "Shadow direction differences between captures",
+            "Minor parked-vehicle or surface-stain changes (not buildings)",
+            "Cloud or atmospheric artifacts",
+        ],
+    },
+    "D8": {
         "domain": "Dermatology (DermaMNIST/ISIC)",
         "normal": "Melanocytic nevi (benign moles)",
         "anomaly_criteria": [
@@ -139,7 +203,7 @@ DOMAIN_KNOWLEDGE = {
             "Dark but uniformly colored moles are typically benign",
         ],
     },
-    "D5b": {
+    "D9": {
         "domain": "Brain MRI (BraTS2021)",
         "normal": "Normal brain MRI slices",
         "anomaly_criteria": [
@@ -155,7 +219,7 @@ DOMAIN_KNOWLEDGE = {
             "Normal choroid plexus or ventricular variation",
         ],
     },
-    "D5c": {
+    "D10": {
         "domain": "Liver CT (BMAD-Liver)",
         "normal": "Normal liver CT slices",
         "anomaly_criteria": [
@@ -170,7 +234,7 @@ DOMAIN_KNOWLEDGE = {
             "Normal gallbladder or ligamentum teres",
         ],
     },
-    "D5d": {
+    "D11": {
         "domain": "Gastrointestinal Endoscopy (HyperKvasir)",
         "normal": "Normal colon/GI mucosa",
         "anomaly_criteria": [
@@ -186,7 +250,7 @@ DOMAIN_KNOWLEDGE = {
             "Normal vascular pattern variation",
         ],
     },
-    "D7": {
+    "D12": {
         "domain": "Road Safety (BDD100K + RoadAnomaly21)",
         "normal": "Normal road driving scenes",
         "anomaly_criteria": [
@@ -199,35 +263,6 @@ DOMAIN_KNOWLEDGE = {
             "Traffic signs, road markings, construction zones",
             "Pedestrians on sidewalks (expected)",
             "Weather conditions (rain, snow on road surface)",
-        ],
-    },
-    "D9": {
-        "domain": "Logical Anomaly (MVTec-LOCO)",
-        "normal": "Correctly assembled products with right parts in right positions",
-        "anomaly_criteria": [
-            "LOGICAL: wrong count (extra/missing items)",
-            "LOGICAL: wrong arrangement or position of parts",
-            "LOGICAL: wrong type of component in a slot",
-            "STRUCTURAL: physical damage to any component",
-        ],
-        "common_false_positives": [
-            "Slight position variation within tolerance",
-            "Different viewing angle showing same correct assembly",
-            "Color variation in same-type components",
-        ],
-    },
-    "D10": {
-        "domain": "Industrial Inspection (VisA)",
-        "normal": "Defect-free manufactured items (PCBs, capsules, candles, etc.)",
-        "anomaly_criteria": [
-            "Surface defects: scratches, cracks, discoloration",
-            "Structural anomalies: bent pins, missing solder, misalignment",
-            "Contamination: foreign particles, excess adhesive",
-        ],
-        "common_false_positives": [
-            "Normal manufacturing variation in appearance",
-            "Slight positional differences",
-            "Lighting artifacts or reflections",
         ],
     },
 }

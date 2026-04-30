@@ -1,0 +1,4192 @@
+[
+  {
+    "item_id": "D2_0048",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the normal product profile: it is a soft, wrinkled plastic bag with an irregular puffed shape, a vertical metallic silver seam, open/crimped top flaps, and printed product graphics. The red colorway and visible side/front panel are consistent with the normal references, especially references 1 and 2. No clear signs of damage, leakage, foreign objects, or structural abnormality beyond expected bag deformation are visible."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.976,
+        0.94,
+        0.876,
+        0.865
+      ]
+    },
+    "cost_tokens": {
+      "input": 2391,
+      "output": 202
+    },
+    "latency_sec": 32.26,
+    "error": null
+  },
+  {
+    "item_id": "D2_0084",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query matches the normal product profile: a single upright plastic beverage bottle with a white cap, clear neck, white label, side/back nutrition panel and barcode, and the expected yellow branding area partially visible near the shoulder. The bottle shape, shelf placement, and pegboard background are all consistent with the reference images. The differences are explained by normal rotation angle and lighting variation rather than damage, deformation, or a wrong product."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.978,
+        0.903,
+        0.888,
+        0.877
+      ]
+    },
+    "cost_tokens": {
+      "input": 2381,
+      "output": 186
+    },
+    "latency_sec": 32.44,
+    "error": null
+  },
+  {
+    "item_id": "D2_0021",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single beige snack cup with a red lid, upright on a white shelf against a perforated white pegboard. The Chinese branding, barcode/instruction icons, and partial cartoon character are all consistent with the normal references. The visible differences are explained by normal rotation/orientation of the cup, with no signs of damage, missing lid, deformation, or foreign objects."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.978,
+        0.932,
+        0.93,
+        0.925
+      ]
+    },
+    "cost_tokens": {
+      "input": 2386,
+      "output": 183
+    },
+    "latency_sec": 36.12,
+    "error": null
+  },
+  {
+    "item_id": "D2_0019",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: a single upright cigarette pack centered in a transparent display holder on a shelf, with glossy reflections, gold border trim, centered branding ('Great Wall'), and lower Chinese warning text partially obscured by the holder. The blue-and-gold design is consistent with one of the known benign variations, and there are no visible signs of damage, deformation, extra objects, or misplacement."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.982,
+        0.808,
+        0.763,
+        0.752
+      ]
+    },
+    "cost_tokens": {
+      "input": 2481,
+      "output": 160
+    },
+    "latency_sec": 37.62,
+    "error": null
+  },
+  {
+    "item_id": "D2_0052",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: it is a Nabati Sandwich Richoco rectangular dark brown box on a white shelf with a white perforated pegboard background. The visible panel with Chinese labeling is consistent with one of the known benign side views. Branding, color scheme, shape, and intact closed packaging all appear normal, with no visible tears, crushing, deformation, or missing parts."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.983,
+        0.913,
+        0.794,
+        0.782
+      ]
+    },
+    "cost_tokens": {
+      "input": 2336,
+      "output": 144
+    },
+    "latency_sec": 22.93,
+    "error": null
+  },
+  {
+    "item_id": "D2_0015",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the established normal product well: it is a tall upright rectangular carton on a white shelf with pegboard background, uses the expected dark green and cream packaging, shows the chocolate-coated layered pie with green filling, includes prominent Chinese text, and displays the 'ORION PIE' branding on the visible cream panel. The visible side information panel and barcode area are also consistent with the references. No clear signs of packaging mismatch, missing features, or structural damage are evident beyond normal viewing-angle variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.932,
+        0.884,
+        0.807,
+        0.79
+      ]
+    },
+    "cost_tokens": {
+      "input": 2358,
+      "output": 167
+    },
+    "latency_sec": 24.01,
+    "error": null
+  },
+  {
+    "item_id": "D2_0036",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal pattern closely: a single upright plastic beverage bottle centered against the same white perforated pegboard background and white shelf base. The bottle appears consistent with the Gatorade-style yellow sports drink seen in references 1-3, including the orange cap, yellow liquid, and wraparound label with the large 'G' logo and Chinese text. No visible signs of damage, deformation, missing parts, incorrect placement, or unexpected foreign objects are present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.98,
+        0.89,
+        0.875,
+        0.807
+      ]
+    },
+    "cost_tokens": {
+      "input": 2352,
+      "output": 188
+    },
+    "latency_sec": 20.41,
+    "error": null
+  },
+  {
+    "item_id": "D2_0062",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the established normal product line: it is a He'Hui boxed wafer-stick snack, upright on a white shelf with a white pegboard background. The front shows the large vertical brand name, the blue vertical text panel with Chinese and English text, wafer stick imagery, a small badge near the upper-right, mushroom flavor imagery, and the small weight marking near the lower-left. The visible side panel and viewing angle are consistent with normal reference variations. No missing, damaged, or inconsistent packaging elements are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.939,
+        0.887,
+        0.824,
+        0.812
+      ]
+    },
+    "cost_tokens": {
+      "input": 2490,
+      "output": 177
+    },
+    "latency_sec": 29.0,
+    "error": null
+  },
+  {
+    "item_id": "D2_0051",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal profile closely: a single upright flexible pouch on a white shelf against a perforated white pegboard, showing the back side with dense Chinese-language product information and a barcode near the bottom. The beige/green color scheme, slight wrinkling, and centered framing are all consistent with the referenced normal variations. No visible signs of damage, incorrect object type, missing package, or unusual placement are present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.989,
+        0.962,
+        0.923,
+        0.864
+      ]
+    },
+    "cost_tokens": {
+      "input": 2353,
+      "output": 154
+    },
+    "latency_sec": 19.79,
+    "error": null
+  },
+  {
+    "item_id": "D2_0053",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: a single sealed flexible snack bag is upright on a white shelf against a white pegboard, shown from the back with barcode and product text visible. The bag shape, slight lean, crumpling, and shelf speckling are all consistent with the listed benign variations and normal scene characteristics. No obvious damage, spillage, obstruction, or foreign object is present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.974,
+        0.964,
+        0.951,
+        0.888
+      ]
+    },
+    "cost_tokens": {
+      "input": 2355,
+      "output": 153
+    },
+    "latency_sec": 23.64,
+    "error": null
+  },
+  {
+    "item_id": "D2_0073",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal shelf-item pattern: a single upright cigarette pack displayed front-facing in a clear plastic holder, with glossy reflective wrapping, gold border/design elements, centered branding/logo, and Chinese health-warning text in the lower front area. The red colorway and specific brand artwork are consistent with normal variation shown in the references. No visible signs of damage, misplacement, missing item, or foreign object are present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.919,
+        0.817,
+        0.789,
+        0.788
+      ]
+    },
+    "cost_tokens": {
+      "input": 2373,
+      "output": 212
+    },
+    "latency_sec": 27.15,
+    "error": null
+  },
+  {
+    "item_id": "D2_0047",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.95,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal pattern: a single sealed red snack pouch upright on a white shelf against a white pegboard, with visible front branding and expected plastic crinkling. Its color, pouch shape, and front-facing presentation are consistent with the provided normal references, and there are no clear signs of damage, leakage, tampering, or foreign objects."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.913,
+        0.857,
+        0.68,
+        0.679
+      ]
+    },
+    "cost_tokens": {
+      "input": 2169,
+      "output": 130
+    },
+    "latency_sec": 21.15,
+    "error": null
+  },
+  {
+    "item_id": "D2_0022",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query matches the normal pattern very closely: a single upright cigarette pack centered in a clear plastic holder, with glossy burgundy/red packaging, gold/yellow accents, prominent Chinese text, and the expected health warning text near the bottom. The shelf background and overall presentation are also consistent with the reference images. In fact, the pack design appears essentially the same as Normal reference 1, with only minor normal glare/reflection differences."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.956,
+        0.88,
+        0.853,
+        0.832
+      ]
+    },
+    "cost_tokens": {
+      "input": 2357,
+      "output": 173
+    },
+    "latency_sec": 21.97,
+    "error": null
+  },
+  {
+    "item_id": "D2_0060",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal pattern closely: an upright small beverage carton on a shelf, with an attached white straw in clear wrapping, intact sealed packaging, and standard dairy-drink style branding/graphics. Its appearance is essentially the same as normal reference 1, with no visible damage, tampering, deformation, or unexpected object/state."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.973,
+        0.692,
+        0.685,
+        0.677
+      ]
+    },
+    "cost_tokens": {
+      "input": 2336,
+      "output": 161
+    },
+    "latency_sec": 19.83,
+    "error": null
+  },
+  {
+    "item_id": "D2_0071",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal references closely: it shows a single upright beverage carton centered on a white shelf against a perforated pegboard background. The packaging is consistent with the banana milk carton seen in the references, with expected branding and light-colored design. The carton appears intact and unopened, with no visible crushing, leakage, or major deformation. A slight surface crease on the right side appears minor and within normal condition."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.981,
+        0.526,
+        0.519,
+        0.515
+      ]
+    },
+    "cost_tokens": {
+      "input": 2264,
+      "output": 146
+    },
+    "latency_sec": 17.81,
+    "error": null
+  },
+  {
+    "item_id": "D2_0006",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal retail display pattern: a single upright cigarette pack in a clear plastic holder, centered against a light shelf back panel, with Chinese branding/warning text and normal glossy glare. The purple-and-gold PRIDE-style packaging closely matches the normal references, especially reference 1. No visible signs of damage, foreign objects, missing product, misplacement, or packaging anomaly are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.955,
+        0.754,
+        0.743,
+        0.732
+      ]
+    },
+    "cost_tokens": {
+      "input": 2473,
+      "output": 189
+    },
+    "latency_sec": 26.79,
+    "error": null
+  },
+  {
+    "item_id": "D2_0035",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single blue instant noodle cup upright on a white shelf with pegboard background, white rim, yellow dash bands near top and bottom, prominent CUP NOODLES branding, seafood food image, and yellow seafood flavor label with Chinese and English text. No visible deviations in product type, color scheme, structure, or placement."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.981,
+        0.952,
+        0.913,
+        0.902
+      ]
+    },
+    "cost_tokens": {
+      "input": 2268,
+      "output": 135
+    },
+    "latency_sec": 18.2,
+    "error": null
+  },
+  {
+    "item_id": "D2_0032",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal pattern very closely: a single upright beverage carton centered on a retail shelf, with a white straw attached to the front in clear wrapping, pegboard background, and printed banana-themed graphics/text. It appears essentially the same as normal reference 1, with no visible damage, missing components, deformation, leakage, or unusual shelf anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.971,
+        0.723,
+        0.674,
+        0.664
+      ]
+    },
+    "cost_tokens": {
+      "input": 2376,
+      "output": 167
+    },
+    "latency_sec": 24.9,
+    "error": null
+  },
+  {
+    "item_id": "D2_0067",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image closely matches the normal reference pattern: a single upright cigarette pack centered in a clear plastic shelf holder, with camouflage-style branding on the front, glossy reflections on the wrapping, Chinese health warning text visible on the lower label area, and a plain light-colored shelf background. The design and presentation are consistent with Normal references 1 and 2, with no visible signs of damage, misplacement, foreign objects, or category mismatch."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.94,
+        0.905,
+        0.723,
+        0.714
+      ]
+    },
+    "cost_tokens": {
+      "input": 2430,
+      "output": 158
+    },
+    "latency_sec": 23.67,
+    "error": null
+  },
+  {
+    "item_id": "D2_0055",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile closely: bright lime-green bottle and cap, dark brown tea visible in the neck, large black Chinese characters outlined in white on the front, brand text near the shoulder, small red label element, contoured bottle shape, and expected white pegboard/shelf background. Differences appear consistent with normal rotation/viewing angle rather than an anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.975,
+        0.963,
+        0.957,
+        0.957
+      ]
+    },
+    "cost_tokens": {
+      "input": 2543,
+      "output": 150
+    },
+    "latency_sec": 22.22,
+    "error": null
+  },
+  {
+    "item_id": "D2_0054",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the normal references: same upright cylindrical canister with translucent plastic lid, same white shelf and pegboard background, same orange-striped multicolor wrap, and the visible seam/green info panel align with expected rotation-based label variation. The product appears intact with no visible dents, tears, deformation, or missing parts."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.98,
+        0.899,
+        0.894,
+        0.88
+      ]
+    },
+    "cost_tokens": {
+      "input": 2360,
+      "output": 132
+    },
+    "latency_sec": 19.41,
+    "error": null
+  },
+  {
+    "item_id": "D2_0079",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.9,
+        "needs_detailed_inspection": false,
+        "reasoning": "The item matches the general product family, shape, and setting, but the package appears to be positioned upside down relative to the printed graphics: the barcode and text are inverted compared with the normal references, which show the box upright. Since the normality profile specifies an upright package resting on its base, this orientation is a clear anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.894,
+        0.863,
+        0.853,
+        0.79
+      ]
+    },
+    "cost_tokens": {
+      "input": 2331,
+      "output": 338
+    },
+    "latency_sec": 31.69,
+    "error": null
+  },
+  {
+    "item_id": "D2_0010",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image closely matches the normal reference pattern: a single upright cigarette pack in a clear plastic holder, front-facing on a light shelf background, with glossy wrap reflections, printed branding/design, and Chinese health-warning text in the lower portion. Its red/cream color scheme with gold accents and circular emblem is consistent with the reference set, especially normal reference 1. No visible structural damage, foreign object, missing product, or category mismatch is apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.934,
+        0.77,
+        0.768,
+        0.744
+      ]
+    },
+    "cost_tokens": {
+      "input": 2503,
+      "output": 163
+    },
+    "latency_sec": 22.05,
+    "error": null
+  },
+  {
+    "item_id": "D2_0009",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal references: white tapered cup, beige/gold lid, visible clear shrink wrap, consistent large red/orange \u4f18\u4e50\u7f8e logo, pink Chinese front text, small illustrated girl near the bottom, and pegboard shelf background. The visible strawberry/leaf graphics and overall orientation are within the listed benign variations. No missing components, major label mismatch, or structural damage is apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.987,
+        0.967,
+        0.954,
+        0.949
+      ]
+    },
+    "cost_tokens": {
+      "input": 2355,
+      "output": 146
+    },
+    "latency_sec": 20.49,
+    "error": null
+  },
+  {
+    "item_id": "D2_0061",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: a single upright cigarette pack centered in a clear plastic holder, front-facing, against a plain light shelf background. The gold packaging, Chinese brand text, glossy reflections, and partially obscured lower section are all consistent with the provided normal examples. No visible signs of damage, misplaced item, extra objects, or packaging anomaly are present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.948,
+        0.864,
+        0.856,
+        0.852
+      ]
+    },
+    "cost_tokens": {
+      "input": 2402,
+      "output": 145
+    },
+    "latency_sec": 20.34,
+    "error": null
+  },
+  {
+    "item_id": "D2_0074",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single tapered paper cup with a white rolled rim and partially visible foil lid tab, blue upper and pink lower sections with the expected wavy boundary, white Chinese text on the blue area, dense vertical product text, and a vertical barcode on the pink section. The cup is upright on the same white shelf with pegboard background. The visible panel layout and barcode position are consistent with normal rotational variation seen in the references, and no damage, contamination, deformation, or label mismatch is evident."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.97,
+        0.938,
+        0.923,
+        0.915
+      ]
+    },
+    "cost_tokens": {
+      "input": 2432,
+      "output": 197
+    },
+    "latency_sec": 21.93,
+    "error": null
+  },
+  {
+    "item_id": "D2_0007",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product closely: same bright green cap, amber upper liquid, tall faceted bottle shape, white-to-green gradient label, prominent Chinese text, and upright presentation on the same shelf/pegboard background. The front label graphics and overall proportions are consistent with the reference views, with no visible missing parts, wrong label, deformation, or other anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.987,
+        0.979,
+        0.927,
+        0.822
+      ]
+    },
+    "cost_tokens": {
+      "input": 2294,
+      "output": 138
+    },
+    "latency_sec": 23.6,
+    "error": null
+  },
+  {
+    "item_id": "D2_0028",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern: a tall slim yellow can with silver rims, black printed text, vertically oriented 'Alk. 4.9% vol. - 500ml' text, and a barcode near the lower visible side. The can is upright on a white shelf against a white perforated pegboard. The visible label panel and rotation are consistent with the benign variations seen in the references, and no damage, missing parts, or label abnormalities are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.991,
+        0.984,
+        0.956,
+        0.954
+      ]
+    },
+    "cost_tokens": {
+      "input": 2298,
+      "output": 160
+    },
+    "latency_sec": 17.22,
+    "error": null
+  },
+  {
+    "item_id": "D2_0082",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query matches the normal reference pattern very closely: a single upright aluminum can centered on a white shelf with pegboard background, silver top/bottom rims, Chinese back-panel text, a QR code, and a vertical barcode near the lower portion. The visible Somersby white/green/gold design and panel layout are consistent with Normal reference 1, with only negligible rotational or lighting variation. No visible damage, deformation, missing label, or unexpected object is present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.992,
+        0.918,
+        0.867,
+        0.86
+      ]
+    },
+    "cost_tokens": {
+      "input": 2491,
+      "output": 192
+    },
+    "latency_sec": 21.58,
+    "error": null
+  },
+  {
+    "item_id": "D2_0020",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: clear glass bottle with white opaque beverage, rounded shoulder, narrow neck, black cap, and black neck sleeve with prominent white '100%' text. The bottle body shows the expected printed information label and barcode, and the transparent glass base is visible. Orientation and label visibility are consistent with benign rotational variation seen in the references. No missing parts, shape changes, or abnormal markings are evident."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        1.0,
+        0.967,
+        0.956,
+        0.889
+      ]
+    },
+    "cost_tokens": {
+      "input": 2405,
+      "output": 155
+    },
+    "latency_sec": 19.94,
+    "error": null
+  },
+  {
+    "item_id": "D2_0034",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product closely: it shows the same back-side packaged food item with a white rear panel, red border, landscape graphic band at the top, nutrition facts table on the upper-right, barcode near the lower-right, dense Chinese text, and the blue handwritten/stamped '2' marking near the left-center. The item is upright on the same white shelf with perforated pegboard background. Differences in bag puffiness, creasing, and top seal shape are consistent with benign packaging variation seen in the references."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.973,
+        0.953,
+        0.943,
+        0.931
+      ]
+    },
+    "cost_tokens": {
+      "input": 2507,
+      "output": 179
+    },
+    "latency_sec": 24.65,
+    "error": null
+  },
+  {
+    "item_id": "D2_0017",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single upright white plastic bottle with white cap, red heart-shaped logo near the top, prominent Chinese front text, white-and-red label design with a large red central graphic, milk-splash transition, and red lower section. Bottle shape, orientation, and shelf/pegboard context are all consistent with the reference images. Minor differences in centering and lighting appear to be normal variation rather than anomalies."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.973,
+        0.966,
+        0.96,
+        0.95
+      ]
+    },
+    "cost_tokens": {
+      "input": 2323,
+      "output": 181
+    },
+    "latency_sec": 18.66,
+    "error": null
+  },
+  {
+    "item_id": "D2_0018",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the normal product profile: it is a tall narrow yellow-green carton, upright on the same white shelf/pegboard background, with the large Chinese branding text on the front and the expected tomato-and-ridged-chip imagery. The observed differences are consistent with normal viewing-angle variation seen in the references. No missing graphics, wrong shape, wrong color scheme, or other visible packaging irregularities are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.929,
+        0.906,
+        0.861,
+        0.786
+      ]
+    },
+    "cost_tokens": {
+      "input": 2364,
+      "output": 182
+    },
+    "latency_sec": 19.67,
+    "error": null
+  },
+  {
+    "item_id": "D2_0024",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image closely matches the normal pattern: a single upright, front-facing glossy pack centered in a clear plastic display slot against a light background. Its bright green color, 'peel green apple' branding, butterfly/capsule text, and overall layout are consistent with Normal reference 1. No visible signs of damage, misplacement, foreign objects, or packaging irregularities beyond normal lighting glare and minor shelf occlusion."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.968,
+        0.929,
+        0.807,
+        0.789
+      ]
+    },
+    "cost_tokens": {
+      "input": 2340,
+      "output": 185
+    },
+    "latency_sec": 20.31,
+    "error": null
+  },
+  {
+    "item_id": "D2_0025",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern very closely: a single upright tall slim soda can centered on a white shelf with a white pegboard background, full can visible, silver rims visible, glossy reflections present, and standard branded Pepsi packaging with Chinese text. No visible damage, deformation, missing label, foreign object, or shelf anomaly is apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.988,
+        0.846,
+        0.81,
+        0.773
+      ]
+    },
+    "cost_tokens": {
+      "input": 2514,
+      "output": 166
+    },
+    "latency_sec": 24.78,
+    "error": null
+  },
+  {
+    "item_id": "D2_0041",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: it shows a single upright packaged peanut snack on a white shelf against a white pegboard, with the expected pink/teal flexible bag, front labeling, and a transparent window revealing beige speckled coated peanuts. The orientation, packaging condition, and visible contents are all consistent with normal variation seen in references 1-3. No signs of damage, missing product, wrong item, or other anomaly are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.979,
+        0.957,
+        0.953,
+        0.765
+      ]
+    },
+    "cost_tokens": {
+      "input": 2407,
+      "output": 194
+    },
+    "latency_sec": 33.29,
+    "error": null
+  },
+  {
+    "item_id": "D2_0069",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single yellow cup-style instant noodle container on the same white shelf and perforated pegboard background, with a bright yellow lid, yellow cup body, large white label area, bold black Chinese text, and noodle image near the bottom. The differences are consistent with normal viewing-angle and positioning variation. The cup appears upright, intact, and unopened, with no visible damage, deformation, or unexpected markings."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.971,
+        0.968,
+        0.94,
+        0.89
+      ]
+    },
+    "cost_tokens": {
+      "input": 2398,
+      "output": 185
+    },
+    "latency_sec": 23.94,
+    "error": null
+  },
+  {
+    "item_id": "D2_0085",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "path": "full_pipeline",
+      "dispatch": {
+        "initial_assessment": "uncertain",
+        "confidence": 0.74,
+        "needs_detailed_inspection": true,
+        "reasoning": "The query item matches the normal product in overall format, black cylindrical can body, green flavor artwork, silver bottom rim, upright shelf placement, and pegboard background. However, the lid area appears noticeably white rather than the expected yellow plastic lid seen in all normal references. While small white seal/film pieces near the lid can be a benign variation, here the visible top edge looks more extensively white than usual, so I cannot confidently determine whether this is normal lighting/angle/seal visibility or an actual packaging anomaly without deeper inspection."
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Top lid/rim color is white instead of the yellow lid seen in the reference views",
+            "location": "top edge of the can",
+            "confidence": 0.98
+          }
+        ],
+        "no_difference_conf": 0.04
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The normal profile specifies a tall cylindrical chip canister with a yellow plastic lid. In the query image, the visible top lid/rim appears white rather than yellow. This is not covered by the listed benign variations, which allow changes in flavor artwork, rotation, seal position, text visibility, and lighting, but not a different lid color. Therefore this is a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      },
+      "n_tools": 3,
+      "retrieval_sims": [
+        0.961,
+        0.919,
+        0.873,
+        0.865
+      ]
+    },
+    "cost_tokens": {
+      "input": 5731,
+      "output": 482
+    },
+    "latency_sec": 34.5,
+    "error": null
+  },
+  {
+    "item_id": "D2_0002",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: a single upright cigarette pack in a clear plastic shelf holder, front-facing and centered, with glossy wrapping glare, printed branding/graphics, and Chinese health warning text near the bottom. The blue SEPTWOLVES design is consistent with one of the normal reference variants, and no visible abnormalities in packaging, placement, or presentation are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.968,
+        0.951,
+        0.781,
+        0.774
+      ]
+    },
+    "cost_tokens": {
+      "input": 2343,
+      "output": 142
+    },
+    "latency_sec": 28.11,
+    "error": null
+  },
+  {
+    "item_id": "D2_0078",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal profile closely: it shows a single slim rectangular carton upright on a white shelf, centered against a white pegboard background. The package is fully visible, portrait-oriented, and has saturated printed branding/text including Chinese characters. Its red side/front panel appearance is consistent with the benign variation seen in the references. No obvious anomaly in shape, orientation, count, or placement is visible."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.959,
+        0.877,
+        0.825,
+        0.796
+      ]
+    },
+    "cost_tokens": {
+      "input": 2520,
+      "output": 157
+    },
+    "latency_sec": 24.23,
+    "error": null
+  },
+  {
+    "item_id": "D2_0081",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal profile closely: it shows a single soft plastic instant noodle multipack on a white shelf against a white pegboard, upright with the front face visible. The red-dominant packaging, large Chinese text, and bowl/food imagery are consistent with normal references 1-3. The slight crumpling and angled presentation are benign variations already represented in the references. No visible signs of damage, foreign objects, wrong product type, or abnormal shelf presentation are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.924,
+        0.889,
+        0.825,
+        0.715
+      ]
+    },
+    "cost_tokens": {
+      "input": 2368,
+      "output": 208
+    },
+    "latency_sec": 23.75,
+    "error": null
+  },
+  {
+    "item_id": "D2_0013",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query bottle matches the normal references closely: same clear plastic bottle with white cap, same contoured shape, same green label with large white graphic artwork, and the same yellow-green to dark green liquid gradient. The shelf/pegboard background and overall product presentation are also consistent. No visible signs of damage, missing parts, wrong label, foreign object, or major packaging deviation are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.99,
+        0.947,
+        0.922,
+        0.86
+      ]
+    },
+    "cost_tokens": {
+      "input": 2401,
+      "output": 147
+    },
+    "latency_sec": 20.59,
+    "error": null
+  },
+  {
+    "item_id": "D2_0077",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile closely: it is a blue flexible multipack noodle bag standing upright on a white shelf against a pegboard, with large central Chinese text, smaller English subtitle text, a prominent prepared noodle image, and upper branding/promotional graphics. The bag is crinkled and slightly tilted, which is explicitly listed as a benign variation. I do not see evidence of damage, tampering, missing packaging elements, or an unexpected product form."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.978,
+        0.921,
+        0.915,
+        0.808
+      ]
+    },
+    "cost_tokens": {
+      "input": 2353,
+      "output": 160
+    },
+    "latency_sec": 21.94,
+    "error": null
+  },
+  {
+    "item_id": "D2_0059",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the reference product closely: same red lid, white tapered bowl, Chinese front text, noodle/garnish artwork, and yellow flavor badge. The shelf and pegboard background are also consistent. No visible structural damage, missing components, or mismatched branding beyond normal perspective/glare variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.977,
+        0.931,
+        0.829,
+        0.693
+      ]
+    },
+    "cost_tokens": {
+      "input": 2288,
+      "output": 124
+    },
+    "latency_sec": 24.49,
+    "error": null
+  },
+  {
+    "item_id": "D2_0011",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal profile closely: it shows a single upright small beverage carton on a white shelf with pegboard background, uses the expected red-and-white packaging, includes Chinese branding/text, dairy-themed graphics, and visible 250 mL marking. The specific red-date milk design also matches one of the normal reference appearances, including minor benign wear/plastic remnant near the base."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.973,
+        0.798,
+        0.571,
+        0.557
+      ]
+    },
+    "cost_tokens": {
+      "input": 2306,
+      "output": 142
+    },
+    "latency_sec": 19.94,
+    "error": null
+  },
+  {
+    "item_id": "D2_0042",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image shows a single upright rectangular carton on the same shelf/pegboard setup as the references. Its blue-and-white Oldenburger milk carton design with cartoon cow mascot matches Normal reference 1 closely. The package appears intact, unopened, centered, and unobstructed, with no visible damage, deformation, leakage, or unexpected objects."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.976,
+        0.815,
+        0.765,
+        0.764
+      ]
+    },
+    "cost_tokens": {
+      "input": 2331,
+      "output": 162
+    },
+    "latency_sec": 23.12,
+    "error": null
+  },
+  {
+    "item_id": "D2_0076",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: same flared paper cup shape, blue upper section and pink lower panel, prominent 'mini' branding with Chinese text, Oreo-like cookie and strawberry artwork, and the pink ladder/slide graphic on the right. The visible side icon/text area on the blue section and the slight rim unevenness are consistent with normal rotational/viewing variation seen in the references. No missing parts, major deformation, foreign objects, or label mismatches are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.954,
+        0.953,
+        0.947,
+        0.947
+      ]
+    },
+    "cost_tokens": {
+      "input": 2606,
+      "output": 193
+    },
+    "latency_sec": 30.14,
+    "error": null
+  },
+  {
+    "item_id": "D2_0039",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single upright plastic bottle with a white cap, transparent upper neck containing brown liquid, a predominantly light pink label with Chinese text and fruit/leaf graphics, and a ribbed molded base on a white shelf against a perforated pegboard. The visible barcode/side-panel view is consistent with expected rotation-based benign variation. No obvious defects, missing parts, deformation, leakage, or mismatched packaging are visible."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.969,
+        0.949,
+        0.929,
+        0.921
+      ]
+    },
+    "cost_tokens": {
+      "input": 2325,
+      "output": 157
+    },
+    "latency_sec": 20.72,
+    "error": null
+  },
+  {
+    "item_id": "D2_0000",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.95,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single tall white cylindrical canister is upright on a white shelf against a pegboard, with visible Lay's-style logo elements near the top, vertical Chinese text, purple-toned flavor graphics, a blue emblem near the lower front, and intact lid/base rims. The slight lid-edge flap and partial logo visibility are explicitly listed as benign variations. No clear damage, deformation, foreign object, or product mismatch is visible."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.977,
+        0.938,
+        0.922,
+        0.9
+      ]
+    },
+    "cost_tokens": {
+      "input": 2468,
+      "output": 166
+    },
+    "latency_sec": 22.03,
+    "error": null
+  },
+  {
+    "item_id": "D2_0005",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image closely matches the normal references: a single upright cigarette pack is centered in a clear acrylic holder, front-facing, with glossy wrap glare, decorative branding, and Chinese health warning text on the lower front partially obscured by the holder. The orange/gold color scheme and '99' logo are consistent with one of the normal reference variants. No visible signs of damage, misplacement, missing product, or foreign object are present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.944,
+        0.904,
+        0.81,
+        0.803
+      ]
+    },
+    "cost_tokens": {
+      "input": 2505,
+      "output": 164
+    },
+    "latency_sec": 25.89,
+    "error": null
+  },
+  {
+    "item_id": "D2_0088",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference closely: a single upright cigarette pack in a clear plastic holder, rectangular flip-top form, prominent Chinese branding, lower-front Chinese health warning partly occluded by the holder, and plain white shelf background with dark trim at the top. The white-and-green color scheme and slight tilt are consistent with documented benign variations, and there are no visible signs of damage, misplacement, duplication, or foreign objects."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.974,
+        0.864,
+        0.837,
+        0.836
+      ]
+    },
+    "cost_tokens": {
+      "input": 2410,
+      "output": 155
+    },
+    "latency_sec": 21.33,
+    "error": null
+  },
+  {
+    "item_id": "D2_0058",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query matches the normal green beverage bottle pattern very closely, especially Normal reference 1: same tall faceted plastic bottle, green cap, brownish upper liquid area, white-to-green label design, dense Chinese text panel, upright placement on a white shelf, and perforated pegboard background. The visible panel is an information-dominant side/back view, which is explicitly listed as a benign variation. No visible signs of damage, missing cap, leakage, deformation, foreign object, or mismatched packaging are present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.977,
+        0.89,
+        0.856,
+        0.852
+      ]
+    },
+    "cost_tokens": {
+      "input": 2341,
+      "output": 195
+    },
+    "latency_sec": 20.49,
+    "error": null
+  },
+  {
+    "item_id": "D2_0014",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the normal reference product: a pink upright rectangular carton on a white shelf with pegboard background, large cartoon face with teal/green eyes, chocolate piece graphics, stylized lower branding, small cartoon face on the side panel, and QR/instruction print near the top. The visible differences are consistent with normal panel orientation/view variation seen in the references. No clear signs of damage, wrong product, missing package elements, or other anomaly are evident."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.971,
+        0.893,
+        0.888,
+        0.874
+      ]
+    },
+    "cost_tokens": {
+      "input": 2395,
+      "output": 161
+    },
+    "latency_sec": 26.36,
+    "error": null
+  },
+  {
+    "item_id": "D2_0049",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal pattern very closely: a single upright rectangular pack centered in a clear plastic holder, front-facing with the lid closed, glossy wrap reflections, and a plain white shelf background. The product appearance, yellow color, 'peel lemon honey' branding, and partial lower obstruction by the holder are all consistent with Normal reference 1. No visible signs of damage, misplacement, tampering, or unexpected object presence."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.968,
+        0.908,
+        0.769,
+        0.746
+      ]
+    },
+    "cost_tokens": {
+      "input": 2446,
+      "output": 176
+    },
+    "latency_sec": 25.69,
+    "error": null
+  },
+  {
+    "item_id": "D2_0004",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single light-green soft plastic snack package stands upright on a white shelf against a white pegboard, with rolled wafer imagery, large dark red/brown Asian-character branding, and the expected blue diagonal label area visible. The item appears isolated with only normal variation in viewing angle and slight tilt/crumpling. No signs of damage, foreign objects, missing product, or mismatched packaging are evident."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.856,
+        0.854,
+        0.835,
+        0.818
+      ]
+    },
+    "cost_tokens": {
+      "input": 2414,
+      "output": 157
+    },
+    "latency_sec": 22.8,
+    "error": null
+  },
+  {
+    "item_id": "D2_0026",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.93,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: it is the same tall blue rectangular box, upright on a white shelf with a perforated white pegboard background, with dense white printed text and a dark top flap. The visible barcode/info-table panel is consistent with the normal references, and the main difference is orientation/face presentation rather than damage, tampering, or a foreign label. No clear anomaly is visible."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.961,
+        0.958,
+        0.948,
+        0.878
+      ]
+    },
+    "cost_tokens": {
+      "input": 2332,
+      "output": 205
+    },
+    "latency_sec": 21.09,
+    "error": null
+  },
+  {
+    "item_id": "D2_0016",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference profile closely: a single tall white beverage cup upright on a white shelf with pegboard background, gold/beige domed lid with visible seal, large red Chinese logo with orange ring, and pink strawberry flavor label with fruit imagery near the bottom. Shape, proportions, orientation, and packaging graphics are all consistent with expected benign variation. No visible defect, mismatch, deformation, or foreign object is apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.987,
+        0.972,
+        0.97,
+        0.95
+      ]
+    },
+    "cost_tokens": {
+      "input": 2447,
+      "output": 158
+    },
+    "latency_sec": 20.79,
+    "error": null
+  },
+  {
+    "item_id": "D2_0086",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern: a single upright cigarette pack in a transparent acrylic holder against a plain light background. The pack has standard tobacco-pack styling, glossy cellophane reflections, branding/text, and Chinese warning text near the lower portion. Its red/gold design is consistent with the benign variations seen in the references, with no visible structural damage, foreign object, or obvious packaging anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.975,
+        0.876,
+        0.834,
+        0.822
+      ]
+    },
+    "cost_tokens": {
+      "input": 2333,
+      "output": 150
+    },
+    "latency_sec": 31.06,
+    "error": null
+  },
+  {
+    "item_id": "D2_0012",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: a single upright packaged dried-food item on a white perforated shelf background, with transparent packaging showing dark dried contents and visible front branding/labeling. The pouch format, green accents, and slight viewing angle are all consistent with known benign variations. No extra items, damage, or obvious packaging anomalies are visible."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.953,
+        0.944,
+        0.896,
+        0.7
+      ]
+    },
+    "cost_tokens": {
+      "input": 2361,
+      "output": 142
+    },
+    "latency_sec": 24.52,
+    "error": null
+  },
+  {
+    "item_id": "D2_0178",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: it is the same yellow rectangular egg rolls box with the expected comic-style front graphics, large Chinese text, 'EGG ROLLS' label, rolled wafer illustrations, black panel borders, and the '15%' badge in the lower-left area. The shelf and pegboard background also match the normal setup. Only minor positional/glare differences are visible, which are consistent with benign variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.969,
+        0.964,
+        0.847,
+        0.629
+      ]
+    },
+    "cost_tokens": {
+      "input": 2354,
+      "output": 183
+    },
+    "latency_sec": 23.37,
+    "error": null
+  },
+  {
+    "item_id": "D2_0066",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query matches the normal reference product: same black upper band with large gold Chinese brand text, same light green cup body, same cartoon child on the lower front, same bowl-of-noodles image in the upper-middle area, same vertical green Chinese text on the left, and the same sealed foil lid with a slight front-center crimp. Differences are limited to normal viewing-angle and lighting variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.974,
+        0.962,
+        0.95,
+        0.924
+      ]
+    },
+    "cost_tokens": {
+      "input": 2423,
+      "output": 182
+    },
+    "latency_sec": 28.5,
+    "error": null
+  },
+  {
+    "item_id": "D2_0156",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query can matches the normal product body design, branding, colors, and shelf setting, but the lid is anomalous. All normal references show a yellow plastic lid, while the query image shows a white/light gray lid. This is a clear visible deviation from the consistent reference pattern, so detailed inspection is not needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.936,
+        0.91,
+        0.897,
+        0.888
+      ]
+    },
+    "cost_tokens": {
+      "input": 2337,
+      "output": 131
+    },
+    "latency_sec": 19.0,
+    "error": null
+  },
+  {
+    "item_id": "D2_0117",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query matches the normal Oreo box design, color scheme, and flavor panel seen in reference 1, but it shows a clear packaging abnormality: the top carton flap is open and protruding upward. In the normal references, the boxes appear fully closed and intact. This indicates the item is likely opened or damaged rather than a benign variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.947,
+        0.844,
+        0.78,
+        0.742
+      ]
+    },
+    "cost_tokens": {
+      "input": 2423,
+      "output": 209
+    },
+    "latency_sec": 22.66,
+    "error": null
+  },
+  {
+    "item_id": "D2_0155",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal references: it shows the same tall cylindrical Lay's can with a yellow lid, black upper packaging, gold Lay's logo, gold Chinese text, and the red spicy-themed lower artwork with a chip image. The visible side text/barcode area and slight rotation are consistent with the benign orientation variations seen in the references. No missing parts, packaging damage, wrong label, or other abnormal visual differences are evident."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.964,
+        0.956,
+        0.951,
+        0.946
+      ]
+    },
+    "cost_tokens": {
+      "input": 2327,
+      "output": 182
+    },
+    "latency_sec": 20.27,
+    "error": null
+  },
+  {
+    "item_id": "D2_0103",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.95,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the brand family, color scheme, and central emblem seen in the normal references, but the cigarette pack is visibly open with the top lid flipped upward. All normal references show closed, intact packs presented front-facing in the holder. This indicates an abnormal product state/packaging condition rather than a benign design variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.917,
+        0.849,
+        0.803,
+        0.792
+      ]
+    },
+    "cost_tokens": {
+      "input": 2346,
+      "output": 189
+    },
+    "latency_sec": 23.37,
+    "error": null
+  },
+  {
+    "item_id": "D2_0139",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: it is the same blue stand-up pouch with plum imagery, landscape background, centered hang-hole, back-side text/icons, barcode near the lower center-right, and the expected red/white/blue lower graphic. The pouch shows only mild, normal flexible-film wrinkles and slight leaning, which are consistent with the reference variations. No visible damage, foreign object, missing package section, or mismatched product features are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.92,
+        0.829,
+        0.826,
+        0.764
+      ]
+    },
+    "cost_tokens": {
+      "input": 2323,
+      "output": 194
+    },
+    "latency_sec": 22.63,
+    "error": null
+  },
+  {
+    "item_id": "D2_0114",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.94,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single tapered noodle cup upright on a white shelf with white pegboard background, black upper band and red lower body, visible white rim, glossy plastic wrap with wrinkles, and expected printed branding/text. The visible differences are consistent with benign rotational/view-angle variation and normal wrap crinkling near the rim rather than a product anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.9,
+        0.899,
+        0.895,
+        0.879
+      ]
+    },
+    "cost_tokens": {
+      "input": 2294,
+      "output": 138
+    },
+    "latency_sec": 17.52,
+    "error": null
+  },
+  {
+    "item_id": "D2_0120",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the general product type, but the bowl body is clearly damaged: there is a large torn/missing section of the side wall exposing a dark interior area and peeled label material hanging down. In the normal references, only minor shrink-wrap wrinkles or small gathered sections are present; the bowl body itself remains intact and sealed. This is a clear packaging/product damage anomaly, so no detailed inspection is needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.914,
+        0.914,
+        0.898,
+        0.897
+      ]
+    },
+    "cost_tokens": {
+      "input": 2302,
+      "output": 149
+    },
+    "latency_sec": 18.76,
+    "error": null
+  },
+  {
+    "item_id": "D2_0100",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item does not match the normal product at all. Normal references consistently show a Kinder Happy Hippo tall rectangular candy box with red/white branded sides or blue information panels. The query shows a different package design: light blue sky background, green vertical band, different Chinese text styling, and no visible Kinder Happy Hippo branding or matching color/layout patterns. This is a clear product mismatch rather than a benign side-panel variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.721,
+        0.717,
+        0.69,
+        0.682
+      ]
+    },
+    "cost_tokens": {
+      "input": 2339,
+      "output": 194
+    },
+    "latency_sec": 23.78,
+    "error": null
+  },
+  {
+    "item_id": "D2_0141",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.9,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the expected Nissin cup format, branding, text panel, and red wrap design, but there is a clear abnormal protruding peeled/torn section at the upper left rim/lid area. The normal references show only minor rim unevenness, not a distinct lifted flap like this. This suggests the cup lid or rim is damaged or partially opened, so the item is anomalous."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.969,
+        0.958,
+        0.915,
+        0.909
+      ]
+    },
+    "cost_tokens": {
+      "input": 2396,
+      "output": 240
+    },
+    "latency_sec": 23.8,
+    "error": null
+  },
+  {
+    "item_id": "D2_0166",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single upright flexible bag on a white shelf with pegboard background, back side facing out, large white information panels, scenic/colorful top banner with Chinese text, nutrition table on the upper-right, QR/square code on the left-center, and barcode near the lower-right. The bag shape, wrinkles, and slight deformation are consistent with normal flexible packaging, and no extra objects, damage, or structural mismatches are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.963,
+        0.961,
+        0.928,
+        0.924
+      ]
+    },
+    "cost_tokens": {
+      "input": 2451,
+      "output": 170
+    },
+    "latency_sec": 23.76,
+    "error": null
+  },
+  {
+    "item_id": "D2_0179",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.9,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the expected product type, back-panel design, and overall upright placement, but there is a clear structural irregularity at the top center of the box: a visible semicircular opening/dark gap that is not present in the normal references. The reference boxes appear closed and intact with straight top edges, while the query suggests the top flap is open, damaged, or deformed. Because this is a distinct packaging-integrity issue and not a benign variation in color, angle, or artwork, it is assessed as anomalous with high confidence."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.968,
+        0.912,
+        0.83,
+        0.725
+      ]
+    },
+    "cost_tokens": {
+      "input": 2330,
+      "output": 307
+    },
+    "latency_sec": 23.19,
+    "error": null
+  },
+  {
+    "item_id": "D2_0105",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: a single upright plastic beverage bottle on a white shelf against a white perforated pegboard, containing opaque white liquid, with a white screw cap, narrow neck/wider body shape, and printed labeling visible. The observed bottle appearance, orientation, and HEYTEA-style back label are consistent with benign variation seen in the references. No visible damage, missing parts, deformation, leakage, or unexpected object/category mismatch is present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.977,
+        0.868,
+        0.787,
+        0.781
+      ]
+    },
+    "cost_tokens": {
+      "input": 2487,
+      "output": 169
+    },
+    "latency_sec": 23.74,
+    "error": null
+  },
+  {
+    "item_id": "D2_0116",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.92,
+        "needs_detailed_inspection": false,
+        "reasoning": "The can matches the normal product type and presentation, but there is a clearly visible irregular vertical damaged-looking mark/tear/scuff running down the center of the label artwork. Normal references show intact, clean printing without this kind of obstruction or surface damage. The can shape is not crushed, but the visible label/surface defect is sufficient to classify it as anomalous."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.985,
+        0.971,
+        0.834,
+        0.834
+      ]
+    },
+    "cost_tokens": {
+      "input": 2413,
+      "output": 261
+    },
+    "latency_sec": 28.48,
+    "error": null
+  },
+  {
+    "item_id": "D2_0127",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the normal jar, contents, and labeling, but the light pink ribbed screw-on lid is missing. The jar appears open with visible threads at the top, which is a clear deviation from all normal references."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.912,
+        0.906,
+        0.883,
+        0.839
+      ]
+    },
+    "cost_tokens": {
+      "input": 2317,
+      "output": 113
+    },
+    "latency_sec": 20.75,
+    "error": null
+  },
+  {
+    "item_id": "D2_0147",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query can matches the normal product type, color, shape, and shelf presentation, but it has a clear localized defect on the front lower-left area: a visible vertical gray torn/scuffed patch interrupting the printed label. Normal references show intact, clean printed surfaces without such damage. This is a strong, obvious packaging anomaly, so detailed inspection is not needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.974,
+        0.865,
+        0.859,
+        0.833
+      ]
+    },
+    "cost_tokens": {
+      "input": 2315,
+      "output": 139
+    },
+    "latency_sec": 21.89,
+    "error": null
+  },
+  {
+    "item_id": "D2_0174",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query matches the normal references closely: it is a single upright Mirinda can on the same shelf/pegboard setup, with metallic orange body, silver top/bottom rim, and the expected green-and-white Mirinda logo with orange fruit graphics. Its slim can shape and orange flavor design are consistent with normal reference 1. No visible damage, missing parts, wrong branding, or other unusual features are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.957,
+        0.812,
+        0.803,
+        0.757
+      ]
+    },
+    "cost_tokens": {
+      "input": 2225,
+      "output": 182
+    },
+    "latency_sec": 18.95,
+    "error": null
+  },
+  {
+    "item_id": "D2_0124",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the normal MINI PUFF carton closely: rectangular yellow box, large Chinese text above bold 'MINI PUFF', cream puff imagery including a large puff near the bottom and smaller puffs around the panel, white milk splash/lower band with blue milk-related text, and small black brand text near the top. The visible side panel with nutrition details and the slight crumpling on one rotated view are consistent with documented benign variations."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.962,
+        0.903,
+        0.822,
+        0.82
+      ]
+    },
+    "cost_tokens": {
+      "input": 2277,
+      "output": 153
+    },
+    "latency_sec": 20.11,
+    "error": null
+  },
+  {
+    "item_id": "D2_0094",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference product closely: it is the same tall white Lay's cylindrical canister with silver rims, the Lay's logo near the top, Chinese text beneath it, and the same dark chip/garnish artwork in the lower-middle area. The can is upright on the same white shelf against the perforated pegboard background. The visible side text/barcode area and slight rotation are consistent with benign orientation variation seen in the references. I do not see any clear packaging damage, foreign object, missing label, or mismatched product features."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.941,
+        0.929,
+        0.925,
+        0.902
+      ]
+    },
+    "cost_tokens": {
+      "input": 2361,
+      "output": 229
+    },
+    "latency_sec": 21.56,
+    "error": null
+  },
+  {
+    "item_id": "D2_0165",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal references: a single green/teal glossy flexible snack pouch standing upright on a white shelf against a white pegboard, with barcode/label markings visible. The pouch appears intact with sealed edges and only normal crinkling/reflection. Its back/side presentation and slight shape variation are consistent with the benign variations seen in the references. No obvious tear, leak, missing product, or foreign object is visible."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.908,
+        0.85,
+        0.833,
+        0.767
+      ]
+    },
+    "cost_tokens": {
+      "input": 2347,
+      "output": 154
+    },
+    "latency_sec": 20.84,
+    "error": null
+  },
+  {
+    "item_id": "D2_0109",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The item matches the general product type and packaging, but the pouch is clearly upside down relative to the normal references: the main branding text is inverted and the retail hanging hole appears near the bottom instead of near the top. This is a strong orientation anomaly, so detailed inspection is not necessary."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.908,
+        0.876,
+        0.849,
+        0.846
+      ]
+    },
+    "cost_tokens": {
+      "input": 2347,
+      "output": 211
+    },
+    "latency_sec": 26.58,
+    "error": null
+  },
+  {
+    "item_id": "D2_0125",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: a single upright flexible food pouch on a white shelf against a perforated pegboard, showing the back/information panel with dense Chinese text, tables, and standard packaging wrinkles. The bag shape, sealing, printed layout, and slight creasing are all consistent with the normal examples, especially references 1-3. No visible damage, leakage, missing product, or foreign object is apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.989,
+        0.93,
+        0.908,
+        0.842
+      ]
+    },
+    "cost_tokens": {
+      "input": 2365,
+      "output": 197
+    },
+    "latency_sec": 26.16,
+    "error": null
+  },
+  {
+    "item_id": "D2_0171",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal profile: a single upright boxed confectionery product is centered on a white shelf against a perforated white pegboard, with the back panel visible showing dense text and a barcode near the bottom. The red glossy packaging with chocolate/biscuit imagery is consistent with normal references 1-3. No visible signs of damage, missing product, wrong item type, or unusual shelf anomaly are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.957,
+        0.903,
+        0.884,
+        0.726
+      ]
+    },
+    "cost_tokens": {
+      "input": 2230,
+      "output": 166
+    },
+    "latency_sec": 20.15,
+    "error": null
+  },
+  {
+    "item_id": "D2_0164",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal references: it is a blue upright Pocky box on a white pegboard shelf, with the large red-and-white Pocky logo, Chinese text below, chocolate biscuit stick graphics, chocolate square graphics, yellow speech-bubble label at the top right, and Glico branding at the top left. The package appears intact and unopened with no visible damage or deformation. No anomalous markings, missing elements, or structural issues are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.968,
+        0.966,
+        0.947,
+        0.911
+      ]
+    },
+    "cost_tokens": {
+      "input": 2470,
+      "output": 165
+    },
+    "latency_sec": 23.59,
+    "error": null
+  },
+  {
+    "item_id": "D2_0135",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query shows a single upright instant noodle cup on the same white shelf/pegboard setup as the references. Its tapered cup shape, sealed top, glossy printed East Asian branding, and red/black design closely match normal references 1 and 4. The lid appears somewhat wrinkled and uneven, but this is explicitly consistent with normal benign variation. No obvious damage, contamination, deformation beyond minor packaging wrinkles, or foreign-object anomaly is visible."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.87,
+        0.823,
+        0.819,
+        0.814
+      ]
+    },
+    "cost_tokens": {
+      "input": 2350,
+      "output": 210
+    },
+    "latency_sec": 21.89,
+    "error": null
+  },
+  {
+    "item_id": "D2_0142",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.93,
+        "needs_detailed_inspection": false,
+        "reasoning": "The bottle, shelf, background, and overall product type match the normal references, but the front paper label appears visibly damaged/peeled/torn on the right side. In the normal references, labels are intact. This is a clear product-condition anomaly rather than a benign variation in view or design."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.96,
+        0.882,
+        0.839,
+        0.65
+      ]
+    },
+    "cost_tokens": {
+      "input": 2341,
+      "output": 175
+    },
+    "latency_sec": 22.91,
+    "error": null
+  },
+  {
+    "item_id": "D2_0110",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "full_pipeline",
+      "dispatch": {
+        "initial_assessment": "uncertain",
+        "confidence": 0.81,
+        "needs_detailed_inspection": true,
+        "reasoning": "The query matches the normal presentation in most respects: a single upright cigarette pack in a clear holder, centered, with the expected 'HARMONIZATION' design and Chinese health warning text. However, there is an unusual light-colored protruding object visible above the top edge of the pack that is not clearly present in the normal references. It is unclear whether this belongs to the pack, indicates an opened/damaged pack, or is just a background/adjacent shelf element. Because of this ambiguity, detailed inspection is warranted."
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A beige rectangular flap/piece is protruding upward from behind the top of the cigarette pack, making the top appear opened or with extra packaging visible.",
+            "location": "top center, above the pack",
+            "confidence": 0.96
+          }
+        ],
+        "no_difference_conf": 0.14
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The beige flap protruding above the top of the cigarette pack is not covered by the normal patterns or benign variations. Normal examples show a single upright rectangular pack with a closed, regular top silhouette. Variations allow differences in color, branding, glare, warning text layout, and slight positioning, but not an opened top or extra piece extending upward from behind the pack. This indicates an unusual packaging/presentation state."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.97
+      },
+      "n_tools": 3,
+      "retrieval_sims": [
+        0.911,
+        0.911,
+        0.794,
+        0.781
+      ]
+    },
+    "cost_tokens": {
+      "input": 5964,
+      "output": 790
+    },
+    "latency_sec": 49.69,
+    "error": null
+  },
+  {
+    "item_id": "D2_0115",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal shelf setting and flexible snack package format, but the package has prominent blue handwritten markings across the front. Normal references show printed branding/graphics only and no added writing or defacement. This is a clear visible anomaly, so detailed inspection is not needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.911,
+        0.899,
+        0.888,
+        0.694
+      ]
+    },
+    "cost_tokens": {
+      "input": 2266,
+      "output": 125
+    },
+    "latency_sec": 24.14,
+    "error": null
+  },
+  {
+    "item_id": "D2_0096",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a dark brown rectangular Nabati Sandwich biscuit box with the red Nabati panel, visible 'SANDWICH' branding, chocolate cookie and cup graphics, and the prominent '3' marking with Chinese text on the right. It is placed singly on a white shelf against a perforated pegboard background, consistent with the references. No visible packaging damage, missing elements, or unexpected product differences are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.955,
+        0.942,
+        0.807,
+        0.764
+      ]
+    },
+    "cost_tokens": {
+      "input": 2346,
+      "output": 156
+    },
+    "latency_sec": 21.33,
+    "error": null
+  },
+  {
+    "item_id": "D2_0122",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The item matches the general product type and placement of the normal references, but the cigarette pack itself appears physically deformed/open at the top. The upper flap is bent upward and the top edge is not flat/sealed like the normal examples, indicating package damage or possible tampering. This is beyond benign variation in design, color, or glare."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.941,
+        0.807,
+        0.799,
+        0.791
+      ]
+    },
+    "cost_tokens": {
+      "input": 2369,
+      "output": 202
+    },
+    "latency_sec": 22.47,
+    "error": null
+  },
+  {
+    "item_id": "D2_0154",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query matches the general product type and display setup of the normal references, but the cigarette pack is visibly open with the top flap lifted. In all normal references, packs are closed and intact in their retail display state. This open-pack condition is a clear deviation from the normal pattern, so detailed inspection is not necessary."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.933,
+        0.907,
+        0.547,
+        0.547
+      ]
+    },
+    "cost_tokens": {
+      "input": 2439,
+      "output": 179
+    },
+    "latency_sec": 23.69,
+    "error": null
+  },
+  {
+    "item_id": "D2_0161",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The bottle matches the normal product in label, shape, and orientation, but the cap condition is clearly abnormal. In all normal references, the bottle has a fully intact white ribbed screw cap. In the query image, the cap is missing/open, with only the lower tamper ring remaining around the neck and the bottle mouth exposed. This is a strong packaging anomaly rather than a benign rotation or lighting variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.902,
+        0.87,
+        0.771,
+        0.738
+      ]
+    },
+    "cost_tokens": {
+      "input": 2407,
+      "output": 204
+    },
+    "latency_sec": 26.24,
+    "error": null
+  },
+  {
+    "item_id": "D2_0128",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the same Oreo box variant and shelf setting, but it is clearly not in the normal sealed/intact state shown in all references. The top flap is open and lifted, creating an obvious packaging integrity anomaly. Since this deviation is clear and confidence is high, detailed inspection is not needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.967,
+        0.827,
+        0.824,
+        0.802
+      ]
+    },
+    "cost_tokens": {
+      "input": 2348,
+      "output": 130
+    },
+    "latency_sec": 22.29,
+    "error": null
+  },
+  {
+    "item_id": "D2_0158",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The product matches the normal Pringles can in branding, color, and placement, but the top is clearly abnormal: the lid/seal area appears opened or damaged, with foil/card material protruding upward from the can. In the normal references, the top rim is intact and closed. This is a strong, visible packaging anomaly, so detailed inspection is not needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.949,
+        0.929,
+        0.926,
+        0.924
+      ]
+    },
+    "cost_tokens": {
+      "input": 2449,
+      "output": 174
+    },
+    "latency_sec": 22.78,
+    "error": null
+  },
+  {
+    "item_id": "D2_0126",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image shows a cigarette pack in the expected acrylic holder, but unlike the normal references the top lid is flipped/open and a second top panel with 'Baisha' is visible above the main pack body. Normal examples show a single closed upright pack. This structural difference is a clear anomaly despite otherwise matching brand, orientation, and shelf context."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.915,
+        0.821,
+        0.808,
+        0.801
+      ]
+    },
+    "cost_tokens": {
+      "input": 2512,
+      "output": 144
+    },
+    "latency_sec": 21.91,
+    "error": null
+  },
+  {
+    "item_id": "D2_0111",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal pattern closely: it shows a single upright rectangular carton centered on a shelf, against the same light perforated pegboard background, with visible front-facing branding and graphics. Minor package shape irregularity or slight creasing is consistent with benign variation and does not indicate a clear anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.935,
+        0.643,
+        0.63,
+        0.626
+      ]
+    },
+    "cost_tokens": {
+      "input": 2413,
+      "output": 131
+    },
+    "latency_sec": 20.28,
+    "error": null
+  },
+  {
+    "item_id": "D2_0176",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image closely matches the normal pattern: a single upright cigarette pack centered in a clear plastic holder, with dark blue front panel, gold border, crown and Chinese text at the top, flower emblem in the center, 'Gurongwang' branding, and a health-warning band near the bottom. Minor glare, slight tilt, and partial occlusion by the holder are consistent with the benign variations shown in the references. No visible structural, placement, or packaging anomaly is apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.946,
+        0.856,
+        0.789,
+        0.775
+      ]
+    },
+    "cost_tokens": {
+      "input": 2555,
+      "output": 200
+    },
+    "latency_sec": 29.21,
+    "error": null
+  },
+  {
+    "item_id": "D2_0151",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.95,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query matches the normal product profile: same tall white Lay's canister, same logo placement, same Chinese text layout, same dark-chip artwork, same lower-right blue icon, and same shelf/pegboard setting. The only notable difference is the top seal/plastic appearing more lifted/opened-looking, which is explicitly listed as a benign variation. No clear packaging mismatch, damage anomaly, or foreign-object anomaly is visible."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.902,
+        0.902,
+        0.888,
+        0.879
+      ]
+    },
+    "cost_tokens": {
+      "input": 2416,
+      "output": 205
+    },
+    "latency_sec": 27.83,
+    "error": null
+  },
+  {
+    "item_id": "D2_0104",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile: a single upright tall slim bottle with a white cap, pale yellow-green liquid, pale green label with plant graphics, Chinese text and the English name 'Sugar Cane Water Chestnut,' plus the orange badge near the upper label. The background and shelf also match the reference setup. No visible damage, tampering, missing label elements, or mismatched packaging are apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.965,
+        0.965,
+        0.963,
+        0.899
+      ]
+    },
+    "cost_tokens": {
+      "input": 2492,
+      "output": 183
+    },
+    "latency_sec": 22.82,
+    "error": null
+  },
+  {
+    "item_id": "D2_0134",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query shows a single upright paperboard retail food box on the expected white shelf with pegboard background. The packaging is intact, with printed pastry imagery and Asian-language branding consistent with the normal references, especially references 1 and 2. The visible tilt and viewing angle are within normal variation, and there are no signs of damage, deformation, spillage, missing parts, or foreign objects."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.637,
+        0.617,
+        0.601,
+        0.589
+      ]
+    },
+    "cost_tokens": {
+      "input": 2345,
+      "output": 190
+    },
+    "latency_sec": 24.12,
+    "error": null
+  },
+  {
+    "item_id": "D2_0093",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.94,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query can matches the normal product type, color, shape, upright position, and general label layout, but the small crest/badge near the upper portion appears visibly damaged/scraped off compared with the intact crest seen in all normal references. This suggests label damage beyond benign rotation or lighting variation. No detailed inspection is needed because the anomaly is clear and localized."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.982,
+        0.974,
+        0.965,
+        0.948
+      ]
+    },
+    "cost_tokens": {
+      "input": 2285,
+      "output": 138
+    },
+    "latency_sec": 17.53,
+    "error": null
+  },
+  {
+    "item_id": "D2_0175",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query pack matches the general cigarette-pack format, branding, and holder setup, but it has a clearly open/flipped-up top lid. In the normal references, packs are displayed closed and upright with intact rectangular front presentation. The open lid creates a visible structural deviation from the normal display condition, so this is a confident anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.939,
+        0.751,
+        0.749,
+        0.749
+      ]
+    },
+    "cost_tokens": {
+      "input": 2393,
+      "output": 136
+    },
+    "latency_sec": 23.34,
+    "error": null
+  },
+  {
+    "item_id": "D2_0152",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: a single tall slim can upright and centered, back-panel view with dense Chinese text, visible nutrition table in the upper-middle area, barcode on the lower portion, silver top and bottom rims, and the same white pegboard shelf background. The red/black Coca-Cola Zero style can is essentially consistent with reference 1, with no visible structural, labeling, or placement anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.972,
+        0.937,
+        0.902,
+        0.898
+      ]
+    },
+    "cost_tokens": {
+      "input": 2602,
+      "output": 163
+    },
+    "latency_sec": 26.18,
+    "error": null
+  },
+  {
+    "item_id": "D2_0098",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.94,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal shelf-item pattern: a single packaged food product is upright on the white shelf in front of the perforated pegboard, shown from the back with prominent informational labels and a barcode visible. The packaging is flexible plastic with normal folds/crinkling, and its green/yellow transparent appearance is within the observed benign variation of package color and shape. No obvious damage, misplacement, or foreign object anomaly is evident."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.787,
+        0.787,
+        0.786,
+        0.778
+      ]
+    },
+    "cost_tokens": {
+      "input": 2365,
+      "output": 202
+    },
+    "latency_sec": 29.2,
+    "error": null
+  },
+  {
+    "item_id": "D2_0131",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the normal product type, red label, white lid, Chinese text, and porridge bowl image, but there is a clear abnormal feature: a dark vertical mark/object appears over the bowl image on the front label. This is not present in the normal references and looks like damage, contamination, or a foreign object/printing defect. The anomaly is obvious enough that detailed inspection is not needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.942,
+        0.94,
+        0.935,
+        0.933
+      ]
+    },
+    "cost_tokens": {
+      "input": 2305,
+      "output": 148
+    },
+    "latency_sec": 18.82,
+    "error": null
+  },
+  {
+    "item_id": "D2_0148",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query can matches the normal reference profile: tall slim yellow can, silver top and bottom rims, large black '5,0' branding, 'ORIGINAL' below it, dense lower text including '5,0 WEISS BEER', and the small diagonal accent near the upper left shoulder. The upright presentation against the white perforated pegboard background also matches. No visible deviations beyond normal rotation/cropping and lighting variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.991,
+        0.986,
+        0.973,
+        0.955
+      ]
+    },
+    "cost_tokens": {
+      "input": 2465,
+      "output": 159
+    },
+    "latency_sec": 21.86,
+    "error": null
+  },
+  {
+    "item_id": "D2_0132",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.89,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the expected product, color scheme, and overall can shape, but there is a noticeable irregular white scuff/tear-like mark on the front lower-left area over the grape graphics that is not consistent with the normal printed label seen in the references. The can otherwise appears intact and upright, but the visible label damage makes this look anomalous."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.982,
+        0.97,
+        0.936,
+        0.93
+      ]
+    },
+    "cost_tokens": {
+      "input": 2542,
+      "output": 231
+    },
+    "latency_sec": 26.94,
+    "error": null
+  },
+  {
+    "item_id": "D2_0113",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.96,
+        "needs_detailed_inspection": false,
+        "reasoning": "The item matches the general product type and placement, but the cigarette pack is clearly open at the top with the lid/flap raised and the interior exposed. In the normal references, packs are closed, intact, and front-facing. This appears to be a damaged or tampered/open package, which is a clear anomaly rather than a benign variation in branding, color, or positioning."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.945,
+        0.87,
+        0.827,
+        0.818
+      ]
+    },
+    "cost_tokens": {
+      "input": 2470,
+      "output": 219
+    },
+    "latency_sec": 25.51,
+    "error": null
+  },
+  {
+    "item_id": "D2_0136",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.91,
+        "needs_detailed_inspection": false,
+        "reasoning": "The product matches the expected green fruit-jelly box design and shelf setting, but the query image shows a noticeable deformation/open flap along the right side edge of the box. The normal references show intact rectangular edges without this side bulge or tear. This indicates packaging damage rather than a benign viewpoint or glare variation."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.933,
+        0.907,
+        0.898,
+        0.842
+      ]
+    },
+    "cost_tokens": {
+      "input": 2325,
+      "output": 169
+    },
+    "latency_sec": 21.19,
+    "error": null
+  },
+  {
+    "item_id": "D2_0140",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the normal product in overall blue pouch design, plum imagery, Chinese text, promotional badge, and shelf/pegboard setting, but it has a clear abnormal defect: a visible tear/puncture on the front center of the bag. Normal references show wrinkles and bending only, not a hole through the packaging. This is a strong packaging-damage anomaly, so detailed inspection is not needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.928,
+        0.893,
+        0.857,
+        0.783
+      ]
+    },
+    "cost_tokens": {
+      "input": 2442,
+      "output": 155
+    },
+    "latency_sec": 23.44,
+    "error": null
+  },
+  {
+    "item_id": "D2_0168",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query bottle matches the normal references closely: same white cap, translucent yellow upper liquid section, pink lower wrapped label, embossed rounded shoulder, and matching peach-themed branding with prominent Chinese text '\u6c34\u871c\u6843' and cartoon character artwork. Shape, proportions, and shelf/pegboard setting are all consistent with normal variation in viewpoint and rotation. No visible mismatch, damage, or missing component suggests an anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.97,
+        0.962,
+        0.915,
+        0.91
+      ]
+    },
+    "cost_tokens": {
+      "input": 2482,
+      "output": 153
+    },
+    "latency_sec": 23.47,
+    "error": null
+  },
+  {
+    "item_id": "D2_0108",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query bottle matches the normal references closely: same tall clear plastic bottle, transparent ribbed screw cap, amber liquid, white wrap label with the same botanical/fruit illustration panel, upright placement on a white shelf, and the same pegboard background. Fill level and overall packaging appearance are consistent with the references. No visible damage, leakage, missing label, incorrect cap, or other abnormality is apparent."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.978,
+        0.83,
+        0.82,
+        0.82
+      ]
+    },
+    "cost_tokens": {
+      "input": 2308,
+      "output": 172
+    },
+    "latency_sec": 21.32,
+    "error": null
+  },
+  {
+    "item_id": "D2_0123",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The box matches the normal blue Oreo side-panel design, pegboard background, and green cream window appearance. However, unlike the normal references, the top flap is visibly open and protruding upward, indicating the package is not properly closed and is likely opened or damaged. This is a clear packaging anomaly, so detailed inspection is not needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.923,
+        0.917,
+        0.905,
+        0.746
+      ]
+    },
+    "cost_tokens": {
+      "input": 2348,
+      "output": 183
+    },
+    "latency_sec": 28.23,
+    "error": null
+  },
+  {
+    "item_id": "D2_0118",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.98,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal reference pattern closely: a single beverage bottle is upright, centered on a white shelf, against the same perforated pegboard background with typical retail lighting and reflections. The package type, cap style, proportions, and label artwork are consistent with the reference coffee bottle examples, including acceptable rotational variation showing a front/angled label view. No visible damage, deformation, leakage, missing components, or unexpected extra objects are present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.95,
+        0.918,
+        0.812,
+        0.781
+      ]
+    },
+    "cost_tokens": {
+      "input": 2343,
+      "output": 156
+    },
+    "latency_sec": 21.22,
+    "error": null
+  },
+  {
+    "item_id": "D2_0149",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.99,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query bottle matches the expected bottle shape, cap, liquid color, and shelf setting, but the label is clearly abnormal: it is partially peeled/detached and folded away from the bottle, exposing a large unlabeled section of the container. Normal references only show rotation-based changes in visible panels, not a damaged or loose wrap label. This is a clear packaging anomaly."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.682,
+        0.673,
+        0.669,
+        0.632
+      ]
+    },
+    "cost_tokens": {
+      "input": 2330,
+      "output": 143
+    },
+    "latency_sec": 20.71,
+    "error": null
+  },
+  {
+    "item_id": "D2_0119",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.95,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the normal beverage-carton profile: it is an upright tetra-pack style drink carton on the same retail shelf background, with intact folded top flaps, clear branding/text, and normal banana-themed graphics. Its appearance closely matches the banana milk references, especially the version with a small handwritten label/sticker near the bottom, which is listed as a benign variation. No visible signs of damage, leakage, deformation, or foreign-object anomaly are present."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.904,
+        0.892,
+        0.766,
+        0.731
+      ]
+    },
+    "cost_tokens": {
+      "input": 2525,
+      "output": 218
+    },
+    "latency_sec": 25.55,
+    "error": null
+  },
+  {
+    "item_id": "D2_0150",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "normal",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query image matches the normal product profile closely: it is a single upright dark stand-up pouch on a white shelf with a white pegboard background, has the yellow brand block at top-left, a visible hang hole near the top, dense Chinese text consistent with the back view, and mixed beans/nuts imagery in the lower-right area. The pouch shape, orientation, and printed layout are consistent with normal reference back-side views, with only minor expected variation from flexible packaging curvature."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.944,
+        0.924,
+        0.909,
+        0.899
+      ]
+    },
+    "cost_tokens": {
+      "input": 2439,
+      "output": 198
+    },
+    "latency_sec": 25.4,
+    "error": null
+  },
+  {
+    "item_id": "D2_0172",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.21999999999999997,
+    "raw_output": {
+      "method": "agent",
+      "path": "full_pipeline",
+      "dispatch": {
+        "initial_assessment": "uncertain",
+        "confidence": 0.67,
+        "needs_detailed_inspection": true,
+        "reasoning": "The query item matches the main normal structure: same tall cylindrical canister, white body, top and bottom rims, upper logo area, vertical Chinese text, and blue seal/net-weight block near the bottom. However, the visible artwork appears more orange/red than the tan/brown or purple/pink splash patterns seen in the normal references, and the side panel shown is not clearly represented among the references. This may be a benign rotation or flavor/print variation, but it is not covered strongly enough by the provided normal examples to be highly confident."
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Top rim appears visibly dented/deformed with a slight inward bend and uneven edge.",
+            "location": "top edge of the can, especially upper-left to upper-center",
+            "confidence": 0.84
+          },
+          {
+            "id": "C2",
+            "description": "A dark vertical crease/line is visible on the body surface, suggesting a dent or wrinkle in the label/can wall.",
+            "location": "front center-right area running downward from near the top",
+            "confidence": 0.61
+          },
+          {
+            "id": "C3",
+            "description": "Printed artwork/color variant differs from the references shown: the query has orange/red fruit graphics instead of the purple/brown variants in the normal references.",
+            "location": "main front label graphics, lower half and right side",
+            "confidence": 0.72
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The top rim shows a slight lifted/crumpled edge near the lid area, which is explicitly listed as a benign variation in the normality profile. The deformation appears minor rather than a strong structural dent."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "A faint vertical line on the body can be explained by normal canister curvature, label seam, or lighting/shadow. It is subtle and not clearly inconsistent with the normal examples."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "Differences in visible artwork are explainable by canister rotation and normal graphic variation. The profile already allows watercolor-like splash graphics with different visible sides; the observed orange/red elements fit within the product's rotating printed design rather than indicating a defect."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.78
+      },
+      "n_tools": 3,
+      "retrieval_sims": [
+        0.914,
+        0.901,
+        0.893,
+        0.883
+      ]
+    },
+    "cost_tokens": {
+      "input": 6119,
+      "output": 685
+    },
+    "latency_sec": 39.01,
+    "error": null
+  },
+  {
+    "item_id": "D2_0129",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "path": "direct",
+      "dispatch": {
+        "initial_assessment": "anomalous",
+        "confidence": 0.97,
+        "needs_detailed_inspection": false,
+        "reasoning": "The query item matches the general Lay's canister format, but the top is clearly abnormal: the fitted plastic lid is missing or displaced and there is torn foil/seal material protruding from the opening. Normal references consistently show an intact lid at the top. This indicates damaged/open packaging, so detailed inspection is not needed."
+      },
+      "n_tools": 1,
+      "retrieval_sims": [
+        0.943,
+        0.888,
+        0.854,
+        0.853
+      ]
+    },
+    "cost_tokens": {
+      "input": 2275,
+      "output": 129
+    },
+    "latency_sec": 20.22,
+    "error": null
+  },
+  {
+    "item_id": "D2_0177",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "agent",
+      "path": "full_pipeline",
+      "dispatch": {
+        "initial_assessment": "uncertain",
+        "confidence": 0.77,
+        "needs_detailed_inspection": true,
+        "reasoning": "The query matches the normal scene and product type very closely: a single upright Somersby can on the same shelf/pegboard background, with expected branding, can shape, and overall color scheme. However, the lower text area on the front green label appears blurred, smeared, or partially obscured compared with the normal reference, which could indicate label damage/print defect or simply motion blur/focus issues. Because the possible anomaly is localized and image-quality-related, detailed inspection is needed before confidently calling it normal or anomalous."
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "White scuff/scratch-like mark obscuring part of the small brand text below the green label panel",
+            "location": "front center-lower area of the can, inside/below the green rectangle",
+            "confidence": 0.94
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query can matches the normal product, setting, and front-facing presentation seen in the references, but the small text below the green label panel appears partially obscured by an irregular white scuff/smear. In Reference 1, this area shows clean printed text, so this is not explained by normal brand/layout variation, viewing angle, or lighting alone. It looks like localized label damage or print smearing."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.95
+      },
+      "n_tools": 3,
+      "retrieval_sims": [
+        0.982,
+        0.786,
+        0.785,
+        0.777
+      ]
+    },
+    "cost_tokens": {
+      "input": 5932,
+      "output": 592
+    },
+    "latency_sec": 43.36,
+    "error": null
+  }
+]

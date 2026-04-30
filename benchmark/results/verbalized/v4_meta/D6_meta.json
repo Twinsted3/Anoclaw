@@ -1,0 +1,43 @@
+{
+  "a_wins_rules": [
+    "If Branch B cites 'orientation change', 'rotation', or 'viewing angle' as the primary evidence for an anomaly, trust Branch A (Agent), as these are often normal variations in 3D point cloud data.",
+    "If Branch B identifies a 'missing section', 'void', or 'collapsed protrusion' that Branch A explicitly refutes by noting the feature exists in the reference set (natural variation), trust Branch A.",
+    "If Branch B claims a 'deformation' or 'bending' that Branch A identifies as a consistent structural feature across references, trust Branch A."
+  ],
+  "b_wins_rules": [
+    "If Branch A identifies a specific structural defect like a 'fold', 'crease', or 'twist' that is visually distinct from the smooth surfaces in the references, trust Branch B (Direct) if it flags the image as anomalous.",
+    "If Branch A's rationale contains a 'json parse failed' error or is otherwise malformed, trust Branch B (Direct).",
+    "If Branch A classifies a query as 'normal' despite the object having a grossly distorted, irregular, or 'folded' shape compared to the flat/elongated references, trust Branch B."
+  ],
+  "a_evidence": [
+    "D6_0007",
+    "D6_0008",
+    "D6_0070",
+    "D6_0082"
+  ],
+  "b_evidence": [
+    "D6_0020",
+    "D6_0029",
+    "D6_0036",
+    "D6_0090",
+    "D6_0098",
+    "D6_0164"
+  ],
+  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If Branch B cites 'orientation change', 'rotation', or 'viewing angle' as the primary evidence for an anomaly, trust Branch A (Agent), as these are often normal variations in 3D point cloud data.\",\n    \"If Branch B identifies a 'missing section', 'void', or 'collapsed protrusion' that Branch A explicitly refutes by noting the feature exists in the reference set (natural variation), trust Branch A.\",\n    \"If Branch B claims a 'deformation' or 'bending' that Branch A identifies as a consistent structural feature across references, trust Branch A.\"\n  ],\n  \"b_wins_rules\": [\n    \"If Branch A identifies a specific structural defect like a 'fold', 'crease', or 'twist' that is visually distinct from the smooth surfaces in the references, trust Branch B (Direct) if it flags the image as anomalous.\",\n    \"If Branch A's rationale contains a 'json parse failed' error or is otherwise malformed, trust Branch B (Direct).\",\n    \"If Branch A classifies a query as 'normal' despite the object having a grossly distorted, irregular, or 'folded' shape compared to the flat/elongated references, trust Branch B.\"\n  ]\n}\n```",
+  "tokens": {
+    "input": 4908,
+    "output": 281
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 13,
+    "agree_wrong": 16,
+    "disagree_a_wins_total": 4,
+    "disagree_b_wins_total": 7,
+    "reflected_a": 4,
+    "reflected_b": 6,
+    "skipped": 0
+  },
+  "domain_code": "D6",
+  "seconds": 24.3
+}

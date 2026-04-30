@@ -1,0 +1,5799 @@
+[
+  {
+    "item_id": "D1_0051",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "zipper",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0043",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "wood",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0063",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "transistor",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0037",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "zipper",
+    "label_pred": 0,
+    "anomaly_score": 0.21999999999999997,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A dark zipper runs vertically through the center of the image in all references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The zipper tape on both sides is dark gray to black and has a fine, dense woven texture.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The zipper teeth form a repeating interlocking pattern with small rectangular openings/highlights along the center line.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The composition is a close-up, straight-on view with the zipper extending continuously from top to bottom.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The background outside the zipper area is a light, plain studio-like backdrop visible as narrow margins at the far left and right edges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The zipper centerline is not perfectly straight in every image; it appears slightly curved or subtly shifted left/right while remaining vertically oriented.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The apparent width of the zipper teeth column varies slightly between references, likely due to small framing or alignment differences.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Minor lighting/contrast differences change how glossy the teeth appear and how strongly the woven tape texture is visible.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "A few tiny white lint-like specks are visible on the tape in some references but not all.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A localized horizontal crease/dent-like dark line is visible on the left zipper tape, interrupting the otherwise uniform woven texture.",
+            "location": "Left side tape, slightly left of the zipper centerline, around the mid-height of the image",
+            "confidence": 0.84
+          }
+        ],
+        "no_difference_conf": 0.12
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The reported dark horizontal crease on the left tape near mid-height appears to be a very subtle shading/compression in the woven fabric rather than a distinct defect. Similar small local texture irregularities and lighting-induced darker patches are consistent with the normal fine woven texture and benign lighting/contrast variation seen across the references. It does not clearly break the zipper structure or introduce a unique foreign mark."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.78
+      }
+    },
+    "cost_tokens": {
+      "input": 4785,
+      "output": 261
+    },
+    "latency_sec": 88.28,
+    "error": null
+  },
+  {
+    "item_id": "D1_0077",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "capsule",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0085",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0039",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "toothbrush",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0040",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "toothbrush",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single toothbrush head is centered in the frame against a dark background, shown in a straight top-down view.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The toothbrush head has a white outer plastic frame with an elongated oval shape and a rounded top.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bristle field is arranged in multiple small clustered tufts distributed symmetrically down the head.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "There is a visible central translucent or rubber-like pad beneath the bristle area, tinted by the bristle colors above it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A small group of tufts is positioned near the rounded top, followed by several rows of evenly spaced tufts through the main body and a few tufts near the neck.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "Each reference includes both colored bristle tufts and white bristle tufts within the same overall layout.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The colored bristles vary in hue across otherwise similar brush heads: yellow/gold, blue, and red are all present in the normal references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The specific distribution of colored versus white tufts varies: some heads have more alternating mixed rows, while others show stronger dominance of the colored tufts in the central rows.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The topmost tuft cluster varies slightly in color composition, with some references showing a more prominent central colored tuft near the tip and others appearing lighter or more mixed there.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The translucent pad under the bristles appears slightly different in tint intensity, ranging from warmer beige/pink to cooler bluish tones depending on the bristle color and lighting.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.96
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4961,
+      "output": 85
+    },
+    "latency_sec": 57.49,
+    "error": null
+  },
+  {
+    "item_id": "D1_0011",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0081",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0002",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "capsule",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single capsule-shaped object is centered in the frame against a plain light/white background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The capsule is horizontally oriented, with a dark black left half and a muted orange/peach right half.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "White imprinting appears on both halves: a lowercase 'actavis' logo/text on the black half and the number '500' on the orange half.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The seam between the two capsule halves is near the middle, creating a clear vertical division between black and orange sections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The capsule has rounded ends and a smooth glossy surface with visible light reflections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The exact placement of the capsule within the frame shifts slightly, though it remains generally centered.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Brightness/contrast and color tone vary slightly across images, affecting how dark the black half looks and how warm the orange half appears.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The 'actavis' logo/text on the black half varies in clarity due to lighting/reflection, appearing more legible in some images than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small specks or tiny marks are visible on the capsule or background in some references.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Minor differences in glare/reflection lines across the capsule surface are present between images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.91
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 4841,
+      "output": 82
+    },
+    "latency_sec": 35.66,
+    "error": null
+  },
+  {
+    "item_id": "D1_0014",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "zipper",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0058",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "wood",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0005",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "pill",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0047",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "toothbrush",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0036",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "transistor",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0053",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "zipper",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0050",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0003",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "wood",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0018",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "grid",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0065",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "wood",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0048",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "metal_nut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0020",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "pill",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0055",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "cable",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0057",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0026",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "screw",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0041",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "capsule",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0056",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "transistor",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single small black electronic component is centered in the image and mounted vertically on a copper stripboard.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The component has a rounded-rectangular/cylindrical black body with a small circular molded mark on its front face.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Three metallic leads extend downward from the bottom of the component body.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The left and right leads are bent outward and then downward into the board holes, while the center lead descends more straight down.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The part is installed on a copper stripboard with parallel vertical copper traces and evenly spaced round perforation holes visible on both sides of the part.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The component body sits above the board surface, with the bent leads visibly spanning from the body to the insertion holes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Small left-right shifts of the component relative to the stripboard traces and holes are present across the images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The exact bend angles and curvature of the outer leads vary slightly between references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The center lead shows minor differences in straightness and slight offset from perfect vertical alignment.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The black body has minor differences in apparent tilt/rotation and highlight reflections on its front surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The visible circular front-face mark varies slightly in prominence and apparent position due to lighting/viewing differences.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4955,
+      "output": 85
+    },
+    "latency_sec": 230.94,
+    "error": null
+  },
+  {
+    "item_id": "D1_0010",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "pill",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0059",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "wood",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0035",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "hazelnut",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Single hazelnut-like nut shown centered against a dark, uniform background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Shell is medium brown to reddish-brown with a matte to slightly satin surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Nut body is rounded/ovoid with one end more tapered or pointed than the opposite end.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Visible longitudinal ridges or fine vertical striping run along the shell surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A darker rough cap/scar patch is present at one end of the nut.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Orientation varies: some nuts are shown sideways with the pointed end to the right, while others are upright with the scar patch at the bottom.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Overall silhouette varies from more elongated/teardrop-shaped to more short and rounded.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The dark basal cap/scar differs in size and shape, ranging from a broad dark cap to a smaller irregular rough patch.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Surface markings vary in prominence: some shells show stronger ribbing and banding, while others appear smoother with subtler stripes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Minor small pale specks, scuffs, or slight discoloration on the shell surface are present in some views.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.96
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4807,
+      "output": 76
+    },
+    "latency_sec": 28.84,
+    "error": null
+  },
+  {
+    "item_id": "D1_0076",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "carpet",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0087",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0080",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "cable",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0069",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "transistor",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0000",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0060",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "grid",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0052",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "transistor",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0012",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0042",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "metal_nut",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single translucent/light gray part is centered in the image against a dark, nearly black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The part has a circular central hole with a visible inner ring/bushing-like border around the opening.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The outer shape is a rounded four-lobed or four-tab form spaced around the center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The body shows concentric circular surface texture or machining/mold-like swirl marks around the center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Edges and lobe tips are rounded rather than sharp, with soft highlights along the perimeter.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The object is viewed from above with the central hole near the middle and the full outer outline visible within the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The part appears at different rotation angles, changing which lobe points upward or sideways.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The exact outline of the four outer lobes varies slightly in width and corner shape, with some appearing more squared-off and others more rounded.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The visibility and strength of concentric surface marks differs across images; some show clearer arc bands near the rim than others.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Brightness and contrast of the material vary slightly, making some parts look more opaque or more reflective than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Minor positional differences are present, with the part centered but shifted slightly within the frame from image to image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4947,
+      "output": 85
+    },
+    "latency_sec": 66.8,
+    "error": null
+  },
+  {
+    "item_id": "D1_0029",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "metal_nut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0067",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "carpet",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0074",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "wood",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0006",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "screw",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0028",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "zipper",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A dark zipper runs vertically through the center of the image in all references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The zipper tape on both sides is dark gray to black and has a fine, dense woven texture.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The zipper teeth form a repeating interlocking pattern with small rectangular openings/highlights along the center line.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The composition is a close-up, straight-on view with the zipper extending continuously from top to bottom.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The background outside the zipper area is a light, plain studio-like backdrop visible as narrow margins at the far left and right edges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The zipper centerline is not perfectly straight in every image; it appears slightly curved or subtly shifted left/right while remaining vertically oriented.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The apparent width of the zipper teeth column varies slightly between references, likely due to small framing or alignment differences.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Minor lighting/contrast differences change how glossy the teeth appear and how strongly the woven tape texture is visible.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "A few tiny white lint-like specks are visible on the tape in some references but not all.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4707,
+      "output": 79
+    },
+    "latency_sec": 264.26,
+    "error": null
+  },
+  {
+    "item_id": "D1_0075",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "grid",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0030",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "transistor",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0031",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Brown leather-like surface with a fine pebbled/grain texture covering the entire visible area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Dense network of thin, irregular crease lines forming small polygonal cells across the surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Matte to low-sheen appearance with soft, diffuse lighting and no strong specular highlights.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Fairly uniform coloration overall, with only subtle tonal changes rather than sharp color breaks.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Texture is continuous edge-to-edge without seams, labels, holes, or other distinct added features.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Minor shifts in brown shade, ranging from slightly warmer/reddish to slightly darker/cooler brown.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Small differences in grain scale and crease density; some images show slightly tighter pebbling while others appear a bit broader or smoother.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Subtle directional flow of the wrinkle network varies, with some areas showing more diagonal or gently curved crease alignment.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Mild lighting falloff or shading gradients are present in different parts of the image, such as slightly darker corners or side regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.96
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4705,
+      "output": 79
+    },
+    "latency_sec": 75.39,
+    "error": null
+  },
+  {
+    "item_id": "D1_0013",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "carpet",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0078",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "metal_nut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0071",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "carpet",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0017",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0034",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "zipper",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0025",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "pill",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0068",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "screw",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0089",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "wood",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Wood-like surface with a warm brown/tan overall coloration is present in all references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The dominant texture consists of elongated linear grain/fiber streaks running mostly vertically through the image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The surface appearance is matte and natural-looking rather than glossy, with soft tonal transitions between lighter and darker grain lines.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Fine darker striations are interspersed with lighter brown base areas, creating a layered wood-grain pattern across the full field.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Small scattered speck-like points are visible at low density within the grain texture.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall tone varies from lighter tan to deeper reddish-brown while remaining the same material and texture type.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Grain intensity varies: some references have subtler, softer streaks while others show stronger, darker, more contrasty grain lines.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The grain direction remains predominantly vertical but can be slightly straight, slightly slanted, or gently wavy/curved.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Spacing and density of the darker grain lines vary, with some surfaces appearing more evenly distributed and others more clustered into narrow bands.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Some references show longer continuous dark streaks, while others have shorter broken or more diffuse grain marks.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A broad, faint irregular blotchy/discolored patch overlays the wood grain, forming a cloudy polygon-like area not seen in the references.",
+            "location": "upper central region, slightly left of center",
+            "confidence": 0.95
+          },
+          {
+            "id": "C2",
+            "description": "A small cluster of short dark horizontal scratch-like lines interrupts the normal vertical grain pattern.",
+            "location": "left side, around mid-height",
+            "confidence": 0.88
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a broad faint cloudy/polygonal discoloration in the upper central-left area that overlays the vertical wood grain rather than following it. The references show normal variation in tone, grain strength, and waviness, but not a localized blotchy patch with this shape and diffuse boundary. This is best explained as a surface stain/discoloration, so it is a genuine anomaly."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "There is a small set of short dark horizontal scratch-like marks on the left side near mid-height. The normal profile is dominated by vertical grain and benign variations remain aligned with the wood texture; these short horizontal lines cut across that pattern and appear localized and non-grain-like. That makes them a genuine anomaly rather than normal wood variation."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 4953,
+      "output": 406
+    },
+    "latency_sec": 269.01,
+    "error": null
+  },
+  {
+    "item_id": "D1_0027",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "capsule",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single capsule-shaped object is centered in the frame against a plain light/white background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The capsule is horizontally oriented, with a dark black left half and a muted orange/peach right half.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "White imprinting appears on both halves: a lowercase 'actavis' logo/text on the black half and the number '500' on the orange half.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The seam between the two capsule halves is near the middle, creating a clear vertical division between black and orange sections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The capsule has rounded ends and a smooth glossy surface with visible light reflections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The exact placement of the capsule within the frame shifts slightly, though it remains generally centered.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Brightness/contrast and color tone vary slightly across images, affecting how dark the black half looks and how warm the orange half appears.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The 'actavis' logo/text on the black half varies in clarity due to lighting/reflection, appearing more legible in some images than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small specks or tiny marks are visible on the capsule or background in some references.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Minor differences in glare/reflection lines across the capsule surface are present between images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The white 'actavis' logo/text imprint that is present on the black left half in all references is absent or nearly completely missing in the query.",
+            "location": "black left half of the capsule, lower-central area",
+            "confidence": 0.98
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "Although the query lacks a clearly legible white 'actavis' logo/text on the black half, the normality profile explicitly notes that this imprint varies in clarity due to lighting and reflection. In the references, the logo is already partially faint or obscured in some images, especially along the glossy black surface. The query still matches the same capsule shape, colors, seam position, and '500' imprint, and the missing/faint left-side logo is plausibly explained by glare/contrast rather than a true object-level difference."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 4915,
+      "output": 290
+    },
+    "latency_sec": 110.95,
+    "error": null
+  },
+  {
+    "item_id": "D1_0061",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "screw",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0032",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0106",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "hazelnut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0083",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "screw",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0105",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "pill",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0095",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0103",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0166",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "screw",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0116",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "capsule",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0125",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "metal_nut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0154",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0157",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0099",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "toothbrush",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0149",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0153",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "grid",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0140",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0104",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0098",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "metal_nut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0169",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "toothbrush",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0108",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "transistor",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0130",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "screw",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Single metal screw is shown isolated against a light plain background in every image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The product has a pointed tip, a partially threaded shaft, and a wider countersunk/flat head.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The screw surface appears metallic gray with reflective highlights and mild shading along the shaft and threads.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The threaded portion occupies roughly the lower-to-middle part of the shaft while a smoother unthreaded section continues toward the head.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The head face includes a visible drive recess/opening, though only partially seen due to angle.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The screw orientation rotates across images, with the head appearing on either the left or right side and the tip on the opposite side.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The screw is photographed at different diagonal angles, ranging from steeper to shallower slants.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The amount of visible head-face detail varies slightly because of viewpoint; the recess is more exposed in some images than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Minor differences in brightness/contrast and shadowing are present across the images, changing the apparent reflectivity of the metal.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4717,
+      "output": 80
+    },
+    "latency_sec": 39.1,
+    "error": null
+  },
+  {
+    "item_id": "D1_0129",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "grid",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A repeating expanded-metal or diamond-mesh lattice fills the full frame, forming interlinked diamond-shaped openings in a regular tessellated pattern.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The mesh strands appear as dark gray raised ribs with soft shading along their edges, creating a consistent embossed/3D look.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The openings are lighter than the ribs, with smooth gray interiors and subtle tonal gradients, giving each cell a softly shaded center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The lattice spacing is uniform within each image, with rows and columns of similarly sized openings repeating across the surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Overall appearance is monochrome gray with mild texture/noise and no added markings, labels, or foreign objects.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The mesh orientation varies: some references show a strong diagonal slant, others are nearly vertical, and others are more horizontal.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The diamond openings vary in aspect ratio, from taller/narrower diamonds to flatter/wider diamonds.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The apparent scale of the pattern changes, with some images showing larger cells and fewer repeats, while others show smaller cells and denser repetition.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Rib thickness and darkness vary slightly, making some meshes look heavier/bolder and others finer/softer.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Background/interior shading inside the openings varies subtly in brightness and smoothness across references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Small irregular tear/slit-like protrusion attached to one mesh rib, breaking the otherwise smooth lattice contour.",
+            "location": "upper center-right area, about one-fifth down from the top edge",
+            "confidence": 0.97
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "In the query image, there is a small localized slit/tear-like feature attached to a mesh rib in the upper center-right region. This shape interrupts the otherwise smooth, repeating contour of the lattice and does not match the normal repeating diamond-mesh geometry seen in the references. It is not explained by the listed benign variations such as orientation, scale, rib thickness, or shading differences, because those variations preserve the regular mesh structure rather than introducing a distinct protruding defect."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4954,
+      "output": 276
+    },
+    "latency_sec": 194.5,
+    "error": null
+  },
+  {
+    "item_id": "D1_0148",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Brown leather-like surface with a fine pebbled/grain texture covering the entire visible area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Dense network of thin, irregular crease lines forming small polygonal cells across the surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Matte to low-sheen appearance with soft, diffuse lighting and no strong specular highlights.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Fairly uniform coloration overall, with only subtle tonal changes rather than sharp color breaks.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Texture is continuous edge-to-edge without seams, labels, holes, or other distinct added features.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Minor shifts in brown shade, ranging from slightly warmer/reddish to slightly darker/cooler brown.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Small differences in grain scale and crease density; some images show slightly tighter pebbling while others appear a bit broader or smoother.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Subtle directional flow of the wrinkle network varies, with some areas showing more diagonal or gently curved crease alignment.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Mild lighting falloff or shading gradients are present in different parts of the image, such as slightly darker corners or side regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Distinct elongated diagonal indentation/crease-like gouge with a dark shadowed lower edge, forming a localized slit-like defect not seen in the references.",
+            "location": "lower-central area, slightly left of center",
+            "confidence": 0.98
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a localized elongated slit/indentation in the lower-central area slightly left of center, with a distinct dark shadow and smooth tapered shape. This feature is not consistent with the normal fine pebbled leather grain or the irregular thin crease network seen in the references. It is also not explained by benign variation in tone, grain scale, wrinkle flow, or lighting falloff, because it is a singular, sharply defined defect-like mark absent from all reference images."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4776,
+      "output": 274
+    },
+    "latency_sec": 185.38,
+    "error": null
+  },
+  {
+    "item_id": "D1_0134",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "capsule",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single capsule-shaped object is centered in the frame against a plain light/white background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The capsule is horizontally oriented, with a dark black left half and a muted orange/peach right half.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "White imprinting appears on both halves: a lowercase 'actavis' logo/text on the black half and the number '500' on the orange half.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The seam between the two capsule halves is near the middle, creating a clear vertical division between black and orange sections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The capsule has rounded ends and a smooth glossy surface with visible light reflections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The exact placement of the capsule within the frame shifts slightly, though it remains generally centered.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Brightness/contrast and color tone vary slightly across images, affecting how dark the black half looks and how warm the orange half appears.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The 'actavis' logo/text on the black half varies in clarity due to lighting/reflection, appearing more legible in some images than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small specks or tiny marks are visible on the capsule or background in some references.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Minor differences in glare/reflection lines across the capsule surface are present between images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The white imprinting/logo is absent or nearly completely missing on both capsule halves; the query lacks the visible 'actavis' text/logo on the black half and the '500' marking on the orange half that are present in all references.",
+            "location": "Across the capsule surface, especially center-left on the black half and center-right on the orange half",
+            "confidence": 0.99
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "All four reference images show consistent white imprinting on both halves of the capsule: the 'actavis' logo/text on the black half and '500' on the orange half. In the query image, these markings are not visible at all, beyond only a very faint possible trace on the black half, while the orange-half '500' is absent. This is not explained by the benign variation that allows only reduced clarity from lighting/reflection; here the imprinting is effectively missing across the capsule compared with the references. Therefore this is a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4942,
+      "output": 324
+    },
+    "latency_sec": 195.12,
+    "error": null
+  },
+  {
+    "item_id": "D1_0162",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "wood",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0150",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "cable",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0122",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single circular component is centered in the image and viewed from directly above, with a dark central opening surrounded by multiple concentric rings.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The outermost visible structure is a thick, dark gray to black rounded ring with a smooth continuous circumference.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Inside the outer ring, there is a metallic inner wall showing dark gray surfaces with bronze/copper-colored reflective highlights along the circular edge.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The center region appears as a nearly black circular interior, slightly softer in tone toward the middle, with no distinct internal features.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The object is placed against a bright, uniform white background, making the circular silhouette clearly separated from the surroundings.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "Subtle fine texture or wear-like streaking is visible on the inner metallic ring, but it remains continuous around the circumference.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The copper/bronze reflective band changes slightly in brightness and position around the circumference, with highlights appearing stronger on different sides in different references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The central dark opening varies slightly in apparent size and centering relative to the surrounding rings.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small bright reflective specks or glints near the lower-left edge of the inner ring are present with slightly different intensity and shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "A thin hairline-like bright line near the lower edge of the inner ring is visible in some images and less noticeable or differently positioned in others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The inner ring texture appears slightly greener, darker, or smoother depending on the image, while maintaining the same overall circular structure.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A large irregular dark/gray patch with wrinkled, smeared appearance covers part of the inner metallic ring, obscuring the normal continuous ring texture.",
+            "location": "lower-right to bottom sector of the inner ring, roughly from 4 o'clock to 7 o'clock",
+            "confidence": 0.98
+          },
+          {
+            "id": "C2",
+            "description": "A bright jagged reflective clump/blob is present on top of the abnormal patch, appearing as extra material or damage rather than the small benign glints seen in references.",
+            "location": "near 5 o'clock on the inner ring, at the boundary of the dark central opening",
+            "confidence": 0.94
+          },
+          {
+            "id": "C3",
+            "description": "The circular inner edge is locally deformed/interrupted by a pronounced inward notch where the abnormal patch intrudes into the opening, breaking the otherwise smooth round contour.",
+            "location": "right-lower side of the central opening, around 4 to 5 o'clock",
+            "confidence": 0.9
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a large irregular dark/gray smeared patch spanning the lower-right to bottom inner ring that is not present in any reference. Normal references preserve a continuous metallic inner ring with only subtle wear texture. This feature is much larger and more deforming than the benign small glints or hairline marks."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "A bright jagged reflective clump is visible near 5 o'clock on top of the abnormal dark patch. The normal profile allows only small reflective specks, mainly minor glints, but this is a concentrated irregular blob associated with disrupted surface appearance, so it is not explained by benign variation."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": true,
+            "reasoning": "The inner circular boundary is visibly interrupted around 4 to 5 o'clock where the abnormal material intrudes inward, creating a local notch/deformation. In the references, the inner opening remains smoothly circular despite small shifts in centering or highlight position. This contour break is therefore a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 5296,
+      "output": 600
+    },
+    "latency_sec": 104.11,
+    "error": null
+  },
+  {
+    "item_id": "D1_0135",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "metal_nut",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single translucent/light gray part is centered in the image against a dark, nearly black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The part has a circular central hole with a visible inner ring/bushing-like border around the opening.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The outer shape is a rounded four-lobed or four-tab form spaced around the center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The body shows concentric circular surface texture or machining/mold-like swirl marks around the center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Edges and lobe tips are rounded rather than sharp, with soft highlights along the perimeter.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The object is viewed from above with the central hole near the middle and the full outer outline visible within the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The part appears at different rotation angles, changing which lobe points upward or sideways.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The exact outline of the four outer lobes varies slightly in width and corner shape, with some appearing more squared-off and others more rounded.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The visibility and strength of concentric surface marks differs across images; some show clearer arc bands near the rim than others.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Brightness and contrast of the material vary slightly, making some parts look more opaque or more reflective than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Minor positional differences are present, with the part centered but shifted slightly within the frame from image to image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Several small protruding burr-like bumps or attached specks are visible along the outer perimeter, which are not present in any reference images.",
+            "location": "outer edge of the part, especially near the upper-left notch, lower-left side, and lower-right side",
+            "confidence": 0.93
+          },
+          {
+            "id": "C2",
+            "description": "The central hole shows a stronger, distinct metallic-looking inner ring/double-lip appearance, unlike the smoother simpler inner border seen in all references.",
+            "location": "inside the central opening around the inner circumference",
+            "confidence": 0.76
+          },
+          {
+            "id": "C3",
+            "description": "The body surface appears unusually blurred/hazy with loss of the normal clear concentric texture, suggesting surface clouding or defocus localized on the part compared with references.",
+            "location": "across most of the part body, especially the annular region between the center hole and outer lobes",
+            "confidence": 0.61
+          }
+        ],
+        "no_difference_conf": 0.04
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows several small discrete outward bumps/specks along the outer perimeter, notably near the upper-left notch and around the lower-left/lower-right edge. These are not explained by rotation, mild lobe-shape variation, or lighting differences in the normality profile. The references show rounded continuous edges without attached speck-like protrusions. This is a genuine edge defect/foreign-material-like anomaly."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "A visible inner ring around the central hole is part of the normal design and is present in all references. In the query it appears somewhat stronger or more metallic, but this can be explained by benign brightness/contrast/focus differences rather than a structural defect. The central opening remains circular and consistent with normal examples."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "The query image is softer/blurrier overall than the references, reducing visibility of the concentric texture across the body. This appears to be an imaging/focus condition affecting the whole part rather than a localized material anomaly. Variations in visibility of surface marks and overall appearance are already covered by benign variation in texture visibility and brightness."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 5184,
+      "output": 613
+    },
+    "latency_sec": 163.52,
+    "error": null
+  },
+  {
+    "item_id": "D1_0100",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Brown leather-like surface with a fine pebbled/grain texture covering the entire visible area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Dense network of thin, irregular crease lines forming small polygonal cells across the surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Matte to low-sheen appearance with soft, diffuse lighting and no strong specular highlights.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Fairly uniform coloration overall, with only subtle tonal changes rather than sharp color breaks.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Texture is continuous edge-to-edge without seams, labels, holes, or other distinct added features.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Minor shifts in brown shade, ranging from slightly warmer/reddish to slightly darker/cooler brown.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Small differences in grain scale and crease density; some images show slightly tighter pebbling while others appear a bit broader or smoother.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Subtle directional flow of the wrinkle network varies, with some areas showing more diagonal or gently curved crease alignment.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Mild lighting falloff or shading gradients are present in different parts of the image, such as slightly darker corners or side regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Elongated horizontal raised/scuffed band with a darker central groove/distortion, interrupting the normal fine leather grain.",
+            "location": "upper-right quadrant, extending from near the upper center toward the right edge",
+            "confidence": 0.98
+          },
+          {
+            "id": "C2",
+            "description": "Cluster of small bright specular spots/residue-like marks associated with the defect area, unlike the uniformly matte finish in the references.",
+            "location": "right of center, along and just below the horizontal raised band",
+            "confidence": 0.93
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a distinct elongated horizontal raised/scuffed band with a darker central indentation in the upper-right area. This feature disrupts the otherwise continuous fine pebbled leather grain seen in all references. It is not explained by benign shade shifts, wrinkle-direction changes, or mild lighting gradients because it has a localized linear form and visible surface deformation unlike the normal texture."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "There are small bright speck-like reflective marks clustered along the same horizontal defect area right of center. The references consistently show a matte to low-sheen finish without localized shiny residue-like spots. These highlights are concentrated and associated with the disturbed band, so they are not a normal lighting variation."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4847,
+      "output": 408
+    },
+    "latency_sec": 114.4,
+    "error": null
+  },
+  {
+    "item_id": "D1_0133",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "cable",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A white outer cable sheath surrounds three insulated inner conductors arranged in a triangular layout, with one conductor at the top and two at the bottom.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The three inner conductors are consistently color-coded green/yellowish at the top, blue at the lower left, and gray/brownish at the lower right.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Each inner conductor is cut in cross-section and contains a central bundle of exposed metallic strands.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The metallic strand bundles are compact, roughly circular to oval clusters centered within each insulated conductor.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The white sheath interior forms a smooth circular cavity around the three conductors, with narrow gaps between the conductors and the sheath.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The exposed conductor strands appear copper-colored with bright reflective highlights on some strand ends.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The cable cross-section is rotated slightly between images, changing the exact orientation of the colored conductors within the circular sheath while preserving the same top/bottom-left/bottom-right arrangement.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The exposed metallic strand ends vary in brightness and specular reflection, with some images showing stronger white highlights on different conductors.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The outer white sheath and inner insulation colors show mild shifts in tone due to lighting, including cooler or brighter appearances.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The conductor cross-sections differ slightly in roundness and exact centering, with minor shape irregularity at the insulation edges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The top green/yellowish conductor shows small differences in the amount and placement of darker green tint around its perimeter.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "variation": "Small surface specks or minor marks are visible on the sheath/interior background in some images, but the overall cable structure remains the same.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The lower-right gray conductor insulation is split/open, creating a pronounced crack/tear in the insulation around its exposed strand bundle.",
+            "location": "lower-right inner conductor",
+            "confidence": 0.99
+          },
+          {
+            "id": "C2",
+            "description": "A sharp translucent/brownish shard-like piece is protruding upward from the lower-right gray conductor, which is absent in all references.",
+            "location": "emerging from the center/top side of the lower-right inner conductor",
+            "confidence": 0.98
+          },
+          {
+            "id": "C3",
+            "description": "The metallic strands in the lower-right gray conductor are no longer a compact centered circular/oval bundle; they appear displaced downward and distorted due to the damage.",
+            "location": "lower-right inner conductor core",
+            "confidence": 0.93
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "In the query, the lower-right gray conductor insulation is visibly torn/splayed open rather than forming the intact rounded cross-section seen in all references. This is not explained by slight shape irregularity, rotation, or lighting variation. The opening around the strand bundle is structural damage and therefore a genuine anomaly."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "A distinct translucent brown shard-like piece protrudes upward from the lower-right conductor in the query. No such protruding object appears in any reference, and it cannot be explained by normal reflective variation of the metallic strands because it has a different shape, size, and extends above the conductor surface. This is a genuine anomaly."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": true,
+            "reasoning": "The lower-right conductor's metallic bundle is displaced and distorted relative to the compact centered bundles consistently seen in the references. While minor centering variation is normal, this degree of downward displacement and deformation is directly associated with the visible tear and protrusion, so it exceeds benign variation and is a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 5376,
+      "output": 559
+    },
+    "latency_sec": 232.47,
+    "error": null
+  },
+  {
+    "item_id": "D1_0109",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0115",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "pill",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0119",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "toothbrush",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0097",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0158",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "toothbrush",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single toothbrush head is centered in the frame against a dark background, shown in a straight top-down view.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The toothbrush head has a white outer plastic frame with an elongated oval shape and a rounded top.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bristle field is arranged in multiple small clustered tufts distributed symmetrically down the head.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "There is a visible central translucent or rubber-like pad beneath the bristle area, tinted by the bristle colors above it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A small group of tufts is positioned near the rounded top, followed by several rows of evenly spaced tufts through the main body and a few tufts near the neck.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "Each reference includes both colored bristle tufts and white bristle tufts within the same overall layout.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The colored bristles vary in hue across otherwise similar brush heads: yellow/gold, blue, and red are all present in the normal references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The specific distribution of colored versus white tufts varies: some heads have more alternating mixed rows, while others show stronger dominance of the colored tufts in the central rows.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The topmost tuft cluster varies slightly in color composition, with some references showing a more prominent central colored tuft near the tip and others appearing lighter or more mixed there.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The translucent pad under the bristles appears slightly different in tint intensity, ranging from warmer beige/pink to cooler bluish tones depending on the bristle color and lighting.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Two thin foreign filament/thread-like strands are lying across the bristle surface, which are not present in any reference images.",
+            "location": "One strand runs diagonally from the left-middle edge across toward the lower center; another runs from upper-middle downward toward the lower center/right over the central bristle area.",
+            "confidence": 0.99
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query image shows two thin, light-colored filament/thread-like strands crossing over the bristle field. These strands are not part of the toothbrush's normal construction, are not described by any normal pattern, and are absent from all reference images. The documented benign variations concern bristle color/layout and pad tint only, which do not explain loose linear filaments draped across the head. Therefore this is a genuine foreign-object anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 5052,
+      "output": 291
+    },
+    "latency_sec": 92.76,
+    "error": null
+  },
+  {
+    "item_id": "D1_0136",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0161",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "transistor",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0163",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0093",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "screw",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Single metal screw is shown isolated against a light plain background in every image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The product has a pointed tip, a partially threaded shaft, and a wider countersunk/flat head.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The screw surface appears metallic gray with reflective highlights and mild shading along the shaft and threads.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The threaded portion occupies roughly the lower-to-middle part of the shaft while a smoother unthreaded section continues toward the head.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The head face includes a visible drive recess/opening, though only partially seen due to angle.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The screw orientation rotates across images, with the head appearing on either the left or right side and the tip on the opposite side.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The screw is photographed at different diagonal angles, ranging from steeper to shallower slants.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The amount of visible head-face detail varies slightly because of viewpoint; the recess is more exposed in some images than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Minor differences in brightness/contrast and shadowing are present across the images, changing the apparent reflectivity of the metal.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The screw tip appears damaged/blunted with an irregular hooked or chipped end instead of the clean sharp pointed tip seen in all references.",
+            "location": "very top end of the screw, at the tip",
+            "confidence": 0.98
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "In all four references, the screw tip is a clean, narrow pointed end consistent with an intact wood/deck screw. In the query image, the very tip is visibly irregular and bent/chipped, forming a hooked blunt end rather than a normal sharp point. This cannot be explained by rotation, viewing angle, or lighting variation because the tip shape itself is deformed. Therefore this is a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4787,
+      "output": 261
+    },
+    "latency_sec": 172.62,
+    "error": null
+  },
+  {
+    "item_id": "D1_0128",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0091",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "hazelnut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0147",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "capsule",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0120",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "grid",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0132",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "metal_nut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0139",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "capsule",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0123",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "cable",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A white outer cable sheath surrounds three insulated inner conductors arranged in a triangular layout, with one conductor at the top and two at the bottom.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The three inner conductors are consistently color-coded green/yellowish at the top, blue at the lower left, and gray/brownish at the lower right.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Each inner conductor is cut in cross-section and contains a central bundle of exposed metallic strands.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The metallic strand bundles are compact, roughly circular to oval clusters centered within each insulated conductor.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The white sheath interior forms a smooth circular cavity around the three conductors, with narrow gaps between the conductors and the sheath.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The exposed conductor strands appear copper-colored with bright reflective highlights on some strand ends.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The cable cross-section is rotated slightly between images, changing the exact orientation of the colored conductors within the circular sheath while preserving the same top/bottom-left/bottom-right arrangement.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The exposed metallic strand ends vary in brightness and specular reflection, with some images showing stronger white highlights on different conductors.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The outer white sheath and inner insulation colors show mild shifts in tone due to lighting, including cooler or brighter appearances.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The conductor cross-sections differ slightly in roundness and exact centering, with minor shape irregularity at the insulation edges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The top green/yellowish conductor shows small differences in the amount and placement of darker green tint around its perimeter.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "variation": "Small surface specks or minor marks are visible on the sheath/interior background in some images, but the overall cable structure remains the same.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct radial slit/notch is present in the white outer sheath, cutting inward from the bottom edge of the circular sheath interior. None of the references show this tear/cut in the sheath.",
+            "location": "bottom center of the white outer sheath, extending inward from the rim toward the middle",
+            "confidence": 0.99
+          },
+          {
+            "id": "C2",
+            "description": "The lower-left blue inner conductor has a noticeable edge gouge/flattened bite-like deformation on its upper-right side, making its cross-section more irregular than the minor shape variations seen in the references.",
+            "location": "lower-left blue conductor, upper-right perimeter",
+            "confidence": 0.87
+          },
+          {
+            "id": "C3",
+            "description": "The exposed metallic strand bundle in the top green/yellowish conductor is shifted upward and appears to contact or nearly contact the insulation boundary rather than remaining centered as in the references.",
+            "location": "top green/yellowish conductor, strand bundle near the upper edge",
+            "confidence": 0.82
+          },
+          {
+            "id": "C4",
+            "description": "The exposed metallic strand bundle in the lower-right gray conductor is also displaced upward/rightward and sits close to the insulation edge instead of being centrally positioned like in the references.",
+            "location": "lower-right gray conductor, strand bundle near the upper-right side",
+            "confidence": 0.79
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a clear radial slit/notch in the white outer sheath at the bottom center extending inward. The reference images consistently show a smooth circular sheath interior without such a cut. This is not explained by rotation, lighting, small specks, or minor edge irregularity, so it is a genuine anomaly."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "The blue lower-left conductor has a distinct bite-like flattening/gouge on its upper-right edge, making the insulation outline notably irregular. While minor roundness differences are normal, this deformation is stronger and more localized than the benign shape variations seen in the references, so it is a genuine anomaly."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "The metallic strands in the top green/yellowish conductor appear somewhat off-center upward, but the references already show small differences in centering and bundle placement within the insulation. This falls within normal variation of cross-section centering and highlight pattern rather than a clear defect."
+          },
+          {
+            "id": "C4",
+            "is_anomaly": false,
+            "reasoning": "The lower-right gray conductor's strand bundle is slightly shifted toward the upper-right, but similar small placement changes and apparent offset are visible across the references. This is consistent with benign variation in conductor centering and imaging, not a definite anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 5500,
+      "output": 748
+    },
+    "latency_sec": 103.06,
+    "error": null
+  },
+  {
+    "item_id": "D1_0124",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Brown leather-like surface with a fine pebbled/grain texture covering the entire visible area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Dense network of thin, irregular crease lines forming small polygonal cells across the surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Matte to low-sheen appearance with soft, diffuse lighting and no strong specular highlights.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Fairly uniform coloration overall, with only subtle tonal changes rather than sharp color breaks.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Texture is continuous edge-to-edge without seams, labels, holes, or other distinct added features.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Minor shifts in brown shade, ranging from slightly warmer/reddish to slightly darker/cooler brown.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Small differences in grain scale and crease density; some images show slightly tighter pebbling while others appear a bit broader or smoother.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Subtle directional flow of the wrinkle network varies, with some areas showing more diagonal or gently curved crease alignment.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Mild lighting falloff or shading gradients are present in different parts of the image, such as slightly darker corners or side regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Small localized puncture/dimple-like surface defect interrupting the normal leather grain, with a tiny clustered raised/indented mark.",
+            "location": "slightly right of center and below the midpoint, in the lower-central area",
+            "confidence": 0.98
+          }
+        ],
+        "no_difference_conf": 0.02
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a small, distinct puncture/dimple-like mark slightly right of center and below the midpoint. This feature interrupts the otherwise continuous fine leather grain and appears as a localized clustered indentation/raised defect. None of the reference images show comparable holes, punctures, or isolated surface breaks; the normal profile explicitly describes continuous texture without distinct added features or holes. Therefore this cannot be explained by ordinary grain, crease variation, shading, or color shift."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4780,
+      "output": 275
+    },
+    "latency_sec": 333.52,
+    "error": null
+  },
+  {
+    "item_id": "D1_0090",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "carpet",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "All references show a tightly woven mesh or fabric-like grid made of interlaced horizontal and vertical strands.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The overall color palette is muted gray to gray-brown, with low saturation and no strong contrasting colors.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The weave is dense and repetitive, filling the full frame edge-to-edge without any borders, labels, or non-textile objects.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Individual strands have a slightly rough, fibrous texture, giving the surface a natural coarse appearance rather than a smooth synthetic look.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Subtle shading and tonal mottling are present across the surface, but the woven pattern remains continuous and regular throughout.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Minor shifts in overall brightness and contrast occur between references, with some images appearing slightly lighter or darker.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The exact spacing and prominence of the interlaced strands vary slightly, making some weaves look a bit tighter or more open than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Localized darker patches or soft shadow-like areas appear in different positions across the images while remaining within the same overall woven texture.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The balance between cool gray and warmer brown-gray tones differs subtly across references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct dark smudge/blob-like stain interrupts the woven texture, forming an irregular elongated patch rather than the subtle mottling seen in the references.",
+            "location": "upper-left quadrant, slightly left of center and below the top edge",
+            "confidence": 0.98
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a clearly darker, elongated smudge-like patch in the upper-left quadrant that disrupts the otherwise regular woven grid. While the references do contain mild mottling and soft darker areas, those remain diffuse and integrated into the texture. This patch is more concentrated, higher-contrast, and blob-like, making it not well explained by the listed benign tonal variations."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 4817,
+      "output": 237
+    },
+    "latency_sec": 187.58,
+    "error": null
+  },
+  {
+    "item_id": "D1_0121",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "screw",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Single metal screw is shown isolated against a light plain background in every image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The product has a pointed tip, a partially threaded shaft, and a wider countersunk/flat head.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The screw surface appears metallic gray with reflective highlights and mild shading along the shaft and threads.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The threaded portion occupies roughly the lower-to-middle part of the shaft while a smoother unthreaded section continues toward the head.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The head face includes a visible drive recess/opening, though only partially seen due to angle.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The screw orientation rotates across images, with the head appearing on either the left or right side and the tip on the opposite side.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The screw is photographed at different diagonal angles, ranging from steeper to shallower slants.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The amount of visible head-face detail varies slightly because of viewpoint; the recess is more exposed in some images than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Minor differences in brightness/contrast and shadowing are present across the images, changing the apparent reflectivity of the metal.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4717,
+      "output": 80
+    },
+    "latency_sec": 188.42,
+    "error": null
+  },
+  {
+    "item_id": "D1_0107",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "zipper",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0173",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "toothbrush",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single toothbrush head is centered in the frame against a dark background, shown in a straight top-down view.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The toothbrush head has a white outer plastic frame with an elongated oval shape and a rounded top.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bristle field is arranged in multiple small clustered tufts distributed symmetrically down the head.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "There is a visible central translucent or rubber-like pad beneath the bristle area, tinted by the bristle colors above it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A small group of tufts is positioned near the rounded top, followed by several rows of evenly spaced tufts through the main body and a few tufts near the neck.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "Each reference includes both colored bristle tufts and white bristle tufts within the same overall layout.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The colored bristles vary in hue across otherwise similar brush heads: yellow/gold, blue, and red are all present in the normal references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The specific distribution of colored versus white tufts varies: some heads have more alternating mixed rows, while others show stronger dominance of the colored tufts in the central rows.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The topmost tuft cluster varies slightly in color composition, with some references showing a more prominent central colored tuft near the tip and others appearing lighter or more mixed there.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The translucent pad under the bristles appears slightly different in tint intensity, ranging from warmer beige/pink to cooler bluish tones depending on the bristle color and lighting.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A large bundle of abnormally splayed/elongated white bristles protrudes outward beyond the toothbrush head contour, unlike the compact tuft clusters in all references.",
+            "location": "top-left area of the rounded tip of the brush head",
+            "confidence": 0.99
+          },
+          {
+            "id": "C2",
+            "description": "The top-left tip tuft region appears deformed/disorganized, with bristles bent and spread irregularly rather than forming a normal contained tuft cluster.",
+            "location": "uppermost left side of the bristle field near the rounded top edge",
+            "confidence": 0.97
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a conspicuous spray of long white bristles protruding outward from the top-left tip, extending beyond the normal toothbrush head contour. In all references, the tip tufts remain compact and contained within the head outline, even when color balance varies. This cannot be explained by the listed normal patterns or benign variations, which cover color/layout differences but not extreme splaying outside the brush boundary."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "The upper-left tip tuft region is visibly deformed and disorganized, with bent, elongated bristles spreading irregularly rather than forming a tight clustered tuft like the references. This is not a normal variation of tuft color or arrangement; it is a structural deformation localized at the tip."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 5113,
+      "output": 429
+    },
+    "latency_sec": 198.8,
+    "error": null
+  },
+  {
+    "item_id": "D1_0151",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "hazelnut",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Single hazelnut-like nut shown centered against a dark, uniform background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Shell is medium brown to reddish-brown with a matte to slightly satin surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Nut body is rounded/ovoid with one end more tapered or pointed than the opposite end.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Visible longitudinal ridges or fine vertical striping run along the shell surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A darker rough cap/scar patch is present at one end of the nut.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Orientation varies: some nuts are shown sideways with the pointed end to the right, while others are upright with the scar patch at the bottom.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Overall silhouette varies from more elongated/teardrop-shaped to more short and rounded.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The dark basal cap/scar differs in size and shape, ranging from a broad dark cap to a smaller irregular rough patch.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Surface markings vary in prominence: some shells show stronger ribbing and banding, while others appear smoother with subtler stripes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Minor small pale specks, scuffs, or slight discoloration on the shell surface are present in some views.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Shell is fractured open with a large irregular hole, exposing the interior; all references show an intact closed shell exterior.",
+            "location": "center and upper half of the nut, spanning most of the visible front opening",
+            "confidence": 0.99
+          },
+          {
+            "id": "C2",
+            "description": "Inner kernel/nut meat is visibly exposed inside the broken shell, which is absent from all references where only the outer shell surface is visible.",
+            "location": "center of the nut within the shell opening",
+            "confidence": 0.98
+          },
+          {
+            "id": "C3",
+            "description": "Jagged broken shell edges with chipped rim and irregular contour are present around the opening, unlike the smooth continuous outer silhouette in the references.",
+            "location": "around the perimeter of the shell opening, especially top edge and right side",
+            "confidence": 0.97
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query nut has a large broken opening in the shell exposing the inside. All references and the normality profile show intact outer shells; this cannot be explained by orientation, shape variation, cap size, ribbing differences, or minor scuffs."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "Visible inner kernel/nut meat is exposed in the query image. In the references, only the exterior shell is visible. This is a consequence of shell breakage and is not a normal variation listed in the profile."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": true,
+            "reasoning": "The shell rim is jagged and chipped around the opening, producing an irregular broken contour unlike the smooth, continuous silhouettes of the reference nuts. This is not consistent with benign variations in pose, silhouette, scar patch, or surface texture."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 5020,
+      "output": 516
+    },
+    "latency_sec": 162.25,
+    "error": null
+  },
+  {
+    "item_id": "D1_0102",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "hazelnut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0101",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "capsule",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0131",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0155",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "grid",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0144",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0176",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "metal_nut",
+    "label_pred": 1,
+    "anomaly_score": 0.71,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single translucent/light gray part is centered in the image against a dark, nearly black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The part has a circular central hole with a visible inner ring/bushing-like border around the opening.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The outer shape is a rounded four-lobed or four-tab form spaced around the center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The body shows concentric circular surface texture or machining/mold-like swirl marks around the center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Edges and lobe tips are rounded rather than sharp, with soft highlights along the perimeter.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The object is viewed from above with the central hole near the middle and the full outer outline visible within the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The part appears at different rotation angles, changing which lobe points upward or sideways.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The exact outline of the four outer lobes varies slightly in width and corner shape, with some appearing more squared-off and others more rounded.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The visibility and strength of concentric surface marks differs across images; some show clearer arc bands near the rim than others.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Brightness and contrast of the material vary slightly, making some parts look more opaque or more reflective than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Minor positional differences are present, with the part centered but shifted slightly within the frame from image to image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Distinct small bright speck/protrusion appears attached to the outer rim, unlike the smooth uninterrupted perimeter seen in all references.",
+            "location": "right side of the part, around the 3 o'clock outer edge",
+            "confidence": 0.82
+          },
+          {
+            "id": "C2",
+            "description": "Small localized bright fleck/spot is visible just outside the lower-left outer edge, suggesting debris or a tiny burr not present in the references.",
+            "location": "lower-left perimeter, around the 7 o'clock position",
+            "confidence": 0.63
+          },
+          {
+            "id": "C3",
+            "description": "The central hub area is noticeably blurred/soft, reducing the normally visible crisp inner ring and surface texture seen in all reference images.",
+            "location": "around the central hole and surrounding inner circular band",
+            "confidence": 0.58
+          }
+        ],
+        "no_difference_conf": 0.17
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The right outer edge at about 3 o'clock does not show a clearly distinct attached protrusion beyond the expected four-lobed outline. The query image is noticeably softer/blurrier than the references, and the apparent tiny bump is consistent with normal edge highlight, slight shape variation, and focus blur. This can be explained by benign variations in lobe outline and imaging appearance."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "There is a small bright fleck just outside the lower-left/lower area of the part near about 7 o'clock that is separate from the normal perimeter. The references show a clean dark background around the object and do not show a detached bright speck in this location. This looks like debris or a small foreign artifact rather than a normal part variation."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "The central hub and inner ring are indeed softer than in the references, but this is an image-quality/focus issue rather than a structural defect of the part. The overall part remains consistent with the normal pattern: centered circular hole, inner ring, four lobes, and concentric texture. Blur alone is not a genuine object anomaly here."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.71
+      }
+    },
+    "cost_tokens": {
+      "input": 5159,
+      "output": 593
+    },
+    "latency_sec": 291.77,
+    "error": null
+  },
+  {
+    "item_id": "D1_0141",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "leather",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0171",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "pill",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0168",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "wood",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0112",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "hazelnut",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D1_0113",
+    "domain": "industrial",
+    "domain_code": "D1",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-AD",
+    "category": "tile",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  }
+]

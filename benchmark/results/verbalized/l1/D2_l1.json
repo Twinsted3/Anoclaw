@@ -1,0 +1,183 @@
+{
+  "domain": "D2",
+  "units": [
+    {
+      "unit": [
+        "D2",
+        "food_package"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Flexible, sealed foil or plastic packaging containing dry food products",
+          "Prominent printed branding, flavor text, and nutritional information labels",
+          "Visible barcode and QR codes on the packaging surface",
+          "Intact heat-sealed edges and crimped tops/bottoms",
+          "Background consists of a white perforated pegboard shelf"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural breach: Tears, punctures, or unsealed edges compromising the vacuum or air-tight seal",
+          "Content failure: Visible leakage of food particles or liquid, or a completely deflated/empty package indicating spoilage or loss",
+          "Labeling defect: Missing, torn, or illegible barcode and nutritional labels preventing product identification",
+          "Severe deformation: Crushing or crushing that obscures the primary branding or suggests physical damage to the contents"
+        ],
+        "rules": [
+          "if the package shows visible tears, holes, or open seams then lean anomaly",
+          "if the package is completely deflated, crushed, or leaking contents then lean anomaly",
+          "if the barcode or primary branding is missing, torn off, or illegible then lean anomaly",
+          "if the package is standing or lying flat with intact seals and legible text then lean normal",
+          "if the package shows standard crinkling or inflation consistent with a sealed snack bag then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "food_box"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Rectangular prism packaging with sharp, well-defined edges and corners",
+          "Surface features high-resolution printed graphics, brand logos, and nutritional text",
+          "Packaging material appears rigid and maintains structural integrity without deformation",
+          "Background consists of a white pegboard with a uniform grid of circular holes",
+          "Boxes are positioned upright on a flat, reflective white surface"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural deformation such as crushed corners, dented sides, or flattened faces due to mishandling",
+          "Surface damage including deep creases, tears, or peeling labels that obscure printed information",
+          "Sealing failure where the box flaps are open, unglued, or the packaging is visibly compromised",
+          "Contamination or staining on the packaging surface (e.g., grease, water spots, or dirt)"
+        ],
+        "rules": [
+          "if the box edges are bent, crushed, or the corners are rounded due to impact then lean anomaly",
+          "if the printed surface shows deep creases, tears, or missing label sections then lean anomaly",
+          "if the box flaps are open or the structural seal is broken then lean anomaly",
+          "if the box maintains a rigid rectangular shape with intact, sharp edges then lean normal",
+          "if the printed graphics and text are clear, flat, and free of physical distortion then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "drink_can"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Cylindrical metal container with a smooth, reflective surface",
+          "Sealed top rim with a standard pull-tab opening mechanism",
+          "Flat, stable base allowing the object to stand upright",
+          "Printed label wrapping around the body with legible text and graphics",
+          "Uniform curvature without visible dents or structural deformation"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural deformation such as dents, crushing, or bulging caused by impact or pressure buildup",
+          "Corrosion or rust spots indicating material degradation or leakage",
+          "Label defects including peeling, tearing, or missing sections exposing the metal underneath",
+          "Damaged or missing pull-tab mechanism preventing the can from being opened",
+          "Seepage or liquid residue on the exterior surface indicating a breach in the seal"
+        ],
+        "rules": [
+          "if the object exhibits significant dents, crushing, or loss of cylindrical shape then lean anomaly",
+          "if the object is a rectangular carton or glass bottle instead of a metal cylinder then lean anomaly",
+          "if the top rim is missing, open, or the pull-tab is detached then lean anomaly",
+          "if the surface shows visible rust, corrosion, or liquid leakage then lean anomaly",
+          "if the object stands upright on a flat base with a smooth, intact metal surface then lean normal",
+          "if the label is fully adhered and wraps continuously around the cylinder then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "cigarette_box"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Rectangular hardboard packaging with a glossy, reflective surface finish",
+          "Prominent brand logo or name printed in the upper or central region",
+          "Mandatory health warning text occupying the lower third of the front face",
+          "Intact, sealed cellophane wrapping covering the entire box",
+          "Sharp, well-defined edges and corners with no structural deformation"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural crushing or denting of the box corners or sides due to impact",
+          "Tearing or puncturing of the outer cellophane seal exposing the inner cardboard",
+          "Severe surface abrasion or scuffing that obscures the printed brand logo or health warnings",
+          "Peeling or flaking of the printed label layer from the cardboard substrate"
+        ],
+        "rules": [
+          "if the box exhibits significant crushing, bending, or loss of rectangular geometry then lean anomaly",
+          "if the outer plastic wrapping is torn, missing, or visibly punctured then lean anomaly",
+          "if the brand logo or health warning text is heavily obscured by scuffs, stains, or peeling then lean anomaly",
+          "if the box maintains a rigid rectangular shape with a continuous, glossy surface then lean normal",
+          "if the health warning text is clearly legible and positioned at the bottom then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "drink_bottle"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Single upright plastic beverage bottle centered in the frame",
+          "Opaque or translucent cylindrical body with a printed paper or plastic label",
+          "Screw-top cap (white, green, or blue) securely fastened at the top",
+          "Bottle resting on a white surface against a perforated pegboard background",
+          "Label features legible text and graphics without significant distortion"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Crushed or dented bottle body indicating physical damage or mishandling",
+          "Missing, loose, or misaligned cap suggesting a seal failure or manufacturing defect",
+          "Torn, peeling, or missing label exposing the plastic underneath",
+          "Severe leakage or spillage causing the bottle to sit in a puddle or appear wet",
+          "Foreign object or debris attached to the exterior of the bottle"
+        ],
+        "rules": [
+          "if the bottle body shows significant dents, crushing, or deformation then lean anomaly",
+          "if the cap is missing, detached, or visibly loose then lean anomaly",
+          "if the label is torn, peeling, or completely missing then lean anomaly",
+          "if the bottle is lying on its side or tilted at an extreme angle then lean anomaly",
+          "if the bottle is upright with an intact cap and a fully adhered label then lean normal",
+          "if the background is a perforated pegboard and the bottle is centered then lean normal"
+        ]
+      }
+    },
+    {
+      "unit": [
+        "D2",
+        "food_bottle"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Cylindrical or tapered cup-shaped container with a distinct lid",
+          "Surface covered in printed branding, nutritional labels, or graphics",
+          "Lid is sealed with a plastic film or foil layer",
+          "Container sits upright on a flat surface",
+          "Background features a white pegboard with a grid of holes"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural deformation: The container body is crushed, dented, or bent, compromising its cylindrical shape.",
+          "Seal failure: The plastic film or foil lid is torn, punctured, or missing, exposing the contents.",
+          "Label damage: The printed surface is significantly scratched, peeled, or obscured, making branding unreadable.",
+          "Foreign object contamination: Presence of non-package items (e.g., dirt, other food) on the surface or lid."
+        ],
+        "rules": [
+          "if the container body is visibly crushed, dented, or bent out of shape then lean anomaly",
+          "if the lid seal is torn, punctured, or completely missing then lean anomaly",
+          "if the printed label is heavily scratched, peeled, or obscured then lean anomaly",
+          "if the container is a standard cup shape with an intact lid and clear graphics then lean normal",
+          "if the container is upright and the background is a pegboard then lean normal"
+        ]
+      }
+    }
+  ]
+}

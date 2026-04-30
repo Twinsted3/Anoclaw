@@ -1,0 +1,1082 @@
+[
+  {
+    "item_id": "D2_0084",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a normal beverage bottle viewed from the back. All structural components (cap, body, label) are intact and undamaged. The presence of the nutrition label and barcode is consistent with a standard product, and there are no signs of the hypothesized anomalies (crushing, missing cap, torn label, leakage).",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0019",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack with intact structure, sealed wrapping, and legible text. No candidate features resembling defects (crushing, tearing, open flap) were identified. The pack matches the normal signature.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0052",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a Nabati Sandwich box with sharp edges, clear printing, and no visible structural damage or surface defects. The observed shadows and reflections are consistent with normal lighting conditions and do not indicate anomalies. The box maintains its rigid rectangular shape as expected for a normal product.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0062",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact box with sharp edges and clear printing, matching the normal signature. No candidate defect features were identified that require refutation.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0036",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The bottle is upright with an intact cap and label. The label rotation is minor and consistent with the bottle not being perfectly front-facing, which is explicitly allowed by the rules. No dents, tears, or missing parts are visible. The candidate features (rotation, shadow) are refuted as normal variations.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0015",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact Orion Pie box with clear printing. Observed features like glare and perspective are confirmed as normal variations by the reference profiler. No defects such as crushing, tears, or deformation are present.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0053",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a prominent blue handwritten mark ('354') on the package surface. The reference profiler confirms that normal packages do not have such markings, and they are not listed as allowed variations. This unauthorized marking constitutes a surface anomaly, distinguishing it from the normal reference instances.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0021",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate feature (a potential scuff) was refuted by the side-by-side tool, which showed the same texture variation in the reference images. With no surviving defect-like features, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0051",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows normal packaging variations (wrinkles, creases) that are also present in the reference images. No unique defects or anomalies were identified.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0048",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed crumpling is explicitly listed as an allowed variation ('minor surface creases') by the reference profiler. The silver band is a structural feature. No actual defects like tears or leaks are present. Therefore, the package is normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0047",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed surface wrinkles and minor shape variations are present in the normal reference images and are explicitly defined as normal handling artifacts in the domain rules. No structural defects or labeling issues were found.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0073",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only potential anomaly candidate (surface reflection), confirming it is a normal variation. The query image shows no signs of damage, crushing, or printing defects, matching the normal reference images.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0060",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a straw attached to the front of the carton in a transparent wrapper. The reference images show the normal state without this attachment. The domain rulebook explicitly states that a transparent straw wrapper attached to the front classifies the item as an anomaly. Therefore, the item is anomalous.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0006",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack with an intact seal, rigid structure, and clear printing. The side-by-side comparison confirmed that the observed reflections are normal variations present in the reference set, and no unique defects were found. Therefore, the pack is classified as normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0071",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a transparent straw wrapper attached to the front of the carton, which is absent in all reference images. The domain rulebook explicitly states this feature should be classified as an anomaly, confirming the detection.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0032",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a transparent straw wrapper attached to the front, which is explicitly defined as an anomaly in the domain rulebook and is absent in all reference images.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0079",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a Pocky box with sharp edges, clear printing, and no visible structural damage or surface defects. The slight shadow is a lighting artifact, not a defect. The box matches the normal signature described in the rulebook.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0035",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with reference images confirms that the query container exhibits no unique defects. Any minor visual variations are consistent with normal packaging characteristics seen in the reference set.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0022",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed design difference is explicitly listed as an allowed variation by the reference profiler. No structural defects or damage are present. The pack is normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0067",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack that is visually consistent with the normal reference images. The logo, pattern, and health warning are all intact and legible, and the box structure is undamaged. All potential defect-like features were refuted by comparison with the references.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0055",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard green tea bottle with an intact cap and label, matching the normal signature. No defects such as dents, tears, or missing parts are visible. The slight rotation of the label is expected and not an anomaly.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0007",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard beverage bottle with an intact cap, fully adhered label, and no visible physical damage. It matches the normal signature defined in the domain rulebook and is consistent with the reference images. No candidate defect features were identified.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0054",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate feature (a potential scuff) was refuted by comparing the query to the reference images, which showed similar variations. No other anomalies were detected. The container is structurally sound and the label is intact.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0010",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack with a different logo design than the references, but the reference profiler explicitly lists 'text variation' as an allowed variation. The pack is structurally intact with no physical damage, so the logo difference is a normal variant, not an anomaly.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0009",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard product with no unique defects. Any minor surface irregularities are consistent with the normal variations observed in the reference images, refuting the initial suspicion of a defect.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0074",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a standard Mini Oreo cup with an intact seal, clear labeling, and no visible structural damage or foreign objects. All observed features align with the normal signature and reference images. No candidate defect features were identified to warrant further refutation.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0061",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a valid regional variant (English text) of the product. No physical defects like crushing, tearing, or scuffing are present. The pack is structurally intact and glossy, matching the normal signature.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0082",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query can exhibits all normal characteristics: cylindrical shape, intact label, sealed top, and no visible defects. No candidate anomaly features were identified that would require refutation. The can matches the normal reference baseline.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0034",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly is minor wrinkling on the flexible packaging. According to the domain rules, 'Classify minor surface creases, wrinkles, or slight scuffs on flexible packaging as normal unless they compromise structural integrity or legibility.' The wrinkles observed are consistent with normal handling and do not indicate a breach or defect. The package is sealed, intact, and the contents are normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0018",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard 'Potato Wish' snack box that appears structurally intact with clear, undamaged labeling. No obvious defects such as dents, tears, or contamination are visible. The appearance is consistent with the normal reference images provided.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0028",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard yellow beverage can with no structural defects, label damage, or corrosion. The minor visual variations observed are consistent with normal manufacturing tolerances and allowed variations (lighting, rotation) defined in the reference profile. Therefore, the item is classified as normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0024",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact cigarette pack with no signs of crushing, tearing, or damage. The visual features, including text and reflections, match the normal reference images, confirming it is not anomalous.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0020",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal beverage bottle with an intact cap, fully adhered label, and no visible damage. All candidate features (label alignment, cap integrity, bottle shape) appear normal and match the reference images. No anomalies detected.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0017",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The bottle is physically intact with a secure cap and fully adhered label. The apparent lack of front branding is due to the bottle being rotated, which is explicitly allowed by the domain rules and not considered an anomaly.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0041",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only candidate feature (bottom seal crease) was refuted by comparison with reference images, which show similar normal variations. The package is structurally intact with legible labels, consistent with a normal product.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0025",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard Pepsi can with no structural defects, dents, or label damage. The surface reflections and minor smudges are consistent with normal handling and lighting conditions, matching the reference images.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0085",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a white scuff/tear on the label near the lid, which is absent in all reference images. According to the domain rules, any small irregular white mark on the printed label is a defect. Therefore, the image is anomalous.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0081",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The observed wrinkles and creases are consistent with normal handling of flexible packaging as per the domain rules. The package is intact, sealed, and legible, with no signs of structural breach or content failure. The candidate features are refuted as normal variations.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0069",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a small, irregular white scuff mark on the label that is not present in the reference images. According to the domain rules, such marks are considered defects. Therefore, the image is classified as anomalous.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0078",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact box with clear printing. Side-by-side comparison with reference images confirms that all observed features, including edges and corners, are consistent with normal product variations. No defects were found.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0002",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the reference images in terms of product features, graphics, and packaging integrity. The observed bright spots are normal reflections on the glossy cellophane wrap, confirmed by their presence in the reference set. No anomalies are detected.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0013",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query bottle displays the back panel (barcode/nutrition) instead of the front branding (logo/character) seen in all reference images. Per the domain rule, lacking visible label/branding on the main body is an anomaly.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0077",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed wrinkling and crumpling on the package are consistent with the normal reference images and are classified as normal handling artifacts per the domain rules. No structural breaches, leaks, or illegible labels are present.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0005",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack that matches the normal signature: rectangular shape, intact glossy wrapping, and clear text. No candidate defect features were identified that would require refutation.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0059",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate feature, a potential scuff on the label, was refuted by comparing it with the reference images, which show similar variations. No other anomalies were detected, so the item is classified as normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0042",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a transparent straw wrapper attached to the front of the carton, a feature absent in all reference images. According to the domain rules, this specific feature classifies the item as an anomaly.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0011",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal red date milk carton with a rectangular prism shape, consistent with the reference baseline. The difference in packaging graphics is an allowed variation and not a defect. No structural anomalies were detected.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0076",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear handwritten mark '269' on the cup body, which is a form of foreign object contamination/label defacement not seen in the normal reference images. Additionally, the lid appears to have a tear. These features confirm the item is anomalous.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0039",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal beverage bottle. The side-by-side comparison confirms the physical structure (base, liquid level) matches the reference set. The only potential anomaly (label rotation) is explicitly allowed by the domain rules. No defects are found.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0000",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the query image's label condition is consistent with the normal reference images. No unique defects were identified, and the initial suspicion of a minor scuff was refuted as normal variation. The container appears structurally sound and properly labeled.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0049",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact cigarette pack with a sealed wrapper and closed flap. The side-by-side comparison with reference images confirms that any perceived surface irregularities are merely lighting reflections common to all packs, not defects. Therefore, the pack is classified as normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0088",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack that is structurally intact, with no signs of crushing, tearing, or surface damage. The packaging matches the normal signature of a sealed, glossy rectangular box with legible text, consistent with the reference images.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0014",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact box with clear graphics. The only potential anomalies (minor edge warping and surface glare) are explicitly defined as normal variations or artifacts in the domain rules and reference profile. Therefore, the box is classified as normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0026",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact box with clear printing. The only notable feature is a surface glare, which the domain rules explicitly classify as a normal lighting artifact. No defects such as crushing, tearing, or staining are observed.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0004",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed wrinkles and minor deformations are consistent with normal handling variations seen in the reference images and do not indicate a structural defect or anomaly.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0012",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features identified (surface wrinkles and light glare) are consistent with normal handling and lighting conditions for flexible packaging, as explicitly allowed by the domain rules. No structural breaches, leaks, or labeling defects are observed. The package appears normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0058",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal green tea bottle. The label angle and minor rotation are explicitly listed as allowed variations by the reference profiler. No defects such as dents, tears, or missing caps are present.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0066",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The observed crinkles and minor tear on the foil seal are consistent with normal packaging variations seen in the reference images, and thus are not considered anomalies. No other defects were found.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0016",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the initial candidate features. The query image shows a standard product with no unique defects, damage, or anomalies compared to the reference images. The label is clean, the shape is intact, and the lid seal is normal.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0086",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a silver cigarette pack. The reference profiler confirms that silver is an expected color variation for this product. The pack is structurally intact with no tears, dents, or peeling. Therefore, it is a normal instance.",
+    "label": 0,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0178",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate defect (minor edge warping) by showing it is a normal variation present in the reference images. No other anomalies were detected, confirming the query image is normal.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0156",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct white scuff/mark on the upper-left label area that is not present in any of the reference images, confirming it as a defect according to the domain rules.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0155",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected defect (small white mark) was refuted by the reference images, which show similar features as normal variations. No other anomalies were detected.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0117",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a box with an exposed brown cardboard top flap, which is a clear deviation from the normal reference images that all have fully printed blue tops. This indicates a packaging defect such as an open flap or tear, satisfying the anomaly criteria.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0139",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (wrinkles) was refuted by comparison with reference images, which show identical normal variations. The package is structurally intact and legible.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0103",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a cigarette pack with an open top flap and exposed inner packaging, a feature not present in any of the sealed reference images. This matches the domain rule for classifying open packs as anomalies.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0114",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear seal failure (torn plastic film) on the rim, which is absent in all reference images. This constitutes a significant anomaly.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0166",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate feature (surface wrinkles) was found in the reference images, confirming it is a normal variation. No other anomalies were detected, so the package is classified as normal.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0141",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly, the crinkled lid seal, was found to be consistent with the reference images, indicating it is a normal packaging variation. No other defects like label scuffs or structural damage were observed.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0100",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query object matches the normal shape (rectangular carton) but lacks the required attached straw, which is explicitly defined as an anomaly in the domain rules and is present in the reference images.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0120",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits severe label peeling and a tear on the cup body, exposing the container underneath. This defect is absent in all reference images, which show intact packaging. Per the domain rules, heavy peeling or obscuring of the label constitutes an anomaly.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0179",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The initial suspicion of a defect at the top edge was refuted by the side-by-side comparison, which showed the feature is present in normal reference images. No other anomalies were detected.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0116",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays the back of a RIO cocktail can. The can exhibits a smooth, cylindrical shape with no dents, crushing, or structural deformation. The label is fully adhered, and the printed text and graphics are clear and legible. There are no signs of corrosion, leakage, or damage. The object conforms to the normal signature of a sealed, intact metal beverage can.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0174",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal Mirinda can with no visible defects. The can is cylindrical, the label is intact and legible, and there are no signs of structural damage, corrosion, or leakage. The reference images confirm the normal appearance of this product type.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0124",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a product box that appears structurally intact with clear, undistorted printing. There are no visible signs of crushing, tearing, staining, or other defects mentioned in the anomaly modes. The appearance is consistent with the normal reference images, showing a standard, undamaged product package. Therefore, it is classified as normal.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0105",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query bottle lacks a visible label on its main body, which is a required feature according to the domain rules and is present in all reference images. This confirms the anomaly.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0127",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a jar missing its pink lid, which is present in all reference images. This is a clear anomaly consistent with the 'Seal failure' or 'missing part' mode.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0147",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The vertical tear on the can's label is a clear defect not present in any reference image, confirming the query is anomalous.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0165",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The package exhibits standard characteristics of a sealed snack bag: intact crimped edges, legible barcode/QR code, and surface wrinkles which are explicitly classified as normal handling artifacts in the domain rules. No structural breaches, leaks, or missing labels are observed.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0109",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard red snack package with no structural defects, leaks, or labeling issues. Observed surface wrinkles and minor folds are consistent with normal handling and allowed variations for this product type.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0094",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct white scuff/tear on the label surface that is not present in any of the reference images. Per the domain rules, this constitutes a defect.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0171",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact box with sharp edges, clear printing, and no visible damage, deformation, or contamination. It matches the normal signature described in the domain rules and is consistent with the reference images.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0125",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (surface creases) was refuted by the reference images, which show identical normal variations. The package is structurally intact with legible labels.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0110",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows an open top flap exposing the inner packaging, which is explicitly defined as an anomaly in the domain rules. The reference images confirm that normal packs have closed, sealed tops.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0164",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate feature of slight edge warping was refuted by comparing it with reference images, which showed similar variations. No other anomalies were detected, leading to a conclusion that the query image is normal.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0115",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (wrinkles, seal folds) are explicitly classified as normal handling artifacts in the domain rules. The package structure is intact, seals are closed, and labels are legible. No structural breach or content failure is observed.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0096",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact box with clear printing and sharp edges, matching the normal signature defined in the rulebook. No candidate defect features were identified to warrant further refutation.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0135",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly, the crumpled lid seal, was refuted by comparing it to the reference images which show similar natural variations. No other defects were found.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0122",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a damaged and open top flap, a structural defect clearly absent in the reference images which show intact, sealed packs. This confirms the query is anomalous.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0154",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits an open top flap, which is explicitly defined as an anomaly in the domain rules. The reference images confirm that the normal state for this product is a closed, sealed top flap. The side-by-side comparison successfully refuted the possibility of this being a normal variation.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0128",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear structural defect: a hole in the top flap. The side-by-side comparison with reference images confirms this feature is absent in normal products, validating the anomaly.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0142",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a torn and peeling label on the right side, a defect not present in any of the reference images. This confirms the bottle is anomalous.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0158",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a severely torn and punctured foil lid, which is a clear deviation from the intact lids seen in all reference images. This matches the defined anomaly mode for seal failure.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0161",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a bottle with a missing cap, which is a critical defect. The side-by-side comparison with reference images confirms that all normal instances have intact caps, validating the anomaly.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0126",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits an open top flap, exposing the inner packaging, which is explicitly defined as an anomaly in the domain rules. This feature is absent in all reference images, confirming it is not a normal variation.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0111",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a transparent straw wrapper attached to the front, which is absent in all reference images. This matches the explicit anomaly rule in the domain rulebook, confirming the item is anomalous.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0104",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard beverage bottle with an intact cap and label, matching the normal signature. No candidate defect features were identified that require refutation.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0176",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits an open top flap with exposed inner packaging, a feature absent in all reference images and explicitly defined as an anomaly in the domain rules.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0151",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard Lay's chip can with no unique defects. The side-by-side comparison confirmed that any minor surface variations are consistent with the normal reference images, refuting the initial suspicion of a label scuff. The container is structurally intact and properly sealed.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0152",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a standard Coca-Cola Zero can with no visible structural deformations, label defects, or surface damage. The can stands upright with a smooth, reflective surface and intact labeling, consistent with the normal signature defined in the domain rules. No candidate features for anomalies were identified.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0134",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a box with severe structural bending, which is a clear deviation from the rigid, straight boxes shown in the reference images. This deformation is a definitive anomaly.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0175",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows an open top flap exposing the inner packaging, which is explicitly defined as an anomaly in the domain rulebook. The side-by-side comparison confirms this feature is absent in all normal reference images, validating the anomaly classification.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0148",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard yellow beer can with an intact label and no visible structural damage, dents, or corrosion. The only potential feature is minor surface dust/smudge, which the domain rules explicitly state should not be flagged as a defect if the text remains legible. Therefore, the can is normal.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0098",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed surface wrinkles and seal folds are consistent with the normal variations seen in the reference images and are explicitly classified as normal handling artifacts by the domain rules. No structural breaches or labeling defects are present.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0132",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The can exhibits all normal characteristics: smooth cylindrical shape, intact sealed top, and a fully adhered label with clear graphics. The only potential feature (minor smudge) is explicitly excluded from being a defect by the domain rules as long as the underlying text is legible, which it is. Therefore, the can is classified as normal.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0093",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a shiny, irregular patch on the query can that is absent in all normal reference images. This feature is consistent with a label defect or dent, confirming the can is anomalous.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0136",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structurally intact box with sharp edges and clear printing, matching the normal signature. No candidate defect features were identified that would survive refutation against the reference images.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0140",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The observed wrinkles and creases are consistent with normal handling of flexible packaging as defined in the domain rules. The package structure is intact with no tears, leaks, or illegible labels, matching the normal reference images.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0131",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a white scuff mark on the query's label that is absent in all reference images. Per the domain rules, this constitutes a defect.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0113",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits an open top flap, which is explicitly defined as an anomaly in the domain rules. The side-by-side comparison confirms this feature is absent in the normal reference images, solidifying the anomaly classification.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "cigarette_box"
+  },
+  {
+    "item_id": "D2_0118",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard beverage bottle with an intact cap and label, upright on a pegboard background. No candidate defect features (dents, tears, leakage) were observed that would not be explained by normal variation. The initial score is low, and with no candidate features to refute, the bottle is classified as normal.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0123",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear physical tear on the top flap, which is absent in all reference images. This matches the domain rule for classifying a box as anomalous due to a large, irregular hole or physical tear on the top flap.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_box"
+  },
+  {
+    "item_id": "D2_0150",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The package shows no structural breaches, leaks, or label damage. The only potential irregularities are minor surface creases, which are explicitly defined as normal handling artifacts in the domain rules and are also present in the reference images. Therefore, the package is normal.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_package"
+  },
+  {
+    "item_id": "D2_0108",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal beverage bottle with no defects. Comparison with reference images confirms that the bottle's structure, cap, and label are within the expected normal range, with no signs of damage or anomalies.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0119",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a transparent straw wrapper attached to the front, which is explicitly defined as an anomaly in the domain rulebook. The reference images confirm this feature is not part of the normal product presentation.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0177",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a standard Somersby can with no visible structural defects, label damage, or contamination. The minor surface smudge candidate is not considered a defect per the domain rules as the underlying text remains clear. The can matches the normal signature of the product class.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_can"
+  },
+  {
+    "item_id": "D2_0168",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query bottle matches the normal reference profile in shape, color, and cap. Observed variations (label orientation) are explicitly allowed. No defects were found after refutation.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0149",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a peeling label, a defect explicitly listed in the anomaly modes. This feature was successfully refuted against the reference images, which all show intact labels. Thus, the image is classified as anomalous.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "drink_bottle"
+  },
+  {
+    "item_id": "D2_0172",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The vertical white scuff on the label is a defect because it is present only in the query image and absent in all reference images, satisfying the domain rule that treats such marks as anomalies.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  },
+  {
+    "item_id": "D2_0129",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a small white mark on the label near the lid that is not present in any of the reference images. Per the domain rules, such a mark is considered a defect, confirming the image as anomalous.",
+    "label": 1,
+    "domain_code": "D2",
+    "category": "food_bottle"
+  }
+]

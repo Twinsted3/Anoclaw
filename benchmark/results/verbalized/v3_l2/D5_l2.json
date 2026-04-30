@@ -1,0 +1,201 @@
+{
+  "domain": "D5",
+  "seed": 0,
+  "k": 10,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D5_0001",
+    "D5_0002",
+    "D5_0023",
+    "D5_0027",
+    "D5_0035",
+    "D5_0046",
+    "D5_0047",
+    "D5_0054",
+    "D5_0055",
+    "D5_0074",
+    "D5_0091",
+    "D5_0095",
+    "D5_0107",
+    "D5_0113",
+    "D5_0137",
+    "D5_0144",
+    "D5_0154",
+    "D5_0167",
+    "D5_0171",
+    "D5_0172"
+  ],
+  "validation_ids": [
+    "D5_0010",
+    "D5_0015",
+    "D5_0021",
+    "D5_0025",
+    "D5_0031",
+    "D5_0033",
+    "D5_0037",
+    "D5_0056",
+    "D5_0079",
+    "D5_0089",
+    "D5_0114",
+    "D5_0119",
+    "D5_0121",
+    "D5_0142",
+    "D5_0145",
+    "D5_0147",
+    "D5_0148",
+    "D5_0150",
+    "D5_0156",
+    "D5_0162"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D5",
+        "screw_bag"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the bag contains loose washers or nuts that are not threaded onto the bolts.",
+          "covers_items": [
+            "D5_0107"
+          ],
+          "justification": "The agent failed to detect the structural anomaly of loose hardware. The presence of unthreaded washers and nuts indicates a missing assembly step or incorrect packaging, which is a logical defect.",
+          "side": "FN"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D5",
+        "splicing_connectors"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the image contains only the background mesh with no splicing connectors or cables present.",
+          "covers_items": [
+            "D5_0167"
+          ],
+          "justification": "The agent failed to detect the complete absence of the target object (wired terminal blocks). The image shows only the background mesh, which is a structural anomaly (missing object) compared to the baseline.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag wire color variations (e.g., yellow, blue) as anomalies if the connector structure and count are intact.",
+          "covers_items": [
+            "D5_0001",
+            "D5_0055",
+            "D5_0074"
+          ],
+          "justification": "The agent incorrectly flagged items with different wire colors (yellow, blue) as anomalies. The reference profiler explicitly lists wire color variation as an allowed variation, so these should be treated as normal.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag a single-wire assembly as an anomaly if the connector housing structure is consistent with the baseline.",
+          "covers_items": [
+            "D5_0001"
+          ],
+          "justification": "The agent flagged a single yellow wire as a 'missing conductor' defect. However, the item is labeled normal, indicating that single-wire configurations are valid variants for this class.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D5",
+        "juice_bottle"
+      ],
+      "k": 6,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the main fruit label is completely missing from the bottle surface.",
+          "covers_items": [
+            "D5_0095"
+          ],
+          "justification": "The agent failed to detect the total absence of the label, likely confusing 'label variation' with 'label presence'. Missing structural components are anomalies.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the main label shows physical damage, such as tears or cut-off text.",
+          "covers_items": [
+            "D5_0144"
+          ],
+          "justification": "The agent missed physical defects (tears, damage) on the label, treating them as normal variations. Structural integrity violations must be flagged.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag bottles where the fruit icon and liquid color differ from the reference, provided the label is intact.",
+          "covers_items": [
+            "D5_0002",
+            "D5_0023"
+          ],
+          "justification": "The agent incorrectly flagged valid variations (cherry/red, banana/white) as anomalies. The domain allows for different fruit types and corresponding liquid colors.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D5",
+        "breakfast_box"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if granola/cereal is on the left and fresh fruit is on the right, reversing the standard layout.",
+          "covers_items": [
+            "D5_0154"
+          ],
+          "justification": "The agent missed a clear structural inversion where the granola and dried fruit occupy the left compartment instead of the right, violating the expected spatial arrangement.",
+          "side": "FN"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D5",
+        "pushpins"
+      ],
+      "k": 8,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if any compartment is completely empty or contains more than two pins.",
+          "covers_items": [
+            "D5_0172",
+            "D5_0113",
+            "D5_0137"
+          ],
+          "justification": "The agent missed structural count violations. D5_0172 has an empty cell, while D5_0113 and D5_0137 have cells with three pins, violating the expected 1-2 pin density.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Treat random pin orientation and non-centered placement within a compartment as normal variation.",
+          "covers_items": [
+            "D5_0027",
+            "D5_0046",
+            "D5_0047",
+            "D5_0054",
+            "D5_0035"
+          ],
+          "justification": "The agent incorrectly flagged intact pins with varying angles or positions as defects. These items are structurally normal and consistent with the reference set.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "a_wins_rules": [
+    "If Branch B (Direct) claims a 'hyperintense' or 'bright' lesion but the query image visually lacks a distinct, high-contrast bright mass compared to the reference images, trust A (Agent).",
+    "If Branch B (Direct) identifies a 'dark' or 'elongated' lesion in the white matter that appears visually consistent with normal sulcal or ventricular structures in the reference images, trust A (Agent).",
+    "If Branch A (Agent) explicitly cites 'normal allowed variations' or 'refutation' of defect-like features in its rationale, trust A (Agent)."
+  ],
+  "b_wins_rules": [
+    "If Branch A (Agent) claims a 'focal hyperintense lesion' or 'ring-enhancing lesion' but the query image appears structurally symmetrical and lacks a distinct bright or ring-shaped anomaly compared to references, trust B (Direct).",
+    "If Branch A (Agent) identifies a lesion in the 'periventricular white matter' that is not visually distinguishable from normal tissue texture in the reference images, trust B (Direct)."
+  ],
+  "a_evidence": [
+    "D9_0049",
+    "D9_0064",
+    "D9_0066",
+    "D9_0077",
+    "D9_0122"
+  ],
+  "b_evidence": [
+    "D9_0014",
+    "D9_0060"
+  ],
+  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If Branch B (Direct) claims a 'hyperintense' or 'bright' lesion but the query image visually lacks a distinct, high-contrast bright mass compared to the reference images, trust A (Agent).\",\n    \"If Branch B (Direct) identifies a 'dark' or 'elongated' lesion in the white matter that appears visually consistent with normal sulcal or ventricular structures in the reference images, trust A (Agent).\",\n    \"If Branch A (Agent) explicitly cites 'normal allowed variations' or 'refutation' of defect-like features in its rationale, trust A (Agent).\"\n  ],\n  \"b_wins_rules\": [\n    \"If Branch A (Agent) claims a 'focal hyperintense lesion' or 'ring-enhancing lesion' but the query image appears structurally symmetrical and lacks a distinct bright or ring-shaped anomaly compared to references, trust B (Direct).\",\n    \"If Branch A (Agent) identifies a lesion in the 'periventricular white matter' that is not visually distinguishable from normal tissue texture in the reference images, trust B (Direct).\"\n  ]\n}\n```",
+  "tokens": {
+    "input": 2259,
+    "output": 257
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 25,
+    "agree_wrong": 8,
+    "disagree_a_wins_total": 5,
+    "disagree_b_wins_total": 2,
+    "reflected_a": 5,
+    "reflected_b": 2,
+    "skipped": 0
+  },
+  "domain_code": "D9",
+  "seconds": 21.9
+}

@@ -1,0 +1,1082 @@
+[
+  {
+    "item_id": "D6_0050",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the provided reference images in terms of shape, color gradient, and point distribution. According to the corrective rule in the domain rulebook, if the object matches the reference class, it should be classified as normal regardless of the initial hypothesis about rainbow colors being anomalous. No candidate defect features were found that are not present in the references.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "candybar"
+  },
+  {
+    "item_id": "D6_0025",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (irregular edge) was refuted by the side-by-side comparison, which showed that similar edge variations exist in the normal reference images. No other defects were identified.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pacCandy"
+  },
+  {
+    "item_id": "D6_0089",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image's features are consistent with the normal variations seen in the reference images, indicating no anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0014",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate feature, a difference in edge shape, was refuted by the side-by-side comparison which showed it to be a natural variation in the brush stroke texture rather than a defect. No other anomalies were found.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pacCandy"
+  },
+  {
+    "item_id": "D6_0042",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits the expected shape, color gradient, and texture. Any minor variations in dot density are explicitly listed as allowed variations in the reference profile. No anomalous features survive refutation.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0001",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the reference images in terms of shape, color gradient, and texture. No candidate features for anomalies were identified, so the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0018",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image's shape, texture, and color gradient are consistent with the natural variation observed in the reference images. No unique anomalies were found.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0064",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct sharp fold that is absent in all reference images, which display smooth surfaces. This feature survives refutation and is classified as an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0069",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query's shape, while distinct from the specific reference instances, matches the class definition of 'irregular overlapping lobes' with 'shape distortion' as an allowed variation. Therefore, it is not anomalous.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0028",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no anomalies. Its shape, lobe structure, and point cloud texture are consistent with the natural variations observed in the reference images, as confirmed by the side-by-side comparison.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0071",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually indistinguishable from the reference images. No candidate defect features were identified during the initial inspection. The shape, color distribution, and texture are consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0030",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The initial suspicion of a defect at the top edge was refuted by the side-by-side comparison, which showed similar irregularities in the reference images. The query object's morphology is consistent with the normal variation defined by the reference set.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0047",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query object is a 3D pentagonal prism, whereas the reference profiler defines the normal baseline as an 'irregular polygonal plane'. This fundamental geometric difference is not covered by allowed variations, confirming the query as anomalous.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0052",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a significant morphological anomaly: a large, elongated protrusion at the top that is absent in all reference images, which consistently show a smooth, rounded contour. This feature survives refutation and confirms the image is anomalous.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0054",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The reference profiler identified the normal baseline as a 'rainbow gradient bear silhouette' with the specific colors seen in the query. The candidate feature (rainbow gradient) was refuted as it is part of the normal definition. No anomalies remain.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0026",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0046",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps on the upper surface that are consistently present in all reference images, as confirmed by the side-by-side comparison.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "car"
+  },
+  {
+    "item_id": "D6_0012",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query's C-shaped silhouette is a distortion of the normal 'overlapping lobes' shape. Since the reference profiler explicitly allows 'shape distortion' as a normal variation, the query is classified as normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0005",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pacCandy"
+  },
+  {
+    "item_id": "D6_0015",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the texture and color distribution in the query image are consistent with the reference images. The initial suspicion of a defect was refuted as a normal variation.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0033",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits the same point-cloud rendering style and rainbow color gradient as the reference images. The domain rulebook clarifies that these features are expected for this class and should not be flagged as anomalies. No other defects are observed.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0000",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query's shape difference is classified as an allowed 'shape distortion' variation by the reference profiler, and no other anomalies are present.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0073",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query object exhibits a shape deformation (crescent vs. double-lobed) which is explicitly listed as an allowed variation by the reference profiler. The point-cloud texture is also consistent with the domain rules. Therefore, no anomaly is detected.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0072",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (tapered edge) was refuted by observing similar variations in the reference images. The query swatch is normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pacCandy"
+  },
+  {
+    "item_id": "D6_0044",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is normal. The side-by-side comparison with reference images confirms that the point cloud structure and density are consistent, with no unique defects or anomalies present.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "fish"
+  },
+  {
+    "item_id": "D6_0056",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (rainbow gradient) is explicitly listed as an allowed variation ('color gradient shift') in the reference profile, confirming the query image is normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0051",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query object has a crescent shape that is structurally inconsistent with the compact, heart-like shapes of all reference images. The domain rules confirm that while point-cloud gaps are normal, a mismatch in global silhouette is an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0017",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a prominent fold/crease that is absent in all reference images, which display smooth surfaces. This confirms the presence of a structural anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0016",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (rainbow gradient) is present in all reference images, confirming it is a normal attribute of this object class. Therefore, the query is normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0021",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image's features are consistent with the normal reference images, indicating no anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "fish"
+  },
+  {
+    "item_id": "D6_0087",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the reference images in both rendering style (point-cloud) and color scheme (rainbow gradient). The domain rules explicitly exclude these features from being anomalies. No other defect-like features are present.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0038",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image (leftmost) lacks the two distinct raised bumps on the upper surface that are consistently present in all four reference images. This structural absence is a clear anomaly according to the domain rules.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "car"
+  },
+  {
+    "item_id": "D6_0063",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually indistinguishable from the reference images. It shares the same shape, rainbow color gradient, and point-cloud texture. No candidate defect features were identified, so the anomaly score remains low.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0013",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate feature (top edge irregularity) by showing it exists in the reference images. The specific anomaly mode (crack in lower-right) is absent. Therefore, the query is classified as normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "diamond"
+  },
+  {
+    "item_id": "D6_0062",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate anomaly feature (rainbow gradient) was successfully refuted because it is present in all provided normal reference images. Therefore, the query image is classified as normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0003",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a significant missing region (hole) in the point cloud that is not present in any of the reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "fish"
+  },
+  {
+    "item_id": "D6_0076",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no anomalies. Its shape, including the small lobe and overall asymmetry, falls within the natural morphological variation observed in the reference images. The color gradient and point texture are also consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0048",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a sharp linear crease at the bottom-right that is absent in all reference images, which show smooth surfaces. This confirms the presence of a defect.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0043",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps on the upper surface that are consistently present in all reference images, as confirmed by the side-by-side comparison. This matches the domain rulebook's definition of an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "car"
+  },
+  {
+    "item_id": "D6_0080",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate feature, showing it is a natural variation present in the reference images. No other anomalies, including the specific 'linear crack or tear' mentioned in the rules, were detected. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "diamond"
+  },
+  {
+    "item_id": "D6_0023",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits the exact characteristics (point-cloud structure, rainbow gradient, irregular shape) defined as the normal baseline by the reference profiler. No anomalous features remain after refutation.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0011",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the provided reference images in terms of shape, point distribution, and the rainbow color gradient. According to the corrective rule in the domain rulebook, if the object matches the reference class, it should be classified as normal. No candidate defect features were identified that are not present in the references.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "candybar"
+  },
+  {
+    "item_id": "D6_0057",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate anomaly feature (rainbow gradient) was successfully refuted because it is present in all reference images, establishing it as the normal appearance for this object class.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0035",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query object's shape, while different from the specific reference instances, is covered by the 'shape distortion' allowed variation identified by the reference profiler. Combined with the domain rule regarding point-cloud texture, no anomaly is detected.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0085",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct horizontal fold/crease that is not present in any of the reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0041",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate feature (top edge irregularity) by showing it exists in the reference images. No other anomalies, specifically the warned-about crack in the lower-right, were detected. The query is normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "diamond"
+  },
+  {
+    "item_id": "D6_0031",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the normal reference images, showing no signs of defects or anomalies.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pacCandy"
+  },
+  {
+    "item_id": "D6_0084",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no distinct defects. The observed shape variations are consistent with the natural variation present in the reference images, and the specific anomaly mode (crack/tear) is absent.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "diamond"
+  },
+  {
+    "item_id": "D6_0068",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually indistinguishable from the reference images. No candidate defect features were identified during the initial inspection. The shape, color distribution, and point density match the normal baseline perfectly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0075",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps on the upper surface that are consistently present in all reference images. This missing structural feature is a definitive deviation from the normal signature defined in the rulebook.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "car"
+  },
+  {
+    "item_id": "D6_0061",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits the same point-cloud rendering style and rainbow color gradient as the reference images. The domain rulebook explicitly instructs not to flag these characteristics as anomalies. No other structural defects are apparent.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0034",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the provided reference images, exhibiting the same rainbow color gradient and point distribution. According to the corrective rule in the domain rulebook, if the object matches the reference class, it should be classified as normal regardless of the initial hypothesis that rainbow colors might be anomalous. No candidate defect features were found that are not present in the references.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "candybar"
+  },
+  {
+    "item_id": "D6_0088",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a rainbow color gradient and an irregular point cloud shape. The reference profiler explicitly lists these multi-spectral colors and the irregular shape as the expected normal signature for this class. The diffuse appearance is covered by allowed variations in point density. Thus, no anomaly is detected.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0059",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a distinct, elongated lobe on the upper-left side that deviates significantly from the compact, smooth morphology seen in all reference images. This matches the rulebook's definition of an anomaly (elongated lobe deviating from standard shape) and is not a normal variation.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0022",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually indistinguishable from the reference images. No candidate defect features were identified during the initial inspection. The shape, color distribution, and texture are consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0078",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "Although the domain rulebook suggests flagging rainbow gradients as anomalies, the reference profiler for this specific task explicitly lists 'color gradient shift' as an allowed variation for normal instances. Since the query exhibits this allowed variation, it is classified as normal.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0019",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually consistent with the reference images, showing a standard rainbow glitter smear with no obvious defects, missing parts, or anomalies. The slight variations in edge shape are present in the reference set as well.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pacCandy"
+  },
+  {
+    "item_id": "D6_0066",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct sharp fold/crease that is not present in any of the reference images, which all exhibit smooth surfaces. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0083",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics defined as normal by the reference profiler (point-cloud rendering, specific color gradient, organic shape). The apparent 'defects' (gradient, texture) are standard for this dataset. No anomalies detected.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0156",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the provided reference images in terms of shape, color gradient, and point distribution. The domain rulebook explicitly states that if the object matches the reference class, it should be classified as normal, overriding the initial hypothesis that rainbow colors are anomalous. Therefore, no anomaly is detected.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "candybar"
+  },
+  {
+    "item_id": "D6_0055",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a smooth edge in the top-left corner, whereas all reference images consistently show a scalloped edge in the same region. This deviation from the established normal pattern confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D6",
+    "category": "pacCandy"
+  },
+  {
+    "item_id": "D6_0139",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the style and structure of the normal reference images (point-cloud with rainbow gradient). No candidate defect features were identified that survive the initial visual check against the references and the domain rulebook.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0144",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate anomaly (diffuse texture) was refuted by the side-by-side tool, which showed the same texture exists in the normal reference images. Thus, the query is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0120",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a 3D pentagonal prism, while the reference images consistently show 2D planar surfaces. This structural difference (volume vs. plane) is a definitive anomaly relative to the established normal baseline.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0135",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no anomalies. Its shape, texture, and color gradient are consistent with the normal reference images, and any minor variations fall within the expected range of natural anatomical variation.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0117",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "Although the domain rulebook suggests flagging rainbow gradients as anomalies, the reference profiler confirms that the provided reference images (the ground truth for 'normal') inherently possess this gradient as an allowed variation. Therefore, the query image is consistent with the normal baseline and is not anomalous.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0118",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate anomaly feature, showing it is a normal variation present in the reference images. The query is therefore normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0167",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps on the upper surface that are a consistent feature in all normal reference images. This structural difference is confirmed by the side-by-side comparison and aligns with the domain rulebook's definition of an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "car"
+  },
+  {
+    "item_id": "D6_0114",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query object's shape, while different from the specific reference instances, falls under the 'shape distortion' allowed variation defined in the domain rules and confirmed by the reference profiler. No other anomalies are present.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0123",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image's rainbow gradient is consistent with the reference images and is explicitly listed as an allowed variation ('color gradient shift') by the reference profiler, refuting the initial hypothesis of it being an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0153",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the reference images in being a point-cloud rendering with a rainbow gradient. The domain rulebook explicitly states these features should not be flagged as anomalies. No other defect-like features are observed.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0129",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct hole in the point cloud that is absent in all reference images, confirming a structural anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "fish"
+  },
+  {
+    "item_id": "D6_0145",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the reference images in shape, color gradient, and point distribution. The reference profiler explicitly identifies the rainbow gradient as the expected color for this object class, refuting the initial hypothesis that it was an anomaly. Therefore, the object is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "candybar"
+  },
+  {
+    "item_id": "D6_0175",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is normal. The initial suspicion of contour deformation was refuted by the side-by-side comparison, which showed that the reference images exhibit similar natural variations in shape and point distribution.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0171",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (rainbow gradient) is explicitly listed as an allowed variation ('color gradient shift') in the reference profile. Thus, the query image is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0116",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial suspicion of a diffuse color gradient was refuted by the side-by-side tool, which showed this feature is consistent with the normal variation in the reference images. No other anomalies were detected.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0105",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is identical to the reference images, which are defined as normal. The reference profiler explicitly identifies the rainbow gradient as the expected normal signature for this class. Therefore, the query is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "candybar"
+  },
+  {
+    "item_id": "D6_0097",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear fold/crease that is not present in any of the reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0109",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate feature (top edge irregularity) by showing it is a normal variation present in the reference images. No other anomalies, such as the specified crack or tear, were detected. Therefore, the image is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "diamond"
+  },
+  {
+    "item_id": "D6_0170",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image's features, including the upper surface contour and raised bumps, are consistent with the reference images. The perceived differences are within the range of natural variation, so the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "car"
+  },
+  {
+    "item_id": "D6_0143",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the normal reference images in both texture (point-cloud) and global silhouette. Domain rules explicitly exclude texture gaps and matching silhouettes from being flagged as anomalies. No other defects are observed.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0147",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query object exhibits a shape distortion (crescent vs. double-lobed) which is explicitly listed as an allowed variation by the reference profiler. The point-cloud texture is consistent with the normal signature. Therefore, no anomaly is detected.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0141",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The domain rulebook explicitly defines the continuous rainbow color gradient as an anomaly (rendering artifact). Despite the reference images showing the same pattern, the explicit rule takes precedence, confirming the query is anomalous.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0099",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the initial candidate features. The query image exhibits the key normal features (two raised bumps) and the observed variations (point density) are consistent with the reference pool, indicating the query is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "car"
+  },
+  {
+    "item_id": "D6_0173",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the perceived anomaly (sparse point density) is a normal variation present in the reference images. No other defect-like features were identified, so the query is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0093",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image was compared against reference images using side-by-side analysis. No unique anomalies were detected; all observed features were consistent with normal variations in the reference set. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "fish"
+  },
+  {
+    "item_id": "D6_0130",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a structural defect (a gap/tear) in the lower-right quadrant of the query image that is not present in any of the reference images. This confirms the anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "diamond"
+  },
+  {
+    "item_id": "D6_0162",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks the two distinct raised bumps on the upper surface that are consistently present in all normal reference images, as confirmed by the side-by-side comparison. This directly matches the anomaly mode defined in the domain rulebook.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "car"
+  },
+  {
+    "item_id": "D6_0154",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics defined as normal by the reference profiler (point-cloud structure, specific color gradient, organic shape). The apparent differences are accounted for by allowed variations in rotation and perspective. No anomalies detected.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0094",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the reference images in shape, color gradient, and point distribution. The domain rulebook explicitly states that if the object matches the reference class, it should be classified as normal, overriding the initial hypothesis that rainbow colors are anomalous. No unique defects were found.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "candybar"
+  },
+  {
+    "item_id": "D6_0104",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually identical to the provided reference images in terms of shape, color gradient, and point distribution. According to the corrective rule in the domain rulebook, if the object matches the reference class, it should be classified as normal regardless of the initial hypothesis about rainbow colors being anomalous. No candidate defect features were found that are not present in the references.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "candybar"
+  },
+  {
+    "item_id": "D6_0121",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a sharp fold/crease that is structurally distinct from the smooth surfaces shown in all reference images. This feature is not a normal variation and is therefore classified as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0113",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a shape, texture, and color gradient consistent with the provided normal reference images. No candidate features resembling defects (such as significant asymmetry, elongated lobes, or texture irregularities) were identified. The domain rules confirm that the observed features (gradients, standard protrusions) are normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0142",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous due to a large, deep indentation on its right side, which is not present in any of the reference images. This significant deviation from the standard compact shape observed in the references and described in the domain rulebook confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0115",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct fold/crease that is not present in any of the reference images, which all show smooth surfaces. This structural difference confirms the query is anomalous.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0122",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (rainbow gradient) was found in all reference images, confirming it is a normal characteristic of this dataset rather than a defect. Therefore, the query is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0169",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the reference images in shape, color gradient, and point distribution. The reference profiler explicitly identifies the rainbow gradient as the expected color scheme for this object class. Therefore, the object is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "candybar"
+  },
+  {
+    "item_id": "D6_0168",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial suspicion of a rainbow gradient anomaly was refuted by the reference profiler, which explicitly lists 'color gradient shift' as an allowed variation and matches the colors seen in the query. Thus, the query is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0133",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate feature (top edge irregularity) by showing it is a natural variation present in the reference images. No other anomalies, such as the specified linear crack, were detected. Therefore, the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "diamond"
+  },
+  {
+    "item_id": "D6_0146",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal point cloud liver model as defined by the reference profiler and domain rules. The shape, color gradient, and point density are consistent with the allowed variations in the reference set. No anomalous features remain after refutation.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0151",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a point-cloud structure with a rainbow color gradient. The reference profiler confirms that this specific color gradient (yellow to purple) is the expected norm for this class of objects. Therefore, the feature initially suspected as an anomaly is actually a normal characteristic, and the object is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0126",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate feature (upper-left lobe protrusion) was found in the reference images, confirming it is a normal anatomical variation. No other anomalies were detected.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0103",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image's shape, texture, and color gradient are consistent with the provided reference images and the domain rules. No significant anomalies such as asymmetry or elongated lobes are present.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0174",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate anomaly, showing that the observed variations are consistent with the normal reference images. Therefore, the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "fish"
+  },
+  {
+    "item_id": "D6_0150",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a sharp fold/crease that is absent in all reference images, which show smooth surfaces. This geometric discontinuity is a confirmed anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0152",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the only candidate feature (top edge irregularity) by showing it is a natural variation present in the reference images. No other anomalies, such as the specified crack or tear, were detected. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "diamond"
+  },
+  {
+    "item_id": "D6_0160",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison reveals that the 'split' or fragmentation observed in the query is a natural variation present in the reference images (specifically Ref 1 and Ref 3). According to the domain rules, structural fragmentation in point-cloud objects should not be flagged as an anomaly if it is inherent to the style or present in normal instances. Since the feature is refuted by the references, the query is normal.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0172",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0095",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the sharp, linear truncation on the upper-right boundary is present in the query image but absent in all reference images, which exhibit smooth, rounded contours. This distinct geometric deviation is a clear anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "diamond"
+  },
+  {
+    "item_id": "D6_0096",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query object exhibits a significantly more elongated and irregular silhouette with a diffuse point distribution, particularly on the right side, which deviates from the compact, rounded shapes seen in all reference images. This structural asymmetry and lack of compactness are consistent with the hypothesized anomaly modes and are not present in the normal reference set.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "chicken"
+  },
+  {
+    "item_id": "D6_0106",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the reference images in style (point-cloud with rainbow gradient) and structure. The domain rulebook explicitly excludes point-cloud artifacts and voids from being anomalies. No defect-like features survive the initial check against the references.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0179",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a prominent fold/crease that is absent in all reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "gemstone"
+  },
+  {
+    "item_id": "D6_0125",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "car"
+  },
+  {
+    "item_id": "D6_0128",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query object has a fundamentally different global silhouette (a crescent shape with a missing lobe) compared to the reference images, which all exhibit a consistent 'figure-8' or 'peanut' shape. The domain rules explicitly state that gaps inherent to the point-cloud texture are normal, but they do not excuse a missing structural component (the entire right lobe). Therefore, the query is anomalous.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "duck"
+  },
+  {
+    "item_id": "D6_0119",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is visually indistinguishable from the reference images. No candidate defect features were identified during the initial inspection. The shape, color distribution, and point density match the normal baseline perfectly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "barCandy"
+  },
+  {
+    "item_id": "D6_0112",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the features initially suspected as anomalies are present in the reference images, indicating they are normal variations. No defects were found.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "fish"
+  },
+  {
+    "item_id": "D6_0158",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "airplane"
+  },
+  {
+    "item_id": "D6_0091",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct hole in the lower-right region that is absent in all reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "fish"
+  },
+  {
+    "item_id": "D6_0136",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The rainbow gradient, initially suspected as an anomaly, is confirmed as a normal variation by the reference profiler which lists 'color gradient shift' as allowed and shows the same pattern in all reference images.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "butterflyFish"
+  },
+  {
+    "item_id": "D6_0127",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image's features (color gradient, point density, shape) are consistent with the normal reference images. No anomalies were found.",
+    "label": 1,
+    "domain_code": "D6",
+    "category": "barCandy"
+  }
+]

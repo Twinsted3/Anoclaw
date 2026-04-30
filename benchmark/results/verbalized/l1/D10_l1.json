@@ -1,0 +1,35 @@
+{
+  "domain": "D10",
+  "units": [
+    {
+      "unit": [
+        "D10"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "normal_signature": [
+          "Single, isolated, contiguous white region against a pure black background",
+          "Granular, stippled texture filling the interior of the shape",
+          "Organic, irregular, and smooth boundary contours",
+          "Absence of internal voids or holes within the white mass",
+          "No external artifacts, noise, or secondary objects in the frame"
+        ],
+        "hypothesized_anomaly_modes": [
+          "Structural fragmentation: The object breaks into multiple disconnected components or islands.",
+          "Internal cavitation: The presence of black holes or voids within the white region, indicating missing material.",
+          "Surface erosion: The texture becomes sparse, patchy, or non-uniform, deviating from the dense stippled pattern.",
+          "Geometric deformation: The object exhibits unnatural sharp angles, straight lines, or extreme elongation inconsistent with the organic class shape.",
+          "Contamination: Appearance of foreign objects or noise clusters in the black background area."
+        ],
+        "rules": [
+          "if the white region consists of multiple disconnected components then lean anomaly",
+          "if there are black holes or voids inside the white region then lean anomaly",
+          "if the texture is sparse, patchy, or significantly non-uniform then lean anomaly",
+          "if the object has sharp geometric edges or straight lines then lean anomaly",
+          "if there are any white pixels in the black background area then lean anomaly",
+          "if the object is a single contiguous mass with uniform granular texture then lean normal"
+        ]
+      }
+    }
+  ]
+}

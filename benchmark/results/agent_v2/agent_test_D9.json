@@ -1,0 +1,4128 @@
+[
+  {
+    "item_id": "D9_0050",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.014000000000000012,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.971,
+        0.917
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images indicate a normal bottle assembly consists of a glass bottle with two front labels: an upper fruit icon label and a lower '100% Juice' label. Across references, the fruit icon can vary by juice type (e.g., cherries or orange), so icon/color differences alone are not anomalous. Comparing the query to the references, the bottle shape, cap area, fill appearance, upper fruit label, and lower '100% Juice' label are all present and in the expected positions. There is no missing label, no extra component, no swapped part in an incorrect slot, and no visible structural damage. The query closely matches ref1 in both layout and fruit type, consistent with the high retrieval similarity.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a correctly assembled juice bottle with exactly two labels in the normal positions: cherry icon label centered in the upper body and '100% Juice' label near the bottom. No components are missing, duplicated, misplaced, or damaged.",
+        "confidence": 0.986
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 235
+    },
+    "latency_sec": 15.68,
+    "error": null
+  },
+  {
+    "item_id": "D9_0044",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.971,
+        0.965
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images show the normal configuration: a tray with three fruits in the left compartment (typically two mandarins/oranges and one peach/nectarine) and, in the right compartment, granola on the top area with a mix of banana chips and almonds in the lower area. In the query image, the overall tray layout matches this same pattern closely. The left compartment contains three fruits in the expected count and positions. The right compartment contains granola in the upper section and banana chips plus almonds in the lower section, also matching the normal arrangement. I do not see any missing component, extra component, wrong part type, or major misplacement. Minor variation in exact fruit appearance and food distribution is consistent with normal variation.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Three fruits are present in the left compartment as in the references. The right compartment has granola on top and banana chips with almonds at the bottom, matching the normal product assembly. No extra or missing items and no incorrect component substitution are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 239
+    },
+    "latency_sec": 17.26,
+    "error": null
+  },
+  {
+    "item_id": "D9_0088",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.013000000000000012,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.98,
+        0.976
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images show a normal juice bottle assembly: a square yellow label with a banana icon placed in the upper-middle area of the bottle, and a smaller rectangular '100% Juice' label near the bottom front. The query image matches this same bottle type, same liquid fill, and same two-label configuration. Comparing positions and components, the banana label is present and correctly placed, and the bottom '100% Juice' label is also present in the expected location. There are no extra or missing parts, no swapped label type, and no visible structural damage. Minor differences in exact label alignment are within normal variation.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query bottle has both expected labels: banana icon label on the upper front and '100% Juice' label at the lower front, matching the retrieved normal references. No missing/extra components or incorrect arrangement are visible.",
+        "confidence": 0.987
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 210
+    },
+    "latency_sec": 22.23,
+    "error": null
+  },
+  {
+    "item_id": "D9_0017",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.962,
+        0.96
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the same general product type: two matching lever-style terminal blocks connected by a single wire. The exact connector size varies across normal references (one normal sample has 3 positions, another has 5), so the number of slots is not fixed for this product family. In the query, both sides use matching 2-position connectors, and a single wire is correctly installed between them. The assembly is symmetric, there are no missing or extra parts relative to this configuration, and there is no visible damage. The yellow wire color is not a defect because color variation is explicitly allowed.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two matching 2-slot terminal connectors are present on left and right, joined by one properly routed wire. No connector appears misplaced, mismatched, broken, or incomplete. The observed difference from references is mainly connector size and wire color, which is consistent with normal variation across the provided normal samples.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 458
+    },
+    "latency_sec": 24.61,
+    "error": null
+  },
+  {
+    "item_id": "D9_0016",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.977,
+        0.915
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The normal references show a square glass juice bottle with a fruit icon label in the upper-middle area and a '100% Juice' label near the bottom. One normal sample contains cherry juice with a cherry icon, and another contains orange-colored juice with an orange icon. 2. The query image shows the same bottle format, the same two-label layout, and a cherry icon paired with a dark red/brown juice, which is logically consistent with the cherry reference. 3. There are no missing components, no extra components, no swapped labels, and no obvious misplacement beyond minor positional variation. 4. The bottle and labels appear intact, with no structural damage visible. 5. Therefore, the query matches a valid normal assembly rather than a logical or structural anomaly.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query has the correct bottle shape, an upper fruit label showing cherries, a bottom '100% Juice' label, and juice color consistent with the cherry reference. No parts are missing, duplicated, swapped, or clearly misplaced.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 312
+    },
+    "latency_sec": 11.59,
+    "error": null
+  },
+  {
+    "item_id": "D9_0026",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.966,
+        0.962
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a consistent normal assembly: the left compartment contains three fruits (typically two mandarins/oranges and one apple/nectarine), while the right compartment contains granola on top and a nut/dried banana mix at the bottom. In the query image, the same overall arrangement is present: three fruits are placed in the left compartment, and the right compartment is correctly divided into granola above and mixed nuts/banana chips below. The counts of items at the component level match the normal pattern, there is no missing or extra compartment content, and no component appears swapped into the wrong section. Differences in exact fruit type/color and slight placement variation are consistent with allowed normal variation rather than a logical anomaly. No structural damage is visible.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Left compartment has three fruits in the expected positions; right compartment has granola occupying the upper area and nuts/banana chips occupying the lower area, matching the normal references. No missing, extra, or misplaced food component is visible.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 239
+    },
+    "latency_sec": 12.24,
+    "error": null
+  },
+  {
+    "item_id": "D9_0036",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.008000000000000007,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.983,
+        0.974
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal juice bottle assembly: an open bottle filled with juice, a square fruit label centered on the upper body, and a '100% Juice' label near the bottom. In the query image, the same components are present in the expected locations. The fruit label is centered on the upper bottle body and the bottom text label is present and correctly positioned. There are no extra or missing labels, no swapped component types, and no obvious structural damage. Minor differences in exact placement and viewing are within normal tolerance.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle contains the expected two labels: orange icon label on the upper body and '100% Juice' label at the bottom; both match the normal references in type and approximate position, with no missing, extra, or misplaced parts.",
+        "confidence": 0.992
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 196
+    },
+    "latency_sec": 11.12,
+    "error": null
+  },
+  {
+    "item_id": "D9_0087",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.959,
+        0.957
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembly kit inside a plastic bag containing 2 bolts, 2 washers, and 2 hex nuts. In the query image, I can identify the same set of components: 2 bolts, 2 washers, and 2 hex nuts. Their positions differ slightly from the references, but the arrangement is still logically correct and within normal variation for loose parts in a bag. There is no missing component, no extra component, no wrong component type, and no visible physical damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query image contains exactly two bolts, two washers, and two hex nuts, matching the normal references. Differences are only minor placement/orientation changes of loose parts.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 178
+    },
+    "latency_sec": 10.94,
+    "error": null
+  },
+  {
+    "item_id": "D9_0046",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.013000000000000012,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.974,
+        0.972
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show a normal product as a clear bottle filled with light-colored juice, with one banana label centered on the upper body and one '100% Juice' label near the bottom. 2. The query image matches this same overall assembly: same bottle shape, same single banana label, same bottom text label, and similar fill level. 3. There are no extra or missing components, no swapped label type, and no clear misplacement beyond normal small pose/view differences. 4. No visible structural damage such as cracks, dents, or broken parts is present. 5. The high retrieval similarity also supports that the query matches normal references closely.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle has the expected single banana icon label in the correct upper position and the '100% Juice' label in the correct lower position, with no missing/extra parts and no visible damage.",
+        "confidence": 0.987
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 245
+    },
+    "latency_sec": 9.57,
+    "error": null
+  },
+  {
+    "item_id": "D9_0023",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.955,
+        0.951
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal tray configuration with two compartments. In the left compartment, there are three fruits total: typically two small oranges/mandarins and one larger red/yellow fruit. In the right compartment, the top area is filled with granola, and the bottom area contains mixed nuts and banana chips. Comparing the query image to these references: the left compartment also contains three fruits with the same logical composition and placement pattern, and the right compartment contains granola on top with nuts/banana chips at the bottom. No items appear missing, extra, swapped, or placed in the wrong compartment. The observed differences are only minor positional and appearance variations, which are allowed.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query tray has the expected 3 fruits on the left (2 mandarins + 1 larger fruit) and the expected granola plus nuts/banana chips arrangement on the right. No wrong-count, wrong-type, wrong-position, or damaged components are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 294
+    },
+    "latency_sec": 13.36,
+    "error": null
+  },
+  {
+    "item_id": "D9_0062",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.967,
+        0.956
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show normal assemblies consisting of two matching push-wire connectors placed at opposite ends and joined by a single wire. 2. In the query image, the same overall assembly is present: one connector on the left, one connector on the right, and a single yellow wire connecting them. 3. The part count is correct and there is no extra or missing component. 4. The connector types and left-right placement appear consistent with the normal reference configuration. 5. The wire is slightly curved and has printed markings, but these are not logical defects; they fall under normal variation and do not indicate wrong assembly. 6. No visible structural damage, swapped part type, or incorrect arrangement is evident.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two connectors are present in the expected left/right positions and connected by a single yellow wire, matching the normal assembly pattern. No missing, extra, misplaced, or damaged part is visible; only minor wire curvature differs from the references.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 448
+    },
+    "latency_sec": 17.61,
+    "error": null
+  },
+  {
+    "item_id": "D9_0059",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.981,
+        0.979
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal product as a clear bottle filled with juice, with an orange icon label centered on the upper front and a '100% Juice' label near the bottom. In the query image, the same components are present: the bottle shape matches, the fill level is plausible, the upper orange label is present in the expected location, and the bottom '100% Juice' label is also present and correctly placed. There are no extra or missing parts, no swapped component types, and no obvious misalignment beyond normal tolerance. No structural damage is visible.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle, upper fruit label, and lower '100% Juice' label all appear present and in the expected arrangement, consistent with the normal references. No missing, extra, misplaced, or damaged components are visible.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 222
+    },
+    "latency_sec": 9.96,
+    "error": null
+  },
+  {
+    "item_id": "D9_0067",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.015000000000000013,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.979,
+        0.975
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show a normal product as a clear bottle filled with juice, with an orange-fruit label centered on the upper body and a '100% Juice' label near the bottom front. 2. The query image matches this same bottle type, same two labels, and the labels are in the expected locations. 3. There are no missing parts, no extra components, no swapped components, and no obvious misplacement beyond normal tolerance. 4. The bottle shape, cap/neck area, juice content, and overall assembly are consistent with the normal references. 5. No structural damage such as cracks, deformation, or broken parts is visible.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Upper orange icon label is present and centered similarly to the references; lower '100% Juice' label is present in the expected position; bottle geometry and contents appear consistent; no extra, missing, or wrongly arranged components are visible.",
+        "confidence": 0.985
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 269
+    },
+    "latency_sec": 10.81,
+    "error": null
+  },
+  {
+    "item_id": "D9_0030",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.981,
+        0.98
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembly pattern: a compartmented box where each compartment contains a single yellow pushpin, with expected variation in orientation and exact position inside each slot. Comparing the query image to the references, the same overall product and layout are present, and each visible compartment appears to contain one pushpin of the same type. There are no compartments with missing pins, no extra pins in a compartment, and no obviously wrong component type inserted. The pin orientations differ from the references, but that is consistent with normal variation and not a logical anomaly. I also do not see signs of structural damage such as broken parts.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All compartments appear populated consistently with one yellow pushpin each, matching the normal references in component type and count. No missing, extra, misplaced, or damaged components are visible.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 204
+    },
+    "latency_sec": 11.86,
+    "error": null
+  },
+  {
+    "item_id": "D9_0005",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.971,
+        0.967
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal product as a clear bottle filled with light-colored juice, with one banana icon label centered on the upper body and one '100% Juice' label near the bottom front. In the query image, the same components are present: the bottle shape matches, the banana label is present in the expected upper position, and the '100% Juice' label is present in the expected lower position. There are no extra or missing parts, no wrong component type, and no clear misplacement beyond normal tolerance. The slight differences in label tilt and fill appearance are consistent with normal variation rather than a logical assembly defect.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle has the expected banana label and bottom '100% Juice' label in the correct locations, with no missing/extra components and no visible structural damage.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 257
+    },
+    "latency_sec": 10.92,
+    "error": null
+  },
+  {
+    "item_id": "D9_0055",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.958,
+        0.956
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images show a normal assembled item consisting of two identical 3-port orange transparent connectors joined by a single blue wire. In the normal examples, each end of the blue wire is inserted into the middle port of each connector, and the overall assembly is symmetric aside from minor cable curvature. The query image matches this same structure: it has the same two connector types, the same component count, and the wire connects the corresponding middle ports on both sides. There is no missing or extra part, no wrong component type, and no incorrect slot usage. The slight wire curvature and minor pose differences are consistent with allowed normal variation.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two correct 3-port connectors are present, one on each side, with a single blue wire properly connecting the middle port of both connectors. No extra/missing components or misplacement are visible.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 208
+    },
+    "latency_sec": 17.49,
+    "error": null
+  },
+  {
+    "item_id": "D9_0060",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.01100000000000001,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.945,
+        0.945,
+        0.945
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The three reference images show a normal assembly consisting of two identical orange transparent connectors, one on each end, joined by a single yellow wire. In all references, the component count is correct, the connector types match, and the wire connects the two endpoints in the expected left-right arrangement. The query image shows the same two matching connectors and one yellow wire connecting them. There are no extra or missing parts, no swapped component types, no incorrect slot usage, and no visible physical damage. The wire is nearly straight, which is within normal positional variation compared with the references.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query has exactly two correct orange connectors at both ends and one yellow wire between them, matching the normal reference assemblies. No missing/extra components, misplacement, or damage is visible.",
+        "confidence": 0.989
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 194
+    },
+    "latency_sec": 19.6,
+    "error": null
+  },
+  {
+    "item_id": "D9_0063",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.019000000000000017,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.928,
+        0.927,
+        0.92
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show normal assemblies consisting of two matching connector blocks joined by a single wire. The number of connector slots can vary across normal samples (e.g., 3-slot and 5-slot versions), so slot count itself is not anomalous as long as both ends match and the assembly is logically consistent. In the query image, both ends appear to be the same 5-slot connector type, connected by a single red wire, which matches the normal pattern seen in reference 1. There is no visible missing part, extra part, wrong connector type, misplacement, or structural damage. The wire routing and connector positioning are slightly varied but remain within normal tolerance.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Both sides use matching 5-slot orange/transparent connector blocks, and they are correctly joined by one red wire. No extra or missing connector slots, no mismatched component type, and no visible breakage or assembly error are present.",
+        "confidence": 0.981
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 328
+    },
+    "latency_sec": 18.18,
+    "error": null
+  },
+  {
+    "item_id": "D9_0053",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.96,
+        0.947
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The retrieved reference images show the normal product as a small zip bag containing the same set of metal fasteners: two bolts, two washers, and nuts, with some tolerance in their exact positions/orientations inside the bag. 2. In the query image, I can identify two bolts on the left, two washers in the middle, and two nuts on the right. This matches the expected component set seen in the normal references. 3. The parts are loose inside the bag, so positional variation is expected; the arrangement differs slightly from the references but remains logically consistent. 4. There is no visible missing part, no extra part, no wrong component type, and no visible structural damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query contains the expected hardware set: 2 bolts, 2 washers, and 2 nuts, with only minor placement differences relative to the normal references.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 375
+    },
+    "latency_sec": 12.47,
+    "error": null
+  },
+  {
+    "item_id": "D9_0086",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.966,
+        0.964
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show the normal product as two identical 3-slot orange/transparent connectors joined by a single short wire, with one connector on the left and one on the right. 2. In the query image, the same two connectors are present in the correct left-right positions and appear properly attached by a single wire. 3. There is no missing component, no extra component, no wrong connector count, and no obvious misplacement or physical damage. 4. The main visible difference is the wire color (yellow instead of blue). According to the provided domain knowledge, color variation in the same-type component should not be treated as an anomaly. 5. Therefore, the assembly is logically correct and should be considered normal.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two matching 3-slot connectors are present, one on each side, connected by a single correctly routed wire; no parts are missing, extra, swapped, or damaged. Only the wire color differs from the references.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 351
+    },
+    "latency_sec": 21.14,
+    "error": null
+  },
+  {
+    "item_id": "D9_0072",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.009000000000000008,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.983,
+        0.98
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal bottle assembly: a transparent bottle filled with light liquid, one upper square label with a banana icon, and one lower rectangular label reading '100% Juice'. In the query image, the same components are present in the expected positions: the banana label is centered on the upper body and the '100% Juice' label is centered near the bottom. There are no extra labels, no missing parts, no swapped component types, and no obvious structural damage to the bottle. Minor differences in placement and viewpoint are within normal tolerance and match the high similarity to references.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle has exactly two expected labels: banana icon on the upper front and '100% Juice' label on the lower front, matching the normal references. No missing, extra, misplaced, or damaged components are visible.",
+        "confidence": 0.991
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 204
+    },
+    "latency_sec": 9.31,
+    "error": null
+  },
+  {
+    "item_id": "D9_0040",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.10999999999999999,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.981,
+        0.976
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembly pattern: a compartment box containing yellow pushpins, generally with one pin per occupied compartment and some compartments left empty. The exact pin orientation varies, which is consistent with allowed normal variation. In the query image, the box layout and pin type match the references well. The count and distribution of pins across compartments appear consistent with the normal examples, with no obvious extra item, missing required component, or wrong component type in any slot. There is no visible structural damage to the box or pins. Differences are limited to ordinary pose/orientation changes of the same pushpins.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All visible items are the expected yellow pushpins; compartments show a plausible normal occupancy pattern similar to the references; no compartment contains an obviously wrong object, duplicated abnormal placement, or missing/physically damaged part.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 206
+    },
+    "latency_sec": 10.83,
+    "error": null
+  },
+  {
+    "item_id": "D9_0019",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.965,
+        0.958
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show the normal product contents: a small zip bag containing 2 bolts, 2 hex nuts, and 2 washers. 2. In the query image, the 2 bolts are present and appear undamaged. 3. However, the loose small parts do not match the normal kit composition. The query appears to contain 1 hex nut and 3 washers instead of the expected 2 hex nuts and 2 washers. 4. This is not a minor positional variation or viewpoint change; it is a wrong-part/count issue, which matches the logical anomaly criteria.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical anomaly - wrong component count/type",
+        "evidence": "Compared with the normal references, the query bag has an incorrect mix of small parts: one hex nut seems missing and an extra washer is present. Normal references consistently show 2 nuts and 2 washers, while the query shows about 1 nut and 3 washers.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 446
+    },
+    "latency_sec": 18.63,
+    "error": null
+  },
+  {
+    "item_id": "D9_0028",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.958,
+        0.949
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show a normal meal tray layout with three fruits in the left compartment and two dry-food sections on the right: granola on top and a mix of nuts/banana chips on the bottom. 2. In the query image, the overall compartment usage matches this pattern exactly: left compartment contains three fruits, right-top contains granola, and right-bottom contains nuts plus banana chips. 3. The fruit count is correct, and their positions are consistent with the references. One fruit at the top appears to be an apple/nectarine-like fruit, which is also present in one normal reference. 4. There is no extra item, no missing item, no misplaced component, and no visible structural damage. 5. Minor appearance differences such as fruit color/shape fall within normal variation and should not be flagged.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray has the expected three fruits in the left section, granola in the upper-right section, and nuts/banana chips in the lower-right section, matching the normal references with no missing, extra, or misplaced components.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 376
+    },
+    "latency_sec": 17.94,
+    "error": null
+  },
+  {
+    "item_id": "D9_0075",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.971,
+        0.97
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembled item consisting of two identical orange connector blocks joined by a single wire, with the connectors facing inward symmetrically. The query image matches this overall assembly: there are exactly two connector blocks, one on each side, and one wire connecting them. The part count is correct, the connector type appears correct on both ends, and the positions/orientation are consistent with the normal references. The only noticeable difference is the wire color/curvature (blue and slightly bowed), which is explicitly noted as a non-anomalous variation and does not indicate wrong assembly. No missing, extra, misplaced, or damaged components are visible.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two matching 3-port orange connectors are present, connected by a single wire between the same corresponding positions as in the references. No extra or missing parts, no wrong connector type, and no structural damage are visible. Wire color/shape variation is within normal tolerance.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 228
+    },
+    "latency_sec": 16.85,
+    "error": null
+  },
+  {
+    "item_id": "D9_0051",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.985,
+        0.985
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal product as a compartment box where each slot contains one yellow pushpin, with noticeable tolerance in pin orientation and exact placement inside each compartment. Comparing the query image to the references, the overall box structure matches, the same type of yellow pushpins is present, and the arrangement remains logically consistent: there appears to be one pin per compartment with no clearly missing slot, no extra pin in a slot, and no wrong component type. Orientation differences are similar to the normal references and fall within expected variation. I also do not see visible structural damage such as broken pins or damaged compartments.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All visible compartments appear populated in the same way as the normal references, using the same pushpin type. No obvious extra/missing items, misplaced parts, or damaged components are visible. The query closely matches the retrieved normal samples.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 652
+    },
+    "latency_sec": 19.56,
+    "error": null
+  },
+  {
+    "item_id": "D9_0081",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.956,
+        0.95
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal product as a sealed plastic bag containing 2 metal bolts, 2 hex nuts, and 2 flat washers. In the query image, I can also see exactly 2 bolts, 2 hex nuts, and 2 flat washers inside the bag. The components are slightly rearranged compared with the references, but this falls within normal positional variation and does not indicate a logical anomaly. There is no visible extra part, missing part, wrong part type, or physical damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query contains the same component set as the normal references: 2 bolts, 2 nuts, and 2 washers. Parts are inside the same type of zip bag and appear intact. Only minor position/orientation differences are present.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 335
+    },
+    "latency_sec": 14.48,
+    "error": null
+  },
+  {
+    "item_id": "D9_0013",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.957,
+        0.955
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The retrieved reference images show a normal tray layout with two compartments: a left fruit compartment containing three fruits, and a right compartment containing granola on top with a nut/dried-banana mix at the bottom. 2. In the query image, the overall tray structure and component placement match this normal pattern closely. 3. The left compartment contains three fruits arranged vertically: one peach/nectarine-like fruit and two mandarins, which matches the fruit count and is consistent with Normal reference 2. 4. The right compartment contains granola in the upper section and almonds/banana chips in the lower section, also matching the normal references. 5. No missing items, extra items, wrong component types, misplaced components, or visible physical damage are evident. Minor differences in exact fruit placement or food distribution are within normal variation.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query matches the normal assembly pattern: 3 fruits in the left section, granola in the top-right, and banana chips/nuts in the bottom-right. The fruit combination and arrangement are especially similar to Normal reference 2.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 360
+    },
+    "latency_sec": 16.3,
+    "error": null
+  },
+  {
+    "item_id": "D9_0083",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.953,
+        0.95
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved references show a normal assembly consists of 2 bolts, 2 washers, and 2 hex nuts inside the bag. In the query image, I can identify 2 bolts, 2 washers, and 2 hex nuts as well. The parts are loose in the bag, so their exact orientations and positions can vary; this matches the allowed normal variation. I do not see any extra component, missing component, wrong component type, or damaged part. Therefore the query matches the normal references.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query image contains the expected set of hardware: two bolts, two washers, and two hex nuts, with no missing or extra items and no visibly wrong part type.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 177
+    },
+    "latency_sec": 9.7,
+    "error": null
+  },
+  {
+    "item_id": "D9_0068",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.015000000000000013,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.98,
+        0.973
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal bottle assembly: a clear bottle filled with light juice, one square fruit label centered on the upper body, and one small '100% Juice' label near the bottom. The query image matches this same overall configuration. Comparing the query to the references, the bottle shape, fill appearance, upper banana label, and lower text label are all present in the expected positions. There is no missing label, no extra component, no swapped component type, and no clearly incorrect arrangement. Minor differences in exact placement are within normal tolerance and consistent with the provided false-positive guidance.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows exactly one banana icon label on the upper front and one '100% Juice' label on the lower front, matching the normal references; no extra/missing parts or wrong component types are visible.",
+        "confidence": 0.985
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 203
+    },
+    "latency_sec": 9.99,
+    "error": null
+  },
+  {
+    "item_id": "D9_0076",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.97,
+        0.97
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images show a normal juice bottle assembly: a transparent bottle filled with juice, one square fruit label centered on the upper body, and one rectangular '100% Juice' label near the bottom front. In the query image, the bottle has the same overall shape, fill level, and the same two labels in the expected positions. There are no extra labels, no missing components, and no misplaced or wrong-type parts. I also do not see structural damage such as cracks or deformations. Minor pose and illumination differences are consistent with normal variation.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query bottle contains exactly the expected front components: one fruit icon label on the upper center and one '100% Juice' label on the lower front, both aligned similarly to the normal references; no missing, extra, swapped, or damaged parts are visible.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 205
+    },
+    "latency_sec": 8.75,
+    "error": null
+  },
+  {
+    "item_id": "D9_0029",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.968,
+        0.96
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved references show the normal product as two matching multi-port lever connectors joined by a wire, with minor allowed variation in wire color and slight pose. In the query image, both ends are present, the connectors appear to be the same type and correctly positioned facing each other, and the wire is properly routed between them. I do not see any missing connector, extra part, misplaced component, or damaged structure. The observed differences from the references are limited to acceptable variation such as wire appearance/color and small positional differences.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two matching connector blocks are present on the left and right, each with the expected stacked orange levers, and they are connected by a central wire in the same overall arrangement as the normal references. No slot appears missing, no extra component is attached, and no physical breakage is visible.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 579
+    },
+    "latency_sec": 21.29,
+    "error": null
+  },
+  {
+    "item_id": "D9_0015",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.981,
+        0.955
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images indicate a normal assembly consists of two orange lever connectors joined by a pair of wires, with matching connector sizes on both ends. In the query image, the left connector has 4 slots while the right connector has 5 slots. This creates a mismatch in component type/size between the two ends. The wire pair is present and generally positioned normally, and there is no visible structural damage. However, the asymmetric connector count is a logical assembly error rather than acceptable variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong type of component in a slot / mismatched connector size",
+        "evidence": "Left side connector is a 4-port block, while right side connector is a 5-port block. Normal references show matching connector types on both sides.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 188
+    },
+    "latency_sec": 14.92,
+    "error": null
+  },
+  {
+    "item_id": "D9_0080",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.018000000000000016,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.972,
+        0.972
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal meal tray layout: three fruits in the left compartment (typically one peach/nectarine at the top and two mandarins below), and in the right compartment granola filling the upper area with a mix of banana chips and almonds clustered in the lower-right area. The query image matches this overall assembly closely. In the left compartment, there are three fruits with the same type and arrangement as the references. In the right compartment, granola occupies the top region and banana chips plus almonds occupy the lower region, again consistent with the references. I do not see any missing item, extra item, wrong component type, or clearly incorrect placement beyond normal variation in exact positions and quantities of loose food pieces. There is also no visible structural damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Three fruits are present in the left section in the expected arrangement; granola is in the upper-right section; banana chips and almonds are present in the lower-right section as in the normal references. Differences are limited to minor natural variation in loose food distribution.",
+        "confidence": 0.982
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 248
+    },
+    "latency_sec": 12.5,
+    "error": null
+  },
+  {
+    "item_id": "D9_0025",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.015000000000000013,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.984,
+        0.958
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images indicate the normal product is a cable assembly with orange connector blocks on both ends and a single wire spanning between them. In both references, the assembly is centered and the connectors appear correctly attached; minor differences such as wire color or slight pose are normal. Comparing the query image to these references, the query shows the same type of connectors on both ends, the same single-wire connection, and no missing or extra components. The parts are in the expected positions and there is no visible damage or incorrect component inserted. The slight orientation/placement variation is within normal tolerance.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query has one wire connecting two matching orange terminal connectors, with correct count of components, correct left-right arrangement, and no visible structural damage or wrong part type.",
+        "confidence": 0.985
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 191
+    },
+    "latency_sec": 16.26,
+    "error": null
+  },
+  {
+    "item_id": "D9_0037",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.961,
+        0.947
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembly consisting of two matching orange transparent connector blocks, one on each side, joined by a single wire stretched horizontally. Minor variations such as wire color and slight connector orientation appear acceptable normal variations. In the query image, the same two connector blocks are present in the expected left-right positions, and a single wire connects them horizontally. There is no missing connector, no extra part, no incorrect component type, and no obvious damage. The observed differences from references are limited to normal variation in appearance/pose.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two matching 3-port connector blocks are present, one at each end, connected by one wire in the correct position. No extra or missing parts and no structural damage are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 186
+    },
+    "latency_sec": 11.06,
+    "error": null
+  },
+  {
+    "item_id": "D9_0048",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.988,
+        0.983
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two retrieved reference images show a normal bottle assembly: a glass bottle filled with light-colored juice, a square upper label with a banana icon, and a lower rectangular label reading '100% Juice'. The query image matches this same overall product configuration. Comparing the query to the references, the bottle shape, fill level, upper banana label, and lower '100% Juice' label are all present and in the expected positions. There is no missing label, no extra component, no swapped component type, and no visibly wrong arrangement. Minor differences in exact placement and viewing are within normal variation and are explicitly not anomalies.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query bottle contains both expected labels: banana icon label in the upper-middle area and '100% Juice' label near the bottom, matching the normal references. No components are missing, duplicated, misplaced, or damaged.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 209
+    },
+    "latency_sec": 8.19,
+    "error": null
+  },
+  {
+    "item_id": "D9_0049",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.965,
+        0.955
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show normal assembled wire connectors consisting of matching connector blocks on both ends, with the wire inserted symmetrically and the same number of occupied slots on left and right. In the query image, both ends use the same connector type and appear undamaged, but the assembly is not logically correct: the left connector has five terminal slots while the right connector has four terminal slots. This creates a mismatch in component count/size between the two ends compared with the normal references, where both sides match. The wire itself is present and connected, so the issue is not missing wiring but wrong component configuration.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong type/component count mismatch",
+        "evidence": "Left side connector visibly has 5 orange lever terminals, while the right side has only 4. Normal references show matched connector sizes on both ends (2-2 or 3-3). No obvious structural damage is visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 220
+    },
+    "latency_sec": 14.59,
+    "error": null
+  },
+  {
+    "item_id": "D9_0069",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.966,
+        0.965
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show the normal product as a short single wire connecting two identical orange-and-transparent terminal blocks, one on each end. 2. The query image has the same overall assembly: one wire, two terminal blocks, and the same left-right connection layout. 3. The wire color in the query is yellow, which matches one normal reference; even if color differed, color variation alone is not an anomaly per the domain rules. 4. There is no visible missing component, extra component, swapped part type, or incorrect slot usage. 5. The slight tilt/pose variation of the left connector and small wire curvature are consistent with normal positional variation, not a logical defect or structural damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query contains exactly two matching terminal connectors connected by a single yellow wire, consistent with the normal references. No extra/missing parts, no wrong component type, and no visible damage are present.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 305
+    },
+    "latency_sec": 20.25,
+    "error": null
+  },
+  {
+    "item_id": "D9_0012",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.908,
+        0.9,
+        0.892
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The normal references consistently show the assembly with one connector on each side, and each connector has 3 orange actuation slots. 2. The query image shows similar overall positioning and same general product type, so it matches the references at a coarse level. 3. However, in the query, each connector has 4 orange slots instead of 3. 4. This is a logical assembly error: the component configuration/count differs from the normal product. 5. The wire color difference alone would not be enough to flag an issue, but the extra slot/terminal count is a clear anomaly.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong count / wrong component configuration",
+        "evidence": "Both left and right connector blocks in the query contain 4 orange terminal levers, while all normal references contain only 3 per side.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 268
+    },
+    "latency_sec": 21.55,
+    "error": null
+  },
+  {
+    "item_id": "D9_0084",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.986,
+        0.978
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show a normal product as a clear bottle filled with light-colored juice, with one square banana label in the middle-upper area and one '100% Juice' label near the bottom front. 2. The query image contains the same components: bottle, juice fill, banana label, and bottom text label. 3. The count of parts is correct: no extra labels, no missing labels, and no missing bottle components. 4. The arrangement matches the references within normal tolerance: the banana label is on the front center area and the '100% Juice' label is near the bottom front. Minor shifts in placement are small and consistent with normal variation. 5. There is no visible wrong component type, no obvious misassembly, and no structural damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle shape, fill level, banana icon label, and '100% Juice' label all match the normal references. Label positions are very similar to the references, with only slight acceptable variation and no missing/extra parts.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 306
+    },
+    "latency_sec": 10.93,
+    "error": null
+  },
+  {
+    "item_id": "D9_0074",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.942,
+        0.934,
+        0.93
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal kit consisting of 2 bolts, 2 hex nuts, and 2 flat washers inside the plastic bag. The exact positions and orientations vary across references, so loose placement is acceptable. In the query image, I can also see 2 bolts, 2 hex nuts, and 2 flat washers. All component types appear correct, with no extra or missing parts. Their placement is slightly different from the references but still consistent with normal variation for loose items in a bag. There is no visible physical damage or incorrect component substitution.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query contains the same expected set of parts as the normal references: 2 bolts, 2 washers, and 2 hex nuts. No missing/extra component, no wrong part type, and no structural damage is visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 391
+    },
+    "latency_sec": 15.04,
+    "error": null
+  },
+  {
+    "item_id": "D9_0052",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.954,
+        0.953
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show the normal product configuration: a divided tray with three fruits in the left compartment (1 peach/nectarine and 2 mandarins/oranges) and granola in the upper-right area with banana chips and almonds in the lower-right area. 2. In the query image, the left compartment also contains exactly 3 fruits: 2 mandarins/oranges and 1 peach/nectarine. This matches the normal part count and part types. 3. The right compartment matches the expected assembly as well: granola occupies the top-right section, and banana chips with almonds are placed in the lower-right section. 4. The fruit ordering differs slightly from the references, but this is within normal variation and does not indicate a logical anomaly. There are no missing parts, extra parts, wrong component types, or obvious structural defects.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All expected components are present in correct quantities and appropriate compartments: 2 mandarins/oranges + 1 peach/nectarine on the left, granola on the upper-right, banana chips and almonds on the lower-right. Only minor positional variation is observed.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 379
+    },
+    "latency_sec": 18.37,
+    "error": null
+  },
+  {
+    "item_id": "D9_0054",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.988,
+        0.983
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a compartment tray containing yellow push pins distributed across the slots, with some slots empty and some containing one or more pins. The query image matches this overall product type and assembly pattern very closely. Comparing the query to the references, the tray structure is intact, the components are the correct type (yellow push pins), and their placements within compartments are consistent with normal examples. There is no clear evidence of a missing tray divider, broken component, foreign object, or obviously incorrect part in any slot. Variations in exact pin count per compartment and orientation are present in the normal references as well, so these should be treated as normal variation rather than anomalies.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All visible items are the expected yellow push pins; the compartment box layout is intact; pin distribution and orientations are similar to the normal reference images; no extra wrong component, missing structural part, or damage is visible.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 220
+    },
+    "latency_sec": 13.62,
+    "error": null
+  },
+  {
+    "item_id": "D9_0061",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.01100000000000001,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.933,
+        0.928,
+        0.919
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show two normal assembly variants: a 2-connector version with a yellow wire (refs 1 and 2) and a 5-connector version with a red wire (ref 3). 2. The query image matches the 5-connector normal variant: both left and right sides have the same number of orange connector blocks, aligned in the expected stacked arrangement. 3. The transparent end housings are present on both sides in the expected positions. 4. The red wire connects the two sides correctly and follows the same overall routing as the normal 5-connector reference, with only slight curvature variation that is acceptable. 5. No missing parts, extra parts, swapped component types, misplacement, or physical damage are visible.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query has five orange connector modules on each side, matching normal reference 3. The red wire is present and correctly spans between the two connector groups. The arrangement, part count, and component types all appear consistent with a correct assembly.",
+        "confidence": 0.989
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 309
+    },
+    "latency_sec": 17.09,
+    "error": null
+  },
+  {
+    "item_id": "D9_0002",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.96,
+        0.96
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two normal references show a consistent assembly pattern: in the left compartment there are three fruits arranged vertically with the peach/nectarine-like fruit at the top and two mandarins/oranges below it. The right compartment contains granola in the upper area and mixed nuts/banana chips in the lower-right area. In the query image, the right compartment matches the normal pattern well. However, in the left compartment, the fruit types are rearranged: a mandarin is placed at the top, the peach/nectarine-like fruit is in the middle, and another mandarin is at the bottom. This is not just a small positional shift; the component types occupy different positions than in the normal references. Based on the logical-anomaly criteria, this is a wrong arrangement/position of parts.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong arrangement or position of parts",
+        "evidence": "Compared with both normal references, the peach/nectarine-like fruit should be in the top position of the left compartment, but in the query a mandarin is at the top and the peach/nectarine-like fruit is in the middle. The right compartment appears normal.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 418
+    },
+    "latency_sec": 17.49,
+    "error": null
+  },
+  {
+    "item_id": "D9_0033",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.973,
+        0.961
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. In both normal reference images, the left compartment consistently contains one apple/nectarine-like fruit placed at the top and two mandarins/oranges below it. 2. The right compartment in the query matches the normal pattern well: granola occupies the upper-right area, with banana chips and almonds at the bottom-right. 3. In the query image, the left compartment still has three fruits with the correct types and count, but their arrangement differs from the normal references: the apple/nectarine-like fruit is placed at the bottom, while two mandarins are above it. 4. This is not just a minor positional shift; it is a clear swap in the expected placement of component types within the compartment. 5. Based on the domain rule that wrong arrangement/position of parts is a logical anomaly, the query should be classified as anomalous.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong arrangement/position of parts",
+        "evidence": "The left compartment has the apple/nectarine-like fruit at the bottom instead of the top, unlike both normal references where it is at the top and the two mandarins are below.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 444
+    },
+    "latency_sec": 21.45,
+    "error": null
+  },
+  {
+    "item_id": "D9_0021",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.07999999999999996,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.984,
+        0.981
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show the normal product as a compartment box where each slot contains one yellow pushpin. Orientation varies from slot to slot, and slight position differences are acceptable. In the query image, the overall box layout matches the references, the same type of yellow pushpins is present, and each visible compartment appears correctly populated with one pin. I do not see any missing pins, extra pins, wrong component types, or damaged parts. The pin orientations differ from the references, but the references themselves also show varying orientations, so this is normal variation rather than a logical defect.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All compartments appear filled with the expected yellow pushpin components; no slot is obviously empty or overfilled, no foreign part is present, and there is no visible structural damage. Differences are limited to normal pose/orientation variation.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 569
+    },
+    "latency_sec": 22.45,
+    "error": null
+  },
+  {
+    "item_id": "D9_0018",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.959,
+        0.954
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show the normal product as a plastic zip bag containing the same set of hardware parts: 2 bolts, 2 hex nuts, and 2 washers/rings. In the query image, I can also see 2 bolts, 2 hex nuts, and 2 washers. The parts are loose inside the bag, so their exact positions and orientations vary, but this is consistent with the normal references. There is no visible extra part, no missing part, no wrong component type, and no sign of physical damage. The arrangement differs slightly from the references, but such variation is explicitly allowed and does not indicate a logical anomaly.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query contains the expected hardware set: two bolts, two nuts, and two washers inside the bag, matching the normal references. No missing/extra components or damaged parts are visible; only minor positional variation is present.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 371
+    },
+    "latency_sec": 13.66,
+    "error": null
+  },
+  {
+    "item_id": "D9_0011",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.94,
+        0.932,
+        0.932
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal tray layout with two compartments: the left compartment contains three whole fruits stacked vertically, and the right compartment contains granola on the upper area with a mix of banana chips and nuts in the lower area. In the query image, the same overall configuration is present. The left compartment contains three fruits in the expected arrangement: two small citrus fruits and one larger red-yellow fruit, which is consistent with normal variation seen in the references. The right compartment also matches the expected composition: granola occupies the top/right section, while banana chips and nuts are grouped at the bottom. There is no missing item, no extra item, no obvious wrong component type, and no incorrect placement beyond normal variation. No physical damage is visible.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Three fruits are present in the left slot as expected; granola is in the upper right section; banana chips and nuts are in the lower right section. The component types, counts, and overall arrangement match the normal references.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1398,
+      "output": 322
+    },
+    "latency_sec": 20.88,
+    "error": null
+  },
+  {
+    "item_id": "D9_0007",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.984,
+        0.984
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembly pattern: a compartmented plastic case containing yellow thumbtacks, generally with one tack per compartment. In the query image, the overall case layout matches the references well, but one compartment contains two thumbtacks instead of one. Specifically, the middle row, fourth compartment from the left has two yellow tacks placed together. This violates the logical correctness rule for count/placement. Other compartments appear consistent with normal variation in orientation, which is allowed.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong count (extra item)",
+        "evidence": "Compared with the normal references, the query has an extra thumbtack in a single compartment: the middle row, fourth column compartment contains two tacks, whereas normal compartments contain one tack each.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 189
+    },
+    "latency_sec": 11.64,
+    "error": null
+  },
+  {
+    "item_id": "D9_0045",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.941,
+        0.935,
+        0.934
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal assembly pattern: the left compartment contains exactly three whole fruits arranged vertically (typically two mandarins/oranges and one apple/peach), while the right compartment contains a large granola portion at the top and a smaller mix of banana chips and almonds at the bottom. In the query image, this same overall layout is present. The left compartment still has three whole fruits in the expected positions, and the right compartment has granola on top with banana chips and almonds below. I do not see any extra or missing major component, no component appears placed in the wrong compartment, and no obviously wrong item type is inserted. Variations in exact fruit type/color and slight arrangement differences are consistent with allowed normal variation.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Three whole fruits are present in the left section; granola occupies the upper-right section; banana chips and almonds occupy the lower-right section. No missing, extra, swapped, or damaged components are visible.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1398,
+      "output": 231
+    },
+    "latency_sec": 16.98,
+    "error": null
+  },
+  {
+    "item_id": "D9_0009",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.961,
+        0.96
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images show the normal assembly pattern: the left compartment contains three whole fruits, specifically two oranges/mandarins and one peach/nectarine, while the right compartment contains granola on top and a mix of banana chips and almonds at the bottom. In the query image, the same overall tray layout is present. The left compartment also contains exactly three whole fruits with the same composition: two small oranges/mandarins and one peach/nectarine. Their order/positions differ slightly from the references, but this is within normal variation. The right compartment has granola in the upper section and banana chips with almonds in the lower section, matching the normal component types and arrangement. I do not see extra or missing items, wrong component types, misplaced parts, or physical damage. Therefore the query matches the logical structure of the normal references.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Left compartment has 3 fruits of the expected types (2 oranges/mandarins + 1 peach/nectarine). Right compartment has granola on top and banana chips with almonds at the bottom, consistent with references. No missing, extra, or incorrectly placed components are visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 271
+    },
+    "latency_sec": 15.96,
+    "error": null
+  },
+  {
+    "item_id": "D9_0014",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.963,
+        0.953
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show a normal product consisting of a small zip bag containing 2 bolts, 2 hex nuts, and 2 washers. 2. In the query image, I can also identify 2 bolts and 4 small metal parts that match the expected set: 2 hex nuts and 2 washers. 3. The parts are loosely placed inside the bag, similar to the references; their exact orientation and position vary, but this is a normal variation and not a logical defect. 4. No extra parts, missing parts, wrong component types, or visible structural damage are present.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query contains the same expected hardware set as the normal references: two bolts, two hex nuts, and two washers inside the plastic bag. Differences are limited to minor placement/orientation changes.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 428
+    },
+    "latency_sec": 15.71,
+    "error": null
+  },
+  {
+    "item_id": "D9_0066",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.961,
+        0.95
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved references show the normal product as a small zip bag containing two bolts/screws plus a matching set of metal fasteners (hex nuts and washers), with some tolerance in exact placement and orientation inside the bag. In the query image, the same component types are present: two bolts, two hex nuts, and two washers. Their positions differ slightly from the references, but this is consistent with normal loose-part variation inside a bag. I do not see any extra part, missing part, wrong component type, or structural damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query contains the expected set of loose hardware items: 2 bolts, 2 hex nuts, and 2 washers, matching the normal references. Arrangement differs only slightly and remains within normal variation for loose components in a plastic bag.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 520
+    },
+    "latency_sec": 18.42,
+    "error": null
+  },
+  {
+    "item_id": "D9_0038",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.025000000000000022,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.972,
+        0.969
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal tray layout with three fruits in the left compartment and two food groups in the right compartment: granola on top and a nut/banana-chip mix on the bottom. In the query image, the same overall assembly is present: the left compartment contains three fruits, and the right compartment contains granola above a nut/banana-chip mix. The fruit types vary slightly across references (apple/nectarine-like fruit versus citrus), which is consistent with normal variation rather than a logical error. There are no missing or extra items, no swapped compartments, and no visibly damaged components.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Left compartment has 3 fruits as expected; right compartment has granola in the upper section and nuts/banana chips in the lower section. Component counts and positions match the normal references, with only acceptable variation in fruit type/appearance.",
+        "confidence": 0.975
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 273
+    },
+    "latency_sec": 15.08,
+    "error": null
+  },
+  {
+    "item_id": "D9_0000",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.979,
+        0.97
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal product as a compartment box where each slot contains one yellow push pin, with some natural variation in pin orientation and exact placement inside each compartment. In the query image, the box layout matches the references, the same type of push pins is present, and the slots appear consistently populated without any clearly missing, extra, misplaced, or damaged components. The pin orientations differ slightly from the references, but this is consistent with normal variation and is explicitly noted as a common false positive to ignore.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All compartments appear filled with the correct yellow push-pin component, with no obvious empty slot, duplicated pin in a slot, wrong part type, or structural damage. Overall arrangement is consistent with the normal reference images.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 1030
+    },
+    "latency_sec": 26.55,
+    "error": null
+  },
+  {
+    "item_id": "D9_0064",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.13,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.98,
+        0.979
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The query image shows a compartmentalized box of yellow push pins, similar overall to the retrieved normal references. In the normal references, each compartment contains push pins with plausible counts and placements, typically 0\u20132 pins per compartment, and all visible items are the same correct component type. Comparing the query to the references, the query preserves the same box layout, same component type, and similar distribution of pins across compartments. I do not see any clearly missing required part, extra foreign object, wrong component type, or impossible arrangement. The pin counts and positions vary slightly from the references, but this is consistent with normal variation rather than a logical assembly error. No structural damage is visible on the components.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All visible objects are yellow push pins of the expected type, placed naturally within the compartments. The box structure matches the references, and there is no clear extra, missing, misplaced, or damaged component beyond normal positional variation.",
+        "confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 228
+    },
+    "latency_sec": 11.05,
+    "error": null
+  },
+  {
+    "item_id": "D9_0024",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.01200000000000001,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.979,
+        0.976
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal product as a clear glass juice bottle with a black cap thread top, filled with light yellow juice, and having two labels on the front: an upper square orange-fruit label and a lower '100% Juice' label. In the query image, the same bottle type, fill appearance, and both front labels are present. The upper fruit label is centered in the expected area, and the lower '100% Juice' label is also present in the correct lower-front region. There are no extra parts, no missing components, no swapped labels, no obvious misplacement beyond normal tolerance, and no visible structural damage. The small differences are consistent with normal viewpoint/position variation.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape matches references; both expected labels are present; label order and approximate positions are correct; no extra or missing components; no visible cracks, dents, or wrong assembly.",
+        "confidence": 0.988
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 247
+    },
+    "latency_sec": 9.68,
+    "error": null
+  },
+  {
+    "item_id": "D9_0001",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.983,
+        0.979
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The retrieved reference images are highly similar to the query and show the normal product: a compartment box containing yellow push pins distributed across the slots with some natural variation in orientation and exact placement. 2. Comparing the query to the references, the same type of components is present throughout: all visible items are the expected yellow push pins, and the box structure matches the normal samples. 3. The query shows a plausible normal distribution of pins across the compartments. There is no clear evidence of a missing pin pattern, extra foreign part, wrong component type, or physically damaged pin. 4. Orientation differences are minor and consistent with the allowed normal variation seen in the references. 5. Therefore, there is no convincing logical or structural anomaly visible in the query image.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All compartments contain the expected yellow push pins with normal pose variation; no foreign object, broken part, missing/wrong component, or clearly incorrect arrangement is visible compared with the normal references.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 1211
+    },
+    "latency_sec": 27.84,
+    "error": null
+  },
+  {
+    "item_id": "D9_0131",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.957,
+        0.955
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved references show the normal product as a wire connecting two orange transparent connector blocks. In both references, the left and right connector blocks appear to be of the same general type and orientation, with the wire inserted between them. The query image closely matches this overall assembly: one wire spans between two orange connector blocks, with no extra or missing major components. Comparing carefully, the query appears consistent with the normal references in part count, placement, and connector type. The small visible differences are limited to minor pose/orientation variation and wire color/positioning, which are explicitly noted as non-anomalous if the assembly remains correct. There is no sign of a wrong component in a slot, missing connector, extra part, or structural damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two connector blocks are present, one on each end of a single wire, matching the normal reference configuration. No extra or missing parts are visible, and the connectors and wire appear intact and properly assembled.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 231
+    },
+    "latency_sec": 15.39,
+    "error": null
+  },
+  {
+    "item_id": "D9_0109",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.98,
+        0.976
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved references show a compartment tray with yellow pushpins distributed across the cells, typically with about one pin per occupied compartment and a similar overall count. In the query image, the tray layout matches the references well, but the pin distribution differs logically: the top-right compartment is empty while another compartment contains two pins close together. This indicates an incorrect arrangement/count distribution rather than harmless pose variation. There is no visible physical damage; the issue is assembly logic relative to the normal references.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical",
+        "evidence": "Compared with the normal references, the query has an empty top-right slot and an extra pin placed in another slot (top row, fourth compartment from the left contains two pins). This creates a wrong count/placement pattern across compartments.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 188
+    },
+    "latency_sec": 9.8,
+    "error": null
+  },
+  {
+    "item_id": "D9_0149",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.955,
+        0.955
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal tray layout with three fruits in the left compartment and granola plus mixed dried banana chips/nuts in the right compartment. In the references, the left side contains one peach/apple-like fruit and two mandarins/oranges. In the query, the left compartment contains two mandarins and one dark red nectarine/plum-like fruit instead of the expected peach/apple-like fruit. The count and general placement are correct, and there is no visible damage, but one component appears to be the wrong type compared with the normal assembly pattern indicated by the references.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical: wrong type of component in a slot",
+        "evidence": "Left compartment has a dark red nectarine/plum-like fruit in the middle, whereas the normal references show a peach/apple-like fruit together with two mandarins. Right compartment contents and counts appear otherwise consistent.",
+        "confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 211
+    },
+    "latency_sec": 17.11,
+    "error": null
+  },
+  {
+    "item_id": "D9_0169",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 4,
+      "retrieval_sims": [
+        0.347,
+        0.342,
+        0.323,
+        0.322
+      ],
+      "n_rounds": 2,
+      "knowledge_used": true,
+      "response": {
+        "round1": {
+          "reasoning": "1. In all four normal reference images, the organizer contains multiple yellow pushpins distributed across the compartments. 2. The query image shows the same organizer structure, but every compartment appears empty. 3. This is not a small positional variation or viewpoint change; it is a complete absence of the expected components. 4. Based on the domain rules, missing items / wrong count is a logical anomaly.",
+          "image_label": "anomalous",
+          "anomaly_type": "logical - missing items / wrong count",
+          "evidence": "All reference samples contain many yellow pushpins in the box, while the query box has no pushpins at all in any compartment.",
+          "confidence": 0.99
+        },
+        "round2": {
+          "image_label": "anomalous",
+          "anomaly_type": "logical_missing_items",
+          "evidence": "The organizer tray is completely empty, while normal examples contain multiple yellow pushpins placed in several compartments. This indicates a severe wrong-count anomaly with missing components.",
+          "confidence": 0.99
+        },
+        "final_score": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 2595,
+      "output": 307
+    },
+    "latency_sec": 22.96,
+    "error": null
+  },
+  {
+    "item_id": "D9_0163",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.957,
+        0.944
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembly pattern consisting of 2 bolts, 2 hex nuts, and 2 washers inside the plastic bag. In the query image, there are still 2 bolts, but I observe 3 hex nuts and 2 washers. The arrangement can vary, and pose differences are acceptable, but the component count should match the normal references. Since there is one extra hex nut compared with the normal configuration, this is a logical anomaly due to wrong count.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - extra item / wrong count",
+        "evidence": "Query image contains 2 bolts, 3 hex nuts, and 2 washers, while normal references consistently show 2 bolts, 2 hex nuts, and 2 washers. The extra hex nut indicates incorrect assembly/package contents.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 195
+    },
+    "latency_sec": 10.17,
+    "error": null
+  },
+  {
+    "item_id": "D9_0108",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.984,
+        0.982
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images show a normal assembly pattern: a compartment box containing yellow pushpins distributed across the grid, with approximately one pin per occupied compartment and some compartments empty. Small pose/orientation differences are normal. Comparing the query image to the references, the overall box layout and component type match well, but there is a logical inconsistency in item placement/count: one compartment in the upper middle-left area contains two pushpins together, whereas normal examples show at most one pushpin per compartment. This indicates an extra item / wrong arrangement rather than harmless pose variation. No physical damage is apparent.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - extra item / wrong count",
+        "evidence": "In the query image, the compartment near the upper center-left contains two yellow pushpins in the same slot. In the normal reference images, compartments contain at most one pushpin each. The rest of the components appear to be the correct type.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 219
+    },
+    "latency_sec": 9.21,
+    "error": null
+  },
+  {
+    "item_id": "D9_0142",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.988,
+        0.987
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal pattern: a 3x5 organizer where each compartment contains exactly one yellow pushpin, with orientation varying but staying within normal tolerance. In the query image, most compartments follow this same pattern, but the leftmost compartment in the middle row contains two pushpins instead of one. The other compartments appear consistent with normal examples, so this is not just pose variation. This indicates a logical assembly/count error.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - extra item / wrong count",
+        "evidence": "In the query, the middle-left slot (row 2, column 1) visibly contains two yellow pushpins, whereas normal references show one pushpin per compartment.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 789
+    },
+    "latency_sec": 21.34,
+    "error": null
+  },
+  {
+    "item_id": "D9_0139",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.945,
+        0.939,
+        0.937
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved normal references consistently show a small parts kit in a plastic bag containing 2 bolts, 3 nuts, and 3 washers. The exact positions and orientations vary between references, so spatial layout inside the bag is not important as long as the part counts and types are correct. In the query image, I can identify 2 bolts, 3 washers, and only 2 nuts. Since one nut is missing compared with the normal references, this is a logical assembly/count anomaly rather than a benign positional variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - missing item",
+        "evidence": "Query image shows 2 bolts and 3 washers, but only 2 hex nuts are visible, while normal references show 3 hex nuts.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 182
+    },
+    "latency_sec": 10.47,
+    "error": null
+  },
+  {
+    "item_id": "D9_0171",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.963,
+        0.957
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The normal references consistently show the same kit contents: 2 bolts, 2 washers, and 3 hex nuts, all loose inside the plastic bag. 2. In the query image, there are still 2 bolts, but the smaller parts do not match the normal configuration. 3. Visually, only 1 washer is clearly present, while 4 hex nuts appear present, with one nut seemingly placed/threaded onto a bolt rather than all parts being loose as in the references. 4. This indicates a logical assembly/content error rather than harmless pose variation, because the part counts and arrangement differ from the normal samples.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical anomaly - wrong count / wrong arrangement",
+        "evidence": "Compared with the references, the query appears to have 1 washer instead of 2 and 4 nuts instead of 3, with one nut mounted on a bolt. Normal samples show 2 bolts + 2 washers + 3 loose nuts.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 536
+    },
+    "latency_sec": 20.85,
+    "error": null
+  },
+  {
+    "item_id": "D9_0124",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.978,
+        0.978
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal juice bottle assembly: one upper fruit-logo label centered on the bottle body and one lower '100% Juice' label near the bottom front. In the query image, the bottle has the same two labels in the expected positions, with no extra or missing components. The labels appear aligned similarly to the references, and the bottle structure is intact with no visible damage. Small differences in exact placement and viewing are within normal variation.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query bottle contains exactly the expected upper orange-logo label and lower '100% Juice' label, both present in correct front-facing locations; no missing label, swapped part, extra component, or structural damage is visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 177
+    },
+    "latency_sec": 23.84,
+    "error": null
+  },
+  {
+    "item_id": "D9_0147",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.954,
+        0.95
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The normal references show a consistent tray layout: the left compartment contains three fruits, while the right compartment contains granola on top and a mix of banana chips and almonds at the bottom. 2. In the query image, the right compartment matches the normal pattern: granola is in the upper-right area and banana chips with almonds are in the lower-right area. 3. The left compartment, however, contains only one fruit instead of the expected three. 4. This is not a minor position or color variation; it is a clear wrong-count/missing-components issue in a designated compartment. 5. Therefore, the product is logically incorrect.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - missing items / wrong count",
+        "evidence": "The left compartment has only one orange/mandarin, whereas both normal references show three fruits in that compartment. The right compartment appears otherwise consistent with normal assembly.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 281
+    },
+    "latency_sec": 28.06,
+    "error": null
+  },
+  {
+    "item_id": "D9_0122",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.962,
+        0.961
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal tray configuration: three whole fruits in the left compartment and granola, almonds, and banana chips arranged in the right compartment. The query image matches this overall layout and component types closely, so there is no clear logical anomaly in count, type, or placement. However, the bottom fruit in the left compartment is visibly damaged, with a missing chunk/peeled-off section on its side. Since domain knowledge states that physical damage to any component is a structural anomaly, this should be classified as anomalous.",
+        "image_label": "anomalous",
+        "anomaly_type": "structural damage",
+        "evidence": "The lower orange/mandarin in the left compartment has a clear broken/missing piece on its outer edge, unlike the intact whole fruits in the normal references.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 235
+    },
+    "latency_sec": 20.77,
+    "error": null
+  },
+  {
+    "item_id": "D9_0110",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.019000000000000017,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.974,
+        0.905
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved references show normal juice bottles with a front fruit label and a lower '100% Juice' label. The query bottle matches the same bottle shape, open neck, fill level, and overall assembly pattern. Comparing the query to the cherry reference, the fruit icon is the same type (cherries) and placed in the correct central position. The bottom '100% Juice' label is also present in the expected location. There is only slight positional tilt of the lower label, which is a tolerated variation and not a logical anomaly. No extra or missing components, no swapped component type, and no visible damage are observed.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle has the expected two labels; the main label shows cherries as in a normal reference, and the lower '100% Juice' label is present. Component count and placement are consistent with normal examples aside from minor label tilt.",
+        "confidence": 0.981
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 213
+    },
+    "latency_sec": 6.59,
+    "error": null
+  },
+  {
+    "item_id": "D9_0134",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.852,
+        0.846,
+        0.843
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The three reference images show the normal assembly: a juice bottle with two labels on the front side\u2014a square fruit label in the middle and a '100% Juice' label near the bottom. In the query image, the bottle shape and liquid content are similar, but both expected front labels are missing. This is not a slight positional variation or viewpoint-only change, because the visible front face is blank where the labels should be. Missing required components indicates a logical assembly anomaly.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical_missing_parts",
+        "evidence": "Compared with all three normal references, the query bottle lacks the central fruit icon label and the lower '100% Juice' label on the front face.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 172
+    },
+    "latency_sec": 52.73,
+    "error": null
+  },
+  {
+    "item_id": "D9_0116",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.947,
+        0.937,
+        0.932
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The normal references show correctly matched assemblies: the connector blocks on the left and right sides are the same type and have the same number of slots/levers on both ends (e.g. 2-to-2 in references 1 and 2, 5-to-5 in reference 3). In the query image, the two ends are mismatched. The left side has a smaller connector block with about 3 orange lever positions, while the right side has a larger connector block with about 5 orange lever positions. This is not a minor position variation or viewpoint effect; it indicates an incorrect part arrangement / wrong component count on one side relative to the other. The wire itself appears intact, so the issue is logical assembly mismatch rather than damage.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong component type/count or mismatched connector arrangement",
+        "evidence": "Query image shows different connector sizes on the two ends: left connector has fewer slots/levers than the right connector. Normal references consistently show matching connector blocks on both ends.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 372
+    },
+    "latency_sec": 33.57,
+    "error": null
+  },
+  {
+    "item_id": "D9_0136",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.94,
+        0.934,
+        0.934
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal kit contains the same general set of parts inside the plastic bag: 2 bolts, 3 hex nuts, and 2 flat washers. Small position changes are acceptable, but the part counts and types should remain logically consistent. In the query image, I can see 2 bolts, only 2 hex nuts, and 3 flat washers. That means one nut is missing and there is an extra washer instead. This is a logical assembly/content error rather than a harmless pose variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong component count/type",
+        "evidence": "Query image appears to contain 7 parts total: 2 bolts, 2 hex nuts, and 3 washers. Normal references show 2 bolts, 3 hex nuts, and 2 washers. The query therefore has an incorrect part composition.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 471
+    },
+    "latency_sec": 28.83,
+    "error": null
+  },
+  {
+    "item_id": "D9_0179",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.953,
+        0.944
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal assembly contents inside the plastic bag: 2 bolts, 2 washers, and 2 hex nuts. Their exact positions vary, so layout differences alone are not anomalous. In the query image, I can see 2 bolts and 2 washers, but there are 3 hex nuts grouped near the lower-right/center area. Since the product should contain only 2 nuts in a normal sample, this indicates an extra component rather than acceptable positional variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong count (extra item)",
+        "evidence": "Query image contains 3 hex nuts, while both normal references contain 2 hex nuts. The bolts and washers match expected types, so the anomaly is the extra nut.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 184
+    },
+    "latency_sec": 7.76,
+    "error": null
+  },
+  {
+    "item_id": "D9_0137",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.943,
+        0.931,
+        0.929
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The normal references show an assembly consisting of two lever connectors joined by a single wire, with the same connector size on both ends and the wire connected in corresponding middle positions. 2. In the query image, the overall assembly matches this pattern: there are two 3-slot lever connectors, one on each side, connected by a single blue wire. 3. The part count and arrangement are correct: no connector is missing, no extra item is present, and the wire spans between the two connectors in the expected way. 4. The right connector appears slightly darker/tinted than in the references, but its shape, slot count, lever layout, and placement remain consistent with the normal samples. Given the domain note that color variation in same-type components should not be flagged, this does not indicate a logical anomaly. 5. No visible structural damage or wrong assembly logic is evident.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Both ends have matching 3-slot lever connectors, the blue wire connects them in the expected central position, and there are no extra, missing, misplaced, or damaged components. The only difference is a slight tint/appearance change on the right connector body, which is consistent with allowable visual variation.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 743
+    },
+    "latency_sec": 43.04,
+    "error": null
+  },
+  {
+    "item_id": "D9_0162",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.971,
+        0.957
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two retrieved reference images show the normal assembly: a juice bottle with a light-colored liquid filling the bottle body and neck, a banana label centered on the front, and a '100% Juice' label near the bottom. The query image matches the same bottle type, same front banana label, and same bottom text label in the expected positions. There are no missing or extra components, and the labels appear correctly placed. The only noticeable difference is the darker/pinkish liquid visible in the neck/top portion, while the rest of the bottle and assembly remain consistent. Based on the domain knowledge, color variation alone should not be flagged as a logical anomaly, and there is no evidence of wrong part count, wrong arrangement, wrong component type, or physical damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, banana front label, and '100% Juice' bottom label all match the normal references in type and position; no parts are missing, duplicated, swapped, or damaged. The visible difference is limited to liquid color near the neck, which is not a logical assembly error.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 252
+    },
+    "latency_sec": 10.08,
+    "error": null
+  },
+  {
+    "item_id": "D9_0167",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.983,
+        0.979
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal product state: a 3x5 compartment box with one yellow pushpin in each slot. Orientation varies freely across normal samples, so pin angle is not a defect by itself. Comparing the query image to the references, the overall box layout matches, all visible components are the correct type (yellow pushpins), and each compartment appears occupied by a single pin. There are no clear extra parts, missing parts, misplaced parts, or wrong component types. No obvious physical damage is visible either. The slightly different poses of some pins are consistent with normal variation seen in the references.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All 15 compartments appear to contain one yellow pushpin, matching the normal references. No slot is clearly empty or overfilled, and no foreign or damaged component is visible.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 871
+    },
+    "latency_sec": 22.31,
+    "error": null
+  },
+  {
+    "item_id": "D9_0159",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.944,
+        0.932,
+        0.929
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The three reference images consistently show a normal kit containing 2 bolts, 2 hex nuts, and 2 washers inside the plastic bag. The exact placement and orientation vary across references, so spatial arrangement within the bag is not critical as long as the component set is correct. In the query image, I can identify 2 bolts, 2 washers, and only 1 clearly visible hex nut. This indicates the component count does not match the normal assembly pattern established by the references. There is no obvious structural damage; the issue is a logical count mismatch.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - missing item / wrong count",
+        "evidence": "Query shows 2 bolts and 2 washers but only 1 hex nut, whereas all normal references show 2 bolts + 2 nuts + 2 washers.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 197
+    },
+    "latency_sec": 8.37,
+    "error": null
+  },
+  {
+    "item_id": "D9_0118",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.961,
+        0.953
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal product contents as a small kit inside a plastic bag: 2 bolts, 2 hex nuts, and 2 flat washers. The exact positions vary between references, so placement is not critical. In the query image, there are still 2 bolts, but the small loose parts do not match the normal set: I can see 3 hex nuts and only 1 flat washer. That indicates a component count mismatch rather than harmless pose variation. According to the domain rules, this is a logical anomaly because the product has the wrong number of parts.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong count (extra/missing items)",
+        "evidence": "Query image contains 2 bolts, 3 hex nuts, and 1 washer, while normal references contain 2 bolts, 2 hex nuts, and 2 washers. This means there is one extra nut and one missing washer.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 313
+    },
+    "latency_sec": 10.65,
+    "error": null
+  },
+  {
+    "item_id": "D9_0133",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.985,
+        0.981
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images show the normal pattern: a compartment box with one yellow pushpin placed in each occupied slot, and the overall assembly consists only of these same-type pushpins distributed across the compartments. The query image matches the same product and component type, but one compartment in the bottom row near the right side contains two pushpins in the same slot instead of a single correctly counted item. This is a logical anomaly because the count of components in that slot is wrong. The rest of the box appears consistent with the references, and there is no clear physical damage.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - extra item / wrong count",
+        "evidence": "In the query image, the bottom-row compartment second from the right contains two yellow pushpins together, whereas normal reference compartments contain at most one pushpin per slot.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 198
+    },
+    "latency_sec": 8.61,
+    "error": null
+  },
+  {
+    "item_id": "D9_0138",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.01200000000000001,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.98,
+        0.973
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two retrieved reference images show a normal juice bottle assembly: a transparent bottle filled with juice, one square label with an orange icon placed on the upper front, and one rectangular '100% Juice' label near the bottom front. In the query image, the same bottle shape, fill, upper fruit label, and lower text label are present. The component types and count match the references exactly, and both labels are in the expected positions with only slight placement variation that is within normal tolerance. There is no missing label, extra part, swapped component, incorrect arrangement, or visible structural damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows the expected two labels: orange icon label on the upper body and '100% Juice' label at the bottom, matching the normal references. Bottle and contents appear intact with no extra/missing components.",
+        "confidence": 0.988
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 203
+    },
+    "latency_sec": 9.67,
+    "error": null
+  },
+  {
+    "item_id": "D9_0098",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.947,
+        0.941,
+        0.939
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show the normal product as a plastic bag containing a set of metal fasteners: 2 bolts, 2 hex nuts, and 3 washers. Across the references, the exact positions and orientations vary, so loose arrangement is not important. In the query image, I can identify the same component set: 2 bolts (one longer, one shorter), 2 hex nuts, and 3 washers inside the bag. There is no visible extra or missing part, no wrong component type, and no structural damage. The assembly/content matches the normal references closely, consistent with the high retrieval similarity.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows the expected count and types of parts: 2 bolts, 2 nuts, 3 washers, matching the normal references. Differences are only in loose placement/orientation within the bag, which is allowed normal variation.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 211
+    },
+    "latency_sec": 16.15,
+    "error": null
+  },
+  {
+    "item_id": "D9_0130",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.938,
+        0.938,
+        0.937
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show normal assemblies with matching connector blocks on both ends and a specific number of wires between them: reference 1 has 1 wire, reference 2 has 2 wires, and reference 3 has 1 wire. In the query image, both end components are 3-slot connector blocks, but there are 2 blue wires routed between them. This does not match the normal 3-slot blue-wire configuration shown in the references, where only a single blue wire is present. The connectors themselves appear intact and correctly oriented, so this is not structural damage. The issue is a logical assembly error: an extra wire / incorrect wiring arrangement.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong count / wrong arrangement of wires",
+        "evidence": "The query contains two blue wires connecting the 3-slot connector blocks, whereas the normal blue reference shows only one blue wire for this connector type. This indicates an extra wire and incorrect slot usage.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 305
+    },
+    "latency_sec": 14.07,
+    "error": null
+  },
+  {
+    "item_id": "D9_0111",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.975,
+        0.975
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal product: a clear bottle filled with light juice, a central golden label containing only a banana icon, and a lower '100% Juice' label. In the query image, the overall bottle shape, fill level, and labels match the normal references closely, so the product type is correct. However, there is an additional small red circular mark on the main golden label to the left of the banana icon. This extra element is not present in either normal reference and does not belong to the expected assembly/print layout. Based on the logical anomaly criteria, this is an extra/unexpected item or wrong label content rather than normal positional variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical: extra/unexpected item on label",
+        "evidence": "A small red dot appears on the upper-left area of the main front label beside the banana symbol; the normal references contain only the banana icon on that label and no red mark.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 249
+    },
+    "latency_sec": 8.33,
+    "error": null
+  },
+  {
+    "item_id": "D9_0151",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.956,
+        0.914
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show normal juice bottles with the same bottle shape, no cap, a centered fruit icon label on the upper body, and a '100% Juice' label near the bottom. In the references, the upper fruit icon is consistent with the juice type shown in the bottle: one cherry drink has a two-cherry icon, and one orange-colored drink has an orange icon. In the query image, the bottle structure and label placement look normal, but the upper fruit icon shows only a single cherry while the liquid appears to be the same dark cherry-colored juice as the cherry reference. Compared with the normal cherry reference, this indicates the wrong component/print on the upper label rather than normal variation. There is no sign of physical damage; the issue is logical inconsistency of the assembled label.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong type of component in a slot",
+        "evidence": "The query bottle contains dark red/cherry-colored juice like the normal cherry bottle, but the upper square label has a single cherry icon instead of the normal two-cherry icon seen in the matching reference. Bottle shape and other parts are otherwise correctly positioned.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 265
+    },
+    "latency_sec": 8.47,
+    "error": null
+  },
+  {
+    "item_id": "D9_0113",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.008000000000000007,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.974,
+        0.911
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The normal references show a small square bottle with a fruit label matching the juice type and a '100% Juice' label near the bottom. 2. Reference 1 specifically shows a dark red/brown juice with a cherry icon label. 3. The query image has the same bottle shape, same bottom label placement, and the same cherry icon on the center label. 4. The liquid color in the query matches the cherry-juice reference and does not indicate a wrong component. 5. No extra or missing parts are visible, and there is no sign of wrong label type, swapped component, misplacement, or physical damage. 6. Minor differences in pose/lighting are within normal variation and are not logical anomalies.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Cherry label is present in the correct position, bottle structure is intact, '100% Juice' label is present at the bottom, and the liquid appearance matches the normal cherry-juice reference.",
+        "confidence": 0.992
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 254
+    },
+    "latency_sec": 8.27,
+    "error": null
+  },
+  {
+    "item_id": "D9_0096",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.959,
+        0.955
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images indicate the normal assembly consists of a plastic bag containing 2 bolts, 2 hex nuts, and 2 flat washers. In the query image, I observe 2 bolts, 2 hex nuts, and 2 flat washers inside the bag. The components appear to be loose and slightly differently positioned compared with the references, but this is consistent with normal variation for parts inside a bag. There is no evidence of an extra or missing item, no wrong component type, and no structural damage visible.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows the same part set and count as the normal references: two bolts, two hex nuts, and two washers. Differences are limited to orientation/placement of loose parts within the bag.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 185
+    },
+    "latency_sec": 10.65,
+    "error": null
+  },
+  {
+    "item_id": "D9_0123",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.952,
+        0.932
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal assembly as a short yellow wire connecting two matching small orange-lever connectors, one on each end. In the query image, the left end matches this normal connector type, but the right end does not: it appears to be a different, larger connector body/type than the left and than the references. The wire count and overall layout are otherwise similar, so the main issue is not missing parts or slight pose variation. Based on the domain rules, this is a logical anomaly because the component type on the right side is incorrect for the expected assembly.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong type of component in a slot",
+        "evidence": "Right-side connector is visibly different from the normal references: it has a larger/different transparent housing and does not match the left connector or the expected paired connector type seen in both reference images.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 252
+    },
+    "latency_sec": 13.69,
+    "error": null
+  },
+  {
+    "item_id": "D9_0093",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.985,
+        0.984
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal product state as a 3x5 organizer where each compartment contains exactly one yellow pushpin. Orientation varies from slot to slot, so pin angle is not a defect by itself. In the query image, all 15 compartments are populated, each with one yellow pushpin of the correct type. I do not see any extra pins, missing pins, wrong components, or damaged parts. The observed pose differences are consistent with normal variation seen in the references.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Every compartment in the query appears filled with one standard yellow pushpin, matching the normal references in count and component type. No slot appears empty or overfilled, and no non-pushpin object or broken part is visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 577
+    },
+    "latency_sec": 19.5,
+    "error": null
+  },
+  {
+    "item_id": "D9_0177",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.95,
+        0.931,
+        0.93
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal assembly set inside a plastic bag consisting of 2 bolts, 2 washers, and 2 hex nuts. The exact positions and orientations vary across references, so layout differences alone are not anomalous. In the query image, I observe 2 bolts and 3 hex nuts, but only 1 washer. This indicates the total component count/type distribution is incorrect relative to the normal pattern. Since logical anomalies include wrong count and wrong type/count of components, this should be flagged as anomalous.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical_wrong_count",
+        "evidence": "Query image contains 2 bolts, 3 hex nuts, and 1 washer, whereas normal references consistently show 2 bolts, 2 hex nuts, and 2 washers.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 189
+    },
+    "latency_sec": 12.27,
+    "error": null
+  },
+  {
+    "item_id": "D9_0166",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.015000000000000013,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.948,
+        0.939,
+        0.938
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved references show a normal assembly consisting of two matching transparent/orange multi-port connectors joined by a single wire. Normal variation includes different wire colors and slight differences in wire curvature or connector placement. In the query image, both end connectors are present, aligned opposite each other, and appear to be the same correct component type. The wire is properly connected between the two connectors, with no missing parts, no extra parts, no swapped component type, and no obvious physical damage. The only difference from some references is minor pose/curvature variation, which is explicitly allowed as normal.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two matching 3-lever connectors are present on left and right, connected by a single blue wire in the expected position. No connector is missing, duplicated, misplaced, or damaged. The assembly closely matches normal reference 2 and is also consistent with normal positional variation seen across the references.",
+        "confidence": 0.985
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 326
+    },
+    "latency_sec": 17.42,
+    "error": null
+  },
+  {
+    "item_id": "D9_0099",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.967,
+        0.962
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembled juice bottle with two labels: a fruit icon label in the middle and a '100% Juice' text label near the bottom. The exact fruit icon can vary across normal samples (e.g., orange, banana), so fruit type itself is not a logical anomaly. Comparing the query image to the references, the bottle shape, presence of both labels, their approximate positions, and overall assembly are consistent with normal examples. There is no missing component, no extra component, no swapped structural part, and no visible damage. Slight differences in label placement/tilt are within normal variation.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query bottle has the expected glass bottle, central fruit label, and bottom '100% Juice' label, all in plausible positions matching normal references. No missing or extra labels/components and no structural damage are visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 209
+    },
+    "latency_sec": 7.23,
+    "error": null
+  },
+  {
+    "item_id": "D9_0143",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.982,
+        0.975
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal pattern: the organizer has a pin placed in every compartment, with one yellow pushpin per slot. Orientation varies from slot to slot, which appears acceptable normal variation, but the count/presence pattern is consistent across the references. Comparing the query to the references, most compartments contain a pin and look consistent in type and general placement. However, the bottom-middle compartment is empty in the query, \u0628\u064a\u0646\u0645\u0627 the corresponding slot is occupied in the normal references and all slots are normally filled. This indicates a logical assembly error due to a missing component rather than harmless pose variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - missing item / wrong count",
+        "evidence": "The query image has an empty compartment in the bottom row near the center, whereas normal reference images show one pushpin in every compartment. No structural damage is apparent; the issue is a missing pin.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 615
+    },
+    "latency_sec": 15.8,
+    "error": null
+  },
+  {
+    "item_id": "D9_0115",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.973,
+        0.967
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal juice bottle assembly with these key components: a transparent bottle, juice filled to a similar height, a square upper label with an orange icon centered on the bottle front, and a lower rectangular '100% Juice' label near the bottom front. In the query image, all expected components are present. The upper orange label is present and positioned consistently with the references. The lower '100% Juice' label is also present in the expected lower front area. The bottle shape, cap/neck structure, and liquid fill appearance are consistent with the normal references. There is no visible extra part, missing part, swapped component, obvious misplacement, or physical damage. Minor positional differences of labels appear within normal tolerance and match the allowed variation described in the domain knowledge.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Both expected front labels are present; the orange icon label is correctly placed in the upper center region, and the '100% Juice' label is correctly placed near the bottom. Bottle geometry and fill level are consistent with the normal references, with no missing, extra, damaged, or wrongly arranged components.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 324
+    },
+    "latency_sec": 9.9,
+    "error": null
+  },
+  {
+    "item_id": "D9_0164",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.906,
+        0.892,
+        0.892
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a consistent normal assembly pattern: the left compartment contains three fruits (typically two mandarins and one apple/peach-like fruit), and the right compartment is split into two food groups: granola on top and a mixed section at the bottom containing both almonds and banana chips. In the query image, the left compartment appears logically correct with three fruits in expected positions. The top-right granola section is also consistent with normal references. However, the bottom-right section contains only almonds and lacks the banana chips that are present in all normal references. This indicates a logical assembly error due to missing components in that slot, not just harmless position or color variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - missing item / wrong component composition",
+        "evidence": "Bottom-right compartment has almonds only, whereas normal references consistently show a mixture of almonds and banana chips in that area. Banana chips are missing in the query image.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1398,
+      "output": 310
+    },
+    "latency_sec": 18.07,
+    "error": null
+  },
+  {
+    "item_id": "D9_0101",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.986,
+        0.982
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal assembly pattern: a 3x5 compartment box with exactly one yellow pushpin in every compartment, for a total of 15 occupied slots. In the query image, all compartments contain one pushpin except the top-right compartment (row 1, column 5), which is empty. This is not a minor pose variation or viewpoint change; it is a missing component relative to the normal pattern. Therefore the product is logically incorrect.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - missing item / wrong count",
+        "evidence": "Compared with both normal references, the query has an empty top-right slot, while normal samples have a pushpin in that compartment. The other compartments appear consistent with normal.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 461
+    },
+    "latency_sec": 21.0,
+    "error": null
+  },
+  {
+    "item_id": "D9_0140",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.982,
+        0.982
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images show a normal organizer case containing yellow push pins distributed across compartments. Normal variation includes different pin orientations and slightly different counts per compartment, but all visible components should be the same yellow push-pin type. In the query image, almost all items are the same yellow push pins, matching the references. However, in the top-right compartment there is one pin with a clearly red/orange head instead of the normal yellow type. This indicates a wrong component/type placed in that slot rather than acceptable color variation, because the domain is logical correctness of assembled components and the references consistently show only one component type. No structural damage is apparent, and the rest of the arrangement looks plausible.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical: wrong type of component in a slot",
+        "evidence": "A single non-matching red/orange-headed pin is present in the top-right compartment of the query image, while the normal references contain only yellow push pins.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 223
+    },
+    "latency_sec": 11.76,
+    "error": null
+  },
+  {
+    "item_id": "D9_0125",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.937,
+        0.929,
+        0.925
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved references show a normal assembled product as a short cable connecting two identical 3-port orange lever connectors, with one connector on each end and the cable properly inserted into both. Variations in cable color (blue or yellow) and slight cable curvature are normal. In the query image, there are again exactly two matching 3-port orange connectors, one on each side, connected by a single yellow cable. The cable appears inserted into both connectors, and there are no extra or missing components. The arrangement matches the normal references aside from a mild bend/tilt, which is within normal variation and explicitly not a logical anomaly.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two correct connector blocks are present, one on each end of a single cable; no missing/extra parts, no wrong component type, and no incorrect slot usage are visible. The slight bend and orientation difference are consistent with normal reference variation.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1014,
+      "output": 217
+    },
+    "latency_sec": 16.01,
+    "error": null
+  },
+  {
+    "item_id": "D9_0105",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.959,
+        0.95
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a consistent normal layout: the left compartment contains one larger red/yellow stone fruit at the top and two small oranges/mandarins below it. The right compartment contains the granola block on top/right and a mix of banana chips and almonds at the lower-right. In the query image, the right compartment appears consistent with the normal references. However, in the left compartment, the larger red/yellow fruit is not in the top position; instead, an orange is placed at the top and the larger fruit is in the middle. This indicates the correct components are present but arranged in the wrong positions. This is a logical anomaly, not just harmless variation, because the references consistently show the larger fruit occupying the top slot.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong arrangement/position of parts",
+        "evidence": "Left compartment order differs from normal: query has orange at top, larger red/yellow fruit in middle, orange at bottom, while normal references have the larger red/yellow fruit at top and the two oranges beneath.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 393
+    },
+    "latency_sec": 18.46,
+    "error": null
+  },
+  {
+    "item_id": "D9_0170",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.939,
+        0.936,
+        0.934
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal kit contains two bolts plus a set of standard fasteners: hex nuts and plain circular washers. While the exact loose positions vary, the component types remain consistent across normal examples. In the query image, the overall bag and bolt layout are similar to normal, and there are still two bolts present. However, one of the small circular parts near the head of the upper bolt is not a plain washer or nut: it has a toothed/star-shaped edge, which is a different component type from the normal references. This indicates a logical assembly/content error rather than harmless position variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong type of component",
+        "evidence": "A toothed/star lock washer-like part appears near the upper bolt head in the query, whereas the normal references contain only plain washers and hex nuts with the two bolts. Component placement variation is acceptable, but the part type mismatch is not.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 492
+    },
+    "latency_sec": 21.49,
+    "error": null
+  },
+  {
+    "item_id": "D9_0114",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.907,
+        0.906,
+        0.9
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal meal tray layout with three fruits in the left compartment (typically two mandarins and one peach/apple) and a mixed granola/nuts/banana section in the right compartment. In the query image, the left compartment also contains three fruits arranged plausibly, matching the normal count and placement. However, the right compartment differs from the references: the normal pattern has granola occupying the upper-right area and banana chips/nuts concentrated in the lower-right area, while in the query the banana chips and almonds are spread across the top and throughout the right compartment, covering areas where granola alone is expected. This indicates an incorrect arrangement of components rather than harmless variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical: wrong arrangement or position of parts",
+        "evidence": "Left compartment appears normal with three fruits. The anomaly is in the right compartment: banana chips and almonds are distributed across the whole section, including the top area, instead of being mainly grouped at the bottom with granola separated above as in the normal references.",
+        "confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 1398,
+      "output": 242
+    },
+    "latency_sec": 16.5,
+    "error": null
+  },
+  {
+    "item_id": "D9_0094",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.964,
+        0.954
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The two reference images show a normal assembly pattern: a plastic bag containing 2 bolts, 2 hex nuts, and 2 washers. The exact positions and orientations vary, which is acceptable as normal variation. In the query image, I can identify the same component set: 2 bolts, 2 hex nuts, and 2 washers inside the bag. There is no missing part, no extra part, and no wrong component type substituted into any expected slot/count. The arrangement differs slightly from the references, but this falls within normal positional variation and does not indicate a logical anomaly. I also do not see visible structural damage to the components.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query image contains exactly 2 bolts, 2 nuts, and 2 washers, matching the normal references. Differences are only in pose/location of loose parts within the bag.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 207
+    },
+    "latency_sec": 11.23,
+    "error": null
+  },
+  {
+    "item_id": "D9_0172",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.958,
+        0.951
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembly/package consisting of a small plastic bag containing 2 bolts, 2 hex nuts, and 2 flat washers. In the query image, I observe the same overall bag type and a very similar arrangement of hardware. Counting the visible components in the query: there are 2 bolts, 2 flat washers, and 2 hex nuts. Their positions differ slightly from the references, but this is acceptable variation for loose parts inside a bag. I do not see any extra part, missing part, wrong component type, or damaged component.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query image contains the expected set of parts: 2 bolts, 2 nuts, and 2 washers inside the bag, matching the normal references. No missing/extra hardware and no incorrect component type is visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 201
+    },
+    "latency_sec": 11.88,
+    "error": null
+  },
+  {
+    "item_id": "D9_0161",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.953,
+        0.95
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved references indicate the normal product is a wire assembly with matching connector blocks on both ends and a specific expected wire count/layout. One reference shows a single blue wire connecting 3-slot connector blocks, and another shows two yellow wires connecting 2-slot connector blocks. In the query image, the assembly has 2-slot connector blocks on both ends, but only one yellow wire is present between them. Compared with the normal 2-slot reference, there should be two parallel wires, not one. The connectors themselves appear intact and properly aligned, so the issue is not damage but an incorrect assembly count.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - missing item / wrong count",
+        "evidence": "Query has 2-position connectors on both sides but only a single yellow wire installed; the corresponding normal configuration for 2-position connectors shows two wires spanning the connectors.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 205
+    },
+    "latency_sec": 15.51,
+    "error": null
+  },
+  {
+    "item_id": "D9_0156",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.964,
+        0.959
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show the normal assembly pattern for this tray: the left compartment contains three fruits total, specifically two oranges/mandarins stacked above one apple/nectarine-like fruit. The right compartment contains granola on top and a nut/dried banana mix on the bottom. In the query image, the right compartment appears consistent with the references in both content and arrangement. However, the left compartment contains only two fruits: one orange and one apple/nectarine-like fruit. Compared with both normal references, one orange is missing from the left compartment. This is a logical anomaly due to wrong item count, not just positional variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - missing item / wrong count",
+        "evidence": "Left compartment has only 1 orange plus 1 apple-like fruit, whereas both normal references show 2 oranges plus 1 apple-like fruit. No other major discrepancy is visible.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 232
+    },
+    "latency_sec": 12.82,
+    "error": null
+  },
+  {
+    "item_id": "D9_0092",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.959,
+        0.956
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images show a normal assembled product consisting of two identical orange/transparent connector blocks joined by a single wire. Across the references, the connectors are present on both ends, the count of components is correct, and the overall assembly pattern is consistent. The query image matches this same configuration: two connectors are present, one on each end, with no missing or extra parts, and the arrangement is consistent with the references. The main visible difference is wire color (blue in the query versus yellow in the references), but domain knowledge says color variation in same-type components should not be flagged. There is no visible structural damage, wrong part type, or misplacement.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Two matching connector terminals are attached at both ends of a single wire, with correct count and placement. No extra/missing components or damaged parts are visible. The only difference is wire color, which is within allowed variation.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 220
+    },
+    "latency_sec": 15.92,
+    "error": null
+  },
+  {
+    "item_id": "D9_0102",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.957,
+        0.946
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images indicate the normal product is a plastic bag containing a specific set of hardware components. In the normal examples, there are 2 bolts, 2 hex nuts, and 2 washers. In the query image, I observe 2 bolts, 2 hex nuts, and 2 washers as well. The parts appear to be the correct types, and the count matches the normal references. Their positions differ slightly from the references, but this is acceptable normal variation because loose parts inside a bag can shift. I do not see any extra or missing component, no wrong component type, and no visible physical damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows exactly six hardware pieces: two bolts, two hex nuts, and two washers, matching the normal reference composition. Arrangement differs only slightly due to loose placement in the bag.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 204
+    },
+    "latency_sec": 8.36,
+    "error": null
+  },
+  {
+    "item_id": "D9_0106",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.972,
+        0.954
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show a normal assembly consisting of one yellow wire connected between two identical orange/transparent terminal connectors, one on each end. 2. In the query image, the same two connectors are present, with one yellow wire spanning between them. 3. The connector types match the references, and both ends appear properly connected. 4. The wire routing is slightly curved, but this is consistent with normal positional variation seen in the references and does not indicate a logical or structural defect. 5. There are no extra parts, no missing parts, no swapped component types, and no visible damage.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query contains exactly two matching terminal connectors and a single yellow wire between them, consistent with both normal references. Only minor wire curvature/position variation is visible, which is within tolerance.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 281
+    },
+    "latency_sec": 20.46,
+    "error": null
+  },
+  {
+    "item_id": "D9_0095",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.92,
+        0.911,
+        0.909
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images consistently show the same kit composition: two bolts together with the expected set of metal nuts/washers only, with no foreign parts present. The query image matches the general scene well, but it contains an additional non-metal green piece underneath/next to the bolts that does not appear in any normal reference. This is not a tolerated variation in pose or lighting; it is an extra wrong component/object in the package. Therefore the product is logically incorrect.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - extra/wrong component",
+        "evidence": "A green irregular piece is visible beneath the two bolts in the query image. Normal references contain only the metal bolts, nuts, and washers, with no green component/object present.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 363
+    },
+    "latency_sec": 13.97,
+    "error": null
+  },
+  {
+    "item_id": "D9_0160",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.954,
+        0.95
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal tray configuration with three whole fruits in the left compartment (one peach/nectarine and two mandarins/oranges) and granola plus dried banana/nuts in the right compartment. In the query, the overall tray matches this pattern closely: the right compartment contents look correct, and the left compartment still contains the same three whole fruits. However, there is an additional loose orange-colored peel/fruit piece in the left compartment near the bottom center-right that does not appear in the normal references. This indicates an extra component/misplaced food item rather than normal positional variation. The fruit ordering differs slightly from the references, but that alone could be tolerated; the extra loose piece is the main anomaly.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - extra/misplaced item",
+        "evidence": "A loose orange peel/fruit fragment is present in the left compartment beside the bottom fruit, whereas normal examples contain only three whole fruits with no extra piece.",
+        "confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 1133,
+      "output": 478
+    },
+    "latency_sec": 20.43,
+    "error": null
+  },
+  {
+    "item_id": "D9_0135",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.98,
+        0.98
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "1. The reference images show a plastic organizer divided into 15 compartments containing yellow push pins. Normal variation includes different pin orientations and slight shifts within each compartment.\n2. In the query image, the same product structure is present: the organizer is intact and all visible components are the same type of yellow push pins.\n3. I checked the compartment-wise layout. The query shows one push pin in each of the 15 compartments, which is consistent with a valid normal arrangement seen in one of the references. Orientation differences are minor and acceptable under the stated tolerance.\n4. There is no clear evidence of missing pins, extra pins, wrong component type, misplaced parts across slots, or physical damage.\n5. Since the query matches the normal references well and no logical or structural defect is visible, it should be classified as normal.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All 15 compartments contain a normal yellow push pin; no compartment appears missing a part or containing an extra/wrong part. The box and pins appear undamaged, and orientation differences are within normal variation.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 696
+    },
+    "latency_sec": 19.7,
+    "error": null
+  },
+  {
+    "item_id": "D9_0150",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.953,
+        0.939
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The retrieved reference images are highly similar and show the expected normal composition: 2 bolts, 3 hex nuts, and 2 flat washers inside the bag. In the query image, the 2 bolts are present, but the smaller parts do not match the normal set. I can see only 2 hex nuts instead of 3, and among the washer-like parts, one appears to be a split/lock washer rather than the normal flat washer seen in both references. This is not a minor position change or viewing-angle effect; it indicates the wrong component mix in the assembly.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong count / wrong component type",
+        "evidence": "Query contains 2 bolts as expected, but only 2 hex nuts are visible whereas normal references contain 3. Also, one washer in the query is a split/lock washer, while normal samples show 2 flat washers.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1019,
+      "output": 416
+    },
+    "latency_sec": 17.29,
+    "error": null
+  },
+  {
+    "item_id": "D9_0091",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.966,
+        0.907
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show normal juice bottles with a fruit label centered on the upper front and a '100% Juice' label near the bottom. Different juice colors and different fruit icons appear to be acceptable normal variation. In the query image, the bottle shape, fill level, upper fruit label position, and lower text label position all match the normal assembly pattern closely. I do notice a small extra mark/symbol near the lower-right area of the upper fruit label that is not present in the shown normal references. This indicates an extra printed element or foreign component on the label, which is not part of the expected design. Since logical anomalies include wrong extra items/components, this should be considered anomalous rather than normal variation.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical: extra item/extra marking on label",
+        "evidence": "A small additional symbol/mark appears on the bottom-right of the upper cherry label in the query image; the normal references show only the fruit icon without this extra element.",
+        "confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 845,
+      "output": 231
+    },
+    "latency_sec": 10.74,
+    "error": null
+  },
+  {
+    "item_id": "D9_0126",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.945,
+        0.943,
+        0.93
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a normal assembly consisting of a plastic bag containing 2 bolts, 2 washers, and 2 hex nuts. The exact positions and orientations vary across references, so layout inside the bag is not fixed. In the query image, I observe 2 bolts, 3 hex nuts, and 0 washers. This differs from the normal component count and type distribution seen consistently in the references. The bolts appear intact, so the issue is logical rather than structural.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - wrong count / wrong component set (extra nut, missing washers)",
+        "evidence": "Query contains two bolts as expected, but there are three hex nuts visible and no washers visible, whereas normal references consistently contain two bolts, two washers, and two nuts.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 189
+    },
+    "latency_sec": 14.82,
+    "error": null
+  },
+  {
+    "item_id": "D9_0097",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 3,
+      "retrieval_sims": [
+        0.93,
+        0.92,
+        0.916
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images consistently show a kit inside a plastic bag containing 2 bolts, 2 hex nuts, and 2 washers. In the query image, I can identify 2 bolts, 2 hex nuts, and 2 washers as well. The parts appear to be the correct component types, and there is no extra or missing item compared with the normal references. Their placement is somewhat scattered, but this variation is consistent with allowable positional variation inside the bag and does not indicate incorrect assembly. No visible structural damage is present.",
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query contains the same expected set of components as the normal references: two bolts, two nuts, and two washers. No wrong-type part, no missing part, and no extra part are visible.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1246,
+      "output": 188
+    },
+    "latency_sec": 12.42,
+    "error": null
+  },
+  {
+    "item_id": "D9_0148",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.955,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 4,
+      "retrieval_sims": [
+        0.697,
+        0.672,
+        0.637,
+        0.631
+      ],
+      "n_rounds": 2,
+      "knowledge_used": true,
+      "response": {
+        "round1": {
+          "reasoning": "The reference images consistently show a normal assembly as two 3-port orange/clear connectors placed apart and joined by a blue wire spanning between them. In the query image, there are still two matching 3-port connectors, but they are positioned directly adjacent to each other in the center. The expected blue connecting wire spanning the gap is not visibly present as a normal bridge between separated connectors. This indicates the arrangement differs substantially from the normal assembly pattern, suggesting an incorrect assembly configuration rather than slight pose variation.",
+          "image_label": "anomalous",
+          "anomaly_type": "logical: wrong arrangement/position of parts",
+          "evidence": "Both connectors are stacked close together in the center instead of being separated left and right with a visible blue wire connecting them across the image, as in all references.",
+          "confidence": 0.95
+        },
+        "round2": {
+          "image_label": "anomalous",
+          "anomaly_type": "logical_missing_part",
+          "evidence": "Two multi-port connector blocks are present, but there is no connecting wire/cable between them as expected; the assembly appears incomplete.",
+          "confidence": 0.96
+        },
+        "final_score": 0.955
+      }
+    },
+    "cost_tokens": {
+      "input": 2205,
+      "output": 400
+    },
+    "latency_sec": 46.6,
+    "error": null
+  },
+  {
+    "item_id": "D9_0153",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "agent",
+      "k_actual": 2,
+      "retrieval_sims": [
+        0.978,
+        0.977
+      ],
+      "n_rounds": 1,
+      "knowledge_used": true,
+      "response": {
+        "reasoning": "The reference images show a compartment box where the normal assembly pattern is one yellow pushpin per compartment across the grid. Small orientation changes are acceptable, but the count and occupancy pattern should remain consistent. In the query image, several compartments are empty, especially in the second column and some middle-left areas, while other compartments still contain pins. This indicates missing items rather than just pose variation. There is no evidence of damage or wrong component type; the issue is the incorrect number/placement of parts relative to the normal references.",
+        "image_label": "anomalous",
+        "anomaly_type": "logical - missing items / wrong count",
+        "evidence": "Compared with the normal references, multiple grid cells in the query box are empty where a pushpin is normally present. The second column has empty compartments, and additional empty cells appear in the middle-left region, reducing the expected one-pin-per-slot pattern.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 962,
+      "output": 206
+    },
+    "latency_sec": 13.15,
+    "error": null
+  }
+]

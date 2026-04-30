@@ -1,0 +1,36 @@
+{
+  "domain": "D10",
+  "units": [
+    {
+      "unit": [
+        "D10"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "Exactly one connected foreground object is present in the image.",
+            "evidence": "All 8 reference images display a single, isolated liver cross-section against a black background."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The image consists strictly of black background and white/grey foreground pixels.",
+            "evidence": "Every reference image is a binary or grayscale mask with no other colors present."
+          },
+          {
+            "type": "texture",
+            "statement": "The foreground object exhibits a uniform, fine-grained speckled texture throughout.",
+            "evidence": "All 8 images show the liver tissue as a consistent noisy grain pattern without smooth gradients or solid blocks."
+          },
+          {
+            "type": "structural",
+            "statement": "The foreground object has a continuous, closed boundary with no internal holes.",
+            "evidence": "In all 8 reference images, the liver cross-section is a solid shape with no black voids inside the white region."
+          }
+        ],
+        "confidence": "high"
+      }
+    }
+  ]
+}

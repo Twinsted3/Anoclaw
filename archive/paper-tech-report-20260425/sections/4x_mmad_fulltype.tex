@@ -1,0 +1,76 @@
+% DRAFT — placeholder for post-experiment fill.
+% Will be spliced into 4_experiments.tex after \subsection{Cross-benchmark generalisation: MMAD}.
+
+\subsection{A unified task-aware agent for MMAD}
+\label{ssec:mmad_fulltype}
+
+The cross-benchmark MMAD evaluation in \S\ref{ssec:mmad} used only the
+Anomaly-Detection subset (Yes/No). MMAD additionally contains eight
+$4$-way multiple-choice question types that probe \emph{defect
+classification} (\num{4688} questions), \emph{defect localization}
+(\num{4878}), \emph{defect description} (\num{4710}), \emph{defect
+analysis} (\num{4782}), and four \emph{object}-understanding types
+(\num{12315} combined). We extend our agent to a \emph{unified
+task-aware} output head that accepts an optional question and a set of
+multiple-choice options and produces, in a single forward pass, (i) a
+continuous anomaly score (for ensembling on AD), (ii) a letter answer
+for MCQ, and (iii) free-text when no options are present. The mode is
+inferred from the input inside the first cognitive turn---no separate
+routing call---so the same agent that produces anomaly scores on
+CrossDomainVAD also answers MCQ items on MMAD.
+
+\paragraph{Setup.}
+We fit per-class decision thresholds for the AD subset on a
+stratified $n{=}\TODO_DEV$-image \emph{dev} sample (all 38 product
+classes, seed $= 42$), then freeze and evaluate on a held-out
+$n{=}\TODO_TEST$-image stratified \emph{test} sample (different seed).
+Ensembling is applied only to AD questions; for the remaining eight
+MCQ types we compare the unified agent's letter prediction against
+the same Direct~VLM baseline with a strictly comparable MCQ-aware
+prompt. Backbone: Qwen3.5-VL-27B, temperature~$0$, same $4$ normal
+reference templates as \S\ref{ssec:mmad}.
+
+\begin{table}[h]
+\centering
+\caption{\textbf{MMAD full-type MCQ accuracy} (Qwen3.5-VL-27B, test
+sample; $n$ per type in parentheses). For Anomaly~Detection we
+additionally report the $0.5$-averaged ensemble and its per-class
+calibrated variant. For the eight non-AD MCQ types we report the
+unified agent alone (Direct~VLM baseline next to it).}
+\label{tab:mmad_fulltype}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Question type ($n$)            & Direct VLM & Unified Agent the refutation agent & Ensemble & Ens.~(per-class $\tau$) \\
+\midrule
+Anomaly Detection (\TODO)      & \TODO & \TODO & \TODO & \TODO \\
+\midrule
+Defect Classification (\TODO)  & \TODO & \TODO & --- & --- \\
+Defect Localization (\TODO)    & \TODO & \TODO & --- & --- \\
+Defect Description (\TODO)     & \TODO & \TODO & --- & --- \\
+Defect Analysis (\TODO)        & \TODO & \TODO & --- & --- \\
+\midrule
+Object Classification (\TODO)  & \TODO & \TODO & --- & --- \\
+Object Analysis (\TODO)        & \TODO & \TODO & --- & --- \\
+Object Structure (\TODO)       & \TODO & \TODO & --- & --- \\
+Object Details (\TODO)         & \TODO & \TODO & --- & --- \\
+\midrule
+Pooled (\TODO total)           & \TODO & \TODO & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Findings.}
+% Fill after experiments:
+% 1. Unified agent closes the MCQ-accuracy gap on AD (from $-0.8$ pp to
+%    $\Delta{>}0$) once per-class thresholds are calibrated, while
+%    retaining the AUROC gain of \S\ref{ssec:mmad}.
+% 2. On Defect-* types the agent's per-image tool reasoning is
+%    informative and delivers $+\TODO$ pp over Direct.
+% 3. On Object-* types the agent matches Direct within noise, confirming
+%    that the mode-inference step does not sacrifice non-detection
+%    performance.
+%
+% If positive numbers are obtained, position this as evidence that a
+% single trained-free agent can span detection and fine-grained MCQ
+% answering without per-task retraining.

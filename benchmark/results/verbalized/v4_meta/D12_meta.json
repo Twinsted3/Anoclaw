@@ -1,0 +1,39 @@
+{
+  "a_wins_rules": [
+    "If the query image contains a large, distinct object (e.g., a person in a costume) that is explicitly present in the provided normal reference images, trust A (Agent) to correctly identify it as normal.",
+    "If the query image depicts a standard driving scene where the only difference from references is the time of day (e.g., daytime vs. nighttime references), trust A (Agent) to classify it as normal rather than flagging it as a contextual anomaly."
+  ],
+  "b_wins_rules": [
+    "If the query image contains a small, low-contrast object on the road surface (e.g., a dark spot or shadow) that A flags as an anomaly but B classifies as normal, trust B (Direct) to avoid false positives on minor visual noise.",
+    "If the query image contains common urban elements such as pedestrians crossing, emergency vehicles, or bright digital billboards that A flags as anomalies, trust B (Direct) to correctly classify them as normal traffic conditions.",
+    "If the query image shows a standard highway or street scene with typical traffic flow and no obvious obstructions, trust B (Direct) to classify it as normal even if A identifies minor variations as anomalies."
+  ],
+  "a_evidence": [
+    "D12_0020"
+  ],
+  "b_evidence": [
+    "D12_0017",
+    "D12_0034",
+    "D12_0054",
+    "D12_0060",
+    "D12_0075",
+    "D12_0094"
+  ],
+  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If the query image contains a large, distinct object (e.g., a person in a costume) that is explicitly present in the provided normal reference images, trust A (Agent) to correctly identify it as normal.\",\n    \"If the query image depicts a standard driving scene where the only difference from references is the time of day (e.g., daytime vs. nighttime references), trust A (Agent) to classify it as normal rather than flagging it as a contextual anomaly.\"\n  ],\n  \"b_wins_rules\": [\n    \"If the query image contains a small, low-contrast object on the road surface (e.g., a dark spot or shadow) that A flags as an anomaly but B classifies as normal, trust B (Direct) to avoid false positives on minor visual noise.\",\n    \"If the query image contains common urban elements such as pedestrians crossing, emergency vehicles, or bright digital billboards that A flags as anomalies, trust B (Direct) to correctly classify them as normal traffic conditions.\",\n    \"If the query image shows a standard highway or street scene with typical traffic flow and no obvious obstructions, trust B (Direct) to classify it as normal even if A identifies minor variations as anomalies.\"\n  ]\n}\n```",
+  "tokens": {
+    "input": 2635,
+    "output": 275
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 33,
+    "agree_wrong": 0,
+    "disagree_a_wins_total": 1,
+    "disagree_b_wins_total": 6,
+    "reflected_a": 1,
+    "reflected_b": 6,
+    "skipped": 0
+  },
+  "domain_code": "D12",
+  "seconds": 22.2
+}

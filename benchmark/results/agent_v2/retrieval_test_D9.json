@@ -1,0 +1,5282 @@
+[
+  {
+    "item_id": "D9_0088",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.976
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/075.png",
+          0.968
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.964
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle shape, fill level, banana logo label, and '100% Juice' bottom label all match the normal reference samples with no missing, extra, or misplaced components.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 72
+    },
+    "latency_sec": 10.47,
+    "error": null
+  },
+  {
+    "item_id": "D9_0050",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/133.png",
+          0.971
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.917
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.906
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.905
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, fill appearance, cherry label, and '100% Juice' tag are consistent with the matching normal cherry-juice reference.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 107
+    },
+    "latency_sec": 11.33,
+    "error": null
+  },
+  {
+    "item_id": "D9_0017",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.68,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.962
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.96
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.96
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.958
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "connector pin-count mismatch",
+        "evidence": "The query shows a blue jumper connecting two 3-port connectors, while the visually similar normal references show matched connector sizes on both ends and consistent expected configurations; this assembly differs from the normal patterns.",
+        "confidence": 0.68
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 69
+    },
+    "latency_sec": 11.37,
+    "error": null
+  },
+  {
+    "item_id": "D9_0044",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.971
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/294.png",
+          0.965
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/295.png",
+          0.964
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.964
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray contents match the normal references: three fruits in the left compartment (one peach/nectarine and two mandarins/oranges) and granola with banana chips and almonds in the right compartment. No missing, extra, or misplaced components are visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 150
+    },
+    "latency_sec": 14.11,
+    "error": null
+  },
+  {
+    "item_id": "D9_0016",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/133.png",
+          0.977
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.915
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.912
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.911
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle appears properly assembled: cherry icon matches the dark red juice color, the '100% Juice' label is present, and there are no obvious missing or misplaced components compared with similar normal references.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 77
+    },
+    "latency_sec": 5.12,
+    "error": null
+  },
+  {
+    "item_id": "D9_0036",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/180.png",
+          0.983
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.974
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/051.png",
+          0.972
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.971
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle shape, open threaded neck, liquid fill level, orange icon label, and '100% Juice' bottom label all match the normal reference samples with no missing or incorrect components.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 130
+    },
+    "latency_sec": 6.09,
+    "error": null
+  },
+  {
+    "item_id": "D9_0026",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.966
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.962
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.956
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/226.png",
+          0.955
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray layout and contents match the normal references: three fruits in the left compartment and granola with almonds and banana chips in the right compartment. No missing, extra, or misplaced components are visible.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 185
+    },
+    "latency_sec": 8.9,
+    "error": null
+  },
+  {
+    "item_id": "D9_0023",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.955
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.951
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/294.png",
+          0.951
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/350.png",
+          0.945
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray contents match the normal references: two mandarins and one stone fruit on the left, with granola on the upper right and banana chips with almonds on the lower right. No missing, extra, or misplaced components are apparent.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 84
+    },
+    "latency_sec": 5.62,
+    "error": null
+  },
+  {
+    "item_id": "D9_0087",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.959
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.957
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/138.png",
+          0.952
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.95
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bag contains the expected hardware set: 2 bolts, 2 hex nuts, and 2 washers, arranged similarly to the normal reference images with no obvious missing, extra, or incorrect components.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 288
+    },
+    "latency_sec": 10.78,
+    "error": null
+  },
+  {
+    "item_id": "D9_0062",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.967
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.956
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.952
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.944
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows a 2-port connector on each end with a single yellow wire linking them, matching the normal reference configuration. Connector orientation and overall assembly are consistent; the slight wire curvature appears acceptable.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 183
+    },
+    "latency_sec": 10.13,
+    "error": null
+  },
+  {
+    "item_id": "D9_0046",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.974
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.972
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/075.png",
+          0.971
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.968
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle shape, fill level, banana label, and '100% Juice' label all match the normal reference samples with no missing, extra, or visibly incorrect components.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 128
+    },
+    "latency_sec": 6.8,
+    "error": null
+  },
+  {
+    "item_id": "D9_0059",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.981
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/051.png",
+          0.978
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/180.png",
+          0.978
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, fill level, orange logo label, and '100% Juice' text label are all present and positioned consistently with the normal references. No missing, extra, or misassembled components are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 78
+    },
+    "latency_sec": 4.09,
+    "error": null
+  },
+  {
+    "item_id": "D9_0067",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.975
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/180.png",
+          0.972
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/051.png",
+          0.96
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle shape, open neck, juice fill level, centered fruit label, and '100% Juice' bottom label all match the normal reference samples with no missing or incorrect components visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 122
+    },
+    "latency_sec": 6.2,
+    "error": null
+  },
+  {
+    "item_id": "D9_0005",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.971
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.967
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/075.png",
+          0.963
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.96
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle shape, fill level, banana logo label, and '100% Juice' label all match the normal reference samples. Slight label tilt is also seen in the references and does not indicate a defect.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 140
+    },
+    "latency_sec": 5.83,
+    "error": null
+  },
+  {
+    "item_id": "D9_0055",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.958
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/089.png",
+          0.956
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.953
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.952
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The product has the expected two 3-port orange lever connectors linked by a single blue wire, with connector count, orientation, and wiring consistent with the normal references.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 168
+    },
+    "latency_sec": 8.29,
+    "error": null
+  },
+  {
+    "item_id": "D9_0060",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.945
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/234.png",
+          0.945
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.945
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/109.png",
+          0.941
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly matches the normal references: two orange connectors are present, one at each end, connected by a single yellow wire with no missing, extra, or visibly misassembled components.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 73
+    },
+    "latency_sec": 5.55,
+    "error": null
+  },
+  {
+    "item_id": "D9_0086",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.966
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.964
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.964
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.947
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembled jumper cable has matching connectors on both ends with wires properly inserted and routed. Variations in wire color and slight curvature are consistent with the normal reference samples.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 70
+    },
+    "latency_sec": 5.19,
+    "error": null
+  },
+  {
+    "item_id": "D9_0063",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.928
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.927
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/089.png",
+          0.92
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.917
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "connector pin-count mismatch",
+        "evidence": "The query shows a 5-port connector on the left connected to a 4-port connector on the right, while the normal references show matched connector sizes on both ends.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 77
+    },
+    "latency_sec": 5.83,
+    "error": null
+  },
+  {
+    "item_id": "D9_0053",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.96
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.947
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/138.png",
+          0.945
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.943
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query bag contains the same expected set of components as the normal references: 2 bolts, 2 washers, and 2 hex nuts. No missing, extra, or visibly incorrect parts are observed.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 78
+    },
+    "latency_sec": 4.38,
+    "error": null
+  },
+  {
+    "item_id": "D9_0019",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.965
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.958
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/138.png",
+          0.958
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/271.png",
+          0.957
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_component",
+        "evidence": "Reference samples consistently show 2 bolts, 2 nuts, and 3 washers in the bag. The query shows 2 bolts, only 1 nut, and 4 washers, indicating the component set is incorrect.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 85
+    },
+    "latency_sec": 4.39,
+    "error": null
+  },
+  {
+    "item_id": "D9_0072",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.983
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/075.png",
+          0.978
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.978
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, fill level, banana icon label, and '100% Juice' text label all match the normal reference samples with no missing or misplaced components.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 68
+    },
+    "latency_sec": 4.23,
+    "error": null
+  },
+  {
+    "item_id": "D9_0040",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.22999999999999998,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/198.png",
+          0.981
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/291.png",
+          0.976
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.976
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.972
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembled organizer and pushpins match the reference pattern: all visible compartments contain plausible yellow thumbtacks with no extra foreign object, missing structural part, or logically incorrect component arrangement.",
+        "confidence": 0.77
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 73
+    },
+    "latency_sec": 4.55,
+    "error": null
+  },
+  {
+    "item_id": "D9_0030",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.981
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/266.png",
+          0.977
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The compartment box structure matches the references, and each compartment appears to contain a single yellow pushpin with plausible orientation and placement. No missing, extra, or clearly malformed components are visible.",
+        "confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 694
+    },
+    "latency_sec": 22.71,
+    "error": null
+  },
+  {
+    "item_id": "D9_0028",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.958
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.949
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/350.png",
+          0.949
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.948
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_component",
+        "evidence": "Reference trays contain three fruits in the left compartment, while the query tray has only two mandarins and one bitten apple/nectarine instead of the expected intact fruit arrangement.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 62
+    },
+    "latency_sec": 6.23,
+    "error": null
+  },
+  {
+    "item_id": "D9_0013",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.957
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/062.png",
+          0.955
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.946
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/128.png",
+          0.946
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query tray matches the normal pattern: left compartment contains one peach/apple-like fruit and two mandarins, right compartment contains granola with mixed banana chips and almonds. No missing, extra, or clearly misplaced components.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 79
+    },
+    "latency_sec": 5.19,
+    "error": null
+  },
+  {
+    "item_id": "D9_0081",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.956
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/312.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.943
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/342.png",
+          0.937
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bag contains the expected set of components: 2 bolts, 2 nuts, and 2 washers, matching the normal reference samples. No missing, extra, or visibly incorrect parts are observed.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 227
+    },
+    "latency_sec": 8.34,
+    "error": null
+  },
+  {
+    "item_id": "D9_0075",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.971
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.97
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.966
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.951
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly matches the normal references: two 3-slot orange/transparent connectors are present on both ends, connected by a single blue wire with correct placement and no visible missing, extra, or misaligned components.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 161
+    },
+    "latency_sec": 10.36,
+    "error": null
+  },
+  {
+    "item_id": "D9_0083",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/312.png",
+          0.953
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.946
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/138.png",
+          0.944
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows the same component set and count as the normal references: 2 bolts, 2 washers, and 2 hex nuts inside the bag, with no obvious missing, extra, or incorrect part.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 78
+    },
+    "latency_sec": 3.9,
+    "error": null
+  },
+  {
+    "item_id": "D9_0068",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.973
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/075.png",
+          0.973
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.971
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle matches the normal references: same banana icon label, same '100% Juice' bottom label, correct bottle shape, and no missing or extra components are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 71
+    },
+    "latency_sec": 3.61,
+    "error": null
+  },
+  {
+    "item_id": "D9_0051",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.12,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.985
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.985
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/276.png",
+          0.981
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/266.png",
+          0.979
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The organizer appears logically consistent with the normal references: each compartment contains a single yellow push pin, with no clearly missing, extra, or foreign component.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 765
+    },
+    "latency_sec": 16.18,
+    "error": null
+  },
+  {
+    "item_id": "D9_0076",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.97
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/180.png",
+          0.97
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.967
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/051.png",
+          0.963
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle shape, cap/neck, juice fill level, orange logo label, and '100% Juice' text label all match the normal references with no missing, extra, or visibly misplaced components.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 121
+    },
+    "latency_sec": 7.16,
+    "error": null
+  },
+  {
+    "item_id": "D9_0015",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.981
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.955
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/234.png",
+          0.947
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.947
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly matches the normal references: a single red wire connects two multi-port orange lever connectors with the expected left-right orientation and no visible missing, extra, or misaligned components.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 155
+    },
+    "latency_sec": 8.26,
+    "error": null
+  },
+  {
+    "item_id": "D9_0029",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.968
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.96
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/089.png",
+          0.944
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.942
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly shows a single red wire connecting two matching multi-port orange/clear connectors, consistent with the normal references. No missing, extra, or visibly misassembled components are apparent.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 344
+    },
+    "latency_sec": 13.38,
+    "error": null
+  },
+  {
+    "item_id": "D9_0037",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.961
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.947
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.946
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.945
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows two 3-port connectors joined by a single blue wire inserted in the middle port on both sides, matching the logical assembly pattern seen in similar normal references.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 71
+    },
+    "latency_sec": 4.48,
+    "error": null
+  },
+  {
+    "item_id": "D9_0025",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.984
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.958
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.954
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.944
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly matches the normal references: a single yellow wire connects two correctly oriented orange/transparent lever connectors, with the wire seated in corresponding top ports and no missing, extra, or misaligned components visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 298
+    },
+    "latency_sec": 12.48,
+    "error": null
+  },
+  {
+    "item_id": "D9_0080",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.972
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/350.png",
+          0.972
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.97
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.967
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray contents and arrangement match the normal references: one apple/nectarine-like fruit with two mandarins on the left, granola on the upper right, and mixed almonds/banana chips on the lower right. No missing, extra, or misplaced component is apparent.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 143
+    },
+    "latency_sec": 7.56,
+    "error": null
+  },
+  {
+    "item_id": "D9_0049",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.965
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/234.png",
+          0.955
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/109.png",
+          0.946
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.946
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "component count mismatch",
+        "evidence": "The query shows 5-port connectors on both ends, while the visually similar normal references show smaller connector blocks (2-port or 3-port). The assembled configuration does not match the normal product variants.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 82
+    },
+    "latency_sec": 5.29,
+    "error": null
+  },
+  {
+    "item_id": "D9_0069",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.12,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.966
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.965
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.952
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.943
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The product has the expected two transparent/orange connectors connected by a single yellow wire, matching the normal references. No missing, extra, or visibly incorrect component is present; only minor pose/angle variation is seen on the left connector.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 254
+    },
+    "latency_sec": 11.23,
+    "error": null
+  },
+  {
+    "item_id": "D9_0048",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.988
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.983
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/075.png",
+          0.976
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.976
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, open threaded neck, fill appearance, banana label, and '100% Juice' label are all present and consistent with the normal reference images. No missing or incorrect component is visible.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 149
+    },
+    "latency_sec": 7.36,
+    "error": null
+  },
+  {
+    "item_id": "D9_0012",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/089.png",
+          0.908
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.9
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.892
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.88
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "wrong component configuration / wrong wire color",
+        "evidence": "The query uses larger 4-position connectors on both ends and a red wire, while all normal references show 3-position connectors connected by a blue wire.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 170
+    },
+    "latency_sec": 9.17,
+    "error": null
+  },
+  {
+    "item_id": "D9_0084",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.986
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.978
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/075.png",
+          0.977
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.977
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, fill level, banana front label, and '100% Juice' bottom label all appear present, correctly placed, and consistent with the normal reference images.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 149
+    },
+    "latency_sec": 7.67,
+    "error": null
+  },
+  {
+    "item_id": "D9_0052",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/350.png",
+          0.954
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.953
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/294.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.946
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray contents match the normal references: three fruits on the left (two mandarins and one peach/nectarine) and granola with banana chips and almonds on the right. No missing, extra, or misplaced components are visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 84
+    },
+    "latency_sec": 7.3,
+    "error": null
+  },
+  {
+    "item_id": "D9_0074",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.942
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/312.png",
+          0.934
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/271.png",
+          0.93
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/138.png",
+          0.921
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bag contains the expected set of components: 2 bolts, 2 nuts, and 2 washers, matching the normal reference samples. No missing, extra, or visibly incorrect part is observed.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 290
+    },
+    "latency_sec": 9.66,
+    "error": null
+  },
+  {
+    "item_id": "D9_0061",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.12,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/109.png",
+          0.933
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/128.png",
+          0.928
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.919
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/234.png",
+          0.907
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows a two-connector cable assembly with both orange lever connectors present and a single yellow wire properly linking them. This matches the structure and orientation seen in similar normal references.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 73
+    },
+    "latency_sec": 5.27,
+    "error": null
+  },
+  {
+    "item_id": "D9_0002",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.96
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/062.png",
+          0.96
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.959
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.958
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Tray contents are logically consistent with the reference samples: left compartment has two mandarins and one stone fruit, right compartment has granola with banana chips and almonds. No missing, extra, or obviously misplaced components.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 67
+    },
+    "latency_sec": 5.68,
+    "error": null
+  },
+  {
+    "item_id": "D9_0033",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.973
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.961
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/295.png",
+          0.959
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.958
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Tray contents match the normal references: left compartment has three fruits, and right compartment has granola with banana chips and almonds in expected arrangement.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 65
+    },
+    "latency_sec": 4.77,
+    "error": null
+  },
+  {
+    "item_id": "D9_0054",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.988
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/276.png",
+          0.983
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/090.png",
+          0.979
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "extra components / incorrect quantity",
+        "evidence": "The query tray has a pushpin in every compartment (about 15 total), while the similar normal references consistently show fewer pins with several compartments left empty. This suggests overfilled or extra components.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 501
+    },
+    "latency_sec": 12.95,
+    "error": null
+  },
+  {
+    "item_id": "D9_0018",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.959
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.954
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.952
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.938
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows the expected set of components seen in the normal references: 2 bolts, 2 hex nuts, and 2 washers inside the bag. No extra, missing, or visibly incorrect part is apparent.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 79
+    },
+    "latency_sec": 5.61,
+    "error": null
+  },
+  {
+    "item_id": "D9_0045",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.941
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/128.png",
+          0.935
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/062.png",
+          0.934
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.933
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray contents match the normal references: three fruits on the left (two mandarins and one apple/nectarine) and granola with mixed banana chips and almonds on the right. No missing, extra, or clearly misplaced components are visible.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 86
+    },
+    "latency_sec": 5.57,
+    "error": null
+  },
+  {
+    "item_id": "D9_0007",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/090.png",
+          0.984
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.984
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/266.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.978
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The compartment box layout and the number/distribution of yellow push pins are consistent with the normal reference samples. No missing, extra, or visibly incorrect component is apparent.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 70
+    },
+    "latency_sec": 4.13,
+    "error": null
+  },
+  {
+    "item_id": "D9_0011",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.94
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.932
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.932
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/062.png",
+          0.932
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray contents match the normal references: two mandarins and one apple/nectarine on the left, with granola plus banana chips and almonds on the right. No missing, extra, or logically inconsistent components are visible.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 82
+    },
+    "latency_sec": 12.6,
+    "error": null
+  },
+  {
+    "item_id": "D9_0009",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.961
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/103.png",
+          0.96
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/062.png",
+          0.955
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/294.png",
+          0.952
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query tray matches the reference pattern: three fruits in the left compartment (two mandarins and one peach/nectarine) and granola with banana chips and almonds in the right compartment. No missing, extra, or misplaced components are apparent.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 85
+    },
+    "latency_sec": 6.54,
+    "error": null
+  },
+  {
+    "item_id": "D9_0021",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.984
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.981
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/266.png",
+          0.977
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "extra components / overfilled layout",
+        "evidence": "The query tray appears to have a pushpin in every compartment (about 15 total), while the normal references consistently show several empty compartments and fewer pins overall.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 691
+    },
+    "latency_sec": 20.82,
+    "error": null
+  },
+  {
+    "item_id": "D9_0000",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.26,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/030.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/198.png",
+          0.97
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/314.png",
+          0.961
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.96
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembled organizer and pushpins appear consistent with the normal references: same box structure, expected type of components, and no clearly missing, extra, or mismatched part arrangement beyond normal variation in pin positions.",
+        "confidence": 0.74
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 78
+    },
+    "latency_sec": 4.4,
+    "error": null
+  },
+  {
+    "item_id": "D9_0001",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.983
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/276.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.978
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_component",
+        "evidence": "The compartment grid pattern matches the references, but the query contains noticeably fewer push pins overall, with several compartments empty compared to the normal samples.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 69
+    },
+    "latency_sec": 4.09,
+    "error": null
+  },
+  {
+    "item_id": "D9_0038",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.972
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.969
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.968
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/226.png",
+          0.964
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray layout and contents match the normal references: three fruits in the left compartment, granola in the upper-right section, and mixed almonds/banana chips in the lower-right section. No missing, extra, or misplaced components are visible.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 157
+    },
+    "latency_sec": 7.29,
+    "error": null
+  },
+  {
+    "item_id": "D9_0014",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.10999999999999999,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.963
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.953
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/138.png",
+          0.945
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/271.png",
+          0.945
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bag contains the expected hardware set: 2 bolts along with 2 hex nuts and 2 washers, matching the normal reference samples despite a different arrangement/orientation.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 458
+    },
+    "latency_sec": 16.83,
+    "error": null
+  },
+  {
+    "item_id": "D9_0066",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.961
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.945
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.941
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bag contains the expected set of components consistent with the normal references: 2 bolts, 2 hex nuts, and 2 washers. No missing, extra, or visibly incorrect part is apparent.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 402
+    },
+    "latency_sec": 18.62,
+    "error": null
+  },
+  {
+    "item_id": "D9_0131",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.957
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.955
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.947
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.94
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "connector pin-count mismatch",
+        "evidence": "The query shows a yellow wire with a 2-port connector on the left and a 3-port connector on the right, while similar normal references have matching connector types on both ends.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 80
+    },
+    "latency_sec": 5.02,
+    "error": null
+  },
+  {
+    "item_id": "D9_0024",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/180.png",
+          0.976
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/051.png",
+          0.975
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.967
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, fill level, upper fruit label, and lower '100% Juice' label all appear present and positioned consistently with the normal reference samples.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 67
+    },
+    "latency_sec": 6.67,
+    "error": null
+  },
+  {
+    "item_id": "D9_0169",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/314.png",
+          0.347
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/030.png",
+          0.342
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/291.png",
+          0.323
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/276.png",
+          0.322
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing components",
+        "evidence": "The reference images show the organizer populated with multiple yellow push pins in many compartments, while the query image shows the same organizer completely empty.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 116
+    },
+    "latency_sec": 6.62,
+    "error": null
+  },
+  {
+    "item_id": "D9_0064",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.12,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/266.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/276.png",
+          0.978
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/030.png",
+          0.972
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All compartments and components appear consistent with the normal references: yellow push pins with expected shape, color, and placement, and no clearly missing, broken, or foreign parts are visible.",
+        "confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 753
+    },
+    "latency_sec": 20.71,
+    "error": null
+  },
+  {
+    "item_id": "D9_0149",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/062.png",
+          0.955
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/350.png",
+          0.955
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.952
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.946
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray contents and arrangement match the normal references: three fruits in the left compartment (two mandarins and one stone fruit) and granola with banana chips/nuts in the right compartment. No missing, extra, or misplaced components are evident.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 172
+    },
+    "latency_sec": 9.32,
+    "error": null
+  },
+  {
+    "item_id": "D9_0109",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/198.png",
+          0.976
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/266.png",
+          0.975
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.975
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing components",
+        "evidence": "The query tray has several empty compartments, especially the entire rightmost column, whereas the normal references show pins distributed across nearly all compartments.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 403
+    },
+    "latency_sec": 10.56,
+    "error": null
+  },
+  {
+    "item_id": "D9_0163",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.957
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.944
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.931
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/342.png",
+          0.93
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing component",
+        "evidence": "Reference samples consistently show 2 bolts, 2 nuts, and 2 washers. The query shows 2 bolts, 2 washers, but only 1 nut.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 75
+    },
+    "latency_sec": 4.77,
+    "error": null
+  },
+  {
+    "item_id": "D9_0171",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.963
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.957
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/271.png",
+          0.943
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.941
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "component count mismatch",
+        "evidence": "Reference samples consistently show 2 bolts, 2 nuts, and 2 washers. The query shows 2 bolts, 3 nuts, and only 1 washer, indicating one washer is missing and an extra nut is present.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 270
+    },
+    "latency_sec": 9.14,
+    "error": null
+  },
+  {
+    "item_id": "D9_0139",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.945
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/150.png",
+          0.939
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/138.png",
+          0.937
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.936
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "damaged/incorrect bolt",
+        "evidence": "The kit should contain two similar long bolts with two nuts and two washers. In the query, the left bolt is much shorter and appears damaged/deformed compared with the normal references.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 80
+    },
+    "latency_sec": 6.33,
+    "error": null
+  },
+  {
+    "item_id": "D9_0147",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.954
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/103.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/294.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.95
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing fruit components",
+        "evidence": "Reference images show three fruits in the left compartment, while the query image contains only one orange and the rest of the compartment is empty.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 69
+    },
+    "latency_sec": 5.88,
+    "error": null
+  },
+  {
+    "item_id": "D9_0134",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.852
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.846
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.843
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/310.png",
+          0.832
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing labels",
+        "evidence": "The query bottle is missing the front banana logo label and the bottom '100% Juice' label that are consistently present in all normal reference images.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 105
+    },
+    "latency_sec": 6.95,
+    "error": null
+  },
+  {
+    "item_id": "D9_0108",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.984
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.982
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.982
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/266.png",
+          0.981
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same type of compartment box with a plausible distribution of yellow push pins, matching the normal references in component type, count range, and overall arrangement. No clearly missing, extra, or incorrect component is evident.",
+        "confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 558
+    },
+    "latency_sec": 17.83,
+    "error": null
+  },
+  {
+    "item_id": "D9_0142",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.988
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.987
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/276.png",
+          0.986
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/266.png",
+          0.982
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "extra component / duplicate pin in one compartment",
+        "evidence": "The tray normally has one yellow pin per compartment. In the query, the second-row leftmost compartment contains two pins, indicating an extra component.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 1163
+    },
+    "latency_sec": 24.67,
+    "error": null
+  },
+  {
+    "item_id": "D9_0124",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.978
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.978
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/180.png",
+          0.977
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/051.png",
+          0.968
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, fill level, orange logo label, and '100% Juice' bottom label all appear present and positioned consistently with the normal references.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 66
+    },
+    "latency_sec": 5.22,
+    "error": null
+  },
+  {
+    "item_id": "D9_0110",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/133.png",
+          0.974
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.905
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/180.png",
+          0.887
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.883
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle shape, cherry label, juice color, fill level, and bottom '100% Juice' label are consistent with the matching normal reference sample.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 115
+    },
+    "latency_sec": 5.69,
+    "error": null
+  },
+  {
+    "item_id": "D9_0116",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.18000000000000005,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/109.png",
+          0.947
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/234.png",
+          0.937
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.932
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/128.png",
+          0.932
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly appears logically consistent: a single wire connects the left 2-port connector to the right 4-port connector, matching the pattern seen in normal references with mixed connector sizes and single-wire bridging.",
+        "confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 77
+    },
+    "latency_sec": 6.88,
+    "error": null
+  },
+  {
+    "item_id": "D9_0122",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/226.png",
+          0.962
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.961
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/350.png",
+          0.956
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.956
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "damaged fruit",
+        "evidence": "The bottom-left mandarin/orange has a large missing/torn section of peel, unlike the intact fruits in the reference images.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 68
+    },
+    "latency_sec": 9.65,
+    "error": null
+  },
+  {
+    "item_id": "D9_0137",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.943
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.931
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.929
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.921
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "mismatched_or_discolored_right_connector",
+        "evidence": "The left connector and blue wire match the normal samples, but the right connector appears noticeably darker/brownish and visually different from the clear/orange connector seen in all references.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 311
+    },
+    "latency_sec": 13.41,
+    "error": null
+  },
+  {
+    "item_id": "D9_0179",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.953
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.944
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.934
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.926
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "damaged/mismatched component",
+        "evidence": "The bag contains the expected two bolts, two nuts, and two washers, but one screw/bolt appears to have a white jagged broken or stripped section, unlike the normal references where both fasteners are intact metal bolts.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 90
+    },
+    "latency_sec": 4.78,
+    "error": null
+  },
+  {
+    "item_id": "D9_0136",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.94
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/312.png",
+          0.934
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.934
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/271.png",
+          0.933
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing component",
+        "evidence": "Reference samples consistently show 2 bolts, 2 spacers, 2 nuts, and 2 washers. The query image shows 2 bolts, 2 spacers, 2 washers, but only 1 nut.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 86
+    },
+    "latency_sec": 10.86,
+    "error": null
+  },
+  {
+    "item_id": "D9_0162",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.971
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.957
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/075.png",
+          0.956
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.95
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "liquid color/fill inconsistency",
+        "evidence": "The bottle matches the normal structure and labels, but the liquid in the upper neck region is noticeably pink/brown instead of the uniform pale white juice seen in all reference images.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 141
+    },
+    "latency_sec": 6.79,
+    "error": null
+  },
+  {
+    "item_id": "D9_0118",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.961
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.953
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.951
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/342.png",
+          0.946
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "component count mismatch",
+        "evidence": "Reference samples consistently show 2 bolts, 2 washers, and 2 nuts. The query shows 2 bolts, 1 washer, and 3 nuts, indicating one washer is missing and there is an extra nut.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 277
+    },
+    "latency_sec": 9.05,
+    "error": null
+  },
+  {
+    "item_id": "D9_0159",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.944
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.932
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/271.png",
+          0.929
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.923
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows the same expected hardware set as the normal references: 2 bolts, 2 nuts, and 2 washers inside the bag, with no missing or extra components.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 72
+    },
+    "latency_sec": 5.3,
+    "error": null
+  },
+  {
+    "item_id": "D9_0098",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.947
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.941
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.939
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.934
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_component",
+        "evidence": "Reference images consistently show 2 bolts, 2 hex nuts, and 3 washers in the bag. The query image shows 2 bolts, 2 hex nuts, and only 2 washers.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 81
+    },
+    "latency_sec": 4.97,
+    "error": null
+  },
+  {
+    "item_id": "D9_0167",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.21999999999999997,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.983
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/090.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.977
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/276.png",
+          0.975
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "All compartments contain a push pin, and the pins' shapes, colors, and varied orientations are consistent with the normal reference images. No clearly missing, extra, or visibly damaged component is apparent.",
+        "confidence": 0.78
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 707
+    },
+    "latency_sec": 21.49,
+    "error": null
+  },
+  {
+    "item_id": "D9_0138",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/180.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/051.png",
+          0.973
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.968
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.965
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, fill level, neck, main fruit label, and lower '100% Juice' label all appear present and consistent with the normal references; no missing, swapped, or clearly misassembled component is visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 121
+    },
+    "latency_sec": 6.38,
+    "error": null
+  },
+  {
+    "item_id": "D9_0130",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.15000000000000002,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/234.png",
+          0.938
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.938
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.937
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.937
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly shows matching 3-port connectors on both ends with two blue wires consistently bridging corresponding positions, which is a plausible normal configuration similar to the references.",
+        "confidence": 0.85
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 68
+    },
+    "latency_sec": 8.93,
+    "error": null
+  },
+  {
+    "item_id": "D9_0111",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/310.png",
+          0.975
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.975
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.974
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.973
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "extra mark / label defect",
+        "evidence": "The query bottle matches the normal references overall, but the main front label has an additional red circular spot on the left side that is not present in any reference images.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 118
+    },
+    "latency_sec": 6.43,
+    "error": null
+  },
+  {
+    "item_id": "D9_0151",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/133.png",
+          0.956
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.914
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.883
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.883
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "incorrect label/packaging component",
+        "evidence": "The bottle contents and color match the cherry-style juice, but the front fruit icon shows a single cherry instead of the normal cherry label seen in the reference samples.",
+        "confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 189
+    },
+    "latency_sec": 6.84,
+    "error": null
+  },
+  {
+    "item_id": "D9_0113",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/133.png",
+          0.974
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.911
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.898
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.896
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle shape, open neck, dark red liquid, cherry icon label, and '100% Juice' bottom label are all consistent with the matching normal reference samples. No missing, swapped, or misassembled components are visible.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 142
+    },
+    "latency_sec": 6.6,
+    "error": null
+  },
+  {
+    "item_id": "D9_0133",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.985
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/291.png",
+          0.981
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/266.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/198.png",
+          0.98
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "multiple components in one compartment",
+        "evidence": "In the lower-right area, a compartment appears to contain more than one pushpin, whereas the normal references show at most one pin per compartment.",
+        "confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 548
+    },
+    "latency_sec": 15.23,
+    "error": null
+  },
+  {
+    "item_id": "D9_0093",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.10999999999999999,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/291.png",
+          0.985
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.984
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.981
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.978
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows a compartment tray with yellow push pins distributed similarly to the normal references. Pin count per compartment varies as in references, and no obvious missing, extra, broken, or incorrectly assembled component is visible.",
+        "confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 79
+    },
+    "latency_sec": 4.77,
+    "error": null
+  },
+  {
+    "item_id": "D9_0166",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.948
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.939
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.938
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.936
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly matches the normal references: two 3-port orange/clear connectors are present on both ends, joined by a single blue wire with typical routing and no visible missing, extra, or misaligned components.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 139
+    },
+    "latency_sec": 8.31,
+    "error": null
+  },
+  {
+    "item_id": "D9_0177",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.931
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.93
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/138.png",
+          0.928
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing washer",
+        "evidence": "Reference samples consistently show 2 bolts, 3 nuts, and 2 washers in the bag. The query image has 2 bolts, 3 nuts, but only 1 washer visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 80
+    },
+    "latency_sec": 3.83,
+    "error": null
+  },
+  {
+    "item_id": "D9_0096",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.959
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.955
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.952
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.947
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bag contains the expected set of parts: 2 bolts, 2 hex nuts, and 2 washers, matching the normal references. No extra, missing, or clearly incorrect component is visible.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 405
+    },
+    "latency_sec": 12.78,
+    "error": null
+  },
+  {
+    "item_id": "D9_0101",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.18999999999999995,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.986
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/291.png",
+          0.982
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.981
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.976
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembled box and compartment layout match the normal references, and the contents are consistent with typical samples: yellow push pins distributed across compartments with no obvious missing/extra component or logically incorrect part.",
+        "confidence": 0.81
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 75
+    },
+    "latency_sec": 3.9,
+    "error": null
+  },
+  {
+    "item_id": "D9_0123",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.952
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/234.png",
+          0.932
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.921
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.913
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "mismatched connector components",
+        "evidence": "The left end uses a 2-slot orange lever connector, while the right end appears to be a different/larger connector type rather than the matching connector seen in normal samples. Normal examples have matching connector styles on both ends.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 245
+    },
+    "latency_sec": 12.83,
+    "error": null
+  },
+  {
+    "item_id": "D9_0115",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/051.png",
+          0.973
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.967
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/180.png",
+          0.966
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.964
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Bottle shape, fill level, neck, and both front labels match the visually similar normal references; no missing, extra, or misplaced component is visible.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 67
+    },
+    "latency_sec": 3.34,
+    "error": null
+  },
+  {
+    "item_id": "D9_0099",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/250.png",
+          0.967
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.962
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.962
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/141.png",
+          0.96
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "component mismatch / incorrect contents-label pairing",
+        "evidence": "The bottle has an orange label on the front, but the liquid inside is opaque white like the banana-juice references rather than yellow/orange like the orange-juice reference.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 138
+    },
+    "latency_sec": 6.9,
+    "error": null
+  },
+  {
+    "item_id": "D9_0164",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/226.png",
+          0.906
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.892
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/350.png",
+          0.892
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.888
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing component",
+        "evidence": "The right-bottom section contains almonds but lacks the banana chips seen in all normal reference trays. Other components appear consistent.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 152
+    },
+    "latency_sec": 8.22,
+    "error": null
+  },
+  {
+    "item_id": "D9_0140",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/276.png",
+          0.982
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.982
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.982
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.98
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "color/part mismatch",
+        "evidence": "One pushpin in the top-right compartment is red/orange while all reference samples show only yellow pushpins.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 65
+    },
+    "latency_sec": 5.1,
+    "error": null
+  },
+  {
+    "item_id": "D9_0105",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.959
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/350.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/295.png",
+          0.949
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.947
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The tray contents and arrangement match the normal references: three fruits on the left compartment, granola in the upper-right, and banana chips with nuts in the lower-right. No missing, extra, or misplaced components are evident.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 127
+    },
+    "latency_sec": 6.67,
+    "error": null
+  },
+  {
+    "item_id": "D9_0170",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.939
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/312.png",
+          0.936
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.934
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.934
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "wrong_component",
+        "evidence": "Query bag contains two bolts, two hex nuts, two flat washers, and one toothed lock washer. Reference normal samples consistently show only flat washers and typically three nuts; the toothed washer indicates an incorrect component mix.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 85
+    },
+    "latency_sec": 7.07,
+    "error": null
+  },
+  {
+    "item_id": "D9_0125",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.937
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.929
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.925
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.923
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly has the same two orange lever connectors joined by a single yellow wire as the normal references. Component count, connector types, and wire routing appear consistent; slight orientation/curvature differences are acceptable.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 78
+    },
+    "latency_sec": 5.09,
+    "error": null
+  },
+  {
+    "item_id": "D9_0114",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/103.png",
+          0.907
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/062.png",
+          0.906
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.9
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/295.png",
+          0.899
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "component arrangement/content mismatch",
+        "evidence": "In the references, the right compartment consistently has granola packed on top with a smaller section of banana chips and almonds at the bottom. In the query, banana chips and almonds dominate the top/right compartment and the granola is reduced to a smaller patch at the bottom, indicating an incorrect assembly/layout.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 103
+    },
+    "latency_sec": 7.33,
+    "error": null
+  },
+  {
+    "item_id": "D9_0143",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.22999999999999998,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/198.png",
+          0.982
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.975
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/291.png",
+          0.975
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.975
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The compartment box structure appears intact and the pushpins are plausibly distributed with no clear missing/extra component, broken divider, or misplaced part compared with the normal references.",
+        "confidence": 0.77
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 901
+    },
+    "latency_sec": 24.39,
+    "error": null
+  },
+  {
+    "item_id": "D9_0094",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.964
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.954
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.948
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.946
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the expected set of components seen in the normal references: 2 bolts, 2 nuts, and 2 washers inside the bag. No extra or missing hardware is visible; only the arrangement differs slightly.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 271
+    },
+    "latency_sec": 13.06,
+    "error": null
+  },
+  {
+    "item_id": "D9_0172",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.958
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.951
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/312.png",
+          0.944
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.944
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bag contains the expected set of components seen in the references: 2 bolts, 2 nuts, and 2 washers. No missing, extra, or clearly incorrect part is visible.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 245
+    },
+    "latency_sec": 11.49,
+    "error": null
+  },
+  {
+    "item_id": "D9_0161",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.953
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.945
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.937
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "extra/misassembled wire connection",
+        "evidence": "The query shows two parallel yellow wires connecting the two 2-port connectors, while the normal references consistently show only a single wire between the connectors.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 219
+    },
+    "latency_sec": 10.64,
+    "error": null
+  },
+  {
+    "item_id": "D9_0092",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.959
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.956
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.954
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.948
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "component mismatch",
+        "evidence": "Reference samples consistently show 3-port connectors on both ends, while the query has 3-port on the left and 2-port on the right.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 71
+    },
+    "latency_sec": 5.95,
+    "error": null
+  },
+  {
+    "item_id": "D9_0102",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.957
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.946
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.946
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.941
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing component",
+        "evidence": "Reference samples consistently show 2 bolts, 3 nuts, and 2 washers. The query appears to contain 2 bolts, 2 nuts, and 3 washers, indicating one nut is missing and replaced by an extra washer.",
+        "confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 88
+    },
+    "latency_sec": 4.55,
+    "error": null
+  },
+  {
+    "item_id": "D9_0106",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/253.png",
+          0.972
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/234.png",
+          0.954
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/295.png",
+          0.952
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/296.png",
+          0.952
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The assembly matches the normal references: two 2-port orange lever connectors linked by a single yellow wire, with both connectors present and the wire routing/bend within normal variation.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 140
+    },
+    "latency_sec": 8.02,
+    "error": null
+  },
+  {
+    "item_id": "D9_0095",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/138.png",
+          0.92
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.911
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.909
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/271.png",
+          0.903
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_component",
+        "evidence": "Reference samples consistently show 2 bolts, 2 hex nuts, and 3 washers. The query shows 2 bolts, 2 hex nuts, but only 2 washers.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 77
+    },
+    "latency_sec": 5.12,
+    "error": null
+  },
+  {
+    "item_id": "D9_0156",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.964
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/294.png",
+          0.959
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/189.png",
+          0.958
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.951
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing component",
+        "evidence": "The left compartment contains only 2 fruits (one orange and one apple/peach), while the normal references consistently show 3 fruits in that compartment. The right compartment contents appear otherwise consistent.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 185
+    },
+    "latency_sec": 10.56,
+    "error": null
+  },
+  {
+    "item_id": "D9_0135",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.19999999999999996,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/276.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.98
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.979
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.976
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same type of assembled organizer with yellow push pins distributed across compartments, consistent with the normal reference images. No missing/extra component type or clearly illogical arrangement is visible.",
+        "confidence": 0.8
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 75
+    },
+    "latency_sec": 3.97,
+    "error": null
+  },
+  {
+    "item_id": "D9_0150",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.953
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.939
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/312.png",
+          0.938
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/030.png",
+          0.932
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "wrong_component",
+        "evidence": "The kit contains two bolts and two hex nuts as expected, but one ring washer is replaced by a split lock washer; normal references show only two plain ring washers.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 74
+    },
+    "latency_sec": 5.24,
+    "error": null
+  },
+  {
+    "item_id": "D9_0160",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/209.png",
+          0.954
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/062.png",
+          0.95
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/103.png",
+          0.948
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/breakfast_box/train/good/206.png",
+          0.947
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "extra/unexpected item",
+        "evidence": "The tray contents mostly match the normal pattern, but there is an additional loose orange peel/segment piece in the left fruit compartment that is not present in the reference normal samples.",
+        "confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 1393,
+      "output": 152
+    },
+    "latency_sec": 7.26,
+    "error": null
+  },
+  {
+    "item_id": "D9_0148",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/089.png",
+          0.697
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/315.png",
+          0.672
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/098.png",
+          0.637
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/splicing_connectors/train/good/284.png",
+          0.631
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_or_incorrect_wire_connection",
+        "evidence": "In the normal references, the two orange multi-port connectors are separated and linked by a visible blue wire. In the query, the connectors are placed directly next to each other with no visible blue wire span between them, indicating an incorrect assembly/configuration.",
+        "confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 157
+    },
+    "latency_sec": 8.79,
+    "error": null
+  },
+  {
+    "item_id": "D9_0126",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/150.png",
+          0.945
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.943
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.93
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/312.png",
+          0.928
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_component",
+        "evidence": "Reference samples consistently show 2 bolts, 2 hex nuts, and 2 washers. The query image shows 2 bolts, 3 hex nuts, and only 1 washer, indicating one washer is missing and an extra nut is present.",
+        "confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 90
+    },
+    "latency_sec": 4.58,
+    "error": null
+  },
+  {
+    "item_id": "D9_0091",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/133.png",
+          0.966
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/206.png",
+          0.907
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/322.png",
+          0.889
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/juice_bottle/train/good/330.png",
+          0.888
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The bottle appears properly assembled: open glass bottle, juice filled inside, fruit label centered on the front, and '100% Juice' label at the bottom. This matches the structure and layout of the normal reference samples.",
+        "confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 913,
+      "output": 81
+    },
+    "latency_sec": 4.47,
+    "error": null
+  },
+  {
+    "item_id": "D9_0153",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/291.png",
+          0.978
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/052.png",
+          0.977
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/097.png",
+          0.969
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/pushpins/train/good/228.png",
+          0.964
+        ]
+      ],
+      "response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same type of assembled product as the references: a compartment case containing yellow pushpins. The number, distribution, and orientations of pins across compartments are consistent with normal reference samples, with no missing/extra component pattern or foreign object visible.",
+        "confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 1108,
+      "output": 88
+    },
+    "latency_sec": 4.29,
+    "error": null
+  },
+  {
+    "item_id": "D9_0097",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.75,
+    "raw_output": {
+      "method": "retrieval",
+      "retrieved_refs": [
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/022.png",
+          0.93
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/276.png",
+          0.92
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/320.png",
+          0.916
+        ],
+        [
+          "/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO/screw_bag/train/good/071.png",
+          0.916
+        ]
+      ],
+      "response": {
+        "image_label": "anomalous",
+        "anomaly_type": "component_count_mismatch",
+        "evidence": "The query appears to contain 2 bolts but an incorrect mix of fasteners compared with the normal references: there seem to be 3 nuts and only 2 washers, while normal samples consistently show 2 nuts and 2 washers.",
+        "confidence": 0.75
+      }
+    },
+    "cost_tokens": {
+      "input": 1203,
+      "output": 511
+    },
+    "latency_sec": 16.8,
+    "error": null
+  }
+]

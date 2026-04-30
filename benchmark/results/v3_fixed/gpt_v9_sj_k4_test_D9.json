@@ -1,0 +1,4898 @@
+[
+  {
+    "item_id": "D9_0050",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.02658665808371441,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "Bottle contents and label icon match the cherry-style reference, while most provided references show pale banana juice; this is a cross-reference category difference rather than a clear defect.",
+            "location": "entire bottle body and center label",
+            "support_conf": 0.98,
+            "ref_consistency": 0.35,
+            "logical_relevance": 0.3
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The bottom '100% Juice' label appears slightly tilted compared with the more level placement in the references.",
+            "location": "lower front label near bottle base",
+            "support_conf": 0.62,
+            "ref_consistency": 0.55,
+            "logical_relevance": 0.46
+          },
+          {
+            "id": "C3",
+            "type": "surface_defect",
+            "description": "There are a few tiny bright speck-like marks/residue spots around the neck/shoulder glass area that are not prominent in the references.",
+            "location": "upper bottle neck and shoulder, especially left side below the cap threads",
+            "support_conf": 0.52,
+            "ref_consistency": 0.5,
+            "logical_relevance": 0.34
+          }
+        ],
+        "no_difference_conf": 0.58
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.04,
+            "benign_conf": 0.96,
+            "positive_evidence": "The query bottle has dark red juice and a cherry icon, which differs from the banana references but matches Reference 1's cherry-style bottle.",
+            "benign_explanation": "This is a category/variant difference across the reference set, not a defect. The query is visually consistent with the cherry reference and shows no pathology from this difference alone.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The lower '100% Juice' label may be slightly tilted.",
+            "benign_explanation": "The tilt is minor and within normal placement variation; no strong evidence of damage, detachment, or severe misapplication is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "A few tiny bright specks are visible near the neck/shoulder glass area.",
+            "benign_explanation": "These specks are faint and consistent with reflections, dust, or minor imaging artifacts rather than a clear bottle defect. No concrete localized damage is evident.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 2475,
+      "output": 700
+    },
+    "latency_sec": 34.46,
+    "error": null
+  },
+  {
+    "item_id": "D9_0016",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.047735443311251124,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The query bottle contains a dark reddish-brown liquid matching the cherry-labeled reference, whereas most other references show a pale off-white liquid with banana labels.",
+            "location": "Entire bottle contents and central front label",
+            "support_conf": 0.99,
+            "ref_consistency": 0.45,
+            "logical_relevance": 0.35
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "A faint foamy/bubbly band is visible along the liquid surface near the neck in the query; this is not clearly visible in the provided references.",
+            "location": "Top of liquid column just below the bottle neck",
+            "support_conf": 0.58,
+            "ref_consistency": 0.72,
+            "logical_relevance": 0.4
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The liquid fill level appears slightly lower than in the cherry reference, leaving a larger headspace under the neck.",
+            "location": "Upper bottle interior below the threaded neck",
+            "support_conf": 0.56,
+            "ref_consistency": 0.61,
+            "logical_relevance": 0.36
+          }
+        ],
+        "no_difference_conf": 0.42
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.04,
+            "benign_conf": 0.96,
+            "positive_evidence": "The query shows a cherry icon and dark reddish liquid, which matches Reference 1. This is a product/content variant rather than a defect.",
+            "benign_explanation": "Differences from the banana references are explained by flavor variation. The bottle shape, labels, and overall structure remain consistent, with no damage or pathological irregularity.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "A faint bubbly/foamy band is visible near the liquid surface in the query.",
+            "benign_explanation": "This appears minor and consistent with normal liquid surface variation, lighting, or settling. There is no clear sign of leakage, contamination, or structural defect, and under the asymmetric rule mere variation is insufficient.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.14,
+            "benign_conf": 0.86,
+            "positive_evidence": "The fill level may be slightly lower than Reference 1, leaving somewhat more headspace.",
+            "benign_explanation": "The difference is small and within plausible normal fill variation or perspective effects. No positive defect evidence is visible such as underfill pathology, tampering, or bottle deformation.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 2473,
+      "output": 718
+    },
+    "latency_sec": 19.26,
+    "error": null
+  },
+  {
+    "item_id": "D9_0017",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.024930457676800022,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The yellow jumper wire has a slightly deeper downward sag/curvature through the middle than the straighter 2-port yellow-wire references.",
+            "location": "Center span of the cable between the left and right connectors",
+            "support_conf": 0.71,
+            "ref_consistency": 0.62,
+            "logical_relevance": 0.34
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The right connector appears rotated a bit differently relative to the left connector, giving a mild asymmetry in end orientation compared with the more level alignment in the references.",
+            "location": "Right-end orange/clear connector",
+            "support_conf": 0.58,
+            "ref_consistency": 0.56,
+            "logical_relevance": 0.31
+          }
+        ],
+        "no_difference_conf": 0.68
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The wire in the query does show a somewhat deeper downward curve across the center span than some references.",
+            "benign_explanation": "This is a mild pose/layout variation only. The object type, connector count, wire color, and overall construction match the 2-port yellow-wire references. Reference 1 already shows noticeable sag, and the query does not show any concrete defect such as breakage, missing parts, damage, or incorrect connector configuration.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The right connector may be angled slightly differently relative to the left side.",
+            "benign_explanation": "This is a small orientation/asymmetry difference consistent with normal placement variation in photographed objects. There is no positive evidence of a defective, missing, or incorrect component, and the connector form matches the normal 2-port examples.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 2379,
+      "output": 541
+    },
+    "latency_sec": 62.89,
+    "error": null
+  },
+  {
+    "item_id": "D9_0088",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0036",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.03119422347379608,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The juice content is yellow/orange in the query, whereas the references show either dark red/brown liquid (cherry) or opaque off-white liquid (banana).",
+            "location": "Bottle contents, entire filled region",
+            "support_conf": 0.99,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.72
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The central label graphic shows an orange/citrus-like fruit icon, while the references show either cherries or bananas.",
+            "location": "Main square label on the front center of the bottle",
+            "support_conf": 0.99,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.78
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "The fill appearance is more translucent than the banana references and differs in hue from all references.",
+            "location": "Liquid body inside bottle",
+            "support_conf": 0.93,
+            "ref_consistency": 0.9,
+            "logical_relevance": 0.58
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The query bottle contains yellow-orange juice, unlike the darker cherry juice and pale banana juice in the references.",
+            "benign_explanation": "This is only a category/content variation: the label icon in the query depicts an orange/citrus fruit, so the liquid color change is consistent with a different juice flavor rather than a defect or pathology. No damage, leakage, deformation, contamination, or other abnormal physical condition is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "The main front label shows an orange/citrus icon, whereas references show cherries or bananas.",
+            "benign_explanation": "A different fruit icon indicates a different product variant, not an anomalous defect. The label is intact, centered, and plausible.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.06,
+            "benign_conf": 0.94,
+            "positive_evidence": "The liquid appears more translucent and differs in hue from the banana-reference liquids.",
+            "benign_explanation": "Transparency and hue are consistent with a different juice type. There is no positive evidence of spoilage, sediment, breakage, or any local defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 2460,
+      "output": 706
+    },
+    "latency_sec": 37.65,
+    "error": null
+  },
+  {
+    "item_id": "D9_0044",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.02120369035544234,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Top-left stone fruit is positioned more horizontally and tucked tighter into the upper-left corner than in the references, where the top fruit varies but is usually less strongly wedged against the corner.",
+            "location": "left compartment, upper-left fruit",
+            "support_conf": 0.54,
+            "ref_consistency": 0.42,
+            "logical_relevance": 0.26
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The dried banana cluster in the lower-right compartment appears slightly more concentrated toward the center-right, with fewer pieces extending toward the left side of the nut/banana area than in some references.",
+            "location": "right compartment, lower section",
+            "support_conf": 0.52,
+            "ref_consistency": 0.39,
+            "logical_relevance": 0.24
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "Granola coverage at the top of the right compartment has a somewhat different lower boundary shape, extending a bit lower near the center while remaining higher at the far right compared with several references.",
+            "location": "right compartment, boundary between granola and banana/nut mix",
+            "support_conf": 0.56,
+            "ref_consistency": 0.36,
+            "logical_relevance": 0.22
+          }
+        ],
+        "no_difference_conf": 0.71
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "No clear defect or impossible placement is visible. The top-left stone fruit is present in the expected compartment and similar in size/type to the references.",
+            "benign_explanation": "Fruit position varies across the references, including different rotations and degrees of corner contact. The query placement looks like normal arrangement variation.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "No missing item, contamination, or damaged food region is visible in the lower-right mix. Banana chips and almonds are present in expected quantities and area.",
+            "benign_explanation": "The exact spread of banana chips and nuts shifts across references. The query's cluster being slightly more center-right is consistent with benign serving variation.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "There is no positive evidence of pathology or a logical inconsistency in the granola region. Granola occupies the expected upper-right compartment.",
+            "benign_explanation": "The granola-to-banana boundary shape differs somewhat among all references. The query boundary falls within normal variation of how the food settles.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 3460,
+      "output": 743
+    },
+    "latency_sec": 134.41,
+    "error": null
+  },
+  {
+    "item_id": "D9_0026",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0087",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.029663398090270965,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The two bolts form a different crossing arrangement than in the references: one bolt is nearly horizontal pointing right while the other is angled up-left, with their heads clustered near the center-left.",
+            "location": "Central area of the bag",
+            "support_conf": 0.82,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.45
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The washers are positioned as one above-center and one below-center around the bolt heads, rather than appearing both on one side or more symmetrically grouped as in the references.",
+            "location": "Center of the bag, around the bolt intersection",
+            "support_conf": 0.71,
+            "ref_consistency": 0.9,
+            "logical_relevance": 0.39
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The nuts are distributed left, upper-center, and center, producing a tighter cluster near the bolt heads than in the references where nuts are more separated.",
+            "location": "Left-center to center of the bag",
+            "support_conf": 0.68,
+            "ref_consistency": 0.88,
+            "logical_relevance": 0.36
+          }
+        ],
+        "no_difference_conf": 0.42
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "No concrete defect is visible. The bag contains the expected hardware types and counts: 2 bolts, 2 washers, and 3 nuts, consistent with the references.",
+            "benign_explanation": "The bolt crossing arrangement differs slightly from the references, but all reference images already show varied orientations and placements of the loose parts inside the bag. This is normal positional variation of unassembled hardware.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "No missing, damaged, or extra washer is visible; both washers are present and intact.",
+            "benign_explanation": "Washer placement around the bolt heads varies across the references as loose items shift freely inside the bag. The observed above/below placement is a benign layout difference, not a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "No pathology is visible in the nut cluster: 3 nuts are present, matching the references, and none appears broken or missing.",
+            "benign_explanation": "Nut spacing differs somewhat, but reference images also show broad positional variation. This tighter grouping is consistent with random settling of loose hardware in the bag.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 3070,
+      "output": 748
+    },
+    "latency_sec": 74.51,
+    "error": null
+  },
+  {
+    "item_id": "D9_0023",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.03666255162519183,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Left compartment fruit arrangement differs: the query has two mandarins stacked at the top/middle and the peach/nectarine at the bottom, whereas in the references the peach/nectarine is typically top or middle and not bottommost.",
+            "location": "Left compartment",
+            "support_conf": 0.89,
+            "ref_consistency": 0.68,
+            "logical_relevance": 0.52
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Nut and banana-chip cluster in the lower-right compartment appears more centrally concentrated and slightly piled into the granola boundary compared with references, where it is usually flatter and more confined to the bottom-right edge.",
+            "location": "Lower-right area of right compartment",
+            "support_conf": 0.77,
+            "ref_consistency": 0.61,
+            "logical_relevance": 0.41
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "The right-compartment granola fill has a subtly different contour, with a more slanted upper-left edge and a slightly narrower band near the fruit-divider side than seen in the references.",
+            "location": "Upper/right compartment granola region",
+            "support_conf": 0.63,
+            "ref_consistency": 0.49,
+            "logical_relevance": 0.29
+          }
+        ],
+        "no_difference_conf": 0.34
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The left compartment fruit order differs somewhat from several references, with the peach/nectarine placed at the bottom instead of top or middle.",
+            "benign_explanation": "All expected food items are present with the same counts: two mandarins and one peach/nectarine on the left, granola above and banana chips/nuts below on the right. Across the references, fruit positions vary noticeably, so this is consistent with ordinary placement variation rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The banana-chip and nut cluster is slightly more central and overlaps the granola boundary more than in some references.",
+            "benign_explanation": "The lower-right contents remain the same type and quantity pattern as the references, and the exact spread of loose snacks naturally varies between trays. There is no missing item, contamination, or foreign object.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "The granola region has a somewhat different contour near the divider and top edge.",
+            "benign_explanation": "Granola is a loose material, so fill shape and edge contour vary substantially across the references themselves. The compartment is filled normally and shows no clear defect or pathological discrepancy.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 3464,
+      "output": 778
+    },
+    "latency_sec": 37.78,
+    "error": null
+  },
+  {
+    "item_id": "D9_0059",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.027170074784729104,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The liquid contents are yellow/orange and the front label shows an orange fruit icon, whereas the references show either dark red liquid with cherries or pale white liquid with bananas.",
+            "location": "Entire bottle contents and central front label",
+            "support_conf": 0.99,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.55
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The lower '100% Juice' label appears slightly tilted compared with the more level placement in the references.",
+            "location": "Bottom front label",
+            "support_conf": 0.77,
+            "ref_consistency": 0.74,
+            "logical_relevance": 0.36
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "The fill level sits around the shoulder/neck transition and appears lower than some banana references, though similar to one cherry reference; this may be a minor state difference.",
+            "location": "Upper liquid boundary inside bottle",
+            "support_conf": 0.58,
+            "ref_consistency": 0.45,
+            "logical_relevance": 0.22
+          }
+        ],
+        "no_difference_conf": 0.12
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The query bottle has yellow-orange juice and an orange fruit icon on the main label, differing from the reference flavors shown.",
+            "benign_explanation": "This is a global content/label variation only. The bottle shape, packaging structure, and overall presentation remain consistent with the references. Under the fp_benign_variation rule, a flavor or product-variant change without visible defect/pathology is not sufficient evidence of anomaly.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The lower '100% Juice' label appears slightly tilted.",
+            "benign_explanation": "The tilt is minor and plausibly due to normal placement variation or viewing angle. No clear damage, misprint, detachment, or structural defect is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.05,
+            "benign_conf": 0.95,
+            "positive_evidence": "The fill level is around the shoulder/neck transition and may differ somewhat from some references.",
+            "benign_explanation": "The fill level remains within the range suggested by the references and does not show leakage, severe underfill, or other pathology.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 2468,
+      "output": 711
+    },
+    "latency_sec": 19.38,
+    "error": null
+  },
+  {
+    "item_id": "D9_0067",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.07444560697388003,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Center label graphic shows an orange/peach-like fruit icon, whereas all provided references show either cherries or bananas.",
+            "location": "middle front label",
+            "support_conf": 0.99,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.93
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "Juice liquid color is yellow-golden in the query, differing from the brown cherry juice and pale white banana juice seen in the references.",
+            "location": "entire bottle contents",
+            "support_conf": 0.97,
+            "ref_consistency": 0.96,
+            "logical_relevance": 0.85
+          }
+        ],
+        "no_difference_conf": 0.04
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "The query bottle's center label shows a different fruit icon than the references, specifically an orange/peach-like symbol rather than cherries or bananas.",
+            "benign_explanation": "This is a product-variant difference in printed label artwork and juice flavor/color, not positive evidence of a defect, damage, or pathological anomaly. The bottle shape, label placement, fill level, and overall object integrity appear normal.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.14,
+            "benign_conf": 0.86,
+            "positive_evidence": "The liquid in the query is yellow-golden, unlike the brown or pale white liquids in the references.",
+            "benign_explanation": "The liquid color change is consistent with a different juice flavor matching the different fruit icon on the label. There is no visible spoilage, leakage, deformation, contamination, or structural defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 2360,
+      "output": 513
+    },
+    "latency_sec": 45.37,
+    "error": null
+  },
+  {
+    "item_id": "D9_0030",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.10559979385504004,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "Query appears to contain 14 push pins, whereas each normal reference appears to contain 15.",
+            "location": "Whole organizer tray",
+            "support_conf": 0.76,
+            "ref_consistency": 0.97,
+            "logical_relevance": 0.93
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Top row, second compartment from the left looks empty in the query, while this compartment contains a pin in all provided references.",
+            "location": "Top row, column 2",
+            "support_conf": 0.9,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.94
+          }
+        ],
+        "no_difference_conf": 0.18
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.2,
+            "benign_conf": 0.8,
+            "positive_evidence": "The query may have one fewer visible push pin than the references, but the exact count is hard to verify because some pins sit near compartment borders and visibility can be affected by orientation and cropping.",
+            "benign_explanation": "A one-pin count difference by itself is only a layout variation and not clear defect/pathology evidence under the stated rule. The organizer and pins otherwise look intact and consistent with the reference regime.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.22,
+            "benign_conf": 0.78,
+            "positive_evidence": "The top row, second compartment does appear empty in the query, whereas that compartment contains a pin in all four references.",
+            "benign_explanation": "This is a presence/absence layout difference, but there is no sign of damage, contamination, breakage, or other pathological defect. Under the fp_benign_variation rule, a missing/shifted item alone is insufficient to call anomaly.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.78
+      }
+    },
+    "cost_tokens": {
+      "input": 2746,
+      "output": 526
+    },
+    "latency_sec": 39.89,
+    "error": null
+  },
+  {
+    "item_id": "D9_0062",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0046",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.017765093154559985,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The fruit icon label on the bottle appears slightly shifted/tilted compared with the references, with the banana graphic sitting a bit more to the right within the square label.",
+            "location": "Center front label on bottle body",
+            "support_conf": 0.42,
+            "ref_consistency": 0.45,
+            "logical_relevance": 0.38
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "The lower '100% Juice' label appears positioned marginally differently and looks slightly more left-leaning/uneven than in the references.",
+            "location": "Bottom front label near base",
+            "support_conf": 0.39,
+            "ref_consistency": 0.41,
+            "logical_relevance": 0.34
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The banana icon inside the square label appears very slightly right-shifted/tilted relative to some references, but there is no clear damage, missing element, duplication, or pathological misplacement.",
+            "benign_explanation": "Across the references, the banana bottle already shows small variations in framing, label placement, and icon alignment. The query remains fully consistent with the same bottle type: banana icon present, square label present, lower '100% Juice' label present, and overall bottle shape/fill normal. This looks like ordinary manufacturing/photographic variation.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The lower '100% Juice' label may look marginally shifted or slightly uneven, but there is no strong evidence of an actual defect such as tearing, absence, severe skew, or wrong label.",
+            "benign_explanation": "The bottom label position and angle vary slightly in the references as well. The query label is present, readable, and consistent with the banana-juice bottle design. This is benign placement variation rather than a defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 2376,
+      "output": 584
+    },
+    "latency_sec": 99.9,
+    "error": null
+  },
+  {
+    "item_id": "D9_0055",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.95451345,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The jumper wire insulation is blue in the query, whereas all normal references show yellow or red wire insulation.",
+            "location": "Single wire spanning between the left and right terminal blocks across the center",
+            "support_conf": 0.99,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.9
+          }
+        ],
+        "no_difference_conf": 0.02
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The query shows a single blue-insulated jumper wire connecting two 3-port orange lever connectors. In the references, the jumper wire insulation is yellow in References 1, 2, and 4, and red in Reference 3; none show blue. The connector arrangement is otherwise consistent, so the salient difference is the wire color.",
+            "benign_explanation": "There is little evidence this is a benign variation under the provided clear_case rule, because the top candidate is a strong, direct visual mismatch present against all references.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 2268,
+      "output": 333
+    },
+    "latency_sec": 68.64,
+    "error": null
+  },
+  {
+    "item_id": "D9_0086",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.04645927327538568,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The yellow wire shows a more noticeable wavy/sagging curve across the middle rather than the straighter routing seen in the most similar 2-pin yellow-wire references.",
+            "location": "Center span of the yellow wire between the two orange connectors",
+            "support_conf": 0.73,
+            "ref_consistency": 0.58,
+            "logical_relevance": 0.46
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Visible black printed text/markings appear on the yellow wire around the center, which is not clearly visible in the normal references.",
+            "location": "Midsection of the yellow wire",
+            "support_conf": 0.68,
+            "ref_consistency": 0.52,
+            "logical_relevance": 0.35
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The left connector appears slightly rotated/tilted relative to the right connector and the background grid, giving a mildly asymmetric end orientation compared with the more even alignment in references.",
+            "location": "Left orange/transparent connector",
+            "support_conf": 0.55,
+            "ref_consistency": 0.49,
+            "logical_relevance": 0.34
+          }
+        ],
+        "no_difference_conf": 0.41
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The query wire has a slightly more undulating path across the center than some references.",
+            "benign_explanation": "Wire routing curvature varies across the references as well, especially among the 2-pin yellow-wire examples. The query still shows the same overall object class, same connector count, same wire color, and intact end connections. No concrete defect such as breakage, missing part, or damaged insulation is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.16,
+            "benign_conf": 0.84,
+            "positive_evidence": "Dark printed markings are visible on the yellow wire near the middle.",
+            "benign_explanation": "Printed text on insulated wire is a common manufacturing marking and does not indicate damage. The wire surface otherwise appears continuous and intact, with no cut, burn, fray, or exposed conductor visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The left connector may be very slightly tilted relative to the background mesh.",
+            "benign_explanation": "Minor pose/rotation differences are consistent with normal placement variation in photographed objects. Both connectors appear present, intact, and properly attached to the wire, with no missing elements or structural defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 2483,
+      "output": 740
+    },
+    "latency_sec": 85.76,
+    "error": null
+  },
+  {
+    "item_id": "D9_0060",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0063",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.9477258985340472,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The query shows a 5-position connector-to-connector assembly with five visible orange lever terminals on each side and a red/black wire pair, whereas the 2-position references use single yellow wire links. The closest matching reference is the 5-position assembly, but the wire routing/color differs.",
+            "location": "Entire object, especially center cable span and both connector blocks",
+            "support_conf": 0.96,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.82
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Compared with the normal 5-position reference, the two wires in the query run more tightly overlapped with the darker wire largely hidden beneath the red wire, instead of being more distinctly separated/visible as two parallel conductors.",
+            "location": "Middle cable section between the left and right 5-port connectors",
+            "support_conf": 0.74,
+            "ref_consistency": 0.78,
+            "logical_relevance": 0.69
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The cable span in the query appears slightly straighter and positioned a bit lower through the center than in the 5-position reference, with less upward bow in the wire pair.",
+            "location": "Center horizontal run of the wire pair",
+            "support_conf": 0.61,
+            "ref_consistency": 0.71,
+            "logical_relevance": 0.52
+          }
+        ],
+        "no_difference_conf": 0.18
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.97,
+            "benign_conf": 0.03,
+            "positive_evidence": "The query matches the 5-position connector form factor seen in Reference 3, with five orange lever terminals on each side, but the interconnecting cable differs clearly: the query shows a red/black wire pair with the darker wire mostly hidden under the red wire, while Reference 3 shows a red wire pair/routing that appears visibly different. This is a whole-object configuration difference, not a minor pose or lighting change. It also differs strongly from References 1, 2, and 4, which are 2-position yellow-wire assemblies.",
+            "benign_explanation": "Only minor pose and curvature differences would be benign, but here the cable composition/color/routing differs from the matching 5-position reference, so this is not just incidental variation.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 2531,
+      "output": 641
+    },
+    "latency_sec": 104.9,
+    "error": null
+  },
+  {
+    "item_id": "D9_0005",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0053",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.05992484647965246,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The two bolts are both grouped on the left and form a wider V-shaped arrangement than in the references; their heads are closer together near the lower-left/center-left while both threaded shafts point upward.",
+            "location": "Left half of the bag",
+            "support_conf": 0.91,
+            "ref_consistency": 0.72,
+            "logical_relevance": 0.55
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "All four small loose parts (2 washers and 2 nuts) are aligned in a horizontal row across the middle-right, unlike the more scattered placements in the references.",
+            "location": "Center to right side of the bag, just left of the zip strip",
+            "support_conf": 0.95,
+            "ref_consistency": 0.84,
+            "logical_relevance": 0.58
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The two nuts are stacked/clustered very closely together on the far right, with one slightly below the other, rather than being separated.",
+            "location": "Right-center area near the zip strip",
+            "support_conf": 0.9,
+            "ref_consistency": 0.8,
+            "logical_relevance": 0.6
+          }
+        ],
+        "no_difference_conf": 0.38
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The two bolts are both on the left and angled upward, which differs somewhat from individual reference placements.",
+            "benign_explanation": "All expected parts appear present: 2 bolts, 2 washers, and 2 nuts. The bolt orientation and spacing vary across the references as well, so this wider V-shaped grouping is consistent with normal loose-part rearrangement inside the bag rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The loose small parts form a more row-like arrangement across the middle-right than in the references.",
+            "benign_explanation": "The parts are free inside a bag and their exact positions vary naturally between reference images. There is no missing, extra, damaged, or incorrect component; only placement differs.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.14,
+            "benign_conf": 0.86,
+            "positive_evidence": "The two nuts are close together near the right side, appearing more clustered than in most references.",
+            "benign_explanation": "This is a positional/layout variation only. Both nuts are present and look normal, and clustering of loose hardware inside the bag is plausible. No positive defect evidence is visible.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 3074,
+      "output": 750
+    },
+    "latency_sec": 95.66,
+    "error": null
+  },
+  {
+    "item_id": "D9_0019",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.9995158120608015,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "Query appears to contain three washers/rings, whereas each reference shows two washers.",
+            "location": "Central cluster between and above the two bolt heads",
+            "support_conf": 0.97,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.98
+          },
+          {
+            "id": "C2",
+            "type": "count_mismatch",
+            "description": "Query appears to contain only one hex nut, while references consistently show two hex nuts.",
+            "location": "Upper-central area of the bag",
+            "support_conf": 0.96,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.98
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Three washers are stacked in a tight triangular cluster in the center of the query; references show washers separated more loosely and not as a three-piece central grouping.",
+            "location": "Center of bag, above the bolt heads",
+            "support_conf": 0.9,
+            "ref_consistency": 0.92,
+            "logical_relevance": 0.82
+          },
+          {
+            "id": "C4",
+            "type": "layout_mismatch",
+            "description": "Only a single nut is visible and it sits above the washer cluster, rather than two nuts distributed apart as in the references.",
+            "location": "Upper center of bag",
+            "support_conf": 0.91,
+            "ref_consistency": 0.96,
+            "logical_relevance": 0.88
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The query clearly shows three circular washers/rings in the central cluster. Across all four references, there are consistently only two washers visible in the bag.",
+            "benign_explanation": "This is not explainable by pose or overlap alone because all three ring-shaped parts are distinctly visible in the query.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The query shows only one hex nut, located above the washer cluster. Every reference image shows two hex nuts.",
+            "benign_explanation": "A second nut is not plausibly hidden: the visible parts are well separated and only one hexagonal nut shape is present in the query.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.88,
+            "benign_conf": 0.12,
+            "positive_evidence": "The three washers in the query form a compact central grouping that is absent from the references, which all show only two washers and looser placement.",
+            "benign_explanation": "Layout alone could vary, but here the layout difference is driven by an extra washer, so it supports a true content anomaly rather than mere pose variation.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C4",
+            "anomaly_conf": 0.9,
+            "benign_conf": 0.1,
+            "positive_evidence": "Only one nut is visible in the query, positioned above the washer cluster, while references consistently contain two nuts in separate positions.",
+            "benign_explanation": "Although placement can vary, the stronger issue is missing presence/count of one nut, so this is not just benign rearrangement.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 3127,
+      "output": 895
+    },
+    "latency_sec": 71.98,
+    "error": null
+  },
+  {
+    "item_id": "D9_0040",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.9929894027128962,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fn_logical_relational",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "Query appears to contain 14 pushpins total, whereas each normal reference appears to show 13 pushpins.",
+            "location": "whole tray / global object count",
+            "support_conf": 0.91,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.98
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Top row seems to have 5 pushpins, including an additional upright pin near the center divider, while references consistently show 4 pins in the top row.",
+            "location": "top row, especially center area near the latch/divider",
+            "support_conf": 0.88,
+            "ref_consistency": 0.9,
+            "logical_relevance": 0.94
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Middle row seems to have 5 pushpins, with a tightly clustered pair around the center-right compartments; references more typically show 4 pins in the middle row.",
+            "location": "middle row, center-right",
+            "support_conf": 0.83,
+            "ref_consistency": 0.82,
+            "logical_relevance": 0.88
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.97,
+            "benign_conf": 0.03,
+            "positive_evidence": "Inspecting the query tray cell-by-cell shows 14 pushpins total. Top row has 5 pins (left horizontal, upper-left diagonal, one upright near the center divider, one horizontal just right of center, one horizontal at far right). Middle row has 5 pins (left diagonal, one upright near center-left, one diagonal near center, one horizontal center-right, one horizontal far right). Bottom row has 4 pins (left vertical, one slanted near lower center-left, one horizontal near lower center, one upright/horizontal pair on right including the far-right bottom pin) for a total of 14. In all four references, the total count is 13 pins.",
+            "benign_explanation": "Small pose/orientation differences are benign, but a consistent extra object is not. The references vary in pin positions yet keep the same overall count.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.94,
+            "benign_conf": 0.06,
+            "positive_evidence": "The query top row contains 5 pushpins, including an extra upright pin placed in the center compartment area near the top divider/latch. Each reference top row shows only 4 pins despite positional variation. This creates a row-level count/layout inconsistency.",
+            "benign_explanation": "Different rotations and compartment choices occur in the references, but none add a fifth top-row pin.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.78,
+            "benign_conf": 0.22,
+            "positive_evidence": "The query middle row also appears to have 5 pins, with a crowded center-right arrangement caused by both a diagonal pin near center and a horizontal pin immediately to its right, plus the far-right horizontal pin. References generally show 4 pins in the middle row.",
+            "benign_explanation": "Row-by-row distribution can vary somewhat, so this is weaker than the global count evidence; however it is still consistent with the extra-pin anomaly.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 2865,
+      "output": 873
+    },
+    "latency_sec": 90.01,
+    "error": null
+  },
+  {
+    "item_id": "D9_0075",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.003291840000000046,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The jumper wire insulation is blue in the query, whereas the matching 3-position connector references show yellow wire insulation.",
+            "location": "Single wire spanning between the left and right orange lever connectors in the center of the image.",
+            "support_conf": 0.99,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.42
+          }
+        ],
+        "no_difference_conf": 0.24
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "No visible defect, break, missing part, deformation, or abnormal connector state is evident. The assembly appears intact with matching 3-position lever connectors on both ends and a single continuous wire between them.",
+            "benign_explanation": "The only observed difference is wire insulation color: the query uses blue instead of the yellow seen in similar 3-position references. Under the fp_benign_variation rule, color variation alone is not sufficient evidence of anomaly without a visible defect or pathological condition.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 2278,
+      "output": 333
+    },
+    "latency_sec": 14.49,
+    "error": null
+  },
+  {
+    "item_id": "D9_0051",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.02098185175721501,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "The query appears to contain a higher total number of yellow pushpins than the normal references, with several compartments holding two pins and an overall denser distribution.",
+            "location": "Across the whole organizer tray",
+            "support_conf": 0.87,
+            "ref_consistency": 0.72,
+            "logical_relevance": 0.88
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Top-left compartment contains two pushpins clustered together, whereas the references more often show at most one pin in that compartment.",
+            "location": "Top-left compartment",
+            "support_conf": 0.78,
+            "ref_consistency": 0.66,
+            "logical_relevance": 0.74
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The bottom-left compartment has a single horizontal pin near the lower edge; this specific occupancy/orientation combination is uncommon in the references.",
+            "location": "Bottom-left compartment",
+            "support_conf": 0.56,
+            "ref_consistency": 0.51,
+            "logical_relevance": 0.53
+          }
+        ],
+        "no_difference_conf": 0.23
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The query tray does look relatively full, with multiple compartments containing two pins.",
+            "benign_explanation": "Across the references, pin counts vary noticeably from tray to tray, and several reference compartments also contain two pins. The query still shows a plausible distribution of loose pushpins in the same type of organizer, with no broken parts, foreign objects, or impossible arrangement. This is variation in count/density rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.06,
+            "benign_conf": 0.94,
+            "positive_evidence": "The top-left compartment in the query contains two nearby pushpins.",
+            "benign_explanation": "This is not pathological. Reference trays already show varying occupancies by compartment, including cells with two pins elsewhere, and nothing about the two top-left pins indicates damage or rule violation. Under the stated asymmetric rule, this is benign variation only.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.04,
+            "benign_conf": 0.96,
+            "positive_evidence": "The bottom-left compartment contains one mostly horizontal pin near the lower edge.",
+            "benign_explanation": "Pin orientation and exact placement vary substantially across all references, including horizontal and diagonal pins near compartment edges. No concrete defect is visible here.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 2849,
+      "output": 717
+    },
+    "latency_sec": 50.23,
+    "error": null
+  },
+  {
+    "item_id": "D9_0072",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.012743694652184168,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The lower '100% Juice' label appears slightly shifted left and a bit tilted compared with the references, where it is more centered and level.",
+            "location": "Bottom front label on the bottle body",
+            "support_conf": 0.42,
+            "ref_consistency": 0.58,
+            "logical_relevance": 0.39
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "The banana icon label looks marginally lower on the bottle body than in the references, with slightly different spacing to the shoulder and bottom label.",
+            "location": "Center front fruit label",
+            "support_conf": 0.37,
+            "ref_consistency": 0.52,
+            "logical_relevance": 0.34
+          },
+          {
+            "id": "C3",
+            "type": "surface_defect",
+            "description": "A faint darker vertical streak/shadow is visible along the left side of the liquid/body area, which is less pronounced than in the references.",
+            "location": "Left interior edge of the bottle body",
+            "support_conf": 0.23,
+            "ref_consistency": 0.31,
+            "logical_relevance": 0.18
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The bottom label in the query is slightly left-shifted and mildly tilted relative to some references.",
+            "benign_explanation": "Across the references, label placement already varies somewhat, and there is no sign of damage, tearing, misprint, or missing component. This is consistent with benign positioning variation or camera alignment.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "The banana icon label may sit marginally lower on the bottle body compared with some references.",
+            "benign_explanation": "The bottle matches the banana-juice references overall in shape, fill, and labeling. The small shift in spacing is minor and consistent with normal placement variation rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.05,
+            "benign_conf": 0.95,
+            "positive_evidence": "A faint darker vertical shading is visible along the left interior edge of the bottle body.",
+            "benign_explanation": "This appears attributable to lighting, glass curvature, and liquid translucency. Similar edge shading/reflections are present in the references, and there is no concrete evidence of contamination, crack, or material defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 2468,
+      "output": 713
+    },
+    "latency_sec": 104.46,
+    "error": null
+  },
+  {
+    "item_id": "D9_0081",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.024931017847680037,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The two bolts are arranged nearly parallel and stacked horizontally, rather than crossing or forming a wider angled spread as in the references.",
+            "location": "Center-lower area of the bag",
+            "support_conf": 0.95,
+            "ref_consistency": 0.78,
+            "logical_relevance": 0.42
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Three small ring washers and two hex nuts are clustered tightly on the left side, while one larger washer sits above the bolts; this specific clustering pattern differs from the reference layouts where hardware is more distributed.",
+            "location": "Left-center cluster and upper-center above the bolts",
+            "support_conf": 0.9,
+            "ref_consistency": 0.72,
+            "logical_relevance": 0.4
+          }
+        ],
+        "no_difference_conf": 0.45
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The bolts are positioned nearly parallel and close together in the center-lower area, differing from some reference arrangements.",
+            "benign_explanation": "All expected hardware appears present: 2 bolts, 2 hex nuts, and 3 washers, matching the reference set. The observed difference is only in internal placement/orientation inside the bag, and the references already show substantial variation in pose and distribution. There is no positive evidence of missing, extra, damaged, or incorrect parts.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The washers and nuts are clustered more tightly on the left with one washer above the bolts, which is a different layout from several references.",
+            "benign_explanation": "This is a packing/layout variation only. Across the references, small parts shift location considerably within the bag. The query still shows the same component counts and types as the references, with no concrete defect or pathology visible.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 2964,
+      "output": 563
+    },
+    "latency_sec": 51.49,
+    "error": null
+  },
+  {
+    "item_id": "D9_0029",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.00595979999999996,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The query uses a red wire rather than the yellow wire seen in several references; however, a red-wire example also exists in the references, so this is only a possible variation.",
+            "location": "Center span between the two connector blocks",
+            "support_conf": 0.98,
+            "ref_consistency": 0.35,
+            "logical_relevance": 0.25
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.06,
+            "benign_conf": 0.94,
+            "positive_evidence": "No clear defect or pathological difference is visible. The query shows a multi-port connector pair linked by a red wire, matching the same overall object type, connector count, and arrangement seen in Reference 3.",
+            "benign_explanation": "Wire color differs from some references, but a red-wire example is present in the references. The connector blocks, port count, orientation, and single bridging wire all appear consistent with a normal variant rather than an anomaly.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 2281,
+      "output": 328
+    },
+    "latency_sec": 10.48,
+    "error": null
+  },
+  {
+    "item_id": "D9_0028",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.038124567297433076,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The mixed nuts/banana-chip section in the lower-right appears slightly more spread upward and leftward, with a denser cluster of whole almonds near the center-right than in the references.",
+            "location": "Lower-right compartment, especially center-right edge of the banana-chip/nut mix",
+            "support_conf": 0.68,
+            "ref_consistency": 0.42,
+            "logical_relevance": 0.46
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The top-left fruit (peach/nectarine) sits a bit lower and more inward from the tray edge compared with most references, changing the left-column spacing.",
+            "location": "Upper item in the left fruit compartment",
+            "support_conf": 0.61,
+            "ref_consistency": 0.38,
+            "logical_relevance": 0.35
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "Granola distribution in the upper-right compartment looks slightly lumpier and extends marginally farther downward into the nut/banana-chip area than in some references.",
+            "location": "Upper-right compartment, lower boundary of granola",
+            "support_conf": 0.64,
+            "ref_consistency": 0.4,
+            "logical_relevance": 0.44
+          }
+        ],
+        "no_difference_conf": 0.57
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The lower-right nut/banana-chip mix is arranged somewhat differently, with several almonds visible near the center-right and chips spread slightly upward.",
+            "benign_explanation": "Across the references, the exact placement of almonds and banana chips varies noticeably from image to image. The query preserves the same food types and overall compartment structure, so this looks like normal serving variation rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The top fruit in the left compartment sits a bit lower/inward than in some references.",
+            "benign_explanation": "Fruit positions vary across all references, and the query still has the same three fruits with the same left-column arrangement. No missing item, extra item, or damaged object is evident.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.14,
+            "benign_conf": 0.86,
+            "positive_evidence": "The granola boundary is slightly uneven and may extend a little farther downward into the lower-right mix.",
+            "benign_explanation": "Granola shape and spill boundary differ naturally among the references. The query shows the expected granola compartment with no clear contamination, absence, or pathological defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 3457,
+      "output": 749
+    },
+    "latency_sec": 137.82,
+    "error": null
+  },
+  {
+    "item_id": "D9_0013",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0068",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.030239204637877992,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Lower '100% Juice' label appears slightly rotated/tilted rather than level compared with the references.",
+            "location": "Bottom front label on the bottle",
+            "support_conf": 0.66,
+            "ref_consistency": 0.85,
+            "logical_relevance": 0.42
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Upper fruit icon label sits a bit lower and slightly more centered vertically within the bottle body than in the references.",
+            "location": "Middle front square label",
+            "support_conf": 0.43,
+            "ref_consistency": 0.62,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "Bottle contents look marginally darker/greyer in the lower half than the palest banana-juice references.",
+            "location": "Liquid fill, especially lower bottle body",
+            "support_conf": 0.38,
+            "ref_consistency": 0.47,
+            "logical_relevance": 0.21
+          }
+        ],
+        "no_difference_conf": 0.58
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The lower '100% Juice' label in the query does appear slightly tilted compared with some references.",
+            "benign_explanation": "This is a minor pose/layout variation only. The bottle type, banana icon, fill appearance, and label presence all match the banana-juice references. No positive defect evidence such as missing label, wrong fruit, damaged bottle, leakage, or clear misplacement absent from multiple references is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The upper fruit icon label may sit marginally lower than in some references.",
+            "benign_explanation": "Across references 2-4, the icon label position already varies slightly. The query remains within that normal variation range and shows no concrete abnormal placement or missing component.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The liquid tone in the lower half looks a touch darker/greyer than the palest references.",
+            "benign_explanation": "This is consistent with lighting/exposure or natural appearance variation. The contents still match the pale banana-juice references overall, with no contamination, separation, or other pathology visible.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 2447,
+      "output": 704
+    },
+    "latency_sec": 54.53,
+    "error": null
+  },
+  {
+    "item_id": "D9_0076",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.025201918108032073,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The bottle contents are yellow/orange and the front label shows an orange fruit icon, whereas the provided normal references show either dark red cherry juice or pale banana juice with matching cherry/banana icons.",
+            "location": "Liquid fill throughout bottle and central front fruit label",
+            "support_conf": 0.99,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.78
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The fill level appears slightly lower than in the banana reference bottles, leaving a taller clear neck region above the liquid.",
+            "location": "Upper bottle neck / liquid meniscus area",
+            "support_conf": 0.58,
+            "ref_consistency": 0.7,
+            "logical_relevance": 0.42
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "The query bottle differs in juice color and fruit icon from the shown references, displaying an orange-colored drink with an orange fruit label instead of cherry or banana. No visible physical defect, damage, leakage, contamination artifact, missing component, or structural abnormality is evident.",
+            "benign_explanation": "This appears to be a different flavor/variant of the same bottled juice product. Bottle shape, cap/neck structure, label placement, and overall condition are consistent with the references. Under the fp_benign_variation rule, flavor/label-content differences alone are not sufficient to call an anomaly without positive defect evidence.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The liquid level may be slightly lower, leaving a somewhat taller clear neck region.",
+            "benign_explanation": "The fill-height difference is small and within plausible normal variation due to bottling tolerance, viewing, or product variant. There is no sign of underfill defect, leakage, or other pathology.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 2381,
+      "output": 572
+    },
+    "latency_sec": 42.97,
+    "error": null
+  },
+  {
+    "item_id": "D9_0015",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.74264715,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The red jumper wire shows a noticeable central kink/downward bend rather than the smoother, nearly straight span seen in the matching 5-port reference.",
+            "location": "Middle of the red wire between the two connector blocks",
+            "support_conf": 0.95,
+            "ref_consistency": 0.88,
+            "logical_relevance": 0.72
+          }
+        ],
+        "no_difference_conf": 0.12
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.89,
+            "benign_conf": 0.11,
+            "positive_evidence": "The query matches Reference 3 in having 5-port connectors and a red wire, but the wire span is visibly different: in the query the red wire has a clear kink/sag near the center with a non-smooth bend, while the reference red-wire assembly is comparatively smooth and straighter across the middle. This is a concrete shape deviation on the main object.",
+            "benign_explanation": "Small wire curvature can vary slightly due to placement, but here the bend is distinct and centrally localized rather than a minor overall arc.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 2274,
+      "output": 339
+    },
+    "latency_sec": 29.11,
+    "error": null
+  },
+  {
+    "item_id": "D9_0083",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0037",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.02638253508863997,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The connecting wire in the query is blue, whereas the comparable 3-port connector references show yellow wires.",
+            "location": "Wire spanning horizontally between the left and right connector blocks",
+            "support_conf": 0.99,
+            "ref_consistency": 0.83,
+            "logical_relevance": 0.42
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "The connector pair configuration matches the 3-port-to-3-port layout seen in references, but the exact wire color differs from all provided examples for that layout.",
+            "location": "Entire jumper assembly, especially the central cable",
+            "support_conf": 0.96,
+            "ref_consistency": 0.8,
+            "logical_relevance": 0.39
+          }
+        ],
+        "no_difference_conf": 0.34
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The query shows a 3-port-to-3-port jumper assembly with intact-looking connectors and a single continuous wire, matching the same overall structure as the references. The only observed difference is wire color.",
+            "benign_explanation": "Under the fp_benign_variation rule, color-only variation is not sufficient to call an anomaly without defect evidence. There is no visible break, missing port, deformation, or other pathology; the blue wire appears to be a benign variant of the same connector assembly.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The full object configuration in the query matches the reference pattern of two 3-port orange lever connectors joined by one wire. No structural inconsistency or damage is visible.",
+            "benign_explanation": "Although the exact wire color is not present among the provided 3-port examples, this is a global appearance difference only. With no positive evidence of defect/pathology, this should be treated as benign variation.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 2372,
+      "output": 560
+    },
+    "latency_sec": 23.85,
+    "error": null
+  },
+  {
+    "item_id": "D9_0069",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.015313286869440113,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The yellow wire has a slightly more noticeable gentle bend/sag near the middle-left rather than appearing fully straight.",
+            "location": "Central span of the wire, slightly left of center",
+            "support_conf": 0.52,
+            "ref_consistency": 0.41,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The left connector appears rotated/tilted a bit more counterclockwise relative to the right connector than in the references.",
+            "location": "Left terminal block",
+            "support_conf": 0.57,
+            "ref_consistency": 0.46,
+            "logical_relevance": 0.34
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The query wire shows a mild bend/sag in the central span, but the wire appears intact with both connectors present and seated. No fraying, break, missing part, or abnormal attachment is visible.",
+            "benign_explanation": "Small differences in wire curvature are seen across the references as normal pose variation. This is not positive defect evidence.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The left connector may be slightly more tilted than in some references, but it is fully present, aligned to the wire, and shows no visible damage or missing elements.",
+            "benign_explanation": "Minor rotational/pose differences between connectors are consistent with benign placement variation and do not indicate pathology.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 2362,
+      "output": 497
+    },
+    "latency_sec": 17.34,
+    "error": null
+  },
+  {
+    "item_id": "D9_0049",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.9529383943312499,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The query uses a blue wire, whereas the normal references show yellow or red wires only.",
+            "location": "Central connecting wire spanning between the two connector blocks",
+            "support_conf": 0.99,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.74
+          },
+          {
+            "id": "C2",
+            "type": "count_mismatch",
+            "description": "The connector configuration is 3-port on both ends in the query; among the references, this exact 3-to-3 arrangement is not shown, with references showing 2-to-2, 5-to-5, and 2-to-3 variants instead.",
+            "location": "Left and right connector blocks",
+            "support_conf": 0.94,
+            "ref_consistency": 0.91,
+            "logical_relevance": 0.86
+          }
+        ],
+        "no_difference_conf": 0.02
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The central connecting wire in the query is clearly blue. Across the references, the wires are yellow in References 1, 2, and 4, and red in Reference 3; none show a blue wire. This is a direct, obvious global appearance difference on the main object.",
+            "benign_explanation": "There is little evidence this is a benign variation within the shown reference set, because wire color is consistent to only yellow/red and blue never appears.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 2384,
+      "output": 436
+    },
+    "latency_sec": 48.05,
+    "error": null
+  },
+  {
+    "item_id": "D9_0012",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.020291249999999983,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The query shows a red wire connecting two 5-port connectors, matching the multi-port red-wire configuration seen in a reference, with no obvious extra, missing, or broken connector elements.",
+            "location": "entire object, especially the central wire and both connector blocks",
+            "support_conf": 0.82,
+            "ref_consistency": 0.93,
+            "logical_relevance": 0.42
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.05,
+            "benign_conf": 0.95,
+            "positive_evidence": "No visible defect or mismatch is evident. The query shows two 5-port orange/clear connectors linked by a single red wire, which matches Reference 3 in connector count, arrangement, and wire color.",
+            "benign_explanation": "The object configuration is consistent with a normal multi-port jumper assembly seen in the references. No missing ports, broken housings, disconnected wire ends, or abnormal arrangement are visible.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 2283,
+      "output": 322
+    },
+    "latency_sec": 37.6,
+    "error": null
+  },
+  {
+    "item_id": "D9_0080",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.02803933478929821,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The dried banana chips and almonds in the lower-right compartment are more densely piled and spread farther across the bottom edge than in the references, with a larger cluster occupying the lower center-right area.",
+            "location": "Lower-right section of the right compartment",
+            "support_conf": 0.77,
+            "ref_consistency": 0.58,
+            "logical_relevance": 0.42
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The granola mass in the upper-right compartment extends slightly lower into the compartment, reducing the vertical gap above the banana/nut mix compared with most references.",
+            "location": "Boundary between granola and banana/nut mix in the right compartment",
+            "support_conf": 0.69,
+            "ref_consistency": 0.55,
+            "logical_relevance": 0.39
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The peach/nectarine in the upper-left compartment sits a bit more horizontally and closer to the top-left corner than in the reference examples.",
+            "location": "Upper item in the left compartment",
+            "support_conf": 0.63,
+            "ref_consistency": 0.46,
+            "logical_relevance": 0.24
+          }
+        ],
+        "no_difference_conf": 0.44
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.11,
+            "benign_conf": 0.89,
+            "positive_evidence": "The banana chips and almonds do form a somewhat fuller pile across the lower-right area, but the same food components are present and occupy the expected compartment.",
+            "benign_explanation": "Across the references, the exact spread and density of the banana/nut mix varies naturally. The query remains consistent with the normal tray layout: left compartment has peach/nectarine plus two mandarins, upper-right has granola, lower-right has banana chips and almonds. This is portion/placement variation rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The granola boundary sits slightly lower, but there is no missing item, contamination, or compartment mismatch.",
+            "benign_explanation": "The granola-to-banana/nut boundary shifts across references as serving placement changes. The query still shows the correct foods in the correct regions with no positive pathology evidence.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.06,
+            "benign_conf": 0.94,
+            "positive_evidence": "The upper-left fruit is angled a bit differently and closer to the top-left corner, but it is the same expected fruit and not visibly damaged beyond normal appearance.",
+            "benign_explanation": "Fruit orientation and exact position vary substantially among the references. This is normal pose variation, not an anomaly.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 3450,
+      "output": 770
+    },
+    "latency_sec": 103.35,
+    "error": null
+  },
+  {
+    "item_id": "D9_0025",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0048",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.01867430806241277,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The lower '100% Juice' label appears slightly shifted left and a bit tilted compared with the banana reference bottles, where it is more centered and level.",
+            "location": "Bottom front label area",
+            "support_conf": 0.62,
+            "ref_consistency": 0.55,
+            "logical_relevance": 0.42
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "The juice fill looks marginally lower in the shoulder/body transition than in some banana references, though overall fill level remains within the observed reference variation.",
+            "location": "Upper liquid level inside bottle",
+            "support_conf": 0.38,
+            "ref_consistency": 0.34,
+            "logical_relevance": 0.28
+          }
+        ],
+        "no_difference_conf": 0.73
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The bottom '100% Juice' label in the query appears slightly left-shifted relative to the bottle centerline and may have a very small tilt.",
+            "benign_explanation": "Across the banana references, label placement and apparent alignment vary slightly due to viewing angle, bottle pose, and sticker application. The query bottle matches the same banana-juice bottle type, with consistent main fruit label, bottle shape, and overall packaging. There is no clear defect, damage, missing part, or pathological mismatch.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The liquid level may appear marginally different from some references near the shoulder/body transition.",
+            "benign_explanation": "The banana references already show small variation in fill height and apparent meniscus position. The query fill level remains well within that observed range, with no evidence of leakage, underfill defect, or inconsistent contents.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 2371,
+      "output": 544
+    },
+    "latency_sec": 64.7,
+    "error": null
+  },
+  {
+    "item_id": "D9_0052",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.051606759669085234,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Fruit arrangement differs: the dark red stone fruit is placed at the bottom of the left compartment, with two mandarins above it, whereas in the references the peach/nectarine is positioned higher (top or middle) and a mandarin is often at the bottom.",
+            "location": "Left compartment, bottom position",
+            "support_conf": 0.82,
+            "ref_consistency": 0.88,
+            "logical_relevance": 0.58
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "The stone fruit appears darker red/purple than the peach/nectarine seen in the references, giving it a noticeably different color state.",
+            "location": "Left compartment, bottom fruit",
+            "support_conf": 0.73,
+            "ref_consistency": 0.71,
+            "logical_relevance": 0.41
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Banana chips and almonds in the right compartment are more concentrated toward the lower-right and center-bottom area, with slightly denser overlap than in the references.",
+            "location": "Right compartment, lower portion",
+            "support_conf": 0.62,
+            "ref_consistency": 0.67,
+            "logical_relevance": 0.34
+          }
+        ],
+        "no_difference_conf": 0.29
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.14,
+            "benign_conf": 0.86,
+            "positive_evidence": "The bottom fruit in the left compartment is a darker red nectarine/peach-like fruit, and its vertical position differs from some references.",
+            "benign_explanation": "Across the references, the left compartment consistently contains the same three-item fruit set: two mandarins and one peach/nectarine, but their ordering varies. The stone fruit appears at top in Reference 2, middle in References 1 and 3, and top in Reference 4; so placement is not fixed. In the query, having the stone fruit at the bottom is a plausible arrangement variation, not a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The stone fruit in the query looks somewhat darker red/purple than in the references.",
+            "benign_explanation": "Color/intensity of the peach/nectarine varies across the references as well, from lighter peach-yellow to darker red tones. The query still shows a normal-looking stone fruit with no visible spoilage, damage, or foreign-object evidence. This is benign appearance variation.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The banana chips and almonds are clustered slightly more toward the lower-right/lower-center of the right compartment.",
+            "benign_explanation": "The right compartment in all images contains granola on top with banana chips and almonds along the bottom, but the exact distribution and overlap vary naturally. The query matches that same overall layout and contents with no missing or extra item and no visible pathology.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 3452,
+      "output": 822
+    },
+    "latency_sec": 41.32,
+    "error": null
+  },
+  {
+    "item_id": "D9_0084",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0061",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 1,
+    "anomaly_score": 0.9170815499999999,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The query shows a 5-position connector-to-connector jumper with five orange lever sections on each end and a red wire, matching the multi-port red-wire reference rather than the 2-port yellow-wire references.",
+            "location": "entire object, both left and right connector blocks and the connecting wire",
+            "support_conf": 0.98,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.78
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The query object is a multi-port connector jumper with five orange lever sections on each side connected by a red wire. Among the references, only Reference 3 has the same overall type: a 5-position-to-5-position red-wire jumper. The query matches that configuration and clearly differs from References 1, 2, and 4, which are 2-position yellow-wire jumpers. This is a strong global object-type difference.",
+            "benign_explanation": "There is little evidence this is a benign variation because the difference is not minor color or pose only; it changes the connector port count and overall assembly type relative to most references.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 2290,
+      "output": 378
+    },
+    "latency_sec": 51.89,
+    "error": null
+  },
+  {
+    "item_id": "D9_0074",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0002",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.024126841036401503,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The middle fruit in the left compartment is rotated so its bright yellow-red patch faces upward/right more prominently than in the references, giving a slightly different presentation.",
+            "location": "Left compartment, center fruit",
+            "support_conf": 0.73,
+            "ref_consistency": 0.52,
+            "logical_relevance": 0.31
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The bottom-left orange sits a bit more isolated from the center fruit, leaving a slightly larger gap than in most references.",
+            "location": "Left compartment, lower fruit spacing",
+            "support_conf": 0.62,
+            "ref_consistency": 0.46,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The banana chip cluster along the lower right compartment appears somewhat more concentrated toward the right edge, with nuts more visible toward the center-left of that lower section.",
+            "location": "Right compartment, bottom mix of banana chips and almonds",
+            "support_conf": 0.68,
+            "ref_consistency": 0.49,
+            "logical_relevance": 0.34
+          }
+        ],
+        "no_difference_conf": 0.58
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "No defect or pathological change is visible. The center fruit's visible color patch and orientation differ slightly from some references, but the fruit type, count, and placement remain consistent.",
+            "benign_explanation": "This is normal pose/rotation variation of the peach/nectarine in the left compartment. Similar orientation and appearance changes occur across the references.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "No missing item, damage, or abnormal object is present. The lower fruit spacing is only slightly different.",
+            "benign_explanation": "Small positional spacing changes between the fruits are expected benign variation and are seen across the references.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "No clear defect is present in the right compartment. The granola, banana chips, and almonds are all present in expected quantities and locations.",
+            "benign_explanation": "The exact distribution of banana chips and nuts along the bottom-right section varies naturally across references; this concentration shift is benign arrangement variation.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 3434,
+      "output": 707
+    },
+    "latency_sec": 43.89,
+    "error": null
+  },
+  {
+    "item_id": "D9_0054",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0021",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.8631868911514348,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fn_logical_relational",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "Query appears to contain fewer push pins overall than the normal references. The query shows about 13 pins, while each reference appears to show about 14.",
+            "location": "global / whole organizer",
+            "support_conf": 0.84,
+            "ref_consistency": 0.94,
+            "logical_relevance": 0.92
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "One compartment appears empty in the query where the references typically distribute pins more evenly, suggesting a missing pin from a bin. The most notable empty bin is the top row, second compartment from the left.",
+            "location": "top row, second compartment from left",
+            "support_conf": 0.58,
+            "ref_consistency": 0.63,
+            "logical_relevance": 0.67
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Another unusually empty compartment is visible in the bottom row, fifth compartment from the left, whereas references commonly show a pin present there or a more balanced occupancy.",
+            "location": "bottom row, fifth compartment from left",
+            "support_conf": 0.56,
+            "ref_consistency": 0.61,
+            "logical_relevance": 0.63
+          }
+        ],
+        "no_difference_conf": 0.19
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.95,
+            "benign_conf": 0.05,
+            "positive_evidence": "Counting the visible push pins in the query gives 13 total. The 15 compartments appear occupied as follows by row: top row = 0,0,1,1,1; middle row = 1,1,1,1,1; bottom row = 1,1,1,1,0,1? More concretely, visible pins are: row1 col1, row1 col2, row1 col3, row1 col4, row1 col5, row2 col1, row2 col2, row2 col3, row2 col4, row2 col5, row3 col1, row3 col2, row3 col3, row3 col4, row3 col5 positions imply two empty bins, but one top-left area contains no pin while two bins elsewhere are empty; overall the image sums to about 13 pins. In all four references, the organizer consistently contains about 14 pins. Since this task is logical-relational, the reduced object count is strong anomaly evidence.",
+            "benign_explanation": "Minor pose differences and per-bin redistribution are normal across references, but the total pin count is consistently higher in the references than in the query. This is not well explained by orientation or lighting.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.22,
+            "benign_conf": 0.78,
+            "positive_evidence": "The top row, second compartment from the left appears empty in the query.",
+            "benign_explanation": "Empty individual compartments occur in the references as well, including top-row empties and other sparse bins. So this specific empty bin is not itself a reliable anomaly; the stronger issue is global count, not that exact location.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.28,
+            "benign_conf": 0.72,
+            "positive_evidence": "The bottom row, fifth compartment from the left appears empty in the query.",
+            "benign_explanation": "References show variable occupancy patterns with some empty bins in different places, so this local empty compartment alone is not convincing anomaly evidence. It mainly contributes to the lower overall count.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 2876,
+      "output": 923
+    },
+    "latency_sec": 70.38,
+    "error": null
+  },
+  {
+    "item_id": "D9_0033",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0007",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.023039321629326537,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "Query appears to contain fewer pushpins than the normal references, with about 12 visible pins versus roughly 14 in each reference image.",
+            "location": "Across the whole organizer tray",
+            "support_conf": 0.94,
+            "ref_consistency": 0.96,
+            "logical_relevance": 0.88
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Top-left compartment has only a single pin in the query, whereas references commonly show two pins in that compartment.",
+            "location": "Top-left compartment",
+            "support_conf": 0.72,
+            "ref_consistency": 0.66,
+            "logical_relevance": 0.58
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Bottom-left compartment has only one horizontal pin in the query; references often show two pins or a denser occupancy pattern in the leftmost column.",
+            "location": "Bottom-left compartment / leftmost column",
+            "support_conf": 0.61,
+            "ref_consistency": 0.55,
+            "logical_relevance": 0.49
+          }
+        ],
+        "no_difference_conf": 0.23
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The query does appear to have fewer visible pushpins overall than several references.",
+            "benign_explanation": "Across the references, pin counts and per-compartment occupancy vary noticeably. The query still shows a plausible distribution of pins across the organizer, with no damaged compartment, foreign object, broken pin, or clearly impossible arrangement. Under the fp_benign_variation rule, a mere count/layout difference without defect evidence is insufficient.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.06,
+            "benign_conf": 0.94,
+            "positive_evidence": "Top-left compartment in the query contains only one pin.",
+            "benign_explanation": "Reference compartments do not have a fixed required count; occupancy varies from image to image. A single pin in the top-left cell is consistent with benign variation and not a pathology.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.05,
+            "benign_conf": 0.95,
+            "positive_evidence": "Bottom-left compartment in the query looks sparsely occupied compared with some references.",
+            "benign_explanation": "Sparse occupancy in one compartment is also seen as normal variation across the references. No concrete defect, damage, or forbidden state is visible in that region.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 2850,
+      "output": 707
+    },
+    "latency_sec": 19.22,
+    "error": null
+  },
+  {
+    "item_id": "D9_0011",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.028501495740762328,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The left fruit compartment has two mandarins on top and the peach/nectarine at the bottom, whereas in the references the peach/nectarine is usually positioned at the top or middle rather than bottom.",
+            "location": "Left compartment, bottom position",
+            "support_conf": 0.88,
+            "ref_consistency": 0.72,
+            "logical_relevance": 0.55
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The dried banana chips and nuts in the lower-right section appear more spread toward the center and stacked more densely than in the references, where they are typically confined more tightly to the bottom-right edge.",
+            "location": "Lower-right section of right compartment",
+            "support_conf": 0.74,
+            "ref_consistency": 0.69,
+            "logical_relevance": 0.46
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "The granola mass in the right compartment has a slightly different contour, extending downward more on the left side and leaving a narrower band for the banana/nut mix than seen in most references.",
+            "location": "Right compartment, boundary between granola and banana/nut mix",
+            "support_conf": 0.7,
+            "ref_consistency": 0.63,
+            "logical_relevance": 0.41
+          }
+        ],
+        "no_difference_conf": 0.38
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The peach/nectarine is placed at the bottom of the left compartment in the query, unlike several references where it appears higher.",
+            "benign_explanation": "This is only a positional variation of the same three fruits. All expected items are present, counts match, and there is no defect, damage, or impossible arrangement. Reference images already show variation in fruit ordering and placement.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The banana chips and nuts in the lower-right appear somewhat more central and dense than in some references.",
+            "benign_explanation": "The snack mix remains in the correct compartment and consists of the same expected components. Its exact spread and clustering vary naturally across the references, with no clear missing item or foreign object.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "The granola boundary shape differs slightly, with a somewhat lower extension on one side.",
+            "benign_explanation": "Granola contour and the dividing line between granola and banana/nut mix vary noticeably across the references. This appears to be ordinary packing variation rather than a true anomaly.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 3467,
+      "output": 761
+    },
+    "latency_sec": 128.67,
+    "error": null
+  },
+  {
+    "item_id": "D9_0009",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.04084071547766732,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The left fruit compartment contains two mandarins at the top and a peach/nectarine at the bottom, whereas in the references the peach/nectarine is positioned higher (top or middle) and a mandarin occupies the bottom position.",
+            "location": "Left compartment, fruit arrangement",
+            "support_conf": 0.91,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.68
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The bottom-right mix of banana chips and almonds appears denser and spread farther across the lower edge, with more banana slices visible than in the references.",
+            "location": "Right compartment, lower snack section",
+            "support_conf": 0.76,
+            "ref_consistency": 0.72,
+            "logical_relevance": 0.55
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "The granola block in the upper-right compartment has a slightly different contour, extending lower into the center and leaving a somewhat altered boundary with the banana-chip section compared with the references.",
+            "location": "Right compartment, boundary between granola and dried fruit/nuts",
+            "support_conf": 0.67,
+            "ref_consistency": 0.64,
+            "logical_relevance": 0.45
+          }
+        ],
+        "no_difference_conf": 0.18
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The query does place the peach/nectarine in the bottom position of the left compartment, unlike the references where it appears top or middle.",
+            "benign_explanation": "This is only an arrangement difference among the same three fruits, with no missing item, extra item, damage, contamination, or impossible placement. Under the fp_benign_variation rule, layout variation alone is not sufficient evidence of anomaly.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The lower-right section shows a somewhat broader spread of banana chips and nuts, with several visible slices along the bottom edge.",
+            "benign_explanation": "The same snack components are present as in the references, and the amount/spacing variation is minor and plausible from serving scatter. No positive defect or foreign object is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The granola-to-banana-chip boundary is slightly different in contour from the references.",
+            "benign_explanation": "Granola shape and boundary variations are expected due to packing and viewpoint. There is no clear structural defect, missing compartment, or abnormal material.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 3462,
+      "output": 758
+    },
+    "latency_sec": 22.62,
+    "error": null
+  },
+  {
+    "item_id": "D9_0045",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0018",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D9_0014",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.07636478072954955,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "Query appears to contain only one bolt, whereas all reference images show two bolts in the bag.",
+            "location": "center-right of bag; only one long threaded bolt clearly visible",
+            "support_conf": 0.79,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.97
+          },
+          {
+            "id": "C2",
+            "type": "count_mismatch",
+            "description": "Query appears to contain three hex nuts, while the references consistently show two hex nuts.",
+            "location": "clustered near the center-left/center of the bag",
+            "support_conf": 0.84,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.96
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Hardware is packed in a tighter central cluster, with one bolt largely hidden/occluded if present, unlike the references where both bolts are clearly separable and visible.",
+            "location": "central cluster of parts",
+            "support_conf": 0.66,
+            "ref_consistency": 0.86,
+            "logical_relevance": 0.7
+          }
+        ],
+        "no_difference_conf": 0.15
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "A long bolt is clearly visible on the right, and a second shorter threaded metallic piece with a cylindrical head is also visible on the left side of the central cluster.",
+            "benign_explanation": "The apparent one-bolt reading is caused by overlap and tighter clustering. The query still appears to contain two bolts, consistent with the references.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "Three ring-like parts and two hexagonal nuts are distinctly visible; one central ring can be mistaken for a nut because of overlap and lighting.",
+            "benign_explanation": "On inspection, the query does not provide solid evidence of three hex nuts. The visible count is consistent with the reference set: two nuts plus washers/spacers.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The hardware is somewhat more clustered in the query.",
+            "benign_explanation": "Packing layout varies substantially across the references as well. The tighter central cluster and partial occlusion are normal positional variation inside the bag, not defect evidence.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 3043,
+      "output": 702
+    },
+    "latency_sec": 43.75,
+    "error": null
+  },
+  {
+    "item_id": "D9_0066",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 1,
+    "anomaly_score": 0.9769620230200904,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fn_logical_relational",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "Query appears to contain three washers, whereas the normal references consistently show two washers.",
+            "location": "Left half of the bag, clustered near the nuts",
+            "support_conf": 0.98,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.99
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "One bolt is placed nearly horizontal across the lower middle/right area; in the references the bolt pair is typically arranged diagonally or crossed with less strong horizontal spread.",
+            "location": "Lower center extending toward right side of the bag",
+            "support_conf": 0.76,
+            "ref_consistency": 0.72,
+            "logical_relevance": 0.62
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Most small parts (nuts and washers) are tightly clustered on the left side in the query, while the references more often show the pieces more distributed across the bag interior.",
+            "location": "Left-central area of the bag",
+            "support_conf": 0.68,
+            "ref_consistency": 0.61,
+            "logical_relevance": 0.57
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The query shows 3 washers/rings on the left side along with 2 nuts and 2 bolts. In all 4 reference images, the hardware set consistently contains exactly 2 washers, 2 nuts, and 2 bolts. Since the failure mode is logical/relational, this count difference is strong anomaly evidence.",
+            "benign_explanation": "Washer visibility is clear and not plausibly due to overlap or occlusion; the extra ring is distinctly visible.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "One bolt lies more horizontally than in most references.",
+            "benign_explanation": "Bolt orientation varies across references and is not a stable defining property. The observed pose is a plausible random arrangement inside the bag.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.22,
+            "benign_conf": 0.78,
+            "positive_evidence": "Small parts are somewhat more clustered on the left in the query.",
+            "benign_explanation": "Distribution of loose hardware inside the bag varies naturally across references, and clustering alone is not reliable anomaly evidence.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 3053,
+      "output": 710
+    },
+    "latency_sec": 37.31,
+    "error": null
+  },
+  {
+    "item_id": "D9_0000",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.9700460748049999,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "The query tray contains noticeably fewer pushpins than the normal references. The references consistently show about 14\u201315 pins, while the query shows only about 12.",
+            "location": "Across the whole tray",
+            "support_conf": 0.97,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.98
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Several compartments in the query are empty, producing a sparser distribution pattern than seen in the references, where pins are more evenly spread and more compartments are occupied.",
+            "location": "Multiple cells, especially upper-left second cell, upper row gaps, and lower middle/right compartments",
+            "support_conf": 0.9,
+            "ref_consistency": 0.88,
+            "logical_relevance": 0.92
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The query tray has substantially fewer pushpins than the references. Counting visually, the references each contain about 14\u201315 pins distributed across the 15 compartments, while the query contains about 11\u201312 pins total. Multiple compartments are empty in the query in a way not seen in the references, confirming a count/layout deficit rather than a small counting ambiguity.",
+            "benign_explanation": "Minor variation in exact pin positions and orientations is normal, but the overall reduction in total pin count and the resulting sparse occupancy pattern are too large to be explained by benign arrangement differences.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 2777,
+      "output": 459
+    },
+    "latency_sec": 99.07,
+    "error": null
+  },
+  {
+    "item_id": "D9_0024",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.9769408979374999,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "The query bottle contains a distinctly yellow/orange juice, whereas the references show either dark red/brown juice or pale off-white juice.",
+            "location": "Entire bottle contents",
+            "support_conf": 0.99,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.93
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The central fruit icon on the main label is an orange/citrus symbol, while the references show cherry or banana symbols.",
+            "location": "Center front label",
+            "support_conf": 0.99,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.95
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The query bottle contains opaque yellow-orange juice throughout the bottle. In the references, the liquid is either dark reddish-brown (reference 1) or pale off-white/cream (references 2-4). This is a clear whole-object content/color mismatch.",
+            "benign_explanation": "Minor lighting or white balance shifts cannot explain the large change from red/brown or off-white liquid to saturated yellow-orange liquid.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 2356,
+      "output": 398
+    },
+    "latency_sec": 11.13,
+    "error": null
+  },
+  {
+    "item_id": "D9_0038",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.025349129145164406,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Top-left peach/nectarine is rotated so its stem/bright yellow patch faces the upper-right edge more prominently than in the references.",
+            "location": "left compartment, top fruit",
+            "support_conf": 0.77,
+            "ref_consistency": 0.42,
+            "logical_relevance": 0.26
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Banana-chip cluster along the lower-right compartment is more split into left and right groups, leaving a more open center among the nuts than most references.",
+            "location": "right compartment, bottom band beneath granola",
+            "support_conf": 0.69,
+            "ref_consistency": 0.48,
+            "logical_relevance": 0.34
+          },
+          {
+            "id": "C3",
+            "type": "count_mismatch",
+            "description": "Visible banana slices on the bottom-right side appear slightly fewer than in some references.",
+            "location": "right compartment, lower section",
+            "support_conf": 0.55,
+            "ref_consistency": 0.31,
+            "logical_relevance": 0.29
+          }
+        ],
+        "no_difference_conf": 0.63
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "The top-left stone fruit in the query is oriented slightly differently, with a brighter highlight/yellow patch near the upper-right side.",
+            "benign_explanation": "This is a normal pose/orientation variation of the same fruit type. Across the references, fruit orientations and exact visible highlight/stem regions vary substantially. There is no defect, missing item, extra item, or pathological change.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.11,
+            "benign_conf": 0.89,
+            "positive_evidence": "The banana-chip/nut band at the bottom of the right compartment is somewhat redistributed, with chips appearing in slightly separated clusters.",
+            "benign_explanation": "The references already show notable variation in how banana chips and almonds are scattered beneath the granola. The query remains logically consistent: granola on top, mixed banana chips and almonds below. No positive defect evidence is present.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The visible number of banana slices may be marginally lower than in some references.",
+            "benign_explanation": "Visible counts vary by occlusion and arrangement across references, and the lower section still contains the expected banana chips and almonds. There is no clear count violation or missing-component anomaly supported by the set.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 3418,
+      "output": 730
+    },
+    "latency_sec": 90.46,
+    "error": null
+  },
+  {
+    "item_id": "D9_0169",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.99418625,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "All yellow push pins seen throughout the compartment tray in every reference image are absent in the query image.",
+            "location": "Across all compartments of the tray",
+            "support_conf": 0.99,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.99
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "The tray appears completely empty in the query, whereas each reference shows multiple push pins distributed across the compartments.",
+            "location": "Entire tray interior",
+            "support_conf": 0.99,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.98
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 1.0,
+            "benign_conf": 0.0,
+            "positive_evidence": "In all four reference images, the compartment tray contains multiple yellow push pins distributed across the sections. In the query image, every compartment is empty and no push pins are visible anywhere in the tray.",
+            "benign_explanation": "This is not explained by minor viewpoint, lighting, or arrangement variation because the entire set of pins is missing rather than merely shifted or partially occluded.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 1.0
+      }
+    },
+    "cost_tokens": {
+      "input": 2738,
+      "output": 382
+    },
+    "latency_sec": 10.34,
+    "error": null
+  },
+  {
+    "item_id": "D9_0001",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.9991481326711219,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fn_logical_relational",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "Query appears to contain fewer push pins overall than the normal references. The query has about 12 visible pins, whereas each reference shows about 14 pins.",
+            "location": "global / entire organizer tray",
+            "support_conf": 0.98,
+            "ref_consistency": 0.96,
+            "logical_relevance": 0.99
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Top-left compartment appears empty in the query, while in all normal references that compartment contains a pin.",
+            "location": "top-left compartment",
+            "support_conf": 0.95,
+            "ref_consistency": 0.97,
+            "logical_relevance": 0.98
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Top row, second compartment from the left appears to contain only one pin in the query; normal references consistently show two pins in this compartment.",
+            "location": "top row, second compartment",
+            "support_conf": 0.88,
+            "ref_consistency": 0.8,
+            "logical_relevance": 0.86
+          },
+          {
+            "id": "C4",
+            "type": "layout_mismatch",
+            "description": "Middle row, fourth compartment from the left appears empty in the query, whereas the normal references show a pin present there.",
+            "location": "middle row, fourth compartment",
+            "support_conf": 0.74,
+            "ref_consistency": 0.67,
+            "logical_relevance": 0.78
+          }
+        ],
+        "no_difference_conf": 0.02
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The query tray contains about 12 pins total, while each of the four reference trays contains about 14 pins. By compartment count, the query is missing pins in at least the top-left compartment and the middle row fourth compartment, producing a lower global count than any reference.",
+            "benign_explanation": "Small pose changes or occlusion do not explain away two missing pins because the tray compartments are clearly visible and the references are consistent in overall count.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.98,
+            "benign_conf": 0.02,
+            "positive_evidence": "The top-left compartment in the query appears empty. In all four references, that compartment contains one visible yellow push pin.",
+            "benign_explanation": "This is not a lighting or orientation issue; the compartment is clearly visible and no pin is present.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.22,
+            "benign_conf": 0.78,
+            "positive_evidence": "The top row second compartment in the query shows one clear pin.",
+            "benign_explanation": "Reference counts in this compartment are not fully consistent: several references also show only one pin there, so this is not reliable anomaly evidence.",
+            "status": "benign"
+          },
+          {
+            "id": "C4",
+            "anomaly_conf": 0.91,
+            "benign_conf": 0.09,
+            "positive_evidence": "The middle row fourth compartment from the left is empty in the query. In all references, that compartment contains one pin.",
+            "benign_explanation": "The compartment is unobstructed, so absence is unlikely to be caused by viewing angle or overlap.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 2941,
+      "output": 899
+    },
+    "latency_sec": 124.65,
+    "error": null
+  },
+  {
+    "item_id": "D9_0109",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0131",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0142",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0163",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0149",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0064",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 1,
+    "anomaly_score": 0.9959337273419699,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "logical_layout",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "count_mismatch",
+            "description": "The query appears to contain 14 push pins, whereas each normal reference appears to show 15 push pins.",
+            "location": "Across the whole compartment tray",
+            "support_conf": 0.98,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.97
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The top-right compartment contains a single horizontal pin near the center/right, while the normal references more often show either no pin there or a differently placed/angled pin pattern; this compartment's occupancy/placement looks atypical.",
+            "location": "Top row, far-right compartment",
+            "support_conf": 0.56,
+            "ref_consistency": 0.58,
+            "logical_relevance": 0.52
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The middle row, far-right compartment appears empty in the query, whereas all normal references show a pin in that compartment.",
+            "location": "Middle row, far-right compartment",
+            "support_conf": 0.92,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.9
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "Inspecting the query tray cell-by-cell shows 14 pins total, while each of the four references shows 15. In the query, the middle row far-right compartment is empty, but in all references that compartment contains one pin. This is a concrete presence/absence and count discrepancy, not just a pose variation.",
+            "benign_explanation": "Small pose and placement changes are normal across references, but a missing entire pin causing both a total-count reduction and an empty compartment where all references have a pin is not explained by benign variation.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The top-right compartment in the query has one roughly horizontal pin.",
+            "benign_explanation": "Top-right occupancy and orientation vary across references; some show one pin at different angles and positions. This looks like normal layout variation rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.98,
+            "benign_conf": 0.02,
+            "positive_evidence": "The query's middle row far-right compartment is empty. In Reference 1, 2, 3, and 4, that same compartment contains exactly one pin. This is strong positive evidence of a missing pin.",
+            "benign_explanation": "Because all references consistently include a pin in that compartment, the empty cell is not a typical configuration difference.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 2864,
+      "output": 763
+    },
+    "latency_sec": 106.7,
+    "error": null
+  },
+  {
+    "item_id": "D9_0171",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0108",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0139",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0134",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0147",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0124",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0122",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0110",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0116",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0137",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0136",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0167",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0162",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0179",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0118",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0098",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0130",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0159",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0133",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0111",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0151",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0138",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0113",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0093",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0096",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0166",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0123",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0177",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0101",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0164",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0099",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0143",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0115",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0140",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0105",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0170",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0125",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0114",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0094",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0172",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0161",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0092",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0156",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0102",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0106",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0095",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0148",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "splicing_connectors",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0160",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "breakfast_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0135",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0150",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0126",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0091",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "juice_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0097",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "screw_bag",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D9_0153",
+    "domain": "logical",
+    "domain_code": "D9",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "MVTec-LOCO",
+    "category": "pushpins",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  }
+]

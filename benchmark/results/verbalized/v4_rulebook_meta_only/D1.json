@@ -1,0 +1,61 @@
+{
+  "domain_code": "D1",
+  "n_rules": 4,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image contains a complex object with a specific orientation (e.g., electronic components, nuts) and the Agent explicitly identifies a rotation or alignment mismatch compared to references, trust the Agent.",
+      "source_items": [
+        "D1_0009",
+        "D1_0038",
+        "D1_0064",
+        "D1_0174"
+      ],
+      "confidence": "oracle",
+      "id": "D1_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the Agent's rationale explicitly states that a suspected defect (e.g., discoloration, missing text) was verified as a 'normal variation' present in the reference images, trust the Agent over the Direct branch.",
+      "source_items": [
+        "D1_0009",
+        "D1_0038",
+        "D1_0064",
+        "D1_0174"
+      ],
+      "confidence": "oracle",
+      "id": "D1_meta_a_win_1"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the Direct branch identifies a small, localized foreign object or contamination (e.g., a fiber on fabric) with a specific bounding box, trust the Direct branch.",
+      "source_items": [
+        "D1_0073",
+        "D1_0111",
+        "D1_0137"
+      ],
+      "confidence": "oracle",
+      "id": "D1_meta_b_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the Direct branch detects a missing printed feature (e.g., logo, text) on a capsule or similar object, trust the Direct branch, as the Agent may incorrectly classify such omissions as normal variations.",
+      "source_items": [
+        "D1_0073",
+        "D1_0111",
+        "D1_0137"
+      ],
+      "confidence": "oracle",
+      "id": "D1_meta_b_win_3"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 4,
+    "n_b_wins": 3
+  }
+}

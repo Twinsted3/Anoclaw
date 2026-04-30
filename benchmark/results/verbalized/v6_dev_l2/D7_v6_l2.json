@@ -1,0 +1,1020 @@
+[
+  {
+    "item_id": "D7_0013",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.07500000000000002,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The only suspicious feature (dark circular structure) was confirmed to exist in the reference images, indicating it is a permanent object. The observed differences are due to seasonal vegetation changes, which are not considered anomalies per domain rules. No building changes detected.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0070",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.050000000000000024,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The high change ratio (84.4%) and uniform heatmap indicate global radiometric/seasonal differences, not localized building changes. Domain rules explicitly exclude seasonal vegetation and color cast variations as anomalies. No structural building changes were detected.",
+    "n_turns": 3,
+    "tools_used": [
+      "segment_and_count",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0031",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.07500000000000002,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected building change was refuted by visual inspection; the region contains only natural ground/vegetation with no structural anomalies. Color variations are consistent with normal seasonal changes.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0003",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.48500000000000004,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side visual comparison definitively shows a new bright blue/green rectangular structure in the query image that is not present in any of the reference images. This confirms a building change anomaly.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0012",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.935,
+    "direct_score": 0.95,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "Despite the tool failure, the visual evidence from the full images is conclusive: the building cluster in the query has distinctly different roof colors/structures compared to the reference, indicating a true building change anomaly.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0062",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.050000000000000024,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The expert model classified the image as normal (low score). The only suspicious region identified was visually verified against references and found to be natural terrain variation, not a building change. No anomalies detected.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0039",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.95,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The apparent differences are due to global radiometric/seasonal shifts (color tone) rather than structural building changes. The side-by-side verification confirmed that the road and vegetation structures are identical in the query and reference images.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_segment_and_count",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0072",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.050000000000000024,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial suspicion of a new building was refuted. The difference heatmap shows a global radiometric shift (likely seasonal or lighting) affecting most of the image, rather than a localized structural change. Per domain rules, such global variations are normal and should not be flagged as anomalies.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0067",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.95,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only significant difference between the query and reference images is the color of the large agricultural fields (green to brown), which is a seasonal vegetation change. The change detection heatmap confirms this is a diffuse, large-area shift rather than a localized structural anomaly. Per domain rules, seasonal vegetation changes are not building anomalies. Therefore, the image is normal.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0027",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a clear absence of buildings (a white barn and a smaller structure) that are distinctly visible in the reference images at the same location. This confirms a building demolition anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0025",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.050000000000000024,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed differences in soil texture and vegetation density between the query and reference images are explicitly listed as allowed normal variations by the reference profiler. No building structures are present to indicate a building change anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_reference_profiler"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0048",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.48500000000000004,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a new white building adjacent to an existing red-roofed building, which is absent in the reference image. This structural change confirms a building change anomaly, ignoring seasonal vegetation differences.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_expert_score"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0057",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.050000000000000024,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (a new building) was refuted by side-by-side comparison, which showed the structure exists in the reference images. No other anomalies were detected.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0077",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.95,
+    "direct_score": 0.95,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side visual evidence confirms a clear building change anomaly: a cluster of new buildings is present in the query image but completely absent in the reference image at the same location.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0020",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a massive structural change (a dam and buildings) that is completely absent in the reference image. This is a definitive building change anomaly, not a seasonal or natural variation.",
+    "n_turns": 1,
+    "tools_used": [],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0076",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.48500000000000004,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark semi-circular patch on the left side of the road that is absent in all reference images. This feature is not a natural variation and indicates a building change or construction anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0074",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.95,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only candidate anomaly (a white patch in the forest) was confirmed to be a natural feature present in the reference images. The residential area shows no changes. Therefore, the query image is normal.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0010",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a cluster of new buildings in the query image that are absent in all reference images. This confirms a building change anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0061",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "Visual verification via side-by-side comparison confirms a large linear building structure exists in the query image but is absent in the reference image, indicating a clear building change anomaly.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0108",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.95,
+    "direct_score": 0.98,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct new building complex (white structure with dark oval feature) on the right side that is completely absent in the reference image, which shows only open land. This is a clear building change anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0139",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.95,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The high change ratio and uniform heatmap from segment_and_count indicate a global radiometric difference (e.g., lighting, season) rather than a specific building change. No localized structural anomaly was detected.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0103",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.95,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "Visual comparison confirms that structures in the query image are consistent with the reference images. No building changes (additions or removals) are detected; observed variations are within normal limits.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0082",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.935,
+    "direct_score": 0.95,
+    "v9_score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "Despite the blurry tool output, a direct visual comparison of the full query and reference images clearly shows a major structural change: a large construction/excavation site and a new dirt road are present in the reference image but absent in the query image. This constitutes a significant building change anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0017",
+    "domain_code": "D7",
+    "label_gt": 0,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a new white building in the query image that is absent in the reference image. This confirms a building change anomaly.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0119",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.94,
+    "direct_score": 0.98,
+    "v9_score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "Despite the tool failure, the initial visual inspection clearly shows a structural change in the central cul-de-sac area between the query and reference images, indicating a building change anomaly.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0093",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.95,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The difference between the query and reference images is a global seasonal shift (vegetation color change), confirmed by the uniform difference heatmap from segment_and_count. No localized building changes were detected. Domain rules explicitly exclude seasonal changes from being classified as anomalies.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0146",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a highway interchange under construction (exposed earth, temporary structures), while the reference images show the same location as a completed, paved interchange with vegetation. This structural difference is a clear building/infrastructure change anomaly.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0079",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.95,
+    "direct_score": 0.95,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear building change anomaly: a new road and construction site in the bottom-right corner. The side-by-side comparison with reference images confirms this feature is absent in the normal baseline, validating the anomaly detection.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0083",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.515,
+    "direct_score": 0.98,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The segment_and_count analysis revealed widespread, diffuse differences across the image (85.9% change ratio) without a localized peak, which is characteristic of global lighting or seasonal shifts rather than a specific building change. Following domain rules to ignore such artifacts, the image is classified as normal.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_side_by_side",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0114",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.97,
+    "direct_score": 0.99,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a clear building change anomaly with extensive residential development that is completely absent in the reference image. The segment_and_count tool confirmed 39% of cells differ, with high-diff regions matching the new construction areas. This represents a significant structural change from undeveloped land to built residential area, which is a definitive building change anomaly.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0137",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.97,
+    "direct_score": 0.99,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image depicts an undeveloped field, whereas the reference image shows a fully developed residential and commercial area at the same location. This represents a significant building change anomaly (absence of buildings in the query relative to the reference).",
+    "n_turns": 1,
+    "tools_used": [],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0105",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a large residential development in the reference images that is completely absent in the query image. This constitutes a clear building change anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0148",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a significant building change anomaly: a large new housing development on the left side that is not present in the reference image. Although the side-by-side tool failed to render the crops, the full-image comparison provides definitive evidence of the anomaly.",
+    "n_turns": 2,
+    "tools_used": [
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0091",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.965,
+    "direct_score": 0.98,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a completely different building configuration compared to the reference image, indicating a significant building change anomaly (addition or removal of structures) which is the target of this detection task.",
+    "n_turns": 1,
+    "tools_used": [],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0095",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.95,
+    "direct_score": 0.95,
+    "v9_score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a building structure in the query image that is completely absent in all reference images at the same location. This represents a clear building change anomaly, confirmed by both the expert model score (115.7) and visual verification.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0080",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.07500000000000002,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The coarse difference analysis indicates a global lighting or seasonal shift affecting the entire image (92% change ratio, uniform heatmap) rather than a localized building change. Per domain rules, such global variations are not considered anomalies. No specific building addition or removal is evident.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0109",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.95,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows no significant building change compared to the references. The high change ratio detected by the tool is attributed to global lighting/contrast shifts, not a specific anomaly. No new structures or demolition are visible.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0129",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.5,
+    "direct_score": 0.95,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed differences (field color, pond) are consistent with seasonal changes and natural landscape variations, which are explicitly allowed. The change detection heatmap is diffuse, indicating global radiometric shift rather than a localized building anomaly. No building change is detected.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_reference_profiler",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0104",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.985,
+    "direct_score": 0.99,
+    "v9_score": 0.98,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear building change anomaly: a large residential development is present in the query but completely absent in the reference images, which show the same area as open farmland. This difference is confirmed by the side-by-side visual comparison.",
+    "n_turns": 3,
+    "tools_used": [
+      "tool_expert_score",
+      "tool_side_by_side"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D7_0100",
+    "domain_code": "D7",
+    "label_gt": 1,
+    "category": "building",
+    "anomaly_score": 0.050000000000000024,
+    "direct_score": 0.050000000000000044,
+    "v9_score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed differences between the query and reference images are entirely attributable to seasonal vegetation changes (green to brown), which is a normal variation. The change heatmap is diffuse and lacks localized peaks indicative of building construction or demolition. Building footprints and infrastructure remain consistent.",
+    "n_turns": 3,
+    "tools_used": [
+      "segment_and_count",
+      "tool_segment_and_count"
+    ],
+    "error": null,
+    "direct_error": null,
+    "w_direct": 0.5,
+    "w_v9": 0.5,
+    "n_rules_injected": 3,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  }
+]

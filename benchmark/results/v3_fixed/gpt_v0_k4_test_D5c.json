@@ -1,0 +1,3682 @@
+[
+  {
+    "item_id": "D5c_0040",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.21999999999999997,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows a small bright curved fragment consistent with the smaller normal reference examples in shape, texture, and isolation on a black background, with no clear extra object, defect, or deformation.",
+        "confidence": 0.78,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 81
+    },
+    "latency_sec": 4.91,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0046",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a single bright speckled object in the lower central area with shape, texture, and placement consistent with the larger normal reference example; no clear defect, extra object, or deformation is visible.",
+        "confidence": 0.94,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 70
+    },
+    "latency_sec": 5.12,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0027",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is a low, flattened wedge-like fragment near the bottom-right, which does not match the normal reference shapes (round blob, bean-like piece, or curved hook-like forms). Its overall silhouette appears deformed compared with the references.",
+        "confidence": 0.91,
+        "bbox": [
+          0.53,
+          0.67,
+          0.88,
+          0.84
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 98
+    },
+    "latency_sec": 5.78,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0069",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "missing_or_extra_object",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_or_extra_object",
+        "evidence": "Query shows only a very small isolated fragment near the lower center, whereas normal references show substantially larger bone/object structures occupying more area.",
+        "confidence": 0.98,
+        "bbox": [
+          0.455,
+          0.727,
+          0.635,
+          0.781
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 74
+    },
+    "latency_sec": 5.92,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0021",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Compared with the normal references, the query object has a markedly irregular shape with a large central cavity/notch and distorted upper-right extension, indicating structural deformation or damage.",
+        "confidence": 0.95,
+        "bbox": [
+          0.29,
+          0.43,
+          0.92,
+          0.84
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 101
+    },
+    "latency_sec": 3.38,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0077",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query shape is a compact double-lobed blob lacking the normal elongated curved tail/neck seen in references, indicating a deformed overall silhouette.",
+        "confidence": 0.88,
+        "bbox": [
+          0.35,
+          0.38,
+          0.68,
+          0.69
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 77
+    },
+    "latency_sec": 2.89,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0080",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly different silhouette from the normal references, with a detached/offset upper protrusion and missing tall connected structures seen in the references, indicating deformation or structural change in the upper-right region.",
+        "confidence": 0.87,
+        "bbox": [
+          0.42,
+          0.41,
+          0.79,
+          0.77
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 91
+    },
+    "latency_sec": 3.55,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0079",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly different overall shape from the normal references: it appears compact and rounded without the expected elongated upper extension or the smaller separate upper fragment seen in the normal examples.",
+        "confidence": 0.95,
+        "bbox": [
+          0.33,
+          0.45,
+          0.77,
+          0.82
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 105
+    },
+    "latency_sec": 4.08,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0020",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.27,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query object matches the expected small bright textured shape seen in the normal references, with similar overall silhouette and no clear defect, breakage, extra object, or contamination.",
+        "confidence": 0.73,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 63
+    },
+    "latency_sec": 2.92,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0084",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly irregular, distorted shape with protruding lobes and a split/open structure on the right side, unlike the compact smooth shapes in the normal references.",
+        "confidence": 0.98,
+        "bbox": [
+          0.33,
+          0.31,
+          0.78,
+          0.67
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 84
+    },
+    "latency_sec": 3.92,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0028",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly irregular multi-lobed shape and larger extent than the smooth compact reference examples, indicating strong deformation/change in object form.",
+        "confidence": 0.92,
+        "bbox": [
+          0.28,
+          0.43,
+          0.8,
+          0.79
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 97
+    },
+    "latency_sec": 4.23,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0052",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.09999999999999998,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows a single small bright object with shape and texture consistent with one of the normal reference examples; no clear defect, extra object, or abnormal change is visible.",
+        "confidence": 0.9,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 77
+    },
+    "latency_sec": 3.28,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0041",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a pronounced narrow vertical protrusion/stem extending upward from the main body, creating a shape not seen in the normal references.",
+        "confidence": 0.97,
+        "bbox": [
+          0.32,
+          0.4,
+          0.66,
+          0.78
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 97
+    },
+    "latency_sec": 6.94,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0001",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "anomaly_type_pred": "missing_or_extra_object",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_or_extra_object",
+        "evidence": "The query shows a separate small bright fragment above the main object and a noticeably different object silhouette compared with the normal references, which do not show this extra detached piece in this configuration.",
+        "confidence": 0.89,
+        "bbox": [
+          0.425,
+          0.43,
+          0.545,
+          0.71
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 103
+    },
+    "latency_sec": 5.47,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0067",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.18000000000000005,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows a small bright object near the lower center, consistent in appearance with one of the normal reference examples that also contains a small isolated object on a black background. No clear defect, extra object, or deformation is visible.",
+        "confidence": 0.82,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 89
+    },
+    "latency_sec": 3.89,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0050",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a rounded body with a small top protrusion and rightward extension, which does not match the elongated/irregular reference shapes; overall silhouette is substantially deformed relative to the normal references.",
+        "confidence": 0.94,
+        "bbox": [
+          0.35,
+          0.49,
+          0.79,
+          0.85
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 91
+    },
+    "latency_sec": 3.28,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0045",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is a small, compact oval shape, unlike the normal references which are curved/crescent-like or irregular elongated shapes. This indicates a notable shape deformation relative to the reference set.",
+        "confidence": 0.87,
+        "bbox": [
+          0.394,
+          0.705,
+          0.582,
+          0.799
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 88
+    },
+    "latency_sec": 5.25,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0025",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a single small bright textured object near the lower center, matching the normal reference example with a similarly small isolated object and no obvious defect, extra object, or deformation.",
+        "confidence": 0.86,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 64
+    },
+    "latency_sec": 2.71,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0026",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object's silhouette is much wider and more irregular than the normal references, with a pronounced rightward extension/lobe not seen in the reference shapes.",
+        "confidence": 0.9,
+        "bbox": [
+          0.36,
+          0.45,
+          0.8,
+          0.78
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 79
+    },
+    "latency_sec": 3.52,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0022",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.27,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a small bright textured object in the same general lower-right region as one normal reference, with no clear defect, extra object, or abnormal change visible.",
+        "confidence": 0.73,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 61
+    },
+    "latency_sec": 3.04,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0062",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The normal references show a larger curved object with a characteristic hooked/extended shape and central opening, while the query shows only a small rounded fragment-like piece in the lower center, indicating major missing structure/deformation.",
+        "confidence": 0.98,
+        "bbox": [
+          0.42,
+          0.73,
+          0.62,
+          0.9
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 91
+    },
+    "latency_sec": 4.09,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0036",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a noticeably different silhouette from the normal references: it is a single compact shape with a right-side protruding/eroded contour and lacks the characteristic notch/opening and upper structure seen in the reference examples.",
+        "confidence": 0.88,
+        "bbox": [
+          0.28,
+          0.45,
+          0.74,
+          0.8
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 113
+    },
+    "latency_sec": 3.62,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0081",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "anomaly_type_pred": "damage_or_change",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "damage_or_change",
+        "evidence": "Query object is much smaller than the normal references and appears split by a vertical dark gap, indicating a changed/damaged appearance.",
+        "confidence": 0.9,
+        "bbox": [
+          0.46,
+          0.6,
+          0.58,
+          0.7
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 72
+    },
+    "latency_sec": 3.74,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0060",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.83,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly different silhouette from the normal references, showing a double-lobed/deformed shape with a central raised peak rather than the simpler single compact crescent/blob forms seen in the references.",
+        "confidence": 0.83,
+        "bbox": [
+          0.43,
+          0.58,
+          0.69,
+          0.75
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 90
+    },
+    "latency_sec": 3.13,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0029",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is much smaller than the normal references and appears fragmented into a small round piece with a detached/raised protruding segment, unlike the larger continuous reference shapes.",
+        "confidence": 0.98,
+        "bbox": [
+          0.56,
+          0.6,
+          0.7,
+          0.76
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 83
+    },
+    "latency_sec": 3.67,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0085",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.24,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a single small bright oval object near the lower center on a black background, consistent in appearance and context with the normal references; no clear defect, extra object, or deformation is visible.",
+        "confidence": 0.76,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 68
+    },
+    "latency_sec": 3.59,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0064",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object is much larger and vertically elongated with an irregular shape and internal voids/notches, unlike the smaller compact reference shapes.",
+        "confidence": 0.95,
+        "bbox": [
+          0.34,
+          0.18,
+          0.82,
+          0.93
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 75
+    },
+    "latency_sec": 3.02,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0088",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a single small bright oval object near the lower center, matching the normal reference example with the same isolated shape and no visible defect or extra/missing parts.",
+        "confidence": 0.95,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 62
+    },
+    "latency_sec": 2.82,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0010",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.12,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a small isolated bright textured fragment consistent with the smallest normal reference in shape, size range, and appearance; no clear defect, extra object, or abnormal change visible.",
+        "confidence": 0.88,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 64
+    },
+    "latency_sec": 2.65,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0005",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object's silhouette differs markedly from the normal references: it is rotated and has a more rounded, compact shape with an irregular jagged notch/protrusion on the right side instead of the expected elongated crescent-like form.",
+        "confidence": 0.95,
+        "bbox": [
+          0.25,
+          0.47,
+          0.7,
+          0.79
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 94
+    },
+    "latency_sec": 3.19,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0017",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "anomaly_type_pred": "missing_or_extra_object",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_or_extra_object",
+        "evidence": "Query object has a small detached fragment above the main body that is not present in the normal references.",
+        "confidence": 0.96,
+        "bbox": [
+          0.474,
+          0.437,
+          0.527,
+          0.544
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 68
+    },
+    "latency_sec": 3.1,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0008",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object has a split/dual-lobed top with altered silhouette compared with the normal references, which show a single small fragment, a compact apple-like shape, or a smooth crescent. The main shape appears deformed with an unusual central notch/opening.",
+        "confidence": 0.84,
+        "bbox": [
+          0.33,
+          0.4,
+          0.82,
+          0.88
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 101
+    },
+    "latency_sec": 4.64,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0048",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.86,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly different overall shape from the normal references, appearing more compact/rounded with an altered upper detached lobe and irregular internal gap structure compared with the expected reference forms.",
+        "confidence": 0.86,
+        "bbox": [
+          0.28,
+          0.45,
+          0.74,
+          0.84
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 87
+    },
+    "latency_sec": 3.14,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0043",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a small bright object in the same lower-central region with similar shape, texture, and orientation range as the normal references; no clear defect, extra object, or deformation is visible.",
+        "confidence": 0.86,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 67
+    },
+    "latency_sec": 18.59,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0074",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object has a noticeably different overall shape and contour from the normal references, appearing bulkier and deformed with an altered right-side protrusion and top bump.",
+        "confidence": 0.89,
+        "bbox": [
+          0.29,
+          0.45,
+          0.74,
+          0.81
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 81
+    },
+    "latency_sec": 3.44,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0012",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object shows an irregular protruding upper-right segment and altered overall silhouette compared with the normal references, suggesting deformation/broken structure.",
+        "confidence": 0.82,
+        "bbox": [
+          0.43,
+          0.35,
+          0.76,
+          0.69
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 75
+    },
+    "latency_sec": 2.97,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0013",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.38,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query object appears consistent with the range of normal references: a small bright textured fragment on a black background without a clear defect, foreign object, or abnormal alteration.",
+        "confidence": 0.62,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 61
+    },
+    "latency_sec": 2.9,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0089",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object has a markedly different silhouette from the references, with a rounded base plus an upward central protrusion and a rightward curled extension not seen in the normal examples.",
+        "confidence": 0.93,
+        "bbox": [
+          0.24,
+          0.47,
+          0.82,
+          0.86
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 83
+    },
+    "latency_sec": 6.41,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0076",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a very small isolated bright object near the lower center, matching the tiny-object reference appearance without any additional defect, deformation, or foreign object.",
+        "confidence": 0.86,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 59
+    },
+    "latency_sec": 2.83,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0086",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a small bright speckled blob in the lower-central area, consistent in size, position, and appearance with the smaller normal reference examples; no clear defect, extra object, or deformation beyond normal variation.",
+        "confidence": 0.84,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 72
+    },
+    "latency_sec": 2.36,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0007",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.18999999999999995,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query object shows similar overall appearance, texture, and expected shape variation relative to the normal references; no clear defect, missing part, extra object, or contamination is visible.",
+        "confidence": 0.81,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 63
+    },
+    "latency_sec": 3.04,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0014",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object's shape is markedly different from the normal references: it has an elongated upright protrusion and irregular attached structure not seen in the normal examples, indicating a deformed/changed object shape.",
+        "confidence": 0.97,
+        "bbox": [
+          0.34,
+          0.25,
+          0.78,
+          0.83
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 88
+    },
+    "latency_sec": 4.38,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0059",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly different, irregular crescent-like shape with a notched/eroded right side and a small detached fragment above it, unlike the smoother intact reference examples.",
+        "confidence": 0.9,
+        "bbox": [
+          0.4,
+          0.49,
+          0.72,
+          0.8
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 105
+    },
+    "latency_sec": 3.39,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0082",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.31999999999999995,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a single small bright textured object on a black background, consistent in appearance with the normal references; no clear defect, extra object, or abnormal change is visible.",
+        "confidence": 0.68,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 63
+    },
+    "latency_sec": 33.39,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0078",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly altered shape with an extra lobed upper-right protrusion and irregular central notch/opening compared with the smoother single-body reference shapes.",
+        "confidence": 0.94,
+        "bbox": [
+          0.33,
+          0.48,
+          0.73,
+          0.82
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 81
+    },
+    "latency_sec": 2.95,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0075",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object's silhouette is a compact rounded blob, unlike the normal references which show a curved hook/banana-like shape with a distinct elongated extension. The overall shape is markedly deformed.",
+        "confidence": 0.97,
+        "bbox": [
+          0.34,
+          0.35,
+          0.75,
+          0.71
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 86
+    },
+    "latency_sec": 10.2,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0053",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is a much larger irregular connected shape with a broad rounded body and extended rightward protrusion, unlike the smaller compact reference shapes; this indicates a clear shape deformation/change from normal.",
+        "confidence": 0.9,
+        "bbox": [
+          0.31,
+          0.45,
+          0.78,
+          0.78
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 88
+    },
+    "latency_sec": 2.96,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0049",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "anomaly_type_pred": "missing_or_extra_object",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_or_extra_object",
+        "evidence": "The query object has an extra small detached bright spot above the main structure, which is not present in the normal references.",
+        "confidence": 0.94,
+        "bbox": [
+          0.49,
+          0.48,
+          0.54,
+          0.55
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 72
+    },
+    "latency_sec": 4.4,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0065",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is a larger irregular fragment near the lower center, differing in shape and size from the small normal reference fragments and not matching the larger normal shapes.",
+        "confidence": 0.88,
+        "bbox": [
+          0.39,
+          0.54,
+          0.74,
+          0.74
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 81
+    },
+    "latency_sec": 5.25,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0030",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows a single small bright elongated object near the lower center, consistent in size, shape, and appearance with the normal reference example of the small isolated object. No clear extra object, deformation, or defect is visible.",
+        "confidence": 0.94,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 74
+    },
+    "latency_sec": 3.58,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0047",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object is much larger and irregularly deformed compared with the small smooth single-piece references, with an extra folded/protruding upper section.",
+        "confidence": 0.99,
+        "bbox": [
+          0.36,
+          0.35,
+          0.91,
+          0.92
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 78
+    },
+    "latency_sec": 3.08,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0006",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.88,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query shows a larger elongated wedge-like bright object near the lower center-right, which does not match the normal references that show either a small compact oval, a tiny speck, or multi-part shapes. The object\u2019s shape is notably deformed relative to the closest normal compact form.",
+        "confidence": 0.88,
+        "bbox": [
+          0.49,
+          0.64,
+          0.82,
+          0.79
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 106
+    },
+    "latency_sec": 3.3,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0057",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is much smaller and reduced to a tiny isolated fragment compared with the normal reference shapes, indicating severe loss/deformation of the expected structure.",
+        "confidence": 0.95,
+        "bbox": [
+          0.454,
+          0.777,
+          0.575,
+          0.834
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 79
+    },
+    "latency_sec": 2.84,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0072",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.21999999999999997,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query silhouette matches the normal references in overall texture and shape variability; no clear defect, missing part, or foreign object is visible.",
+        "confidence": 0.78,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 55
+    },
+    "latency_sec": 3.31,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0066",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object's silhouette is notably smaller and more compact than the normal references, lacking the expected elongated tail/extension and showing an irregular top notch, indicating shape deformation/change.",
+        "confidence": 0.92,
+        "bbox": [
+          0.42,
+          0.53,
+          0.68,
+          0.72
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 83
+    },
+    "latency_sec": 3.51,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0071",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a broader, cap-like silhouette with a rounded left side and sloped right extension, which does not match the slimmer elongated reference shapes.",
+        "confidence": 0.87,
+        "bbox": [
+          0.3,
+          0.62,
+          0.72,
+          0.92
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 99
+    },
+    "latency_sec": 3.44,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0016",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.19999999999999996,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a small isolated bright fragment near the lower center-right, consistent with the small isolated object seen in the normal references without clear extra damage, deformation, or additional objects.",
+        "confidence": 0.8,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 64
+    },
+    "latency_sec": 4.8,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0018",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a pronounced central split/open gap and irregular upper protrusions compared with the normal references, which show more continuous intact shapes without this separated broken appearance.",
+        "confidence": 0.94,
+        "bbox": [
+          0.38,
+          0.42,
+          0.73,
+          0.77
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 101
+    },
+    "latency_sec": 18.21,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0164",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is a tall, vertically elongated shape with irregular top protrusions, which does not match the rounded/curved reference shapes and appears deformed relative to the normal examples.",
+        "confidence": 0.91,
+        "bbox": [
+          0.44,
+          0.47,
+          0.75,
+          0.93
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 86
+    },
+    "latency_sec": 3.18,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0132",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "contamination_or_artifact",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "contamination_or_artifact",
+        "evidence": "Query object shows a distinct darker round patch on the lower-left portion of the otherwise bright textured object, not seen in the normal references.",
+        "confidence": 0.95,
+        "bbox": [
+          0.26,
+          0.61,
+          0.49,
+          0.83
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 76
+    },
+    "latency_sec": 3.13,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0175",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is a small rounded fragment that does not match the larger, more structured reference shapes and appears truncated/deformed relative to the normal examples.",
+        "confidence": 0.82,
+        "bbox": [
+          0.486,
+          0.678,
+          0.656,
+          0.818
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 79
+    },
+    "latency_sec": 3.29,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0172",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.25,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a single small bright textured blob in the lower central area, consistent in appearance, size range, and placement with the normal references; no clear extra object, defect, or deformation is evident.",
+        "confidence": 0.75,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 69
+    },
+    "latency_sec": 3.48,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0124",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.85,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object's upper-right protruding lobe appears shortened, blunted, and differently shaped compared with the normal references, with altered overall contour in that region.",
+        "confidence": 0.85,
+        "bbox": [
+          0.53,
+          0.42,
+          0.79,
+          0.69
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 81
+    },
+    "latency_sec": 3.1,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0154",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "pathology_or_lesion",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "pathology_or_lesion",
+        "evidence": "The query object matches the small leaf-like reference shape but contains a distinct dark circular spot on its left side that is not present in the normal references.",
+        "confidence": 0.98,
+        "bbox": [
+          0.235,
+          0.625,
+          0.395,
+          0.785
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 80
+    },
+    "latency_sec": 4.36,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0034",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.18999999999999995,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a small isolated bright fragment near the lower center-right, consistent in appearance with one of the normal reference examples that also contains a similar small fragment. No clear extra object, deformation, or surface defect is evident.",
+        "confidence": 0.81,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 73
+    },
+    "latency_sec": 19.54,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0168",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly different silhouette from the normal references, appearing broader and more irregular with a large protruding lower-left mass and changed overall shape.",
+        "confidence": 0.96,
+        "bbox": [
+          0.18,
+          0.26,
+          0.78,
+          0.78
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 99
+    },
+    "latency_sec": 4.27,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0056",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.82,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object has a markedly different silhouette from the normal references, with a larger rounded mass and altered internal notch/opening shape on the right side.",
+        "confidence": 0.82,
+        "bbox": [
+          0.24,
+          0.42,
+          0.77,
+          0.85
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 79
+    },
+    "latency_sec": 28.41,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0096",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "anomaly_type_pred": "missing_or_extra_object",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_or_extra_object",
+        "evidence": "The query shows a much larger, vertically elongated object with a different silhouette than any normal reference, including extra protruding lower lobes and altered overall shape.",
+        "confidence": 0.96,
+        "bbox": [
+          0.31,
+          0.17,
+          0.73,
+          0.91
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 79
+    },
+    "latency_sec": 3.82,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0148",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "missing_or_extra_object",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_or_extra_object",
+        "evidence": "Query shows only a single lower blob-like component, while normal references typically show two separated components or a distinctly different multi-part shape. The upper component appears missing and the overall shape is altered.",
+        "confidence": 0.95,
+        "bbox": [
+          0.26,
+          0.55,
+          0.72,
+          0.84
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 86
+    },
+    "latency_sec": 4.26,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0123",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is much larger and round/irregular in shape, unlike the small elongated or compact reference objects near the lower center.",
+        "confidence": 0.97,
+        "bbox": [
+          0.41,
+          0.53,
+          0.66,
+          0.72
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 76
+    },
+    "latency_sec": 4.02,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0137",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object is only the lower curved portion and lacks the prominent upper/right extension and internal notch/hole structure seen in the normal references, indicating a deformed or incomplete shape.",
+        "confidence": 0.95,
+        "bbox": [
+          0.263,
+          0.491,
+          0.699,
+          0.754
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 84
+    },
+    "latency_sec": 15.38,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0152",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "anomaly_type_pred": "pathology_or_lesion",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "pathology_or_lesion",
+        "evidence": "Query object shows a distinct dark circular spot/void on the left side of the structure that is not present in the most similar normal references; shape is otherwise broadly similar.",
+        "confidence": 0.94,
+        "bbox": [
+          0.237,
+          0.539,
+          0.376,
+          0.681
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 84
+    },
+    "latency_sec": 2.96,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0119",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a noticeably different overall shape and internal structure from the normal references, appearing truncated/deformed with a prominent dense central region and altered upper protrusion.",
+        "confidence": 0.89,
+        "bbox": [
+          0.4,
+          0.53,
+          0.77,
+          0.79
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 82
+    },
+    "latency_sec": 8.0,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0098",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query silhouette is a single fused, irregular shape with a sharp upper protrusion and right-side notch, unlike the normal references which show separate smaller components or different smoother shapes.",
+        "confidence": 0.92,
+        "bbox": [
+          0.28,
+          0.42,
+          0.75,
+          0.86
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 84
+    },
+    "latency_sec": 4.23,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0171",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.31999999999999995,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows a single bright textured object on a black background, consistent with the normal references in overall appearance and no clear localized defect, contamination, or extra/missing structure is evident.",
+        "confidence": 0.68,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 80
+    },
+    "latency_sec": 3.15,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0167",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.86,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a different overall shape from the normal references, with a broader bent form and an internal hole/indentation not seen in the closest normal example.",
+        "confidence": 0.86,
+        "bbox": [
+          0.25,
+          0.5,
+          0.72,
+          0.8
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 82
+    },
+    "latency_sec": 3.01,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0103",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object has a rounded pear-like silhouette that does not match the referenced normal shapes, with a changed top-right contour suggesting deformation/shape change.",
+        "confidence": 0.84,
+        "bbox": [
+          0.29,
+          0.42,
+          0.73,
+          0.82
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 78
+    },
+    "latency_sec": 3.97,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0125",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object's silhouette is markedly different from the normal references: it is larger, has a pronounced inward notch/open side, and an unusual protruding top section not seen in the reference shapes.",
+        "confidence": 0.96,
+        "bbox": [
+          0.29,
+          0.54,
+          0.66,
+          0.86
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 87
+    },
+    "latency_sec": 3.09,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0094",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a markedly different shape from the normal references, with a rounded left body and a protruding pointed extension on the right plus irregular internal dark regions not seen in the references.",
+        "confidence": 0.93,
+        "bbox": [
+          0.27,
+          0.53,
+          0.73,
+          0.79
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 87
+    },
+    "latency_sec": 3.14,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0122",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.27,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query object matches the reference distribution of bright textured blobs on a black background, with no clear defect, foreign object, or missing part evident.",
+        "confidence": 0.73,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 57
+    },
+    "latency_sec": 3.53,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0115",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is much larger and vertically elongated compared with the small, compact reference shapes, indicating a strong shape/size deformation relative to normal.",
+        "confidence": 0.99,
+        "bbox": [
+          0.34,
+          0.19,
+          0.71,
+          0.85
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 97
+    },
+    "latency_sec": 3.64,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0149",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.86,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a noticeably different outline from the normal references, with a slanted/flattened right side and an unusual dark pit-like indentation on the left portion, indicating shape deformation.",
+        "confidence": 0.86,
+        "bbox": [
+          0.36,
+          0.56,
+          0.73,
+          0.84
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 87
+    },
+    "latency_sec": 2.89,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0136",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is much rounder and more compact than the elongated/irregular reference shapes, indicating a changed silhouette/deformation relative to the normal examples.",
+        "confidence": 0.87,
+        "bbox": [
+          0.36,
+          0.53,
+          0.64,
+          0.73
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 99
+    },
+    "latency_sec": 4.22,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0092",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "anomaly_type_pred": "damage_or_change",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "damage_or_change",
+        "evidence": "Query object contains additional large dark internal regions and altered internal structure compared with the normal references, while overall silhouette is roughly similar.",
+        "confidence": 0.91,
+        "bbox": [
+          0.23,
+          0.47,
+          0.79,
+          0.89
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 72
+    },
+    "latency_sec": 4.83,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0139",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query shows only a small isolated fragment near the bottom center, whereas normal references show a larger curved anatomical structure occupying more area; most of the expected structure appears missing/truncated.",
+        "confidence": 0.98,
+        "bbox": [
+          0.45,
+          0.78,
+          0.57,
+          0.88
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 84
+    },
+    "latency_sec": 3.46,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0128",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.84,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a different overall silhouette from the normal references, with an added rounded upper-right lobe and altered contour not seen in the reference shapes.",
+        "confidence": 0.84,
+        "bbox": [
+          0.37,
+          0.46,
+          0.71,
+          0.73
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 80
+    },
+    "latency_sec": 16.84,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0142",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.87,
+    "anomaly_type_pred": "damage_or_change",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "damage_or_change",
+        "evidence": "Query object has an internal dark circular spot/hole in the upper-right portion and altered internal structure compared with the normal references.",
+        "confidence": 0.87,
+        "bbox": [
+          0.62,
+          0.28,
+          0.82,
+          0.5
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 72
+    },
+    "latency_sec": 4.67,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0093",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.36,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query object silhouette and texture are consistent with the normal references; no clear breakage, missing part, or foreign artifact is visible.",
+        "confidence": 0.64,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 55
+    },
+    "latency_sec": 2.79,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0166",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "anomaly_type_pred": "damage_or_change",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "damage_or_change",
+        "evidence": "Query object shape differs markedly from the normal references: it is a taller irregular vertical blob with altered contour and small internal dark voids/notches not seen in the normal examples.",
+        "confidence": 0.89,
+        "bbox": [
+          0.43,
+          0.33,
+          0.76,
+          0.86
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 82
+    },
+    "latency_sec": 4.05,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0160",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.22999999999999998,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query object matches the normal reference examples in overall shape, texture, and isolated bright-object-on-black presentation. No clear defect, foreign object, or missing part is evident beyond normal shape variation seen in references.",
+        "confidence": 0.77,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 70
+    },
+    "latency_sec": 3.31,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0147",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.86,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a more compact, irregular bean-like shape with a pronounced inward notch and altered contour compared with the smoother crescent-like normal references.",
+        "confidence": 0.86,
+        "bbox": [
+          0.38,
+          0.34,
+          0.72,
+          0.73
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 98
+    },
+    "latency_sec": 3.25,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0106",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "anomaly_type_pred": "surface_defect",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "surface_defect",
+        "evidence": "The query object matches the general normal bean-like shape, but there is a distinct dark circular spot/indentation on the left-central surface that is not present in the normal references.",
+        "confidence": 0.93,
+        "bbox": [
+          0.27,
+          0.63,
+          0.4,
+          0.76
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 102
+    },
+    "latency_sec": 4.51,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0121",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is a compact irregular fragment that does not match the normal reference shapes, which are broader curved lobes or elongated hooked forms. It appears deformed/truncated relative to the expected structure.",
+        "confidence": 0.9,
+        "bbox": [
+          0.39,
+          0.38,
+          0.67,
+          0.72
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 89
+    },
+    "latency_sec": 3.45,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0178",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.18000000000000005,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query object shape and texture are consistent with the normal references, showing a similar two-lobed structure without clear defect, foreign object, or missing part.",
+        "confidence": 0.82,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 59
+    },
+    "latency_sec": 2.7,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0157",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "missing_or_extra_object",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "missing_or_extra_object",
+        "evidence": "Query object has an extra small detached bright fragment above the main object that is not present in the normal references.",
+        "confidence": 0.95,
+        "bbox": [
+          0.46,
+          0.48,
+          0.56,
+          0.69
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 70
+    },
+    "latency_sec": 4.56,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0176",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.86,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object has a noticeably different shape and larger compact silhouette compared with the small elongated normal examples, indicating deformation/change in object geometry.",
+        "confidence": 0.86,
+        "bbox": [
+          0.38,
+          0.6,
+          0.69,
+          0.82
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 76
+    },
+    "latency_sec": 4.75,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0105",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object is much larger and irregularly fragmented/assembled compared with the small compact crescent/oval reference objects, with clear deformed shape and internal gap near the upper-right portion.",
+        "confidence": 0.99,
+        "bbox": [
+          0.28,
+          0.34,
+          0.72,
+          0.79
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 86
+    },
+    "latency_sec": 11.57,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0101",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query image matches the normal reference pattern showing the main lower structure with a separate upper fragment; overall shape, separation, and texture are consistent with the normal examples.",
+        "confidence": 0.95,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 76
+    },
+    "latency_sec": 32.97,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0169",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "contamination_or_artifact",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "contamination_or_artifact",
+        "evidence": "The query shows a dark circular spot inside the otherwise uniformly speckled bright object, which is not present in the normal references.",
+        "confidence": 0.95,
+        "bbox": [
+          0.42,
+          0.66,
+          0.53,
+          0.79
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 75
+    },
+    "latency_sec": 4.68,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0140",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "contamination_or_artifact",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "contamination_or_artifact",
+        "evidence": "A distinct dark circular/oval region is present on the lower-left portion of the object, which is not seen in the normal references.",
+        "confidence": 0.98,
+        "bbox": [
+          0.18,
+          0.6,
+          0.42,
+          0.88
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 95
+    },
+    "latency_sec": 6.95,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0156",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.81,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object's silhouette differs from the normal references: it appears as a compact wedge-like shape with a left-side protrusion and lacks the expected larger rounded body/upright extension seen in the references, indicating deformation/change in shape.",
+        "confidence": 0.81,
+        "bbox": [
+          0.28,
+          0.58,
+          0.64,
+          0.83
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 95
+    },
+    "latency_sec": 22.43,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0135",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "surface_defect",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "surface_defect",
+        "evidence": "The query object has a distinct dark circular void/spot inside the bright structure near the right-central area, which is not present in the normal references.",
+        "confidence": 0.95,
+        "bbox": [
+          0.47,
+          0.56,
+          0.64,
+          0.73
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 96
+    },
+    "latency_sec": 5.2,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0114",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.31000000000000005,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, texture, and internal dark notch are consistent with the normal references showing this object in different orientations/sections; no clear extra, missing, broken, or damaged region is evident.",
+        "confidence": 0.69,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 67
+    },
+    "latency_sec": 6.2,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0110",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.30000000000000004,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a small isolated bright object on a black background, consistent with one of the normal reference variations in size, texture, and appearance. No clear defect, breakage, or extra/missing structure is visible.",
+        "confidence": 0.7,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 72
+    },
+    "latency_sec": 3.13,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0117",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query object matches the normal leaf-like reference in overall shape, texture, and pose, with no clear defect, missing part, or foreign object visible.",
+        "confidence": 0.91,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 59
+    },
+    "latency_sec": 2.64,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0112",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object appears fragmented into multiple separated pieces with clear gaps, unlike the intact single connected shapes in the normal references.",
+        "confidence": 0.98,
+        "bbox": [
+          0.23,
+          0.24,
+          0.72,
+          0.79
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 72
+    },
+    "latency_sec": 2.93,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0129",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.91,
+    "anomaly_type_pred": "pathology_or_lesion",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "pathology_or_lesion",
+        "evidence": "Query object shows a distinct small dark hole/lesion-like spot within the bright structure near the lower-central/right area, not seen in the normal references.",
+        "confidence": 0.91,
+        "bbox": [
+          0.45,
+          0.66,
+          0.6,
+          0.82
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 81
+    },
+    "latency_sec": 3.26,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0130",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.20999999999999996,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a small bright curved fragment in the lower-central area, consistent in size, texture, and appearance with the small normal reference examples; no clear defect, extra object, or deformation relative to reference.",
+        "confidence": 0.79,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 70
+    },
+    "latency_sec": 2.7,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0158",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object is much bulkier and more irregular than the normal references, with a prominent upper protruding fragment and deformed contour not seen in the examples.",
+        "confidence": 0.92,
+        "bbox": [
+          0.33,
+          0.45,
+          0.79,
+          0.91
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 80
+    },
+    "latency_sec": 3.33,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0153",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query shows only a small isolated fragment near the bottom center, whereas normal references depict a much larger complete object with fuller structure. This suggests the object is severely reduced/broken or only a fragment remains.",
+        "confidence": 0.98,
+        "bbox": [
+          0.458,
+          0.713,
+          0.642,
+          0.848
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 90
+    },
+    "latency_sec": 3.79,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0097",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "anomaly_type_pred": "pathology_or_lesion",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "pathology_or_lesion",
+        "evidence": "Query object contains several distinct dark circular spots within the main bright structure, not seen in the normal references.",
+        "confidence": 0.96,
+        "bbox": [
+          0.15,
+          0.18,
+          0.8,
+          0.88
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 71
+    },
+    "latency_sec": 2.57,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0126",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object shows only a small detached-looking lower fragment and lacks the tall elongated upper portion seen in all normal references, indicating a major shape loss/deformation.",
+        "confidence": 0.98,
+        "bbox": [
+          0.37,
+          0.6,
+          0.73,
+          0.84
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 81
+    },
+    "latency_sec": 3.22,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0113",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object has a markedly different, larger rounded shape with a pronounced rightward protrusion and internal dark dents compared with the smaller reference shapes, indicating shape deformation/change.",
+        "confidence": 0.9,
+        "bbox": [
+          0.31,
+          0.59,
+          0.74,
+          0.84
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 82
+    },
+    "latency_sec": 13.73,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0134",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is much larger and has a markedly different, deformed crescent-like shape compared with the small compact/elongated normal references.",
+        "confidence": 0.98,
+        "bbox": [
+          0.19,
+          0.56,
+          0.77,
+          0.9
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 97
+    },
+    "latency_sec": 3.44,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0099",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.94,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is much bulkier and more upright than the normal references, lacking the expected thin curved/leaf-like silhouette and showing a deformed overall shape with a small notch near the upper right.",
+        "confidence": 0.94,
+        "bbox": [
+          0.29,
+          0.37,
+          0.76,
+          0.93
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 89
+    },
+    "latency_sec": 3.18,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0104",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "The query object is much smaller and truncated compared with the normal references, with a missing elongated upper portion and altered overall silhouette.",
+        "confidence": 0.95,
+        "bbox": [
+          0.57,
+          0.47,
+          0.79,
+          0.83
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 93
+    },
+    "latency_sec": 3.56,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0144",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.39,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "v0": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shows a single textured white blob on black background, consistent with the reference set's variation in silhouette, size, and orientation; no clear defect, breakage, or foreign artifact is visible.",
+        "confidence": 0.61,
+        "bbox": null
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 68
+    },
+    "latency_sec": 3.08,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0146",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object has a markedly different irregular, enlarged bent shape compared with the small oval/compact reference appearances, indicating strong deformation/change in structure.",
+        "confidence": 0.95,
+        "bbox": [
+          0.23,
+          0.62,
+          0.72,
+          0.91
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 77
+    },
+    "latency_sec": 2.78,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0141",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "anomaly_type_pred": "surface_defect",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "surface_defect",
+        "evidence": "Query object shows several distinct dark circular/patchy spots on the otherwise bright textured surface, which are not present in the normal references.",
+        "confidence": 0.93,
+        "bbox": [
+          0.25,
+          0.18,
+          0.82,
+          0.78
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 74
+    },
+    "latency_sec": 2.91,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0143",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": "breakage_or_deformation",
+    "raw_output": {
+      "v0": {
+        "image_label": "anomalous",
+        "anomaly_type": "breakage_or_deformation",
+        "evidence": "Query object is fragmented into multiple separated pieces with internal gaps, unlike the intact continuous shapes in the normal references.",
+        "confidence": 0.98,
+        "bbox": [
+          0.27,
+          0.24,
+          0.79,
+          0.8
+        ]
+      }
+    },
+    "cost_tokens": {
+      "input": 1738,
+      "output": 71
+    },
+    "latency_sec": 12.25,
+    "error": null
+  }
+]

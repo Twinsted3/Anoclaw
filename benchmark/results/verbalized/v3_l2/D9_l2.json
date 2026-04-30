@@ -1,0 +1,94 @@
+{
+  "domain": "D9",
+  "seed": 0,
+  "k": 10,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D9_0003",
+    "D9_0014",
+    "D9_0044",
+    "D9_0049",
+    "D9_0056",
+    "D9_0060",
+    "D9_0064",
+    "D9_0066",
+    "D9_0067",
+    "D9_0077",
+    "D9_0091",
+    "D9_0096",
+    "D9_0097",
+    "D9_0099",
+    "D9_0104",
+    "D9_0122",
+    "D9_0141",
+    "D9_0160",
+    "D9_0166",
+    "D9_0169"
+  ],
+  "validation_ids": [
+    "D9_0016",
+    "D9_0028",
+    "D9_0037",
+    "D9_0047",
+    "D9_0051",
+    "D9_0053",
+    "D9_0058",
+    "D9_0076",
+    "D9_0083",
+    "D9_0086",
+    "D9_0100",
+    "D9_0101",
+    "D9_0103",
+    "D9_0107",
+    "D9_0128",
+    "D9_0129",
+    "D9_0130",
+    "D9_0133",
+    "D9_0146",
+    "D9_0149"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D9"
+      ],
+      "k": 10,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag mild asymmetry in lateral ventricle size or shape as a tumor anomaly.",
+          "covers_items": [
+            "D9_0066",
+            "D9_0056",
+            "D9_0049"
+          ],
+          "justification": "The agent repeatedly identified natural variations in ventricular symmetry as defects. Normal brains often exhibit slight asymmetry in ventricular horns, which should be tolerated.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Ignore subtle periventricular hyperintensities or signal variations that lack distinct mass effect or borders.",
+          "covers_items": [
+            "D9_0066",
+            "D9_0014",
+            "D9_0049"
+          ],
+          "justification": "The agent flagged diffuse or slight brightness changes in white matter near ventricles as lesions. These are often normal signal variations or non-specific findings, not tumors.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not classify global image blurriness, noise, or low contrast as structural brain anomalies.",
+          "covers_items": [
+            "D9_0003",
+            "D9_0044",
+            "D9_0077"
+          ],
+          "justification": "The agent misinterpreted technical artifacts (blur, noise, dark voids from low res) as physical defects like 'dark voids' or 'distorted anatomy'. These are acquisition issues, not pathology.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    }
+  ]
+}

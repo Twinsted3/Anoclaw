@@ -1,0 +1,252 @@
+{
+  "overall": {
+    "n_items": 120,
+    "n_errors": 0,
+    "auroc": 0.7116666666666668,
+    "auroc_ci": [
+      0.6183092650103521,
+      0.8066729910714285
+    ],
+    "balanced_accuracy": 0.6833333333333333,
+    "ba_ci": [
+      0.5999825174825176,
+      0.7575835077113849
+    ],
+    "f1_binary": 0.7246376811594203,
+    "f1_macro": 0.6760443307757886,
+    "confusion_matrix": [
+      [
+        32,
+        28
+      ],
+      [
+        10,
+        50
+      ]
+    ],
+    "cost_tokens_in_per_100": 79107.0,
+    "cost_tokens_out_per_100": 7823.0,
+    "avg_latency_sec": 3.77
+  },
+  "macro_avg_auroc": 0.7183333333333334,
+  "macro_avg_ba": 0.6833333333333335,
+  "per_domain": {
+    "D1": {
+      "domain": "industrial",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 0.85,
+      "auroc_ci": [
+        0.595959595959596,
+        1.0
+      ],
+      "balanced_accuracy": 0.8500000000000001,
+      "ba_ci": [
+        0.6515151515151515,
+        1.0
+      ],
+      "f1_binary": 0.8571428571428571,
+      "f1_macro": 0.849624060150376,
+      "confusion_matrix": [
+        [
+          8,
+          2
+        ],
+        [
+          1,
+          9
+        ]
+      ],
+      "cost_tokens_in_per_100": 111800.0,
+      "cost_tokens_out_per_100": 7585.0,
+      "avg_latency_sec": 4.23
+    },
+    "D2": {
+      "domain": "retail",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 0.4,
+      "auroc_ci": [
+        0.15147727272727274,
+        0.6566350316350316
+      ],
+      "balanced_accuracy": 0.5,
+      "ba_ci": [
+        0.35,
+        0.65
+      ],
+      "f1_binary": 0.6428571428571429,
+      "f1_macro": 0.40476190476190477,
+      "confusion_matrix": [
+        [
+          1,
+          9
+        ],
+        [
+          1,
+          9
+        ]
+      ],
+      "cost_tokens_in_per_100": 112000.0,
+      "cost_tokens_out_per_100": 8290.0,
+      "avg_latency_sec": 4.28
+    },
+    "D4": {
+      "domain": "maintenance",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 0.8700000000000001,
+      "auroc_ci": [
+        0.6262310606060606,
+        1.0
+      ],
+      "balanced_accuracy": 0.8,
+      "ba_ci": [
+        0.6000000000000001,
+        0.9583333333333333
+      ],
+      "f1_binary": 0.8181818181818182,
+      "f1_macro": 0.797979797979798,
+      "confusion_matrix": [
+        [
+          7,
+          3
+        ],
+        [
+          1,
+          9
+        ]
+      ],
+      "cost_tokens_in_per_100": 42600.0,
+      "cost_tokens_out_per_100": 6985.0,
+      "avg_latency_sec": 3.32
+    },
+    "D5": {
+      "domain": "medical",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 0.43499999999999994,
+      "auroc_ci": [
+        0.17996428571428574,
+        0.7222222222222221
+      ],
+      "balanced_accuracy": 0.45,
+      "ba_ci": [
+        0.2940563725490197,
+        0.6154411764705883
+      ],
+      "f1_binary": 0.5925925925925926,
+      "f1_macro": 0.3732193732193732,
+      "confusion_matrix": [
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          8
+        ]
+      ],
+      "cost_tokens_in_per_100": 65920.0,
+      "cost_tokens_out_per_100": 9385.0,
+      "avg_latency_sec": 3.83
+    },
+    "D7": {
+      "domain": "road",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 1.0,
+      "auroc_ci": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 0.8,
+      "ba_ci": [
+        0.6428571428571428,
+        0.95
+      ],
+      "f1_binary": 0.8333333333333334,
+      "f1_macro": 0.7916666666666667,
+      "confusion_matrix": [
+        [
+          6,
+          4
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "cost_tokens_in_per_100": 71020.0,
+      "cost_tokens_out_per_100": 7835.0,
+      "avg_latency_sec": 3.7
+    },
+    "D8": {
+      "domain": "surveillance",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 0.755,
+      "auroc_ci": [
+        0.5049242424242426,
+        0.9393939393939394
+      ],
+      "balanced_accuracy": 0.7,
+      "ba_ci": [
+        0.5,
+        0.8809523809523809
+      ],
+      "f1_binary": 0.625,
+      "f1_macro": 0.6875,
+      "confusion_matrix": [
+        [
+          9,
+          1
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "cost_tokens_in_per_100": 71300.0,
+      "cost_tokens_out_per_100": 6860.0,
+      "avg_latency_sec": 3.23
+    }
+  },
+  "per_split": {
+    "calibration": {
+      "n_items": 120,
+      "n_errors": 0,
+      "auroc": 0.7116666666666668,
+      "auroc_ci": [
+        0.6183092650103521,
+        0.8066729910714285
+      ],
+      "balanced_accuracy": 0.6833333333333333,
+      "ba_ci": [
+        0.5999825174825176,
+        0.7575835077113849
+      ],
+      "f1_binary": 0.7246376811594203,
+      "f1_macro": 0.6760443307757886,
+      "confusion_matrix": [
+        [
+          32,
+          28
+        ],
+        [
+          10,
+          50
+        ]
+      ],
+      "cost_tokens_in_per_100": 79107.0,
+      "cost_tokens_out_per_100": 7823.0,
+      "avg_latency_sec": 3.77
+    }
+  }
+}

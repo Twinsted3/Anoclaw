@@ -1,0 +1,1802 @@
+[
+  {
+    "item_id": "D4_0027",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark pit/chip in the lower right region that is absent in all reference images, confirming it as a surface degradation anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0036",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark mark in the lower-right region that is not present in the reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0011",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear, dark, jagged linear crack in the center that is absent in all reference images, which display only normal granular concrete texture. This confirms the presence of a crack anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0071",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots initially suspected as anomalies were found to be present in the normal reference images, indicating they are part of the natural texture variation of the concrete surface. No other defect-like features were identified.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0062",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the natural speckling and aggregate variation seen in the provided normal reference images. No unique defect features were found that distinguish the query from the normal baseline.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0024",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots initially suspected as defects are present in the normal reference images, confirming they are part of the standard concrete texture variation. No unique anomaly was found.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0075",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark mark) was successfully refuted by finding identical features in the normal reference images (specifically Ref 3). Therefore, the query image is classified as normal.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0026",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear mark that is absent in all reference images, which display only normal granular concrete texture. This confirms the presence of a crack anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0083",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots initially suspected as anomalies are present in the normal reference images, indicating they are part of the standard surface texture and not defects.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0021",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower-right quadrant that is not present in the reference images. This localized feature contrasts with the normal concrete texture and is indicative of a surface defect, leading to a high anomaly score.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0014",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the natural speckling and minor imperfections present in the normal reference images. No unique defect features were found that distinguish the query as anomalous.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0057",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots identified as potential defects in the query image are also present in the normal reference images. Therefore, they are classified as normal texture variations, and the image is considered normal.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0080",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear crack in the lower-left region. Side-by-side comparison with reference images confirms this linear discontinuity is absent in the normal reference pool, which only exhibits granular texture or minor pitting. Therefore, the image is anomalous.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0072",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the natural speckling and minor imperfections seen in the normal reference images. No distinct crack-like features were identified that are absent from the reference set.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0055",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark chip/pit in the bottom-right region that is absent in all reference images, confirming it as a surface degradation anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0087",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear mark that is not present in any of the reference images, which display only normal granular concrete texture. This confirms the presence of a crack anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0061",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark chip/pit in the bottom-right corner that is absent in all reference images, confirming a surface defect.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0056",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots and textural variations in the query image are consistent with the normal variations seen in the reference images, indicating no anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0064",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear linear crack that is not present in any of the normal reference images, confirming an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0041",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear mark (crack) that is not present in any of the normal reference images, confirming an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0040",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear crack in the lower right quadrant. The side-by-side comparison with reference images confirms this feature is absent in the normal baseline, identifying it as a definitive anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0000",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular spot in the lower-left region that is absent in the corresponding regions of all reference images. This feature is not a normal texture variation and is therefore classified as an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0017",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear crack in the lower-left region. The side-by-side comparison with normal reference images confirms that this linear discontinuity is not a natural feature of the concrete texture, as it is absent in all reference samples. Therefore, the image is classified as anomalous.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0037",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark spot) was refuted by the side-by-side comparison, which showed similar features in the normal reference images. The query image exhibits only normal concrete texture variations.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0078",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear mark (crack) that is not present in any of the normal reference images, confirming an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0053",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear crack in the lower right region. This feature is absent in the reference images, which display only normal granular concrete texture. The feature survives refutation, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0003",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms the presence of a distinct dark irregular mark in the query image that is absent in the reference images, identifying it as an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0046",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower-right region that is not present in the corresponding regions of the normal reference images. This feature survives refutation and is consistent with a localized defect such as a stain or chip.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0059",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots initially flagged as potential anomalies are confirmed to be normal texture variations, as they are present in the provided reference images. No other defect-like features remain.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0025",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear discontinuity in the lower-right region that is absent in all normal reference images. This feature satisfies the criteria for a crack anomaly and survives the refutation protocol.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0050",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular chip or pit on the right side that is absent in all reference images, confirming it as a surface defect.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0084",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear mark that is absent in all reference images, which display only normal granular concrete texture. This confirms the presence of a crack anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0088",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected dark spots in the query image are consistent with normal surface pits/pores observed in the reference images (specifically Ref 3) and do not exhibit the linear, jagged characteristics of cracks.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0028",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower right that represents localized surface degradation (a chip or pit). This feature is absent in the reference images, which show normal concrete textures. Therefore, the image is anomalous.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0019",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the 'random dark speckles' allowed variation seen in the normal reference images. Visual comparison confirms no unique defects are present.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0051",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The dark, irregular mark in the lower-right of the query image is a distinct defect not present in the normal reference images, indicating an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0043",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the 'random dark speckles' identified as an allowed variation in the reference images. No features survive the refutation protocol, indicating the surface is normal.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0004",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark chip/pit on the right side that is absent in all reference images, which exhibit a uniform granular texture. This confirms the presence of a surface defect.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0060",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark chip/void on the right side that is absent in all reference images. This localized surface degradation is a clear anomaly relative to the normal granular texture.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0048",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the 'random dark speckles' allowed variation seen in the reference images. Visual comparison confirms no unique defects are present.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0067",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect features (dark spots) were successfully refuted by observing similar features in the normal reference images. The query image exhibits normal concrete texture variation without distinct cracks or anomalies.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0081",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear linear crack in the lower-left region that is not present in any of the reference images, confirming an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0032",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark chip/pit defect on the right side. The side-by-side comparison with reference images confirms this feature is absent in the normal baseline, validating it as an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0065",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect features (dark spots) were successfully refuted by comparing them to the reference images, which show similar natural speckling. No anomalous cracks or damage were detected.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0047",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear discontinuity (crack) that is not present in any of the normal reference images, confirming an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0082",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the faint linear marks in the query image are not present in the reference images, indicating they are genuine cracks rather than normal texture variations.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0006",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomalies (dark spots) are present in the normal reference images, indicating they are natural surface variations rather than defects. No unique crack-like features were found in the query.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0063",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular mark (chip/pit) on the right side that is not present in the reference images. This feature represents localized surface degradation and is therefore an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0023",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear crack that is absent in all reference images, which display only normal granular concrete texture. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0008",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect features (dark spots) were successfully refuted by observing their presence in the normal reference images. The query image exhibits only normal textural variations.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0058",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear mark (crack) that is not present in any of the reference images, which show only normal granular concrete texture. The feature survives refutation, confirming the anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0079",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots observed in the query image are consistent with the natural speckling and minor imperfections found in the reference images. Since these features are present in the normal reference pool, they are not considered anomalies.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0045",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear mark in the lower-left region that is absent in the corresponding regions of all reference images. This feature matches the definition of a crack anomaly and survives the refutation protocol.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0039",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect features (dark spots) were successfully refuted by showing they exist as normal variations in the reference images. The query image exhibits standard concrete texture without anomalies.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0054",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark spots initially flagged as potential anomalies are confirmed to be normal texture variations, as they are present in the provided reference images. No unique defects were found.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0069",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, jagged linear mark that is absent in all reference images. This feature represents a linear discontinuity consistent with a concrete crack, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0030",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular mark in the lower right quadrant that is not present in the reference images, which show only normal concrete textures. This feature survives refutation and indicates a surface anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0001",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear dark linear crack in the lower right, which is not present in any of the normal reference images. The feature survives refutation, confirming the anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0076",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0034",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains distinct, large dark irregular spots that are absent in the reference images, which only show fine, uniform speckling. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0167",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular spot that is not present in any of the reference images, which show uniform granular textures. This feature survives refutation and is identified as an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0152",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct linear crack that is not present in any of the provided normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0142",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected linear mark in the query image is consistent with natural texture variations found in the reference images and does not exhibit the distinct characteristics of a crack. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0179",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular spot that is not present in the corresponding regions of the normal reference images. This feature survives the refutation protocol and is identified as an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0103",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The dark irregular spot in the query image is a distinct feature not found in the normal reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0177",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical crack on the left side. The side-by-side comparison with reference images confirms that this linear discontinuity is not present in the normal concrete texture samples, validating it as a defect.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0135",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack in the top-right region that is absent in all reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0137",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect (dark speckle) was successfully refuted by the side-by-side comparison, which showed identical features in the normal reference images. No other anomalies were detected.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0146",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, jagged linear crack that is absent in all reference images, which display only normal concrete texture. The feature survives refutation, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0134",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark irregular mark that is not present in any of the reference images, which only show normal fine speckling. This feature survives refutation and is classified as an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0158",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct linear crack on the left side, which is a clear defect. This feature was not found in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0175",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is not present in the normal reference images. The refutation protocol confirms this feature is an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0154",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark pit (surface degradation) that is not present in the reference images, which only show normal aggregate or smooth texture. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0141",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The dark irregular spot in the query image is a distinct feature not present in the normal reference images, indicating a surface defect such as pitting or contamination.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0150",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected defect (dark mark) was found to be consistent with normal surface speckling and pitting observed in the reference images. No unique anomalies were detected.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0166",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The dark irregular spot in the query image is a distinct feature not found in the normal reference images, indicating a surface anomaly such as a stain or defect.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0090",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular mark that is absent in the normal reference images, indicating a surface defect such as a stain or pit.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0163",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is not present in any of the normal reference images, confirming an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0147",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear linear crack, a structural defect not present in any of the normal reference images. The refutation protocol confirms this feature is unique to the query, leading to a high anomaly score.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0104",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is not present in any of the normal reference images. The side-by-side comparison successfully refuted the possibility of this being a normal texture variation, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0140",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct crack in the top-left corner that is absent in all normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0125",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark spot) was compared against reference images and found to be a normal variation of the concrete surface texture (pitting/exposed aggregate), not a defect.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0130",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is not present in any of the normal reference images, which only exhibit random speckling. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0155",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical crack that is not present in any of the normal reference images. The refutation protocol confirms this feature is an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0157",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (a small dark speck) was compared against reference images and found to be a normal surface characteristic. No other defects were observed.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0118",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular spot that is absent in the normal reference images, indicating a surface defect or anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0121",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear mark (crack) that is absent in the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0171",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark mark) was refuted by the side-by-side comparison, which showed it is a natural surface pit similar to those in the reference images. No other defect-like features remain.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0098",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct linear crack that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0133",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, dark, irregular mark that is not present in any of the normal reference images. This feature survives the refutation protocol and is classified as an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0138",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark spot that is absent in the normal reference images, confirming it as an anomaly (likely a stain or defect) rather than a normal texture variation.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0116",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark spot that is not present in the normal reference images, indicating a localized surface defect.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0178",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack in the lower region that is completely absent in the reference images, which show only normal concrete texture. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0145",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark spot) was refuted by the side-by-side comparison, which showed similar features in the normal reference images. Therefore, the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0106",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct dark, irregular spot that is absent in the corresponding regions of the normal reference images. This feature survives the refutation protocol, confirming it as an anomaly (likely a defect like pitting or contamination).",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0096",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct isolated dark spot/pit that is not present in any of the reference images. This feature represents localized surface degradation (pitting) and is therefore classified as an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0164",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0102",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical crack that is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0176",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0111",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack in the bottom right corner, which is absent in all normal reference images. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0119",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular spot that is not present in the normal reference images. This feature survives the refutation protocol and is identified as a surface defect (stain or pit).",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0122",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is absent in all reference images, confirming it as an anomaly according to the refutation protocol.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0113",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack on the left side that is not present in any of the reference images, which only show normal concrete texture. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0129",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms the presence of a distinct dark spot in the query image that is absent in the reference images, indicating a surface defect such as a pit or stain.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0099",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected crack-like features in the query image are also present in the normal reference images, confirming they are part of the standard surface texture and not anomalies.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0153",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, faint linear mark that is not present in the normal reference images. This feature matches the description of a concrete crack (thin, dark, linear discontinuity) and survives the refutation process, indicating an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0124",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, jagged linear crack that is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0144",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The dark irregular spot in the query image is a distinct feature not present in the normal reference images, indicating a likely anomaly such as a stain or surface defect.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0148",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, irregular mark that is absent in the reference images, which only exhibit fine, uniform speckling. This feature is consistent with a defect (e.g., contamination or crack) and survives refutation.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0107",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct diagonal linear mark (crack) that is not present in the normal reference images, confirming an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0093",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is absent in the reference images, confirming an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0105",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear linear crack in the lower region, which is absent in all reference images showing normal concrete texture. This distinct discontinuity confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D4_0165",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms the presence of a distinct dark irregular mark in the query image that is absent in the reference images, which only show normal fine speckling. This feature is significantly larger and darker than the background texture, indicating an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0092",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected dark specks in the query image are consistent with the natural granular texture and minor variations observed in the normal reference images. No unique defect was identified.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0139",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, irregular mark near the bottom center that is significantly larger and darker than the fine speckling seen in the reference images. This feature is unique to the query and does not appear in the normal reference pool, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0162",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, irregular mark that is significantly larger and darker than the normal speckling observed in the reference images. This feature survives refutation as it is not present in the normal baseline, indicating an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "wall",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0100",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark linear crack that is absent in all reference images, which display only normal granular concrete texture. The feature survives refutation, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0109",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0131",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical crack that is absent in all reference images, which display only normal concrete texture variations. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "deck",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D4_0114",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct vertical crack on the right side, which is a linear discontinuity not present in the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D4",
+    "category": "pavement",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "corrective_fn",
+      "corrective_fn"
+    ]
+  }
+]

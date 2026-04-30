@@ -1,0 +1,70 @@
+{
+  "domain_code": "D1",
+  "n_rules": 5,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image contains complex textures (e.g., metallic strands, speckled surfaces) and Branch B cites 'discoloration', 'oxidation', or 'dirt' as the anomaly, trust A (Agent) to distinguish these from normal manufacturing variations.",
+      "source_items": [
+        "D1_0009",
+        "D1_0016",
+        "D1_0038",
+        "D1_0064"
+      ],
+      "confidence": "oracle",
+      "id": "D1_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B claims a 'missing logo' or 'missing text' on a capsule or similar object, trust A (Agent) to verify if the text is actually present but obscured by lighting or angle, or if the object variant legitimately lacks the text.",
+      "source_items": [
+        "D1_0009",
+        "D1_0016",
+        "D1_0038",
+        "D1_0064"
+      ],
+      "confidence": "oracle",
+      "id": "D1_meta_a_win_1"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B's rationale focuses on subtle color shifts in metallic components (like copper strands) while Branch A explicitly notes consistency with reference strand arrangements, trust A (Agent).",
+      "source_items": [
+        "D1_0009",
+        "D1_0016",
+        "D1_0038",
+        "D1_0064"
+      ],
+      "confidence": "oracle",
+      "id": "D1_meta_a_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a distinct geometric object with sharp edges (e.g., a metal part) and Branch B identifies a specific 'breakage', 'chip', or 'deformation' at a protrusion or corner, trust B (Direct).",
+      "source_items": [
+        "D1_0179"
+      ],
+      "confidence": "oracle",
+      "id": "D1_meta_b_win_3"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the anomaly is a clear structural discontinuity (like a missing tip or jagged edge) that contradicts the smooth geometry of the reference, trust B (Direct) over A's general 'consistent texture' assessment.",
+      "source_items": [
+        "D1_0179"
+      ],
+      "confidence": "oracle",
+      "id": "D1_meta_b_win_4"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 4,
+    "n_b_wins": 1
+  }
+}

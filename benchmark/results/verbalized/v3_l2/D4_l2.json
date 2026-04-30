@@ -1,0 +1,164 @@
+{
+  "domain": "D4",
+  "seed": 0,
+  "k": 10,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D4_0009",
+    "D4_0010",
+    "D4_0018",
+    "D4_0022",
+    "D4_0038",
+    "D4_0049",
+    "D4_0052",
+    "D4_0066",
+    "D4_0070",
+    "D4_0074",
+    "D4_0091",
+    "D4_0094",
+    "D4_0095",
+    "D4_0101",
+    "D4_0123",
+    "D4_0127",
+    "D4_0160",
+    "D4_0169",
+    "D4_0172",
+    "D4_0174"
+  ],
+  "validation_ids": [
+    "D4_0013",
+    "D4_0015",
+    "D4_0016",
+    "D4_0020",
+    "D4_0031",
+    "D4_0033",
+    "D4_0044",
+    "D4_0073",
+    "D4_0085",
+    "D4_0086",
+    "D4_0110",
+    "D4_0112",
+    "D4_0115",
+    "D4_0126",
+    "D4_0128",
+    "D4_0132",
+    "D4_0143",
+    "D4_0159",
+    "D4_0161",
+    "D4_0168"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D4",
+        "pavement"
+      ],
+      "k": 7,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag distinct linear discontinuities (cracks) and localized surface degradation (pitting, exposed aggregate) regardless of background texture.",
+          "covers_items": [
+            "D4_0101",
+            "D4_0160"
+          ],
+          "justification": "The agent missed clear structural cracks and severe pitting, likely confusing them with general texture. These are distinct geometric defects, not texture noise.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag isolated dark spots or irregular marks that are distinct from the surrounding aggregate pattern, even if small.",
+          "covers_items": [
+            "D4_0169",
+            "D4_0174"
+          ],
+          "justification": "The agent dismissed distinct dark spots as 'natural variation' or 'shadows'. These items show localized anomalies that break the surface continuity.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag scattered small indentations or grain density fluctuations if they are consistent with the reference surface texture.",
+          "covers_items": [
+            "D4_0066",
+            "D4_0010"
+          ],
+          "justification": "The agent over-flagged natural surface roughness and aggregate distribution as defects. These are inherent to the material, not anomalies.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag dark irregular marks if they appear to be shadows or natural aggregate variations matching the reference profile.",
+          "covers_items": [
+            "D4_0009"
+          ],
+          "justification": "The agent flagged a dark mark as an anomaly, but it was a normal feature of the textured surface (likely a shadow or aggregate).",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D4",
+        "wall"
+      ],
+      "k": 5,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag distinct, isolated dark irregular marks that are significantly larger or darker than the background speckling.",
+          "covers_items": [
+            "D4_0094"
+          ],
+          "justification": "The agent missed a clear anomaly because it was a single, isolated dark mark rather than a crack. The rule distinguishes these 'blotches' from the fine, random speckling allowed in the reference.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag scattered, small dark speckles or spots if they are consistent with the random texture variation seen in reference images.",
+          "covers_items": [
+            "D4_0052",
+            "D4_0074",
+            "D4_0018",
+            "D4_0038"
+          ],
+          "justification": "The agent consistently over-flagged normal concrete surfaces by misidentifying inherent random dark speckles as defects. The reference profiler explicitly lists these as allowed variations.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D4",
+        "deck"
+      ],
+      "k": 8,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag thin, dark, jagged linear marks as cracks even if they appear faint or short against the concrete texture.",
+          "covers_items": [
+            "D4_0091",
+            "D4_0123",
+            "D4_0095"
+          ],
+          "justification": "The agent missed clear structural cracks (D4_0091, D4_0095) and dark linear marks (D4_0123) because they were subtle or short. These distinct linear features are definitive anomalies regardless of their prominence.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag global coarse aggregate texture or multi-colored particle distribution as anomalies if no distinct linear cracks are present.",
+          "covers_items": [
+            "D4_0022",
+            "D4_0049",
+            "D4_0070"
+          ],
+          "justification": "The agent incorrectly flagged natural concrete surface variations (coarse texture, color variance) as anomalies. These are inherent material properties, not defects, and should be ignored unless accompanied by a crack.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    }
+  ]
+}

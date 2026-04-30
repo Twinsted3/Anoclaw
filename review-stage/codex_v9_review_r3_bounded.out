@@ -1,0 +1,520 @@
+Reading prompt from stdin...
+OpenAI Codex v0.120.0 (research preview)
+--------
+workdir: /hdd1/jiangxi/AD-Agent
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: high
+reasoning summaries: none
+session id: 019daa32-a137-7981-b9b2-ec409b2211ed
+--------
+user
+You are an adversarial senior ML reviewer (NeurIPS/ICML level).
+Round 3 of the AD-Agent autonomous review loop.
+Prior rounds: R1=5.0 (not ready), R2=5.8 (not ready). Full log: review-stage/AUTO_REVIEW.md
+What is new in R3: §4.7 was deleted and replaced by a new §5 Verbalized Self-Evolution.
+Focus this round only on §5 method design, motivation, and experimental protocol.
+Accept the 'tbd' table entries as placeholders — experiments running in background.
+
+========== paper/sections/verbalized.tex ==========
+\section{Verbalized Self-Evolution}
+\label{sec:verbalized}
+
+Passive v9 (\S\ref{sec:experiments}) re-reads the normal reference images
+on every test query but never \emph{accumulates} anything from them:
+the same ref set produces the same ad-hoc reasoning trace a thousand
+times. The retrieval-based active-learning pilot we originally
+attempted (pre-review appendix, cf.\ \citet{al_pilot_appendix})
+partially addressed this by injecting a DINOv2-CLS-retrieved neighbour
+prior, but was bottlenecked by what visual-similarity embeddings can
+express: on \emph{logical} anomalies (wrong count, misordered
+components) no DINOv2-CLS neighbour encodes the defining predicate,
+and the pilot indeed regressed $-4.0$ pp on D5 MVTec-LOCO.
+
+This section introduces a \textbf{verbalized self-evolution} protocol
+that learns a persistent, natural-language \emph{rulebook} per domain
+(or per class, where applicable) and injects it into the agent's
+turn-$1$ system prompt at test time. Because rules are natural
+language, they can capture predicates the visual embedding cannot
+(``count the legs'', ``screws should be aligned''), and because the
+rulebook is produced \emph{once} per domain, its cost amortises across
+all test queries in that domain.
+
+\subsection{Three learning regimes}
+\label{ssec:verb_regimes}
+
+We frame this as a ladder of three learning regimes; the choice is
+about \emph{how much supervision the system touches}, not whether a
+rulebook is used at inference time:
+
+\begin{description}
+\item[\textbf{Passive v9}] — training-free. No rulebook; refs are read
+  per-query as in \S\ref{ssec:main_results}. This is the baseline.
+\item[\textbf{L1 — ref-only rulebook} (self-supervised, $0$ oracle)]
+  — reflect on the normal reference pool and emit a persistent
+  rulebook containing a \emph{normal signature} and a set of
+  \emph{hypothesized anomaly modes}. Uses zero oracle labels. The
+  rulebook \emph{is} a learned artifact; we therefore do not call L1
+  training-free, despite it touching no new labels.
+\item[\textbf{L2 — active verbalized rulebook} (semi-supervised,
+  $K{=}10$ oracle per domain)] — run passive v9 on dev, pick the $K$
+  highest-uncertainty dev items ($|s{-}0.5|$ smallest), obtain their
+  ground-truth labels from the dev manifest, and reflect each
+  (image, agent trajectory, label) tuple into a \emph{corrective
+  rule}. Only dev items are revealed; test labels are never touched.
+\item[\textbf{L1+L2 — stacked rulebook}] — concatenate the L1 rulebook
+  and the L2 corrective rules into a single domain rulebook.
+  Oracle budget is $K$ per domain (same as L2 alone).
+\end{description}
+
+L1 and L2 capture complementary biases. L1 reads only normal images
+and therefore has a \emph{predict-normal bias}: its
+\emph{hypothesized anomaly modes} are reasoned from the function and
+structure of the ref objects, but never from a real anomaly, so the
+rulebook tends to over-accept borderline queries. L2 reads exactly
+the dev items Passive v9 is most uncertain about, so its corrective
+rules are concentrated on borderline cases and naturally pull in the
+opposite direction — adding anomaly modes for dev false-negatives and
+tolerances for dev false-positives. The L1+L2 stack therefore tests
+whether the two sources combine super-additively.
+
+\subsection{Method}
+\label{ssec:verb_method}
+
+\paragraph{Rulebook granularity.} We use an adaptive granularity that
+follows the dataset schema rather than a tuned hyperparameter: for
+domains with more than one class in the \texttt{manifests\_v2}
+taxonomy (D1 industrial / $15$ classes, D2 retail / $6$, D3
+VisA / $12$, D4 infrastructure / $3$, D5 MVTec-LOCO / $5$, D6
+Real3D-AD / $11$) we build a \emph{per-class} rulebook; for the
+six single-class domains (D7--D12) we build a single
+\emph{per-domain} rulebook. At test time the rulebook for the query's
+(domain, class) tuple is injected; the lookup uses the manifest
+\texttt{category} field, not an oracle class prediction from the
+model.
+
+\paragraph{L1 protocol.} For each rulebook unit (class or single-class
+domain), sample $\min(8,\;|\mathrm{refs}|)$ reference images. A
+reflector VLM — the \emph{same} backbone used for the query-time
+agent, no stronger model — is asked to emit a strict-JSON rulebook of
+the form
+\begin{quote}\small\ttfamily
+\{"normal\_signature":["...","..."],
+  "hypothesized\_anomaly\_modes":["...","..."],\\
+ "rules":["if X then lean anomaly","if Y then lean normal"]\}
+\end{quote}
+The two-field decomposition is a hard requirement of the prompt:
+requiring \emph{both} a normal signature and an enumerated anomaly
+mode list is our primary counter-measure against L1's predict-normal
+bias, and we measure its effect directly
+(\S\ref{ssec:verb_bias_diagnostic}).
+The reflector sees only ref images, no query and no oracle — so L1
+uses zero dev or test exposure.
+
+\paragraph{L2 protocol.} Run Passive v9 on all $40$ dev items per
+domain. Let $\mathcal{U}_K$ be the set of $K{=}10$ dev items with the
+smallest $|s{-}0.5|$. For each $i\in\mathcal{U}_K$, reveal its
+manifest label $y_i$. A reflector VLM receives
+$(x_i,\;\text{agent trajectory}_i,\;y_i,\;\text{L1 rulebook})$ and emits
+either (a) an \emph{anomaly-mode extension} when $y_i{=}1$ and the
+agent missed it, or (b) a \emph{normal-signature tolerance} when
+$y_i{=}0$ and the agent over-flagged. The reflector writes at most
+one rule per dev item. The remaining $30$ dev items are held out as
+a \textbf{rule-quality holdout} (\S\ref{ssec:verb_holdout}) and are
+not touched by the reflector.
+
+\paragraph{Stacking.} The L1+L2 rulebook is the string concatenation
+\texttt{[L1 signature] $\parallel$ [L1 anomaly modes $\cup$ L2
+extensions] $\parallel$ [L1 rules $\cup$ L2 corrective rules]}, with
+de-duplication at the rule-string level. Rules coming from L2 are
+marked ``(corrective)''; we leave a principled conflict resolution
+between L1 and L2 predicates to future work.
+
+\paragraph{Test-time injection.} The rulebook for (domain, class) is
+prepended to the turn-$1$ user message of the Passive v9 agent as a
+short JSON block tagged \texttt{DOMAIN RULEBOOK}. All other
+machinery — mode classifier, refutation protocol, tool set, stopping
+criterion — is unchanged. No test labels or test-set items enter the
+rulebook pipeline at any stage; the injection is the only test-time
+difference from Passive v9.
+
+\subsection{Experiments}
+\label{ssec:verb_exp}
+
+\paragraph{Setup.} All 12 CrossDomainVAD-11 test domains
+($n{=}1{,}418$), Qwen3.5-VL-27B backbone, temperature $0$. Each
+variant is run with $3$ seeds; we report the mean across seeds.
+Oracle budget for L2 is $K{=}10$ dev items per domain ($120$ total
+across the benchmark). All hyperparameters are frozen across domains.
+Reflector calls are charged explicitly in Table~\ref{tab:verb_cost}.
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Verbalized self-evolution: per-domain AUROC,
+Qwen3.5-VL-27B test.} Each cell is the mean of $3$ seeds; oracle
+column shows cumulative revealed dev labels. Adaptive granularity:
+per-class for D1/D2/D3/D4/D5/D6, per-domain for D7/D8/D9/D10/D11/D12.
+All test items are held strictly out of the rulebook-construction
+pipeline.}
+\label{tab:verb_main}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Variant & Oracle / domain & Rulebook source & Macro AUROC & $\Delta$ vs Passive & $P(\Delta{>}0)$ \\
+\midrule
+Passive v9 (\S\ref{ssec:main_results}) & $0$ & --- & $0.814$ & --- & --- \\
+\textbf{+ L1}   (ref-only, self-sup)     & $0$   & refs only           & \emph{t.b.d.} & \emph{t.b.d.} & \emph{t.b.d.} \\
+\textbf{+ L2}   (active verbalized)      & $10$  & dev oracle only     & \emph{t.b.d.} & \emph{t.b.d.} & \emph{t.b.d.} \\
+\textbf{+ L1+L2} (stacked)               & $10$  & refs + dev oracle   & \emph{t.b.d.} & \emph{t.b.d.} & \emph{t.b.d.} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Bias diagnostic.}
+\label{ssec:verb_bias_diagnostic}
+For each variant we report the \emph{predict-normal rate} on the
+test set (fraction of queries with anomaly score $<0.5$). Our working
+hypothesis is that L1-alone will show a higher predict-normal rate
+than Passive, L2-alone will show a lower rate, and the L1+L2 stack
+will land closest to Passive.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+Variant & Predict-normal rate (test) & $\Delta$ vs Passive \\
+\midrule
+Passive v9 & \emph{t.b.d.} & $0$ \\
++ L1 & \emph{t.b.d.} & \emph{t.b.d.} \\
++ L2 & \emph{t.b.d.} & \emph{t.b.d.} \\
++ L1+L2 & \emph{t.b.d.} & \emph{t.b.d.} \\
+\bottomrule
+\end{tabular}
+\caption{Bias diagnostic; a signed $\Delta$ measures the predict-normal
+drift induced by the rulebook.}
+\label{tab:verb_bias}
+\end{table}
+
+\paragraph{Rule-quality holdout.}
+\label{ssec:verb_holdout}
+The $30$ dev items that the L2 reflector did not see form a held-out
+validation set for rulebook quality. We report dev-holdout AUROC of
+each variant; this measures rulebook quality without touching the
+test split and disentangles ``the rulebook is better'' from ``the
+test set happens to benefit.''
+
+\paragraph{Qualitative rule samples.} For each domain we include
+one representative rule from the L1 and L2 rulebooks
+(Appendix~\ref{app:verbalized_rules}), with its associated test-item
+flip. Example rule classes we expect to see: counting / logical (D5),
+symmetry / bilateral (D9 brain MRI), texture anomaly (D7, D8),
+scene-level anomaly (D12), missing-component (D1).
+
+\paragraph{Ablations.}
+We report three ablations in Appendix~\ref{app:verbalized_ablations}:
+(a) removing the \texttt{hypothesized\_anomaly\_modes} field from the
+L1 prompt (tests whether the bias counter-measure works),
+(b) per-class vs pooled per-domain rulebook on the multi-class
+domains (tests whether class-level granularity is needed),
+(c) replacing the dev-oracle in L2 with the same-budget random dev
+labels (tests whether uncertainty selection matters).
+
+\subsection{Limitations}
+\label{ssec:verb_limitations}
+L1 reads only normal refs and therefore cannot learn truly novel
+anomaly classes unless the reflector hallucinates them; L2 is bounded
+by the $K$ oracle budget and by the dev set's coverage of the
+anomaly manifold; the stacked L1+L2 rulebook does not yet resolve
+predicate conflicts between L1 and L2 formally and can in principle
+loop if L1 and L2 recommend opposite actions on the same feature.
+The rulebook is currently static across test items within a
+(domain, class); a dynamic variant that selects rules per-query is
+future work.
+
+========== benchmark/scripts/verbalized_learning.py ==========
+"""Verbalized Self-Evolution (§5 of paper).
+
+Three-regime learning ladder over CrossDomainVAD-11:
+
+  Passive v9       - training-free baseline (no rulebook); see agent_v9.
+  L1  ref-only     - self-supervised; rulebook reflected from NORMAL
+                     reference images only; zero oracle.
+  L2  active       - semi-supervised; run passive v9 on dev, pick K=10
+                     lowest-confidence items, reveal their labels from
+                     the manifest, reflect into corrective rules.
+  L1+L2 stacked    - concatenated rulebook (with dedup); oracle budget
+                     is still K (L2 budget only).
+
+Rulebook granularity: per-class for multi-class domains (D1,D2,D3,D4,
+D5,D6), per-domain for single-class domains (D7..D12). The lookup key
+is (domain_code, category) read from the manifest.
+
+All test items are STRICTLY held out of the rulebook-construction
+pipeline.  L2 only reveals labels for items whose split=='dev'.
+
+Usage:
+
+  # Stage 1: build L1 rulebook for one domain (0 oracle)
+  python verbalized_learning.py build-l1 \
+      --manifest benchmark/manifests_v2/D1_industrial_manifest.json \
+      --out      benchmark/results/verbalized/D1_l1.json \
+      --n_refs   8 --seed 0
+
+  # Stage 2: build L2 corrective rules (K=10 oracle)
+  python verbalized_learning.py build-l2 \
+      --manifest benchmark/manifests_v2/D1_industrial_manifest.json \
+      --passive_dev benchmark/results/verbalized/D1_passive_dev.json \
+      --l1       benchmark/results/verbalized/D1_l1.json \
+      --out      benchmark/results/verbalized/D1_l2.json \
+      --k 10
+
+  # Stage 3: evaluate on test with a rulebook
+  python verbalized_learning.py eval-test \
+      --manifest benchmark/manifests_v2/D1_industrial_manifest.json \
+      --rulebook benchmark/results/verbalized/D1_l1l2.json \
+      --out      benchmark/results/verbalized/D1_eval_l1l2.json
+"""
+from __future__ import annotations
+import argparse
+import json
+import os
+import random
+import sys
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+import agent_v9 as v9_mod  # noqa: E402
+from infer import (  # noqa: E402
+    call_llm, extract_json, get_client, get_model_name,
+    img_msg, load_and_encode, text_msg,
+)
+
+
+DOMAIN_FILES = {
+    "D1": "D1_industrial_manifest.json",
+    "D2": "D2_retail_manifest.json",
+    "D3": "D3_complex_industrial_manifest.json",
+    "D4": "D4_infrastructure_manifest.json",
+    "D5": "D5_logical_manifest.json",
+    "D6": "D6_industrial_3d_manifest.json",
+    "D7": "D7_remote_sensing_manifest.json",
+    "D8": "D8_dermatology_manifest.json",
+    "D9": "D9_brain_mri_manifest.json",
+    "D10": "D10_liver_ct_manifest.json",
+    "D11": "D11_gi_endoscopy_manifest.json",
+    "D12": "D12_road_safety_manifest.json",
+}
+
+MULTI_CLASS_DOMAINS = {"D1", "D2", "D3", "D4", "D5", "D6"}
+
+
+# ---------------------------------------------------------------------------
+# Rulebook granularity: group manifest items into (domain, class) buckets.
+# ---------------------------------------------------------------------------
+
+def group_units(manifest):
+    """Return dict: unit_key -> list[items].
+
+    unit_key is (domain_code, category) for multi-class domains,
+    (domain_code,) for single-class domains.
+    """
+    groups = {}
+    for it in manifest:
+        d = it.get("domain_code")
+        c = it.get("category")
+        key = (d, c) if d in MULTI_CLASS_DOMAINS else (d,)
+        groups.setdefault(key, []).append(it)
+    return groups
+
+
+def collect_unit_refs(items):
+    """Collect unique ref image paths across items in a unit."""
+    seen, refs = set(), []
+    for it in items:
+        for p in it.get("ref_paths", []) or []:
+            if p not in seen:
+                seen.add(p)
+                refs.append(p)
+    return refs
+
+
+def unit_label(unit_key):
+    """Human-readable unit name for prompts."""
+    if len(unit_key) == 2:
+        return f"{unit_key[0]} / {unit_key[1]}"
+    return f"{unit_key[0]}"
+
+
+# ---------------------------------------------------------------------------
+# L1: ref-only reflector
+# ---------------------------------------------------------------------------
+
+L1_SYSTEM = (
+    "You are a visual anomaly-detection expert. You will see several "
+    "NORMAL reference images of a specific class. Your job is to write "
+    "a persistent natural-language rulebook that another agent will "
+    "consult when it later sees a query image from the SAME class and "
+    "must decide whether the query is anomalous."
+)
+
+L1_USER_TEMPLATE = """Class: {unit_name}
+Number of reference images: {n_refs}
+All reference images shown below are NORMAL examples.
+
+Emit a strict-JSON rulebook in EXACTLY this shape (no extra keys, no \
+prose outside JSON):
+
+{{
+  "normal_signature": [
+    "short phrase describing an invariant feature of the normal class",
+    "...",
+    "..."
+  ],
+  "hypothesized_anomaly_modes": [
+    "plausible defect A expected to occur on this class (reason about \
+the object's function/structure, not just appearance)",
+    "plausible defect B",
+    "..."
+  ],
+  "rules": [
+    "if <visible predicate> then lean anomaly",
+    "if <visible predicate> then lean normal",
+    "..."
+  ]
+}}
+
+Guidelines:
+  - 3 to 6 items per list; be specific, not generic.
+  - Anomaly modes MUST be present: list at least 3 plausible ways this \
+class can fail, even though no defective image is shown. Use functional \
+reasoning (e.g. 'hazelnuts should be roughly spherical with a single \
+intact shell; a crack or missing half is a visible failure').
+  - Rules must be testable on a single image (no counterfactuals).
+  - Output JSON only; no markdown, no explanation.
+"""
+
+
+def build_l1_rulebook(unit_key, ref_paths, client, model, n_refs=8,
+                      max_retries=3):
+    """Ask a reflector VLM to emit a rulebook for one (domain, class) unit.
+
+    Returns dict with keys: normal_signature, hypothesized_anomaly_modes,
+    rules, plus meta fields (unit, n_refs_seen).
+    """
+    refs_used = ref_paths[:n_refs]
+    parts = []
+    for rp in refs_used:
+        parts.append(img_msg(load_and_encode(rp)))
+    parts.append(text_msg(L1_USER_TEMPLATE.format(
+        unit_name=unit_label(unit_key), n_refs=len(refs_used))))
+    messages = [
+        {"role": "system", "content": L1_SYSTEM},
+        {"role": "user", "content": parts},
+    ]
+    for _ in range(max_retries):
+        try:
+            resp_text, _, _ = call_llm(client, model, messages, temperature=0.0)
+            parsed = extract_json(resp_text)
+            if (isinstance(parsed, dict)
+                    and "normal_signature" in parsed
+                    and "hypothesized_anomaly_modes" in parsed):
+                parsed.setdefault("rules", [])
+                return {
+                    "unit": list(unit_key),
+                    "n_refs_seen": len(refs_used),
+                    "rulebook": parsed,
+                }
+        except Exception as e:  # pragma: no cover - log and retry
+            print(f"[L1 reflect] retry after error: {e}", file=sys.stderr)
+            time.sleep(1.0)
+    raise RuntimeError(f"L1 reflector failed for {unit_key}")
+
+
+# ---------------------------------------------------------------------------
+# L2: active verbalized reflector (dev oracle + agent trajectory)
+# ---------------------------------------------------------------------------
+
+L2_SYSTEM = (
+    "You are a visual anomaly-detection expert. A colleague agent just "
+    "ran on a DEV image and was uncertain. The ground-truth label has "
+    "been revealed to you. Your job is to propose ONE corrective rule "
+    "that, if added to the agent's rulebook, would have prevented the "
+    "mistake or reduced its uncertainty."
+)
+
+L2_USER_TEMPLATE = """DEV item: {item_id}
+Class: {unit_name}
+Agent predicted anomaly score: {score:.3f}  (0=normal, 1=anomaly)
+GROUND-TRUTH label: {gt_name} (={gt_int})
+
+Existing L1 rulebook for this class:
+{l1_json}
+
+Agent trajectory (condensed):
+{trajectory}
+
+Emit strict JSON, exactly ONE rule, of this shape:
+
+{{
+  "rule_type": "anomaly_mode_extension" | "normal_tolerance" | "rule",
+  "text": "short actionable rule, <= 25 words",
+  "justification": "<= 40 words explaining why this rule resolves the \
+dev item"
+}}
+
+Guidelines:
+  - Use "anomaly_mode_extension" when agent underpredicted anomaly (gt=1, score<0.5).
+  - Use "normal_tolerance" when agent overpredicted anomaly (gt=0, score>0.5).
+  - Use "rule" for a clean if-then predicate that applies more broadly.
+  - Do NOT restate the ground truth. Do NOT name the specific dev item.
+  - The rule must generalise to unseen test items of the SAME class.
+  - Output JSON only.
+"""
+
+
+def _compact_trajectory(v9_item_result, max_chars=800):
+    """Render a v9 per-item result dict into a compact trajectory string."""
+    r = v9_item_result
+    parts = []
+    if r.get("initial_score") is not None:
+        parts.append(f"initial_score={r['initial_score']}")
+    cf = r.get("candidate_features") or []
+[file truncated at line 250 for brevity — remaining ~250 lines are CLI glue]
+
+========== agent_v9 injection diff (rulebook kwarg) ==========
+def _build_initial_messages(..., rulebook=None):
+    ...
+    if rulebook:
+        preamble_text = rulebook.rstrip() + "\n\n" + preamble_text
+    ...
+
+========== TASK ==========
+Critique §5 on method design, motivation framing, experimental protocol.
+Check §5 consistency with §4 (old §4.7 label ssec:active_learning is deleted).
+Check implementation <-> §5 text fidelity.
+DO NOT explore the repo or run commands; review from the content above only.
+
+Output EXACTLY this format, no prose outside it:
+Score: X/10
+Verdict: ready/almost/not ready
+Weaknesses (ranked, with 1-sentence minimum fix per item): 1) ... 2) ... 3) ...
+Memory update for R4: ...
+
+codex
+Score: 6.2/10
+Verdict: almost
+Weaknesses (ranked, with 1-sentence minimum fix per item): 1) L2 is not cleanly defined as “dev oracle only”: §5 and Table 5 present L2 as a standalone dev-label rulebook, but the L2 protocol and script both require the L1 rulebook as input, so the L2 row is contaminated by ref-derived knowledge and is not comparable to L1+L2; minimum fix: either redefine L2 as “L2 conditioned on L1 context but injects only L2 rules” and add a true no-L1 L2 ablation, or remove L1 from the L2 reflector input and implementation. 2) The L2 corrective-rule logic is underspecified for high-uncertainty items that Passive v9 gets correct: the text says anomaly extensions are for missed anomalies and tolerances for over-flagged normals, but uncertainty sampling will select many correctly classified borderline items and the template still forces exactly one “corrective” rule; minimum fix: explicitly define rules for correct-but-uncertain dev items, allow “no rule” or calibration/tolerance rules, and report how many selected items are actual errors. 3) The per-domain oracle budget conflicts with per-class rulebook granularity: K=10 labels per domain is sparse for D1/D3/D6 with many classes, so many per-class L2 rulebooks may receive zero corrective evidence while others get multiple rules; minimum fix: report selected-dev class coverage and define the fallback behavior for classes without L2 rules, or change selection to class-stratified K while keeping the oracle budget explicit. 4) The implementation fidelity is currently weaker than the methodological claims: L1 says “sample” refs but the shown code uses the first n refs, and it does not enforce the claimed strict schema, 3-to-6 list lengths, or nonempty anomaly modes beyond key presence; minimum fix: make ref sampling seeded and random, validate JSON fields and cardinalities, and retry/reject malformed or underspecified rulebooks. 5) The holdout protocol is conceptually useful but currently not enough to validate rulebook quality: dev-holdout AUROC is measured after the selected 10 items influenced the rulebook, yet there is no nested model-selection boundary, confidence interval, or rule-length/cost normalization, so it may still overstate robustness; minimum fix: pre-register that holdout is diagnostic only, report per-domain paired deltas with uncertainty, and include rulebook token/call cost in the same comparison. 6) The motivation overclaims super-additivity before evidence: the L1+L2 paragraph says the stack “therefore tests” complementarity, but the current setup lacks an interaction test separating L1, L2, and L1-conditioned-L2; minimum fix: add a factorial comparison or state the complementarity as a hypothesis, not an implied design consequence. 7) §5 appears consistent with deleting old §4.7 only if all references to `ssec:active_learning` were removed, but the provided text still references the pre-review active-learning appendix and `al_pilot_appendix`; minimum fix: verify no stale `ssec:active_learning` cross-reference remains and make the appendix citation clearly historical rather than a live method dependency.
+Memory update for R4: Focus first on whether L2 has been disentangled from L1, whether correct-but-uncertain dev items and class coverage are reported, and whether the implementation now enforces seeded sampling plus rulebook schema validation; accept t.b.d. numerical cells only if the protocol definitions are now internally consistent.
+tokens used
+11,977
+Score: 6.2/10
+Verdict: almost
+Weaknesses (ranked, with 1-sentence minimum fix per item): 1) L2 is not cleanly defined as “dev oracle only”: §5 and Table 5 present L2 as a standalone dev-label rulebook, but the L2 protocol and script both require the L1 rulebook as input, so the L2 row is contaminated by ref-derived knowledge and is not comparable to L1+L2; minimum fix: either redefine L2 as “L2 conditioned on L1 context but injects only L2 rules” and add a true no-L1 L2 ablation, or remove L1 from the L2 reflector input and implementation. 2) The L2 corrective-rule logic is underspecified for high-uncertainty items that Passive v9 gets correct: the text says anomaly extensions are for missed anomalies and tolerances for over-flagged normals, but uncertainty sampling will select many correctly classified borderline items and the template still forces exactly one “corrective” rule; minimum fix: explicitly define rules for correct-but-uncertain dev items, allow “no rule” or calibration/tolerance rules, and report how many selected items are actual errors. 3) The per-domain oracle budget conflicts with per-class rulebook granularity: K=10 labels per domain is sparse for D1/D3/D6 with many classes, so many per-class L2 rulebooks may receive zero corrective evidence while others get multiple rules; minimum fix: report selected-dev class coverage and define the fallback behavior for classes without L2 rules, or change selection to class-stratified K while keeping the oracle budget explicit. 4) The implementation fidelity is currently weaker than the methodological claims: L1 says “sample” refs but the shown code uses the first n refs, and it does not enforce the claimed strict schema, 3-to-6 list lengths, or nonempty anomaly modes beyond key presence; minimum fix: make ref sampling seeded and random, validate JSON fields and cardinalities, and retry/reject malformed or underspecified rulebooks. 5) The holdout protocol is conceptually useful but currently not enough to validate rulebook quality: dev-holdout AUROC is measured after the selected 10 items influenced the rulebook, yet there is no nested model-selection boundary, confidence interval, or rule-length/cost normalization, so it may still overstate robustness; minimum fix: pre-register that holdout is diagnostic only, report per-domain paired deltas with uncertainty, and include rulebook token/call cost in the same comparison. 6) The motivation overclaims super-additivity before evidence: the L1+L2 paragraph says the stack “therefore tests” complementarity, but the current setup lacks an interaction test separating L1, L2, and L1-conditioned-L2; minimum fix: add a factorial comparison or state the complementarity as a hypothesis, not an implied design consequence. 7) §5 appears consistent with deleting old §4.7 only if all references to `ssec:active_learning` were removed, but the provided text still references the pre-review active-learning appendix and `al_pilot_appendix`; minimum fix: verify no stale `ssec:active_learning` cross-reference remains and make the appendix citation clearly historical rather than a live method dependency.
+Memory update for R4: Focus first on whether L2 has been disentangled from L1, whether correct-but-uncertain dev items and class coverage are reported, and whether the implementation now enforces seeded sampling plus rulebook schema validation; accept t.b.d. numerical cells only if the protocol definitions are now internally consistent.

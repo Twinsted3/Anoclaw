@@ -1,32 +1,70 @@
 {
-  "round": 2,
-  "status": "in_progress",
+  "round": 4,
+  "status": "completed",
+  "phase": "E_documented",
   "difficulty": "nightmare",
   "reviewer": "codex_exec_gpt54_xhigh",
+  "pivot": "v11_controller_learning (completed)",
   "rounds": [
-    {
-      "round": 1,
-      "score": 5.0,
-      "verdict": "not ready",
-      "raw": "review-stage/codex_v9_review_r1_raw.out"
+    {"round": 1, "score": 5.0, "verdict": "not ready", "raw": "review-stage/codex_v9_review_r1_raw.out"},
+    {"round": 2, "score": 5.8, "verdict": "not ready", "raw": "review-stage/codex_v9_review_r2_raw.out", "delta": "+0.8"},
+    {"round": 3, "score": 6.4, "verdict": "almost", "raw": "review-stage/codex_r3_small.out", "delta": "+0.6"},
+    {"round": 4, "score": 6.8, "verdict": "almost", "raw": "review-stage/codex_v9_review_r4_raw.out", "delta": "+0.4", "note": "v3 framework rebuilt; R4 flagged baseline mismatch"},
+    {"round": 5, "score": 7.1, "verdict": "almost", "raw": "review-stage/codex_v11_review_r5_raw.out", "delta": "+0.3"},
+    {"round": 6, "score": 7.2, "verdict": "almost", "raw": "review-stage/codex_v11_review_r6_raw.out", "delta": "+0.1"},
+    {"round": 7, "score": 7.6, "verdict": "almost", "raw": "review-stage/codex_v11_review_r7_raw.out", "delta": "+0.4", "note": "Codex accepted frozen-branch pairing + shuffled negative control. Shuffled rules indistinguishable from no-rules (−0.30pp, P=0.315). Correct rules significantly beat shuffled (full vs shuffled +3.39pp P=1.000). Remaining blockers are framing (title training-free conflict, abstract/intro v11 integration) + single-backbone scope. Fixed 'every backbone' wording in 5_conclusion.tex + 3_method.tex. Narrowed shuffled-rules claim to acknowledge D7/D8 rationale-based fallback. Added single-backbone limitations paragraph to §4."}
+  ],
+  "v11_pivot_outcome": {
+    "motivation": "R4 identified that v3 framework had mismatched baseline (v9 agent 0.669 vs Table 1 Direct 0.714 vs v10 ensemble 0.732). User pivoted to controller-level learning with v10 as the true baseline.",
+    "architecture": "v11 = v10 two-branch ensemble (v9 Agent || Direct Generic) + optional Controller VLM that arbitrates with per-domain RAG rulebook. learning_enabled=False is byte-equivalent to v10; learning_enabled=True invokes controller.",
+    "learning_signal": "Disagreement-based. Dev items where v9 and Direct split on 0.5 boundary → partitioned into A-wins / B-wins / agree-wrong / agree-correct. Meta-rule reflector (VLM w/ images) writes 1–3 routing rules per side from balanced K/2+K/2 sample. Domain-rules (invariants + corrective FN/FP) reused from the v3 pilot artifacts.",
+    "final_macro_auroc": {
+      "direct_generic": 0.7119,
+      "v9_alone": 0.6696,
+      "v10_blend_baseline": 0.7333,
+      "v11_controller": 0.7539
     },
-    {
-      "round": 2,
-      "score": 5.8,
-      "verdict": "not ready",
-      "raw": "review-stage/codex_v9_review_r2_raw.out",
-      "delta": "+0.8",
-      "note": "Round 2 blockers mostly addressed; compute-intensive v8 rerun deferred; v4-to-appendix restructure remains future work"
-    }
+    "delta_v11_vs_v10": "+2.05 pp",
+    "bootstrap_ci_95": "[+0.41, +3.67] pp",
+    "p_delta_gt_0": 0.995,
+    "significance_at_95": "YES",
+    "per_domain_wins_losses": "wins 8 (D1,D2,D4,D5,D6,D7,D8,D10), neutral 1 (D11), losses 3 (D3,D9,D12)",
+    "biggest_wins": "D7 LEVIR +13.4pp, D8 DermaMNIST +7.4pp (both: v9 weak, Direct strong, controller correctly trusts Direct)",
+    "biggest_losses": "D9 BraTS -3.2pp (agree-wrong dominated — no routing signal), D12 BDD+RA -1.9pp (near ceiling 0.982)",
+    "parse_failure_rate": 0.0,
+    "rulebook_pilot_reused": "v3 L1 invariants + L2 cluster FN/FP (already produced under round 3/4)"
+  },
+  "paper_changes_applied": [
+    "paper/sections/controller_learning.tex populated with v11 real numbers; bootstrap CI table filled",
+    "paper/main.tex input order: method → controller_learning → experiments",
+    "paper/sections/verbalized.tex preserved as archive (no longer \\input)",
+    "paper/sections/4_experiments.tex §4.7-removed comment updated to reference new §4 controller_learning"
   ],
-  "pending_fixes_deferred": [
-    "v8 qwen3 test rerun (~3h compute) — compute constraint in this session",
-    "Method section v4-to-appendix full restructure — bigger-than-minimum restructure",
-    "AL extension to all 12 domains × multi-seed × multi-K"
+  "artifacts": {
+    "agent": "benchmark/scripts/agent_v11.py",
+    "pipeline": "benchmark/scripts/verbalized_v4.py",
+    "bootstrap": "benchmark/scripts/v11_bootstrap.py",
+    "passive_dev_results": "benchmark/results/verbalized/v11_passive_dev/",
+    "meta_rules": "benchmark/results/verbalized/v4_meta/",
+    "stacked_rulebooks": "benchmark/results/verbalized/v4_rulebook/",
+    "test_eval": "benchmark/results/verbalized/v11_eval_test/",
+    "summary": "refine-logs/v11_results_summary.md"
+  },
+  "gotchas_logged_this_session": [
+    "QWEN_MODEL must resolve to /hdd1/models/Qwen3.5-27B-FP8 (served-name alias Qwen3.5-VL-27B works); silent 404 + score=0.5 if wrong",
+    "codex exec via nohup+background pipe loses stdin; foreground always works",
+    "vLLM --data-parallel-size does NOT round-robin; sticks to engine 000; use 4 separate replicas + external LB",
+    "vLLM --limit-mm-per-prompt image=12 caps the meta-rule reflector: K=10 cases * (query+2 refs) = 30 images fails; solution: show only query per case, refs implicit via branch rationales",
+    "Direct branch DESCRIPTOR_MODE=generic required to match Table 1's 0.714/0.732 baseline (domain-anchored descriptor would shift the comparison)"
   ],
-  "experiments_done_this_session": [
-    "mmad_v9_dev500 (n=2302 across 9 types)",
-    "active_learning pilot 4 domains (D1, D5 logical, D9 brain MRI, D12) K=10"
+  "v12_comparison_done_but_not_in_paper": "2026-04-24. Ran v12 (v8 tools + v10 prompt) blend/full/meta-only/no-rules. v12 blend 0.7532 ≈ v11 full 0.7539; v12 + learning (any rulebook) mean-negative (−1.68 to −1.93pp). Disagreement pool drops 141 → 97 with v12. Paper §4 briefly included a ssec:ctrl_vs_tools subsection but user decided 2026-04-24 to REVERT and keep v11-only narrative — artefacts retained on disk at benchmark/results/verbalized/v12_* for future use. Paper restored to state after R7 (with minor factual fixes). v11 full 0.7539 remains the sole headline in §4.",
+  "pending_followups": [
+    "Ablation: meta-only vs meta+domain rulebook — LAUNCHED 2026-04-22 20:12 (bg bsayepdvp, ~3h), output benchmark/results/verbalized/v11_eval_test_meta_only",
+    "Ablation: controller without image (text-only arbitration) to test whether visual grounding matters",
+    "Appendix app:rulebook_pilot: DONE — appended to paper/sections/A_appendix.tex; forward-ref in controller_learning.tex cleaned up",
+    "Rerun with max_turns=5 for apples-to-apples with Table 1 (this run used max_turns=3, so v10 blend reproduction was 0.7333 vs 0.732)",
+    "Round 5 codex review of the new §4 controller_learning.tex (manual invocation; autonomous loop exhausted MAX_ROUNDS=4)",
+    "vLLM replicas shutdown (Task #10 pending) — keep running until meta-only ablation finishes"
   ],
-  "timestamp": "2026-04-20T06:32:00+08:00"
+  "timestamp": "2026-04-22T20:00:00+08:00"
 }

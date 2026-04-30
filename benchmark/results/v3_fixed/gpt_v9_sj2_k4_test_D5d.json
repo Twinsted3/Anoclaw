@@ -1,0 +1,5549 @@
+[
+  {
+    "item_id": "D5d_0013",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0059",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0086",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0038",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.18999999999999995,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth, glistening mucosal surface is present throughout the lumen/view, with moist specular highlights.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Overall mucosa has a pink to orange/salmon coloration without sharply demarcated contrasting lesions dominating the scene.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Rounded folds or curved luminal contours are visible, giving a soft, tubular/cavitary appearance.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Small scattered reflective spots and a thin mucus/fluid coating are commonly visible on the mucosal surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Degree of luminal opening varies: some views show a more centered circular opening, while others show a slit-like or partially obscured lumen.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Background color tone varies from deeper orange-brown to lighter pink.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Visibility of fine surface vessels/vascular blush varies, being more apparent in some images and subtler in others.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small yellow-white adherent material or residue is present in some normal views, ranging from tiny flecks to a few larger deposits.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Endoscopic context differs between images, with some including on-screen text overlays or a visible instrument tip while others show an unobstructed field.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Broad patch of irregular finely nodular/granular mucosa creating a roughened plaque-like area rather than the uniformly smooth surface seen in all references",
+            "location": "central to upper-central field",
+            "confidence": 0.8
+          },
+          {
+            "id": "C2",
+            "description": "Subtle focal raised bulge/protrusion of the mucosal wall, giving localized asymmetry instead of only gentle rounded folds",
+            "location": "upper left quadrant near the top edge",
+            "confidence": 0.57
+          }
+        ],
+        "no_difference_conf": 0.12
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The central to upper-central area appears mildly coarse/granular, but it is not a sharply demarcated plaque or discrete lesion. The mucosa remains pink-orange, glistening, and continuous with surrounding folds, fitting normal variation in surface texture and vascular/mucosal relief rather than a true focal abnormality. This can be explained by viewing angle, mucosal folds, and subtle variation in surface pattern."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The subtle upper-left bulge is consistent with a normal rounded fold or luminal contour. Similar soft protrusions and asymmetric fold impressions are seen across reference images as benign variation in lumen shape and wall apposition. There is no distinct mass, ulceration, or contrasting lesion."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.81
+      }
+    },
+    "cost_tokens": {
+      "input": 4449,
+      "output": 406
+    },
+    "latency_sec": 165.38,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0037",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0077",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0021",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0005",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0030",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0035",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0022",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0058",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0089",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0011",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0085",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0062",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Pink-to-orange mucosal surface is present throughout, with generally smooth, moist tissue appearance.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Curved luminal contours and broad mucosal folds create a rounded tunnel-like endoscopic view.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Small bright white specular reflections from fluid/lighting are scattered on the mucosal surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Surface texture appears intact and continuous without a discrete focal mass-like protrusion dominating the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall color varies from deeper orange-brown to pale pink across normal views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Visibility of fine submucosal vascular markings differs, being more apparent in some images and faint in others.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Fold prominence and lumen openness vary: some views show a more centered circular opening, while others show broad close-up folds.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small amounts of yellowish fluid/mucus or residue are present in some normal images but absent or minimal in others.",
+            "evidence_refs": [
+              1,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.84
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 4226,
+      "output": 76
+    },
+    "latency_sec": 65.54,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0002",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0068",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0079",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0015",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0063",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Endoscopic intraluminal view with a rounded/tubular lumen and smooth continuous mucosal surface is present in all references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Mucosa is predominantly pink to orange-brown with overall even coloration and no abrupt focal color break dominating the scene.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Fine vascular markings or a faint reticular/subsurface vessel pattern are visible on the mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Surface appears moist with multiple small bright specular reflections from illumination.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Gentle folds/curving contours of the bowel wall are seen, creating a softly ridged circumferential appearance rather than a flat surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall hue varies from more orange-brown to lighter pink across normal images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The lumen may appear more centered and circular in some views or more off-center/partially obscured by folds in others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Visibility of vascular markings varies from subtle and faint to more conspicuous branching lines.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small amounts of yellowish mucus/fluid or residue are present in some normal views, while others look cleaner.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Wall distension and fold prominence vary, with some images showing broader smooth expanses and others showing tighter concentric folds.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.93
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 4468,
+      "output": 82
+    },
+    "latency_sec": 122.14,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0043",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0034",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0088",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0028",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0067",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0024",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0001",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.10999999999999999,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth, moist mucosal surfaces with glossy specular highlights are present throughout the views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The tissue is predominantly pink to salmon colored, without sharply demarcated contrasting regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Curved luminal anatomy is seen, with a central or eccentric opening formed by rounded mucosal folds.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Mucosal folds have smooth contours and gently rounded edges rather than irregular jagged borders.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall color tone varies from paler light pink to deeper orange-pink across images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The opening/lumen may appear more slit-like and narrow in some views or wider and more circular in others depending on angle and fold position.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small superficial yellow-white mucus/debris flecks are visible in some otherwise normal views.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Fine surface vascular markings are conspicuous in some images and minimal or not obvious in others.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Endoscopic instrumentation or on-screen overlay elements may be present in the field of view or absent.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Localized dark purple-brown discoloration/bruise-like area forming an irregular patch rather than the uniformly pink-salmon mucosa seen in the references.",
+            "location": "right side of the image around the luminal opening/crease adjacent to the instrument tip",
+            "confidence": 0.85
+          }
+        ],
+        "no_difference_conf": 0.12
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The queried darker area lies within a fold/crease adjacent to the instrument and corresponds to expected shadowing, deeper fold coloration, and visible vascular/mucosal tone variation rather than a discrete lesion. Its borders are not sharply demarcated, the surrounding folds remain smooth and rounded, and similar darker pink-brown vascular areas are seen in Reference 4. This is adequately explained by normal luminal fold anatomy, variable color tone, vascular markings, and the presence of instrumentation."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 4314,
+      "output": 283
+    },
+    "latency_sec": 193.3,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0084",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0047",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0000",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0080",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0052",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0076",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth, glistening mucosal surface with moist appearance and multiple bright specular reflections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Overall mucosa is pink to peach/tan in color without strong color contrast within the main visible surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Rounded luminal anatomy with curved contours and soft tissue walls occupying most of the field.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Presence of mucosal folds or gentle ridges creating a layered or pleated appearance.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Fold prominence varies from subtle low undulations to large, conspicuous pleats.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Color tone varies within the normal set from paler pink/peach to deeper tan-orange hues.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The central view may show a narrowed slit-like opening, a darker round lumen, or broad tissue surfaces depending on scope angle and location.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small scattered pinpoint darker spots are visible in some images but not all.",
+            "evidence_refs": [
+              1,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Procedure-related overlays or instrument presence can appear in the frame in some otherwise normal images.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Patchy irregular white coating/plaque-like areas on the mucosal surface, creating a non-uniform matte appearance instead of the uniformly smooth glistening mucosa seen in all references.",
+            "location": "along the left wall and extending across the upper circumferential mucosa",
+            "confidence": 0.95
+          },
+          {
+            "id": "C2",
+            "description": "Mucosal surface appears roughened/thickened with loss of the typical smooth fold definition, with edematous-looking pale tissue around the lumen.",
+            "location": "circumferentially around the central opening, most evident in the upper half of the image",
+            "confidence": 0.82
+          },
+          {
+            "id": "C3",
+            "description": "Focal reddish linear irritated/eroded area contrasting with adjacent pale mucosa.",
+            "location": "lower-right wall near the edge of the frame",
+            "confidence": 0.68
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows conspicuous patchy white plaque-like/coated mucosa along the left wall and upper circumference, producing a dull irregular surface unlike the smooth, uniformly glistening pink-tan mucosa in the references. This cannot be explained by normal color-tone variation, fold prominence, or viewing angle."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "There is circumferential pale thickened/roughened mucosa around the central opening with partial loss of the usual smooth fold definition. The references show moist smooth folds and ridges, whereas this appears edematous and coated. This exceeds benign variation in fold prominence or lumen shape."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "The subtle reddish linear area at the lower-right edge is mild and could be due to lighting, scope contact, or normal local color variation at the margin of the frame. On its own it is not clearly distinct enough from benign variation to be called a definite anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 4429,
+      "output": 554
+    },
+    "latency_sec": 151.73,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0036",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth pink-to-salmon mucosal lining is present throughout the lumen, without obvious mass-like protrusions dominating the view.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Mucosal folds/rugae are visible, creating gently undulating or curved surface contours along the wall.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The endoscopic field shows a tubular/cavity-like lumen with curved walls converging toward a central or eccentric opening/deeper recess.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "A moist reflective surface is consistently seen, with small bright specular highlights from illumination on the mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Color tone varies from pale pink/beige to deeper reddish-orange across otherwise normal-appearing mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Visibility of the superficial vascular pattern varies; some images show more distinct branching vessels while others appear smoother and less vascular.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small amounts of adherent yellow-white material or mucus/debris can be present on the mucosal surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The scope/instrument position and viewing angle differ, with the dark endoscope tip visible prominently in some views and absent or less central in others.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Fold prominence differs between images, ranging from relatively subtle shallow folds to more pronounced converging folds near the recess/opening.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.94
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 4376,
+      "output": 80
+    },
+    "latency_sec": 240.98,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0031",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0072",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0012",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0057",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0032",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0055",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.08999999999999997,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth glistening mucosal surface with multiple small bright specular reflections from moisture is present throughout the views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The tissue coloration is consistently within a pink to orange-brown range without a sharply demarcated contrasting area dominating the scene.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Gentle mucosal folds or curved wall contours are visible, giving the lumen a soft undulating appearance rather than rigid flat walls.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Fine superficial vascular markings are faintly visible beneath the mucosal surface in at least part of the image.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Degree of luminal openness varies: some images show a more open central lumen or tunnel-like view, while others are closer to the wall surface.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Prominence of mucosal folds varies from broad concentric/curved folds to smoother, less folded wall segments.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Visibility of superficial vessels varies from subtle and sparse to more noticeable branching red lines.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small scattered reddish spots or patchy blush-like areas can be present on otherwise similar pink mucosa.",
+            "evidence_refs": [
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The endoscope shaft or edge of the scope may be visible in the field in some views, partially obscuring the mucosa.",
+            "evidence_refs": [
+              1
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.78
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 4312,
+      "output": 79
+    },
+    "latency_sec": 205.35,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0048",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0070",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0056",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0082",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0025",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Pink to salmon-colored mucosal surface is present throughout the views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The lining appears smooth and moist/glossy, with multiple bright specular reflections from the endoscopic light.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Curved folds or rounded wall contours create a tubular/cavity-like appearance rather than a flat surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "No obvious discrete mass, ulcer crater, or active bleeding is visible in these normal references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Degree of folding varies, from more prominent concentric or projecting folds to smoother expanded walls.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Visibility of fine surface vascular markings varies; they are more apparent in some views and faint in others.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Lumen/opening shape and size vary across views, including slit-like, rounded, or partially obscured openings.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small amounts of yellowish mucus/debris are present in some images while others appear cleaner.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Overall color tone varies slightly from paler pink to deeper orange-pink between images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A dark, sharply bordered triangular/elongated object intrudes into the lumen view, creating an extra non-mucosal structure not present in any reference images.",
+            "location": "left-central portion of the image extending diagonally inward",
+            "confidence": 0.98
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The dark sharply bordered triangular structure is most consistent with the endoscope/instrument edge or a shadowed portion of the scope entering the field of view, not a mucosal lesion. The surrounding mucosa remains smooth, pink, moist, and without a discrete mass, ulcer, or bleeding. This non-mucosal intrusion is an imaging/device artifact rather than a genuine anatomical anomaly, and therefore is explainable as a normal procedural variation rather than pathology."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 4303,
+      "output": 272
+    },
+    "latency_sec": 76.22,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0003",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0051",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0019",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0049",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.17000000000000004,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth pink-to-salmon mucosal surface is present throughout the lumen in all references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Subtle mucosal folds or gentle ridging are visible rather than sharply irregular projections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Fine superficial vascular markings are visible under the mucosal surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The mucosa has a moist, glossy appearance with small specular light reflections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The view shows a rounded tubular/luminal interior with continuous mucosal lining.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall color varies from lighter pale pink to deeper reddish pink across images.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The prominence of visible vessels varies, being more conspicuous in some images and fainter in others.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small amounts of yellowish fluid/residue or bubbles are present in some views but not others.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Fold configuration differs by view, with some images showing broader smooth walls and others more pronounced converging folds.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "An endoscope instrument tip or thin strand is visible in some frames due to the imaging setup, while absent in others.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Large smooth bulging rounded protrusion/nodular structure projecting into the lumen, creating a focal mass-like contour rather than the gentle folds seen in references.",
+            "location": "central to lower-central lumen, extending toward the right side",
+            "confidence": 0.95
+          },
+          {
+            "id": "C2",
+            "description": "Discrete circular pit-like opening or depressed lesion with a raised rim, distinct from the continuous smooth mucosal lining in the references.",
+            "location": "lower-left to lower-central area on the protruding structure",
+            "confidence": 0.88
+          },
+          {
+            "id": "C3",
+            "description": "Localized darker gray-blue submucosal discoloration/shadowing within the bulging area, unlike the uniformly pink-salmon mucosa of the references.",
+            "location": "center of the image within the main protrusion",
+            "confidence": 0.77
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The large smooth rounded prominence appears compatible with normal luminal fold/configuration and perspective distortion from close endoscopic viewing. Its surface is smooth, glossy, and covered by continuous pink mucosa without ulceration, friability, or irregular mass-like texture. Similar broad smooth wall contours and fold-related bulges are represented in the normal profile, especially the variation in fold configuration."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The circular pit-like area is most consistent with a normal luminal opening/fold indentation or a transient fold-defined recess rather than a depressed lesion. It has a smooth rim, blends with surrounding mucosa, and does not show destructive change. Rounded tubular/luminal interiors with continuous mucosal lining are part of the normal pattern in the references."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "The darker gray-blue area likely reflects shadowing, depth, or submucosal lighting effects within the curved fold/protrusion. There is no clear focal mucosal disruption or distinct abnormal pigmentation pattern. Mild color variation and lighting-related differences are explainable by benign variation and endoscopic angle."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.83
+      }
+    },
+    "cost_tokens": {
+      "input": 4556,
+      "output": 579
+    },
+    "latency_sec": 151.66,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0008",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0060",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0053",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0004",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Moist, glossy mucosal surface with multiple bright specular highlights is present throughout the lumen views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The tissue is predominantly pink to salmon-colored with a smooth overall appearance.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Curved folds or concentric/radial mucosal contours are visible, forming a tubular or folded internal lumen.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "No large obstructing mass is seen; the lumen remains at least partially visible/open in each reference.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Degree of vascular visibility varies: some views show more prominent fine branching surface vessels, while others appear more uniformly smooth.",
+            "evidence_refs": [
+              1,
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Lumen shape and fold geometry vary from slit-like or narrowed openings to rounder central openings depending on view and distension.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small amounts of yellowish material or mucus/adherent residue are present in some images but not all.",
+            "evidence_refs": [
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The endoscope tip is visible along the edge in some references, partially obscuring the field, while other images show only mucosa and lumen.",
+            "evidence_refs": [
+              1,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Color tone ranges from lighter peach to deeper reddish-pink across images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Several discrete adherent yellow-white plaques/deposits are present on the mucosal surface, appearing larger and more numerous than the small incidental residue seen in the references.",
+            "location": "upper central wall and lower right edge of the query image",
+            "confidence": 0.78
+          },
+          {
+            "id": "C2",
+            "description": "The mucosa shows a more nodular/bulging rounded fold contour near the lumen entrance rather than the smoother continuous fold transitions seen in the references.",
+            "location": "central to left-central region surrounding the lumen opening",
+            "confidence": 0.55
+          }
+        ],
+        "no_difference_conf": 0.22
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The yellow-white foci in the upper central wall and lower right edge appear consistent with small adherent mucus/residue rather than a true mucosal lesion. Similar yellowish adherent material is already present in references 3 and 4 as a documented benign variation. The surrounding mucosa remains smooth, pink, and without ulceration, mass effect, or clear plaque-like mucosal disruption."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The rounded bulging fold contour around the lumen opening is compatible with normal variation in fold geometry and lumen shape. The references show substantial variation from slit-like to rounder openings depending on angle and distension. In the query, the mucosa is smooth and continuous without a discrete mass, irregular surface, or focal destructive change."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 4431,
+      "output": 425
+    },
+    "latency_sec": 162.3,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0018",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0007",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0054",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0039",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0083",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0081",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0105",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0136",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0119",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0115",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0162",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0117",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.13,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth, glistening mucosal surface with multiple bright specular highlights from moisture/fluid.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Predominantly pink to peach/salmon coloration of the tissue throughout the lumen.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Curved luminal anatomy with soft folds/ridges forming rounded contours rather than sharp edges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Tissue appears intact and continuous, without an obvious discrete protruding mass dominating the field.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Presence of subtle surface texture/vascular mottling beneath the mucosa while maintaining an overall smooth appearance.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall color varies from paler beige-pink to deeper orange-pink across images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Fold configuration varies from tightly apposed/clustered folds to a more open tubular view with broader lumen.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Visibility of fine red vascular markings or mottling is more apparent in some views and faint in others.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small bubbles or tiny amounts of surface fluid are present in some images but not equally prominent in all.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The amount and placement of bright reflection spots differ substantially depending on viewing angle and fluid coating.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Noticeable yellow-brown adherent material/debris coating the mucosal wall rather than a uniformly clean smooth surface.",
+            "location": "left side of the lumen adjacent to the dark central opening",
+            "confidence": 0.84
+          },
+          {
+            "id": "C2",
+            "description": "The lumen appears as a relatively narrowed, dark tunnel with circumferential tapering and less prominent rounded fold architecture than in the references.",
+            "location": "center of the image extending into the distal lumen",
+            "confidence": 0.62
+          }
+        ],
+        "no_difference_conf": 0.11
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The queried area on the left side of the lumen shows a small amount of yellow-brown material that is most consistent with adherent mucus/fluid/debris. This does not form a discrete tissue lesion, mass, ulcer, or structural abnormality. Surface moisture/fluid and minor content residue are compatible with the normal endoscopic appearance and benign variation of variable surface coating seen across views."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The central dark lumen with circumferential tapering is explainable by normal curved tubular anatomy and variable fold configuration. The references already show substantial variation from clustered folds to a more open tubular lumen. In the query, the mucosa remains smooth, pink-orange, and continuous without an obstructing mass or clear pathologic stricture, so this appearance is a normal variation of viewing angle/distension rather than a definite anomaly."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 4537,
+      "output": 432
+    },
+    "latency_sec": 131.64,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0178",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0144",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0138",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0104",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0157",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0130",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0140",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0148",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0114",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0102",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0149",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0131",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0171",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Endoscopic intraluminal view with a central or near-central dark lumen/opening surrounded by smooth curved mucosal walls.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Mucosal surface appears smooth and continuous without obvious protruding masses, deep ulceration, or grossly irregular destructive areas.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Surface is moist and glossy with multiple bright specular light reflections from the endoscope illumination.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Overall coloration is within a warm mucosal range, from pale pink to tan/orange, rather than sharply contrasting colors.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The lumen and surrounding folds/walls have rounded contours, giving the scene a tubular appearance.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Mucosal color varies across normal examples, ranging from very pale pink to tan/brown to orange-yellow tones.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Visibility and prominence of mucosal folds differ: some images show smoother walls with fewer obvious folds, while others show more distinct concentric or longitudinal folds.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The lumen opening varies in size and shape, appearing slit-like, round, oval, or partially obscured depending on viewing angle and distension.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small amounts of surface material or coating are variably present, including scattered tiny bubbles, mucus, or light debris.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Image framing and overlays vary, with some references showing on-screen text/comment boxes while others have a clean circular endoscopic border only.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 5,
+            "variation": "Tiny scattered specks or superficial pigment-like flecks can be present on an otherwise smooth mucosal surface.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Focal irregular whitish plaque/exudative-looking material adherent to the mucosal surface, larger and denser than the small scattered mucus/debris seen in references.",
+            "location": "lower central to lower-right mucosa near the foreground edge",
+            "confidence": 0.9
+          },
+          {
+            "id": "C2",
+            "description": "Localized red linear/raw-appearing area suggesting superficial mucosal break or erosion rather than uniformly smooth intact lining.",
+            "location": "lower central wall just below the lumen, adjacent to the whitish material",
+            "confidence": 0.82
+          },
+          {
+            "id": "C3",
+            "description": "Patchy gray-white irregular mucosal discoloration/coating creating a nonuniform roughened area instead of the smoother homogeneous pink/tan surface in all references.",
+            "location": "right side of the lumen and extending to the upper-right wall",
+            "confidence": 0.74
+          }
+        ],
+        "no_difference_conf": 0.06
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The lower central/lower-right whitish material appears superficial, soft, and adherent like mucus/debris/foam rather than a true plaque or structural lesion. Small surface material is explicitly allowed by the benign variations, and there is no clear mass effect, ulcer crater, or discrete pathologic border."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The faint red linear area just below the lumen is subtle and can be explained by normal fold contour, contact/pressure effect, or mild color variation on glossy mucosa. It does not show a definite mucosal break, ulcer base, or convincing erosion beyond expected normal variation."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "The right-sided gray-white patchy appearance is most consistent with lighting, mucus coating, and angle-related surface texture differences on otherwise intact mucosa. The references and benign variations allow color variability and small amounts of coating/debris; there is no definite destructive irregularity or protruding lesion."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 4813,
+      "output": 560
+    },
+    "latency_sec": 74.75,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0091",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0147",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0141",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0145",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0092",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0143",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.92,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth, glistening mucosal surface with bright specular light reflections is present throughout the images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The tissue shows a pink to orange/salmon coloration without sharply demarcated abnormal-appearing discoloration.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Curved luminal anatomy and continuous mucosal contours are seen, with the wall surfaces appearing intact.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Surface texture varies from relatively smooth broad walls to more prominently folded or ridged mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Color tone varies within the normal set, ranging from paler pink to deeper orange/salmon hues.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Visibility of fine vascular or mottled surface pattern differs between images, being more evident in some views and subtler in others.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Endoscope hardware/overlays are variably present, including a dark instrument shaft and on-screen inset/text elements in some images but not others.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Small focal mucosal surface break/erosion with reddish center, unlike the intact continuous mucosal surfaces in all references.",
+            "location": "left lower wall of the lumen, near the 7\u20138 o'clock position just above the teal inset",
+            "confidence": 0.94
+          },
+          {
+            "id": "C2",
+            "description": "Patchy whitish adherent-looking surface irregularity/coating along the mucosa, forming focal roughened plaques rather than the uniformly smooth glistening lining seen in the references.",
+            "location": "most evident along the right wall around 2\u20134 o'clock and also scattered on the left wall",
+            "confidence": 0.81
+          }
+        ],
+        "no_difference_conf": 0.05
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "There is a small discrete mucosal break/erosive-looking focus with a reddish center on the left lower wall near 7-8 o'clock. This is not explained by the normal profile of smooth, intact, continuous mucosa or by benign variation in folds, color tone, or vascular visibility. It appears focal and structurally disruptive rather than a lighting or texture variant."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "There are patchy whitish roughened/adherent-looking plaques along the right wall and scattered elsewhere, giving a locally irregular coated appearance rather than the smooth glistening mucosa expected in the references. This exceeds normal variation in color or texture and is not attributable to folds, vascular pattern, or overlays."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 4189,
+      "output": 433
+    },
+    "latency_sec": 98.48,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0100",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.12,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Moist, glossy mucosal surface with multiple small bright specular reflections is present in all images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The tissue is predominantly pink to tan/salmon in color without sharply demarcated focal discoloration.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Smooth continuous mucosal lining is seen throughout, with gentle folds/curving contours rather than irregular disrupted surfaces.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Subtle fine vascular markings are visible beneath the mucosal surface.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Endoscopic close-up viewpoint within a tubular lumen is consistent across the references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Degree of fold prominence varies: some views show pronounced, thick rugal-like folds while others appear flatter and more gently undulating.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Color tone varies within the normal set from lighter pink/salmon to slightly darker tan-brown hues.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Visibility of superficial vessels differs by image, being more conspicuous in some views and subtler in others.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The lumen configuration and camera angle vary, including more open central luminal views versus oblique close-up wall views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "An endoscopic instrument is visible in some references but absent in others.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Circumferential smooth pale/whitish ring-like narrowing of the mucosa, producing a constricted lumen appearance rather than the broader folded contour seen in all references.",
+            "location": "mid to inner circumference surrounding the central dark lumen, most evident along the right and upper walls",
+            "confidence": 0.9
+          },
+          {
+            "id": "C2",
+            "description": "Relative absence of the usual visible mucosal folds/rugal pattern, with the wall appearing featureless and uniformly smooth around the narrowed segment.",
+            "location": "throughout the visible mucosal wall encircling the lumen",
+            "confidence": 0.78
+          },
+          {
+            "id": "C3",
+            "description": "Central lumen is markedly dark and pinhole/oval in shape with an abrupt transition from the surrounding pale mucosa, unlike the more open gently contoured luminal views in the references.",
+            "location": "center of the image",
+            "confidence": 0.74
+          }
+        ],
+        "no_difference_conf": 0.05
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The apparent circumferential smooth narrowing is explainable by normal luminal configuration and camera perspective. The mucosa remains smooth, glossy, and uniformly pink-pale without focal lesion, ulceration, nodularity, or disrupted surface. Reference images already show variability in lumen shape and contour, including more closed or oblique views. This looks like a normal contracted tubular segment rather than a true abnormal stricture."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "Reduced visibility of folds is consistent with the benign variation that fold prominence can range from prominent to relatively flat. In the query, the wall appears smoothly distended/contracted with preserved continuous mucosa and no irregularity. Absence of strong rugal pattern alone is not sufficient evidence of pathology."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "The dark central oval lumen with abrupt contrast from the surrounding lighter mucosa is a normal consequence of viewing down a tubular lumen with variable insufflation, angle, and lighting. Similar luminal variability is present in the references. There is no discrete mass, bleeding, ulcer, or asymmetric obstruction visible."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 4602,
+      "output": 591
+    },
+    "latency_sec": 87.94,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0134",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0167",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0094",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0168",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0109",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth pink-to-light-peach mucosal surface is present throughout the views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The tissue surface appears moist and glossy with multiple small specular light reflections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Broad mucosal folds or gentle ridges are visible, giving the lumen a softly undulating contour rather than a flat wall.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "A central or near-central lumen/opening is seen, partially surrounded by symmetric or curved folds of tissue.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "No reference shows a dominant discrete mass-like protrusion; the visible contours are formed by smooth continuous folds.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall color tone varies from pale pink/light peach to slightly deeper orange-pink between images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The lumen shape and size vary, including slit-like, small round, and more open/tubular appearances depending on view and distension.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Fine superficial vascular markings are faint or more apparent in some images, especially in reference 3, while subtler in others.",
+            "evidence_refs": [
+              3,
+              1,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small amounts of surface residue or discoloration are present in some normal views, such as yellowish fluid/coating or tiny brown specks.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Image framing and instrumentation vary, with the endoscope shaft visible in some references and absent in others.",
+            "evidence_refs": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A dominant discrete rounded polypoid/lobulated protruding mass is present, attached by a narrower stalk/base, which is absent from all normal references.",
+            "location": "upper-left to central-left portion of the image, projecting into the lumen",
+            "confidence": 0.99
+          },
+          {
+            "id": "C2",
+            "description": "The usual central or near-central open lumen surrounded by folds is replaced/obscured by the large focal protrusion, creating an asymmetric intraluminal contour not seen in the references.",
+            "location": "central field, around and behind the protruding lesion",
+            "confidence": 0.89
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a large, discrete, rounded pedunculated/polypoid protrusion projecting into the lumen from the upper-left/central-left region. This is not explained by the normal patterns of smooth continuous folds, variable lumen shape, color variation, residue, or scope position. All references show contours formed by folds and walls without a dominant focal mass. This lesion clearly departs from those normal appearances and represents a genuine anomaly."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "The obscuration and distortion of the usual lumen by the large focal protruding lesion is secondary evidence of the same abnormal process. While lumen shape can vary normally, in this case the asymmetric intraluminal contour is caused by a discrete mass rather than by benign fold configuration or distension differences. Therefore this is also a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4600,
+      "output": 451
+    },
+    "latency_sec": 227.0,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0116",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0152",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0174",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0151",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0106",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0179",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0165",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0123",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0107",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0124",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0099",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0110",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0142",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0160",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Pink to orange mucosal surface with generally smooth, moist appearance is seen across the references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Gentle curving folds/rugal contours of the wall are present rather than a flat surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The lumen appears as a rounded or curved central/deeper opening surrounded by continuous mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Small bright white specular highlights from reflected light are commonly scattered on the moist surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Mucosal coloration is fairly uniform within each image without a sharply demarcated focal lesion.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall hue varies from pale pink/beige to deeper orange tones while maintaining the same smooth mucosal look.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Fold prominence varies, with some images showing more pronounced wrinkling and others appearing more gently undulating.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Yellowish fluid or mucus residue/coating is present to different degrees along parts of the wall in some normal images.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The lumen may be centered or off-center and can appear more open versus more narrowed depending on view/orientation.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Surface vascular/detail visibility varies from subtle fine texture to slightly more visible mottled mucosal patterning.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Focal irregular ulcer-like surface defect with adherent yellow-white exudative material, interrupting the otherwise smooth mucosal surface",
+            "location": "upper-left to upper-central mucosa just above the lumen",
+            "confidence": 0.96
+          },
+          {
+            "id": "C2",
+            "description": "Adjacent localized erythematous patch with scattered red punctate spots/hemorrhagic-looking speckling forming a sharply focal lesion rather than uniform coloration",
+            "location": "upper-central mucosa surrounding and just right of the yellow-white defect",
+            "confidence": 0.91
+          }
+        ],
+        "no_difference_conf": 0.02
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a sharply focal mucosal defect on the upper-left/upper-central wall with adherent yellow-white material and an interrupted, uneven surface. This is not explained by the normal profile of smooth continuous mucosa, gentle folds, or by benign mucus coating alone, because the underlying surface appears eroded/ulcerated rather than simply coated."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "There is a localized erythematous area with punctate red speckling immediately adjacent to the defect, forming a discrete focal lesion. This differs from the benign variations of general hue change or mild mottled texture seen in references, which remain relatively uniform and lack a sharply demarcated inflamed-looking patch."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4529,
+      "output": 418
+    },
+    "latency_sec": 238.4,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0097",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0164",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0153",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0113",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth, glistening mucosal surface with a moist appearance is present throughout the views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Overall coloration is predominantly pale pink to salmon pink across the tissue surfaces.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The images show gently curving luminal/folded anatomy with soft rounded contours rather than sharp edges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Specular light reflections from the endoscope are visible as bright white highlights on the mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "No prominent mass-like protrusion or obvious disruptive lesion is seen; the lining appears continuous.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Visibility of the lumen/opening varies from a broader central opening to a narrower slit-like or recessed view.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Surface vascular markings are more apparent in some images and faint or not obvious in others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small amounts of yellowish mucus/fluid are present in some views, while other views appear cleaner.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The degree of fold prominence varies, with some images showing broad smooth folds and others showing tighter clustered folds near the opening.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Image tone and brightness vary slightly, from lighter pink well-lit views to darker or more shadowed views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Discrete rounded polypoid/nodular mucosal protrusion projecting from the surface, creating a focal mass-like elevation not seen in any reference images.",
+            "location": "upper central to slightly left-of-center portion of the image",
+            "confidence": 0.97
+          }
+        ],
+        "no_difference_conf": 0.02
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query image shows a discrete, rounded, sessile polypoid mucosal protrusion in the upper central/left-central field. This is a focal mass-like elevation with a smooth surface, distinct from the broad folds, luminal contours, mucus, and lighting-related highlights described in the normality profile. None of the reference images demonstrate a comparable isolated nodular projection; their contours are continuous smooth folds without a localized exophytic bump. Therefore this finding is not explained by normal patterns or benign variations and is a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4454,
+      "output": 293
+    },
+    "latency_sec": 240.93,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0133",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0120",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5d_0096",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Pink to light salmon mucosal surface is present throughout the images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The lining appears smooth, moist, and glossy with specular light reflections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "A central or eccentric lumen/opening is visible within the field of view.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Mucosal folds or gentle contour ridges are seen surrounding or leading toward the lumen.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The mucosal surface looks intact without obvious large masses, deep ulcer-like defects, or active bleeding.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Fold prominence varies from strongly ridged and clustered to more subtle, shallow folds.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The lumen shape and position vary, appearing round, oval, slit-like, or irregular and may be central or off-center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Overall color tone varies within a normal range from paler pink to warmer orange-pink.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small scattered surface specks or tiny dots are visible in some normal images, while others appear more uniformly smooth.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Amount of visible fluid/mucus and reflective highlights varies, with some views showing more pooling or bubbles than others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct round protruding polypoid mass projects into the lumen, attached by a narrower stalk/base; no comparable focal exophytic lesion is present in any reference.",
+            "location": "center-left foreground extending toward the middle of the image",
+            "confidence": 0.99
+          },
+          {
+            "id": "C2",
+            "description": "The protruding lesion has a granular/nodular surface texture rather than the uniformly smooth fold/lining surface seen in the references.",
+            "location": "surface of the round mass in the center-left/midline",
+            "confidence": 0.91
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a discrete round polypoid structure projecting into the lumen with a narrower attachment/base, distinct from the surrounding folds and mucosal contour. This cannot be explained by normal fold prominence, lumen shape variation, color variation, or mucus/bubbles in the normality profile. None of the references show a comparable focal exophytic mass."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "The surface of the same protruding lesion appears granular/nodular compared with the usually smooth glossy mucosa and folds in the references. While tiny specks can be a benign variation, this texture is localized to a raised mass and supports that the lesion is a true abnormal focal finding rather than a normal mucosal fold."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4488,
+      "output": 418
+    },
+    "latency_sec": 103.95,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0121",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth glistening mucosal surface is present throughout, with moist reflective highlights from the endoscopic light.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The lumen or a central opening is visible, typically surrounded by gently curving mucosal folds or concentric contours.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Overall mucosal coloration stays within a pale pink to orange-pink range without sharply demarcated contrasting regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Surface architecture appears continuous and intact, with gradual transitions in texture rather than abrupt disruptions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Degree of visible vascular pattern varies: some images show more distinct fine branching vessels, while others appear smoother with vessels less apparent.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Color tone varies from lighter pale pink to deeper orange-pink across otherwise normal-appearing views.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The shape and size of the visible central opening/lumen differs, ranging from a small slit-like or pinhole opening to a wider round lumen.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Mucosal folds vary in prominence, from subtle shallow undulations to more obvious concentric or converging folds.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Small amounts of adherent mucus/fluid, tiny bubbles, or light debris can be present on the surface while the overall appearance remains normal.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Extensive irregular whitish plaque-like/exudative material coating the mucosal surface, creating sharply contrasting opaque areas not seen in the references",
+            "location": "circumferentially along the upper and lower portions of the lumen, especially top edge and lower foreground",
+            "confidence": 0.98
+          },
+          {
+            "id": "C2",
+            "description": "Focal red raw-looking mucosal defect/erosion with apparent surface disruption adjacent to the lumen",
+            "location": "right side of the lumen around the 3 o'clock position",
+            "confidence": 0.9
+          },
+          {
+            "id": "C3",
+            "description": "Additional small focal ulcerated or polypoid red lesion protruding from the wall",
+            "location": "lower-left wall near the 7 o'clock position, just below the lumen",
+            "confidence": 0.8
+          },
+          {
+            "id": "C4",
+            "description": "Abruptly irregular mucosal architecture with loss of the usual smooth continuous glistening surface",
+            "location": "throughout the visible mucosa surrounding the central lumen",
+            "confidence": 0.93
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows extensive thick irregular whitish material coating large portions of the mucosa, especially superiorly and inferiorly, with sharply demarcated opaque areas. This is far beyond the small amounts of mucus, fluid, or debris allowed as a benign variation, and it departs from the smooth pink/orange glistening mucosa in the references."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "At the right side of the lumen there is a focal red raw-appearing area with apparent surface disruption and adjacent whitish exudative material. This is not explained by normal fold variation or color variation, because the references maintain intact continuous mucosa without localized erosive defects."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": true,
+            "reasoning": "The lower-left wall shows a small focal red protruding/ulcerated lesion distinct from the surrounding mucosa. This is not a normal fold, vascular pattern, or minor debris; it appears as a localized abnormality interrupting the otherwise expected smooth contour."
+          },
+          {
+            "id": "C4",
+            "is_anomaly": true,
+            "reasoning": "The surrounding mucosa in the query has markedly irregular architecture with loss of the usual smooth glistening continuous surface. The abrupt textural disruption, combined with exudative coating and inflamed areas, is inconsistent with the normal patterns and benign variations shown in the references."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4591,
+      "output": 622
+    },
+    "latency_sec": 364.92,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0163",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The scene is a close-up endoscopic circular field with dark vignette/border at the periphery and moist reflective highlights on the tissue surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The visible tissue surface is smooth and intact in appearance, without obvious masses or protruding irregular structures dominating the view.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The mucosal coloration stays within pink to orange-brown tones across images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Gentle folds, curvature, or a lumen-like narrowing/opening are present rather than a flat planar surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall color temperature varies from more orange/brown views to paler pink views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The amount and prominence of mucosal folds/ridges vary, with some images showing smoother walls and others showing more visible wrinkling.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small yellowish material or staining is present in some views and absent or minimal in others.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The endoscope/instrument shaft is visible in some images but not others.",
+            "evidence_refs": [
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Overlaid text/graphics and inset boxes appear in some references while others have little or no on-screen annotation.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct round polypoid/nodular protrusion projects from the mucosal wall, creating a focal mass-like structure not seen in any reference images.",
+            "location": "right-central wall of the lumen, extending inward near the opening",
+            "confidence": 0.98
+          }
+        ],
+        "no_difference_conf": 0.02
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query image shows a discrete rounded polypoid protrusion arising from the right-central mucosal wall and extending into the lumen. This is a focal mass-like structure, not just a gentle fold, curvature, color change, or lighting artifact. The reference images show smooth mucosa with folds/opening but no comparable nodular intraluminal projection. Therefore this finding is not explained by the listed normal patterns or benign variations and is a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4386,
+      "output": 277
+    },
+    "latency_sec": 108.82,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0137",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Endoscopic circular field of view with dark peripheral vignette is present in all images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The visible surface is moist and glossy, with multiple bright specular light reflections on the mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Mucosal lining appears smooth and intact without obvious disruption, with soft curved contours or folds.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Overall coloration stays within a pink to salmon/orange mucosal range.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Color tone varies from pale light pink to deeper orange-red across normal examples.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Surface texture ranges from relatively uniform and smooth to more visibly reticular or vascular/folded.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "A central or near-central lumen/opening is clearly visible in some images, while others mainly show adjacent walls and folds without a centered opening.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small scattered surface flecks or tiny debris-like brown specks are visible in some otherwise normal images.",
+            "evidence_refs": [
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Procedure-related overlays or instrument presence can appear in normal images, including on-screen text/inset and a visible scope/tool tip.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Large smooth polypoid/protruding lobulated mucosal mass projecting into the lumen, creating an extra focal structure not seen in any reference images.",
+            "location": "right side of the lumen, extending from the mid-right toward the center",
+            "confidence": 0.97
+          },
+          {
+            "id": "C2",
+            "description": "The protruding lesion has a distinctly nodular/granular surface texture with visible punctate pits/vascular pattern, unlike the uniformly smooth wall contours in the references.",
+            "location": "surface of the protruding mass on the right-center",
+            "confidence": 0.9
+          },
+          {
+            "id": "C3",
+            "description": "Lumen architecture is asymmetrically narrowed/partially obstructed by the projecting mass, rather than showing only soft wall folds or an open central passage.",
+            "location": "central to upper-central lumen adjacent to the right-sided mass",
+            "confidence": 0.88
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a distinct pedunculated/polypoid mucosal mass projecting from the right side into the lumen. This is not explained by the normal patterns of smooth curved wall/folds, moisture, color range, or by benign variation in fold prominence. The references show folds and wall contours, but not a discrete exophytic lobulated structure of this size protruding into the lumen."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "The surface of the protruding lesion has a nodular/granular pit-like texture that differs from the expected smooth to mildly vascular/reticular normal mucosa in the references. While some benign vascular pattern variation exists, this texture is specifically localized to a protruding mass and supports a true abnormal lesion rather than normal mucosal variation."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": true,
+            "reasoning": "The lumen is partially occupied and narrowed by the right-sided projecting mass. Normal benign variation can include different lumen orientation or folds, but here the altered architecture is secondary to a discrete intraluminal lesion, making it a genuine anomaly rather than a normal fold configuration."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4452,
+      "output": 586
+    },
+    "latency_sec": 204.52,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0175",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth, glistening mucosal surface with strong specular light reflections is present throughout the images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The mucosa has an overall pink to light salmon/brown coloration without a sharply demarcated focal lesion.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "A central or near-central luminal opening/passage is visible, surrounded by continuous mucosal folds or converging wall contours.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Surface architecture appears intact, with gentle folds/rugae or shallow contouring rather than irregular exophytic structures.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Color tone varies from pale pink to deeper reddish-brown across normal examples.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Degree of visible vascular pattern varies: more apparent fine branching vessels in some images and less conspicuous vasculature in others.",
+            "evidence_refs": [
+              1,
+              3,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The lumen may appear as a small round opening or as a more slit-like/angled passage depending on viewing angle and distension.",
+            "evidence_refs": [
+              2,
+              3,
+              1,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Amount of visible surface mucus/fluid and reflective glare differs between images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Folds may appear subtle and smooth in some views or more prominent and curving/circumferential in others.",
+            "evidence_refs": [
+              2,
+              3,
+              4,
+              1
+            ]
+          },
+          {
+            "id": 5,
+            "variation": "Small scattered residue or bubbles are present in some normal images while others appear cleaner.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 6,
+            "variation": "Procedure-related elements such as the endoscope tip or a thin fluid jet may be visible in the field in some otherwise normal images.",
+            "evidence_refs": [
+              1,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Circumferentially irregular darker brown-red ring/segment of mucosa around the luminal opening, creating a more uneven wall contour than the uniformly pink smooth surrounding mucosa seen in all references.",
+            "location": "around the central lumen, most evident on the right and lower-right inner wall",
+            "confidence": 0.72
+          },
+          {
+            "id": "C2",
+            "description": "Localized shallow depressed/ulcer-like darkened area with loss of the usual smooth glistening surface appearance.",
+            "location": "right side of the luminal margin, approximately 2 to 4 o'clock",
+            "confidence": 0.58
+          }
+        ],
+        "no_difference_conf": 0.2
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The darker brown-red circumferential segment around the lumen is explainable by normal mucosal color variation, shadowing, viewing angle, and the natural appearance of converging folds around a tubular opening. The surface remains smooth and glistening without a discrete mass, sharp border, or disrupted architecture. Similar deeper tones and fold-related contour changes are compatible with the normal patterns and benign variations in the references."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The suspected shallow depressed darkened area at the right luminal margin does not show a clear ulcer crater, fibrin base, active erosion, or definite focal mucosal break. It appears more consistent with the oblique view into the lumen, local shadow, and normal fold curvature adjacent to the opening. The mucosal surface still looks intact and continuous, fitting normal variation rather than a true lesion."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 4660,
+      "output": 458
+    },
+    "latency_sec": 292.55,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0118",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth pink-to-salmon mucosal surface is present throughout the images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The mucosa has a moist, glossy appearance with multiple small specular light reflections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Gentle folds, ridges, or curved wall contours are visible rather than a flat surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Fine superficial vascular or textural markings can be seen beneath the mucosal surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The lumen/wall junction forms smooth curved recesses or narrowing without disruptive irregularity.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall color varies from lighter pale pink to deeper orange-salmon across normal images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The prominence of visible vascular markings varies, being more evident in some views and faint in others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small yellowish material or residue is present in some normal images but absent in others.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Endoscope shaft/instrument occupies part of the field in some views, while other images show only mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Field geometry differs, with some images centered on a broad wall surface and others on a fold or recess near a lumen opening.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.89
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 4386,
+      "output": 80
+    },
+    "latency_sec": 90.44,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0139",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The mucosal surface is predominantly smooth and pink-to-salmon/orange in color, without obvious disruptive lesions dominating the field.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Fine superficial vascular or reticular mucosal markings are visible on the wall in each image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The surface appears moist with multiple bright specular reflections from fluid/illumination.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Curving folds or gentle wall contours are present, giving the lumen a softly undulating appearance.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "A dark endoscope shaft/instrument occupies part of the view in some images, while others show only mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Overall hue varies from lighter orange-peach to deeper pink-red between normal images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The prominence of vascular markings differs, appearing subtler in some views and more conspicuous in others.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small pale/yellowish adherent spots are visible in one normal view but absent in the others.",
+            "evidence_refs": [
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "View geometry differs: some images show a narrowed fold/opening region, while one image shows a broader close-up mucosal field.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Cluster of multiple smooth, rounded polypoid/lobulated mucosal protrusions bulging into the lumen, rather than the gentle continuous folds seen in the references.",
+            "location": "central to right-central field",
+            "confidence": 0.96
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows several discrete, smooth, rounded hemispheric mucosal protrusions clustered in the central-right field. These are not explained by the normal profile of gentle continuous folds or softly undulating wall contours seen in the references. The protrusions are focal and polypoid/lobulated rather than a broad curving fold, and this clustered nodular appearance is absent from the reference normals. Therefore this candidate is a genuine structural abnormality rather than a benign variation in color, vascularity, moisture, or viewing angle."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 4392,
+      "output": 285
+    },
+    "latency_sec": 71.34,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0103",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth, glistening moist mucosal surface is present throughout the images, with bright specular light reflections.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Overall mucosal coloration is in the pink to salmon/orange range without sharply demarcated contrasting areas.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The lumen/wall contour appears rounded and continuous, with soft folds or curved surfaces rather than jagged or irregular edges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Longitudinal or gently curving mucosal folds/rugae are a recurring normal structural feature.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Fold prominence varies: some views show pronounced thick ridged folds, while others show a smoother, broader wall surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Visibility of fine submucosal vascular markings varies from faint to more noticeable.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small amounts of surface fluid, bubbles, or yellowish mucus/debris are variably present.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The lumen can appear more open and circular in some views or narrower/slit-like depending on viewing angle and distension.",
+            "evidence_refs": [
+              1,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Color tone varies slightly across references, ranging from lighter peach-pink to deeper orange-pink.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Focal round exophytic/polypoid protrusion projecting from the mucosal wall, with a pale whitish-yellow cap, not seen in any reference images.",
+            "location": "upper right quadrant of the query image, attached to the right lateral wall near the fold",
+            "confidence": 0.98
+          },
+          {
+            "id": "C2",
+            "description": "Large sharply demarcated blue-stained/blue-tinted mucosal region creating strong color contrast with the surrounding brown-pink mucosa; this type of localized contrasting area is absent from all references.",
+            "location": "right half of the image, surrounding the protruding lesion and extending across the adjacent wall",
+            "confidence": 0.94
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a discrete round exophytic protrusion on the right wall with a pale whitish-yellow cap. This is a focal raised lesion rather than a smooth fold, mucus film, bubble, or ordinary contour change. None of the normal patterns or benign variations explain a localized polypoid projection of this type, and no comparable structure is present in the references."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The blue-tinted region is most consistent with procedural dye/chromoendoscopic staining or imaging-related color effect over otherwise smooth mucosa, rather than intrinsic abnormal tissue by itself. Although this sharp blue coloration is not seen in the reference set, the anomaly claim is based on color contrast alone, and the underlying wall contour remains smooth without a separate structural abnormality beyond C1."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 4447,
+      "output": 458
+    },
+    "latency_sec": 134.36,
+    "error": null
+  },
+  {
+    "item_id": "D5d_0156",
+    "domain": "medical_colon",
+    "domain_code": "D5d",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "HyperKvasir",
+    "category": "endoscopy",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Smooth, continuous mucosal lining with a glossy/wet surface is present throughout the lumen.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Warm pink-to-orange mucosal coloration predominates across the images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Subtle fine vascular markings or faint branching surface patterns are visible beneath the mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Specular light reflections from fluid and the endoscopic light source are scattered on the mucosal surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A rounded tubular lumen with gently curving folds/walls is seen, without abrupt disruption of the surface contour.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Overall color tone varies from lighter pink/peach to deeper orange-yellow between normal examples.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The lumen may appear more open and centrally visible in some views or more close-up/partially collapsed in others depending on scope position.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Visibility of vascular detail varies from more apparent fine branching lines to more uniform-looking mucosa.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small amounts of yellowish mucus/fluid coating or residue can be present on the surface in otherwise normal views.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Local shallow fold contours or slight bulging of the wall can be seen as part of the normal tubular shape.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Distinct focal protruding polypoid/nodular lesion with a smooth pale-whitish cap projecting into the lumen, creating an extra rounded structure not seen in any reference images.",
+            "location": "right lower-central portion of the image, attached to the mucosal fold at the lumen edge",
+            "confidence": 0.98
+          }
+        ],
+        "no_difference_conf": 0.02
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The queried finding is a discrete, rounded polypoid protrusion with a pale whitish cap arising from the mucosal edge and projecting into the lumen. This is not explained by the normal profile of smooth continuous mucosa, gentle fold curvature, variable lumen openness, or mild benign wall bulging. Normal fold contours in the references remain broad and continuous with the wall, whereas this lesion forms a focal exophytic nodule with a distinct head and stalk-like attachment. On direct inspection, it represents a true focal structural abnormality rather than lighting, mucus, or routine fold variation."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4451,
+      "output": 316
+    },
+    "latency_sec": 86.37,
+    "error": null
+  }
+]

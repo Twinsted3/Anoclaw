@@ -11,8 +11,8 @@ from utils import load_visual_ctx, extract_frames_aegis, extract_frames_forensic
 
 
 
-os.environ["OPENAI_API_KEY"] = "***REDACTED-OPENAI-KEY***"
-
+# os.environ["OPENAI_API_KEY"] = "***REDACTED-OPENAI-KEY***"
+os.environ["OPENAI_API_KEY"] = "***REDACTED-SEED-KEY***"
 
 def merge_session_input(history_items, new_input_items):
     if isinstance(new_input_items, list):
@@ -76,7 +76,8 @@ def run_agent(vid_path_list, meta_data_list, run_config, args, idx):
 
 if __name__ == "__main__":
 
-    int_MODEL = "o3-mini-2025-01-31"
+    # int_MODEL = "o3-mini-2025-01-31"
+    int_MODEL = "doubao-seed-1-6-vision-250815"
     run_config = RunConfig(
         session_input_callback=merge_session_input,
         trace_include_sensitive_data=True,

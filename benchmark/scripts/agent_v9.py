@@ -172,7 +172,7 @@ def _parse_v9_action(text, mode_hint):
     return parsed
 
 
-def _call_with_retry(client, model, messages, mode_hint, max_tokens=700,
+def _call_with_retry(client, model, messages, mode_hint, max_tokens=1400,
                      retries=1):
     cur = list(messages)
     for _ in range(1 + retries):

@@ -1,0 +1,1802 @@
+[
+  {
+    "item_id": "D10_0003",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear internal void (hole) which is a structural anomaly not observed in any of the normal reference images. The refutation protocol confirms this feature is unique to the query.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0010",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, dark internal void (lesion) that is not present in any of the normal reference images, confirming a pathological anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0065",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, dark, irregular void in the liver tissue that is not present in any of the normal reference images. This feature survives refutation and is a clear indicator of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0083",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains two distinct foreground objects, while all reference images and the domain rules specify exactly one. The side-by-side comparison confirmed the second object is an anomaly not present in the normal baseline.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0004",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, dark, irregular void that is not present in any of the normal reference images. This feature is a clear deviation from the normal liver anatomy shown in the references, indicating a pathological anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0058",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains internal dark spots (potential lesions) that are not present in the normal reference images, confirming an anomaly. The boundary irregularity was refuted as it is a normal variation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0013",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits distinct internal voids (holes) in the liver tissue that are completely absent in the normal reference images, confirming a structural anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0007",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large void and bright spots that are completely absent in the normal reference images, confirming the presence of anomalies.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0043",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a structural protrusion on the liver contour that is not present in any of the reference images. Since the reference pool represents normal variations and lacks this feature, the protrusion is identified as a definitive anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0037",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The dark void observed in the query image is a normal anatomical feature (likely a blood vessel) as it is also present in the provided normal reference images. No anomalous features were detected.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0056",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a foreground object with a distinct double-lobed shape. The reference profiler and side-by-side comparison confirm that normal instances are 'elongated shards' and do not exhibit this double-lobed topology. Since the feature is not present in the reference pool, it is classified as an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0055",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits fragmentation (two disconnected components), which is not listed as an allowed variation in the reference profile. All reference images show a single connected object. Therefore, the query is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0039",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large internal void not found in any reference image, violating the uniform texture invariant and confirming an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0072",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no anomalous features. Its shape and texture are consistent with the natural variation observed in the normal reference images, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0082",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark void) was successfully refuted by observing identical features in the normal reference images. The query image is therefore classified as normal.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0034",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query object exhibits a circular shape, which deviates from the 'irregular organic blob' shape established as normal by the reference images. This shape difference is not listed as an allowed variation, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0040",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query exhibits fragmentation (two disconnected parts), which the reference profiler explicitly identifies as an allowed variation for this dataset. Therefore, the image is normal.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0069",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a second, disconnected foreground object (a small fragment) that is absent in all reference images, violating the normal invariant of having exactly one connected component.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0005",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular void in the liver tissue that is absent in all normal reference images. This structural defect survives the refutation protocol, indicating a high probability of anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0041",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a focal hyperdense lesion that is not present in any of the normal reference images, confirming an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0085",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark void in the liver tissue that is not present in any of the reference images, which all show uniform speckled texture. This feature survives refutation and indicates a clear anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0033",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (hole) within the liver structure, which is not present in any of the normal reference images. This structural anomaly confirms the image is defective.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0008",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct bright, irregular lesion in the liver structure that is not present in any of the reference images, which all show a uniform speckled texture. This feature survives refutation, confirming the image as anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0061",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large internal void (hole) in the liver structure that is completely absent in all reference images, which show solid, continuous tissue. This structural defect is a definitive anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0023",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular void in the liver tissue that is not present in any of the reference images. This feature is confirmed as an anomaly via the refutation protocol, as it is not a normal variation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0053",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular void in the liver tissue that is not present in any of the reference images, which all show uniform, solid texture. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0088",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a liver cross-section with a smaller size and no internal holes. However, the reference profiler explicitly states that 'size variation' and 'internal texture density' are allowed variations for normal liver CT slices. Therefore, these features are not considered anomalies, and the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0070",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct hyperdense focal spot that is absent in all reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0074",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear anomaly: it contains two separate foreground objects, whereas the reference images and domain rules establish that a normal liver CT slice must contain exactly one connected object. This count violation is not an allowed variation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0060",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a simple, uniform oval object that lacks the complex lobular structure and internal vascular features (bright spots) characteristic of the normal liver slices in the reference set. This significant deviation in morphology and texture indicates an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0025",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large central void that is absent in all reference images, which display uniform tissue. This structural difference confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0077",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular internal void (likely a lesion or cyst) that is not present in any of the normal reference images, which all show solid, continuous liver tissue. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0015",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (hole) within the liver structure, which is absent in all normal reference images. This topological anomaly confirms the image is defective.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0079",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark void (hole) within the liver tissue that is absent in all reference images, which display uniform, solid parenchyma. This structural defect confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0050",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (hole) in the liver tissue, which is a pathological anomaly. This feature was successfully refuted against the reference images, as none of the normal samples exhibit such a void. Therefore, the image is classified as anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0042",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (hole) within the liver tissue, which is not present in any of the normal reference images. This structural defect confirms the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0006",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (hole) in the liver tissue which is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0051",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits internal voids and an irregular shape that are absent in the normal reference images, confirming the presence of pathology.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0066",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a significantly different shape (irregular with a concave notch) and size compared to the compact, convex shapes in the reference images. Since these features are not present in the normal references, the query is classified as anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0027",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits two separate foreground objects, violating the invariant that normal liver CT slices contain exactly one connected component. The reference profiler confirms that while shape and size vary, fragmentation is not a normal variation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0081",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct internal void (black hole) within the liver tissue, a feature completely absent in the provided normal reference images. This structural defect confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0086",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear structural anomaly: a disconnected foreground component (a small detached fragment) that is not present in any of the normal reference images, which all show a single connected liver structure. This violates the domain invariant for normal liver CTs.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0057",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large internal void (hole) in the liver structure that is absent in all reference images, which show solid, continuous tissue. This confirms the presence of a pathological anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0071",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, dark, irregular void in the liver structure that is not present in any of the normal reference images. This structural defect is a clear anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0062",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular void in the liver tissue that is absent in all reference images, which exhibit uniform texture. This structural defect is a clear anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0016",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image lacks the expected foreground object (stomach cross-section) present in all reference images. This absence is a definitive anomaly as it is not an allowed variation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0002",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains an extra disconnected white fragment in the upper right region that is absent in all reference images. This violates the invariant that normal liver CTs contain exactly one connected foreground object, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0038",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear high-intensity streak that is absent in all reference images, which exhibit uniform texture. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0047",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a tiny, isolated fragment instead of the large liver cross-section seen in all reference images. This extreme difference in object size and position is not a normal variation and indicates a significant anomaly (e.g., missing organ or severe pathology).",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0049",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (hole) in the liver tissue, a feature completely absent in all normal reference images. This structural defect confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0068",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular void in the liver tissue that is absent in all reference images, which display solid, continuous structures. This structural defect confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0009",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (a boundary notch) was successfully refuted by observing similar features in the normal reference images. The query image exhibits normal anatomical variation and texture.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0046",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single connected foreground object with uniform texture, consistent with the normal reference images and domain rules. No candidate defect features were identified to warrant further refutation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0017",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains large internal voids that are structurally inconsistent with the solid, continuous tissue seen in all reference images. This feature survives refutation and indicates a clear anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0029",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image violates the invariant of having exactly one connected foreground object, showing multiple disconnected components and internal holes not seen in any reference. This confirms a structural anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0001",
+    "score": 0.98,
+    "mode": "anomaly_detection",
+    "rationale": "The query image fails to show the expected 'irregular curved organ' structure defined by the reference profiler. Instead, it contains only a tiny speck, which constitutes a severe anomaly (missing object) rather than an allowed variation like fragmentation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0000",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a small, disconnected bright spot that violates the normal invariant of having exactly one connected foreground object. This feature was not observed in any of the reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0073",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (hole) in the liver tissue which is not present in any of the normal reference images. This feature survives refutation and is classified as an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0048",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a small, textured object. The reference profiler confirms that size and shape variations are normal for this class. Since the observed differences are within the allowed range of normal variation, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0169",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark hypodense region that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0109",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a single grayscale textured object. The reference profiler confirms that size variation and irregular organic shapes are normal characteristics of this dataset. The query object's small size and shape fall within these allowed variations, indicating it is a normal instance.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0089",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a detached fragment of liver tissue, resulting in two connected components, whereas all reference images show exactly one connected component. This structural discontinuity is a definitive anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0098",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark hypodense region in the liver parenchyma that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0125",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct hypodense lesion (dark spot) that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0096",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains two separate foreground objects, violating the domain rule and reference baseline which specify exactly one connected object. This feature is not an allowed variation, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0156",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a small, textured, irregular object. The reference profiler confirms that 'scale' is an allowed variation for this class of objects. Therefore, the small size is a normal variation, and no anomaly is detected.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0145",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct bright, irregular lesion in the upper right of the liver that is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0114",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate feature of an irregular shape was refuted by the side-by-side comparison, which showed similar shapes in the reference images. No other defect-like features were identified, indicating the query is likely normal.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0090",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark circular lesion within the liver tissue, which is absent in all reference images showing normal uniform texture. This confirms the presence of a pathology anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0116",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a prominent dark void and fragmented structure that are absent in all normal reference images, confirming the presence of a pathology anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0177",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct dark void and bright streaks that are not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0093",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, dark, cross-shaped void in the center of the liver tissue, which is a structural defect not present in any of the normal reference images. The refutation protocol confirms this feature is unique to the query, indicating a significant anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0110",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a liver cross-section that is smaller and lacks internal voids compared to some references. However, the reference profiler explicitly lists 'size variation' and 'internal voids' as allowed normal variations. Since the query's features fall within these allowed variations, it is classified as normal.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0129",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, dark, irregular void in the liver structure that is absent in all normal reference images. This feature survives refutation and indicates a clear anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0097",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal dark void (hole) in the liver structure, which is absent in all reference images showing normal solid tissue. This feature survives refutation and indicates a pathology anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0121",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a second, small disconnected foreground object (a speck) in the upper right, which is absent in all reference images. This violates the invariant that normal liver CTs contain exactly one connected object, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0113",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a dark circular lesion-like spot that is not present in any of the normal reference images, confirming an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0099",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct bright, branching structure that is not present in any of the reference images, which all exhibit a uniform speckled texture. This unique feature indicates an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0133",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct bright focal spot that is absent in all reference images, which exhibit a uniform speckled texture. This feature survives refutation and indicates a pathology anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0100",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains multiple disconnected foreground objects, whereas the reference baseline and allowed variations strictly define normal instances as a single connected component. This structural violation confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0141",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal dark void (likely a lesion or cyst) that is absent in all normal reference images, confirming an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0128",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct elongated protrusion that is absent in all reference images. This structural deviation is not covered by the allowed normal variations (size, rotation, texture), confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0115",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits multiple disconnected foreground components, violating the invariant of a single connected object found in the reference baseline. This fragmentation is not an allowed variation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0148",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark circular lesion that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0150",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query exhibits fragmentation (multiple disconnected components). The reference profiler explicitly lists 'fragmentation' as an allowed variation for this class of images. Therefore, the observed feature is consistent with the normal baseline, and the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0138",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark internal region (lesion) that is absent in all reference images, which exhibit uniform texture. This feature survives refutation and indicates a clear anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0144",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark hole-like region in the liver structure that is absent in all reference images. This feature survives refutation and is confirmed as an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0146",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a disconnected upper fragment, violating the invariant of a single connected foreground object observed in all reference images. This structural anomaly is confirmed by the side-by-side comparison.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0111",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a tiny, textureless speck that fails to match the 'white textured irregular blob' structure of the normal references. While size variation is allowed, the reduction to a point-like artifact without internal texture indicates a clear anomaly (likely noise or missing organ).",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0143",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image's shape and texture variations are explicitly covered by the allowed variations (shape deformation, protrusions) identified in the reference profiler. Therefore, no anomaly is detected.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0108",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark circular lesion that is not present in any of the normal reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0103",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark spot (hypodense lesion) in the liver tissue, which is not present in any of the normal reference images. This feature survives refutation and indicates a pathology anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0123",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark circular lesion within the liver tissue, which is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0139",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits internal voids (holes) in the liver tissue which are not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0154",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits large, dark, irregular regions that are completely absent in the reference images, which show a uniform texture. This confirms the presence of a pathology anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0158",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark circular void (lesion) within the liver tissue, which is completely absent in the normal reference images that exhibit uniform texture. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0178",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows that the bright irregular region in the query image is not present in the reference images, which all exhibit a uniform speckled texture. This confirms the presence of an anomaly in the query image.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0092",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image's shape and size variations are consistent with the natural variability observed in the reference images. No unique anomaly is detected.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0105",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (a notch on the liver boundary) was successfully refuted by observing similar features in the normal reference images. No other defect-like features remain, indicating the query is normal.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0101",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits shape and texture characteristics that are fully consistent with the normal variations observed in the reference images. No anomalous features remain after refutation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0118",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void/hole in the liver structure, which is not present in any of the normal reference images. This structural defect confirms the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0155",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark circular void within the liver tissue, which is not present in any of the normal reference images. This feature survives the refutation protocol and indicates a pathological anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0132",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains distinct dark hypodense lesions that are absent in all normal reference images, confirming the presence of a pathological anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0164",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (hole) that is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0161",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a single connected object with a texture consistent with the reference images. While the shape is more compact and regular than some references, the reference set itself exhibits high variability in shape (from fragmented to elongated), suggesting that a compact oval is a valid normal instance. No defect-like features (holes, tears, foreign objects) are present. The initial low anomaly score is maintained as no candidate features survive as anomalies.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0126",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (hole) within the liver tissue, which is a clear deviation from the solid, uniform texture observed in all reference images. This feature was successfully refuted against the normal baseline, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0130",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a prominent dark void in the liver tissue that is absent in all reference images, which display uniform texture. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0166",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the dark void (hole) and the irregular, elongated shape are unique to the query image. The reference images show compact, uniform structures without any internal voids. Since the candidate features (void and irregularity) are not found in the normal references, the query is definitively anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0095",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct bright circular lesion that is absent in all normal reference images, confirming it as a pathological anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0107",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a liver structure that is abnormally small and compact compared to the larger, more complex shapes seen in the normal reference images. This significant deviation in morphology indicates a pathological anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0165",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a tiny speck that lacks the characteristic shape and speckled texture of the liver slices in the reference images. Although size variation is allowed, the extreme reduction in size combined with the loss of all structural features indicates a missing organ or severe artifact, classifying it as anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0124",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, dark, irregular void in the liver tissue that is not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0131",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits distinct dark voids and gaps that are completely absent in the reference images, which display uniform texture. This confirms the presence of pathological anomalies.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0174",
+    "score": 0.3,
+    "mode": "anomaly_detection",
+    "rationale": "The query image's shape and texture are consistent with the natural variations seen in the reference images. The smooth oval shape is likely due to the specific slice location, and the texture matches the normal speckled pattern. No definitive anomaly is detected.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0122",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains distinct black voids in the liver tissue that are absent in all normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0127",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark circular lesion that is absent in all reference images, confirming it as a pathological anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0170",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains two distinct connected components, whereas all reference images and the domain rules specify exactly one connected object. This structural anomaly was confirmed by the side-by-side comparison, as the multi-object pattern does not exist in the normal reference set.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0153",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular region within the liver tissue that is not present in any of the reference images, which all exhibit uniform texture. This feature survives refutation and indicates a pathology anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0134",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (hole) within the liver tissue, which is a pathological anomaly. This feature is absent in all reference images, which display normal, solid liver tissue. The refutation protocol confirms the anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D10_0149",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark void in the upper-left region of the liver structure that is absent in all reference images, which show uniform texture. This feature survives refutation and indicates a clear anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  }
+]

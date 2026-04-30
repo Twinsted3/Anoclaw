@@ -1,0 +1,92 @@
+{
+  "domain": "D8",
+  "seed": 0,
+  "k": 10,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D8_0000",
+    "D8_0006",
+    "D8_0020",
+    "D8_0028",
+    "D8_0049",
+    "D8_0053",
+    "D8_0056",
+    "D8_0059",
+    "D8_0068",
+    "D8_0071",
+    "D8_0096",
+    "D8_0104",
+    "D8_0111",
+    "D8_0115",
+    "D8_0129",
+    "D8_0140",
+    "D8_0158",
+    "D8_0172",
+    "D8_0173",
+    "D8_0178"
+  ],
+  "validation_ids": [
+    "D8_0011",
+    "D8_0015",
+    "D8_0018",
+    "D8_0022",
+    "D8_0042",
+    "D8_0047",
+    "D8_0051",
+    "D8_0069",
+    "D8_0083",
+    "D8_0086",
+    "D8_0121",
+    "D8_0126",
+    "D8_0127",
+    "D8_0131",
+    "D8_0143",
+    "D8_0145",
+    "D8_0146",
+    "D8_0153",
+    "D8_0161",
+    "D8_0163"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D8"
+      ],
+      "k": 10,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag lesions with homogeneous dark pigmentation and smooth borders as anomalies.",
+          "covers_items": [
+            "D8_0000",
+            "D8_0020",
+            "D8_0068"
+          ],
+          "justification": "The agent incorrectly identified uniform dark color and lack of pigment network as defects. These features are common in benign nevi and should be tolerated.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag lesions with a central dark blotch or focal hyperpigmentation if the overall border is regular.",
+          "covers_items": [
+            "D8_0049",
+            "D8_0053"
+          ],
+          "justification": "The agent flagged central dark spots and slight border irregularities as anomalies. In benign lesions, central blotches are common and do not indicate malignancy if the overall shape is preserved.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag diffuse erythema or pinkish background color as a defect in the absence of other malignant features.",
+          "covers_items": [
+            "D8_0071",
+            "D8_0059"
+          ],
+          "justification": "The agent misclassified diffuse redness and pink backgrounds as anomalies. These are often benign inflammatory responses or normal variations in skin tone, not melanoma indicators.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    }
+  ]
+}

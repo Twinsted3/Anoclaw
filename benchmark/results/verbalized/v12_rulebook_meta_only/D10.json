@@ -1,0 +1,57 @@
+{
+  "domain_code": "D10",
+  "n_rules": 4,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image contains a distinct dark void or lesion that is visually absent in all provided normal reference images, trust A (Agent).",
+      "source_items": [
+        "D10_0084",
+        "D10_0102",
+        "D10_0167"
+      ],
+      "confidence": "oracle",
+      "id": "D10_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch A's rationale explicitly mentions 'side-by-side visual refutation' confirming the absence of a defect, trust A (Agent).",
+      "source_items": [
+        "D10_0084",
+        "D10_0102",
+        "D10_0167"
+      ],
+      "confidence": "oracle",
+      "id": "D10_meta_a_win_1"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a significant reduction in object size or compactness compared to the reference images, and Branch B identifies this as 'breakage_or_deformation', trust B (Direct).",
+      "source_items": [
+        "D10_0064",
+        "D10_0159"
+      ],
+      "confidence": "oracle",
+      "id": "D10_meta_b_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image matches the shape and texture of at least one reference image perfectly, despite other references showing different views, trust B (Direct).",
+      "source_items": [
+        "D10_0064",
+        "D10_0159"
+      ],
+      "confidence": "oracle",
+      "id": "D10_meta_b_win_3"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 3,
+    "n_b_wins": 2
+  }
+}

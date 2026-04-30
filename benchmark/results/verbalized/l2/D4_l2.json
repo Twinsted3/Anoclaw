@@ -1,0 +1,211 @@
+{
+  "domain": "D4",
+  "seed": 0,
+  "k": 10,
+  "use_l1_context": false,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D4_0009",
+    "D4_0010",
+    "D4_0018",
+    "D4_0022",
+    "D4_0038",
+    "D4_0049",
+    "D4_0052",
+    "D4_0066",
+    "D4_0070",
+    "D4_0074",
+    "D4_0091",
+    "D4_0094",
+    "D4_0095",
+    "D4_0101",
+    "D4_0123",
+    "D4_0127",
+    "D4_0160",
+    "D4_0169",
+    "D4_0172",
+    "D4_0174"
+  ],
+  "validation_ids": [
+    "D4_0013",
+    "D4_0015",
+    "D4_0016",
+    "D4_0020",
+    "D4_0031",
+    "D4_0033",
+    "D4_0044",
+    "D4_0073",
+    "D4_0085",
+    "D4_0086",
+    "D4_0110",
+    "D4_0112",
+    "D4_0115",
+    "D4_0126",
+    "D4_0128",
+    "D4_0132",
+    "D4_0143",
+    "D4_0159",
+    "D4_0161",
+    "D4_0168"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D4",
+        "pavement"
+      ],
+      "k": 7,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify any continuous, jagged linear fracture traversing the pavement surface as an anomaly, regardless of width or color contrast.",
+          "justification": "The agent initially detected the crack but lowered the score due to uncertainty. This rule explicitly defines structural fractures as anomalies, preventing the agent from dismissing them as texture variations.",
+          "from_item": "D4_0101"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag small, isolated, high-contrast colored specks (e.g., orange/red) on pavement as anomalies, even if they resemble surface texture variations.",
+          "justification": "The agent dismissed the anomaly as a shadow or pit. This rule forces the detection of distinct colored foreign objects that contrast with the monochromatic pavement texture.",
+          "from_item": "D4_0174"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify faint, irregular dark marks on textured pavement as normal if they align with the surface grain and lack sharp, distinct edges.",
+          "justification": "The agent incorrectly flagged a natural texture variation as an anomaly. This rule clarifies that subtle, grain-aligned marks without sharp boundaries are acceptable normal features for this class.",
+          "from_item": "D4_0009"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Treat scattered small dark spots or indentations as normal texture if they are present in reference images.",
+          "justification": "The agent overpredicted the anomaly score because it flagged common surface indentations as defects. This rule clarifies that such features are normal if found in reference data.",
+          "from_item": "D4_0010"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify pavement as anomalous if surface exhibits deep pitting, exposed aggregate, or significant texture degradation compared to smooth reference.",
+          "justification": "The agent initially detected pitting but lowered the score. This rule explicitly mandates that deep pitting and exposed aggregate constitute anomalies, preventing underprediction.",
+          "from_item": "D4_0160"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify dark, irregular marks on textured pavement as normal if they lack sharp edges or structural depth, indicating natural grain density fluctuations.",
+          "justification": "The agent overpredicted the anomaly score by misinterpreting natural texture variation as a defect. This rule clarifies that irregular marks without structural characteristics (like cracks) are acceptable normal variations.",
+          "from_item": "D4_0066"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify isolated dark irregular spots on pavement as anomalies if they are absent in reference images.",
+          "justification": "The agent correctly identified the dark spot as a defect but hesitated. This rule explicitly validates the side-by-side comparison logic to confirm anomalies when unique dark spots are found.",
+          "from_item": "D4_0169"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D4",
+        "wall"
+      ],
+      "k": 5,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify distinct, isolated dark irregular marks on textured surfaces as anomalies, even if the overall texture appears consistent with normal variations.",
+          "justification": "The agent hesitated because the background texture was noisy. This rule explicitly prioritizes distinct, localized dark marks over general texture noise, ensuring such defects are flagged as anomalies.",
+          "from_item": "D4_0094"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify scattered dark speckles and small irregular patches on concrete walls as normal texture variations, not anomalies.",
+          "justification": "The agent overpredicted the anomaly score (0.5) for a normal image containing common concrete texture features. This rule explicitly defines these features as acceptable variations to prevent false positives.",
+          "from_item": "D4_0018"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify scattered small dark speckles on concrete walls as normal texture variations, not anomalies.",
+          "justification": "The agent overpredicted anomaly (0.5) for a normal image containing random dark speckles. This rule explicitly defines such speckles as acceptable texture, preventing false positives.",
+          "from_item": "D4_0038"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify scattered dark speckles on concrete walls as normal texture variations, not anomalies.",
+          "justification": "The agent initially flagged speckles as defects. This rule explicitly defines them as acceptable texture, preventing false positives on similar concrete surfaces.",
+          "from_item": "D4_0074"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify scattered dark specks on concrete walls as normal if they are small, irregular, and lack a connected pattern.",
+          "justification": "The agent overpredicted anomaly (0.5) due to scattered specks. This rule explicitly defines these specific visual features as normal variations, preventing false positives on similar textures.",
+          "from_item": "D4_0052"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D4",
+        "deck"
+      ],
+      "k": 8,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify as normal if texture coarseness and minor color variations are explicitly listed as allowed variations in the reference profile.",
+          "justification": "The agent initially flagged the image as anomalous due to texture differences. This rule clarifies that such variations are acceptable if documented in the reference, preventing false positives.",
+          "from_item": "D4_0070"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify any visible surface crack, regardless of width or continuity, as an anomaly.",
+          "justification": "The agent's score dropped to 0.5 despite identifying a clear crack. This rule ensures that the presence of any fracture is treated as a definitive anomaly, preventing uncertainty.",
+          "from_item": "D4_0091"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify dark, irregular linear marks in the lower-left quadrant as anomalies, even if similar textures appear elsewhere on the surface.",
+          "justification": "The agent incorrectly dismissed the defect as a natural feature found in reference images. This rule forces the agent to treat specific localized linear marks as anomalies regardless of general texture similarity.",
+          "from_item": "D4_0127"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag coarse aggregate texture or multi-colored particle distribution as anomalies if they appear uniformly across the entire deck surface.",
+          "justification": "The agent incorrectly identified natural surface texture variations as defects. This rule clarifies that global, uniform textural features are acceptable normal variations for this class.",
+          "from_item": "D4_0022"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag uniform, featureless gray regions lacking expected concrete texture as potential anomalies, even if no distinct defect is visible.",
+          "justification": "The agent dismissed the image as normal texture variation. This rule forces the agent to treat the absence of expected surface texture as a valid anomaly signal, correcting the underprediction.",
+          "from_item": "D4_0172"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify isolated dark linear marks on deck surfaces as anomalies if they are absent from normal reference images.",
+          "justification": "The agent correctly identified the mark as absent from references but hesitated. This rule explicitly mandates classifying such unique dark linear features as anomalies to resolve uncertainty.",
+          "from_item": "D4_0123"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify any continuous, dark, jagged linear feature traversing the surface as an anomaly, regardless of width or texture contrast.",
+          "justification": "The agent's initial high score was correct, but the final output of 0.5 indicates uncertainty. This rule explicitly defines the visual signature of a structural crack to ensure such defects are consistently flagged as anomalies.",
+          "from_item": "D4_0095"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag coarse aggregate texture as anomalous if the surface is structurally intact and lacks distinct defects like cracks or holes.",
+          "justification": "The agent incorrectly identified natural surface texture variation as a defect. This rule clarifies that texture coarseness alone is insufficient for an anomaly classification in this class.",
+          "from_item": "D4_0049"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "D4 / pavement": {
+      "pavement": 7
+    },
+    "D4 / wall": {
+      "wall": 5
+    },
+    "D4 / deck": {
+      "deck": 8
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "domain_code": "D5",
+  "n_rules": 11,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image contains a distinct, dark, irregular defect or ulceration with surrounding exudate that is clearly absent in all normal reference images, trust A (Agent).",
+      "source_items": [
+        "D11_0055",
+        "D11_0075",
+        "D11_0165"
+      ],
+      "confidence": "oracle",
+      "id": "D11_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B identifies 'inflammation' or 'granular texture' as pathology, but Branch A explicitly refutes this by attributing the appearance to normal mucus, debris, or fold variation consistent with references, trust A (Agent).",
+      "source_items": [
+        "D11_0055",
+        "D11_0075",
+        "D11_0165"
+      ],
+      "confidence": "oracle",
+      "id": "D11_meta_a_win_1"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image displays a clear anatomical landmark such as the gastroesophageal junction (Z-line), pylorus, or haustral folds with regular convergence, and Branch A flags it as anomalous due to color variation or minor texture differences, trust B (Direct).",
+      "source_items": [
+        "D11_0012",
+        "D11_0038",
+        "D11_0044",
+        "D11_0046",
+        "D11_0066",
+        "D11_0073",
+        "D11_0088"
+      ],
+      "confidence": "oracle",
+      "id": "D11_meta_b_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch A identifies a 'mass', 'plaque', or 'pigmentation' as an anomaly, but the visual evidence shows these features are consistent with normal anatomical structures (e.g., rugal folds, Z-line transition) or procedural artifacts (e.g., endoscope tip, foam) seen in references, trust B (Direct).",
+      "source_items": [
+        "D11_0012",
+        "D11_0038",
+        "D11_0044",
+        "D11_0046",
+        "D11_0066",
+        "D11_0073",
+        "D11_0088"
+      ],
+      "confidence": "oracle",
+      "id": "D11_meta_b_win_3"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": null,
+      "text": "Mucosal surface is dominated by continuous pink, salmon, or light orange hues.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D11_invariant_4"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": null,
+      "text": "Surface texture is smooth or exhibits regular, continuous folds (rugae) without disruption.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D11_invariant_5"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": null,
+      "text": "No distinct, protruding, or sessile masses (polyps) are present on the mucosal surface.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D11_invariant_6"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": null,
+      "text": "No open, crater-like defects (ulcers) with raised or necrotic borders are visible.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D11_invariant_7"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": null,
+      "text": "Do not flag diffuse mucosal erythema or reddish hue as an ulcer if the surface texture remains smooth and intact.",
+      "source_items": [
+        "D11_0015",
+        "D11_0076"
+      ],
+      "confidence": "high",
+      "id": "D11_corrective_fp_8"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": null,
+      "text": "Do not flag the Z-line (squamocolumnar junction) or gastric folds as a polypoid mass if they follow natural anatomical convergence.",
+      "source_items": [
+        "D11_0038",
+        "D11_0073",
+        "D11_0076"
+      ],
+      "confidence": "high",
+      "id": "D11_corrective_fp_9"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": null,
+      "text": "Do not flag dark shadows, specular reflections, or bile staining as pigmented lesions or plaques.",
+      "source_items": [
+        "D11_0012",
+        "D11_0044",
+        "D11_0052",
+        "D11_0066",
+        "D11_0080"
+      ],
+      "confidence": "high",
+      "id": "D11_corrective_fp_10"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 3,
+    "n_b_wins": 7
+  },
+  "_shuffled_origin": "D11"
+}

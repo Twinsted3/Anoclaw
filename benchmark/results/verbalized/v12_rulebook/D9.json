@@ -1,0 +1,126 @@
+{
+  "domain_code": "D9",
+  "n_rules": 10,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image displays a distinct, focal hyperintense (bright) lesion or mass that is clearly absent in the provided normal reference images, trust A (Agent).",
+      "source_items": [
+        "D9_0122"
+      ],
+      "confidence": "oracle",
+      "id": "D9_meta_a_win_0"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows standard anatomical structures (e.g., ventricles, sulci) that appear symmetrical and intact, matching the general appearance of the normal reference images, trust B (Direct).",
+      "source_items": [
+        "D9_0014",
+        "D9_0016",
+        "D9_0053",
+        "D9_0060",
+        "D9_0067",
+        "D9_0076"
+      ],
+      "confidence": "oracle",
+      "id": "D9_meta_b_win_1"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch A identifies an anomaly based on 'enlarged ventricles' or 'structural deviation' but the ventricles appear symmetrical and within normal limits compared to the references, trust B (Direct).",
+      "source_items": [
+        "D9_0014",
+        "D9_0016",
+        "D9_0053",
+        "D9_0060",
+        "D9_0067",
+        "D9_0076"
+      ],
+      "confidence": "oracle",
+      "id": "D9_meta_b_win_2"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": null,
+      "text": "The brain tissue is centrally located within the image frame, surrounded by a black background.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D9_invariant_3"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": null,
+      "text": "The brain cross-section exhibits a continuous, roughly oval or circular outer boundary.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D9_invariant_4"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": null,
+      "text": "The image consists of a grayscale palette (black background, gray/white tissue) with no other colors.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D9_invariant_5"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": null,
+      "text": "The brain tissue displays a granular, heterogeneous texture with visible internal structures.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D9_invariant_6"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": null,
+      "text": "Do not flag mild asymmetry in lateral ventricle size or shape as a tumor anomaly.",
+      "source_items": [
+        "D9_0066",
+        "D9_0056",
+        "D9_0049"
+      ],
+      "confidence": "high",
+      "id": "D9_corrective_fp_7"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": null,
+      "text": "Ignore subtle periventricular hyperintensities or signal variations that lack distinct mass effect or borders.",
+      "source_items": [
+        "D9_0066",
+        "D9_0014",
+        "D9_0049"
+      ],
+      "confidence": "high",
+      "id": "D9_corrective_fp_8"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": null,
+      "text": "Do not classify global image blurriness, noise, or low contrast as structural brain anomalies.",
+      "source_items": [
+        "D9_0003",
+        "D9_0044",
+        "D9_0077"
+      ],
+      "confidence": "high",
+      "id": "D9_corrective_fp_9"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 1,
+    "n_b_wins": 6
+  }
+}

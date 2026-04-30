@@ -1,0 +1,331 @@
+{
+  "domain": "D1",
+  "seed": 0,
+  "k": 10,
+  "use_l1_context": false,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D1_0001",
+    "D1_0004",
+    "D1_0016",
+    "D1_0022",
+    "D1_0044",
+    "D1_0046",
+    "D1_0049",
+    "D1_0064",
+    "D1_0066",
+    "D1_0082",
+    "D1_0092",
+    "D1_0094",
+    "D1_0096",
+    "D1_0111",
+    "D1_0137",
+    "D1_0145",
+    "D1_0167",
+    "D1_0175",
+    "D1_0178",
+    "D1_0179"
+  ],
+  "validation_ids": [
+    "D1_0008",
+    "D1_0009",
+    "D1_0015",
+    "D1_0019",
+    "D1_0023",
+    "D1_0038",
+    "D1_0045",
+    "D1_0073",
+    "D1_0084",
+    "D1_0088",
+    "D1_0114",
+    "D1_0117",
+    "D1_0118",
+    "D1_0142",
+    "D1_0152",
+    "D1_0156",
+    "D1_0159",
+    "D1_0165",
+    "D1_0172",
+    "D1_0174"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D1",
+        "hazelnut"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Treat the rough, fibrous texture and irregular edge of the hazelnut cap as a standard natural feature, not a defect.",
+          "justification": "The agent's score of 0.500 indicates uncertainty regarding the cap's texture. This rule clarifies that the fibrous, uneven appearance of the cap is a normal characteristic, preventing false positives.",
+          "from_item": "D1_0066"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "wood"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Treat isolated, circular light spots or discolorations on wood surfaces as anomalies if they are absent in normal reference images.",
+          "justification": "The agent initially detected these spots but lowered the score due to uncertainty. This rule explicitly validates such unique circular features as anomalies when confirmed absent in references, preventing underprediction.",
+          "from_item": "D1_0178"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "bottle"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If a chip or crack is visible on the bottle rim, classify as anomaly regardless of initial confidence.",
+          "justification": "The agent initially detected the rim chip but lowered the score due to uncertainty. This rule ensures that confirmed physical defects on the rim are always treated as anomalies.",
+          "from_item": "D1_0175"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "cable"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag bright copper strands as anomalies if they are fully enclosed within intact colored insulation layers.",
+          "justification": "The agent incorrectly flagged the shiny copper strands in the top conductor as a defect. This rule clarifies that metallic reflectivity is normal when the insulation is intact.",
+          "from_item": "D1_0016"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "carpet"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify any isolated, non-woven linear artifact or scratch disrupting the regular weave pattern as an anomaly.",
+          "justification": "The agent initially detected the scratch but lowered the score due to uncertainty. This rule explicitly defines such linear disruptions as anomalies, preventing future underprediction.",
+          "from_item": "D1_0111"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "screw"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify screws as normal if the head, threads, and tip are structurally intact, even if the image is grayscale or lacks high contrast.",
+          "justification": "The agent hesitated likely due to the monochrome image or lighting. This rule clarifies that structural integrity overrides visual artifacts like grayscale conversion, ensuring normal items are correctly identified.",
+          "from_item": "D1_0082"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Treat minor surface texture variations and slight drive slot asymmetries as normal manufacturing tolerances for screws.",
+          "justification": "The agent overpredicted anomaly by flagging standard metal grain unevenness and minor slot asymmetry as defects. This rule explicitly defines these common features as acceptable normal variations.",
+          "from_item": "D1_0049"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "toothbrush"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify as anomaly if bristles exhibit significant splaying, dishevelment, or non-uniform spreading, particularly in the upper regions of the brush head.",
+          "justification": "The agent initially detected splayed bristles but lowered the score due to uncertainty. This rule explicitly defines splaying and dishevelment as definitive anomalies, ensuring such defects are correctly flagged.",
+          "from_item": "D1_0096"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "metal_nut"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if any arm edge exhibits chipping, irregular geometry, or missing material, regardless of surface texture.",
+          "justification": "The agent initially detected edge chipping but dismissed it as normal. This rule explicitly defines edge damage as a defect, preventing future dismissal of similar geometric irregularities.",
+          "from_item": "D1_0179"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify granular surface texture and casting marks on metal nuts as normal manufacturing variations unless accompanied by distinct cracks or voids.",
+          "justification": "The agent overpredicted the anomaly score due to uncertainty about the granular surface texture. This rule explicitly defines such textures as normal, preventing false positives on similar items.",
+          "from_item": "D1_0022"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "tile"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify any distinct, translucent, shard-like foreign object on the tile surface as an anomaly.",
+          "justification": "The agent initially detected the shard but lowered the score due to uncertainty. This rule explicitly defines translucent foreign fragments as anomalies, preventing future underprediction.",
+          "from_item": "D1_0145"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "zipper"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Treat any dark discoloration or stain on the fabric adjacent to the zipper teeth as a confirmed anomaly.",
+          "justification": "The agent initially detected the stain but lowered its score due to uncertainty. This rule explicitly classifies fabric stains near the zipper as anomalies, preventing underprediction.",
+          "from_item": "D1_0167"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "grid"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Classify any continuous dark linear feature crossing the mesh pattern as an anomaly, regardless of whether it aligns with the grid geometry.",
+          "justification": "The agent initially detected the diagonal line but lowered the score due to uncertainty. This rule explicitly defines linear intrusions as anomalies, preventing the agent from dismissing them as normal grid variations.",
+          "from_item": "D1_0092"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Treat global pattern rotation as a normal variation for grid classes if the mesh structure and density remain consistent with reference samples.",
+          "justification": "The agent flagged the image as uncertain due to pattern rotation. This rule clarifies that rotation is a valid normal variation, preventing false positives when the underlying mesh structure is intact.",
+          "from_item": "D1_0044"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "pill"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify scattered red speckles on white oval pills with 'FF' imprint as normal texture variations, not defects.",
+          "justification": "The agent hesitated due to the red speckles. This rule explicitly defines these speckles as acceptable texture for this specific pill type, preventing false positives.",
+          "from_item": "D1_0046"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Classify tablets with small, scattered red speckles as normal if the imprint is clear and the tablet shape is intact.",
+          "justification": "The agent overpredicted anomaly (0.5) due to red speckles. This rule explicitly defines such speckling as a normal variation when structural features like the imprint remain clear, preventing false positives.",
+          "from_item": "D1_0001"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D1",
+        "capsule"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the capsule shell exhibits visible creasing, wrinkling, or deformation, particularly on the black half.",
+          "justification": "The agent missed the physical deformation (crease) on the black half, dismissing it as texture variation. This rule explicitly targets shell integrity defects like wrinkling.",
+          "from_item": "D1_0094"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the black capsule half lacks the expected 'actavis' logo or text imprint.",
+          "justification": "The agent incorrectly assumed the logo was present on the black half. This rule explicitly requires verifying the logo's presence to catch missing imprint defects.",
+          "from_item": "D1_0137"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag standard manufacturer branding or dosage numbers printed on capsule bodies as surface defects or anomalies.",
+          "justification": "The agent incorrectly elevated the score for a normal capsule, likely misinterpreting the printed '500' and 'actavis' text as surface blemishes or defects.",
+          "from_item": "D1_0004"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag missing 'actavis' logo as an anomaly if the '500' imprint is clearly visible on the orange half.",
+          "justification": "The agent incorrectly flagged the missing logo as a defect. This rule clarifies that the '500' imprint is the primary identifier for this capsule variant, making the logo optional.",
+          "from_item": "D1_0064"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "D1 / hazelnut": {
+      "hazelnut": 1
+    },
+    "D1 / wood": {
+      "wood": 1
+    },
+    "D1 / bottle": {
+      "bottle": 1
+    },
+    "D1 / cable": {
+      "cable": 1
+    },
+    "D1 / carpet": {
+      "carpet": 1
+    },
+    "D1 / screw": {
+      "screw": 2
+    },
+    "D1 / toothbrush": {
+      "toothbrush": 1
+    },
+    "D1 / metal_nut": {
+      "metal_nut": 2
+    },
+    "D1 / tile": {
+      "tile": 1
+    },
+    "D1 / zipper": {
+      "zipper": 1
+    },
+    "D1 / grid": {
+      "grid": 2
+    },
+    "D1 / pill": {
+      "pill": 2
+    },
+    "D1 / capsule": {
+      "capsule": 4
+    }
+  }
+}

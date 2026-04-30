@@ -1,0 +1,221 @@
+{
+  "overall": {
+    "n_items": 100,
+    "n_errors": 0,
+    "auroc": 0.8554,
+    "auroc_ci": [
+      0.769087157809984,
+      0.9344667376893938
+    ],
+    "balanced_accuracy": 0.86,
+    "ba_ci": [
+      0.79,
+      0.9255501826778422
+    ],
+    "f1_binary": 0.8541666666666666,
+    "f1_macro": 0.859775641025641,
+    "confusion_matrix": [
+      [
+        45,
+        5
+      ],
+      [
+        9,
+        41
+      ]
+    ],
+    "cost_tokens_in_per_100": 139748.0,
+    "cost_tokens_out_per_100": 10260.0,
+    "avg_latency_sec": 6.09
+  },
+  "macro_avg_auroc": 0.8629999999999999,
+  "macro_avg_ba": 0.86,
+  "per_domain": {
+    "D1": {
+      "domain": "industrial",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 0.965,
+      "auroc_ci": [
+        0.8699532967032968,
+        1.0
+      ],
+      "balanced_accuracy": 0.95,
+      "ba_ci": [
+        0.8458333333333337,
+        1.0
+      ],
+      "f1_binary": 0.9473684210526315,
+      "f1_macro": 0.949874686716792,
+      "confusion_matrix": [
+        [
+          10,
+          0
+        ],
+        [
+          1,
+          9
+        ]
+      ],
+      "cost_tokens_in_per_100": 202965.0,
+      "cost_tokens_out_per_100": 10815.0,
+      "avg_latency_sec": 6.62
+    },
+    "D2": {
+      "domain": "retail",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 0.6149999999999999,
+      "auroc_ci": [
+        0.328125,
+        0.8650416666666666
+      ],
+      "balanced_accuracy": 0.6,
+      "ba_ci": [
+        0.4285714285714286,
+        0.7857142857142857
+      ],
+      "f1_binary": 0.42857142857142855,
+      "f1_macro": 0.5604395604395604,
+      "confusion_matrix": [
+        [
+          9,
+          1
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "cost_tokens_in_per_100": 202960.0,
+      "cost_tokens_out_per_100": 9710.0,
+      "avg_latency_sec": 6.17
+    },
+    "D4": {
+      "domain": "maintenance",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 0.9000000000000001,
+      "auroc_ci": [
+        0.6666666666666666,
+        1.0
+      ],
+      "balanced_accuracy": 0.95,
+      "ba_ci": [
+        0.8333333333333333,
+        1.0
+      ],
+      "f1_binary": 0.9473684210526315,
+      "f1_macro": 0.949874686716792,
+      "confusion_matrix": [
+        [
+          10,
+          0
+        ],
+        [
+          1,
+          9
+        ]
+      ],
+      "cost_tokens_in_per_100": 81915.0,
+      "cost_tokens_out_per_100": 9655.0,
+      "avg_latency_sec": 5.13
+    },
+    "D5": {
+      "domain": "medical",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 0.835,
+      "auroc_ci": [
+        0.6098750000000001,
+        1.0
+      ],
+      "balanced_accuracy": 0.8,
+      "ba_ci": [
+        0.6363636363636364,
+        0.95
+      ],
+      "f1_binary": 0.8333333333333334,
+      "f1_macro": 0.7916666666666667,
+      "confusion_matrix": [
+        [
+          6,
+          4
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "cost_tokens_in_per_100": 77290.0,
+      "cost_tokens_out_per_100": 10525.0,
+      "avg_latency_sec": 6.92
+    },
+    "D7": {
+      "domain": "road",
+      "n": 20,
+      "n_items": 20,
+      "n_errors": 0,
+      "auroc": 1.0,
+      "auroc_ci": [
+        0.9999999999999999,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "ba_ci": [
+        1.0,
+        1.0
+      ],
+      "f1_binary": 1.0,
+      "f1_macro": 1.0,
+      "confusion_matrix": [
+        [
+          10,
+          0
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "cost_tokens_in_per_100": 133610.0,
+      "cost_tokens_out_per_100": 10595.0,
+      "avg_latency_sec": 5.6
+    }
+  },
+  "per_split": {
+    "calibration": {
+      "n_items": 100,
+      "n_errors": 0,
+      "auroc": 0.8554,
+      "auroc_ci": [
+        0.769087157809984,
+        0.9344667376893938
+      ],
+      "balanced_accuracy": 0.86,
+      "ba_ci": [
+        0.79,
+        0.9255501826778422
+      ],
+      "f1_binary": 0.8541666666666666,
+      "f1_macro": 0.859775641025641,
+      "confusion_matrix": [
+        [
+          45,
+          5
+        ],
+        [
+          9,
+          41
+        ]
+      ],
+      "cost_tokens_in_per_100": 139748.0,
+      "cost_tokens_out_per_100": 10260.0,
+      "avg_latency_sec": 6.09
+    }
+  }
+}

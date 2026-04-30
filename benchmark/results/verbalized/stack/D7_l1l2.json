@@ -1,0 +1,52 @@
+{
+  "domain": "D7",
+  "units": [
+    {
+      "unit": [
+        "D7"
+      ],
+      "rulebook": {
+        "normal_signature": [
+          "High-altitude aerial or satellite perspective of terrestrial landscapes",
+          "Presence of natural terrain textures including soil, vegetation, and water bodies",
+          "Man-made infrastructure such as roads, highways, and residential housing clusters",
+          "Geometric patterns in agricultural fields or construction sites",
+          "Consistent lighting and shadowing typical of overhead photography",
+          "Do not flag natural vegetation bands as anomalies if their color variation is consistent with seasonal changes or species differences.",
+          "Do not flag global color desaturation or texture shifts as anomalies if the underlying street and building geometry remains structurally consistent with reference imagery.",
+          "If the image shows a consistent, sharp boundary between residential infrastructure and natural forested land, classify as normal.",
+          "Do not flag as anomaly if the image contains a complete dam structure with visible spillway gates and reservoir, even if construction activity is absent.",
+          "Do not flag large, uniform agricultural fields with consistent vertical striping as anomalies, even if they appear darker than surrounding terrain.",
+          "Do not flag standard rural infrastructure, such as small buildings or vehicles on roads, as anomalies in aerial imagery."
+        ],
+        "hypothesized_anomaly_modes": [
+          "Presence of non-terrestrial objects (e.g., aircraft, satellites, or debris) floating above the ground plane",
+          "Digital artifacts or corruption such as pixelation, color banding, or missing image sectors",
+          "Unnatural geometric overlays or text watermarks obscuring the landscape features",
+          "Sudden, illogical discontinuities in terrain texture or road continuity indicating image stitching errors",
+          "Flag as anomaly if distinct, isolated structures with non-standard roof colors (e.g., orange) appear in open fields or undeveloped zones.",
+          "If a highway interchange shows unpaved ground, missing pavement, or construction equipment where completed roads are expected, classify as anomaly.",
+          "Flag as anomaly if a distinct, high-density forest or woodland region borders the residential grid, creating a sharp land-use transition.",
+          "If a large-scale housing development or construction site is detected in a region dominated by natural terrain, immediately classify as anomaly."
+        ],
+        "rules": [
+          "if the image contains floating objects that do not cast shadows on the ground then lean anomaly",
+          "if the image shows digital noise, blocky artifacts, or missing data regions then lean anomaly",
+          "if the image displays text, logos, or graphical overlays not part of the physical scene then lean anomaly",
+          "if the image shows continuous terrain textures with natural lighting and shadows then lean normal",
+          "if the image displays coherent infrastructure like roads and buildings integrated into the landscape then lean normal",
+          "(corrective) Do not flag natural vegetation bands as anomalies if their color variation is consistent with seasonal changes or species differences.",
+          "(corrective) Flag as anomaly if distinct, isolated structures with non-standard roof colors (e.g., orange) appear in open fields or undeveloped zones.",
+          "(corrective) Do not flag global color desaturation or texture shifts as anomalies if the underlying street and building geometry remains structurally consistent with reference imagery.",
+          "(corrective) If a highway interchange shows unpaved ground, missing pavement, or construction equipment where completed roads are expected, classify as anomaly.",
+          "(corrective) Flag as anomaly if a distinct, high-density forest or woodland region borders the residential grid, creating a sharp land-use transition.",
+          "(corrective) If the image shows a consistent, sharp boundary between residential infrastructure and natural forested land, classify as normal.",
+          "(corrective) Do not flag as anomaly if the image contains a complete dam structure with visible spillway gates and reservoir, even if construction activity is absent.",
+          "(corrective) Do not flag large, uniform agricultural fields with consistent vertical striping as anomalies, even if they appear darker than surrounding terrain.",
+          "(corrective) If a large-scale housing development or construction site is detected in a region dominated by natural terrain, immediately classify as anomaly.",
+          "(corrective) Do not flag standard rural infrastructure, such as small buildings or vehicles on roads, as anomalies in aerial imagery."
+        ]
+      }
+    }
+  ]
+}

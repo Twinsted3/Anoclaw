@@ -1,0 +1,43 @@
+{
+  "a_wins_rules": [
+    "If Branch A's rationale explicitly cites specific reference images (e.g., 'consistent with Ref2') to refute anomaly features like color variegation or border irregularity, trust A.",
+    "If Branch B claims a lesion is anomalous solely because it is a pigmented spot on 'clear' skin, but the provided normal references also contain pigmented nevi, trust A.",
+    "If Branch A's rationale contains a 'json parse failed' error but Branch B confidently classifies the image as 'normal' based on matching reference morphology, trust A (indicating a likely anomaly)."
+  ],
+  "b_wins_rules": [
+    "If Branch B's rationale states the query image is 'identical' to a provided normal reference image, trust B.",
+    "If Branch A's rationale contains a 'json parse failed' error and Branch B classifies the image as 'normal' citing standard benign features (e.g., reticular pattern, symmetry), trust B.",
+    "If Branch B identifies classic melanoma indicators (significant asymmetry, jagged borders, chaotic color) that are explicitly absent in the normal reference set, trust B."
+  ],
+  "a_evidence": [
+    "D8_0006",
+    "D8_0011",
+    "D8_0049",
+    "D8_0051",
+    "D8_0129"
+  ],
+  "b_evidence": [
+    "D8_0015",
+    "D8_0053",
+    "D8_0056",
+    "D8_0068",
+    "D8_0127"
+  ],
+  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If Branch A's rationale explicitly cites specific reference images (e.g., 'consistent with Ref2') to refute anomaly features like color variegation or border irregularity, trust A.\",\n    \"If Branch B claims a lesion is anomalous solely because it is a pigmented spot on 'clear' skin, but the provided normal references also contain pigmented nevi, trust A.\",\n    \"If Branch A's rationale contains a 'json parse failed' error but Branch B confidently classifies the image as 'normal' based on matching reference morphology, trust A (indicating a likely anomaly).\"\n  ],\n  \"b_wins_rules\": [\n    \"If Branch B's rationale states the query image is 'identical' to a provided normal reference image, trust B.\",\n    \"If Branch A's rationale contains a 'json parse failed' error and Branch B classifies the image as 'normal' citing standard benign features (e.g., reticular pattern, symmetry), trust B.\",\n    \"If Branch B identifies classic melanoma indicators (significant asymmetry, jagged borders, chaotic color) that are explicitly absent in the normal reference set, trust B.\"\n  ]\n}\n```",
+  "tokens": {
+    "input": 2955,
+    "output": 264
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 15,
+    "agree_wrong": 8,
+    "disagree_a_wins_total": 9,
+    "disagree_b_wins_total": 8,
+    "reflected_a": 5,
+    "reflected_b": 5,
+    "skipped": 0
+  },
+  "domain_code": "D8",
+  "seconds": 21.4
+}

@@ -1,0 +1,4947 @@
+[
+  {
+    "item_id": "D2_0084",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0019",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0021",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0048",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The item is a multi-pack wrapped in glossy red plastic packaging.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The package is bulky and soft-sided, with a squashed or compressed overall shape rather than a rigid box form.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Chinese branding/text is printed prominently on the package.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The packaging includes food imagery associated with instant noodles, visible on printed panels.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A vertical silver seam/band is visible on side or back views of the wrapper.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The package is photographed on a white shelf surface against a white perforated pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The viewing angle changes across references, showing front, side, and back portions of the same package.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The amount of front branding and noodle-bowl artwork visible varies by angle; some views show a large front panel while others show only partial graphics.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Top edges and flaps of the plastic wrapper appear differently folded or crumpled in different views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The silver seam/band is more centered and prominent in some views and less visible or absent in the frontal view.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "A cream/yellow side or front panel is more exposed in some views than others.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4895,
+      "output": 83
+    },
+    "latency_sec": 89.15,
+    "error": null
+  },
+  {
+    "item_id": "D2_0015",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0052",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The item is a long rectangular boxed snack product shown on a white shelf in front of a white perforated pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The packaging is predominantly dark brown with red graphic panels and white branding/text.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The product is branded 'nabati' / 'Nabati Sandwich' with additional 'Richoco' branding visible on the box.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Different faces of the same box include printed product information such as nutrition/ingredients text, barcode, and other label blocks.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The box is photographed as a single item centered against the pegboard, with no other products present.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The box is shown from different orientations/faces: front panel, back/bottom panel, and narrow side panels.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "On some faces the box is lying horizontally, while on others it is standing vertically on its narrow end.",
+            "evidence_refs": [
+              1,
+              4,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Some visible faces emphasize marketing graphics with cookie imagery and large logo elements, while others emphasize dense informational text and label tables.",
+            "evidence_refs": [
+              1,
+              3,
+              4,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "A red callout area with '3' appears on one visible front-facing panel, while other views do not show this element because a different face is visible.",
+            "evidence_refs": [
+              1
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.94
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4719,
+      "output": 80
+    },
+    "latency_sec": 116.76,
+    "error": null
+  },
+  {
+    "item_id": "D2_0062",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0053",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0051",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0036",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The item is a plastic beverage bottle with a bright yellow liquid and an orange screw cap.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The bottle has a white wraparound label covering the lower half, while the upper bottle section is transparent and shows the yellow drink.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "A large stylized black 'G' with an orange lightning bolt logo appears on the label area.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The bottle body has a contoured shape with a narrower middle grip section and rounded shoulder/ribbed upper section.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The product is photographed upright, centered, against a white pegboard-style retail background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Different viewing angles show different parts of the wrap label: front branding, back nutrition/barcode panel, and side seam/partial graphics.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Front label language/text differs between references, with English visible in one front view and Chinese visible in another front view.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The large 'G' logo may be fully centered and visible in front views, partially visible on side views, or absent from the exact visible panel on the back view due to bottle rotation.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Back/side panels can show dense text blocks, a QR code, barcode, or a mostly plain white seam area depending on rotation.",
+            "evidence_refs": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.97
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4735,
+      "output": 80
+    },
+    "latency_sec": 165.9,
+    "error": null
+  },
+  {
+    "item_id": "D2_0073",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0022",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single cigarette pack is centered upright in a clear plastic display holder against a mostly white shelf background.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The pack uses a dark red/maroon base color with prominent gold/yellow graphic elements and text.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "A vertical gold panel or decorative block appears near the top center of the pack front.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Chinese branding/warning text is visible on the pack and/or in the holder area in front of it.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The transparent holder has molded side compartments and partially obscures the lower portion of the pack.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The central front emblem/design differs: one pack shows a circular gold emblem with a double-happiness symbol, while the other shows a larger stacked double-happiness character design.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The lower front label text differs between the packs, including different English/numbering such as 'SHUANG XI' versus '1906'.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Additional gold text near the top front is more prominent in the second reference than in the first.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The pack height/shape appears slightly different, with the second pack looking a bit taller and narrower than the first.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Reflections and glare on the plastic wrap and holder vary between the two images.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 3416,
+      "output": 74
+    },
+    "latency_sec": 73.48,
+    "error": null
+  },
+  {
+    "item_id": "D2_0047",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0060",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0006",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0035",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0067",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0079",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0071",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The product is a small rectangular beverage carton with a mostly white front panel and a thin yellow border/edge visible along the sides or top.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Both packages display prominent dark green product name text centered on the front.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Both fronts include banana imagery near the lower middle portion of the package.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The brand logo/text appears near the top area of the front panel in both references.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Both packages include additional English text indicating banana/original/milk drink on the front.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The item is photographed upright on a shelf against a perforated pegboard-style store background.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "One reference shows a white attached straw wrapped in plastic on the front of the carton, while the other does not show a straw on the visible face.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The front-panel artwork differs: one reference shows a glass/jar-style illustration with bananas, while the other shows a bottle-shaped banana milk illustration.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The exact script and layout of the main product text differ between references, with different character arrangements and spacing.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Additional decorative elements vary, such as bubbles/swirl accents in one reference and a circular seal/stamp graphic in the other.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.96
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 3404,
+      "output": 79
+    },
+    "latency_sec": 186.54,
+    "error": null
+  },
+  {
+    "item_id": "D2_0032",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The product is a small rectangular beverage carton shown standing upright on a white shelf against a perforated pegboard-style background.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The carton packaging is predominantly white with yellow accents along edges or the lower area.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Both cartons display prominent green text on the front panel.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The front design includes banana-themed imagery, indicating a banana-flavored milk drink product.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Branding and decorative graphics are printed on the front, including a banana illustration and stylized product labeling.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The front panel artwork differs: one reference shows a bottle outline graphic with bananas inside, while the other shows a printed bottle image near the bottom.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "A white drinking straw is attached vertically on the front in reference 1, while no attached straw is visible in reference 2.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The text layout and language presentation vary between references, with different arrangements of Korean and English text.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The visible front face differs slightly in perspective and panel design, with one image showing a narrower face and the other a broader front panel.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.92
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 3292,
+      "output": 77
+    },
+    "latency_sec": 148.91,
+    "error": null
+  },
+  {
+    "item_id": "D2_0054",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0010",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0009",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0055",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0061",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0028",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0074",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0034",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0082",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "All references show the same Somersby apple-flavor beverage can: a slim aluminum can with a predominantly white body, gold-toned top rim/bottom band, and green Somersby branding.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The can consistently features the large 'SOMERSBY' brand name in green on the body.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Green label/design panels are present on the can in all references.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The product is photographed upright on a white surface against a perforated pegboard-like background.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Each image shows a different rotational view of the same can, with side portions of the front artwork visible near the edges even when the front is not centered.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The visible panel differs by rotation: one view shows the back with barcode and QR code, one shows the front logo/tree artwork, and one shows the side panel with dense product text.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Text orientation varies by visible side: most front/back branding is upright, while the side information panel appears vertically oriented.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The amount of readable graphic detail varies by view, such as barcode/QR prominence in reference 1, large central logo artwork in reference 2, and dense ingredient/manufacturer text in reference 3.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.96
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 3996,
+      "output": 78
+    },
+    "latency_sec": 98.17,
+    "error": null
+  },
+  {
+    "item_id": "D2_0020",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single white/cream liquid bottle is centered in the image, standing upright on a white shelf surface against a perforated pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The bottle has a narrow neck and wider body made of clear glass, with the light-colored contents filling most of the bottle.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "A dark black cap/sleeve covers the top of the bottle, and white text is printed on this dark upper section.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Printed product labeling with dense small text appears on the bottle body.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The pegboard background contains evenly spaced round holes and remains consistent across the reference images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The bottle is shown from different viewing angles, revealing different parts of the label such as back text panels, side panels, or a partial front label.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The amount and placement of visible body text and barcode vary depending on the rotation of the bottle.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "A blue front/side label element is visible in some views but mostly hidden or absent from view in others due to bottle orientation.",
+            "evidence_refs": [
+              4,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The top white text on the black neck sleeve appears at slightly different positions and line breaks because of the bottle rotation.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.99
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4741,
+      "output": 80
+    },
+    "latency_sec": 106.31,
+    "error": null
+  },
+  {
+    "item_id": "D2_0018",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0007",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0017",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0024",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0041",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0085",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0069",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0025",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0078",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0081",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0059",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0013",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0002",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single blue cigarette pack is displayed upright in a clear plastic holder against a light-colored background.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The pack front features a yellow square logo area with a wolf graphic and Chinese characters, with the brand name 'SEPTWOLVES' below it.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Both packs have a blue sky/cloud-themed design on the front.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Gold-colored text appears on the upper portion of the pack and on the lower warning area.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A Chinese health warning is visible across the lower front portion of the pack, partially obscured by the plastic holder.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The exact upper-front text differs: one pack shows English descriptive text, while the other shows Chinese text with '8 mg'.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The cloud shapes and their placement on the pack front vary between the two references.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The amount of glare/reflection on the glossy pack surface differs between the images.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The framing and position of the pack within the holder vary slightly between the two references.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.96
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 3270,
+      "output": 76
+    },
+    "latency_sec": 182.81,
+    "error": null
+  },
+  {
+    "item_id": "D2_0077",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The item is a blue plastic bag package of instant noodles with a crinkled, flexible surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The package shows the same product branding/design, including large Chinese text on the front and the English subtitle 'Golden Stock Shrimp Noodles'.",
+            "evidence_refs": [
+              1,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "A food image featuring yellow/golden noodles appears on the front packaging.",
+            "evidence_refs": [
+              1,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The back/side views include a vertical silver seam running down the package.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Instructional or information panels are printed on the package, visible as text blocks and illustrated preparation steps.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The product is photographed standing upright on a white shelf with a perforated pegboard-style white background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The viewing angle varies between front-facing views and back/side views of the same package.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The bag shape and top edge vary due to crumpling and how the flexible package is resting.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Front branding can appear centered and fully visible or partially angled/partially obscured depending on orientation.",
+            "evidence_refs": [
+              1,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The silver rear seam appears centered in one view and slightly off-center in another due to package rotation.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Back-panel text, barcode, and preparation graphics are visible to different extents depending on the side/back angle.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4825,
+      "output": 82
+    },
+    "latency_sec": 142.1,
+    "error": null
+  },
+  {
+    "item_id": "D2_0042",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A small rectangular Oldenburger milk drink carton is centered upright on a white shelf against a perforated pegboard background.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The front panel has a blue-and-white color scheme with the Oldenburger logo in a dark blue block at the top.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The package shows prominent Chinese text in the middle of the front panel.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Colored circular callouts appear on the front, including nutrient/ingredient claims such as DHA and other benefits.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A cartoon cow illustration appears on the lower front portion of the carton.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "Green grass graphics run along the bottom edge of the carton front, with volume text near the lower right showing 180 ml.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "A white drinking straw may be attached vertically across the front of the carton.",
+            "evidence_refs": [
+              1
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The front-facing angle and exact centering of the carton vary slightly between images.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Minor differences in visibility/clarity of front text and graphics occur due to lighting, focus, or the straw partially occluding the design.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.97
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 3268,
+      "output": 76
+    },
+    "latency_sec": 63.4,
+    "error": null
+  },
+  {
+    "item_id": "D2_0076",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0039",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0000",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0005",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0014",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0088",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0011",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The product is a small rectangular carton package shown upright on a white shelf with a perforated pegboard-style background.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The carton uses a predominantly red-and-white color scheme.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Both packages display the Mengniu logo and Chinese brand text near the upper left area of the front-facing panel.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Images of red dates/jujubes appear prominently across the upper portion of the visible panel.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Large white Chinese text is printed vertically or stacked on the red lower/front area of the carton.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The visible panel includes product-related printed graphics and text, with '250mL' shown near the bottom right.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Different front/side panel designs are visible: one reference shows a male model holding the product, while the other shows an alarm clock and pitcher/cup graphic.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The arrangement and orientation of the Chinese text differ between the two visible panels.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "A handwritten or marker-like number ('146') appears on one carton panel but not the other.",
+            "evidence_refs": [
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "There is slight variation in the carton viewing angle and visible edge lines, with one image showing more of a front face and the other a slightly turned panel with a central vertical seam/fold visible.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.94
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 3414,
+      "output": 80
+    },
+    "latency_sec": 261.12,
+    "error": null
+  },
+  {
+    "item_id": "D2_0058",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0026",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0004",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0016",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0066",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0049",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.010000000000000009,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single rectangular product box/carton is placed upright in the center slot of a transparent acrylic/plastic shelf divider or display holder.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The item is photographed front-on against a mostly plain light-colored background, with the clear holder visible across the lower portion of the image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Packaging surfaces are glossy or semi-glossy and show visible reflections/highlights from overhead lighting.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Each package has prominent printed branding/text and graphic design elements on the main visible face.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The transparent shelf compartment has adjacent empty or partially visible neighboring slots on the left and right.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Package color varies substantially, including bright yellow, red/cream, pale gold, and red/gold designs.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Text language/script differs across packages, with some showing English, some Chinese characters, and some a mix.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Graphic style varies from large logo/illustration to central emblem/medallion to patterned backgrounds and vertical branding text.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The box orientation is usually upright, but one reference shows the package upside down while still positioned in the same holder.",
+            "evidence_refs": [
+              1,
+              2,
+              4,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The visible fit within the holder varies slightly: some boxes sit deeper or lower in the slot while others extend higher above the holder rim.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.98
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4867,
+      "output": 79
+    },
+    "latency_sec": 339.53,
+    "error": null
+  },
+  {
+    "item_id": "D2_0012",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0178",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0156",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0117",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0086",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0103",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0155",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0139",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0114",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0120",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0141",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0179",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0105",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0100",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0166",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The item is a sealed plastic food package with a mostly red outer border/design and a transparent front or side area showing white shredded contents inside.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The package consistently features Chinese text branding and product information printed on labels or directly on the bag.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "A white rectangular information panel with dense black text is present on the back/side views of the package.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The back/side views show a barcode near the lower portion of the package.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A landscape-style graphic band near the top of the package appears on the back/side views.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The package is photographed upright on a white shelf against a perforated white pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The package is shown from different viewing angles: full front view, straight back view, and angled back/side views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The amount of visible product differs by angle, with the front view showing more of the white shredded contents and the back/side views showing more printed labels.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The package shape shows minor natural deformation such as slight leaning, puffiness, or wrinkling while remaining sealed and upright.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Front-facing branding elements, including a central vertical red label and decorative graphics, are visible only in the front view, while nutritional/details panels dominate the back views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4853,
+      "output": 83
+    },
+    "latency_sec": 120.87,
+    "error": null
+  },
+  {
+    "item_id": "D2_0127",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0116",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0124",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0109",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0147",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0174",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 1,
+    "anomaly_score": 0.97,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single tall, slim aluminum can is centered upright in the image.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The can body is predominantly bright orange with a metallic sheen.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The top and bottom rims are silver metallic.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The product is photographed against a white perforated pegboard-style shelf backing with evenly spaced holes.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The can features printed branding and graphics directly on the orange surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "Orange/citrus-themed artwork appears on the can, including sliced orange illustrations and decorative swirls/bubbles.",
+            "evidence_refs": [
+              1,
+              3
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Different sides of the same can are shown: a Chinese front label, a back panel with dense product text and barcode, and an English 'MIRINDA ORANGE FLAVOR' side.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The amount and placement of visible text varies by viewing angle, from large central logo text to dense small-print information.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "A barcode is visible on the back view but not on the logo-facing views.",
+            "evidence_refs": [
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The citrus graphics are more prominent on the front/logo-facing sides and less visible on the back text-heavy side.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A narrow vertical gray/silver scuff-like mark or damaged patch is visible on the lower front of the can, interrupting the orange printed surface; this defect is not present in any reference views.",
+            "location": "lower central area of the can body, below the MIRINDA logo",
+            "confidence": 0.96
+          }
+        ],
+        "no_difference_conf": 0.04
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query shows a distinct narrow vertical gray/silver mark on the lower front-center of the can, below the MIRINDA logo. This appears to expose the metallic can surface or indicate a scuff/damage area interrupting the normal orange printed body. None of the reference views show a comparable mark in that area, and it is not explained by viewing angle, branding variation, or other benign variations."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 4140,
+      "output": 278
+    },
+    "latency_sec": 132.96,
+    "error": null
+  },
+  {
+    "item_id": "D2_0094",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0125",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0165",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0171",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0164",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0135",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0110",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0115",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0096",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0122",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0142",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0154",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0158",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0126",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0161",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single plastic bottled drink is centered upright on a white surface in front of a perforated light-colored pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The bottle has a white screw cap and a short transparent neck above an opaque light beige liquid.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The label design is predominantly green and white with large black East Asian characters on the front area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The product is a milk tea beverage, indicated by the prominent large text and beverage-style packaging.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The bottle body is rounded with slightly sloped shoulders and a broad front label wrapping around the container.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "Cartoon character artwork is present on the label.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The visible front-facing character artwork varies by bottle orientation: reference 1 shows a black-haired cartoon girl, while references 2-4 show Disney characters such as Daisy Duck and Minnie Mouse.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The bottle is rotated differently across images, revealing different parts of the wraparound label and side panel.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "A side panel with a QR code/barcode area is visible in some views due to rotation.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The exact placement and amount of front text and graphics visible changes with the viewing angle, including partial vs more centered visibility of the main black characters.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The Disney branding text near the bottom front is visible in references 2-4 but not in reference 1, consistent with different label artwork/orientation.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The bottle cap appears damaged/open: the top cap is missing, leaving the mouth exposed, and only a lower white tamper ring/cap fragment remains around the neck.",
+            "location": "top of the bottle",
+            "confidence": 0.99
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "In all reference images, the bottle has an intact white screw cap covering the mouth. In the query image, the top cap is clearly missing/open, with the bottle mouth exposed and only the lower tamper ring/cap remnant remaining around the neck. This is not explained by bottle rotation, label variation, or any listed benign variation, so it is a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 5045,
+      "output": 262
+    },
+    "latency_sec": 171.96,
+    "error": null
+  },
+  {
+    "item_id": "D2_0111",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0128",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0151",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0104",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0175",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0098",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0176",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0093",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0152",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0148",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0131",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0132",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0113",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0140",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0134",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The product is a tall rectangular box with a predominantly white package design.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The box features large printed images of golden pastry/egg-yolk style baked goods on the main visible faces.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Orange/brown accent graphics and labels are consistently used on the packaging.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Chinese text is printed on the box, with some English text also visible on certain faces.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The product is photographed standing upright on a white shelf in front of a perforated pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "Different faces of the same box include either product branding imagery or dense informational text/nutrition-style panels.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The box is shown from different viewing angles, including front-facing, side-facing, and corner views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The box orientation in the image varies slightly, with some views showing the package leaning or tilted.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Some visible faces emphasize the large pastry product photo, while another visible face shows dense black text and a nutrition table.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Small icons, stamps, or seals appear on some side/top-visible panels depending on the viewing angle.",
+            "evidence_refs": [
+              1,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A pronounced inward dent/crease is visible along the left-middle edge of the box, making the side panel look pinched or warped.",
+            "location": "left side of the box around the midsection, near the pastry image",
+            "confidence": 0.96
+          }
+        ],
+        "no_difference_conf": 0.05
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query image shows a clear physical deformation: the left-middle edge/face of the box is visibly caved inward, creating a pinched waist-like crease near the pastry image. In the reference images, the box sides remain straight and planar even when the package is viewed at different angles or with slight leaning. This effect is not explained by normal viewing-angle changes, tilt, or face variation, so it is a genuine packaging damage anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4820,
+      "output": 273
+    },
+    "latency_sec": 318.83,
+    "error": null
+  },
+  {
+    "item_id": "D2_0168",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0108",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0123",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A tall, narrow rectangular blue Oreo product box is shown upright, centered against a white perforated pegboard background on a white shelf surface.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The packaging consistently uses predominantly blue coloring with Oreo branding and Chinese text printed on the box.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The box features matcha/green cream cookie imagery, including a dark Oreo-style cookie and green filling or green dessert visuals.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Each reference shows a different side panel of the same product package, with the box remaining vertically oriented.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Different side panels are visible: one side has dense product information and barcode, while others have front/side promotional graphics and illustrations.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The amount and style of food imagery varies by panel, from mostly text-heavy to large cookie-and-cream promotional visuals.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The orientation of printed text and graphics differs by panel, including vertically arranged branding and rotated side-panel layouts.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Some panels prominently display green matcha leaves, powder, or cream swirls, while others show little or none of these accents.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Top flap of the box is opened and protruding upward, creating an exposed, bent cardboard flap not seen in any reference.",
+            "location": "top edge of the box",
+            "confidence": 0.99
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query image shows the same blue Oreo side panel as Reference 3, but the top flap is clearly open and bent upward, exposing the inside of the carton. None of the references show an open or protruding flap; all depict the box closed with a flat top edge. This is not explained by the normal pattern of different side panels or printed-layout variations, so it is a genuine physical anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4679,
+      "output": 252
+    },
+    "latency_sec": 52.74,
+    "error": null
+  },
+  {
+    "item_id": "D2_0136",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single green rectangular product box is shown against a white perforated pegboard shelf background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The front face of the box features colorful fruit imagery including a halved passion fruit, green/yellow citrus-like fruits, and a bunch of purple grapes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The package artwork includes three translucent jelly cubes in orange, purple, and light green placed on a white plate.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "There is a dark brown vertical label area with white Chinese text and a small white heart/logo near the top portion of the front design.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A circular or stamp-like '-30%' marking appears on the upper area of the package front.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "White Chinese text appears near the lower edge of the package front.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The box orientation varies: it is photographed tilted left or right, more upright, or rotated upside down while remaining the same product.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The visible side edge of the box differs slightly, with some views showing more of the left side panel due to perspective.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Glare and bright reflections on the glossy packaging shift position and intensity across images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The product framing changes slightly, with the box appearing more centered, closer, or with different margins to the pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A side flap/tear-out tab on the right edge of the box is protruding outward, making the box edge look opened or bent. This protruding flap is not present in any reference images.",
+            "location": "Mid-right edge of the package",
+            "confidence": 0.96
+          }
+        ],
+        "no_difference_conf": 0.05
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "In the query image, there is a distinct protruding flap or torn/open tab extending from the mid-right edge of the box. Across the reference images, the box edges appear straight and closed, with no comparable tab sticking out on that side. This cannot be explained by orientation, perspective, framing, or glare, since those benign variations do not create a physical edge deformation. It indicates the package is opened, bent, or damaged."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4933,
+      "output": 280
+    },
+    "latency_sec": 170.27,
+    "error": null
+  },
+  {
+    "item_id": "D2_0118",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single bottled beverage is centered upright in the image, photographed standing on a white shelf in front of a white perforated pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The product is a Kirin FIRE coffee drink bottle with a gold-colored ribbed cap and a mostly dark brown label/body with lighter cream tones near the shoulder.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "A blue circular badge/sticker appears near the upper shoulder area of the bottle label in each reference.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The bottle has a narrow cylindrical shape with a transparent upper neck/shoulder area below the cap and a wrapped label covering most of the body.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The label design includes FIRE branding and coffee-themed dark gradient graphics; when the front-facing side is visible, a flame logo and the word 'FIRE' are present.",
+            "evidence_refs": [
+              1,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The bottle is rotated to different sides: full front view, back/ingredient panel view, partial side view with barcode/icons, and slightly angled front view.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The amount of readable front branding varies depending on rotation: some views clearly show the flame logo and 'FIRE' text, while others mainly show side or back text panels.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Different secondary label elements are visible by angle, such as dense nutrition/ingredient text on the back or barcode/icon panels on the side.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The bottle position and framing vary slightly, including small shifts in left-right placement and minor differences in apparent size or camera distance.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4827,
+      "output": 82
+    },
+    "latency_sec": 116.47,
+    "error": null
+  },
+  {
+    "item_id": "D2_0149",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0119",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The item is a rectangular paper carton beverage package shown upright from the front.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The carton has a predominantly yellow/orange color scheme with a banana-themed graphic pattern.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "A large white central label area appears on the front face.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The front label shows Chinese text with the English product name 'Banana Milk' below it.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The lower front area includes small text indicating volume, including '240mL'.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The top of the carton is folded inward with angled side flaps visible near the upper corners.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 6,
+            "pattern": "The product is photographed against a perforated pegboard-like background on a light-colored shelf surface.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "A white drinking straw may be absent or attached vertically along the right front side of the carton.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "There may be an additional small colored sticker/marking near the lower front area.",
+            "evidence_refs": [
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The carton can appear slightly more centered or slightly angled/offset in the frame.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Lighting and glare on the glossy carton surface vary between the references.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.91
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 3402,
+      "output": 73
+    },
+    "latency_sec": 226.14,
+    "error": null
+  },
+  {
+    "item_id": "D2_0177",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 1,
+    "anomaly_score": 0.93,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "All references show the same Somersby apple-flavor beverage can: a slim aluminum can with a predominantly white body, gold-toned top rim/bottom band, and green Somersby branding.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The can consistently features the large 'SOMERSBY' brand name in green on the body.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Green label/design panels are present on the can in all references.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The product is photographed upright on a white surface against a perforated pegboard-like background.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "Each image shows a different rotational view of the same can, with side portions of the front artwork visible near the edges even when the front is not centered.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The visible panel differs by rotation: one view shows the back with barcode and QR code, one shows the front logo/tree artwork, and one shows the side panel with dense product text.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Text orientation varies by visible side: most front/back branding is upright, while the side information panel appears vertically oriented.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The amount of readable graphic detail varies by view, such as barcode/QR prominence in reference 1, large central logo artwork in reference 2, and dense ingredient/manufacturer text in reference 3.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The small white brand text/logo near the bottom of the green front label appears smeared/blurred and partially illegible, unlike the crisp text in the normal front reference.",
+            "location": "lower center of the can, inside the green rectangular label below the Chinese product name",
+            "confidence": 0.95
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "In the front reference, the small white brand text/logo at the bottom of the green label is present and legible, while in the query the same area appears noticeably smeared/blurred and partially unreadable. This is not explained by can rotation, panel changes, or other listed benign variations, because the query is showing the same front-facing panel as reference 2. The rest of the front artwork aligns normally, making the localized blur in that printed area a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 4081,
+      "output": 289
+    },
+    "latency_sec": 171.04,
+    "error": null
+  },
+  {
+    "item_id": "D2_0150",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single stand-up pouch of mixed nuts/snacks is centered in the image, photographed on a white shelf against a white perforated pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The package is predominantly dark/black with a yellow brand block near the top left area and a hang hole near the top center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Large white Chinese product text is prominently printed on the front of the pouch.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The lower front of the pouch shows a large photo of mixed nuts/beans, including visible peanuts and green peas.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The pouch has a rounded, slightly irregular top silhouette and a gusseted bottom that allows it to stand upright.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The pouch is shown at slightly different viewing angles, rotating left/right so different parts of the front panel are more visible.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Some views show the back/side panel details such as dense text blocks and a barcode more clearly, while others show the main front artwork more directly.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The illustrated/printed spoon and floating nut graphics on the package are more prominent in some orientations than others.",
+            "evidence_refs": [
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The exact apparent width and contour of the pouch vary slightly due to perspective and pouch shape, while remaining the same product type.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.94
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4755,
+      "output": 81
+    },
+    "latency_sec": 258.33,
+    "error": null
+  },
+  {
+    "item_id": "D2_0172",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A tall white cylindrical Lay's chip can is shown standing upright on a white shelf in front of a white perforated pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The package has a predominantly white body with the Lay's logo near the top area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The can features Chinese text on the front/side labeling.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "A red-orange product illustration of stacked potato chips and cured-meat-like slices appears on the can artwork.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The container has a fitted top lid area visible at the top and a circular base rim visible at the bottom.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "The item is photographed singly and centered or near-centered in the frame under similar store-shelf lighting.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The can is rotated to different sides: front-facing branding is visible in references 2 and 3, a partial front/angled view in reference 1, and the back nutrition/barcode panel in reference 4.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The top seal/lid edge appears slightly different in shape or openness across views, with a more noticeable lifted or uneven edge in references 1 and 3.",
+            "evidence_refs": [
+              1,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Small side details such as a QR-code-like blue block, barcode, and dense text are visible or hidden depending on the rotation angle.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The can's horizontal position and apparent width vary slightly due to camera angle and orientation, while remaining the same product type.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.86
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 4887,
+      "output": 84
+    },
+    "latency_sec": 215.77,
+    "error": null
+  },
+  {
+    "item_id": "D2_0129",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A tall cylindrical Lay's Stax-style potato chip can is shown upright on a white shelf against a white perforated pegboard background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The container has a bright yellow plastic lid on top.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The label is predominantly black/dark with gold Lay's branding near the top and red/orange graphics toward the lower half.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The product is a Chinese-market Lay's chips can with Chinese text on the front/side panels.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "A large potato chip image appears on the lower front-side area of the label, surrounded by red chili/seasoning-like graphics.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 5,
+            "pattern": "Side/back views include dense white text blocks and a vertical barcode printed on the label.",
+            "evidence_refs": [
+              1,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The can is rotated to different angles, ranging from front-facing branding views to side/back information-panel views.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The Lay's logo and product name can appear fully centered and readable in some views or partially cut off/shifted when the can is turned.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The barcode may be fully visible on the side/back panel or only partially visible near the edge depending on rotation.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The potato chip and chili graphics vary in prominence and position in the frame because different parts of the wraparound label are facing forward.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The top lid area is damaged/open, with the usual bright yellow plastic lid not visible and torn silver foil protruding from the opening.",
+            "location": "top of the can",
+            "confidence": 0.99
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "All reference images show the can with an intact bright yellow plastic lid on top. In the query image, the top is visibly opened/damaged: the yellow lid is missing from view and torn silver foil is protruding from the opening. This cannot be explained by rotation or any listed benign variation, so it is a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4892,
+      "output": 243
+    },
+    "latency_sec": 71.3,
+    "error": null
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "a_wins_rules": [
+    "If the query image shows a variation in color (e.g., liquid or wire) or label icon that matches a known product variant described in the reference profiler, trust A (Agent) to correctly identify it as normal.",
+    "If the query image contains a subtle, non-structural feature like printed text or markings on a component that is absent in all reference images, trust A (Agent) to detect this as a logical anomaly."
+  ],
+  "b_wins_rules": [
+    "If the query image shows a clear physical defect such as a torn label, missing object, or extra foreign object, trust B (Direct) to correctly identify it as an anomaly.",
+    "If the query image shows a change in the count of components (e.g., extra washer, missing nut) or a change in the configuration of parts (e.g., number of terminal blocks), trust B (Direct) to detect this as a logical anomaly.",
+    "If the query image shows a change in the state of a product (e.g., liquid color change to an unexpected color like milky white) that is not a known variant, trust B (Direct) to identify it as an anomaly."
+  ],
+  "a_evidence": [
+    "D5_0002",
+    "D5_0055",
+    "D5_0156"
+  ],
+  "b_evidence": [
+    "D5_0027",
+    "D5_0056",
+    "D5_0114",
+    "D5_0142",
+    "D5_0144",
+    "D5_0145",
+    "D5_0171"
+  ],
+  "raw": "{\n  \"a_wins_rules\": [\n    \"If the query image shows a variation in color (e.g., liquid or wire) or label icon that matches a known product variant described in the reference profiler, trust A (Agent) to correctly identify it as normal.\",\n    \"If the query image contains a subtle, non-structural feature like printed text or markings on a component that is absent in all reference images, trust A (Agent) to detect this as a logical anomaly.\"\n  ],\n  \"b_wins_rules\": [\n    \"If the query image shows a clear physical defect such as a torn label, missing object, or extra foreign object, trust B (Direct) to correctly identify it as an anomaly.\",\n    \"If the query image shows a change in the count of components (e.g., extra washer, missing nut) or a change in the configuration of parts (e.g., number of terminal blocks), trust B (Direct) to detect this as a logical anomaly.\",\n    \"If the query image shows a change in the state of a product (e.g., liquid color change to an unexpected color like milky white) that is not a known variant, trust B (Direct) to identify it as an anomaly.\"\n  ]\n}",
+  "tokens": {
+    "input": 3821,
+    "output": 264
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 17,
+    "agree_wrong": 13,
+    "disagree_a_wins_total": 3,
+    "disagree_b_wins_total": 7,
+    "reflected_a": 3,
+    "reflected_b": 7,
+    "skipped": 0
+  },
+  "domain_code": "D5",
+  "seconds": 26.2
+}

@@ -1,0 +1,43 @@
+{
+  "a_wins_rules": [
+    "If the Agent's rationale explicitly cites a 'reference profile' or 'allowed variations' (e.g., vegetation density, soil texture) to explain observed differences, trust the Agent.",
+    "If the Agent identifies a major structural discrepancy (e.g., missing housing blocks, cleared land) that contradicts the Direct branch's claim of 'identical layout', trust the Agent.",
+    "If the Direct branch attributes significant visual changes to 'seasonal characteristics' or 'lighting' while the Agent flags a lack of expected structural elements (like vegetation or buildings), trust the Agent."
+  ],
+  "b_wins_rules": [
+    "If the Agent's rationale contains a 'json parse failed' error or is otherwise malformed, trust the Direct branch.",
+    "If the Agent flags a localized color anomaly (e.g., 'bright blue object', 'dark patch') but the Direct branch confirms the overall structural layout (streets, houses) is identical, trust the Direct branch.",
+    "If the Direct branch attributes visual differences to 'imaging conditions' (season, time of day, sensor settings) and the Agent's evidence relies solely on texture or color shifts without structural change, trust the Direct branch."
+  ],
+  "a_evidence": [
+    "D7_0025",
+    "D7_0061",
+    "D7_0067",
+    "D7_0100",
+    "D7_0119"
+  ],
+  "b_evidence": [
+    "D7_0003",
+    "D7_0017",
+    "D7_0039",
+    "D7_0048",
+    "D7_0057"
+  ],
+  "raw": "{\n  \"a_wins_rules\": [\n    \"If the Agent's rationale explicitly cites a 'reference profile' or 'allowed variations' (e.g., vegetation density, soil texture) to explain observed differences, trust the Agent.\",\n    \"If the Agent identifies a major structural discrepancy (e.g., missing housing blocks, cleared land) that contradicts the Direct branch's claim of 'identical layout', trust the Agent.\",\n    \"If the Direct branch attributes significant visual changes to 'seasonal characteristics' or 'lighting' while the Agent flags a lack of expected structural elements (like vegetation or buildings), trust the Agent.\"\n  ],\n  \"b_wins_rules\": [\n    \"If the Agent's rationale contains a 'json parse failed' error or is otherwise malformed, trust the Direct branch.\",\n    \"If the Agent flags a localized color anomaly (e.g., 'bright blue object', 'dark patch') but the Direct branch confirms the overall structural layout (streets, houses) is identical, trust the Direct branch.\",\n    \"If the Direct branch attributes visual differences to 'imaging conditions' (season, time of day, sensor settings) and the Agent's evidence relies solely on texture or color shifts without structural change, trust the Direct branch.\"\n  ]\n}",
+  "tokens": {
+    "input": 4790,
+    "output": 269
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 13,
+    "agree_wrong": 9,
+    "disagree_a_wins_total": 5,
+    "disagree_b_wins_total": 13,
+    "reflected_a": 5,
+    "reflected_b": 5,
+    "skipped": 0
+  },
+  "domain_code": "D7",
+  "seconds": 24.3
+}

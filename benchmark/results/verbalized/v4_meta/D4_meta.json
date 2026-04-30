@@ -1,0 +1,41 @@
+{
+  "a_wins_rules": [
+    "If Branch B identifies a 'uniform' or 'smooth' texture as an anomaly due to deviation from coarse references, but Branch A explicitly cites 'grain size' or 'color variation' as an allowed variation in the reference profiler, trust A.",
+    "If Branch B flags a specific localized feature (e.g., 'vertical linear defect', 'chip', 'dark spot') as an anomaly, but Branch A successfully refutes it by demonstrating the feature exists in the normal reference images, trust A."
+  ],
+  "b_wins_rules": [
+    "If Branch A flags a 'dark irregular mark' or 'high-contrast spot' as an anomaly, but Branch B identifies the feature as a 'shadow' or 'typical aggregate/pore' consistent with the reference texture, trust B.",
+    "If Branch A claims a feature is unique to the query image based on visual comparison, but Branch B asserts the texture is 'uniform' and 'consistent' with references without identifying a specific defect, trust B."
+  ],
+  "a_evidence": [
+    "D4_0031",
+    "D4_0044",
+    "D4_0049",
+    "D4_0070",
+    "D4_0086"
+  ],
+  "b_evidence": [
+    "D4_0009",
+    "D4_0015",
+    "D4_0016",
+    "D4_0066",
+    "D4_0074"
+  ],
+  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If Branch B identifies a 'uniform' or 'smooth' texture as an anomaly due to deviation from coarse references, but Branch A explicitly cites 'grain size' or 'color variation' as an allowed variation in the reference profiler, trust A.\",\n    \"If Branch B flags a specific localized feature (e.g., 'vertical linear defect', 'chip', 'dark spot') as an anomaly, but Branch A successfully refutes it by demonstrating the feature exists in the normal reference images, trust A.\"\n  ],\n  \"b_wins_rules\": [\n    \"If Branch A flags a 'dark irregular mark' or 'high-contrast spot' as an anomaly, but Branch B identifies the feature as a 'shadow' or 'typical aggregate/pore' consistent with the reference texture, trust B.\",\n    \"If Branch A claims a feature is unique to the query image based on visual comparison, but Branch B asserts the texture is 'uniform' and 'consistent' with references without identifying a specific defect, trust B.\"\n  ]\n}\n```",
+  "tokens": {
+    "input": 2754,
+    "output": 235
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 20,
+    "agree_wrong": 5,
+    "disagree_a_wins_total": 9,
+    "disagree_b_wins_total": 6,
+    "reflected_a": 5,
+    "reflected_b": 5,
+    "skipped": 0
+  },
+  "domain_code": "D4",
+  "seconds": 19.2
+}

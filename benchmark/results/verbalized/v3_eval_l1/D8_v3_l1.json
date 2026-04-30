@@ -1,0 +1,1802 @@
+[
+  {
+    "item_id": "D8_0066",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (smooth border, uniform color, symmetry) that are consistent with the normal reference image (ref0) and distinct from the anomalous reference images. Therefore, it is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0084",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The features initially considered potentially anomalous (irregular border, color variegation) are also present in the normal reference images, indicating they are within the range of normal variation for this type of skin lesion. Therefore, the query image is likely normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0058",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits blue-black pigmentation and a white halo, features that are absent in all normal reference images which only display brown/tan colors. These features survive refutation and indicate an anomaly.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0087",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a dark central blotch, irregular border, and significant color variegation, none of which are present in the normal reference lesions. These features are indicative of an anomaly, likely melanoma.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0038",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0046",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (dark brown color, slightly scalloped border) that are explicitly listed as allowed variations in the normal reference profile. No anomalous features survived the refutation process.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0045",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting an anomaly (irregular border, color variegation) are also present in the provided normal reference images. Since these features are part of the normal variation in this dataset, the query image is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0050",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (central dark pigmentation) is a common feature in the provided normal reference images. The lesion's borders are smooth and its color palette is consistent with normal nevi. Therefore, the query image is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0030",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect features (dark center, irregular border) were successfully refuted by finding similar features in the normal reference images. Therefore, the query is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0032",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0088",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0043",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The features initially suspected as anomalies (irregular border, color variegation) are confirmed to be present in the normal reference images, refuting the hypothesis of an anomaly. The query is consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0040",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a dark, structureless area and an irregular border that are not present in the normal reference images, which show lighter, patterned pigmentation. These features are consistent with melanoma anomalies.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0021",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a uniform dark brown color and a smooth, continuous border, which are consistent with the normal baseline profile. The lack of a reticular network and solid pigmentation are within the allowed variations for normal nevi and do not constitute anomalies.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0074",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (reticular network, slight border irregularity, color variation) that are also present in the normal reference images. No unique anomalous features were identified, indicating the lesion is likely a benign nevus.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0044",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays radial streaks and pseudopods, a structural feature strongly associated with melanoma. The side-by-side comparison with normal reference nevi confirms that these features are absent in the normal baseline, leading to a high anomaly score.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0026",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits multiple anomalous features (irregular borders, color heterogeneity, asymmetry) that are absent in the reference images, strongly indicating an anomaly.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0067",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion displays significant asymmetry, color variegation (dark irregular center), and an irregular border, which are not observed in the provided normal reference images. These features strongly suggest an anomaly consistent with melanoma.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0078",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0073",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's reddish-purple color and oval shape with soft edges are consistent with the normal baseline profile derived from the reference images, which explicitly allows for reddish-brown pigmentation. No other anomalous features were found.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0003",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The features initially suspected as anomalies (irregular network, asymmetry) are present in the provided normal reference images. Since the query does not exhibit any feature unique to it that is absent in the normal pool, it is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0057",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison reveals that the query lesion's features—specifically the central dark pigmentation and lighter periphery—are consistent with the natural variation seen in the reference images (e.g., Ref 0 and Ref 4). No unique defect-like feature survives refutation; the observed heterogeneity is a normal characteristic of melanocytic nevi in this dataset.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0039",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a uniform light brown color and a reticular pigment network with soft, slightly irregular borders. These features are consistent with the benign melanocytic nevi shown in the reference images and lack the specific dermoscopic criteria for melanoma (e.g., asymmetry, atypical network, blue-white veil, irregular streaks). Therefore, the lesion is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0005",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (color, shape, border) that are consistent with the allowed variations of normal skin lesions defined by the reference profiler. No anomalous features survive refutation.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0009",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a pigment network and border characteristics that are also present in the normal reference images. No unique anomalous features were identified, indicating the lesion is likely a normal melanocytic nevus.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0027",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0089",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a regular reticular network and uniform pigmentation, which are explicitly listed as allowed variations in the normal reference profile. No anomalous features were found after refutation.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0012",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0008",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a prominent dark central blotch and color variegation that are completely absent in the reference images of normal nevi. This structural and chromatic deviation confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0002",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison revealed that the query lesion's features (uniform color, smooth border) are consistent with normal benign nevi and do not represent anomalies when compared to the diverse set of reference images.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0070",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0017",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits significant deviations from the normal reference nevi, specifically in color (red vs. brown), structure (lack of pigment network), and boundary definition. These features were successfully refuted against the reference pool, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0007",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's features (reticular network, color, border) are consistent with the normal reference images. The initial candidate anomalies were refuted as they appear in the normal pool, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0029",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a distinct reddish-purple coloration that is not present in any of the normal reference images, which are exclusively brown or reddish-brown. This qualitative color difference survives refutation and indicates an anomaly.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0077",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a benign-appearing skin lesion with symmetry, uniform color, and smooth borders. The side-by-side comparison confirms that the lesion lacks the irregular structural and color features present in the more complex reference images (like Ref0), supporting a normal classification.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0064",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting anomaly (irregular shape and border) were successfully refuted by observing similar features in the normal reference images. The query lesion exhibits characteristics consistent with a benign melanocytic nevus.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0013",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting an anomaly (irregular border, central hyperpigmentation) were successfully refuted as they are present in the normal reference images. Therefore, the query image is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0080",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features initially flagged as anomalous (irregular border, dark color) were successfully refuted by the side-by-side comparison, which showed these traits are present in the normal reference images. Thus, the query is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0024",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0025",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison reveals that the 'irregular dark center' and 'color variegation' observed in the query are also present in the reference images (specifically ref0 and ref3). Since these features are part of the natural variation of normal nevi in this dataset, they are refuted as anomalies. The query lesion is consistent with the normal baseline.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0014",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits two distinct pigmented lesions, violating the invariant rule that normal images contain exactly one primary lesion. The reference profiler confirms that multiple lesions are not an allowed variation, thus the anomaly is confirmed.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0033",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting an anomaly (slightly irregular border and color gradient) were successfully refuted as they are also present in the provided normal reference images. Therefore, the query lesion is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0060",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits extreme dark pigmentation, homogeneity, and an irregular border, none of which are present in the provided normal reference images. These features strongly suggest an anomaly consistent with melanoma.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0082",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's features, including its reticular pattern and border characteristics, are consistent with the normal variations seen in the reference images. No unique anomalous features were identified.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0035",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits two distinct lesions, violating the normal rule of exactly one primary lesion. The reference profiler confirms that multiple lesions are not an allowed variation, so this feature is confirmed as anomalous.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0081",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (dark pigmentation, irregular borders) identified in the query are also present in the normal reference images, indicating they are part of the natural variation for this class and not anomalies.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0076",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (smooth border, uniform faint color, small size) that are completely absent in the reference baseline, which consists of lesions with irregular borders and variegated colors. Given the task context of melanoma detection where references represent the target class, the query's benign appearance is a significant anomaly.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0019",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays specific dermoscopic features of malignancy (irregular borders, radial streaming) that are absent in the provided normal reference images, confirming the anomaly.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0079",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a uniform color and smooth boundary, which are consistent with the normal reference images. No features suggestive of melanoma (such as irregular borders, color variegation, or asymmetry) are present. Therefore, the lesion is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0065",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a central red/purple coloration and lacks the typical brown reticular pigment network seen in all normal reference images. These features are not found in the reference pool, confirming the lesion is anomalous.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0023",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (reticular network, soft borders, brown pigmentation) that are consistent with the normal reference images. No unique anomalous features were identified after refutation.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0054",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's features (regular pigment network, uniform color, well-defined borders) are consistent with the normal reference images, indicating it is a benign nevus and not an anomaly.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0010",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0062",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The observed central hypopigmentation and slight asymmetry in the query lesion are explicitly listed as allowed variations (color intensity, slight asymmetry) in the normal reference profile. The lesion boundary is smooth, adhering to structural invariants. Thus, the lesion is classified as normal.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0031",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's features (reticular network, brown color) are consistent with the normal reference images. No anomalous features survived the refutation protocol.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0061",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains two distinct pigmented lesions, violating the normal invariant of a single primary lesion. The reference profiler confirms that normal variations include size, color, and shape, but not the presence of multiple separate lesions. Therefore, the image is anomalous.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0037",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0036",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (irregular shape, color variation) that are explicitly defined as normal variations in the reference profile. No anomalous features survive refutation.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0055",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's features are consistent with the natural variation observed in the normal reference images. No anomalous features survived the refutation process.",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0170",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting anomaly (irregular border, color variation) are present in the normal reference images, refuting the hypothesis of an anomaly. The query lesion is consistent with a normal melanocytic nevus.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0001",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0100",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's features, including its pigment network, border irregularity, and color variation, are consistent with the natural variation observed in the normal reference images. No unique anomalous features were identified.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0107",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0144",
+    "score": 0.72,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion shows a central dark blotch and a lighter, irregular periphery. While central hyperpigmentation is seen in normal references (ref0), the specific combination with a fuzzy, irregular border is more suspicious and less typical of the provided normal examples, leading to a moderate-high anomaly score.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0108",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a benign melanocytic nevus with a regular pigment network and uniform color. The reference profiler confirms that these features (including hair and slight asymmetry) are standard variations for normal lesions in this context, refuting any anomaly hypothesis.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0091",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a reticular pigment network and coloration consistent with the normal reference images. Features initially considered potentially anomalous, such as border irregularity, are also present in the normal references, confirming the lesion is within the range of normal variation.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0122",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a pinkish skin lesion. The reference profiler confirms that 'pink' is an expected color and 'lighting shift' is an allowed variation for normal lesions in this context. Since the observed features fall within the defined normal variations, the anomaly hypothesis is refuted.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0123",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0094",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison reveals that the query lesion's reticular pattern and slight asymmetry are consistent with the natural variation seen in the reference images (specifically Ref 0 and Ref 1). No unique defect-like features (such as abrupt cutoff, blue-white veil, or atypical vascular structures) were found that are absent in the normal references. Therefore, the initial suspicion of anomaly is refuted.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0142",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0151",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (color variation, texture) that are explicitly listed as allowed variations in the normal reference profile. No specific melanoma indicators are present, leading to a conclusion of normality.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0117",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0097",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0118",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0112",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits color variegation and an irregular border, but these features are also present in the normal reference images (e.g., ref0, ref1) and are covered by the allowed variations ('color intensity shift', 'irregular oval'). No unique defect-like features were identified that are absent in the normal baseline.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0141",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (central dark area) is a common feature in benign compound nevi and is visually similar to patterns seen in the reference images (specifically ref2). The lesion lacks other malignant features like jagged borders or chaotic color distribution. Thus, it is classified as normal.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0113",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting an anomaly (light color, irregular border) are also present in the provided normal reference images (specifically Ref0 and Ref1). Since these features are part of the normal variation in the reference set, they are refuted as anomalies. The query image is consistent with a normal melanocytic nevus.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0130",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion displays significant color variegation and structural asymmetry, features that are absent in the provided normal reference images which are uniform in color and regular in shape. This strong deviation from the normal baseline indicates an anomaly.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0162",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (regular network, uniform color, smooth border) that are explicitly covered by the allowed variations in the normal reference profile. No anomalous characteristics were found.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0150",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's features (pigment network, color variation, border irregularity) are consistent with the normal reference images. No anomalous features survived the refutation process.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0168",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion displays classic melanoma features (asymmetry, irregular borders, color variegation) that are completely absent in the normal reference images, confirming a high probability of anomaly.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0135",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits prominent regression structures (white scar-like areas) which are absent in all provided normal reference images. This feature is a strong indicator of melanoma, confirming the image as anomalous.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0149",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting an anomaly (irregular border, central darkening) were successfully refuted as they are present in the normal reference images. Therefore, the query image is classified as normal.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0171",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The primary suspicious feature (irregular/starburst border) was found to be present in a normal reference image (Ref 1), indicating it is a benign morphological variant rather than a defect. No other unique anomaly features remain.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0092",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains definitive dermoscopic features of melanoma (blue-white veil, irregular blotches) that are not present in the normal reference nevi, confirming the lesion is anomalous.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0098",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's reddish coloration and smooth oval shape are consistent with the normal baseline defined by the reference profiler, which explicitly includes 'red' and 'pink' as expected colors and allows for color intensity variations. No structural anomalies were found.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0155",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (pink color and color intensity variation) observed in the query image are explicitly listed as expected colors and allowed variations in the reference profiler. Therefore, the lesion is consistent with the normal baseline.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0124",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (irregular border, color variation) are explicitly listed as allowed variations in the normal reference profile. With no other anomalous features present, the lesion is determined to be normal.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0156",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a deep, solid dark red/brown central pigmentation that is not present in any of the normal reference images, which display lighter brown or mottled patterns. This distinct color feature survives refutation, indicating an anomaly.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0152",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a blue-white veil and significant color variegation (black/blue-gray), which are distinct from the uniform brown/tan pigmentation of the normal reference lesions and are not listed as allowed variations. These features are highly specific for melanoma, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0169",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (color variation, irregular border, asymmetry) that are also present in the provided normal reference images. Therefore, these features are not anomalous, and the lesion is classified as normal.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0138",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion displays clear signs of regression (pink/white area) and asymmetry, which are absent in the normal reference pool. These features strongly indicate an anomaly (melanoma).",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0174",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays classic melanoma indicators (color variegation, irregular borders, asymmetry) that are completely absent in the normal reference images, confirming a high probability of anomaly.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0128",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's features (dark color, irregular shape, slight asymmetry) are all consistent with the normal baseline profile derived from the reference images, which explicitly allow for these variations. No anomalous features remain after refutation.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0133",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (fuzzy border, color variation) that are explicitly listed as allowed variations in the normal reference profile. No anomalous features (sharp edges, multiple colors outside palette, multiple lesions) are present.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0099",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays classic melanoma indicators (irregular border, color variegation with black/blue-white areas) that are completely absent in the provided normal reference images. The refutation protocol confirms these features are anomalous.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0159",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (irregular shape, color variation) that are explicitly listed as allowed variations in the normal reference profile. No anomalous features were found.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0102",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a reticular pigment network and brown pigmentation, which the reference profiler explicitly lists as allowed variations for normal skin lesions. No anomalous features (such as irregular borders, color variegation beyond normal range, or atypical structures) were found that are not present in the normal reference set.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0147",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion displays a prominent reddish/pink coloration that is not present in any of the provided normal reference images, which are exclusively brown or tan. This significant deviation in color palette, confirmed by side-by-side comparison and the reference profiler's baseline, indicates an anomaly.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0095",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting an anomaly (irregular border, color variegation) were successfully refuted by observing similar features in the normal reference images. Therefore, the query is classified as normal.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0179",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a skin lesion with a highly irregular, jagged border and heterogeneous pigmentation. The side-by-side comparison with normal reference images confirms that these specific structural and color features are absent in the normal set, indicating a high probability of anomaly (melanoma).",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0105",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a 'halo' pattern (a lighter ring around a dark center) which is absent in all provided normal reference images. Since this feature survives refutation against the normal baseline, the image is classified as anomalous.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0114",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0103",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a deep red/purple coloration that is distinctly different from the brown/tan palette of the normal reference lesions. This color anomaly was not refuted by the reference pool, indicating the query is anomalous.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0101",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion's morphological features (shape, color, border) are consistent with the normal variations observed in the reference images. No specific anomaly survives the refutation process.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0139",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting anomaly (irregular shape and border) were successfully refuted by observing similar features in the normal reference images. The lesion exhibits characteristics consistent with a benign nevus.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0164",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features suggesting an anomaly (irregular border, color variegation) were found to be present in the normal reference images as well, indicating they are part of the normal variation for this type of lesion. Thus, the query is classified as normal.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0116",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a central white scar-like area (regression), a feature completely absent in the provided normal reference images which show uniform pigmentation. This distinct structural deviation confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0120",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays multiple features (color variegation, structural disorganization, ill-defined borders) that are consistently absent in the reference images of normal nevi. The side-by-side comparison confirms these features are unique to the query, indicating a high likelihood of an anomaly.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0165",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains two distinct lesions, violating the normal invariant of a single primary lesion. The reference profiler confirms that while border and texture variations are normal, the count of lesions is not a listed variation, making the multi-lesion appearance a definitive anomaly.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0125",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0137",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0157",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0167",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits highly irregular borders, significant color variegation, and asymmetry, which are not present in the normal reference images. These features strongly suggest an anomaly, consistent with potential melanoma characteristics.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0175",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits a combination of a dark central blotch, irregular border, and asymmetry that is not observed in the provided normal reference images, indicating a potential anomaly consistent with melanoma features.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0136",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a distinct dark, structureless blotch and significant asymmetry that are not observed in the provided normal reference images. These features are characteristic of melanoma and survive the refutation process against the normal baseline.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0132",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features initially flagged as potential anomalies (asymmetry, irregular border, color variation) are explicitly listed as allowed variations in the normal reference profile. Therefore, the lesion is classified as normal.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0160",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (dark color, granular texture, irregular border) that are explicitly listed as allowed variations in the normal reference profile. Therefore, the lesion is classified as normal.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0106",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D8_0177",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query lesion exhibits features (uniform color, smooth boundary) consistent with benign nevi shown in the reference images. No anomalous features survived refutation.",
+    "label": 1,
+    "domain_code": "D8",
+    "category": "skin_lesion",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  }
+]

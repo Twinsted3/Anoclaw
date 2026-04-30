@@ -1,0 +1,5626 @@
+[
+  {
+    "item_id": "D5c_0046",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "All images are predominantly black with one or more small bright white/gray foreground regions occupying only a limited portion of the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The visible foreground regions have soft, organic, blob-like or curved shapes rather than sharp geometric outlines.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bright regions show speckled or textured internal intensity variation instead of being perfectly uniform solid white.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The main visible bright structure is located in the lower half of the image in each reference.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The size of the bright foreground region varies substantially, from tiny specks/slivers to a comparatively large blob.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The shape of the main bright region varies, including elongated curved slivers, a broader crescent-like patch, and a rounded oval blob.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The horizontal position of the main bright region varies across images, appearing near the center, left of center, or right of center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The exact vertical placement within the lower half varies, from very close to the bottom to somewhat higher above it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "A faint secondary small spot may be present away from the main bright region, as seen in one reference, while other references show only the main region.",
+            "evidence_refs": [
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4731,
+      "output": 74
+    },
+    "latency_sec": 33.62,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0027",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image has a predominantly black background with the bright structure occupying only a small portion of the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The visible structure appears as a high-intensity white/gray object with mottled or grainy internal texture rather than a uniform solid fill.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bright object is spatially isolated, surrounded by substantial empty black space and not touching the image borders.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object shape varies noticeably, including curved crescent/comma-like forms, a rounded blob, and a smaller irregular fragment.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object position varies within the lower half of the frame, from lower-left to lower-central placement.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Some normal images contain a single connected bright object, while one reference shows multiple separated bright components.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The apparent size of the bright structure varies from small compact regions to larger elongated curved regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "A faint soft gray halo around the bright object is more apparent in some references than others.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.89
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 4577,
+      "output": 77
+    },
+    "latency_sec": 49.68,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0040",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0069",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.17000000000000004,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A bright grayscale object or objects appear against a uniformly black background with strong separation from the background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The foreground structures have a granular or speckled internal texture rather than being flat-filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The main foreground shape is compact and isolated, occupying only a limited portion of the frame with large surrounding black space.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Foreground silhouettes are irregular and asymmetrical, with curved outer contours and one or more indented/notched regions visible in the shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The number of visible foreground components varies: some images show a single connected object, while another shows two clearly separated bright components.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Overall shape proportions vary from tall and elongated to short and rounded or hook-like.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Object size within the frame varies noticeably, from relatively large foreground occupancy to much smaller isolated pieces.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Internal brightness distribution varies, with some objects showing more pronounced streaking or denser bright regions and others appearing more uniformly speckled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Object placement within the frame varies, including centered objects, off-center objects, and vertically separated components.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The query shows only a very small, flattened oval/leaf-like bright fragment without the irregular hooked/notched silhouette seen in the single-object references; it appears reduced to a tiny remnant rather than a full asymmetrical structure.",
+            "location": "lower central portion of the image",
+            "confidence": 0.86
+          }
+        ],
+        "no_difference_conf": 0.12
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The query contains a small isolated bright object on a black background with the same granular/speckled texture seen in the references. Although it is much smaller and more flattened/oval than the common hooked or notched silhouettes, the normality profile explicitly allows substantial variation in object size, proportions, and placement, and Reference 4 shows that very small separated components can occur. The observed difference is therefore explainable as a benign size/shape variation rather than a genuine anomaly."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.83
+      }
+    },
+    "cost_tokens": {
+      "input": 4788,
+      "output": 287
+    },
+    "latency_sec": 67.45,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0080",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0021",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image has a predominantly black background with a single isolated bright/white foreground region.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The bright foreground region is compact and localized, occupying only a small portion of the full frame and surrounded by large empty black space.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The foreground object has irregular organic contours rather than straight-edged geometric boundaries.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Within the bright region, the fill is not perfectly uniform; it shows visible granular/speckled texture and some local intensity variation.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The size of the bright foreground region varies substantially, from very tiny spots to larger blob-like structures.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The shape of the foreground region varies, including thin elongated forms, rounded leaf-like forms, and taller irregular lobed forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The foreground region appears at slightly different positions in the frame, though generally in the lower half/central area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Some normal objects contain small darker voids or indentations within the bright region, while others are solid without such internal gaps.",
+            "evidence_refs": [
+              2,
+              1,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Large internal dark cleft/open gap cutting into the bright object, creating a pronounced split-like defect rather than only a small void or shallow indentation.",
+            "location": "upper-central to central portion of the foreground object",
+            "confidence": 0.94
+          },
+          {
+            "id": "C2",
+            "description": "Extended thin dark trench/notch traversing the upper-right part of the object, producing an abnormal separated flap-like upper segment.",
+            "location": "upper-right region of the foreground object",
+            "confidence": 0.89
+          },
+          {
+            "id": "C3",
+            "description": "The object contour appears structurally disrupted with a jagged broken top edge and multi-lobed fragmented appearance, unlike the more continuous single-piece outlines in the references.",
+            "location": "top boundary of the foreground object, especially from upper-center to upper-right",
+            "confidence": 0.84
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query object contains a large dark cleft penetrating deeply into the upper-central/central bright mass, creating a strong split-like separation. While the normal profile allows small darker voids or indentations, the reference examples do not show a void this large and disruptive relative to the object body. This feature materially breaks the object's continuity beyond benign variation."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "The upper-right portion shows an elongated dark trench/notch that separates a thin flap-like bright segment from the main mass. Normal variation includes irregular organic contours and occasional small voids, but this long trench with apparent partial detachment is more severe and structurally disruptive than the reference shapes."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": true,
+            "reasoning": "Compared with the references, which remain single compact pieces despite shape variation, the query object's top boundary is unusually jagged and fragmented, with a broken multi-lobed appearance concentrated from upper-center to upper-right. This level of contour disruption is not well explained by the listed benign shape variability."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 4811,
+      "output": 556
+    },
+    "latency_sec": 129.28,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0077",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image contains a single bright, speckled white foreground structure against a uniformly black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The main foreground structure has a curved, crescent/comma-like overall shape with a rounded bulbous lower portion and a narrower upper extension or tip.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The foreground object is isolated in the frame with substantial empty black space surrounding it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The interior of the bright structure is textured with fine granular or noisy speckling rather than being uniformly filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The object orientation varies noticeably across images, including right-leaning, upright, and left-curving presentations.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The object position within the frame varies, appearing lower-center, lower-left, or more right-shifted depending on the reference.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "A separated small bright fragment above the main body is present in some references but absent in others.",
+            "evidence_refs": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "A small internal dark notch or hole-like interruption near the upper central region appears in some images, while others show a more continuous silhouette.",
+            "evidence_refs": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The silhouette proportions vary from a broader, squat rounded base to a taller, narrower form with a more elongated upper tip.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The foreground silhouette is bilobed/dumbbell-like with two rounded lobes fused side-by-side, rather than the usual single crescent/comma-like body with one dominant rounded base and a narrow tapering extension.",
+            "location": "central lower-middle foreground object, involving the overall shape across both left and right halves",
+            "confidence": 0.92
+          },
+          {
+            "id": "C2",
+            "description": "The query lacks the characteristic pointed or tapering upper tip/extension seen in all references; instead the upper contour is blunt and broadly rounded.",
+            "location": "upper portion of the foreground object, especially top-center to upper-right edge",
+            "confidence": 0.86
+          }
+        ],
+        "no_difference_conf": 0.05
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query object appears genuinely bilobed, with two similarly substantial rounded masses fused together, rather than the normal single bulbous base plus narrower curved extension described in the normal profile and seen across the references. Variation in orientation, position, and proportions does not account for this side-by-side dumbbell-like overall silhouette."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "Across the references, despite pose and proportion changes, the object retains a tapering or pointed upper extension/tip. In the query, the upper contour is broad and blunt without a distinct narrow tip. This is not well explained by the listed benign variations and is consistent with the altered bilobed morphology."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 4878,
+      "output": 425
+    },
+    "latency_sec": 124.3,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0079",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.18000000000000005,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single bright, speckled foreground object appears against a uniformly black background in every image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The foreground object is compact and occupies a relatively small portion of the frame, with large empty black space around it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The object has a smooth, curved blob-like main body rather than sharp polygonal edges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Internal texture within the bright object is grainy/speckled rather than solid uniform white.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The object shape varies from a small rounded crescent/blob to a taller form with an elongated upper extension.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The object's vertical position varies: in some images it sits lower in the frame, while in others it is more centrally placed.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "A small dark internal hole/notch is visible in some objects, while others appear filled without a clear internal void.",
+            "evidence_refs": [
+              2,
+              3,
+              1,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "A detached tiny bright fragment above the main object is present in one reference, while the others show only the main object.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The query object has a distinct irregular concave bite/notch removed from its upper-right margin, creating a two-lobed silhouette. This margin loss is not seen in any reference, where the outer contour remains smoother or forms an elongated upward extension rather than a sharp scooped-out defect.",
+            "location": "upper-right edge of the bright object",
+            "confidence": 0.88
+          }
+        ],
+        "no_difference_conf": 0.16
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The query object differs in contour from the references, but the normality profile explicitly allows substantial shape variation, ranging from rounded blob/crescent forms to taller forms with extensions. On visual inspection, the query remains a single compact, smooth-edged speckled blob against a black background, consistent with the reference set. The upper-right indentation appears to be part of the allowed silhouette variability rather than a clear defect or foreign structure. No unmistakable abnormal feature is present that cannot be explained by normal shape variation."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 4693,
+      "output": 305
+    },
+    "latency_sec": 56.73,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0084",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.26,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A bright, textured white/gray foreground blob appears against a uniformly black background in every reference.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The foreground object is isolated with large amounts of empty black space around it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The object is positioned in the lower half of the frame, roughly near the lower center region.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The object interior has a speckled/grainy texture rather than being uniformly filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies substantially, from very small compact blobs to a much larger irregular shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object shape varies from rounded/oval to crescent-like to irregular lobed forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The object's exact vertical and horizontal placement shifts within the lower half of the image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Some references include tiny additional faint specks or small detached spots besides the main blob.",
+            "evidence_refs": [
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Boundary smoothness varies, with some objects having smoother rounded edges and others having more uneven contours or small indentations.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct extra elongated lobulated extension projects from the upper-right side of the main bright blob, creating a two-pronged/wing-like appendage not seen in any reference.",
+            "location": "upper-right margin of the main object",
+            "confidence": 0.96
+          },
+          {
+            "id": "C2",
+            "description": "There is a pronounced internal split/notch separating the new right-sided extension from the main body, giving the object a broken or cleft appearance beyond the small edge indentations seen in references.",
+            "location": "central to right-upper portion of the object, between the main body and the rightward appendage",
+            "confidence": 0.88
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The query object is larger and more irregular than some references, but irregular lobed forms and substantial shape variation are explicitly supported by the normality profile. Reference 1 already shows a complex asymmetric blob with protruding upper portions and edge indentations. The upper-right extension in the query appears to be an extreme but still plausible contour variation of the same kind of speckled isolated blob rather than a clearly separate foreign structure."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "A notch or cleft between lobes can be explained by the documented benign variation in boundary unevenness, small indentations, and irregular lobed shapes. Reference 1 also shows notable upper indentations/notches. The split in the query does not create a truly detached second object; it remains part of a single irregular blob, so this is best interpreted as normal morphological variation."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.74
+      }
+    },
+    "cost_tokens": {
+      "input": 4804,
+      "output": 457
+    },
+    "latency_sec": 68.07,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0020",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0028",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.9,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single isolated bright/white object appears against a uniformly black background in each image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object is positioned in the lower portion of the frame, leaving a large amount of empty black space above it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The visible object has a granular or speckled internal texture rather than a perfectly smooth fill.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The object occupies a relatively small area compared with the full image and is clearly separated from the image borders.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies notably, from very small bright fragments to a substantially larger bright region.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object shape varies across references, including elongated curved/sliver-like forms and a more rounded blob-like form.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The exact horizontal placement shifts somewhat, with the object appearing slightly left, near center, or slightly right within the lower part of the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Object orientation differs, with some elongated shapes tilting or curving in different directions.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The object boundary ranges from smooth rounded outlines to more irregular or lobed contours.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The bright object contains multiple sharp linear dark clefts/fissure-like lines cutting through its interior, rather than only the fine uniform granular texture seen in the references.",
+            "location": "central to left-central interior of the object",
+            "confidence": 0.9
+          },
+          {
+            "id": "C2",
+            "description": "A distinct pinched/notched constriction divides the object into two lobes, creating an hourglass-like indentation not present in the reference examples.",
+            "location": "midline of the object, between the larger left lobe and the upper-right lobe",
+            "confidence": 0.8
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query object shows several conspicuous dark linear clefts crossing the interior, especially through the central-left region. The references consistently show speckled/granular internal texture, but not multiple sharp fissure-like lines of this prominence. This is not explained by the listed normal patterns or benign shape/size/orientation variations, so it is a genuine anomaly."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "A pinched or lobulated contour can be explained by the documented benign variation in object boundary and shape. Reference examples already include irregular, curved, and somewhat lobed outlines, so the two-lobed/notched silhouette alone is within normal variation."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 4829,
+      "output": 410
+    },
+    "latency_sec": 44.45,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0001",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single bright, grainy/peppered foreground object appears against a uniformly black background in every image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The main foreground object is located in the lower portion of the frame, leaving most of the image as empty black space above it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The main object has a compact, curved, crescent- or wedge-like silhouette rather than a rectangular or highly elongated shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The interior of the bright object shows mottled texture with scattered brighter speckles/highlights rather than being uniformly filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The exact outline of the main object varies from flatter and smoother to more lobulated or bulged along the top edge.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The object position shifts slightly horizontally and vertically within the lower half of the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Brightness distribution differs across references, with some objects appearing more uniformly bright and others showing stronger gradients or localized brighter regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "A small separate bright fragment above the main object is present in one reference but absent in the others.",
+            "evidence_refs": [
+              1
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The right edge of the object may end in a sharper pointed tip in some references or a rounder termination in others.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The main bright object is markedly larger and more rounded/bulbous than the reference objects, with an expanded left-sided mass producing a near-circular silhouette rather than the usual compact crescent/wedge form.",
+            "location": "lower central to lower-left portion of the image, involving most of the main foreground object",
+            "confidence": 0.88
+          },
+          {
+            "id": "C2",
+            "description": "There is a pronounced inward notch/concave indentation cutting into the upper-right portion of the main object, creating a partially hollowed appearance not seen in the references.",
+            "location": "upper-right side of the main foreground object",
+            "confidence": 0.76
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "Although the query object is somewhat larger and more rounded on the left than some references, the overall finding remains a single compact curved foreground object in the lower frame with mottled internal texture. The reference set already shows substantial silhouette variability, including flatter, more wedge-like forms and more lobulated/bulged forms, so this expanded rounded shape is explainable by benign outline variation rather than a clear anomaly."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The upper-right inward notch appears to be part of the normal contour variation of this crescent-like object. Reference examples, especially the more irregular/lobulated shapes, show changing top-edge profiles and differing right-edge terminations. The query still matches the expected compact curved object pattern, and the concavity does not constitute a distinct abnormal structure."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 4871,
+      "output": 448
+    },
+    "latency_sec": 41.66,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0041",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0052",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0045",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image contains a single isolated bright white object against a uniformly black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object is positioned in the lower portion of the frame, leaving most of the image as empty black space above it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bright object has an irregular, organic curved outline rather than a geometric shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The interior of the object shows visible textured or speckled white intensity rather than being perfectly solid and uniform.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies from relatively small compact forms to larger elongated forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object shape varies, including crescent-like curved forms and more rounded blob-like forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Object orientation differs across images, with some appearing more horizontal and others tilted or more upright.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The object location shifts within the lower part of the frame, appearing near lower-center or lower-left/left-of-center positions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Surface texture pattern varies from fine speckling to more streaked or striated internal texture.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4665,
+      "output": 72
+    },
+    "latency_sec": 47.44,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0067",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0025",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0050",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0062",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0022",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0036",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0026",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A bright white to light-gray foreground object is shown against a uniformly black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The foreground object has a granular/speckled internal texture rather than being smoothly filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The visible structure is compact and isolated, occupying a relatively small portion of the full frame with large surrounding black space.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The main object has an irregular rounded or blob-like silhouette with soft curved boundaries rather than straight edges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The object's position varies within the frame, appearing from lower-central to mid-frame locations.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The size of the main bright object varies, from relatively small and compact to larger multi-lobed forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Some normal references show multiple separated bright components, while others show a single connected component.",
+            "evidence_refs": [
+              1,
+              3,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The outline can be simple and smooth in some cases or more lobulated/protruding in others.",
+            "evidence_refs": [
+              4,
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "A small internal dark void/opening is present in one reference, while the others appear fully filled.",
+            "evidence_refs": [
+              3,
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The query object has a long, thin pointed horizontal extension/tail projecting from the lower-right side of the main mass, creating an asymmetric spur-like appendage not seen in any reference.",
+            "location": "lower-right edge of the foreground object",
+            "confidence": 0.9
+          },
+          {
+            "id": "C2",
+            "description": "A tiny detached bright speck/component is present just to the right of the main object near the tip of the rightward extension; none of the references show a detached fragment in this immediate right-lateral position adjacent to the main body.",
+            "location": "immediately right of the object's lower-right extension",
+            "confidence": 0.76
+          },
+          {
+            "id": "C3",
+            "description": "There is a narrow vertical slit-like dark cleft/notch cutting into the object near its center-right, giving the appearance of a partial internal separation or indentation not matched by the references.",
+            "location": "central to center-right portion of the main object",
+            "confidence": 0.65
+          }
+        ],
+        "no_difference_conf": 0.07
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The query object is an irregular lobulated blob with a rightward taper/extension, but the reference set already shows substantial variation in outline, including protrusions, multi-lobed forms, and asymmetric appendage-like regions. This rightward spur is consistent with the documented benign variation that the silhouette can be more lobulated or protruding in some normal cases. It does not clearly exceed the range of normal shape variation."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "A tiny bright speck appears just to the right of the main object, but the references include cases with multiple separated bright components and isolated small detached pieces. Given that detached components are explicitly listed as a benign variation, this small adjacent speck is best explained as normal variation rather than a genuine anomaly."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "The narrow dark slit/notch near the center-right of the object is comparable to the kind of internal indentation or void-like feature seen in the references, especially the example with an internal dark opening. Minor internal gaps and contour indentations are within the stated benign variation and do not by themselves indicate an anomaly."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 4921,
+      "output": 607
+    },
+    "latency_sec": 124.84,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0060",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0081",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0082",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image shows a single bright speckled/texture-filled irregular object against a uniformly black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object occupies a relatively small portion of the frame, with large surrounding empty black space.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The object is positioned in the lower half of the image rather than near the top.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Object boundaries are irregular and organic rather than geometric, with asymmetric contours.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The interior of the object appears predominantly light gray to white with dense fine-grain black speckling.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The object's exact shape varies substantially, from compact rounded forms to elongated tapered forms.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The object's orientation differs across images, including tilted, upright, and more horizontal presentations.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The object location shifts within the lower half of the frame, including lower-center, lower-right, and slightly above lower-center placements.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Some objects contain visible internal gaps/notches or separated-looking lobes, while others appear more continuous.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Object size varies moderately, with some references showing a larger footprint and others a smaller, more compact footprint.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.83
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 4779,
+      "output": 81
+    },
+    "latency_sec": 63.73,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0043",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0085",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0029",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.96,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single bright, speckled/finely textured white object appears against a uniformly black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object is isolated with large surrounding empty space and does not touch the image borders.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The object has an irregular organic silhouette with curved edges rather than a geometric shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The interior of the object is non-uniform, showing granular or streak-like texture and mild brightness variation.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object orientation varies widely, including upright, horizontal, and tilted presentations.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object shape varies from compact rounded forms to elongated crescent-like or hooked forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Object position within the frame shifts, though it remains generally in the lower-central region with ample black margin.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The contour may be continuous as one piece or appear split into two closely separated bright components.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Some examples show localized brighter internal patches or streaks, while others have a more evenly speckled fill.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The bright structure in the query is markedly smaller than all reference objects, appearing as a tiny compact fragment rather than the larger organ-like silhouette seen in every normal example.",
+            "location": "lower-central region of the image",
+            "confidence": 0.97
+          },
+          {
+            "id": "C2",
+            "description": "An extra narrow, angular protruding component extends upward/right from the main rounded bright piece, giving the object a hooked or note-like two-part appearance with a sharper, more geometric appendage than seen in the references.",
+            "location": "upper-right side of the small bright object in the lower center",
+            "confidence": 0.86
+          }
+        ],
+        "no_difference_conf": 0.02
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query object is drastically smaller than the objects in all reference images. While the profile allows variation in orientation, shape, position, and even split components, it does not support such an extreme reduction in scale to a tiny compact fragment. On visual inspection, the query contains only a very small bright structure in the lower center, unlike the substantially larger organ-like silhouettes seen in every normal reference. This is a genuine anomaly."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "A hooked or two-part appearance can be explained by the benign variation that the contour may appear split into two closely separated bright components, and references already show hooked/irregular forms. The small upward-right appendage is unusual in detail but still broadly compatible with normal shape variability. By itself, this candidate is better explained as a normal variation rather than a separate genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 4807,
+      "output": 452
+    },
+    "latency_sec": 125.03,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0064",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0005",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0088",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0010",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0008",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0048",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0074",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0089",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0017",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0013",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0012",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0014",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0075",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0086",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0076",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Images are grayscale with a predominantly black background and a brighter speckled/textured foreground object.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "A single isolated bright object appears against the background rather than multiple separated objects.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The foreground object has an irregular organic silhouette rather than a simple geometric shape.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Within the bright object, intensity is heterogeneous and grainy, with fine mottled texture instead of uniform fill.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies substantially, from a very tiny bright fragment to a much larger region occupying a noticeable portion of the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object location shifts within the image, including lower-right placement and more central/lower-central placement.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Object shape varies, including rounded-lobed forms, hook-like/curved forms, and more upright tapered extensions.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Some normal objects contain small internal dark holes or cutout-like voids, while others appear more solid.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Foreground brightness ranges from moderately bright textured regions to very bright nearly white regions.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.95
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4639,
+      "output": 72
+    },
+    "latency_sec": 121.81,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0007",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0078",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0065",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0049",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0053",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0059",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0018",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0030",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0047",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0006",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0056",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0072",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0066",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0057",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0016",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0034",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0071",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0172",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0132",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.98,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image has a predominantly black background with one or more bright white speckled foreground regions occupying a relatively small portion of the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The foreground regions have irregular curved or blob-like contours rather than geometric shapes, and their interiors show a grainy/speckled white texture.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bright structures are spatially isolated from the image borders, with large empty black areas surrounding them.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The size of the bright foreground region varies substantially, from a small slender crescent-like shape to larger broader blobs.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The location of the bright region varies within the lower half of the image, including lower-left, lower-center, and lower-right placements.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Some normal images contain a single connected bright component, while others include multiple separated bright components.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Internal structure varies: some bright regions are mostly solid speckled blobs, while others show small holes, gaps, or detached thin protrusions.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct dark gray rounded subregion/lesion is superimposed within the otherwise bright speckled foreground object, creating a localized low-intensity area not seen in the references.",
+            "location": "lower-left portion of the main bright object",
+            "confidence": 0.96
+          }
+        ],
+        "no_difference_conf": 0.04
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query contains a conspicuous dark gray rounded area embedded within the lower-left part of the main bright speckled object. While the references show variation in overall shape, size, position, number of components, and occasional small holes/gaps, they do not show a large localized low-intensity subregion superimposed inside an otherwise bright object. This feature is not explained by the listed normal patterns or benign variations and appears to be a genuine internal lesion-like anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 4586,
+      "output": 278
+    },
+    "latency_sec": 109.53,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0164",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.89,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image has a predominantly black background with the bright content confined to a small region rather than filling the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The visible foreground object(s) appear as white to light-gray irregular blobs with a speckled/grainy internal texture.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bright region is located in the lower half of the image, leaving large empty black space above.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The object boundaries are organic and uneven/curved rather than straight-edged geometric shapes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies substantially, from a relatively large blob occupying much of the lower-right/lower-central area to a very small isolated patch.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object position shifts within the lower half: lower-right in reference 1, lower-center in references 2 and 4, and lower-left/center in reference 3.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The number of disconnected bright components can differ: most images show a single connected region, while reference 3 shows a main blob plus a small separate fragment above it.",
+            "evidence_refs": [
+              1,
+              2,
+              4,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The internal texture orientation/appearance varies, including more isotropic speckling and more visibly directional streak-like grain.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Overall shape differs across references, ranging from elongated and hooked forms to rounded mound-like blobs to a thin shallow segment.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct small dark circular pit/hole is present within the bright object, rather than the uniformly speckled filled interior seen in the references.",
+            "location": "upper-central portion of the bright object",
+            "confidence": 0.92
+          },
+          {
+            "id": "C2",
+            "description": "There are tiny narrow bright protrusions/spikes extending upward from the top edge of the main blob, creating a jagged top margin not seen in the references.",
+            "location": "top edge of the bright object",
+            "confidence": 0.78
+          },
+          {
+            "id": "C3",
+            "description": "A small localized outward bump/attached nub is visible on the right side of the object, forming an extra side appendage absent from all references.",
+            "location": "mid-to-lower right border of the bright object",
+            "confidence": 0.62
+          }
+        ],
+        "no_difference_conf": 0.06
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query object contains a clear small dark circular void inside the otherwise bright speckled blob near the upper-central area. The references show speckled interiors but do not show an internal hole/pit within the main object. This is not explained by the listed normal patterns or benign variations of size, position, component count, texture orientation, or outer shape."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The tiny upward spikes on the top edge appear consistent with normal irregular, organic boundaries and minor contour roughness. Reference shapes already show uneven protrusions and hooked or peaked tops, so a slightly jagged top margin is explainable as benign shape variation rather than a distinct anomaly."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": false,
+            "reasoning": "The small bump on the right border is within the normal range of irregular outline variation. The references show substantial variability in silhouette, including side bulges, hooked ends, and changing contour forms. This localized nub does not stand out as a separate unexplained defect."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 4996,
+      "output": 553
+    },
+    "latency_sec": 101.85,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0124",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0175",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0154",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0168",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0096",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0123",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0137",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.14,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image has a predominantly black background with one isolated bright speckled/texture-rich white object and no other visible structures.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The bright object is compact and occupies a relatively small portion of the frame, surrounded by substantial empty black space.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The object has irregular organic contours rather than a simple geometric outline, and its interior shows grainy grayscale texture rather than uniform fill.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies noticeably, from a very small rounded spot to a larger elongated or lobulated form.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object shape varies from a tiny near-round blob to curved crescent/comma-like forms and more lobulated hooked forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Some objects contain internal dark notches or hollow-like cut-ins, while others appear solid without such openings.",
+            "evidence_refs": [
+              1,
+              2,
+              4,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Object position shifts within the lower-central region of the frame, including slightly left-lower, central-lower, and right-lower placements.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Internal texture intensity and contrast vary, with some references showing finer linear streaking and others showing coarser mottled speckling.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Small focal dark pit/indentation within the otherwise bright textured object, appearing as a localized internal defect rather than a broad shape notch.",
+            "location": "Left-central interior of the bright object",
+            "confidence": 0.72
+          }
+        ],
+        "no_difference_conf": 0.36
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The queried object shows a small internal dark indentation/spot near the left-central portion, but internal dark notches, pits, and hollow-like cut-ins are explicitly represented in the references and listed as a benign variation. The overall scene remains consistent with the normal pattern: one isolated bright textured object on a black background, with variable irregular shape and internal texture. This candidate is therefore explainable as normal morphological variation rather than a distinct anomaly."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 4697,
+      "output": 261
+    },
+    "latency_sec": 367.56,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0148",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.09999999999999998,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "All images have a predominantly black background with one or more isolated bright speckled blobs as the foreground.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The foreground regions are white to light gray and have a granular/noisy internal texture rather than being solid-filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "Foreground objects are spatially separated from the image borders, surrounded by substantial empty black space.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The number of bright connected components varies: some images show a single main blob, while others show two clearly separated blobs.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The foreground shape varies considerably, including curved/crescent-like forms, rounded compact forms, and elongated pointed forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Internal dark gaps or notch-like concavities are present in some larger blobs, while other blobs appear more compact and smooth.",
+            "evidence_refs": [
+              1,
+              2,
+              4,
+              3
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The relative positions of multiple components vary: the smaller component may appear above, above-right, or close to the larger component.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The apparent size of the bright components varies from small rounded spots to larger dominant blobs occupying a wider area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct triangular internal dark cavity/defect is present within the single bright blob, giving the object a punched-in hollow near its center-right rather than only an edge notch or shallow concavity.",
+            "location": "inside the foreground blob, slightly right of center",
+            "confidence": 0.82
+          }
+        ],
+        "no_difference_conf": 0.24
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The query shows a single bright speckled blob with an internal dark notch/cavity near the center-right. This is consistent with the normal profile and especially benign variation 2, which explicitly allows internal dark gaps or notch-like concavities in larger blobs. Similar inward dark notches or hollows are visible in references 1, 2, and 4. The overall scene structure, texture, isolation, and shape variability also match the reference set, so this cavity does not stand out as a genuine anomaly."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 4683,
+      "output": 291
+    },
+    "latency_sec": 98.17,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0152",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0098",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0171",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0119",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0167",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0128",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0103",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image contains a single bright white-to-light-gray textured blob on a solid black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The bright object is isolated with substantial empty black space around it and does not touch the image borders.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The object has an irregular organic silhouette rather than a geometric shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The interior of the object shows visible granular or streaky texture instead of being uniformly filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies noticeably, from very small blobs to a much larger blob.",
+            "evidence_refs": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object position varies within the lower half of the frame, including lower-left, lower-center, and lower-right placements.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Object orientation varies, with some blobs appearing more horizontal/elongated and another more vertical or upright.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Contour details vary, including smoother rounded forms, tapered leaf-like shapes, and shapes with notches or protrusions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Internal texture appearance varies between more streak-like vertical grain and more fine speckled grain.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Small irregular extra protrusion/ruffled bump extends from the object's upper-right edge, creating a jagged local contour not seen in the references.",
+            "location": "upper-right margin of the bright blob",
+            "confidence": 0.78
+          }
+        ],
+        "no_difference_conf": 0.26
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The queried blob does show a slight uneven bump along the upper-right edge, but this is consistent with the documented benign variation in contour details. The references already include irregular organic silhouettes with local notches and protrusions, especially Reference 4, which has pronounced contour complexity. The query remains a single isolated textured blob with an irregular outline, so the small ruffled edge is best explained as normal shape variation rather than a genuine anomaly."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 4731,
+      "output": 239
+    },
+    "latency_sec": 62.4,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0122",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0094",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.19999999999999996,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image has a predominantly black background with one or more isolated bright speckled white regions occupying a small portion of the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The bright regions have irregular organic outlines rather than sharp geometric shapes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The white regions show a granular/noisy internal texture instead of being uniformly filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The bright structures are located in the lower half of the image, leaving most of the upper area empty and black.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The size of the bright region varies substantially, from very small isolated blobs to much larger contiguous shapes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The number of bright components can vary between a single connected region and multiple separated regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The exact horizontal and vertical placement within the lower half shifts across images.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The shape profile differs across references, including rounded compact blobs, elongated small ovals, and broader lobulated forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "Two distinct dark round/oval void-like defects are present inside the bright speckled region, creating internal holes/focal low-intensity lesions not seen in the references.",
+            "location": "within the main bright blob in the lower-central image, one near the upper-central interior and one near the right-central interior",
+            "confidence": 0.96
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The query shows one irregular bright speckled blob in the lower half, consistent with the normal patterns. The reported two darker interior spots appear to be local texture fluctuations within the granular/noisy fill rather than true voids or sharply defined holes. Similar internal intensity nonuniformity is already compatible with the references' speckled texture, and there is no clearly bounded structural defect that stands out as a new abnormal feature."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.8
+      }
+    },
+    "cost_tokens": {
+      "input": 4647,
+      "output": 280
+    },
+    "latency_sec": 54.57,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0115",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0125",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0136",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0101",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0149",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "The image background is uniformly black with the visible structures appearing as brighter gray-to-white regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "Normal images contain one or more compact bright foreground blobs that occupy only a small portion of the full frame, with most of the image remaining empty background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bright regions have irregular, organic outlines rather than simple geometric shapes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "Within the bright regions, there is a mottled or speckled internal texture instead of a perfectly uniform fill.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "The number of bright foreground components can vary from a single connected blob to two separated blobs.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Foreground size varies considerably, from very small isolated blobs to larger regions occupying a broader area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Foreground position varies within the frame, though the structures tend to appear in the lower half and can be more central or slightly offset.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Shape complexity varies: some blobs are smoother and rounded, while others show protrusions, indentations, or partially separated adjoining parts.",
+            "evidence_refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Brightness and contrast within the foreground vary, with some regions appearing more uniformly bright and others containing darker internal portions or adjacent dimmer components.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct small dark circular pit/void is present inside the bright foreground blob, appearing as a focal internal defect rather than ordinary speckled texture.",
+            "location": "left-central interior of the single bright blob in the lower-middle of the image",
+            "confidence": 0.85
+          }
+        ],
+        "no_difference_conf": 0.12
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The queried image shows a single irregular bright blob with the same mottled internal texture seen in the references. The reported dark circular spot in the left-central interior is small and consistent with the normal internal brightness variation/speckled texture described in the profile. Reference 3 in particular shows darker internal portions and irregular internal contrast, indicating such localized darker areas can be benign. The spot does not appear as a clear structural defect distinct from the expected texture."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 4804,
+      "output": 277
+    },
+    "latency_sec": 20.69,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0092",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0142",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0139",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0166",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image shows a single bright, textured white/gray blob-like object against a uniformly black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object occupies a relatively small portion of the frame and is surrounded by large amounts of empty black space.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The object has irregular organic contours rather than geometric edges, with a granular or streaky internal texture.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The bright object is positioned in the lower half of the image rather than near the top.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object shape varies notably, from a compact crescent/leaf-like form to a taller elongated form with multiple bulges.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object orientation changes across images: some are more horizontal or curved, while one is strongly vertical.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The exact position within the lower half shifts left/right and slightly up/down between references.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Internal brightness/texture density varies, with some objects appearing more uniformly bright and others more mottled or streak-dominant.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Some shapes include deeper indentations or narrow neck-like constrictions, while others are smoother and more compact.",
+            "evidence_refs": [
+              2,
+              3,
+              1,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct small dark oval/punched-out defect is present inside the bright object, unlike the references which show textured interiors without a comparable isolated internal hole.",
+            "location": "interior of the object, slightly left of center in the upper-middle portion",
+            "confidence": 0.93
+          },
+          {
+            "id": "C2",
+            "description": "A tiny detached bright speck appears just above the main object's top edge, suggesting a small extra fragment not seen in the references.",
+            "location": "immediately above the top-central to top-left edge of the object",
+            "confidence": 0.68
+          }
+        ],
+        "no_difference_conf": 0.08
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query object contains a clearly visible small dark internal hole/void slightly left of center. The reference images show granular or streaky internal texture and changing outer shape/orientation, but none show a comparable discrete punched-out dark defect within the bright object. This is not explained by the listed normal patterns or benign variations, so it is a genuine anomaly."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The tiny bright speck above the object's top edge is very small and could plausibly arise from minor edge roughness, imaging noise, or a trivial contour irregularity. Given the references already show irregular organic contours and variable texture, this small detached-looking speck is not strong enough to establish a genuine anomaly by itself."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 4853,
+      "output": 419
+    },
+    "latency_sec": 73.01,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0147",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0093",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.050000000000000044,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single bright foreground object is present against a uniformly black background in each image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object appears isolated, with substantial empty black space around it and no additional separate bright objects elsewhere in the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The foreground object has an irregular organic outline rather than a simple geometric shape.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The bright object shows mottled/granular internal texture rather than being uniformly filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The object is located in the lower half of the image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies notably, ranging from very small and compact to much larger shapes occupying more area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object shape varies from tall and vertically elongated to broad curved forms to a small oval-like fragment.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Object position shifts within the lower portion of the frame, including lower-center, lower-left, and lower-right placements.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Boundary details vary, with some objects showing notches or hooked protrusions while others have smoother outlines.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Internal brightness distribution varies, from fairly even speckling to regions with brighter concentrated spots or gradients.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [],
+        "no_difference_conf": 0.88
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 4775,
+      "output": 81
+    },
+    "latency_sec": 64.93,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0160",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image has a uniformly black background with the visible subject appearing as a bright white to light-gray textured region.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The subject occupies only a limited portion of the frame, with large amounts of empty black space surrounding it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The visible subject has irregular, organic, non-geometric contours rather than straight-edged or symmetric shapes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The bright subject region shows a fine speckled or grainy internal texture rather than being uniformly filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Subject size varies substantially, from very small bright fragments to larger blob-like regions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Subject position varies within the frame, though it remains generally in the lower half or lower-central area.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The subject may appear as a single connected component or as multiple separated bright components.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Subject outline and orientation vary, including curved leaf-like slivers, rounded blobs, and more complex irregular silhouettes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Some subjects include small concave indentations or notches along the boundary, while others have smoother edges.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct small dark circular void/notch is present within the bright subject rather than only along its outer boundary; this appears as an internal hole-like defect not seen in the references.",
+            "location": "right-central portion of the bright object",
+            "confidence": 0.87
+          },
+          {
+            "id": "C2",
+            "description": "There is a tiny sharp protruding tip/irregular spike extending from the top of the bright subject, creating a localized rough extra part compared with the smoother upper margins in the references.",
+            "location": "top edge of the bright object, slightly right of center",
+            "confidence": 0.56
+          }
+        ],
+        "no_difference_conf": 0.11
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The dark spot in the right-central area appears connected to or formed by a boundary indentation on the right side of the bright object rather than being a clearly enclosed internal hole. The references already show irregular organic contours and small boundary notches/concavities as benign variations, especially ref 4. This is therefore explainable as normal shape variation."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The tiny pointed tip at the top of the object is consistent with the normal variation in outline and orientation seen across the references, which include uneven, irregular upper margins and protruding/curved ends. It does not stand out as a distinct foreign structure."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 4842,
+      "output": 410
+    },
+    "latency_sec": 68.3,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0106",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.95,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image contains a single bright, textured object against a uniform black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object appears isolated with strong contrast and no other bright structures elsewhere in the frame.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The bright object has an irregular, organic silhouette rather than a geometric shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The interior of the object shows a granular or fibrous-looking white-gray texture rather than being uniformly filled.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "pattern": "The object is positioned in the lower half of the image with substantial empty black space above it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies noticeably, from relatively small compact blobs to larger expanded shapes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object shape varies from rounded and compact to elongated or lobulated forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Some objects contain clear inward notches or concavities, while others are smoother and more continuous in outline.",
+            "evidence_refs": [
+              1,
+              3,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "The object orientation differs across images, with the main mass appearing tilted or extended in different directions.",
+            "evidence_refs": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "The object location within the lower half shifts somewhat, including more left-shifted, centered, or slightly right-leaning placement.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct darker focal spot/void is present within the bright object, appearing as a localized internal lesion rather than the usual uniformly granular texture seen in the references.",
+            "location": "inside the object on the left-lower interior portion",
+            "confidence": 0.97
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The query object matches the normal scene layout and general object appearance, but it contains a localized darker roundish spot within the bright textured interior on the left-lower side. The references show granular/fibrous internal texture and occasional boundary notches, but not a discrete internal dark focal void like this. This feature is not explained by the listed normal patterns or benign shape/orientation variations, so it is a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 4851,
+      "output": 271
+    },
+    "latency_sec": 83.4,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0156",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0178",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0157",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0121",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0176",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0140",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0169",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0105",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "A single isolated bright white/gray object appears against a uniformly black background in each image.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object is positioned in the lower half of the frame, with large empty black space surrounding it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The visible object has an organic, irregular outline rather than a geometric shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The object interior shows a mottled or striated grayscale texture, not a flat solid fill.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies substantially, from relatively large compact blobs to very small thin fragments.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object shape varies from rounded/compact forms to elongated curved crescent-like forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "The object's exact horizontal position shifts, appearing left-of-center, near center, or slightly right-of-center.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Surface texture differs between images, with some objects appearing more speckled/granular and others more vertically striated.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The query object is fragmented into multiple adjoining lobes/segments rather than appearing as one continuous isolated piece; there is a clear separated upper-right segment connected only minimally to the main body.",
+            "location": "upper-right portion of the object",
+            "confidence": 0.97
+          },
+          {
+            "id": "C2",
+            "description": "There is a distinct dark cleft/hole cutting into the object interior, creating an internal gap/notch that is not seen in the references.",
+            "location": "central to upper-central region of the object",
+            "confidence": 0.98
+          },
+          {
+            "id": "C3",
+            "description": "The overall outline is markedly disrupted and jagged, with a broken/chipped appearance and multiple protrusions rather than the smoother single organic contour seen in the references.",
+            "location": "along the top and central margins of the object",
+            "confidence": 0.9
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "The references show single continuous organic pieces, even when thin or crescent-shaped. In the query, the object is broken into multiple adjoining lobes with a distinctly separate upper-right block-like segment and only narrow attachment to the rest. This degree of fragmentation is not explained by the normal patterns or benign shape/size variation."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "The query contains a conspicuous internal dark gap/notch in the central-upper portion, producing a hole-like cleft within the bright object. The references do not show comparable internal voids; their objects remain solid continuous bright regions with textured interiors. This is not accounted for by ordinary organic outline variation."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": true,
+            "reasoning": "While normal examples vary in shape from compact to crescent-like, they still preserve relatively coherent smooth organic contours. The query outline is markedly disrupted, jagged, and chip-like, with multiple protrusions and an irregular broken appearance. This exceeds benign shape variation and is consistent with a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4772,
+      "output": 560
+    },
+    "latency_sec": 167.37,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0135",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0113",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0114",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.16000000000000003,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image shows a single isolated bright speckled/texture-filled object against a uniform black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object occupies only a relatively small portion of the full frame, with large surrounding black empty space.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The foreground object has an irregular organic silhouette rather than a simple geometric shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The interior of the object is predominantly light gray to white with fine granular speckling visible throughout.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies noticeably across references, from very small compact appearance to larger forms.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "Object position varies within the frame, though it remains in the lower half overall.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Overall shape varies from compact rounded forms to elongated or hooked forms with protruding extensions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Some objects contain visible internal dark cutouts/holes or notches, while others appear solid without obvious internal voids.",
+            "evidence_refs": [
+              1,
+              2,
+              4
+            ]
+          },
+          {
+            "id": 4,
+            "variation": "Brightness distribution inside the object varies: some references look fairly uniform, while others include brighter streaks or localized highlights.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "A distinct narrow dark linear slit/fissure is present within the object rather than just a rounded internal hole or edge notch seen in references.",
+            "location": "left-central interior of the object",
+            "confidence": 0.88
+          },
+          {
+            "id": "C2",
+            "description": "There is a small adjacent wedge-like dark defect extending from the left side into the object, giving the appearance of a local tear or chipped intrusion near the fissure.",
+            "location": "mid-left border of the object, just below/left of the central dark slit",
+            "confidence": 0.74
+          }
+        ],
+        "no_difference_conf": 0.1
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": false,
+            "reasoning": "The query object shows a small dark internal slit-like void in the left-central interior. Internal dark cutouts, holes, and notches are explicitly present as benign variation in the references, especially Reference 1 and Reference 2, where dark internal defects and edge-connected notches are also seen. The exact shape here is narrower and more linear, but it remains consistent with normal morphology variation rather than a clearly new abnormal feature."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": false,
+            "reasoning": "The wedge-like dark indentation extending from the left edge into the object is also explainable by the documented benign variation of irregular silhouettes and edge notches/cutouts. Similar border irregularities and intrusions are visible in the references, particularly References 1, 2, and 4. This appears to be a normal shape variation rather than a distinct anomaly."
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 4816,
+      "output": 438
+    },
+    "latency_sec": 41.9,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0112",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 1,
+    "anomaly_score": 0.99,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "profile": {
+        "normal_patterns": [
+          {
+            "id": 0,
+            "pattern": "Each image contains a single isolated bright/white textured object against a uniform black background.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "pattern": "The object is positioned in the lower half of the frame with a large amount of empty black space above it.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "pattern": "The foreground object has an irregular organic silhouette rather than a geometric shape.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "pattern": "The object interior appears mottled/granular, with dense speckled white-gray texture instead of a flat solid fill.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ],
+        "benign_variations": [
+          {
+            "id": 0,
+            "variation": "Object size varies noticeably, from relatively small compact shapes to larger broader shapes.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 1,
+            "variation": "The silhouette varies in complexity: some objects have protruding lobes or pointed extensions, while others are more rounded and compact.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 2,
+            "variation": "Exact placement shifts within the lower-central region, including slightly left-of-center, centered, and slightly right-of-center positions.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "variation": "Object orientation differs, with some shapes leaning upward or extending to the right, while others appear more upright or squat.",
+            "evidence_refs": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "scout": {
+        "candidates": [
+          {
+            "id": "C1",
+            "description": "The bright object is fragmented into multiple separated pieces rather than appearing as one continuous isolated shape; there are clear breaks/gaps splitting the upper-right portion from the lower main body.",
+            "location": "center-right to upper-right region of the object",
+            "confidence": 0.99
+          },
+          {
+            "id": "C2",
+            "description": "A distinct internal dark void/notch is present within the object, creating a hole-like missing area near the middle of the structure.",
+            "location": "central portion of the object, slightly right of center",
+            "confidence": 0.95
+          },
+          {
+            "id": "C3",
+            "description": "There are extra small detached bright fragments/lobules adjacent to the main mass, producing a clustered multi-part layout not seen in the references.",
+            "location": "central to upper-central area above the main lower body",
+            "confidence": 0.9
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "is_anomaly": true,
+            "reasoning": "In the references, the bright region consistently appears as a single connected object, even when it has lobes or pointed extensions. In the query, the upper-right section is clearly separated from the lower body by a dark gap, creating multiple disconnected pieces. This is not explained by the normal silhouette/orientation variations."
+          },
+          {
+            "id": "C2",
+            "is_anomaly": true,
+            "reasoning": "The query shows a pronounced internal dark void/notch near the center-right that reads as a missing hole-like area within the object complex. The references show irregular outer contours but not a comparable central void formed between clustered pieces. This exceeds benign shape variation."
+          },
+          {
+            "id": "C3",
+            "is_anomaly": true,
+            "reasoning": "There are extra small detached bright fragments in the central/upper-central area, producing a clustered multipart structure. Reference objects may have protrusions, but they remain part of one continuous mass. Detached lobules are not supported by the normality profile and indicate a genuine anomaly."
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 4797,
+      "output": 541
+    },
+    "latency_sec": 62.33,
+    "error": null
+  },
+  {
+    "item_id": "D5c_0129",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0117",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0110",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0158",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0130",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0126",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0143",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0097",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0153",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0134",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0099",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0104",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0144",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0146",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D5c_0141",
+    "domain": "medical_liver",
+    "domain_code": "D5c",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "BMAD-Liver",
+    "category": "liver_ct",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "domain_code": "D3",
+  "n_rules": 5,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image shows a rigid object (like a PCB) that is rotated 180 degrees relative to the reference images, causing text labels and pin headers to appear inverted or upside down, trust A (Agent).",
+      "source_items": [
+        "D3_0092",
+        "D3_0132",
+        "D3_0152",
+        "D3_0174"
+      ],
+      "confidence": "oracle",
+      "id": "D3_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image shows a component (like an LED) that is physically bent, tilted, or deformed compared to the upright components in the reference images, trust A (Agent).",
+      "source_items": [
+        "D3_0092",
+        "D3_0132",
+        "D3_0152",
+        "D3_0174"
+      ],
+      "confidence": "oracle",
+      "id": "D3_meta_a_win_1"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image contains small, localized surface defects such as chips, breaks, or contamination spots (e.g., red specks) on the object itself, trust B (Direct).",
+      "source_items": [
+        "D3_0030",
+        "D3_0033",
+        "D3_0044",
+        "D3_0123",
+        "D3_0131",
+        "D3_0153"
+      ],
+      "confidence": "oracle",
+      "id": "D3_meta_b_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a defect on the background surface (e.g., a scratch or mark) rather than on the object, trust B (Direct).",
+      "source_items": [
+        "D3_0030",
+        "D3_0033",
+        "D3_0044",
+        "D3_0123",
+        "D3_0131",
+        "D3_0153"
+      ],
+      "confidence": "oracle",
+      "id": "D3_meta_b_win_3"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image appears visually identical to the reference images with no obvious orientation changes or deformations, trust B (Direct) to avoid false positives from minor lighting or texture variations.",
+      "source_items": [
+        "D3_0030",
+        "D3_0033",
+        "D3_0044",
+        "D3_0123",
+        "D3_0131",
+        "D3_0153"
+      ],
+      "confidence": "oracle",
+      "id": "D3_meta_b_win_4"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 4,
+    "n_b_wins": 6
+  }
+}

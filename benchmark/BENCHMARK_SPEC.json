@@ -1,0 +1,154 @@
+{
+  "name": "CrossDomainVAD-11",
+  "version": "2.0",
+  "date": "2026-04-12",
+  "description": "Cross-domain training-free visual anomaly detection benchmark. 11 domains, reference-based, image-level binary classification.",
+  "total_items": 1958,
+  "splits": {
+    "calibration": {"items_per_domain": 20, "purpose": "threshold tuning, hyperparameter selection"},
+    "dev": {"items_per_domain": 40, "purpose": "method development, prompt iteration"},
+    "test": {"items_per_domain": 120, "purpose": "final evaluation, reported in paper", "note": "D6 has 98 test items due to source data limitation"}
+  },
+  "domains": [
+    {
+      "id": "D01",
+      "old_id": "D1",
+      "name": "Industrial Manufacturing",
+      "source_dataset": "MVTec-AD",
+      "n_items": 180,
+      "failure_type": "A",
+      "failure_description": "Fine-grained texture/surface defects",
+      "anomaly_types": ["surface_defect", "breakage_or_deformation", "contamination_or_artifact", "missing_or_extra_object"],
+      "categories": ["bottle", "cable", "capsule", "carpet", "grid", "hazelnut", "leather", "metal_nut", "pill", "screw", "tile", "toothbrush", "transistor", "wood", "zipper"],
+      "descriptor": "industrial manufacturing product (metal part, plastic component, or textured surface). Normal = defect-free product matching the reference items. Anomaly = physical defects such as scratches, dents, cracks, contamination, missing components, misalignment, or color/texture deviation from the references."
+    },
+    {
+      "id": "D02",
+      "old_id": "D2",
+      "name": "Retail Product Inspection",
+      "source_dataset": "GoodsAD",
+      "n_items": 180,
+      "failure_type": "A",
+      "failure_description": "Packaged goods defects (not shelf-gap)",
+      "anomaly_types": ["surface_defect", "breakage_or_deformation", "missing_or_extra_object"],
+      "categories": ["cigarette_box", "drink_bottle", "drink_can", "food_bottle", "food_box", "food_package"],
+      "descriptor": "packaged consumer good photographed in a product-inspection setting. Normal = defect-free packaged product matching the reference item in shape, label, and colour. Anomaly = physical defect such as broken or deformed packaging, torn label, missing logo/text, surface dents, contamination, or a missing component."
+    },
+    {
+      "id": "D03",
+      "old_id": "D4",
+      "name": "Infrastructure Inspection",
+      "source_dataset": "SDNET2018",
+      "n_items": 180,
+      "failure_type": "A",
+      "failure_description": "Subtle crack detection on concrete/infrastructure",
+      "anomaly_types": ["crack"],
+      "categories": ["deck", "pavement", "wall"],
+      "descriptor": "concrete or infrastructure surface such as a bridge deck, wall, or pavement. Normal = intact surface with typical weathering, stains, joints, and minor discoloration. Anomaly = cracks, spalling, exposed rebar, or structural damage (NOT shadows, surface stains, or normal construction joints)."
+    },
+    {
+      "id": "D04",
+      "old_id": "D5",
+      "name": "Dermoscopy",
+      "source_dataset": "DermaMNIST",
+      "n_items": 180,
+      "failure_type": "A",
+      "failure_description": "Melanoma vs benign mole distinction",
+      "anomaly_types": ["melanoma"],
+      "categories": ["skin_lesion"],
+      "descriptor": "dermoscopic image of a skin lesion. Normal = benign mole (melanocytic nevus). Anomaly = malignant melanoma (irregular borders, asymmetric shape, color variation, large diameter)."
+    },
+    {
+      "id": "D05",
+      "old_id": "D5b",
+      "name": "Brain MRI",
+      "source_dataset": "BraTS2021",
+      "n_items": 180,
+      "failure_type": "A",
+      "failure_description": "Glioma tumour detection in brain slices",
+      "anomaly_types": ["pathology"],
+      "categories": ["brain_mri"],
+      "descriptor": "axial brain MRI slice from the BraTS2021 glioma dataset. Normal = brain slice with no visible pathology (structurally symmetric, normal tissue intensities). Anomaly = visible brain pathology such as glioma tumour, hyperintense lesion, mass effect, midline shift, or oedema."
+    },
+    {
+      "id": "D06",
+      "old_id": "D5c",
+      "name": "Liver CT",
+      "source_dataset": "BMAD-Liver",
+      "n_items": 180,
+      "failure_type": "A",
+      "failure_description": "Liver lesion detection in CT",
+      "anomaly_types": ["pathology"],
+      "categories": ["liver_ct"],
+      "descriptor": "axial abdominal CT slice centred on the liver, from BMAD-Liver. Normal = liver parenchyma of uniform density without focal lesions. Anomaly = liver pathology such as tumour, metastasis, abscess, cyst, or focal hypodense/hyperdense lesion."
+    },
+    {
+      "id": "D07",
+      "old_id": "D5d",
+      "name": "GI Endoscopy",
+      "source_dataset": "HyperKvasir",
+      "n_items": 180,
+      "failure_type": "A",
+      "failure_description": "Polyp/ulcer detection in endoscopy",
+      "anomaly_types": ["pathology"],
+      "categories": ["endoscopy"],
+      "descriptor": "gastrointestinal endoscopy frame from HyperKvasir. Normal = normal mucosa (clean pink/red tissue, no polyps, no ulcers, no bleeding). Anomaly = pathological finding such as polyp, ulcer, hemorrhoid, cancerous tissue, inflammation, or bleeding."
+    },
+    {
+      "id": "D08",
+      "old_id": "D6",
+      "name": "Remote Sensing Change Detection",
+      "source_dataset": "LEVIR-CD+",
+      "n_items": 158,
+      "failure_type": "C",
+      "failure_description": "Building change between bi-temporal satellite tiles",
+      "anomaly_types": ["building_change"],
+      "categories": ["building"],
+      "descriptor": "bi-temporal remote sensing tile pair from LEVIR-CD+. The reference image is the earlier capture; the query is a later capture of the SAME location. Normal = no building change. Anomaly = building-level change (new construction, demolition, roof replacement, road extension). 'Organised' or 'planned urbanisation' ARE the anomaly."
+    },
+    {
+      "id": "D09",
+      "old_id": "D7",
+      "name": "Road Obstacle Detection",
+      "source_dataset": "RoadAnomaly21 + BDD100K",
+      "n_items": 180,
+      "failure_type": "C",
+      "failure_description": "Unexpected objects on roadway",
+      "anomaly_types": ["road_obstacle", "animal", "vehicle_on_road"],
+      "categories": ["road_scene"],
+      "descriptor": "road or traffic scene photograph. Normal = typical road surface, vehicles, pedestrians, and infrastructure. Anomaly = unexpected obstacles on or near the roadway such as fallen objects, animals, construction debris, or out-of-place items that pose a driving hazard."
+    },
+    {
+      "id": "D10",
+      "old_id": "D9",
+      "name": "Logical Anomaly",
+      "source_dataset": "MVTec-LOCO",
+      "n_items": 180,
+      "failure_type": "B",
+      "failure_description": "Missing/extra/swapped components in composite products",
+      "anomaly_types": ["logical_anomalies", "structural_anomalies"],
+      "categories": ["breakfast_box", "juice_bottle", "pushpins", "screw_bag", "splicing_connectors"],
+      "descriptor": "image from the MVTec-LOCO logical-anomaly benchmark. Normal = structurally correct composition matching the reference: all expected components present, in the right count, position, colour, and arrangement. Anomaly = LOGICAL anomaly (missing/added/swapped component, wrong count, wrong colour pairing, misplaced sub-item) or STRUCTURAL anomaly (physical damage to a component)."
+    },
+    {
+      "id": "D11",
+      "old_id": "D10",
+      "name": "Industrial VisA",
+      "source_dataset": "VisA",
+      "n_items": 180,
+      "failure_type": "A",
+      "failure_description": "Industrial product defects (VisA benchmark)",
+      "anomaly_types": ["defect"],
+      "categories": ["candle", "capsules", "cashew", "chewinggum", "fryum", "macaroni1", "macaroni2", "pcb1", "pcb2", "pcb3", "pcb4", "pipe_fryum"],
+      "descriptor": "industrial manufacturing product from the VisA benchmark. Normal = defect-free product matching the reference items. Anomaly = physical defects: scratches, dents, cracks, chips, missing parts, contamination, discoloration, melting, broken shape, or foreign inclusions."
+    }
+  ],
+  "failure_types": {
+    "A": "Fine-grained texture/surface comparison — expert patch-kNN often stronger than VLM",
+    "B": "Structural/logical comparison — need component enumeration and spatial reasoning",
+    "C": "Image alignment mismatch — viewpoint/scale/crop differences confuse both VLM and expert"
+  },
+  "excluded": {
+    "D8_Avenue": "Surveillance behavioral anomaly — temporal reasoning out of scope for single-frame AD"
+  }
+}

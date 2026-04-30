@@ -1,0 +1,42 @@
+{
+  "a_wins_rules": [
+    "If the query image shows a rigid object (like a PCB) that is rotated 180 degrees relative to the reference images, causing text labels and pin headers to appear inverted or upside down, trust A (Agent).",
+    "If the query image shows a component (like an LED) that is physically bent, tilted, or deformed compared to the upright components in the reference images, trust A (Agent)."
+  ],
+  "b_wins_rules": [
+    "If the query image contains small, localized surface defects such as chips, breaks, or contamination spots (e.g., red specks) on the object itself, trust B (Direct).",
+    "If the query image shows a defect on the background surface (e.g., a scratch or mark) rather than on the object, trust B (Direct).",
+    "If the query image appears visually identical to the reference images with no obvious orientation changes or deformations, trust B (Direct) to avoid false positives from minor lighting or texture variations."
+  ],
+  "a_evidence": [
+    "D3_0092",
+    "D3_0132",
+    "D3_0152",
+    "D3_0174"
+  ],
+  "b_evidence": [
+    "D3_0030",
+    "D3_0033",
+    "D3_0044",
+    "D3_0123",
+    "D3_0131",
+    "D3_0153"
+  ],
+  "raw": "{\n  \"a_wins_rules\": [\n    \"If the query image shows a rigid object (like a PCB) that is rotated 180 degrees relative to the reference images, causing text labels and pin headers to appear inverted or upside down, trust A (Agent).\",\n    \"If the query image shows a component (like an LED) that is physically bent, tilted, or deformed compared to the upright components in the reference images, trust A (Agent).\"\n  ],\n  \"b_wins_rules\": [\n    \"If the query image contains small, localized surface defects such as chips, breaks, or contamination spots (e.g., red specks) on the object itself, trust B (Direct).\",\n    \"If the query image shows a defect on the background surface (e.g., a scratch or mark) rather than on the object, trust B (Direct).\",\n    \"If the query image appears visually identical to the reference images with no obvious orientation changes or deformations, trust B (Direct) to avoid false positives from minor lighting or texture variations.\"\n  ]\n}",
+  "tokens": {
+    "input": 4202,
+    "output": 232
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 20,
+    "agree_wrong": 10,
+    "disagree_a_wins_total": 4,
+    "disagree_b_wins_total": 6,
+    "reflected_a": 4,
+    "reflected_b": 6,
+    "skipped": 0
+  },
+  "domain_code": "D3",
+  "seconds": 21.0
+}

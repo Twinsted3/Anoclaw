@@ -1,0 +1,1082 @@
+[
+  {
+    "item_id": "D9_0030",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal brain anatomy with symmetric ventricles and no unique focal lesions. Features initially considered suspicious (periventricular signal) are present in the normal reference images, confirming they are not anomalies.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0033",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0013",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0010",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0050",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, focal hyperintense lesion in the posterior right hemisphere that is absent in all normal reference images. This feature is a clear anomaly consistent with pathological findings such as a tumor or infarction, and it survives the refutation protocol.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0035",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a focal hyperintense lesion in the periventricular white matter that is not present in any of the normal reference images. This feature survives refutation and matches the criteria for an anomaly (focal lesion absent in normal baseline).",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0089",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection of the query image reveals no candidate anomalous features such as focal lesions, significant asymmetry, or mass effect. The brain structure, including the ventricles and tissue boundaries, appears normal and consistent with the provided reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25) to reflect high confidence in normality. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0029",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, mass effect, or asymmetry. The brain structure appears symmetric with normal ventricle morphology and intact boundaries, consistent with the normal reference images. Per the domain rules, if no candidate features are found, the anomaly score should be capped low.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0068",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits texture noise, which the reference profiler explicitly identifies as an allowed variation in normal brain MRI scans. No other anomalous features such as lesions or structural distortions are present. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0040",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0043",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal axial brain MRI. The observed texture granularity is an allowed variation in the reference set, and the central ventricle is a normal anatomical feature. No anomalous features remain after refutation.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0088",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is a sagittal slice containing a large, irregular void, which deviates significantly from the normal axial baseline established by the reference images. This structural and planar discrepancy confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0082",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a large, irregular hyperintense mass in the right cerebral hemisphere that is absent in all normal reference images. This feature is consistent with a pathological lesion (e.g., tumor) and is not a normal anatomical variant. Therefore, the image is classified as anomalous.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0025",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal brain anatomy with symmetric ventricles and no focal lesions. Comparison with reference images confirms that observed features are within normal variation, leading to a very low anomaly score.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0074",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a severe, jagged boundary distortion and signal dropout on the left side that is completely absent in all normal reference images. This confirms the presence of a significant anomaly, likely due to artifact corruption or severe pathology, leading to a high anomaly score.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0080",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits severe motion blur or signal dropout, causing a loss of anatomical detail that is not present in any of the normal reference images. This artifact corruption is a clear anomaly.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0012",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, asymmetry, or mass effect. The brain structure, including the ventricles and tissue boundaries, appears normal and symmetric, consistent with the provided reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25) to reflect high confidence in normality.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0062",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection of the query image reveals no candidate anomalous features such as lesions, asymmetry, or mass effect. The brain structure, including the ventricles and tissue boundaries, appears normal and consistent with the provided reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25). Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0015",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense lesion in the right posterior hemisphere that is absent in all normal reference images. This feature survives refutation and indicates a significant anomaly, such as a tumor or severe edema.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0071",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct focal hyperintense lesion in the right hemisphere that is absent in all normal reference images. This feature survives refutation and indicates a significant anomaly, such as a tumor or stroke.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0036",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left cerebral hemisphere that is completely absent in the normal reference images. This feature satisfies the domain rule for a large hyperintense mass with irregular borders, confirming the image as anomalous.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0019",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a large, irregular hyperintense mass in the left cerebral hemisphere with surrounding edema, which is a clear deviation from the normal brain anatomy shown in the reference images. This feature strongly indicates a pathological anomaly such as a tumor, satisfying the rule to classify as anomaly if a large hyperintense mass is detected.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0042",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, mass effect, or significant asymmetry. The brain structure appears symmetric with normal ventricle morphology and intact tissue boundaries, consistent with the normal reference images. Per the domain rules, if no candidate features are found, the anomaly score should be capped low.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0046",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, significant asymmetry, or mass effect. The brain structure, including the ventricles and tissue boundaries, appears normal and consistent with the provided reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25) to reflect high confidence in normality.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0008",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, mass effect, or significant asymmetry. The brain structure, including the ventricles and cortical folds, appears consistent with the normal reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25) to reflect high confidence in normality.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0009",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left hemisphere that is absent in all normal reference images. This feature is a definitive anomaly, likely representing a tumor or severe lesion, and has survived the refutation protocol.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0065",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, mass effect, or significant asymmetry. The brain structure, including the ventricles and cortical boundaries, appears consistent with the normal reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25) to reflect high confidence in normality.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0078",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass in the left hemisphere with significant mass effect and ventricular distortion. These features are absent in the normal reference images and align with the domain rule to 'Flag as anomaly if a large, heterogeneous mass with irregular borders and significant mass effect is present.' The anomaly is clear and does not require further refutation.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0005",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0039",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a large, irregular hyperintense mass in the right cerebral hemisphere with significant mass effect and midline shift, which is absent in the normal reference images. According to the domain rules, such a finding immediately classifies the image as anomalous.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0031",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0006",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left cerebral hemisphere that is absent in all normal reference images. This feature is a clear anomaly and survives the refutation protocol.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0001",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a focal hyperintense lesion in the left periventricular white matter that is absent in all normal reference images. This feature is not a normal anatomical variation and indicates a pathological anomaly.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0020",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it displays a completely different anatomical plane (sagittal/oblique posterior fossa) compared to the reference images (axial cerebrum). This fundamental structural mismatch confirms the image does not belong to the normal class defined by the references.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0087",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, mass effect, or significant asymmetry. The brain structure appears symmetric with normal ventricle morphology and intact tissue boundaries, consistent with the normal reference images. Per the domain rulebook, if no candidate features are found, the anomaly score should be capped low.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0004",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a focal hyperintense lesion in the left periventricular region that is absent in all reference images. This feature survives refutation and is classified as an anomaly.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0055",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits severe global blurriness that obscures anatomical details, which is inconsistent with the sharp references and the 'allowed variations' (texture granularity) defined in the normal baseline. This matches the 'Artifact corruption' anomaly mode in the rulebook.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0032",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal brain anatomy with symmetric ventricles and tissue texture. The subtle features initially considered were confirmed to be present in the normal reference pool, leading to a final classification of normal.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0000",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features. The brain slice exhibits bilateral symmetry, normal ventricular morphology, and clear tissue differentiation, matching the normal signature described in the rulebook. Per the rulebook, if no candidate features are found, the anomaly score should be capped low (<=0.25). Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0021",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0017",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal brain anatomy with symmetric ventricles and no focal lesions. Side-by-side comparison with reference images confirms that any subtle features are consistent with normal anatomical variation, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0061",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, focal hyperintense lesion in the right posterior hemisphere that is completely absent in all normal reference images. This feature is a definitive anomaly according to the domain rules, which mandate flagging such masses.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0007",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a focal hyperintense lesion in the right periventricular region that is absent in all normal reference images. This feature is consistent with a pathological anomaly such as an ischemic stroke and survives refutation.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0070",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, asymmetry, or mass effect. The brain structure appears symmetric with normal ventricle morphology. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (<=0.25). Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0063",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal brain anatomy with symmetric ventricles and no focal lesions. Side-by-side comparison with reference images confirms that all observed features are consistent with the normal baseline, refuting any initial suspicion of anomaly.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0023",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct focal hyperintense lesion in the right posterior hemisphere that is absent in all reference images. This feature is not a normal anatomical variation and is classified as an anomaly based on the refutation protocol and domain rules.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0057",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, asymmetry, or mass effect. The brain structure, including the ventricles and cortical boundaries, appears consistent with the normal reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25) to reflect high confidence in normality.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0027",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, mass effect, or significant asymmetry. The brain structure, including the ventricles and cortical boundaries, appears consistent with the normal reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25) to reflect high confidence in normality.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0045",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a focal, dark lesion in the right frontal periventricular region that is completely absent in the normal reference images. This confirms the presence of an anomaly consistent with a focal periventricular lesion.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0081",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (periventricular hyperintensity) was refuted by the reference images, which show similar features. The brain structure is symmetric with no mass effect, confirming normality.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0041",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct focal hyperintense lesion in the cerebral hemisphere that is completely absent in all provided normal reference images. This confirms the presence of an anomaly, likely a pathological lesion such as a tumor or infarct, consistent with the domain rules.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0048",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a focal hyperintense lesion in the periventricular region that is absent in all normal reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0075",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right cerebral hemisphere that is absent in all normal reference images. This feature is consistent with a pathological anomaly such as a tumor or severe lesion, and the refutation protocol confirms it is not a normal anatomical variation.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0085",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, asymmetry, or mass effect. The brain structure, including the ventricles and tissue boundaries, appears normal and consistent with the reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25) to reflect high confidence in normality.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0073",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains two distinct, dark, ring-like lesions in the right hemisphere that are completely absent in the normal reference images. This confirms the presence of a pathological anomaly, likely cystic lesions or necrotic tumors, leading to a high anomaly score.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0011",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal brain MRI as defined in the rulebook: bilateral symmetry, distinct grey/white matter contrast, normal ventricle shape, and absence of focal lesions or mass effect. No candidate anomalous features were identified during initial inspection, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0072",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass and a ring-like lesion that are completely absent in the normal reference images. These features represent significant pathological anomalies (likely tumor or abscess) and survive the refutation protocol.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0150",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, asymmetry, or mass effect. The brain structures (ventricles, grey/white matter) appear normal and symmetric, consistent with the provided reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25). Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0054",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a large, irregular hyperintense mass with significant mass effect, which is absent in all normal reference images. This feature is a definitive indicator of an anomaly, such as a brain tumor.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0106",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right posterior hemisphere, which is a clear deviation from the normal brain anatomy shown in the reference images. This feature is consistent with a pathological anomaly such as a tumor or large infarct.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0002",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0034",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays severe signal dropout and boundary distortion on the left side, which is completely absent in the normal reference images. This confirms the presence of a significant anomaly.",
+    "label": 0,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0142",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right cerebral hemisphere that is completely absent in the normal reference images. This focal lesion is a definitive anomaly, likely representing a tumor or acute infarction.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0111",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass with significant mass effect and edema, which is a definitive anomaly according to the domain rules and is not present in the normal reference images.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0102",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, mass effect, or significant asymmetry. The brain structure, including the ventricles and cortical boundaries, appears consistent with the normal reference images. According to the domain rules, if no candidate features are found, the anomaly score should be capped low (e.g., 0.25) to reflect high confidence in normality.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0139",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left posterior hemisphere that is completely absent in the normal reference images. This feature survives refutation and indicates a significant pathological anomaly.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0092",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior right hemisphere that is completely absent in the normal reference images. This feature is a clear pathological anomaly, likely a tumor or large infarction, and survives refutation.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0112",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior hemisphere that is completely absent in the normal reference images. This feature survives refutation and indicates a significant anomaly, likely a tumor or severe lesion.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0179",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a focal, ring-like hyperintense lesion in the right hemisphere that is completely absent in all normal reference images. This feature is a clear indicator of pathology (e.g., tumor or abscess) and survives refutation, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0156",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense lesion in the right cerebral hemisphere that is not present in any of the normal reference images. This feature is a clear deviation from the normal baseline and indicates a significant pathological anomaly.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0168",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a focal hyperintense lesion in the posterior hemisphere that is absent in all normal reference images. This feature survives refutation and aligns with the domain rule for classifying posterior focal lesions as anomalies.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0161",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left cerebral hemisphere that is completely absent in the normal reference images. This feature is a definitive sign of an anomaly, likely a brain tumor, and survives the refutation protocol.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0127",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the superior hemisphere that is absent in all normal reference images. This feature survives refutation and indicates a significant anomaly, such as a tumor or edema.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0118",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior hemisphere that is completely absent in the normal reference images. This feature survives refutation and is a clear indicator of an anomaly.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0136",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left cerebral hemisphere that is absent in all normal reference images. This feature is a clear indicator of an anomaly, such as a tumor or severe lesion, and survives refutation.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0177",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior hemisphere that is completely absent in the normal reference images. This feature survives refutation and indicates a significant anomaly, likely a tumor or cyst.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0145",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in a sagittal view, which is absent in the normal axial reference images and does not match any allowed variations (noise, contrast, rotation). This confirms the presence of a significant anomaly.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0143",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct focal hyperintense lesion in the left posterior hemisphere that is completely absent in all normal reference images. This feature is a strong indicator of pathology (e.g., tumor, stroke, or inflammation) and cannot be refuted as a normal variation.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0121",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the central brain region that is absent in all normal reference images. This mass causes significant distortion of the surrounding brain anatomy, which is a clear indicator of a pathological anomaly. The refutation protocol confirms this feature is not a normal variation.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0117",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior hemisphere that is completely absent in the normal reference images. This feature survives refutation and indicates a significant anomaly, likely a tumor or severe lesion.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0173",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right hemisphere that is absent in all normal reference images. This feature survives refutation and indicates a severe anomaly, likely a brain tumor.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0159",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image represents a lower axial slice of the brain (cerebellum/brainstem) compared to the reference images. The absence of lateral ventricles and the different texture are due to 'slice level variation' and 'texture noise', which are explicitly listed as allowed variations in the reference profile. No anomalous features remain after refutation.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0158",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right cerebral hemisphere that is completely absent in the normal reference images. This feature survives the refutation protocol and indicates a significant pathological anomaly, such as a tumor or large lesion.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0109",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior right hemisphere that is completely absent in all normal reference images. This feature is a definitive anomaly, likely representing a tumor or severe lesion.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0144",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0174",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right hemisphere that is absent in all normal reference images. This feature is a clear indicator of an anomaly (e.g., tumor) and survives the refutation protocol.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0115",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a focal hyperintense lesion in the right periventricular white matter that is absent in all normal reference images. This confirms the presence of an anomaly, likely representing a pathological process such as ischemia or a demyelinating lesion.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0125",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior hemisphere that is absent in all normal reference images. This feature is a definitive anomaly, likely representing a tumor or large lesion, and survives the refutation protocol.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0153",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass with significant mass effect, which is absent in all normal reference images. This matches the domain rule for classifying large hyperintense masses as anomalies.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0116",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass with significant mass effect, which is a definitive anomaly according to the domain rules and is absent in the normal reference images.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0175",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left cerebral hemisphere that is completely absent in the normal reference images. This feature is a definitive anomaly (likely a tumor) and cannot be refuted as a normal variation.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0162",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass in the posterior hemisphere that is completely absent in the normal reference images. This feature is a definitive anomaly, likely representing a tumor or severe lesion, leading to a high anomaly score.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0148",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass with surrounding edema in the left hemisphere, which is a clear deviation from the normal brain anatomy shown in the reference images. This feature is explicitly listed as an anomaly mode (brain tumor/mass) and triggers an immediate classification as anomalous per the domain rules.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0090",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass with significant mass effect and midline shift. This feature is completely absent in all provided normal reference images, confirming it as a pathological anomaly.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0163",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0151",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass in the posterior hemisphere with associated mass effect, which is a definitive anomaly according to the domain rules and is absent in the normal reference images.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0126",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense lesion in the posterior right hemisphere, which is a clear deviation from the normal reference images and matches the domain rule for flagging posterior focal lesions as anomalies.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0138",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass in the left hemisphere with significant mass effect and midline shift, which is absent in the normal reference images and explicitly defined as an anomaly in the domain rules.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0157",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass with significant mass effect and edema, which is a definitive anomaly according to the domain rules and is absent in the normal reference images. No refutation is needed as the feature is unambiguous.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0124",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left hemisphere that is absent in all normal reference images. This feature survives refutation and is definitively classified as an anomaly.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0135",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass in the left hemisphere with significant mass effect and midline shift, which are definitive signs of a pathological anomaly (likely a tumor) according to the domain rules. This feature is absent in the normal reference images and cannot be refuted as a normal variation.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0098",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass in the left hemisphere with significant mass effect, which is a clear deviation from the normal symmetric anatomy seen in the reference images. This aligns with the domain rule to classify such findings as anomalies.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0134",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right cerebral hemisphere that is absent in all normal reference images. This feature is a clear indicator of an anomaly, such as a tumor or large infarction, and survives the refutation protocol.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0152",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits normal brain anatomy with symmetric ventricles and no focal lesions. Comparison with reference images confirms that observed features are within the range of normal variation, leading to a classification of normal.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0178",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior right hemisphere that is completely absent in all normal reference images. This feature is a definitive anomaly (likely a tumor or severe lesion) and survives the refutation protocol.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0108",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense lesion in the posterior hemisphere, which is a definitive anomaly according to the domain rules and is not present in the normal references.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0165",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal brain anatomy with symmetric ventricles and no focal lesions. Features initially considered as potential anomalies were confirmed to be consistent with normal variations observed in the reference images.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0095",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior right hemisphere, which is absent in all normal reference images. This feature is confirmed as an anomaly through the refutation protocol.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0110",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a large, irregular hyperintense mass with significant mass effect, midline shift, and ventricular distortion, which are clear indicators of a pathological anomaly (e.g., tumor) and are absent in the normal reference images. The domain rules explicitly state to classify such findings as anomalies.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0105",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left cerebral hemisphere that is completely absent in the normal reference images. This feature survives refutation and indicates a significant pathological anomaly.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0170",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits severe blurring and a complete loss of anatomical detail that is not present in any of the normal reference images. This deviation is far beyond the allowed 'texture noise' variation and indicates a significant anomaly, likely due to severe image corruption or artifact.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0119",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right posterior hemisphere that is completely absent in the normal reference images. This feature survives refutation and is a definitive anomaly, likely representing a tumor or severe stroke.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0113",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right hemisphere, which is completely absent in the normal reference images. This confirms the presence of a significant anomaly, likely a tumor or large lesion, warranting a high anomaly score.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0176",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the posterior right hemisphere, which is a clear deviation from the normal reference images and matches the criteria for a brain tumor or severe lesion. The rule 'If a large hyperintense mass is detected in the cerebral hemisphere, immediately classify as anomaly' applies.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0171",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the cerebral hemisphere that is completely absent in all normal reference images. This feature is a clear indicator of a pathological anomaly, such as a tumor or severe lesion, and survives the refutation protocol.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0132",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a large, irregular hyperintense mass in the left cerebral hemisphere with significant mass effect, which is a definitive anomaly according to the domain rules and is absent in the normal reference images.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0164",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right cerebral hemisphere that is completely absent in all normal reference images. This feature is a definitive anomaly, consistent with a brain tumor or severe lesion, and cannot be explained as normal anatomical variation.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0114",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "Initial visual inspection reveals no candidate anomalous features such as focal lesions, mass effect, or significant asymmetry. The ventricles are symmetric and the tissue texture is uniform, matching the normal signature described in the rulebook. According to the rulebook, if no candidate features are found, the score should be capped at 0.25. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0155",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the right cerebral hemisphere that is completely absent in all normal reference images. This feature survives refutation and is a definitive anomaly.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  },
+  {
+    "item_id": "D9_0093",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular hyperintense mass in the left hemisphere that is completely absent in all normal reference images. This feature survives refutation and is a definitive anomaly.",
+    "label": 1,
+    "domain_code": "D9",
+    "category": "brain_mri"
+  }
+]

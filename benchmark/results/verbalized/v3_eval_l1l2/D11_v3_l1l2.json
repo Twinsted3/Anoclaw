@@ -1,0 +1,1802 @@
+[
+  {
+    "item_id": "D11_0009",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (fold structure and speckles) correspond to allowed normal variations ('fold orientation' and 'lighting reflection') identified in the reference profiler. No pathological features like polyps or ulcers are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0077",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular lesion (ulcer) that is completely absent in the normal reference images, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0014",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (white foam, mucosal texture) observed in the query image are also present in the normal reference images, indicating they are normal variations. No distinct anomalies such as polyps or ulcers were detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0048",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits features (bright spots, color) that are explicitly listed as allowed variations (lighting glare, mucus) in the normal reference profile. No structural anomalies like polyps or ulcers are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0050",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal gastrointestinal mucosa with regular folds and mucus (bubbles), both of which are confirmed as allowed variations by the reference profiler. No pathological features such as polyps or ulcers are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0011",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits features (lighting variations, fold patterns) that are explicitly listed as allowed normal variations in the reference profile. No pathological anomalies like polyps or ulcers are detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0028",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with reference images confirms that the observed features (folds and reflections) are normal variations. No anomalies are detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0043",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The features initially suspected as anomalies (irregular folds, color variation) are present in the normal reference images as natural anatomical structures (likely a sphincter). No pathological defects like polyps or ulcers are detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0081",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (foam, instrument) are present in the normal reference images, refuting them as anomalies. The query image shows normal mucosal texture and color consistent with the references.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0027",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed features (reflections and folds) are explicitly listed as normal variations in the reference profile. No pathological defects like polyps or ulcers are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0001",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, protruding mass that is absent in all reference images of normal mucosa. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0054",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protruding mass (polyp) that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0017",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a normal gastrointestinal orifice (likely the pylorus or appendiceal orifice) characterized by a central constriction and surrounding mucus bubbles. These features align with the 'focal constriction' and 'mucus presence' allowed variations identified in the reference profiler. The mucosal color and texture are normal, and there is no evidence of ulceration or polypoid growth.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0067",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a protruding mass (polyp) in the query image that is absent in all normal reference images, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0000",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, protruding mass that is not present in any of the normal reference images. This feature is a clear anomaly, likely representing a polyp or foreign body, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0031",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The dark area is an endoscopic instrument, a common procedural artifact. The surrounding mucosa appears normal with no signs of polyps or ulcers. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0008",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0082",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (dark opening) is a normal anatomical structure, confirmed by its identical appearance in Reference Image 0. No pathological defects are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0037",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular lesion with mucosal disruption that is completely absent in the reference images, which show only healthy, smooth mucosa. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0032",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal endoscopic view with a medical instrument and procedural foam, both of which are consistent with the reference images. No pathological features such as polyps or ulcers are detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0053",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the features in the query image, including the dark instrument and surrounding mucosal texture, are consistent with normal anatomy and do not represent a pathological anomaly like a polyp or ulcer.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0064",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear protruding mass (polyp) that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0045",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison demonstrates that the features in the query image are consistent with normal anatomical variations present in the reference images. No anomalies were detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0074",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains distinct dark, irregular patches on the mucosal surface that are completely absent in all provided normal reference images. This feature survives refutation and is highly indicative of a pathological anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0085",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a normal esophageal lumen with a central opening and mucus/foam, both of which are explicitly listed as allowed variations in the reference profile. No pathological features such as polyps or ulcers are detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0086",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed features (bubbles/foam and lighting variations) are explicitly listed as allowed normal variations in the reference profile. No pathological defects (polyps, ulcers) are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0063",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows that the whitish-yellow patch and textural irregularity on the left side of the query image are not present in the normal reference images. This feature is unique to the query and represents a pathological anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0016",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0078",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal mucosal folds and texture consistent with the reference images. No anomalous features such as polyps or ulcers were detected after refutation.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0061",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct sessile polyp in the lower right quadrant, which is not present in any of the reference images showing normal mucosa. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0010",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protruding mass (polyp) in the lower right quadrant, which is absent in all reference images showing normal mucosa. This structural anomaly confirms the image is anomalous.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0026",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed features (foam, discoloration) are explicitly listed as allowed variations (surface moisture, shadowing) in the normal reference profile. No pathological structures like polyps or ulcers are detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0005",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a normal pylorus with a central opening and smooth mucosa. Observed features like bubbles are common artifacts allowed in the normal baseline. No pathological defects (polyps/ulcers) are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0020",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal gastrointestinal mucosa with an inserted instrument. The dark area is the instrument shaft, not a tissue defect. All observed features (pink color, smooth folds, glare, mucus) are consistent with the normal reference profile and allowed variations.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0003",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0007",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed features (glare, texture variation) are explicitly listed as normal variations in the reference profile. No pathological structures like polyps or ulcers are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0024",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protruding mass (polyp) that is not present in any of the reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0051",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal mucosal folds and color. The observed foam and endoscope are explicitly listed as allowed variations in the reference profile. No pathological features like polyps or ulcers are detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0019",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular lesion that is absent in all reference images, which display normal GI mucosal variations. This confirms the presence of a pathological anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0089",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a clear sessile polyp, a protruding mass not present in any of the normal reference images. The side-by-side comparison confirms this structural anomaly is unique to the query, leading to a high anomaly score.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0070",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate feature (dark shadow) was refuted by comparison with reference images, which show similar shadows in normal folds. No other anomalies are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0084",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only normal anatomical features (smooth folds) and expected artifacts (lighting reflections) as defined by the reference profiler. No anomalies such as polyps or ulcers are detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0068",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, protruding mass that is absent in all reference images showing normal mucosa. This feature is a clear indicator of an anomaly, likely a polyp.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0021",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, protruding mass (polyp) that is clearly absent in the reference images showing normal mucosa. This feature survives refutation, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0069",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct polyp (protruding mass) in the lower right quadrant. The side-by-side comparison with reference images confirms this feature is absent in normal samples, validating the anomaly detection.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0062",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular lesion in the center that is absent in all normal reference images, which show only smooth, healthy mucosa. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0041",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed white speckles are consistent with allowed normal variations (lighting reflections and mucus) identified in the reference profiler. No structural anomalies like polyps or ulcers are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0071",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the yellowish, raised lesion in the upper right of the query image is not present in any of the reference images, which show only normal pink mucosa. This feature is a distinct structural anomaly (likely a polyp or similar growth) and survives refutation.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0036",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a clear polyp (protruding mass) which is absent in all reference images of normal mucosa. The side-by-side comparison successfully refuted the possibility of this being a normal variation, confirming the anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0006",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only normal anatomical structures (folds) and artifacts (glare/mucus) that are explicitly listed as allowed variations in the reference baseline. No pathological features like polyps or ulcers are detected.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0040",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0058",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate feature (white spots) was found in the reference images, confirming it is a normal artifact. No other anomalies were detected. The image is normal.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0023",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular lesion in the center that is absent in all reference images, which show only normal mucosal variations. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0035",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protruding mass (polyp) that is absent in all normal reference images, confirming it as an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0056",
+    "score": 0.25,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate anomaly (whitish patch) was found in the reference images, indicating it is a normal variation (likely mucus or reflection) rather than a defect. No other anomalous features were identified.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0059",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct raised, reddish mass surrounding the lumen, which is a clear structural anomaly (polyp/mass) not present in any of the normal reference images. The refutation protocol confirms this feature is unique to the query, indicating a high probability of pathology.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0083",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct polyp (protruding mass) that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0065",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a clear, dark, protruding mass that is absent in all normal reference images. This feature is consistent with a polyp or foreign body, confirming the image as anomalous.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0029",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The features initially suspected as anomalies (central folds and whitish spots) are confirmed to be normal anatomical structures and lighting artifacts by comparing them with the provided reference images. No defect remains.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0172",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protruding mass (polyp) that is not present in any of the reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0018",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a normal esophagogastric junction with characteristic radial folds and a Z-line. All observed features align with the normal baseline and allowed variations defined by the reference profiler. No pathological anomalies such as polyps or ulcers are present.",
+    "label": 0,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0161",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a clear polyp (protruding mass) that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0095",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a clear sessile polyp (protruding mass) which is absent in all normal reference images, confirming a definitive anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0175",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (fold distortion) was refuted by the reference images, which show similar normal anatomical structures. No other defect-like features were identified.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0124",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal gastrointestinal mucosa with expected pink coloration and regular folds. The observed white highlights are specular reflections, which are explicitly listed as a normal variation in the reference profile. No pathological features such as polyps or ulcers are present.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0174",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular lesion with mucosal disruption that is completely absent in the reference images showing normal mucosa. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0128",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct blue-stained protruding mass that is absent in all normal reference images, confirming the presence of an anomaly (likely a polyp).",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0125",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear, large, protruding mass (polyp) that is absent in all normal reference images, confirming an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0171",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, protruding reddish mass (polyp) in the upper-left quadrant. This feature is absent in all reference images, which show normal, smooth mucosal folds. Therefore, the query is anomalous.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0167",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, large, lobulated polypoid mass that is absent in all provided normal reference images. This structural anomaly confirms the image is pathological.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0098",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (mucosal folds and specular highlights) observed in the query image are consistent with normal anatomical structures and artifacts seen in the reference images. No anomalous features such as polyps or ulcers were detected.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0106",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear polyp (protruding mass) which is absent in all normal reference images. The refutation protocol confirms this feature is anomalous.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0176",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (glare and yellowish patches) are explicitly listed as allowed variations (lighting glare, mucus presence) in the normal reference profile. No structural anomalies like polyps or ulcers are present.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0101",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The features initially considered (foam and instrument) are present in the reference images, indicating they are normal procedural artifacts. The mucosal surface shows no signs of pathology such as polyps or ulcers.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0123",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, distinct polypoid mass that is completely absent in the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0119",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image clearly displays a polyp (a protruding mass) that has been stained blue, which is a definitive pathological anomaly compared to the normal, smooth mucosa in the reference images.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0151",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a clear erythematous lesion and irregular texture that are absent in all provided normal reference images. This confirms the presence of a pathological anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0127",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (white spots, yellowish patches) are identified as normal variations (lighting reflection, fluid) confirmed by the reference profiler. No pathological defects like polyps or ulcers are present.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0160",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear polyp (protruding mass) which is absent in the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0130",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, elevated, bluish mass which is a clear deviation from the normal pink, smooth mucosal folds defined by the reference profiler. This feature is not an allowed variation and indicates a pathological anomaly (polyp).",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0150",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct central lesion characterized by dark discoloration and irregular texture, which is absent in all provided normal reference images. This confirms the presence of an anomaly (likely an ulcer).",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0113",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, dark, protruding mass that is absent in all reference images, which show only normal mucosal folds. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0120",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0162",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits normal mucosal characteristics: smooth texture, regular folds, and uniform coloration. The bright spots are consistent with light reflections seen in normal endoscopic images, not pathological lesions. No candidate features suggest a defect.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0179",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The features initially suspected as anomalies (foam, instrument) are present in the normal reference images, indicating they are normal procedural artifacts. The mucosa itself shows no signs of polyps or ulcers.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0126",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, large, protruding mass (polyp) that is not present in any of the normal reference images. The side-by-side comparison successfully refutes the possibility that this is a normal variation, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0131",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a distinct dark, protruding mass that is absent in all normal reference images. This feature survives the refutation protocol, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0143",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with normal reference images shows that the features in the query image, including folds and texture, are within the range of normal anatomical variation. No distinct polyp or ulcer is identified.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0114",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protruding sessile mass (polyp) that is not present in any of the reference images showing normal mucosa. This structural anomaly confirms the image is anomalous.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0134",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct central reddish lesion that is absent in all provided normal reference images, confirming it as an anomaly (likely an ulcer or severe inflammation).",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0157",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate features (fold convergence and shadow) are either present in the normal reference images or are artifacts, confirming the query image is normal.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0154",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear polyp, which is a protruding mass not present in any of the normal reference images. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0102",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, elevated, bluish-white mass that is completely absent in the normal reference images. This structural and color anomaly confirms the presence of a defect (likely a polyp).",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0091",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits features (foam, instrument) that are either allowed variations in normal images or external objects. No pathological defects like polyps or ulcers are present.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0132",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct polyp (protruding mass) that is absent in all normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0139",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct polyp (protruding mass) that is not present in any of the normal reference images. The refutation protocol confirms this feature is an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0094",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a distinct dark, protruding mass that is absent in all provided normal reference images. This feature is a clear structural anomaly, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0140",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct central ulcerative lesion that is not present in any of the normal reference images. The side-by-side comparison successfully refuted the possibility of this being a normal variation, confirming the presence of a pathological anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0144",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays normal mucosal folds and lighting artifacts consistent with the reference baseline. No pathological features such as polyps or ulcers are detected.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0177",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a circular opening and mucosal features (reflections, mucus) that are explicitly listed as allowed variations in the normal reference profile. No anomalous structures like polyps or ulcers are present.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0153",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits foam and an instrument, both of which are consistent with normal endoscopic procedures or allowed variations (foam) as per the reference profile. No pathological features like polyps or ulcers are present.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0170",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the central dark opening is a normal anatomical structure (likely a vessel or fold) and not a pathological defect like an ulcer or polyp. The surrounding mucosa is smooth and pink, consistent with the normal reference images. Bubbles are a common artifact. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0115",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed features (bright spots and folds) are explicitly listed as normal variations (lighting reflection, folding patterns) in the reference profile. No pathological anomalies like polyps or ulcers are detected.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0133",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows normal mucosal tissue with a medical instrument and procedural artifacts (bubbles). No polyp or ulcer is present, as confirmed by comparison with normal reference images.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0090",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protruding mass (polyp) that is not present in any of the normal reference images, confirming an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0105",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct protruding mass (polyp) in the lower right quadrant, which is absent in all reference images showing normal mucosal surfaces. This feature survives refutation and confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0146",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a normal esophagogastric junction. The observed features (Z-line shape, specular highlights) match the expected normal baseline and allowed variations defined by the reference profiler. No pathological anomalies are detected.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0122",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The features initially considered potentially anomalous (folds and shadows in the lumen) are also present in the normal reference images, indicating they are normal anatomical variations rather than defects like polyps or ulcers.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0093",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct polyp (protruding mass) that is not present in any of the normal reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0138",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protruding mass (polyp) on the right wall, which is absent in all normal reference images. This structural anomaly confirms the image is not normal.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0099",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, raised, bluish mass (polyp) that is absent in all normal reference images. The side-by-side comparison confirms this feature is an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0108",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, pale, protruding mass that is absent in all normal reference images. This feature survives the refutation protocol and is consistent with a polyp anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0155",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark, irregular lesion in the center that is absent in all reference images, which display normal, smooth mucosa. This feature survives refutation and indicates a clear anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0178",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0107",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a clear polyp with surface erosion, a structural defect not present in any of the normal reference images. The refutation protocol confirms this feature is anomalous.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0166",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct protruding mass (polyp) that is not present in any of the normal reference images, confirming an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0156",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The features initially considered (foam, instrument) are present in the normal reference images, indicating they are not anomalies. The query image shows normal mucosal appearance consistent with the references.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0097",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (central reddish irregularity) is a normal anatomical feature (likely the Z-line or gastroesophageal junction) as confirmed by its presence in the reference images. No pathological defect is detected.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0141",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear polyp, a protruding mass not present in any of the normal reference images. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  },
+  {
+    "item_id": "D11_0109",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits features (specular reflections, vascular patterns) that are explicitly listed as normal variations in the reference profile. No structural defects like polyps or ulcers are present.",
+    "label": 1,
+    "domain_code": "D11",
+    "category": "endoscopy",
+    "n_rules_injected": 3,
+    "rule_types": [
+      "invariant",
+      "invariant",
+      "invariant"
+    ]
+  }
+]

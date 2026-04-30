@@ -1,0 +1,2761 @@
+Reading prompt from stdin...
+OpenAI Codex v0.122.0 (research preview)
+--------
+workdir: /hdd1/jiangxi/AD-Agent
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR, /home/jiangxi/.codex/memories]
+reasoning effort: high
+reasoning summaries: none
+session id: 019db675-c11f-72b1-8273-0866e4ba1b4f
+--------
+user
+You are an adversarial senior ML reviewer (NeurIPS/ICML level).
+This is Round 5 of an autonomous review loop for the AD-Agent paper
+(AnomalyClaw). Previous rounds:
+  R1: 5.0/10 not ready
+  R2: 5.8/10 not ready
+  R3: 6.4/10 almost
+  R4: 6.8/10 almost — flagged baseline mismatch in §5
+Full log: review-stage/AUTO_REVIEW.md.
+
+## What is new since Round 4
+
+The author REPLACED the §5 v3 Verbalized Self-Evolution chapter with a
+new §4 "Controller-Level Verbalized Learning". Placement changed:
+the new §4 now sits between §3 method and what is now §5 experiments.
+
+Architecture (v11):
+  - v11 = v10 + a Controller VLM arbitration layer.
+  - v10 = parallel(v9 Agent, Direct) + 0.5:0.5 fixed blend (the Table
+    Qwen3.5 baseline 0.732 in §5 main results table).
+  - With learning_enabled=False, v11 is byte-equivalent to v10.
+  - With learning_enabled=True, a Controller VLM sees image + refs +
+    both branches' score-rationale pairs + RAG-retrieved rulebook,
+    emits final_score in [0,1] plus a categorical trust {A,B,blend}.
+  - Falls back to v10 blend on any controller failure (parse, API,
+    missing branch).
+
+Rulebook (per domain, RAG at inference):
+  - Meta-rules (routing): from disagreement cases on dev (v9 vs Direct
+    split at 0.5). Partition into agree-correct/agree-wrong/
+    disagree-A-wins/disagree-B-wins; agree-wrong discarded.
+    Reflector VLM sees K=10 cases with images + both rationales + GT
+    and writes 1-3 rules per side.
+  - Domain-rules (content): REUSED from the prior v3 pilot — L1 ref-
+    only invariants (6 types) and L2 oracle-grounded corrective
+    FN/FP cluster rules. Documented in new Appendix app:rulebook_pilot.
+
+Supervision is semi-supervised — paper says so explicitly now:
+  - Agent/Direct branches: zero labels.
+  - Rule construction (Stages B-C): all 40 dev labels per domain used
+    to partition, plus GT label shown to reflector for each sampled
+    case. Domain-rule pilot consumes additional K=10 oracle FN/FP
+    labels per domain for the L2 corrective layer.
+  - Inference: zero labels.
+
+Results on Qwen3.5-VL-27B CrossDomainVAD-12 test (n=1418, paired
+stratified bootstrap 1000 resamples):
+
+  Direct (generic)         : 0.7119
+  Agent v9 alone           : 0.6696
+  v10 blend (Passive v11)  : 0.7333  (reproduces Table 1 0.732 within 0.13 pp)
+  v11 Controller meta-only : 0.7396  Δ +0.63 pp, CI [-1.26,+2.36], P(Δ>0)=0.730
+  v11 Controller meta+domain: 0.7539  Δ +2.05 pp, CI [+0.41,+3.67], P(Δ>0)=0.995
+  Δ(full - meta) = +1.43 pp, CI [-0.19,+3.13], P(Δ>0)=0.960
+
+Per-domain (n=120 each except D7=98): wins 8/12 for full (D1 +0.5, D2
++0.6, D4 +3.4, D5 +0.2, D6 +2.8, D7 +13.4, D8 +7.4, D10 +3.5), neutral
+1 (D11 -0.1), losses 3 (D3 -1.9, D9 -3.2, D12 -1.9).
+
+Meta-only ablation reveals complementary contribution:
+  4 domains full≫meta (D4/D7/D8/D10 — content knowledge matters)
+  4 domains meta≥full (D1/D3/D5/D11 — routing alone suffices)
+  4 tied
+
+## Instructions
+
+Read paper/sections/controller_learning.tex end-to-end.
+Also read paper/sections/A_appendix.tex (the app:rulebook_pilot
+section) and paper/sections/4_experiments.tex (now §5) to check
+consistency.
+Also read refine-logs/v11_results_summary.md for reproducible numbers.
+Also spot-check one of benchmark/results/verbalized/v11_eval_test/*.json
+to verify the headline numbers.
+
+Evaluate honestly:
+
+1. Is the §4 narrative consistent with the numbers? Does it overclaim
+   or underclaim?
+2. Is the Controller Learning architecture genuinely new, or just
+   cosmetic re-labeling of v3?
+3. The semi-supervised framing (40 dev labels/domain + K=10 L2
+   oracle) — is this properly acknowledged?
+4. Bootstrap CIs: paired stratified, 1000 resamples, per-domain
+   stratification — computed correctly?
+5. Meta-only ablation: does it meaningfully isolate the routing
+   signal? What does it tell us about the proposed architecture?
+6. What remaining weaknesses would you flag?
+7. Is the paper ready for a top venue? Yes/Almost/Not ready?
+
+Output format (EXACT):
+Score: X/10
+Verdict: ready / almost / not ready
+Verified claims: ...
+Unverified / false claims: ...
+Weaknesses (ranked, with minimum fix each)
+Memory update for Round 6 (if any)
+
+Be adversarial but fair — acknowledge genuine improvements. Note the
+paper title still says "Training-Free Cross-Domain VAD" which may be
+inconsistent with the semi-supervised Controller Learning chapter.
+
+codex
+I’ll do this as a review, not an edit. I’m going to read the specified sections, cross-check the result summary and one raw v11 JSON, then return the exact requested format with concrete fixes.
+exec
+/bin/bash -lc "sed -n '1,260p' paper/sections/controller_learning.tex" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+\section{Controller-Level Verbalized Learning}
+\label{sec:controller}
+
+The AnomalyClaw v10 ensemble combines a multi-turn Agent branch with a
+single-pass Direct branch under a fixed $0.5{:}0.5$ blend. This
+extracts a $+1.69$ pp macro AUROC gain on Qwen3.5-VL-27B
+(Table~\ref{tab:main_results}) purely from \emph{ensemble diversity}
+--- the two branches make systematically different errors, and
+fixed-weight averaging already helps. This section asks whether a
+learned controller, guided by a small verbalized rulebook, can beat
+the fixed blend without collapsing the diversity gain that produces
+it in the first place.
+
+We answer with a v11 agent that generalises v10 with a learning
+switch. When \emph{learning is disabled}, v11 is byte-equivalent to
+v10 --- identical two-branch execution, identical $0.5{:}0.5$
+blend. When \emph{learning is enabled}, a Controller VLM consumes
+the image, both branches' score--rationale pairs, and a per-domain
+rulebook, and writes a final anomaly score. The rulebook carries two
+layers of knowledge: (i) \emph{meta-rules} (routing) distilled from
+dev-set cases where the two branches disagreed, and (ii)
+\emph{domain rules} (content) reused verbatim from a prior reference-only
+and oracle-grounded pilot (Appendix~\ref{app:rulebook_pilot}). We note
+up-front that \emph{v11 is not training-free}: rule construction consumes
+dev-set ground-truth labels. The total oracle budget is the $40$-item dev
+split per domain ($480$ labels across $12$ domains); at inference, no
+label is consulted. On Qwen3.5-VL-27B CrossDomainVAD-12 test
+($n{=}1418$), the learning-enabled v11 reaches macro $0.7539$, a
+$+2.05$ pp gain over the v10 baseline of $0.7333$ with $95\%$
+stratified paired bootstrap CI $[+0.41, +3.67]$ and
+$\hat{p}(\Delta{>}0) = 0.995$.
+
+\subsection{Architecture}
+\label{ssec:ctrl_arch}
+
+Let $A(x)$ and $B(x)$ denote the Agent and Direct branches evaluated
+on a query item $x$. Each returns a scalar score in $[0, 1]$ and a
+short textual rationale, so $A(x) = (s_A, r_A)$ and $B(x) = (s_B,
+r_B)$.
+
+\paragraph{v10 (no learning).} The ensemble score is a fixed linear
+combination
+\[
+\hat{s}_{\mathrm{v10}}(x) \;=\; w_A\,s_A \,+\, w_B\,s_B, \qquad
+w_A = w_B = \tfrac{1}{2}.
+\]
+This is the \S\ref{sec:experiments} Table~\ref{tab:main_results}
+baseline. On Qwen3.5-VL-27B it achieves macro AUROC $0.732$
+($+1.69$ pp over single-call Direct $0.714$).
+
+\paragraph{v11 (learning-enabled).} A Controller VLM $C$ receives the
+same reference and query images that each branch saw, plus the two
+branch outputs and a retrieved rulebook excerpt $\mathcal{R}(x)$:
+\[
+\hat{s}_{\mathrm{v11}}(x) \;=\; C\bigl(\mathrm{imgs}(x),\ (s_A, r_A),\ (s_B, r_B),\ \mathcal{R}(x)\bigr).
+\]
+$C$ is prompted to return a JSON object with \texttt{final\_score}
+$\in [0,1]$, a categorical \texttt{trust} $\in\{A, B, \mathrm{blend}\}$
+and a one-line reasoning trace. On any controller failure (parse
+error, API error, missing branch) the item falls back to the v10
+linear blend, preserving the $0.732$ floor. The Controller sees the
+image so that its arbitration is grounded in visual evidence, not
+purely a text routing layer.
+
+\paragraph{Rulebook RAG.} At inference, the Controller never sees the
+full per-domain rulebook. A metadata filter over
+$(\mathrm{domain}, \mathrm{category})$ first restricts the rule pool
+to rules matching the item's class (domain-wide rules always
+admissible). Within the filtered pool rules are ranked by priority ---
+meta-rules first (up to $3$), then invariants and corrective rules
+(up to $4$ combined) --- and rendered as a short markdown block. The
+injected payload is typically $60$--$120$ tokens per query.
+
+\subsection{Learning protocol}
+\label{ssec:ctrl_protocol}
+
+The learning pipeline runs offline, once per domain. It is
+\emph{semi-supervised}: the Agent and Direct branches themselves never
+see labels, but rule construction consults the dev-set ground-truth
+labels ($40$ per domain). Specifically, all $40$ labels are consumed to
+partition dev items by branch agreement (Stage B), and the ground-truth
+label of each sampled disagreement case is shown to the reflector VLM
+(Stage C). Domain rules (Stage D) carry an additional small oracle load
+from the $K{=}10$ balanced FN/FP sample used by the L2 pilot
+(Appendix~\ref{app:rulebook_pilot}). At test time no label is consulted.
+
+\paragraph{Stage A --- Passive collection.} We evaluate v11 with
+learning disabled (i.e.\ v10) on each domain's $40$-item dev split,
+recording per item the pair $(s_A, r_A, s_B, r_B)$ and the manifest
+label $y$.
+
+\paragraph{Stage B --- Disagreement partition.} Each item's two
+branch scores are binarised at $0.5$ and compared to $y$. Items
+decompose into four buckets: \emph{agree-correct}, \emph{agree-wrong},
+\emph{disagree-A-wins} (Agent right, Direct wrong), and
+\emph{disagree-B-wins} (Direct right, Agent wrong). Over the $12$
+domains this yields $61$ A-wins + $80$ B-wins = $141$ disagreement
+cases total (an average of $11.8$ per domain; min $7$, max $18$).
+\emph{Agree-wrong} items are discarded: they carry no
+branch-routing signal, and pilot runs showed that asking the
+reflector to write ``both-miss'' rules produces vacuous generic
+cautions.
+
+\paragraph{Stage C --- Meta-rule reflection.} From each domain we
+balance-sample up to $K{=}10$ cases ($K/2$ A-wins, $K/2$ B-wins;
+deterministic, sorted by item id) and feed them in a single
+multi-image prompt to a reflector VLM (Qwen3.5-VL-27B). The reflector
+sees per case the query image, both branches' score--rationale pairs,
+and the ground-truth label. (Reference images are omitted because
+vLLM caps image count at $12$ per prompt; refs are implicitly
+described by each branch's rationale.) The reflector is asked for
+$1$--$3$ routing rules per side under three explicit constraints:
+(i) each rule must name an \emph{observable} pattern in the
+rationale or image, not merely cite the item id; (ii) no ``always
+trust $X$'' rules; (iii) rules must be actionable at inference time
+from what the Controller sees. All $12$ domains produced parseable
+rule lists, yielding $2$--$3$ rules per side per domain.
+
+\paragraph{Stage D --- Rule stacking.} For each domain we merge the
+meta-rules with the domain rules from the reference-only + oracle
+pilot: reference-only invariants (\texttt{invariant} tag, six types:
+count, symmetry, spatial layout, colour palette, texture,
+structural) and oracle-grounded cluster rules
+(\texttt{corrective\_fn} / \texttt{corrective\_fp} tags). Each rule
+carries $(\mathrm{type}, \mathrm{category}, \mathrm{text},
+\mathrm{source\_items}, \mathrm{confidence})$ metadata. Per-domain
+stacked rulebook sizes range from $10$ (D12 road safety) to $86$
+(D1 MVTec-AD, many categories each contributing invariants).
+
+\subsection{Results}
+\label{ssec:ctrl_results}
+
+\paragraph{Setup.} All numbers are on CrossDomainVAD-12 manifests\_v2
+test ($n{=}1418$), Qwen3.5-VL-27B served locally (4 DP replicas
+behind a round-robin load balancer), $\texttt{DESCRIPTOR\_MODE}=$\texttt{generic}
+throughout, $\max\_\text{turns}=3$ for the v9 trajectory.
+\emph{Paired} stratified bootstrap CIs ($1000$ resamples, per-domain
+stratification) compare v11 against the v10 blend recomputed from the
+same run's $(s_A, s_B)$ --- an exact paired comparison on identical
+branch outputs.
+
+\begin{table}[t]
+\centering
+\small
+\caption{\textbf{v11 Controller Learning on Qwen3.5-VL-27B
+CrossDomainVAD-12 test} ($n{=}1418$). Baseline is v10
+($w_A = w_B = 0.5$) which matches Table~\ref{tab:main_results}'s
+reported $0.732$ within $0.13$ pp ($0.7333$ on this run). Paired
+bootstrap CI on the macro $\Delta$ is $[+0.41, +3.67]$ pp,
+$\hat p(\Delta{>}0) = 0.995$ --- significant at $95\%$.}
+\label{tab:controller_main}
+\begin{tabular}{lcccc}
+\toprule
+Regime & Macro AUROC & $\Delta$ vs v10 & $95\%$ CI & $\hat p(\Delta{>}0)$\\
+\midrule
+Single-call Direct (generic) & $0.7119$ & $-2.14$ & --- & --- \\
+Agent v9 alone               & $0.6696$ & $-6.37$ & --- & --- \\
+v10 blend = Passive v11      & $0.7333$ & ---     & --- & --- \\
+v11 Controller (meta only)   & $0.7396$ & $+0.63$ & $[-1.26, +2.36]$ & $0.730$ \\
+v11 Controller (meta+domain) & $\mathbf{0.7539}$ & $\mathbf{+2.05}$ & $[+0.41, +3.67]$ & $\mathbf{0.995}$ \\
+\bottomrule
+\end{tabular}
+\\[4pt]
+{\footnotesize Ablation comparison: the full stack (meta $\cup$ domain
+rules) contributes $+1.43$ pp incremental over meta-rules alone
+(bootstrap mean; CI $[-0.19, +3.13]$, $\hat p{=}0.960$). Meta-rules
+alone are directionally positive but the CI straddles zero --- the
+gain is carried jointly by routing rules \emph{and} domain content.}
+\end{table}
+
+\paragraph{Per-domain breakdown.}
+Table~\ref{tab:controller_per_domain} reports per-domain
+v10-blend AUROC, v11 AUROC, and the Controller's categorical
+\texttt{trust} output counts.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{\textbf{Per-domain Controller behaviour.} Columns: test $n$,
+v10 blend AUROC (recomputed from the same branch outputs), v11
+Controller AUROC, $\Delta$ in percentage points, then the Controller's
+categorical \texttt{trust} decision counts (Agent / Direct / Blend).
+Wins on $8$ of $12$ domains; three losses (D3, D9, D12) each $\le\,3.3$ pp;
+three big wins (D7, D8 in particular) more than cover the losses.}
+\label{tab:controller_per_domain}
+\begin{tabular}{llrrrrrrr}
+\toprule
+Dom & Source & $n$ & v10 & v11 & $\Delta$ (pp) & Trust$_A$ & Trust$_B$ & Blend\\
+\midrule
+D1 & MVTec-AD          & 120 & 0.934 & 0.938 & $+0.5$        &  9 & 47 & 64 \\
+D2 & GoodsAD           & 120 & 0.607 & 0.613 & $+0.6$        & 56 & 17 & 47 \\
+D3 & VisA              & 120 & 0.853 & 0.834 & $-1.9$        &  9 & 60 & 51 \\
+D4 & SDNET             & 120 & 0.670 & 0.704 & $+3.4$        & 24 & 48 & 48 \\
+D5 & MVTec-LOCO        & 120 & 0.676 & 0.678 & $+0.2$        & 28 & 64 & 28 \\
+D6 & Real3D-AD         & 120 & 0.531 & 0.558 & $+2.8$        & 33 & 12 & 75 \\
+D7 & LEVIR-CD+         &  98 & 0.754 & 0.888 & $\mathbf{+13.4}$ & 24 & 55 & 19 \\
+D8 & DermaMNIST        & 120 & 0.647 & 0.721 & $\mathbf{+7.4}$  & 48 & 51 & 21 \\
+D9 & BraTS             & 120 & 0.848 & 0.816 & $-3.2$        & 34 & 35 & 51 \\
+D10 & BMAD-Liver CT    & 120 & 0.491 & 0.526 & $+3.5$        & 53 & 24 & 43 \\
+D11 & HyperKvasir      & 120 & 0.808 & 0.807 & $-0.1$        & 27 & 61 & 32 \\
+D12 & BDD+RoadAnomaly  & 120 & 0.982 & 0.963 & $-1.9$        & 11 & 47 & 62 \\
+\midrule
+\textbf{Macro} & & 1418 & \textbf{0.7333} & \textbf{0.7539} & $\mathbf{+2.05}$ & \multicolumn{3}{c}{---} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Findings.}
+
+\begin{enumerate}
+\item \textbf{Controller arbitration beats fixed blend at $95\%$
+significance.} The $+2.05$ pp macro gain has a paired bootstrap
+CI of $[+0.41, +3.67]$ and posterior mass $\hat p(\Delta{>}0) =
+0.995$. Gains are concentrated but not fabricated: of the $12$
+domains, $8$ improve (four by at least $+2.5$ pp), three regress by
+at most $3.3$ pp, and one (D11) is essentially neutral. The gain
+magnitude is similar to the fixed-blend gain itself ($+1.69$ pp,
+Table~\ref{tab:main_results}), yet cumulative --- v11 compounds on top
+of v10 rather than replacing it.
+
+\item \textbf{The $+13.4$ pp D7 LEVIR change-detection swing comes
+from correct routing.} On remote-sensing change detection, the v9
+trajectory scores $0.606$ macro AUROC (systematic FP on seasonal
+vegetation changes) while Direct scores $0.861$. The fixed blend
+($0.754$) sits roughly halfway, partly collapsing Direct's signal.
+The Controller (trust counts $24$ A / $55$ B / $19$ blend) correctly
+leans on Direct, and lands at $0.888$ --- a higher AUROC than either
+branch alone. D8 DermaMNIST is the same story on dermatology
+(v11 $0.721$ vs blend $0.647$, $+7.4$ pp).
+
+\item \textbf{Three regressions, each a known failure mode.}
+D3 VisA ($-1.9$ pp): the Controller over-trusts Direct ($60$ B /
+$120$ items) when the Agent's structural reasoning was already the
+right signal. D9 BraTS ($-3.2$ pp): brain-MRI texture heuristics in
+the rulebook push the Controller off-target; \textit{agree-wrong}
+items dominate error here so the Controller has no routing signal
+to learn from. D12 BDD+RA ($-1.9$ pp): the blend sits at $0.982$,
+essentially at the ceiling --- any Controller-driven deviation has
+negative expectation. These three cases bound the
+honesty of our claim: the $+2.05$ pp macro gain is not uniform.
+
+\item \textbf{Controller behaviour is domain-aware and
+non-trivial.} Trust counts vary dramatically: D1 mostly keeps blend
+($64/120$), D5 heavily trusts Direct ($64$), D10 heavily trusts
+Agent ($53$). The Controller is not collapsing to a constant
+preference. Parse-failure rate is exactly $0$ across $1418$ items.
+
+\item \textbf{Meta-rules alone are insufficient; domain content
+matters.} Stripping the domain layer (invariants $+$ FN/FP
+correctives) and keeping only the routing meta-rules produces a
+macro $\Delta$ of only $+0.63$ pp (CI $[-1.26, +2.36]$,
+$\hat p{=}0.730$) --- directionally positive but not significant.
+The incremental contribution of domain rules is $+1.43$ pp on
+average (CI $[-0.19, +3.13]$, $\hat p{=}0.960$). Per-domain, this
+splits cleanly: on domains where v9 and Direct disagree in
+stereotyped ways (D2 retail, D7 LEVIR, D8 DermaMNIST, D10 liver CT),
+full $>$ meta because the Controller needs domain knowledge to
+adjudicate; on domains where the two branches are already close
+(D1 MVTec, D3 VisA, D5 LOCO, D11 HyperKvasir), meta-only suffices
+or is even slightly better (noise level). The worst case for
+
+exec
+/bin/bash -lc "sed -n '1,320p' paper/sections/A_appendix.tex" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+\section{Benchmark Specification}
+\label{app:benchmark}
+
+Table~\ref{tab:benchmark_detail} provides per-domain details for CrossDomainVAD-12. All splits, item IDs, reference mappings, and domain descriptors will be released as a JSON specification file (\texttt{benchmark/manifests\_v2/full\_manifest.json}).
+
+\begin{table*}[t]
+\centering
+\caption{CrossDomainVAD-12 per-domain specification.}
+\label{tab:benchmark_detail}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{cllp{0.38\linewidth}rl}
+\toprule
+ID & Domain & Source & Anomaly definition & Refs/item & License \\
+\midrule
+D1  & Industrial  & MVTec-AD & Surface defect, damage, contamination & $\le 10$ & CC BY-NC-SA \\
+D2  & Retail  & GoodsAD & Torn label, deformation, missing component & $\le 10$ & Research \\
+D3  & Complex industrial  & VisA & Surface defect, chips, scratches, missing solder & $\le 10$ & CC BY-NC-SA \\
+D4  & Infrastructure  & SDNET2018 & Cracks, spalling, structural damage & $\le 10$ & Public \\
+D5  & Logical  & MVTec-LOCO & Wrong count / arrangement / component type & $\le 10$ & CC BY-NC-SA \\
+D6  & 3D product (RGB render) & Real3D-AD & Geometric defect (bulge, sink, hole, asymmetry) & $\le 10$ & Research \\
+D7  & Remote-sensing change  & LEVIR-CD+ & Building-level change between temporal pair & 1--2 & Research \\
+D8  & Dermoscopy  & DermaMNIST & Malignant melanoma & $\le 10$ & CC BY \\
+D9  & Brain MRI  & BraTS2021 & Glioma, mass effect, oedema & $\le 10$ & CC BY \\
+D10 & Liver CT  & BMAD-Liver & Focal lesion, tumour, cyst & $\le 10$ & Research \\
+D11 & GI endoscopy  & HyperKvasir & Polyp, ulcer, inflammation & $\le 10$ & Research \\
+D12 & Road safety  & BDD100K + RoadAnomaly21 & Unexpected object on roadway & 2 & Research \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Reference selection.}
+References are normal images from the same category/scene, selected deterministically by metadata match then fixed random seed. No reference appears as a query. Patient-level (D8--D11) and event-level (D7) deduplication prevents leakage. For D6 (Real3D-AD) the reference pool is rendered views of the same 3D template object from multiple viewpoints.
+
+\paragraph{Split protocol.}
+Per domain: 20 calibration, 40 dev, 120 test (balanced 50/50, except D7 LEVIR-CD+ which contributes 98 test items after allocating the 20/40 calibration/dev splits from the 158 source bi-temporal pairs available). All splits frozen before experiments. Total test $n{=}1{,}418$.
+
+\paragraph{Task-anchored domain descriptors.}
+The task-anchored descriptor $d$ is a single sentence inserted into every VLM prompt for the \emph{legacy} Direct baseline of Finding~1; v10's Direct branch (Table~\ref{tab:main_results}) runs \emph{without} these descriptors, matching the v9 agent's descriptor-free task preamble. The twelve descriptors used in CrossDomainVAD-12 are:
+\begin{itemize}\small\setlength\itemsep{1pt}
+    \item \textbf{D1 Industrial (MVTec-AD):} Normal = a manufactured object matching the reference in geometry, texture, and colour. Anomaly = surface defect, damage, contamination, or missing/extra component.
+    \item \textbf{D2 Retail (GoodsAD):} Normal = a packaged supermarket product matching the reference in label, shape, and surface. Anomaly = torn label, deformation, missing component, or printing defect.
+    \item \textbf{D3 Complex industrial (VisA):} Normal = a manufactured object matching the reference. Anomaly = surface defect, chips, scratches, missing solder, or misalignment.
+    \item \textbf{D4 Infrastructure (SDNET2018):} Normal = intact concrete surface. Anomaly = crack, spalling, or structural damage.
+    \item \textbf{D5 Logical (MVTec-LOCO):} Normal = correct count and spatial arrangement of components. Anomaly = wrong count, wrong position, or wrong component type.
+    \item \textbf{D6 3D product (Real3D-AD):} Normal = geometrically intact product matching the reference shape under rendered point-cloud views. Anomaly = geometric defect (bulge, sink, hole, contamination, asymmetry).
+    \item \textbf{D7 Remote-sensing change (LEVIR-CD+):} Normal = no building change between reference and query. Anomaly = building-level change including new construction, demolition, or expansion. \emph{Planned urbanisation IS the anomaly}.
+    \item \textbf{D8 Dermoscopy (DermaMNIST):} Normal = benign melanocytic skin lesion. Anomaly = malignant melanoma.
+    \item \textbf{D9 Brain MRI (BraTS2021):} Normal = healthy brain MRI slice. Anomaly = glioma, mass effect, or peritumoural oedema.
+    \item \textbf{D10 Liver CT (BMAD-Liver):} Normal = healthy liver CT slice. Anomaly = focal lesion, tumour, or cyst.
+    \item \textbf{D11 GI endoscopy (HyperKvasir):} Normal = clean gastrointestinal mucosa. Anomaly = polyp, ulcer, or inflammation.
+    \item \textbf{D12 Road safety (BDD100K + RoadAnomaly21):} Normal = empty driveable roadway (possibly with expected vehicles and markings). Anomaly = unexpected object on the roadway.
+\end{itemize}
+
+A corresponding generic baseline descriptor used in Finding~1 reads simply: ``\emph{Identify whether the query image is anomalous relative to the reference(s).}'' v10's Direct branch uses this generic prompt by default.
+
+\section{Score Extraction Rules}
+\label{app:scoring}
+
+All VLM variants output structured JSON. The anomaly score $s \in [0, 1]$:
+
+\paragraph{v0 Direct.}
+Output: \texttt{\{image\_label, confidence, anomaly\_type\}}.
+$s = c$ if label $=$ ``anomalous'', $s = 1{-}c$ if ``normal'', where $c$ is reported confidence. Parse failure rate: $<1\%$ across all backbones.
+
+\paragraph{AnomalyClaw interpret.}
+Same JSON schema and scoring. Final score: interpret output on escalated items, $s_0$ on committed items.
+
+\paragraph{Route B.}
+$s = 0.3 \cdot s_0 + 0.7 \cdot \sigma(\text{expert\_score})$, where $\sigma$ normalises relative to calibration median.
+
+\section{Failed agent variants}
+\label{app:ablation}
+
+Table~\ref{tab:ablation_appendix} reports the six alternative agent designs we tested on GPT-5.4 calibration. All were fixed and tuned on the same 220-item calibration split as AnomalyClaw. Failure analysis per variant:
+
+\begin{table}[h]
+\centering
+\caption{Ablation of agent variants (GPT-5.4, calibration macro AUROC). All use the same descriptor-enhanced v0 as the base.}
+\label{tab:ablation_appendix}
+\small
+\begin{tabular}{lcc}
+\toprule
+Variant & Macro & $\Delta$ vs v0 \\
+\midrule
+v0 Direct (baseline)     & 0.785 & --- \\
+v1 Normal-First          & 0.761 & $-$2.4 \\
+v2 Self-Refine           & 0.726 & $-$5.9 \\
+v3 Debate (naive score)  & 0.713 & $-$7.2 \\
+v3 Debate (gated score)  & 0.744 & $-$4.1 \\
+Evidence-grounded prop.  & 0.683 & $-$10.2 \\
+Third-call arbiter       & 0.694 & $-$9.1 \\
+\midrule
+\textbf{AnomalyClaw}     & \textbf{0.837} & \textbf{$+$5.2} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+    \item \textbf{Normal-First} (v1): structured prompting forces the VLM to enumerate ``normal'' claims, introducing false positives. On Qwen3.5, the reasoning chain consumes the token budget before emitting JSON.
+    \item \textbf{Self-Refine} (v2): a second non-adversarial pass adds no new information; it is the weakest variant, confirming that more calls $\neq$ better.
+    \item \textbf{Debate} (v3): a refuter rationalises confident correct predictions. Even with a confidence-gated aggregation rule, debate never beats v0.
+    \item \textbf{Evidence injection}: feeding DINOv2 patch distances into the proposer prompt distracts the VLM ($-10$ pp).
+    \item \textbf{Arbiter}: a third VLM call on contested items fires on 66\% of items (too aggressive) and is net negative.
+\end{itemize}
+
+These ablations were run on GPT-5.4 calibration because they represent disqualified designs rather than competitive baselines; we did not re-run them on SeedVL or Qwen3.5 once the failure pattern was clear.
+
+\section{Expert model comparison (legacy, v1 taxonomy)}
+\label{app:expert}
+
+This expert-model comparison was conducted during the early design-exploration phase on the legacy twelve-domain split with display codes D01--D11. The code-letter mapping onto the v2 taxonomy of Table~\ref{tab:benchmark_detail} is: D01$\to$D1 MVTec-AD, D02$\to$D2 GoodsAD, D03$\to$D4 SDNET, D04$\to$D8 Derma, D05$\to$D9 BraTS, D06$\to$D10 Liver, D07$\to$D11 Kvasir, D08$\to$D7 LEVIR, D09$\to$D12 road, D10$\to$D5 LOCO, D11$\to$D3 VisA. v10 (Table~\ref{tab:main_results}) does not depend on these experts.
+
+We benchmarked three expert models on the calibration split (Table~\ref{tab:expert_appendix}). SubspaceAD dominates overall, reaching 1.000 AUROC on D11 VisA calibration where all VLMs score $\leq 0.85$. AnomalyVFM (zero-shot, DINOv2 + LoRA) is uniformly weaker (macro 0.599) and was excluded from the final system. DINOv2-PatchNN complements SubspaceAD on D03 infrastructure (0.80 vs 0.50). The oracle that selects the best expert per domain reaches macro 0.898, indicating 7 pp headroom for multi-expert routing as future work.
+
+\begin{table}[h]
+\centering
+\caption{Expert model comparison (calibration, macro AUROC).}
+\label{tab:expert_appendix}
+\small
+\begin{tabular}{lcc}
+\toprule
+Expert & Macro & Strongest domain \\
+\midrule
+DINOv2-PatchNN & 0.640 & D09 road (1.00) \\
+\textbf{SubspaceAD} & \textbf{0.756} & D11 VisA (1.00) \\
+AnomalyVFM & 0.599 & D03 infra (0.72) \\
+\midrule
+Oracle (max/domain) & 0.898 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Descriptor ablation (legacy, v1 taxonomy)}
+\label{app:descriptor}
+
+This ablation supports Finding~1 and uses the legacy D01--D11 display codes on the earlier twelve-domain split; the code mapping to the v2 taxonomy is listed at the top of Appendix~\ref{app:expert}. v10's Direct branch in Table~\ref{tab:main_results} runs descriptor-free by design (\S\ref{ssec:v10}), so the ablation is an orthogonal finding about prompt engineering on the Direct baseline rather than a component of v10.
+
+Table~\ref{tab:descriptor_ablation} shows the per-domain effect of replacing the generic descriptor (``Identify whether the query image is anomalous relative to the reference(s)'') with the task-anchored descriptor (Appendix~\ref{app:benchmark}) on the test split for all three backbones. The macro gain is positive and statistically significant for every backbone (paired bootstrap with 1{,}000 resamples, per-domain stratification, $n{=}1{,}298$): GPT-5.4 $+6.4$ pp [$+4.4, +8.4$], SeedVL $+4.1$ pp [$+1.6, +6.4$], Qwen3.5 $+3.2$ pp [$+1.0, +5.5$]. The three backbones agree on the qualitative direction but disagree on which domains benefit most: GPT-5.4 is dominated by D06 Liver CT and D08 Change ($+31$/$+33$ pp), SeedVL gains most on D08 Change and D09 Road ($+18$/$+14$ pp), Qwen3.5 gains most on D06 Liver and D04 Dermoscopy ($+14$/$+8$ pp). A handful of small per-domain regressions appear on each backbone (e.g.\ D03 Infrastructure on all three, D09 Road on Qwen3.5); these are VLM-strong domains where the more specific prompt trims some true-positive confidence.
+
+\begin{table}[h]
+\centering
+\caption{Descriptor ablation on the test split: per-domain AUROC (Generic vs Task-anchored, $\Delta$ in pp). Bold = largest per-domain gain per backbone.}
+\label{tab:descriptor_ablation}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccc|ccc|ccc}
+\toprule
+& \multicolumn{3}{c|}{GPT-5.4} & \multicolumn{3}{c|}{SeedVL} & \multicolumn{3}{c}{Qwen3.5} \\
+Domain & Gen. & Task & $\Delta$ & Gen. & Task & $\Delta$ & Gen. & Task & $\Delta$ \\
+\midrule
+D01 Industrial      & 0.951 & 0.962 & $+$1.0  & 0.848 & 0.874 & $+$2.6 & 0.912 & 0.903 & $-$0.8 \\
+D02 Retail          & 0.752 & 0.774 & $+$2.2  & 0.864 & 0.863 & $-$0.1 & 0.632 & 0.672 & $+$4.0 \\
+D03 Infrastructure  & 0.664 & 0.623 & $-$4.1  & 0.745 & 0.660 & $-$8.6 & 0.702 & 0.712 & $+$1.0 \\
+D04 Dermoscopy      & 0.769 & 0.796 & $+$2.7  & 0.708 & 0.760 & $+$5.2 & 0.680 & 0.762 & \textbf{$+$8.2} \\
+D05 Brain MRI       & 0.915 & 0.934 & $+$1.9  & 0.736 & 0.864 & \textbf{$+$12.8} & 0.866 & 0.849 & $-$1.8 \\
+D06 Liver CT        & 0.433 & 0.745 & \textbf{$+$31.2} & 0.529 & 0.492 & $-$3.7 & 0.544 & 0.684 & \textbf{$+$14.0} \\
+D07 GI Endoscopy    & 0.903 & 0.890 & $-$1.3  & 0.881 & 0.876 & $-$0.4 & 0.874 & 0.918 & $+$4.4 \\
+D08 Change Det.     & 0.496 & 0.827 & \textbf{$+$33.2} & 0.643 & 0.822 & \textbf{$+$17.9} & 0.767 & 0.828 & $+$6.1 \\
+D09 Road Obstacle   & 0.954 & 0.968 & $+$1.4  & 0.793 & 0.936 & \textbf{$+$14.3} & 0.970 & 0.911 & $-$6.0 \\
+D10 Logical         & 0.660 & 0.683 & $+$2.3  & 0.678 & 0.651 & $-$2.7 & 0.641 & 0.676 & $+$3.5 \\
+D11 VisA            & 0.873 & 0.878 & $+$0.5  & 0.805 & 0.878 & $+$7.3 & 0.776 & 0.800 & $+$2.4 \\
+\midrule
+Macro               & \textbf{0.761} & \textbf{0.825} & \textbf{$+$6.4} &
+                      \textbf{0.748} & \textbf{0.789} & \textbf{$+$4.1} &
+                      \textbf{0.760} & \textbf{0.792} & \textbf{$+$3.2} \\
+95\% CI ($\Delta$)  & \multicolumn{3}{c|}{$[+4.4, +8.4]$} &
+                      \multicolumn{3}{c|}{$[+1.6, +6.4]$} &
+                      \multicolumn{3}{c}{$[+1.0, +5.5]$} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Per-domain AUROC across three backbones (v10)}
+\label{app:perdomain}
+
+Figure~\ref{fig:per_domain_appendix} shows per-domain AUROC for Direct, the v9 agent alone, and the v10 ensemble across all twelve v2 domains on each of the three backbones. Table~\ref{tab:main_results} contains the exact macro numbers and bootstrap CIs; this figure visualises the per-domain dispersion and where the ensemble's complementary-error advantage concentrates.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/fig_per_domain.pdf}
+\caption{\textbf{Per-domain AUROC on CrossDomainVAD-12 test} ($n{=}1{,}418$), one panel per VLM backbone. Three bars per domain: Direct (blue) / v9 agent alone (orange) / v10 ensemble $0.5\!\cdot\!\text{Direct}+0.5\!\cdot\!\text{v9}$ (green). Grey dotted line marks the $0.5$ random-guessing floor. Macro numbers and the stratified paired bootstrap $\Delta$(Ens$-$Direct) with $95\%$ CI are reported in each panel title. The ensemble's complementary-error gain concentrates on infrastructure (D4), logical (D5), and road (D12) on SeedVL; on GPT-5.4 the gain is uniform across industrial and medical families; on Qwen3.5-VL-27B the ensemble has to compensate for the v9 agent's deficit on D7 (LEVIR) and D11 (Kvasir) by relying on Direct.}
+\label{fig:per_domain_appendix}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Per-backbone macro AUROC on CrossDomainVAD-12 test ($n{=}1{,}418$, 12 domains, $\ge 90$ valid items per domain after error filtering): v10's Direct branch, the v9 agent alone, and the ensemble. Headline numbers match Table~\ref{tab:main_results}; full per-domain breakdown in Figure~\ref{fig:per_domain_appendix}. All comparisons use the $1{,}000$-resample stratified paired bootstrap with per-domain stratification.}
+\label{tab:per_domain}
+\small
+\begin{tabular}{lccccccc}
+\toprule
+Backbone & Direct & v9 & Ens & $\Delta_\text{Ens$-$D}$ & 95\% CI & $P(\Delta{>}0)$ & sig. \\
+\midrule
+GPT-5.4 & 0.731 & 0.768 & \textbf{0.772} & $+4.01$ & $[+2.58, +5.50]$ & $1.000$ & \checkmark \\
+SeedVL  & 0.678 & 0.715 & \textbf{0.738} & $+5.99$ & $[+4.32, +7.66]$ & $1.000$ & \checkmark \\
+Qwen3.5 & 0.714 & 0.671 & \textbf{0.732} & $+1.69$ & $[-0.08, +3.51]$ & $0.971$ & (0) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Leave-one-domain-out sensitivity (full table)}
+\label{app:loo}
+
+\begin{table}[h]
+\centering
+\caption{Leave-one-domain-out macro AUROC gain of score fusion over v0. All 11 LOO splits are positive on every backbone.}
+\label{tab:loo}
+\small
+\begin{tabular}{lccc}
+\toprule
+Metric (pp) & GPT-5.4 & SeedVL & Qwen3.5 \\
+\midrule
+Full $\Delta$ (all 11 domains) & $+$1.4 & $+$1.9 & $+$5.9 \\
+LOO min                        & $+$0.9 & $+$1.3 & $+$4.9 \\
+LOO max                        & $+$2.2 & $+$3.1 & $+$7.0 \\
+LOO std                        & 0.33   & 0.45   & 0.55   \\
+Positive splits / 11           & 11 / 11 & 11 / 11 & 11 / 11 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Paired bootstrap (full nine-row table) and budget-matched controls}
+\label{app:bootstrap}
+
+Table~\ref{tab:bootstrap} in the main body lists the three GPT-5.4 rows; Table~\ref{tab:bootstrap_full} below includes all nine pairwise comparisons across the three backbones. Table~\ref{tab:budget} reports the negative-control budget-matched baselines that we ran on GPT-5.4 and SeedVL calibration splits.
+
+\begin{table}[h]
+\centering
+\caption{Full stratified paired bootstrap table ($1{,}000$ resamples, per-domain stratification, $n{=}1298$).}
+\label{tab:bootstrap_full}
+\small
+\begin{tabular}{llccc}
+\toprule
+Backbone & Comparison & $\Delta$ & 95\% CI & sig.\ at $p{<}0.05$ \\
+\midrule
+\multirow{3}{*}{GPT-5.4}  & fusion vs v0        & $+0.014$ & $[+0.003, +0.025]$ & \checkmark \\
+                           & agent  vs v0        & $+0.005$ & $[-0.007, +0.015]$ & --- \\
+                           & fusion vs agent     & $+0.009$ & $[-0.004, +0.022]$ & --- \\
+\midrule
+\multirow{3}{*}{SeedVL}   & fusion vs v0        & $+0.019$ & $[+0.008, +0.031]$ & \checkmark \\
+                           & agent  vs v0        & $+0.023$ & $[+0.007, +0.039]$ & \checkmark \\
+                           & fusion vs agent     & $-0.005$ & $[-0.019, +0.010]$ & --- \\
+\midrule
+\multirow{3}{*}{Qwen3.5}  & fusion vs v0        & $+0.059$ & $[+0.045, +0.076]$ & \checkmark \\
+                           & agent  vs v0        & $+0.019$ & $[+0.009, +0.030]$ & \checkmark \\
+                           & fusion vs agent     & $+0.040$ & $[+0.026, +0.055]$ & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Budget-matched negative controls (\textbf{v0/v3-era numbers, pre-v6}; included as historical record of disqualified designs and \emph{not comparable} with the v6 ensemble numbers in Table~\ref{tab:main_results}). The v0 Direct / SubspaceAD fusion / AnomalyClaw rows in this table use our older v0 descriptor Direct and our v3 router \texttt{AnomalyClaw} system; the main-paper headline numbers (GPT-5.4 $0.864$, SeedVL $0.809$, Qwen3.5 $0.814$) are from the v6 agent$+$Direct ensemble on the same test split. ``Random escalation'' and ``DINOv2 blend'' are calibration-split numbers for disqualified designs. This table's purpose is only to show that blind second-call escalation and weaker expert blends are negative controls; it should not be read as a competing test-split comparison against our headline v6 recipe.}
+\label{tab:budget}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Method & Calls/img & GPT-5.4 & SeedVL & Qwen3.5 \\
+\midrule
+v0 Direct                        & 1.00 & 0.822 & 0.795 & 0.792 \\
+Random escalation 30\%           & 1.30 & 0.795 & 0.750 & --- \\
+v0 + 0.2$\cdot$DINOv2 blend      & 1.00 & 0.830 & 0.807 & --- \\
+\textbf{v0 + 0.2$\cdot$SubspaceAD fusion} & \textbf{1.00} & \textbf{0.835} & 0.813 & \textbf{0.851} \\
+\textbf{AnomalyClaw}             & $\sim$1.3 & 0.826 & \textbf{0.818} & 0.811 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{VLM$\times$Expert complementarity matrix (full figure)}
+\label{app:complementarity}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{figures/fig_complementarity.pdf}
+\caption{VLM$\times$Expert correctness matrix per domain (GPT-5.4 test). Numbers are \% of items. ``Expert-only correct'' is the upper bound of what the agent can recover; ``VLM-only correct'' is what it risks losing by blindly trusting the expert.}
+\label{fig:complementarity}
+\end{figure}
+
+\section{AnomalyClaw decision trace example}
+\label{app:trace}
+
+Every AnomalyClaw v3 prediction carries a full trace that a human reviewer can audit. For illustration, we show two trace snippets from the actual test runs (Qwen3.5 backbone) — first the autonomous router plan generated for one domain, then a per-item agent execution.
+
+\paragraph{Autonomous router plan (D5c BMAD-Liver, Qwen3.5).}
+\begin{quote}\small
+\textbf{Strategy:} interpret. \textbf{Expert:} subspacead. \textbf{Tools:} \{\texttt{domain\_descriptor}, \texttt{hotspot\_cropper}\}.\\[2pt]
+\textbf{Reasoning (verbatim from Qwen3.5):} ``\emph{SubspaceAD is the designated expert for liver CT texture anomalies, and the interpret strategy provides a critical safety net to verify subtle focal lesions that the VLM may miss. The hotspot cropper makes the second-call evidence explicit when the expert flags a concentrated abnormality.}''\\[2pt]
+\textbf{Cost:} 1 text-only VLM call (671 input / 1013 output tokens) — amortised across all 120 D5c test items.
+\end{quote}
+
+\paragraph{Per-item agent execution (D1 Industrial, item \texttt{D1\_0063}, SeedVL).}
+\begin{quote}\small
+\textbf{Phase 1 (Plan lookup).} Cached plan for D1 = (\texttt{strategy:fusion}, \texttt{expert:subspacead}, tools \{\texttt{domain\_descriptor}, \texttt{hotspot\_cropper}\}).\\[2pt]
+\textbf{Phase 2 (Expert).} \texttt{SubspaceAD.score} = 17.95 (global calibration median $m{=}40.0$); \texttt{top-5 patches} at $(22,24), (10,24), (10,22), (33,32), (\ldots)$ in the $48{\times}48$ grid. Derived $\rho = 159.7$, $\kappa = 1.43$.\\[2pt]
+\textbf{Phase 3 (Online override).} $\hat{y}_{\mathrm{v0}}{=}$normal AND $\rho > 0.8$ $\Rightarrow$ promote strategy \emph{fusion} $\to$ \emph{interpret}.\\[2pt]
+\textbf{Interpret call.} VLM re-examines the cropped hotspot bounding box (image coords $(307, 137)$--$(459, 478)$). \texttt{image\_label}=``anomalous'', \texttt{confidence}=$0.85$, \texttt{evidence}=``a linear scratch visible at the flagged region was missed at global inspection.''\\[2pt]
+\textbf{Final decision.} anomaly; score $=$ 0.85. Ground truth: anomalous. Agent escalated correctly via the online expert override.
+\end{quote}
+
+Every test-split item has an analogous trace, serialised as JSON in the released \texttt{plan} and \texttt{raw\_output} fields. Score fusion, by contrast, produces only a scalar.
+
+\section{Route C: Component Enumeration prototype}
+\label{app:routec}
+
+We prototyped a fourth route, \emph{Component Enumeration} (Route C), for logical anomalies (D10 MVTec-LOCO) where the anomaly is defined by wrong count or wrong spatial arrangement of components rather than by a texture defect. Route C triggers when $\rho{>}1.2$ and $\kappa{<}1.10$ (strong but \emph{dispersed} expert signal). The action is a second VLM call with a specialised enumerate prompt that asks the model to list components in the query versus the references and report count differences.
+
+On D10 calibration (20 items, 4 reference images per query), Route C reaches 60\% accuracy versus v0's 55\%. The gain is modest for two reasons: (i) VLMs struggle to count small similar objects reliably, and (ii) the 20-item calibration split yields noisy threshold estimates. Route C is \emph{not} part of the main-table AnomalyClaw variant reported in Table~\ref{tab:main_results}: the reported numbers use only Routes A/B/D. We include Route C here as a concrete direction for future work and flag it as a prototype rather than a validated component of the agent.
+
+\section{Routing distribution}
+\label{app:routing}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/fig_routing.pdf}
+\caption{AnomalyClaw routing distribution on the SeedVL test split. 67\% of items resolve by Route A (VLM and expert agree, 0 extra calls); Route D (interpret) is invoked on 33\% of items; Route B (trust expert) does not fire on any test item because the asymmetric anomaly-trust gate handles strong concentrated signals before they reach Route B.}
+\label{fig:routing_appendix}
+\end{figure}
+
+\section{Proposer--Advocate debate protocol}
+
+exec
+/bin/bash -lc "sed -n '1,320p' paper/sections/4_experiments.tex" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{Setup}
+\label{ssec:setup}
+
+\paragraph{Benchmark.}
+We evaluate on \textbf{CrossDomainVAD-12}, a twelve-domain reference-based anomaly-detection benchmark that unifies industrial, medical, remote-sensing, infrastructure, 3D, and road-scene sources under a single per-image AUROC protocol: D1 MVTec-AD industrial, D2 GoodsAD retail, D3 VisA complex industrial, D4 SDNET2018 concrete infrastructure, D5 MVTec-LOCO logical, D6 Real3D-AD 3D product (rendered point-cloud views), D7 LEVIR-CD+ bi-temporal remote-sensing change, D8 DermaMNIST dermoscopy, D9 BraTS2021 brain MRI, D10 BMAD liver CT, D11 HyperKvasir GI endoscopy, D12 BDD100K+RoadAnomaly21 road safety. Each domain contributes 20 calibration / 40 dev / 120 test items (D7: 98 test because the LEVIR-CD+ split used contributes 158 source pairs before 20/40 calibration/dev allocation). All items are reference-based, paired with 1--10 normal references. Total test items $n{=}1{,}418$. The full per-domain specification is in Appendix~\ref{app:benchmark}.
+
+\paragraph{Backbones.}
+Three VLMs spanning proprietary--open: \textbf{GPT-5.4} (proprietary frontier), \textbf{SeedVL} (\texttt{doubao-seed-2-0-lite}, proprietary non-frontier), and \textbf{Qwen3.5-VL-27B} (open-weight, served locally via vLLM, thinking disabled). Temperature $0$, identical prompts.
+
+\paragraph{Baselines and systems.}
+\emph{Primary contrast} (Table~\ref{tab:main_results}):
+(i) \textbf{Direct VLM} (generic descriptor): one VLM call per item with a descriptor-free prompt (``is the query image normal relative to the references?''), establishing a task-aware but domain-hint-free lower bound that is directly comparable to the agent's task preamble.
+(ii) \textbf{AnomalyClaw v10 agent}: our refutation-style autonomous agent (\S\ref{ssec:refutation}) that emits candidate features, dispatches tool calls, and returns a continuous anomaly score; v10 wraps the v9 trajectory with an \emph{independent} parallel Direct call and returns the $0.5\!\cdot\!s_{\mathrm{Direct}}+0.5\!\cdot\!s_{\mathrm{agent}}$ ensemble in a single run per item.
+(iii) \textbf{Ensemble} = the v10 output ($\alpha{=}0.5$, weights frozen a priori, no dev tuning).
+\emph{Secondary / legacy baselines} (\S\ref{ssec:descriptor_ablation}--\S\ref{ssec:budget}, for context against earlier training-free VAD work):
+\textbf{DINOv2-PatchNN} (patch-$k$-NN expert), \textbf{SubspaceAD} (PCA subspace expert~\citep{subspacead2026}), \textbf{Debate} (proposer--advocate, 2 VLM calls), \textbf{Interpret} (three-route router), \textbf{Fusion} ($s = 0.8\,s_0 + 0.2\,\sigma(s_\mathrm{SubspaceAD})$), and the \textbf{Descriptor / Calibration / Oracle routers}. These were evaluated in an earlier draft on an equivalent 12-domain split drawn from the same 10 source datasets; we re-use their conclusions about router and fusion behaviour here but do not claim head-to-head equivalence with the v10 numbers in Table~\ref{tab:main_results}.
+
+\paragraph{Protocol.}
+Per-domain AUROC; macro-averaged across the 12 domain codes present in test. All thresholds and router assignments frozen from calibration. VLM anomaly scores extracted via structured JSON output (schema in Appendix~\ref{app:scoring}); $s = c$ if label is ``anomalous'' else $1 - c$. Bootstrap 95\% CIs via stratified paired bootstrap (per-domain stratification, $1{,}000$ resamples).
+
+\subsection{Main results}
+\label{ssec:main_results}
+
+\begin{table}[t]
+\centering
+\caption{\textbf{Main results: per-domain AUROC across three VLM backbones on CrossDomainVAD-12 test} ($n{=}1{,}418$). For each backbone we report the descriptor-free Direct VLM baseline and our \emph{agent+Direct ensemble} ($s = 0.5\!\cdot\!s_{\mathrm{Direct}} + 0.5\!\cdot\!s_{\mathrm{agent}}$, weights frozen a priori), where the agent is \textbf{v10} = v9 refutation agent (\S\ref{ssec:refutation}) wrapped with a parallel independent Direct call; both scores are computed in a single \texttt{agent\_v10.py} invocation per item. Both Direct and agent use \texttt{DESCRIPTOR\_MODE=generic} prompts (no domain hint), matching v9's descriptor-free task preamble for apples-to-apples comparison. \textbf{Macro} row at the bottom; $\Delta$ is ensemble macro minus Direct macro. 95\% stratified paired bootstrap CIs on macro $\Delta$ are reported under the table; the gain is significant at $95\%$ on GPT-5.4 and SeedVL ($P(\Delta\!>\!0){=}1.000$), positive but just above the significance boundary on Qwen3.5 ($P(\Delta\!>\!0){=}0.971$, lower CI $-0.08$ pp touches zero).}
+\label{tab:main_results}
+\small
+\setlength{\tabcolsep}{3.8pt}
+\begin{tabular}{l|ccc|ccc|ccc}
+\toprule
+& \multicolumn{3}{c|}{\textbf{GPT-5.4}} & \multicolumn{3}{c|}{\textbf{SeedVL}} & \multicolumn{3}{c}{\textbf{Qwen3.5-VL-27B}} \\
+Domain & Direct & Ens & $\Delta$ & Direct & Ens & $\Delta$ & Direct & Ens & $\Delta$ \\
+\midrule
+D1  MVTec-AD industrial       & 0.956 & 0.954 & $-0.2$ & 0.836 & 0.880 & $+4.4$ & 0.903 & 0.955 & $+5.2$ \\
+D2  GoodsAD retail            & 0.765 & 0.788 & $+2.3$ & 0.865 & 0.883 & $+1.8$ & 0.644 & 0.603 & $-4.1$ \\
+D3  VisA complex industrial   & 0.837 & 0.895 & $+5.8$ & 0.886 & 0.891 & $+0.5$ & 0.787 & 0.829 & $+4.2$ \\
+D4  SDNET infrastructure      & 0.544 & 0.704 & $+16.0$& 0.440 & 0.637 & $+19.7$& 0.611 & 0.654 & $+4.3$ \\
+D5  MVTec-LOCO logical        & 0.640 & 0.741 & $+10.1$& 0.664 & 0.839 & $+17.5$& 0.604 & 0.674 & $+7.0$ \\
+D6  Real3D-AD 3D product      & 0.555 & 0.556 & $+0.1$ & 0.473 & 0.476 & $+0.3$ & 0.517 & 0.522 & $+0.5$ \\
+D7  LEVIR-CD+ change-det.     & 0.807 & 0.810 & $+0.3$ & 0.798 & 0.823 & $+2.5$ & 0.877 & 0.794 & $-8.3$ \\
+D8  DermaMNIST dermatology    & 0.644 & 0.702 & $+5.8$ & 0.605 & 0.621 & $+1.6$ & 0.551 & 0.619 & $+6.8$ \\
+D9  BraTS2021 brain MRI       & 0.826 & 0.835 & $+0.9$ & 0.587 & 0.653 & $+6.6$ & 0.779 & 0.852 & $+7.3$ \\
+D10 BMAD liver CT             & 0.448 & 0.493 & $+4.5$ & 0.442 & 0.426 & $-1.6$ & 0.483 & 0.487 & $+0.4$ \\
+D11 HyperKvasir GI endoscopy  & 0.776 & 0.785 & $+0.9$ & 0.730 & 0.759 & $+2.9$ & 0.847 & 0.809 & $-3.8$ \\
+D12 BDD100K+RA21 road safety  & 0.975 & 0.979 & $+0.4$ & 0.811 & 0.963 & $+15.2$& 0.970 & 0.984 & $+1.4$ \\
+\midrule
+\textbf{Macro}                & \textbf{0.731} & \textbf{0.772} & $\mathbf{+4.01}$ & \textbf{0.678} & \textbf{0.738} & $\mathbf{+5.99}$ & \textbf{0.714} & \textbf{0.732} & $\mathbf{+1.69}$ \\
+\bottomrule
+\end{tabular}
+\\[3pt]
+{\footnotesize Macro $\Delta$ (Ens $-$ Direct) 95\% stratified paired bootstrap CIs ($1000$ resamples, per-domain stratification):
+GPT-5.4 $[+2.58, +5.50]$, $P(\Delta\!>\!0){=}1.000$;\;
+SeedVL $[+4.32, +7.66]$, $P(\Delta\!>\!0){=}1.000$;\;
+Qwen3.5 $[-0.08, +3.51]$, $P(\Delta\!>\!0){=}0.971$ (positive in mean; CI touches zero).
+The \emph{agent-alone vs Direct} comparison tells a richer story: on GPT-5.4 and SeedVL the v9 agent by itself already beats Direct ($+3.64$~pp and $+3.68$~pp respectively, both $P{\ge}0.998$), and the Direct branch of v10 adds a further $+0.4$--$+2.3$~pp on top. On Qwen3.5-VL-27B the v9 agent alone is \emph{significantly weaker} than Direct ($-4.46$~pp, $95\%$ CI $[-7.61, -1.55]$, $P{=}0.001$), yet composing it with an independent Direct call still produces a positive ensemble macro gain. This failure-mode robustness is the motivation for v10's always-on parallel Direct branch rather than a pure agent system. Per-backbone per-domain agent-alone and Direct-alone scores are in Appendix~\ref{app:perdomain}.}
+\end{table}
+
+% -- Old v5-era table kept for reference; v6 superseded it 2026-04-18 --
+%\begin{table}[t]
+%\caption{v5-era AnomalyClaw results ...
+% (archived in archive/v5_per_domain_router/)}
+%\end{table}
+
+Table~\ref{tab:main_results} reports the headline numbers. We highlight the main v2 finding (Finding~5) first, then four legacy findings (Findings~1--4) drawn from an earlier draft that evaluated router and fusion baselines on an equivalent twelve-domain split. Those findings are included for context against earlier training-free VAD work; the v10 agent was not included in that evaluation, and their numbers are not directly comparable to Table~\ref{tab:main_results}.
+
+\paragraph{Finding 1 (legacy, v1 split): Descriptors dominate.}
+\label{ssec:descriptor_ablation}
+Replacing a generic domain descriptor with a task-anchored one significantly improves all three backbones at zero inference cost (Figure~\ref{fig:intuition}a): macro AUROC moves from 0.761 to 0.825 on GPT-5.4 ($+6.4$ pp, 95\% CI $[+4.4,+8.4]$), 0.748 to 0.789 on SeedVL ($+4.1$ pp, $[+1.6,+6.4]$), and 0.760 to 0.792 on Qwen3.5 ($+3.2$ pp, $[+1.0,+5.5]$). The gain concentrates in domains where VLM world-knowledge priors conflict with the task-specific anomaly definition (LEVIR change, liver CT); full per-backbone per-domain evidence is in Appendix~\ref{app:descriptor}. We recommend this as baseline practice for any training-free VAD system.\footnote{Measured on an earlier 12-domain sampling of the same source datasets prior to the adoption of a generic-descriptor baseline in v10; the task-anchored descriptor was the earlier Direct baseline, whereas v10's Direct branch is intentionally descriptor-free (\S\ref{ssec:setup}) to match the v9 agent's task-preamble for a fair ensemble. The descriptor finding itself (task-anchored $>$ generic) is orthogonal to the v10 ensemble claim.}
+
+\paragraph{Finding 2 (legacy, v1 split): No single strategy wins uniformly.}
+Across 12 test domain codes, the argmax strategy differs by domain: fusion is preferred on 7--8 domains (industrial, retail, logical, liver CT, brain MRI), direct wins on 2--3 (brain MRI on SeedVL, LEVIR change, road), debate wins on 1--2 (road on GPT-5.4), and expert-only wins on 1 (dermoscopy via patch-$k$-NN). Figure~\ref{fig:intuition}(a) visualises this on SeedVL; the per-backbone tables are in Appendix~\ref{app:perdomain}. This strategy variance is the motivation for an agent rather than a single fixed recipe.
+
+\paragraph{Finding 3 (legacy, v1 split): A calibration-split router closes 40--60\% of the oracle gap.}
+The calibration router (Figure~\ref{fig:intuition}b) matches or beats every single-strategy baseline on every backbone. On SeedVL it beats fusion by \textbf{$+1.64$ pp} (95\% CI $[+0.02, +3.18]$, significant at $p{<}0.05$ by stratified paired bootstrap); it beats direct by $+3.27$ pp on SeedVL, $+0.97$ pp on GPT-5.4, and $+5.63$ pp on Qwen3.5 (all significant except GPT-5.4 $\to$ direct). The oracle upper bound leaves $+1.3$, $+1.3$, $+1.4$ pp of further headroom on the three backbones respectively. A zero-data \emph{descriptor} router (rules from the benchmark family taxonomy, no metrics consulted) is surprisingly competitive: $+1.7$ / $+2.2$ / $+4.9$ pp over direct on GPT-5.4 / SeedVL / Qwen3.5, all significant.
+
+\paragraph{Finding 4 (legacy, v1 split): Debate hurts; interpret is unreliable.}
+Both alternative strategies underperform fusion on all three backbones (debate $-4$/$-3$/$-17$ pp; interpret $-2$/$-2$/$-5$ pp). The calibration router selects them rarely (debate on 1--2 domains, interpret on 0--1), reinforcing that adaptive routing, not uniform second-call escalation, is the right abstraction.
+
+\paragraph{Finding 5 (headline, v2): An always-on parallel Direct branch inside the agent gives a significant ensemble gain on every backbone, including when the agent alone is significantly worse than Direct.}
+\label{ssec:finding5}
+Our \textbf{AnomalyClaw v10 agent} is a refutation-style autonomous ReAct loop that, in a \emph{single} invocation per item, runs two operations in parallel on the same backbone: (a) a descriptor-free Direct VLM call matching the agent's task preamble ($s_{\mathrm{Direct}}$), and (b) a v9 multi-turn trajectory that emits candidate features, dispatches up to five tool calls from a 13-tool library (expert probes, visual inspection, reference understanding, structural, semantic-knowledge lookup), and returns a final refuted anomaly score ($s_{\mathrm{agent}}$). The output is the fixed-weight average $s_{\mathrm{ens}} = 0.5\,s_{\mathrm{Direct}} + 0.5\,s_{\mathrm{agent}}$; no dev tuning, no per-backbone agent variant. Two of the 13 tools make additional VLM/LLM calls inside the tool body (\texttt{tool\_reference\_profiler}, \texttt{tool\_domain\_knowledge}); those are counted as agent VLM calls.
+
+The 3-backbone ensemble story splits into three distinct regimes. (i) \textbf{GPT-5.4 (strong agent)}: the v9 agent alone already beats Direct by $+3.64$~pp ($95\%$ CI $[+1.20,+6.21]$, $P{=}0.998$); the Direct branch adds a further $+0.37$~pp on top, yielding an ensemble macro of $0.772$ vs Direct's $0.731$ ($\Delta{=}+4.01$~pp, $[+2.58,+5.50]$, $P{=}1.000$). (ii) \textbf{SeedVL (balanced)}: both branches contribute significantly---v9 alone $+3.68$~pp over Direct, Ensemble a further $+2.31$~pp over v9, total $+5.99$~pp over Direct (all $P{\ge}0.998$). This is v10's best case: an ensemble of two noisy-but-complementary estimators each beats either alone. (iii) \textbf{Qwen3.5-VL-27B (weak agent)}: the v9 agent alone is \emph{significantly worse} than Direct ($-4.46$~pp, $95\%$ CI $[-7.61,-1.55]$, $P{=}0.001$)---a training-free agent can genuinely hurt a strong VLM backbone when the tool catalogue triggers tool misuse on specific domains (e.g.\ D7 LEVIR: Direct $0.877$, agent $0.657$). Yet v10's always-on Direct branch recovers the signal: the ensemble macro is $0.732$ vs Direct's $0.714$, $\Delta{=}+1.69$~pp, $P{=}0.971$ (positive in mean; lower CI $-0.08$~pp just touches zero).
+
+The v2 design takeaway is the \textbf{failure-mode robustness of the parallel-Direct branch}. An ensemble-aware architecture is not just a minor improvement over a pure agent; it is what allows a training-free agent recipe to be deployed on a new VLM backbone without first verifying that the agent alone outperforms Direct. The agent's errors and Direct's errors are complementary in \emph{every} backbone we tested, even when the agent is individually weak: on Qwen3.5 the agent still adds signal on D1 ($+5.2$~pp over Direct when ensembled), D3 ($+4.2$), D5 ($+7.0$), D8 ($+6.8$), and D9 ($+7.3$), and Direct recovers the domains where the agent fails (D7, D11). Per-domain breakdown is in Appendix~\ref{app:perdomain}. The v10 code path is \texttt{agent\_v10.py} (parallel Direct + v9 trajectory, post-hoc $\alpha{=}0.5$ blend inside the single per-item call).
+
+\subsection{Empirical v9 agent behaviour}
+\label{ssec:v9_behavior}
+
+Table~\ref{tab:main_results} reports outcomes; this subsection reports the \emph{trajectory} of how v9 reached them. We instrument every v10 run to record, per item, the number of turns spent (1--5), the tools invoked, the refutation verdicts emitted, and the list of candidate features produced. Figure~\ref{fig:agent_behavior} (four panels) and Table~\ref{tab:agent_behavior} summarise the aggregate behaviour across the three backbones. Three findings follow; all numbers are on the CrossDomainVAD-12 test split.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/fig_agent_behavior.pdf}
+\caption{\textbf{v9 agent behaviour across three backbones on CrossDomainVAD-12 test.}
+\textbf{(a)} n\_turns distribution per item (before the forced-final turn at budget $K{=}5$): GPT-5.4 and SeedVL finalise in $2$ turns on $\ge 89\%$ of items; Qwen3.5-VL-27B takes a $1$-turn shortcut on $15.1\%$ of items and uses $\ge 3$ turns on $8.5\%$. \textbf{(b)} Tool invocation frequency (fraction of items invoking each tool; top $6$ tools shown): \texttt{tool\_side\_by\_side} dominates ($66$--$91\%$), \texttt{tool\_reference\_profiler} is second ($2$--$30\%$); the other $11$ tools in the catalogue are essentially unused. \textbf{(c)} Refutation verdict distribution (stacked by verdict type, normalised to $100\%$): GPT-5.4 is a balanced refuter ($56\%$ \texttt{found\_in\_ref}, $38\%$ \texttt{not\_found}), Qwen3.5 moderately biased toward \texttt{not\_found} ($60\%$), SeedVL strongly biased toward \texttt{not\_found} ($89\%$). \textbf{(d)} Number of \texttt{candidate\_features} generated in turn~$1$: GPT-5.4 averages $2.47$ candidates/item, SeedVL $1.84$, Qwen3.5 $1.55$.}
+\label{fig:agent_behavior}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Summary of v9 agent behaviour statistics per backbone (same data as Figure~\ref{fig:agent_behavior}, tabulated).}
+\label{tab:agent_behavior}
+\begin{tabular}{lccc}
+\toprule
+& \textbf{GPT-5.4} & \textbf{SeedVL} & \textbf{Qwen3.5-VL-27B} \\
+Metric & ($n_{\text{ok}}{=}1314$) & ($n_{\text{ok}}{=}1412$) & ($n_{\text{ok}}{=}1374$) \\
+\midrule
+\% items finalised in $1$ turn (no tool)      & $1.1\%$ & $7.4\%$ & $\mathbf{15.1\%}$ \\
+\% items finalised in $2$ turns                & $89.3\%$ & $91.4\%$ & $76.3\%$ \\
+\% items using $\ge 3$ turns                   & $9.6\%$ & $1.2\%$ & $8.5\%$ \\
+\midrule
+\% items invoking \texttt{tool\_side\_by\_side}        & $75.3\%$ & $\mathbf{90.5\%}$ & $65.6\%$ \\
+\% items invoking \texttt{tool\_reference\_profiler}   & $\mathbf{29.6\%}$ & $2.0\%$  & $23.4\%$ \\
+\% items invoking other $11$ tools combined            & $<4\%$   & $<0.5\%$ & $<1\%$ \\
+\midrule
+Refutation verdict: \texttt{found\_in\_ref}  & $56\%$  & $\phantom{0}9\%$  & $39\%$ \\
+Refutation verdict: \texttt{not\_found}      & $38\%$  & $\mathbf{89\%}$   & $60\%$ \\
+Refutation verdict: \texttt{inconclusive}    & $\phantom{0}7\%$   & $<1\%$ & $\phantom{0}2\%$ \\
+\midrule
+Mean \texttt{candidate\_features} per item   & $\mathbf{2.47}$ & $1.84$ & $1.55$ \\
+\% items with $0$ candidates                 & $1.1\%$  & $6.7\%$  & $\mathbf{8.9\%}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Finding 5.1: Agent depth tracks agent quality (GPT > SeedVL $\gg$ Qwen3.5).}
+The $n$\_turns distribution (Figure~\ref{fig:agent_behavior}a) is a proxy for how much reasoning the agent performs before committing to a score. Qwen3.5-VL-27B finalises on turn~$1$ for $15.1\%$ of items---$10$--$14\times$ more often than GPT-5.4 and $2\times$ SeedVL---and Qwen3.5 also produces the fewest candidate features (mean $1.55$ vs GPT's $2.47$; $8.9\%$ of items produce zero candidates vs GPT's $1.1\%$). The v9 agent is not broken on Qwen3.5-VL-27B, but it is \emph{shallower}: it skips refutation on a larger fraction of items and enters final-turn scoring with less evidence. This shallower behaviour is consistent with Qwen3.5's $-4.46$~pp deficit of agent-alone vs Direct (Table~\ref{tab:main_results}) and is the mechanism by which v10's always-on parallel Direct branch remains necessary on weaker backbones: the Direct branch does not depend on the agent's willingness to reason.
+
+\paragraph{Finding 5.2: The $13$-tool library collapses to an effective $2$-tool system in practice.}
+Figure~\ref{fig:agent_behavior}b shows that \texttt{tool\_side\_by\_side} (which crops query and references at matching bboxes) and \texttt{tool\_reference\_profiler} (which summarises the reference pool into a structured normal-baseline profile) together account for $>95\%$ of all tool invocations on every backbone. The other $11$ tools in the catalogue---including zoom-bbox, patch-grid, image-diff, rotate-align, component-counter, segment-and-count, texture-FFT, visual retriever, expert-probe, domain-knowledge, and two reserved slots---are selected on $\le 0.5\%$ of items aggregated over the three backbones. This is not a failure of the library design per se but a data point about which tools a refutation-framed VLM actually \emph{chooses}: reference alignment (side-by-side) and reference summarisation (profiler) are the two operations that directly map onto the ``is this candidate feature also in a reference?'' question that the refutation protocol forces the VLM to answer. We defer tool-catalogue simplification and targeted-tool training for weaker backbones to future work; the numbers in Table~\ref{tab:main_results} reflect the current $13$-tool library as-shipped.\footnote{We report the empirical tool usage so that downstream users are not misled by the $13$-tool catalogue description. Section~\S\ref{ssec:v10} lists the library by tier (expert probes, visual inspection, reference understanding, structural analysis, semantic-knowledge lookup) because that tier structure is what the v9 prompt advertises to the VLM; the VLM's actual selection behaviour, measured here, is a different object. Tool-catalogue optimisation is future work.}
+
+\paragraph{Finding 5.3: Refutation-verdict distribution is strongly backbone-dependent.}
+The refutation protocol asks the VLM to return a verdict per targeted candidate feature: \texttt{found\_in\_ref} retires the feature (``this pattern is also in a normal reference''), \texttt{not\_found} preserves it (``no matching pattern in references''), and \texttt{inconclusive} is an escape hatch. A balanced refuter---one that actually tests hypotheses in both directions---should produce mixed verdicts. GPT-5.4 is the closest to balanced ($56\%$ \texttt{found\_in\_ref} / $38\%$ \texttt{not\_found}) and it is also the backbone on which v9 alone beats Direct most cleanly. SeedVL produces $89\%$ \texttt{not\_found} verdicts: its refutation is not actually retiring candidates, it is preserving almost all of them. Qwen3.5 is intermediate ($39\%$/$60\%$). Two observations follow. First, the backbone-dependence of the refutation verdict is itself evidence that v10's always-on Direct branch is load-bearing rather than redundant: a backbone that rarely retires candidates is a backbone whose agent score is inflated toward anomaly, and the Direct branch provides the complementary signal. Second, this is a diagnostic handle for future v9 prompt tuning---the verdict distribution is a runtime-observable quantity that correlates with agent quality, and a per-backbone instruction-tuning pass that nudges SeedVL's refuter toward \texttt{found\_in\_ref} is an obvious next step we do not take in this paper.
+
+\subsection{Why ensembles win: rank-granularity, not middle-mass}
+\label{ssec:score_diversity}
+
+We test candidate mechanisms for the ensemble gain through controlled post-hoc transformations of the agent's scores on the Qwen3.5-VL-27B test set. Each transformation is designed to change exactly one property and freeze the others, so a change in ensemble gain isolates that property's causal contribution.\footnote{This ablation was conducted on an earlier draft using the pre-v10 free-score agent (\texttt{agent\_v6\_5.py}) on an equivalent 12-domain split; we did not re-run it on v10 because the rank-granularity mechanism is agent-family agnostic (both v6.5 and v10's v9 component emit free-form JSON scores with comparable numerical precision), and the ablation's causal claim (rank granularity $\Rightarrow$ ensemble gain) is architecture-orthogonal. The absolute ensemble gain on v10 differs in magnitude (Table~\ref{tab:main_results}) but preserves the rank-granularity pattern documented below.}
+
+\begin{itemize}
+    \item \textbf{v6-BIN}: collapse v6 scores to two values $\{0.05, 0.95\}$ at the per-split median. Preserves sign but destroys rank granularity (2 unique values vs 49 in original).
+    \item \textbf{v6-EXT-RANK}: monotone-remap v6 scores to linearly spaced points in $[0.05, 0.19]\cup[0.81, 0.95]$, preserving every unique rank but moving all 49 values outside $[0.2, 0.8]$. Preserves rank granularity AND standalone AUROC; destroys middle-zone mass.
+    \item \textbf{v6-AFFINE($a$)}: $s\mapsto\mathrm{clip}(0.5 + (s-0.5)\cdot a, 0, 1)$. Preserves rank for $a\!\le\!1$ (no clipping) and tests rank collapse near the boundaries for $a\!>\!1$.
+    \item \textbf{v8-SOFT}: monotone compression of v8 scores into $[0.25, 0.75]$. Adds middle-zone mass while preserving rank.
+    \item \textbf{RANDOM}: replace agent scores with uniform samples in $[0.2, 0.8]$. Pure middle-zone noise with no signal.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\caption{Controlled ablation on Qwen3.5-VL-27B test ($n{=}1418$, macro AUROC over 12 domains). Columns: the agent variant, its standalone AUROC, the $0.5\!\cdot\!\mathrm{Direct}+0.5\!\cdot\!X$ ensemble AUROC, the \emph{number of unique score values}, the middle-zone mass, and the Spearman correlation with Direct. The key row is \textbf{v6-EXT-RANK}: middle-mass drops to $0\%$ but rank granularity is preserved, and the ensemble gain actually \emph{increases} to $+4.68$ pp. Conversely \textbf{v6-BIN} keeps sign-level direction but collapses ranks from $49$ to $2$, and the ensemble drops to $+2.31$ pp. Middle-mass is correlational with rank granularity on unprocessed outputs; rank granularity is what causes ensemble gain.}
+\label{tab:score_diversity}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Agent variant $X$ & $X$ alone & ensemble $\Delta$ & \# unique & mid-mass (\%) & $\rho_S$ & err-cos \\
+\midrule
+v6.5 original         & $0.7713$ & $+4.53$ & $49$ & $24.0\%$ & $0.535$ & $0.621$ \\
+\textbf{v6-EXT-RANK}  & $0.7713$ & $\mathbf{+4.68}$ & $49$ & $0.0\%$  & $0.535$ & --- \\
+v6-BIN ($0.05/0.95$)  & $0.6928$ & $+2.31$ & $2$  & $0.0\%$  & $0.449$ & $0.575$ \\
+v6-AFFINE($a{=}0.25$) & $0.7713$ & $+4.71$ & $49$ & $100\%$  & $0.535$ & --- \\
+v6-AFFINE($a{=}0.5$)  & $0.7713$ & $+4.64$ & $49$ & $100\%$  & $0.535$ & --- \\
+v6-AFFINE($a{=}2.0$)  & $0.7092$ & $+2.02$ & $49$ (many clipped) & $2.7\%$ & --- & --- \\
+v8 original           & $0.6710$ & $+1.22$ & $\sim\!15$ & $0.4\%$ & $0.477$ & $0.594$ \\
+v8-SOFT               & $0.6710$ & $+1.35$ & $\sim\!15$ & $100\%$ & $0.477$ & $0.634$ \\
+RANDOM                & $0.4845$ & $-3.39$ & $1418$ & $100\%$ & $-0.032$ & $0.522$ \\
+\midrule
+Direct only (reference) & $0.7684$ & --- & $11$ & $0.0\%$ & $1.0$ & $0.0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two clean falsifications and one corroboration follow. (i) Middle-mass is \emph{not causal}: v6-EXT-RANK preserves every v6 rank but pushes all values outside $[0.2, 0.8]$; the ensemble gain is $+4.68$ pp, larger than the $+4.53$ pp of the original. (ii) Rank granularity \emph{is} causal: v6-BIN collapses 49 ranks to 2 and the gain halves. (iii) v6-AFFINE is the cleanest positive control---compressing $a<1$ preserves rank and stays in the high-gain regime ($+4.64$ to $+4.71$ pp) regardless of middle-mass; expanding $a>1$ clips out-of-range values and collapses ranks, dropping gain. On this evidence, the mechanism we report is: \emph{Direct has a coarse bimodal rank grid (11 unique values); averaging with an agent that has a fine rank grid (49 unique values) breaks ties inside each bimodal cluster with real signal}. Middle-mass and rank granularity happen to correlate on unprocessed VLM outputs because free-form JSON produces many distinct intermediate numerals; decoupling them in the lab separates the correlational from the causal.
+
+\subsection{Per-domain behaviour.}
+\label{ssec:perdomain_main}
+The calibration router's choice coincides with the oracle on 9/12 domains for GPT-5.4 and 10/12 for both SeedVL and Qwen3.5. Mismatches concentrate where two strategies are within 1 pp on calibration (a bootstrap-level tie that the router cannot reliably resolve with 20 items), and the realised AUROC gap on test is small ($\le 0.06$). The per-backbone per-strategy per-domain table and the per-domain router-choice overlay are in Appendix~\ref{app:perdomain} (Figure~\ref{fig:per_domain_appendix}).
+
+\subsection{Statistical significance (legacy, v1 split)}
+\label{ssec:budget}
+
+The bootstrap CIs for Table~\ref{tab:main_results}'s v10 ensemble are reported in-table. This subsection's bootstrap summary (Table~\ref{tab:bootstrap}) concerns the router-vs-fusion-vs-direct comparisons from Findings~1--4 and was computed on the earlier v1 twelve-domain split; we retain it here for continuity with those findings and for the reader who wants significance context for the router claims.
+
+\begin{table}[t]
+\centering
+\caption{Stratified paired bootstrap summary for the router / fusion / direct comparisons of Findings~1--4 (test split, $1{,}000$ resamples, per-domain stratification). $\Delta$ is the pairwise macro-AUROC gap; CI is the 95\% percentile interval; \checkmark\ means the CI excludes zero. These numbers are \emph{not} directly comparable to Table~\ref{tab:main_results}'s v10 ensemble because they were computed on an earlier draft's 12-domain split.}
+\label{tab:bootstrap}
+\small
+\begin{tabular}{llccc}
+\toprule
+Backbone & Comparison & $\Delta$ & 95\% CI & sig. \\
+\midrule
+GPT-5.4 & descriptor-router vs direct & $+0.017$ & $[+0.009, +0.024]$ & \checkmark \\
+GPT-5.4 & calibration-router vs fusion & $-0.006$ & $[-0.022, +0.009]$ & --- \\
+GPT-5.4 & fusion vs direct & $+0.015$ & $[+0.005, +0.025]$ & \checkmark \\
+GPT-5.4 & oracle vs fusion & $+0.013$ & $[+0.001, +0.026]$ & \checkmark \\
+\midrule
+SeedVL & descriptor-router vs direct & $+0.022$ & $[+0.014, +0.031]$ & \checkmark \\
+SeedVL & \textbf{calibration-router vs fusion} & \boldmath$+0.016$ & $[+0.000, +0.032]$ & \checkmark \\
+SeedVL & fusion vs direct & $+0.016$ & $[+0.006, +0.027]$ & \checkmark \\
+SeedVL & oracle vs calibration-router & $+0.013$ & $[+0.001, +0.025]$ & \checkmark \\
+\midrule
+Qwen3.5 & descriptor-router vs direct & $+0.049$ & $[+0.036, +0.061]$ & \checkmark \\
+Qwen3.5 & calibration-router vs fusion & $+0.001$ & $[-0.010, +0.011]$ & --- \\
+Qwen3.5 & fusion vs direct & $+0.055$ & $[+0.041, +0.070]$ & \checkmark \\
+Qwen3.5 & oracle vs calibration-router & $+0.014$ & $[+0.006, +0.022]$ & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:bootstrap} summarises the stratified paired bootstrap for the headline comparisons. The calibration router strictly beats every single-strategy baseline on SeedVL (including fusion, significant); it ties fusion on GPT-5.4 and Qwen3.5 (fusion is the dominant single strategy on those backbones). Against the weaker \emph{direct} baseline that prior agentic-VAD work usually compares to, all three routers---descriptor, calibration, and oracle---show significant gains.
+
+\subsection{Cross-benchmark generalisation: MMAD}
+\label{ssec:mmad}
+
+We re-evaluated our Qwen3.5-VL-27B agent+Direct ensemble on \textbf{MMAD}~\citep{jiang2024mmad}, a $39{,}670$-question industrial-inspection MCQ benchmark whose Anomaly-Detection (AD) subset is a Yes/No binary-judgment task over four constituent datasets: DS-MVTec, MVTec-LOCO, VisA, and GoodsAD. We report on a stratified $500$-image sample balanced across all $38$ product classes (seed$=42$), yielding $n{=}483$ AD questions across the four datasets.\footnote{The sample also contains $n{=}5$ items from the original MVTec-AD split; we exclude it from Table~\ref{tab:mmad} because its small size precludes stable AUROC estimates.} Ground-truth labels are derived from \texttt{Options[Answer]} in \texttt{mmad.json} (preferred) with fallback to the immediate parent folder (\texttt{good}/\texttt{normal}$\,\to\,$label $0$); relying on substring matches against the full path would incorrectly assign label $0$ to every GoodsAD item because ``good'' is contained in ``GoodsAD''. Each query uses the first four \texttt{random\_templates} from \texttt{mmad.json} as normal references (matching MMAD's few-shot$=4$ setup); the Qwen3.5-VL-27B agent is the unified task-aware \texttt{agent\_v10} (\S\ref{ssec:mmad_v9}), and the ensemble is the same $0.5$-average recipe with no re-tuning. Because the MCQ-letter accuracy on a two-option Yes/No question is dominated by the choice of threshold rather than the underlying score ordering (cf.~\S\ref{ssec:score_diversity}), we report only threshold-free ranking metrics: \textbf{AUROC} (global ordering) and the maximum \textbf{F1-max} achievable under any single threshold (precision--recall curve).
+
+\begin{table}[h]
+\centering
+\caption{\textbf{MMAD cross-benchmark transfer} (Qwen3.5-VL-27B \texttt{agent\_v10}, stratified $n{=}483$ AD questions across the four MMAD constituent datasets; $n_+$ anomalous items in parentheses). We report AUROC (global ranking metric natively comparable to Table~\ref{tab:main_results}) and F1-max (best F1 under any single threshold on the precision--recall curve). The ensemble is the unweighted $0.5$-average of Direct and Agent scores. Best per row in bold.}
+\label{tab:mmad}
+\small
+\begin{tabular}{lccccccc}
+\toprule
+ & & \multicolumn{3}{c}{AUROC} & \multicolumn{3}{c}{F1-max} \\
+\cmidrule(lr){3-5}\cmidrule(l){6-8}
+Subset  & $n$ ($n_+$) & Direct & Agent & Ens. & Direct & Agent & Ens. \\
+\midrule
+DS-MVTec    & 96\ \ (69) & 0.838 & 0.878 & $\mathbf{0.893}$ & $\mathbf{0.880}$ & 0.878 & $\mathbf{0.890}$ \\
+MVTec-LOCO  & 91\ \ (59) & $\mathbf{0.790}$ & 0.644 & 0.761 & $\mathbf{0.818}$ & 0.787 & 0.806 \\
+VisA        & 119\ (72) & 0.855 & 0.775 & $\mathbf{0.876}$ & $\mathbf{0.822}$ & 0.757 & 0.818 \\
+GoodsAD     & 172\ (92) & 0.599 & 0.592 & $\mathbf{0.613}$ & 0.697 & 0.697 & $\mathbf{0.703}$ \\
+\midrule
+\textbf{Macro (4 sets)} &  --- & 0.770 & 0.722 & $\mathbf{0.786}$ & 0.804 & 0.780 & $\mathbf{0.804}$ \\
+\textbf{Pooled}         & 483 (292) & 0.747 & 0.718 & $\mathbf{0.774}$ & 0.782 & 0.754 & $\mathbf{0.780}$ \\
+$\Delta$ Ens $-$ Direct &  --- & --- & --- & $\mathbf{+0.027}$ & --- & --- & $-0.002$ \\
+\bottomrule
+\end{tabular}
+\\[3pt]
+{\footnotesize All per-subset numbers use ground truth derived from \texttt{Options[Answer]}; an earlier evaluator variant that derived the label by substring match against the full path incorrectly assigned label $0$ to every GoodsAD item (``good'' is contained in ``GoodsAD''), which depressed pooled AUROC by roughly $7$ pp.}
+\end{table}
+
+Two findings follow. First, the \textbf{AUROC gain transfers} to a completely independent benchmark: pooled AUROC moves from $0.747$ (Direct) to $0.774$ (agent$+$Direct ensemble), a macro-averaged $+1.56$ pp and pooled $+2.65$ pp, matching the direction and magnitude of Table~\ref{tab:main_results}'s Qwen3.5 gain with no inference-time re-tuning. The ensemble is the top AUROC entry on three of the four datasets (DS-MVTec, VisA, GoodsAD); on MVTec-LOCO (logical anomalies, where reference-matching offers little signal) the agent underperforms Direct and the ensemble is dragged down, but Direct alone remains strong. Second, \textbf{F1-max does not gain} (macro $0.804$ tied; pooled $-0.002$). This is consistent with \S\ref{ssec:score_diversity}: averaging scores changes rank ordering between positive and negative items (AUROC), but in a two-option Yes/No task the optimal threshold is already close to the natural $0.5$ decision boundary, leaving little room for a decision-rule improvement on top of a Direct baseline whose per-image scores are already near-calibrated. A method that needs to improve decision-threshold accuracy would need an additional per-class calibration step; we leave that to future work. The important conclusion is that the ensemble mechanism is benchmark-agnostic at the \emph{ranking} level.
+
+\subsection{Extending MMAD beyond AD: a unified task-aware agent (v9)}
+\label{ssec:mmad_v9}
+
+The cross-benchmark experiment of \S\ref{ssec:mmad} only used the
+Anomaly-Detection subset (Yes/No). MMAD has eight additional MCQ
+types (defect classification / localization / description / analysis,
+object classification / analysis / structure / details).  We extend
+our agent to a single \emph{unified task-aware} runner (\texttt{agent\_v9.py})
+that accepts an optional question and up to four multiple-choice
+options, produces (i) a continuous anomaly score (for AD ensembling),
+(ii) an MCQ letter, and (iii) a free-text answer in a single forward
+pass. Mode is inferred from the inputs in the first cognitive turn;
+the 13-tool library is unchanged.
+
+Using the same Qwen3.5-VL-27B backbone and four normal reference
+templates as \S\ref{ssec:mmad}, we re-ran the evaluator on a fresh
+stratified $500$-image sample ($n{=}2{,}302$ question-answer pairs
+across 38 classes; seed~$42$, option-derived labels).
+
+\begin{table}[h]
+\centering
+\caption{\textbf{MMAD full-type MCQ accuracy} (Qwen3.5-VL-27B,
+$n{=}500$ images, $2{,}302$ questions). Unified agent v9 vs a matched
+Direct VLM baseline with the same MCQ-aware prompt. Ensemble is
+reported only for AD (our primary target). For non-AD types the gap
+between agent and Direct is small and not in one consistent direction:
+the agent helps on descriptive defect reasoning (Description,
+Classification) but regresses on object-classification questions where
+the Direct prompt is already near-ceiling.}
+\label{tab:mmad_v9_fulltype}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Question type                    & $n$  & Direct & Agent & $\Delta_\text{Ag}$ & Ens (AD) & $\Delta_\text{Ens}$ \\
+\midrule
+Anomaly Detection                & $483$ & $63.6$ & $61.5$ & $-2.1$ & $64.0$ & $+0.4$ \\
+Defect Classification            & $268$ & $66.0$ & $67.2$ & $+1.2$ & --- & --- \\
+Defect Localization              & $283$ & $65.4$ & $62.9$ & $-2.5$ & --- & --- \\
+Defect Description               & $264$ & $81.1$ & $82.8$ & $+1.7$ & --- & --- \\
+Defect Analysis                  & $274$ & $84.7$ & $84.1$ & $-0.6$ & --- & --- \\
+Object Classification            & $187$ & $94.6$ & $91.5$ & $-3.2$ & --- & --- \\
+Object Analysis                  & $172$ & $87.2$ & $88.2$ & $+1.0$ & --- & --- \\
+Object Structure                 & $181$ & $81.8$ & $82.3$ & $+0.5$ & --- & --- \\
+Object Details                   & $177$ & $91.0$ & $86.6$ & $-4.4$ & --- & --- \\
+\midrule
+\textbf{Macro (all types)}       & $2{,}302$ & $79.5$ & $78.5$ & $-1.0$ & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+{\footnotesize Parse-failure rates on the full $2{,}302$-QA v9 run
+are Direct $0.6\%$, Agent $0.9\%$ (maximum per-type parse-failure for
+Agent is $3.0\%$ on Defect Classification). Treating parse failures
+as wrong predictions shifts accuracy numbers by at most $0.9$~pp and
+does not change the qualitative direction of $\Delta_\mathrm{Ag}$.}
+
+\paragraph{Finding 7: Extending to MCQ does not deliver a systematic
+gain.} Aggregated over 2{,}302 questions across all 9 MMAD types, the
+unified agent scores $78.5\%$ vs Direct's $79.5\%$ ($-1.0$
+pp). The gain decomposes non-uniformly: the agent's tool-assisted
+reasoning helps on \emph{defect description} ($+1.7$ pp) and \emph{defect classification}
+($+1.2$ pp)---types that benefit from referencing normal images and
+reasoning about visual differences---but hurts on \emph{object
+classification} ($-3.2$ pp) and \emph{object details} ($-4.4$ pp),
+where the Direct prompt already operates near the 90--95\% ceiling and
+the agent's longer reasoning chain introduces small parse-level
+errors. The AD-subset AUROC ensemble gain of $+2.65$ pp pooled
+(Table~\ref{tab:mmad}) is the systematic signal, not the non-AD MCQ
+letter accuracy. Overall, we position the unified runner as an
+\emph{architectural contribution}: a single training-free agent that
+
+exec
+/bin/bash -lc "sed -n '1,260p' refine-logs/v11_results_summary.md" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+# v11 Controller Learning — Final Results
+
+**Date**: 2026-04-22 (overnight run)
+**Backbone**: Qwen3.5-VL-27B (4 DP replicas on GPU 0/1/2/7, LB on port 8210)
+**Dataset**: CrossDomainVAD-12 manifests_v2 test split (12 domains, n=1418)
+
+## Macro AUROC
+
+| Regime | Macro | Δ vs v10 | 95% CI | p̂(Δ>0) |
+|---|---|---|---|---|
+| Direct (generic descriptor) | 0.7119 | −2.14 | — | — |
+| v9 agent alone | 0.6696 | −6.37 | — | — |
+| v10 blend (= Passive v11) | 0.7333 | — | — | — |
+| **v11 Controller (meta+domain RAG)** | **0.7539** | **+2.05 pp** | [+0.41, +3.67] | 0.995 |
+
+Paired stratified bootstrap, 1000 resamples, per-domain stratification. The v10
+blend re-computed from v9_score + direct_score on the same run (exact paired
+comparison). Reproduces Table 1 Qwen3.5 ens 0.732 within 0.13 pp.
+
+## Per-domain
+
+| Dom | Source | n | v10 | v11 | Δ (pp) | A | B | blend |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| D1 | MVTec-AD | 120 | 0.934 | 0.938 | +0.5 | 9 | 47 | 64 |
+| D2 | GoodsAD | 120 | 0.607 | 0.613 | +0.6 | 56 | 17 | 47 |
+| D3 | VisA | 120 | 0.853 | 0.834 | −1.9 | 9 | 60 | 51 |
+| D4 | SDNET | 120 | 0.670 | 0.704 | +3.4 | 24 | 48 | 48 |
+| D5 | MVTec-LOCO | 120 | 0.676 | 0.678 | +0.2 | 28 | 64 | 28 |
+| D6 | Real3D-AD | 120 | 0.531 | 0.558 | +2.8 | 33 | 12 | 75 |
+| D7 | LEVIR-CD+ | 98 | 0.754 | 0.888 | **+13.4** | 24 | 55 | 19 |
+| D8 | DermaMNIST | 120 | 0.647 | 0.721 | **+7.4** | 48 | 51 | 21 |
+| D9 | BraTS | 120 | 0.848 | 0.816 | −3.2 | 34 | 35 | 51 |
+| D10 | BMAD-Liver | 120 | 0.491 | 0.526 | +3.5 | 53 | 24 | 43 |
+| D11 | HyperKvasir | 120 | 0.808 | 0.807 | −0.1 | 27 | 61 | 32 |
+| D12 | BDD+RA | 120 | 0.982 | 0.963 | −1.9 | 11 | 47 | 62 |
+
+Wins: 8/12 (D1,D2,D4,D5,D6,D7,D8,D10), Neutral: 1 (D11), Losses: 3 (D3,D9,D12).
+
+## Pipeline artifacts
+
+- Agent code: `benchmark/scripts/agent_v11.py`
+- Learning pipeline: `benchmark/scripts/verbalized_v4.py` (partition, meta-rule
+  reflector, stack, RAG retrieval)
+- Bootstrap: `benchmark/scripts/v11_bootstrap.py`
+- Passive dev (Stage A): `benchmark/results/verbalized/v11_passive_dev/*.json`
+- Meta-rules (Stage B): `benchmark/results/verbalized/v4_meta/D*_meta.json`
+- Stacked rulebooks (Stage C): `benchmark/results/verbalized/v4_rulebook/D*.json`
+- Test eval (Stage D): `benchmark/results/verbalized/v11_eval_test/D*.json`
+- Paper section: `paper/sections/controller_learning.tex` (new §4 between §3 method and §5 experiments)
+
+## Disagreement statistics (across 12 domains, 40-item dev each)
+
+| Bucket | Count | Usage |
+|---|---|---|
+| agree_correct | 238 | ignored (no signal) |
+| agree_wrong | 99 | discarded (no routing signal) |
+| disagree_a_wins | 61 | reflector input (trust Agent rules) |
+| disagree_b_wins | 80 | reflector input (trust Direct rules) |
+
+Meta-rule yield: 2–3 rules per side per domain, 12/12 domains parseable.
+
+## Key findings
+
+1. **Controller arbitration beats fixed blend at 95%**: +2.05 pp macro, CI
+   [+0.41, +3.67], P=0.995. Gain compounds on top of v10's +1.69 pp over
+   single-call Direct (Table 1).
+2. **D7 (+13.4 pp) and D8 (+7.4 pp) carry the macro**: both are domains where
+   v9 is significantly weaker than Direct and the controller correctly learns
+   to trust Direct.
+3. **Regressions are bounded and explained**: D3 over-trusts B, D9 has
+   agree_wrong dominated by both-branch misses (no routing signal), D12 at the
+   ceiling (0.982 blend has nowhere to go but down).
+4. **Controller is domain-aware**: trust distribution varies dramatically
+   (A-heavy on D2/D10; B-heavy on D3/D5/D7/D11/D12; blend-heavy on D1/D6).
+5. **Parse-failure rate 0.00%**: 1418/1418 items produced a parseable
+   controller JSON.
+
+## Gotchas
+
+- vLLM --limit-mm-per-prompt image=12 caps the meta-rule reflector. With K=10
+  cases × (query+2 refs) = 30 images, we exceed the cap. Workaround: reflector
+  sees only query images; refs implicit via branch rationales.
+- DESCRIPTOR_MODE=generic must be set for agent_v11 to match Table 1's Direct
+  baseline. Otherwise Direct uses domain-anchored prompts and the comparison
+  is no longer apples-to-apples.
+- Ablation of meta-only vs meta+domain not run yet — that would isolate the
+  routing signal from the content signal. Deferred.
+
+## Meta-only ablation (2026-04-23)
+
+Stripped the domain layer (invariants + corrective FN/FP) from the rulebook,
+kept only disagreement-derived meta-rules. Re-ran on the same 1418 test items.
+
+| Regime | Macro | Δ vs v10 | 95% CI | P(Δ>0) |
+|---|---:|---:|---|---:|
+| v10 blend | 0.7333 | — | — | — |
+| v11 meta only | 0.7396 | +0.63 | [−1.26, +2.36] | 0.730 |
+| v11 meta+domain (full) | **0.7539** | **+2.05** | **[+0.41, +3.67]** | **0.995** |
+| Δ(full − meta) | — | +1.43 | [−0.19, +3.13] | 0.960 |
+
+**Conclusion**: the full stack is significant at 95%; meta-only alone is
+directionally positive but NOT significant. Domain rules contribute an
+incremental ~1.4 pp that is nearly significant. Meta-rules carry routing
+signal but cannot substitute for the invariant + corrective content layer.
+
+Per-domain (Δm = v11_meta − blend; Δf = v11_full − blend):
+
+| Dom | blend | v11_meta | v11_full | Δm (pp) | Δf (pp) | pattern |
+|---|---:|---:|---:|---:|---:|---|
+| D1 MVTec-AD | 0.933 | 0.960 | 0.938 | +2.7 | +0.5 | meta ≥ full (noise) |
+| D2 GoodsAD | 0.607 | 0.619 | 0.613 | +1.2 | +0.6 | meta ≥ full (noise) |
+| D3 VisA | 0.853 | 0.867 | 0.834 | +1.4 | −1.9 | meta fixes, full overcorrects |
+| D4 SDNET | 0.670 | 0.630 | 0.704 | −4.0 | +3.4 | full ≫ meta (invariants carry) |
+| D5 LOCO | 0.676 | 0.700 | 0.678 | +2.4 | +0.2 | meta ≥ full (noise) |
+| D6 Real3D-AD | 0.531 | 0.565 | 0.558 | +3.4 | +2.8 | tied |
+| D7 LEVIR | 0.754 | 0.841 | 0.888 | +8.7 | +13.4 | full > meta (both positive) |
+| D8 DermaMNIST | 0.647 | 0.599 | 0.721 | −4.8 | +7.4 | full ≫ meta (FN/FP rules carry) |
+| D9 BraTS | 0.848 | 0.796 | 0.816 | −5.2 | −3.2 | full loses less than meta |
+| D10 BMAD-Liver | 0.491 | 0.495 | 0.526 | +0.4 | +3.5 | full > meta |
+| D11 HyperKvasir | 0.808 | 0.839 | 0.807 | +3.2 | −0.1 | meta > full |
+| D12 BDD+RA | 0.982 | 0.963 | 0.962 | −1.8 | −1.9 | tied |
+
+Four cleanly full-dominant domains (D4/D7/D8/D10), four meta-dominant
+(D1/D3/D5/D11), four tied. This is more nuanced than a uniform story in
+either direction — the two rule layers contribute complementary signal.
+
+Artefacts: `benchmark/results/verbalized/v11_eval_test_meta_only/` and
+`benchmark/scripts/v11_bootstrap_3way.py`.
+
+codex
+The first pass shows the new §4 is much more cautious than the previous description suggests: it explicitly says v11 is not training-free and flags meta-only as non-significant. I’m now checking the appendix rulebook pilot and raw result artifacts for consistency rather than trusting the prose.
+exec
+/bin/bash -lc "sed -n '260,520p' paper/sections/controller_learning.tex" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+or is even slightly better (noise level). The worst case for
+meta-only is D4 SDNET ($-4.0$ pp vs blend), where the L1 structural
+invariants about concrete cracks carry specific content the
+Controller cannot reconstruct from routing rules.
+\end{enumerate}
+
+\subsection{Limitations}
+\label{ssec:ctrl_limits}
+
+Each AD-mode test item pays an extra VLM call (Controller), which
+adds approximately $35$--$50\%$ wall-time over v10 depending on
+domain. The learning procedure is semi-supervised: the $40$-item dev
+label budget per domain is the cost of rule construction (Stages B--C);
+on top of that the reused domain-rule pilot consumes a further
+$K{=}10$ balanced FN/FP labels per domain for its L2 corrective rules
+(Appendix~\ref{app:rulebook_pilot}). Only the reference-only L1
+invariants are genuinely label-free. The rulebook is fixed at training
+time; online rule evolution from test feedback is future work. The
+v11 floor guarantee depends on the Controller's JSON being
+parseable; when it is not we fall back to the v10 blend rather than
+either branch alone (observed parse-failure rate on this run: $0\%$).
+Finally, the D9 regression flags a genuine limitation of
+disagreement-based learning: when both branches are predominantly
+wrong together, the Controller has no routing signal to exploit.
+
+exec
+/bin/bash -lc 'rg -n "rulebook_pilot|Verbal|v3|Rulebook|oracle|semi|L1|L2|corrective" paper/sections/A_appendix.tex' in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+89:v3 Debate (naive score)  & 0.713 & $-$7.2 \\
+90:v3 Debate (gated score)  & 0.744 & $-$4.1 \\
+102:    \item \textbf{Debate} (v3): a refuter rationalises confident correct predictions. Even with a confidence-gated aggregation rule, debate never beats v0.
+114:We benchmarked three expert models on the calibration split (Table~\ref{tab:expert_appendix}). SubspaceAD dominates overall, reaching 1.000 AUROC on D11 VisA calibration where all VLMs score $\leq 0.85$. AnomalyVFM (zero-shot, DINOv2 + LoRA) is uniformly weaker (macro 0.599) and was excluded from the final system. DINOv2-PatchNN complements SubspaceAD on D03 infrastructure (0.80 vs 0.50). The oracle that selects the best expert per domain reaches macro 0.898, indicating 7 pp headroom for multi-expert routing as future work.
+254:\caption{Budget-matched negative controls (\textbf{v0/v3-era numbers, pre-v6}; included as historical record of disqualified designs and \emph{not comparable} with the v6 ensemble numbers in Table~\ref{tab:main_results}). The v0 Direct / SubspaceAD fusion / AnomalyClaw rows in this table use our older v0 descriptor Direct and our v3 router \texttt{AnomalyClaw} system; the main-paper headline numbers (GPT-5.4 $0.864$, SeedVL $0.809$, Qwen3.5 $0.814$) are from the v6 agent$+$Direct ensemble on the same test split. ``Random escalation'' and ``DINOv2 blend'' are calibration-split numbers for disqualified designs. This table's purpose is only to show that blind second-call escalation and weaker expert blends are negative controls; it should not be read as a competing test-split comparison against our headline v6 recipe.}
+283:Every AnomalyClaw v3 prediction carries a full trace that a human reviewer can audit. For illustration, we show two trace snippets from the actual test runs (Qwen3.5 backbone) — first the autonomous router plan generated for one domain, then a per-item agent execution.
+323:The \emph{debate} strategy runs two VLM calls in sequence. The Proposer receives the query, references, and the task-anchored descriptor, and returns a JSON object \texttt{\{image\_label, anomaly\_type, evidence, confidence, bbox\}}. The Advocate receives the Proposer's output verbatim plus an adversarial prompt asking it to refute the Proposer's claim using the same references, and returns a JSON object \texttt{\{refute\_confidence, counter\_evidence\}}. We combine both into a final score via the rule: if \texttt{refute\_confidence}\,$\geq 0.6$, overturn the Proposer; if \texttt{proposer.confidence}\,$\geq 0.6$ and \texttt{refute\_confidence}\,$\leq 0.4$, commit to the Proposer; otherwise take the Proposer's score unchanged. No third VLM call and no oracle. Temperature is 0 for both calls; the same descriptor $\phi_d$ is used.
+366:\section{Rulebook Pilot: L1 invariants + L2 oracle corrective rules}
+367:\label{app:rulebook_pilot}
+374:\texttt{corrective\_fn}, and \texttt{corrective\_fp} entries that the v11
+377:\paragraph{L1 --- Reference-only invariants.}
+395:\paragraph{L2 --- Oracle cluster rules.}
+399:labels, and ask a reflector VLM to propose $1$--$3$ \emph{corrective}
+406:correctives tagged with metadata:
+416:Per-domain JSON: \texttt{benchmark/results/verbalized/v3\_l1/} and
+417:\texttt{v3\_l2/}. The v11 stacked rulebook: \texttt{benchmark/results/verbalized/v4\_rulebook/}.
+
+exec
+/bin/bash -lc 'ls benchmark/results/verbalized/v11_eval_test | head' in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+D1.json
+D10.json
+D11.json
+D12.json
+D2.json
+D3.json
+D4.json
+D5.json
+D6.json
+D7.json
+
+exec
+/bin/bash -lc 'rg --files benchmark/results/verbalized/v11_eval_test | head -n 5' in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+benchmark/results/verbalized/v11_eval_test/D6.json
+benchmark/results/verbalized/v11_eval_test/D4.json
+benchmark/results/verbalized/v11_eval_test/D1.json
+benchmark/results/verbalized/v11_eval_test/D12.json
+benchmark/results/verbalized/v11_eval_test/D5.json
+
+exec
+/bin/bash -lc "sed -n '1,260p' review-stage/AUTO_REVIEW.md" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+# AnomalyClaw Auto Review Log — v9 loop
+
+**Loop start**: 2026-04-19 23:36 CST
+**Prior loop**: v8 paper closed at 6.0/10 "almost" (archived as
+`AUTO_REVIEW.v8.md`, `REVIEW_STATE.v8.json`).
+
+**Difficulty**: nightmare (`codex exec`, GPT reads repo directly)
+**Max rounds**: 4
+**Reviewer**: GPT-5.4 via codex CLI, `model_reasoning_effort=xhigh`
+
+---
+
+## Score progression
+
+| Round | Score | Verdict | Δ | When |
+|-------|-------|---------|---|------|
+| 1     | 5.0   | not ready | — | 2026-04-19 23:36 → 00:08 |
+| 2     | 5.8   | not ready | +0.8 | 2026-04-20 06:06 → 06:27 |
+
+---
+
+## Round 1 (2026-04-19 23:36 – 2026-04-20 00:08)
+
+### Six critical findings
+1. **MMAD label bug** — `"good" in key.lower()` flipped every GoodsAD
+   item to label=0. Reported numbers depressed by ~7 pp.
+2. **SeedVL Direct provenance** — main table mixed old v2 descriptor
+   run with newer v6 agent. Consistent v6 direct is 0.7995 not 0.7794;
+   Δ shrinks from +2.14 to +0.93 pp (non-significant).
+3. **Router/v4/v6 story mixup** — method describes v4 router,
+   experiments headline v6+Direct ensemble.
+4. **v8 interpretability claim ahead of evidence** — reported
+   v8_qwen3_test.json has `history` missing for all 1418 items.
+5. **Tool-cost claim** — `tool_reference_profiler` and
+   `tool_domain_knowledge` DO make VLM/LLM calls.
+6. **Stale appendix numbers** — appendix Qwen fusion `0.851` vs main
+   text `0.814`.
+
+### Actions taken
+1. Label fix — `mmad_eval.py`, `mmad_eval_v9.py`, `mmad_relabel.py`.
+2. SeedVL fix — switched to `v6_direct_seedvl_test.json`.
+3. Method — added §3.5 v6 agent; "Framework vs. headline" paragraph.
+4. v8 rerun deferred (~3h compute).
+5. Tool-cost — §3 v6 subsection acknowledges extra VLM/LLM calls.
+6. Appendix — caption flags numbers as v0/v3-era historical.
+
+### New experiments
+- **v9 MMAD full-type** (n=2302 QAs): agent vs Direct = −1.0 pp macro
+  accuracy. Agent helps on Defect Description (+1.7), Classification
+  (+1.2); hurts on Object Details (−4.4), Object Classification (−3.2).
+  AD AUROC Δ +1.65 pp.
+- **Active pilot** (4 domains, K=10 dev-oracle, DINOv2 prior):
+  mean Δ +3.5 pp. D1 +7.33, D5 −4.00, D9 +11.11, D12 −0.44.
+
+Commits: `0d7ec3d`, `e0030a3`, `6891eb1`, `5b29947`.
+
+---
+
+## Round 2 (06:06 – 06:27)
+
+### Assessment
+- **Score**: 5.8 / 10 (up from 5.0)
+- **Verdict**: not ready
+- Raw: `review-stage/codex_v9_review_r2_raw.out` (2.5 MB)
+
+### Six new critical findings (Round 2)
+1. **AL domain mapping swap**: active-learning pilot used
+   `manifests_v2` where D5=logical, D9=brain MRI, but the paper AL
+   table reused the Table-1 labels (D5=brain MRI, D9=logical).
+2. **Relabeled MMAD file not shipped**: `mmad_anomaly_qwen3.json`
+   still contained stale labels; corrected numbers were in the
+   paper but not reproducible from a released artifact.
+3. **v9 MCQ parse-failure accounting missing**: denominators were
+   answered-only; parse-failure rates per type not reported.
+4. **v8 claim still overclaimed**: "reviewers can audit every
+   score" remained in text despite `history` missing from all 1418
+   stored predictions.
+5. **Tool-cost language still inconsistent**: §3 was fixed but
+   `Appendix~\ref{app:cost}` referenced an appendix that did not
+   exist; intro/abstract still implied zero-call tools.
+6. **Three-backbone claim too strong in places**: SeedVL is
+   non-significant; abstract/intro wording should make this explicit.
+
+### Round 2 fixes applied
+1. **AL labels corrected** — table now uses `manifests_v2` taxonomy
+   (D1 industrial, D5 MVTec-LOCO logical, D9 BraTS brain MRI, D12
+   road safety). Finding 8 interpretation rewritten: brain MRI
+   helps (+11.11), logical hurts (−4.00, DINOv2 CLS can't retrieve
+   logical-anomaly neighbours well).
+2. **Shipped `mmad_anomaly_qwen3_relabeled.json`** (180 items
+   flipped) as a released artifact.
+3. **Parse-failure rates** added to Table~\ref{tab:mmad_v9_fulltype}
+   footnote: Direct 0.6\%, Agent 0.9\% overall; max per-type 3.0\%.
+   Treating failures as wrong shifts accuracy ≤0.9pp, no direction
+   change.
+4. **v8 rerun** still not executed (compute constraint).
+5. **`Appendix~\ref{app:cost}` references removed** from §3 and §4
+   and replaced with inline cost statements.
+6. Abstract/intro wording for SeedVL non-significance was already
+   updated in Round 1; verified in Round 2.
+
+### Remaining concerns (deferred / out-of-scope for this session)
+- v8 qwen3 test rerun with history capture (~3h compute).
+- Method section v4→appendix full restructure (minimum fix applied).
+- AL extension to all 12 domains × multi-seed (future work).
+
+Commits: `0b15cf6`.
+
+---
+
+## Current state (06:30 CST)
+
+- Score 5.8/10 (just below 6.0 threshold); verdict "not ready" but
+  Round-2 blockers addressed.
+- User (human) expected back ~07:00; final wrap-up commit below.
+- MAX_ROUNDS=4 not exhausted (Round 3 available for next session).
+
+---
+
+## Round 3 (2026-04-20 ~16:45 – 17:10 CST)
+
+### Trigger
+- User deleted §4.7 (DINOv2-CLS retrieval AL pilot) and replaced it
+  with a new top-level §5 "Verbalized Self-Evolution".
+- Auto-review-loop re-invoked with focus on §5 consistency and
+  method design; experiments for §5 are running in background
+  (t.b.d. table entries are placeholders).
+
+### Assessment
+- **Score**: 6.4/10 (up from 5.8)
+- **Verdict**: almost (above positive threshold for the first time)
+- Raw: `review-stage/codex_r3_small.out`
+
+### Five critical findings (Round 3, ranked by severity)
+1. **L2 regime ambiguity** — the L2 reflector receives the L1
+   rulebook as context, but Table 5 (tab:verb_main) labels the
+   "+L2" row as "dev oracle only". Contradiction. Fix: either
+   relabel as "L1-conditioned L2" or add a strict dev-only L2 (no
+   L1 context) and treat stacking explicitly as its own row.
+2. **Dev holdout selection bias** — the "rule-quality holdout" is
+   defined as the 30 dev items NOT selected by uncertainty, so it
+   systematically excludes the hardest boundary cases. Fix:
+   pre-split dev into a selection subset (uncertainty query pool)
+   and a validation subset (untouched), report holdout AUROC on
+   the validation subset only.
+3. **Per-class coverage on multi-class domains** — K=10 per domain
+   in D1/D3/D6 (up to 15 classes) means most classes get 0 L2
+   examples. Fix: report per-class coverage of L2 selections, or
+   switch to a per-class-capped selection policy.
+4. **Prompt-length confound** — a longer JSON rulebook block may
+   change model behaviour independent of rule content. Fix: add
+   length-matched controls (shuffled rules, wrong-domain rulebook,
+   no-op JSON) as ablations.
+5. **Statistical treatment underdefined** — "3 seeds" and
+   P(Δ>0) not enough without specifying sampling unit and
+   uncertainty computation. Fix: paired bootstrap CIs over domains
+   and items, explicit P(Δ>0) definition, per-domain deltas.
+
+### Actions scheduled (this session)
+- Implement fixes (1)(2)(3) as protocol changes BEFORE running
+  expensive L1/L2 experiments:
+  - Split dev 40 → 20 selection + 20 validation; build-l2 queries
+    oracle only from selection subset; rule-quality holdout is the
+    untouched 20-item validation subset.
+  - Add `--use_l1_context` flag to `build-l2` (default False, pure
+    dev-only); stacking (L1+L2) passes L1 context at the stack step,
+    not inside L2 reflection.
+  - Report per-class coverage of L2 selections.
+- Defer fixes (4)(5) to Round 4 (after numbers are in).
+
+### Status
+- Score crossed positive threshold (6.4/10 almost); per skill rules
+  the loop may terminate, but we continue into Round 4 after
+  protocol fixes + experiment numbers land.
+- Next: implement protocol fixes, run L1 / L2 / stack / eval-test.
+
+### Actions completed this round (2026-04-20 17:10 → 17:30)
+1. **Protocol fixes 1/2/3** applied:
+   - §5 paper: L2 now explicitly "dev-only, no L1 context"; dev pre-split (20 sel + 20 val); per-class coverage paragraph added; stacking paragraph rewritten to reflect offline merge.
+   - `benchmark/scripts/verbalized_learning.py`: `build_l2_rulebook(..., use_l1_context=False)` default; `split_dev_ids()` deterministic per-seed 50/50 split; `per_class_coverage()` reporter; `cmd_build_l2` uses selection pool only for uncertainty ranking.
+   - Table header: "+ L2" row now labelled "dev oracle only (no L1 context)" and "+ L1+L2" labelled "offline stacked".
+2. **Fixes 4/5 deferred** to Round 4 — add prompt-length controls (shuffled / wrong-domain / no-op) and paired bootstrap CIs once numbers land.
+3. **Bug fixed (unplanned)**: discovered vLLM served name is `/hdd1/models/Qwen3.5-27B-FP8` not `Qwen3.5-VL-27B` — every call in the first pipeline pass 404'd silently, yielding 480 result rows of `score=0.5 / "json parse failed"`. Deleted garbage outputs, patched both pipeline scripts to force `QWEN_MODEL=/hdd1/models/Qwen3.5-27B-FP8`, relaunched. Memory note saved as `project_qwen_model_name.md`.
+4. **Experiments in flight (background)**:
+   - `passive_dev v2` (PID 1123763) — real scoring confirmed on D1 (score=0.05, real rationale). ~2.7h ETA for 480-item dev sweep.
+   - `L1 / L2 / stack pipeline` (PID 1139071) — Stage 1 L1 started on D1. L2 will process whichever passive_dev files are ready when it reaches Stage 2.
+   - `eval-test orchestrator` (`run_verbalized_eval.sh`) ready to fire once rulebooks land.
+5. **GPU state**: 3 Qwen3.5 replicas on 0/1/2 (LB 8210). Attempted 2 more on GPU 4 / 7 — GPU 4 OOM-killed on engine init (~7GB residual occupied by another user), GPU 7 loaded OK but not wired into LB yet; left serving as idle capacity for later.
+6. **Paper state**: §5 supersedes §4.7 (which is a one-line comment pointer); main.tex updated; uncommitted pending review of numbers.
+
+### Phase: D (waiting for experiments)
+Round 4 scheduled once (a) rulebooks land, (b) eval-test runs, (c) §5 tables are filled with real numbers, (d) 4/5 deferred fixes are added.
+
+---
+
+## Round 4 Continuation — User-Directed Pivot to v11 Controller Learning (2026-04-22)
+
+### Context
+
+R4 codex review (6.8/10 almost) surfaced a baseline-mismatch concern:
+the v3 Verbalized Self-Evolution framework compared rulebook-on to a
+Passive v9 agent floor of 0.669, whereas Table 1's Qwen3.5 baseline is
+actually the v10 ensemble at 0.732 (Direct 0.714 + v9 ensembled). User
+pivoted the entire §5 framework rather than land another L1/L2 seed
+sweep. The v3 chapter is archived; a new §4 "Controller-Level
+Verbalized Learning" sits between §3 method and §5 experiments.
+
+### Architecture
+
+**v11 = v10 + Controller switch.** With `learning_enabled=False`, v11
+is byte-equivalent to v10 (parallel v9 + Direct, fixed $0.5$:$0.5$
+blend). With `learning_enabled=True`, a Controller VLM arbitrates:
+sees image + refs + both branches' score-rationale pairs + a RAG
+rulebook, emits final anomaly score in $[0,1]$. Controller failure
+falls back to blend, preserving the v10 floor.
+
+**Rulebook = meta-rules + domain-rules stacked.**
+- Meta-rules (routing): from disagreement cases on dev (v9 vs Direct
+  split at $0.5$). Partition: agree-correct / agree-wrong /
+  disagree-A-wins / disagree-B-wins. Only disagreement cases used;
+  agree-wrong discarded (no routing signal). Reflector sees query
+  images + both rationales + GT, writes 1-3 rules per side.
+- Domain-rules (content): reused from v3 L1 (ref-only invariants, 6
+  types) and L2 (oracle cluster corrective FN/FP). Not regenerated.
+- RAG at inference: filter by (domain, category), rank meta first
+  (up to 3) then domain (up to 4).
+
+### Stage outputs
+
+1. **Passive v11 dev** (n=480, 12 domains × 40 dev items): 141
+   disagreement cases partition (61 A-wins + 80 B-wins, 99
+   agree-wrong, 238 agree-correct). Min 7, max 18 usable per domain.
+2. **Meta-rules** (Stage B): 12/12 domains produced parseable rule
+   lists. 2–3 rules per side. Zero parse errors after dropping refs
+   from reflector prompt (vLLM caps at 12 images; K=10×3=30 > cap).
+3. **Stacked rulebooks**: 10–86 rules per domain (varies with
+   per-class invariant count).
+4. **Test eval** (n=1418, Qwen3.5-VL-27B, manifests_v2 test):
+
+   | Regime | Macro | Δ vs v10 | 95% CI | p̂(Δ>0) |
+   |---|---|---|---|---|
+   | Direct (generic) | 0.7119 | −2.14 | — | — |
+   | v9 alone | 0.6696 | −6.37 | — | — |
+   | **v10 blend (= Passive v11)** | **0.7333** | — | — | — |
+   | **v11 Controller (meta+domain)** | **0.7539** | **+2.05 pp** | **[+0.41, +3.67]** | **0.995** |
+
+   Paired stratified bootstrap, 1000 resamples, per-domain
+   stratification. v10 blend recomputed from same run's $(s_A, s_B)$
+   for exact paired comparison. Reproduces Table 1's 0.732 within
+   0.13 pp.
+
+### Per-domain (Δ = v11 − v10 blend)
+
+| Dom | v10 | v11 | Δ | Controller trust A/B/blend |
+|---|---:|---:|---:|---|
+| D1 MVTec-AD | 0.934 | 0.938 | +0.5 | 9/47/64 |
+| D2 GoodsAD | 0.607 | 0.613 | +0.6 | 56/17/47 |
+| D3 VisA | 0.853 | 0.834 | **−1.9** | 9/60/51 |
+| D4 SDNET | 0.670 | 0.704 | +3.4 | 24/48/48 |
+| D5 MVTec-LOCO | 0.676 | 0.678 | +0.2 | 28/64/28 |
+
+exec
+/bin/bash -lc "sed -n '360,430p' paper/sections/A_appendix.tex" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+    \item \texttt{component\_counter(hotspot\_map, threshold=0.5) $\to$ (n, stats)}: connected-component labelling with skimage; returns component count and per-component area/centroid.
+    \item \texttt{knowledge\_lookup(domain\_code) $\to$ list[str]}: returns a fixed, per-domain keyword list (length $\le 6$; written once during benchmark setup).
+\end{itemize}
+
+Tools are composed explicitly by each strategy: \emph{direct} uses only the descriptor; \emph{fusion} uses descriptor and expert scores; \emph{interpret} additionally uses the cropper and expert hotspots; \emph{debate} uses the descriptor and optionally the retriever. No tool is invoked outside its strategy's declared contract.
+
+\section{Rulebook Pilot: L1 invariants + L2 oracle corrective rules}
+\label{app:rulebook_pilot}
+
+The domain-rule corpus reused by the v11 Controller (\S\ref{sec:controller},
+Stage D) was produced by an earlier pilot that we ran on the same
+CrossDomainVAD-12 dev/test split. We document it here for reproducibility;
+the pilot's standalone results are not part of the main claim but its
+artefacts (per-domain JSON rulebooks) are the \texttt{invariant},
+\texttt{corrective\_fn}, and \texttt{corrective\_fp} entries that the v11
+rulebook RAG retrieves.
+
+\paragraph{L1 --- Reference-only invariants.}
+For each (domain, category) pair, a reflector VLM (Qwen3.5-VL-27B) is shown
+$n{=}8$ normal reference images and asked to list visual \emph{invariants}
+--- concrete properties verifiable in \emph{every} reference --- restricted
+to six types:
+\begin{itemize}[topsep=1pt,parsep=0pt,itemsep=1pt]
+  \item \texttt{count}: exact number of parts, segments, or discrete items.
+  \item \texttt{symmetry}: axes or symmetries preserved across references.
+  \item \texttt{spatial\_layout}: global arrangement of components.
+  \item \texttt{color\_palette}: colour range observed across refs.
+  \item \texttt{texture}: surface or fabric texture properties.
+  \item \texttt{structural}: overall shape, topology, or part connectivity.
+\end{itemize}
+The reflector is forbidden from listing ``hypothesised anomaly modes'' (an
+earlier pilot design that collapsed into generic VLM-prior recitation).
+Empty lists are allowed when no invariant can be verified across all
+references.
+
+\paragraph{L2 --- Oracle cluster rules.}
+For each domain, we run Passive v9 on the $40$-item dev split, form a
+balanced batch of $K/2$ false negatives (gt$=$1, $s{<}0.5$) plus $K/2$
+false positives (gt$=$0, $s{\ge}0.5$) with $K{=}10$, reveal their manifest
+labels, and ask a reflector VLM to propose $1$--$3$ \emph{corrective}
+rules per side over the whole batch at once. Per-item rules are forbidden
+(they over-generate); \texttt{normal\_tolerance} rules must name a specific
+visual feature rather than blanket-suppress an anomaly class.
+
+\paragraph{Rule store.}
+For each domain we emit one JSON file containing the invariants and
+correctives tagged with metadata:
+$(\mathrm{type},\ \mathrm{category}\ [\text{or null}],\ \mathrm{text},\ \mathrm{source\_items},\ \mathrm{confidence})$.
+The v11 Controller never consumes these rules directly; instead it reads
+RAG-retrieved top-$k$ subsets filtered by the query's $(\mathrm{domain},
+\mathrm{category})$ metadata (\S\ref{ssec:ctrl_arch}). The stacked store
+size ranges from 10 rules (D12 road safety, single category with few
+invariants) to 86 rules (D1 MVTec-AD, eight categories each contributing
+count/colour/texture/structural invariants).
+
+\paragraph{Artefacts.}
+Per-domain JSON: \texttt{benchmark/results/verbalized/v3\_l1/} and
+\texttt{v3\_l2/}. The v11 stacked rulebook: \texttt{benchmark/results/verbalized/v4\_rulebook/}.
+
+exec
+/bin/bash -lc "sed -n '260,520p' refine-logs/v11_results_summary.md" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+exec
+/bin/bash -lc "jq 'type, length, .[0]' benchmark/results/verbalized/v11_eval_test/D7.json" in /hdd1/jiangxi/AD-Agent
+ exited 127 in 0ms:
+/bin/bash: line 1: jq: command not found
+
+exec
+/bin/bash -lc "sed -n '1,240p' benchmark/scripts/v11_bootstrap.py" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+"""Stratified paired bootstrap CI for v11 controller vs v10 blend on manifests_v2 test.
+
+Reads benchmark/results/verbalized/v11_eval_test/D*.json, for each item extracts:
+  - v9_score, direct_score       → v10 blend = 0.5 * (v9 + direct)
+  - anomaly_score                → v11 controller final
+  - label_gt                     → ground truth
+  - domain_code                  → stratum
+
+Computes macro AUROC on both series, then draws B paired stratified bootstrap
+resamples (items sampled with replacement within each domain stratum; same
+resampled index set used for both v10 blend and v11). Reports macro delta CI
+and posterior mass P(delta > 0).
+
+Usage:
+  python v11_bootstrap.py [--bootstraps 1000] [--dir benchmark/results/verbalized/v11_eval_test]
+"""
+from __future__ import annotations
+import argparse, json, os, sys
+from collections import defaultdict
+from pathlib import Path
+
+import numpy as np
+from sklearn.metrics import roc_auc_score
+
+
+def load_items(directory: str):
+    """Return {domain_code: list of (gt, v9, direct, v11)} plus per-domain item order."""
+    out = defaultdict(list)
+    for p in sorted(Path(directory).glob("D*.json")):
+        results = json.load(open(p))
+        for x in results:
+            gt = x.get("label_gt")
+            score = x.get("anomaly_score")
+            if gt is None or score is None:
+                continue
+            v9 = x.get("v9_score") if x.get("v9_score") is not None else score
+            dv = x.get("direct_score") if x.get("direct_score") is not None else score
+            out[x["domain_code"]].append((int(gt), float(v9), float(dv), float(score)))
+    return dict(out)
+
+
+def macro_auroc(per_domain_scores, score_idx: int) -> float:
+    """score_idx: 1=v9, 2=direct, 3=v11. Always use idx 0 as gt."""
+    aucs = []
+    for dc, rows in per_domain_scores.items():
+        gts = [r[0] for r in rows]
+        sc = [r[score_idx] for r in rows]
+        if len(set(gts)) < 2:
+            continue
+        aucs.append(roc_auc_score(gts, sc))
+    return float(np.mean(aucs))
+
+
+def blend_series(rows):
+    return [(r[0], 0.5 * r[1] + 0.5 * r[2]) for r in rows]
+
+
+def macro_auroc_blend(per_domain):
+    aucs = []
+    for dc, rows in per_domain.items():
+        bs = blend_series(rows)
+        gts = [r[0] for r in bs]
+        sc = [r[1] for r in bs]
+        if len(set(gts)) < 2:
+            continue
+        aucs.append(roc_auc_score(gts, sc))
+    return float(np.mean(aucs))
+
+
+def bootstrap_paired(per_domain, B: int, seed: int = 0):
+    """Stratified paired bootstrap. Resample items within each domain; compute
+    macro AUROC for blend and v11 on the same resampled indices."""
+    rng = np.random.default_rng(seed)
+    deltas = []
+    blends_mu = []
+    v11s_mu = []
+    domains = sorted(per_domain.keys())
+    # Pre-extract arrays for speed
+    dom_arrays = {}
+    for dc in domains:
+        rows = per_domain[dc]
+        arr = np.array([(r[0], 0.5*r[1]+0.5*r[2], r[3]) for r in rows])
+        dom_arrays[dc] = arr
+
+    for b in range(B):
+        blend_aucs = []
+        v11_aucs = []
+        for dc in domains:
+            arr = dom_arrays[dc]
+            n = len(arr)
+            idx = rng.integers(0, n, size=n)
+            sub = arr[idx]
+            gts = sub[:, 0].astype(int)
+            if len(np.unique(gts)) < 2:
+                continue  # skip degenerate resample for this domain
+            blend_aucs.append(roc_auc_score(gts, sub[:, 1]))
+            v11_aucs.append(roc_auc_score(gts, sub[:, 2]))
+        if not blend_aucs:
+            continue
+        mb = float(np.mean(blend_aucs)); mv = float(np.mean(v11_aucs))
+        blends_mu.append(mb); v11s_mu.append(mv); deltas.append(mv - mb)
+    return np.array(deltas), np.array(blends_mu), np.array(v11s_mu)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dir", default="benchmark/results/verbalized/v11_eval_test")
+    ap.add_argument("--bootstraps", type=int, default=1000)
+    ap.add_argument("--seed", type=int, default=0)
+    args = ap.parse_args()
+
+    per_domain = load_items(args.dir)
+    if not per_domain:
+        print(f"No data in {args.dir}")
+        sys.exit(1)
+
+    print(f"Loaded {sum(len(v) for v in per_domain.values())} items across "
+          f"{len(per_domain)} domains")
+    # Per-domain breakdown
+    for dc in sorted(per_domain.keys()):
+        rows = per_domain[dc]
+        gts = [r[0] for r in rows]
+        v9 = roc_auc_score(gts, [r[1] for r in rows]) if len(set(gts))>1 else float('nan')
+        dr = roc_auc_score(gts, [r[2] for r in rows]) if len(set(gts))>1 else float('nan')
+        bl = roc_auc_score(gts, [0.5*r[1]+0.5*r[2] for r in rows]) if len(set(gts))>1 else float('nan')
+        v11 = roc_auc_score(gts, [r[3] for r in rows]) if len(set(gts))>1 else float('nan')
+        print(f"  {dc:<4} n={len(rows):>4}  direct={dr:.4f}  v9={v9:.4f}  blend={bl:.4f}  v11={v11:.4f}  Δ={(v11-bl)*100:+.2f}pp")
+
+    blend_macro = macro_auroc_blend(per_domain)
+    v11_macro = macro_auroc(per_domain, 3)
+    direct_macro = macro_auroc(per_domain, 2)
+    v9_macro = macro_auroc(per_domain, 1)
+
+    print(f"\nMacro AUROC (point estimate):")
+    print(f"  direct  = {direct_macro:.4f}")
+    print(f"  v9      = {v9_macro:.4f}")
+    print(f"  blend   = {blend_macro:.4f}  (== v10)")
+    print(f"  v11     = {v11_macro:.4f}")
+    print(f"  Δ v11−blend = {(v11_macro-blend_macro)*100:+.2f}pp")
+
+    print(f"\nBootstrap ({args.bootstraps} resamples, seed={args.seed}, stratified paired):")
+    deltas, blends_mu, v11s_mu = bootstrap_paired(per_domain, args.bootstraps, args.seed)
+    if len(deltas) == 0:
+        print("  no valid resamples")
+        return
+    lo, hi = np.percentile(deltas*100, [2.5, 97.5])
+    p_pos = float(np.mean(deltas > 0))
+    print(f"  mean Δ    = {np.mean(deltas)*100:+.2f}pp")
+    print(f"  median Δ  = {np.median(deltas)*100:+.2f}pp")
+    print(f"  95% CI    = [{lo:+.2f}, {hi:+.2f}] pp")
+    print(f"  P(Δ>0)    = {p_pos:.3f}")
+    print(f"  blend mean  = {blends_mu.mean():.4f}")
+    print(f"  v11 mean    = {v11s_mu.mean():.4f}")
+
+
+if __name__ == "__main__":
+    main()
+
+exec
+/bin/bash -lc "sed -n '1,260p' benchmark/scripts/v11_bootstrap_3way.py" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+"""Three-way paired stratified bootstrap: v10 blend vs v11 full vs v11 meta-only.
+
+Reads both v11_eval_test/ (meta + domain rulebook) and v11_eval_test_meta_only/
+(meta-rules only), matches by item_id, and reports macro deltas with CIs.
+"""
+from __future__ import annotations
+import argparse, json, os
+from pathlib import Path
+import numpy as np
+from sklearn.metrics import roc_auc_score
+
+
+def load_matched(full_dir, meta_dir):
+    """Return {domain_code: ndarray[n, 4]} with columns (gt, blend, full, meta)."""
+    out = {}
+    for p in sorted(Path(full_dir).glob("D*.json")):
+        d = p.stem
+        full_rows = json.load(open(p))
+        meta_path = Path(meta_dir) / f"{d}.json"
+        if not meta_path.exists():
+            continue
+        meta_rows = json.load(open(meta_path))
+        m_idx = {x["item_id"]: x for x in meta_rows}
+        rows = []
+        for x in full_rows:
+            m = m_idx.get(x["item_id"])
+            if m is None:
+                continue
+            gt = x.get("label_gt")
+            if gt is None:
+                continue
+            v9 = x.get("v9_score")
+            dv = x.get("direct_score")
+            if v9 is None or dv is None:
+                continue
+            blend = 0.5 * v9 + 0.5 * dv
+            full = x.get("anomaly_score", blend)
+            meta = m.get("anomaly_score", blend)
+            rows.append((int(gt), float(blend), float(full), float(meta)))
+        if rows:
+            out[d] = np.array(rows)
+    return out
+
+
+def macro_auc(data, col):
+    aucs = []
+    for d, arr in data.items():
+        gts = arr[:, 0].astype(int)
+        if len(np.unique(gts)) < 2:
+            continue
+        aucs.append(roc_auc_score(gts, arr[:, col]))
+    return float(np.mean(aucs))
+
+
+def bootstrap(data, B, seed=0):
+    rng = np.random.default_rng(seed)
+    blend_d, full_d, meta_d = [], [], []
+    for b in range(B):
+        bl_a, fu_a, me_a = [], [], []
+        for d, arr in data.items():
+            n = len(arr)
+            idx = rng.integers(0, n, size=n)
+            sub = arr[idx]
+            gts = sub[:, 0].astype(int)
+            if len(np.unique(gts)) < 2:
+                continue
+            bl_a.append(roc_auc_score(gts, sub[:, 1]))
+            fu_a.append(roc_auc_score(gts, sub[:, 2]))
+            me_a.append(roc_auc_score(gts, sub[:, 3]))
+        if bl_a:
+            blend_d.append(np.mean(bl_a))
+            full_d.append(np.mean(fu_a))
+            meta_d.append(np.mean(me_a))
+    return (np.array(blend_d), np.array(full_d), np.array(meta_d))
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--full", default="benchmark/results/verbalized/v11_eval_test")
+    ap.add_argument("--meta", default="benchmark/results/verbalized/v11_eval_test_meta_only")
+    ap.add_argument("--bootstraps", type=int, default=1000)
+    ap.add_argument("--seed", type=int, default=0)
+    args = ap.parse_args()
+
+    data = load_matched(args.full, args.meta)
+    total = sum(len(v) for v in data.values())
+    print(f"Loaded {total} matched items across {len(data)} domains.\n")
+
+    print(f"{'D':<4}{'n':>4}{'blend':>8}{'v11f':>8}{'v11m':>8}{'Δf':>9}{'Δm':>9}{'Δm-f':>9}")
+    print('-' * 59)
+    for d in sorted(data.keys(), key=lambda s: int(s[1:])):
+        arr = data[d]
+        gts = arr[:, 0].astype(int)
+        if len(np.unique(gts)) < 2:
+            continue
+        ab = roc_auc_score(gts, arr[:, 1])
+        af = roc_auc_score(gts, arr[:, 2])
+        am = roc_auc_score(gts, arr[:, 3])
+        print(f"{d:<4}{len(arr):>4}{ab:>8.3f}{af:>8.3f}{am:>8.3f}"
+              f"{(af-ab)*100:>+8.2f}pp{(am-ab)*100:>+8.2f}pp{(am-af)*100:>+8.2f}pp")
+
+    blend = macro_auc(data, 1)
+    full = macro_auc(data, 2)
+    meta = macro_auc(data, 3)
+    print(f"\nMacro AUROC (point estimate):")
+    print(f"  blend (v10)       = {blend:.4f}")
+    print(f"  v11 full          = {full:.4f}  (Δ vs blend {(full-blend)*100:+.2f} pp)")
+    print(f"  v11 meta-only     = {meta:.4f}  (Δ vs blend {(meta-blend)*100:+.2f} pp)")
+    print(f"  Δ(full − meta)    = {(full-meta)*100:+.2f} pp")
+
+    print(f"\nBootstrap ({args.bootstraps} resamples, stratified paired):")
+    bl_b, fu_b, me_b = bootstrap(data, args.bootstraps, args.seed)
+    df = (fu_b - bl_b) * 100
+    dm = (me_b - bl_b) * 100
+    dfm = (fu_b - me_b) * 100
+
+    def ci(arr):
+        lo, hi = np.percentile(arr, [2.5, 97.5])
+        return f"[{lo:+.2f}, {hi:+.2f}]"
+
+    def ppos(arr):
+        return float(np.mean(arr > 0))
+
+    print(f"  Δ v11_full vs blend : mean {df.mean():+.2f} pp  CI {ci(df)}  P>0 {ppos(df):.3f}")
+    print(f"  Δ v11_meta vs blend : mean {dm.mean():+.2f} pp  CI {ci(dm)}  P>0 {ppos(dm):.3f}")
+    print(f"  Δ full vs meta       : mean {dfm.mean():+.2f} pp  CI {ci(dfm)}  P>0 {ppos(dfm):.3f}")
+
+
+if __name__ == "__main__":
+    main()
+
+exec
+/bin/bash -lc "python - <<'PY'
+import json
+p='benchmark/results/verbalized/v11_eval_test/D7.json'
+rows=json.load(open(p))
+print(type(rows).__name__, len(rows))
+for k,v in rows[0].items():
+    if isinstance(v,(str,int,float,bool)) or v is None:
+        print(f'{k}: {v}')
+    elif isinstance(v,list):
+        print(f'{k}: list len {len(v)}')
+    elif isinstance(v,dict):
+        print(f'{k}: dict keys {list(v)[:8]}')
+PY" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+list 98
+item_id: D7_0038
+domain_code: D7
+label_gt: 0
+mode: anomaly_detection
+anomaly_score: 0.935
+direct_score: 0.95
+v9_score: 0.92
+v9_initial_score: 0.85
+v9_updated_score: 0.92
+mcq_answer: None
+free_text: None
+option_scores: None
+rationale: The query image contains a distinct pattern of light-colored tracks in the field that is completely absent in the reference image, confirming it as an anomaly.
+n_turns: 2
+tools_used: list len 1
+confidence: 95
+candidate_features: list len 1
+remaining_features: list len 0
+refutation_verdicts: list len 1
+history: list len 2
+w_direct: 0.5
+w_v9: 0.5
+learning_enabled: True
+controller: dict keys ['trust', 'reasoning', 'tokens']
+error: None
+direct_error: None
+direct_rationale: {"image_label": "anomalous", "anomaly_type": "damage_or_change", "evidence": "The query image shows a large field that is green and vegetated, whereas the reference image shows the same field as dry and brown with distinct white patterns (likely crop residue or soil disturbance) visible in the center. This represents a significant change in the state of the land surface.", "confidence": 0.95, "bbox": [0.2, 0.3, 0.8, 0.7]}
+
+exec
+/bin/bash -lc 'python benchmark/scripts/v11_bootstrap.py --bootstraps 1000 --seed 0 --dir benchmark/results/verbalized/v11_eval_test' in /hdd1/jiangxi/AD-Agent
+exec
+/bin/bash -lc "find benchmark/results/verbalized/v11_eval_test -maxdepth 1 -name 'D*.json' -printf '%f\\n' | sort -V" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+D1.json
+D2.json
+D3.json
+D4.json
+D5.json
+D6.json
+D7.json
+D8.json
+D9.json
+D10.json
+D11.json
+D12.json
+
+exec
+/bin/bash -lc 'python benchmark/scripts/v11_bootstrap_3way.py --bootstraps 1000 --seed 0 --full benchmark/results/verbalized/v11_eval_test --meta benchmark/results/verbalized/v11_eval_test_meta_only' in /hdd1/jiangxi/AD-Agent
+codex
+The raw D7 file has 98 items and the expected fields: `v9_score`, `direct_score`, `anomaly_score`, `learning_enabled=True`, controller metadata, and ground truth. I’ve launched the paper’s own bootstrap scripts to verify the reported CIs and deltas from disk.
+ succeeded in 31061ms:
+Loaded 1418 items across 12 domains
+  D1   n= 120  direct=0.9018  v9=0.8964  blend=0.9335  v11=0.9382  Δ=+0.47pp
+  D10  n= 120  direct=0.4906  v9=0.4831  blend=0.4914  v11=0.5262  Δ=+3.49pp
+  D11  n= 120  direct=0.8414  v9=0.5799  blend=0.8076  v11=0.8071  Δ=-0.06pp
+  D12  n= 120  direct=0.9501  v9=0.9133  blend=0.9815  v11=0.9625  Δ=-1.90pp
+  D2   n= 120  direct=0.6604  v9=0.5600  blend=0.6065  v11=0.6126  Δ=+0.61pp
+  D3   n= 120  direct=0.7671  v9=0.8206  blend=0.8528  v11=0.8340  Δ=-1.88pp
+  D4   n= 120  direct=0.5978  v9=0.5792  blend=0.6703  v11=0.7043  Δ=+3.40pp
+  D5   n= 120  direct=0.6179  v9=0.6579  blend=0.6763  v11=0.6781  Δ=+0.18pp
+  D6   n= 120  direct=0.5067  v9=0.5556  blend=0.5306  v11=0.5581  Δ=+2.75pp
+  D7   n=  98  direct=0.8609  v9=0.6064  blend=0.7539  v11=0.8878  Δ=+13.39pp
+  D8   n= 120  direct=0.5664  v9=0.6196  blend=0.6471  v11=0.7212  Δ=+7.42pp
+  D9   n= 120  direct=0.7822  v9=0.7635  blend=0.8483  v11=0.8161  Δ=-3.22pp
+
+Macro AUROC (point estimate):
+  direct  = 0.7119
+  v9      = 0.6696
+  blend   = 0.7333  (== v10)
+  v11     = 0.7539
+  Δ v11−blend = +2.05pp
+
+Bootstrap (1000 resamples, seed=0, stratified paired):
+  mean Δ    = +2.05pp
+  median Δ  = +2.06pp
+  95% CI    = [+0.41, +3.67] pp
+  P(Δ>0)    = 0.995
+  blend mean  = 0.7335
+  v11 mean    = 0.7541
+
+ succeeded in 45851ms:
+Loaded 1418 matched items across 12 domains.
+
+D      n   blend    v11f    v11m       Δf       Δm     Δm-f
+-----------------------------------------------------------
+D1   120   0.933   0.938   0.960   +0.47pp   +2.65pp   +2.18pp
+D2   120   0.607   0.613   0.619   +0.61pp   +1.22pp   +0.61pp
+D3   120   0.853   0.834   0.867   -1.88pp   +1.40pp   +3.28pp
+D4   120   0.670   0.704   0.630   +3.40pp   -4.03pp   -7.43pp
+D5   120   0.676   0.678   0.700   +0.18pp   +2.38pp   +2.19pp
+D6   120   0.531   0.558   0.565   +2.75pp   +3.42pp   +0.67pp
+D7    98   0.754   0.888   0.841  +13.39pp   +8.70pp   -4.69pp
+D8   120   0.647   0.721   0.599   +7.42pp   -4.76pp  -12.18pp
+D9   120   0.848   0.816   0.796   -3.22pp   -5.24pp   -2.01pp
+D10  120   0.491   0.526   0.495   +3.49pp   +0.40pp   -3.08pp
+D11  120   0.808   0.807   0.839   -0.06pp   +3.18pp   +3.24pp
+D12  120   0.982   0.962   0.963   -1.90pp   -1.82pp   +0.08pp
+
+Macro AUROC (point estimate):
+  blend (v10)       = 0.7333
+  v11 full          = 0.7539  (Δ vs blend +2.05 pp)
+  v11 meta-only     = 0.7396  (Δ vs blend +0.63 pp)
+  Δ(full − meta)    = +1.43 pp
+
+Bootstrap (1000 resamples, stratified paired):
+  Δ v11_full vs blend : mean +2.05 pp  CI [+0.41, +3.67]  P>0 0.995
+  Δ v11_meta vs blend : mean +0.59 pp  CI [-1.26, +2.36]  P>0 0.730
+  Δ full vs meta       : mean +1.46 pp  CI [-0.19, +3.13]  P>0 0.960
+
+exec
+/bin/bash -lc "rg -n \"Training-Free|training-free|semi-supervised|Controller|v11|Verbalized|label\" paper -g '*.tex'" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+paper/sections/4_experiments.tex:2:\label{sec:experiments}
+paper/sections/4_experiments.tex:5:\label{ssec:setup}
+paper/sections/4_experiments.tex:18:\emph{Secondary / legacy baselines} (\S\ref{ssec:descriptor_ablation}--\S\ref{ssec:budget}, for context against earlier training-free VAD work):
+paper/sections/4_experiments.tex:22:Per-domain AUROC; macro-averaged across the 12 domain codes present in test. All thresholds and router assignments frozen from calibration. VLM anomaly scores extracted via structured JSON output (schema in Appendix~\ref{app:scoring}); $s = c$ if label is ``anomalous'' else $1 - c$. Bootstrap 95\% CIs via stratified paired bootstrap (per-domain stratification, $1{,}000$ resamples).
+paper/sections/4_experiments.tex:25:\label{ssec:main_results}
+paper/sections/4_experiments.tex:30:\label{tab:main_results}
+paper/sections/4_experiments.tex:68:Table~\ref{tab:main_results} reports the headline numbers. We highlight the main v2 finding (Finding~5) first, then four legacy findings (Findings~1--4) drawn from an earlier draft that evaluated router and fusion baselines on an equivalent twelve-domain split. Those findings are included for context against earlier training-free VAD work; the v10 agent was not included in that evaluation, and their numbers are not directly comparable to Table~\ref{tab:main_results}.
+paper/sections/4_experiments.tex:71:\label{ssec:descriptor_ablation}
+paper/sections/4_experiments.tex:72:Replacing a generic domain descriptor with a task-anchored one significantly improves all three backbones at zero inference cost (Figure~\ref{fig:intuition}a): macro AUROC moves from 0.761 to 0.825 on GPT-5.4 ($+6.4$ pp, 95\% CI $[+4.4,+8.4]$), 0.748 to 0.789 on SeedVL ($+4.1$ pp, $[+1.6,+6.4]$), and 0.760 to 0.792 on Qwen3.5 ($+3.2$ pp, $[+1.0,+5.5]$). The gain concentrates in domains where VLM world-knowledge priors conflict with the task-specific anomaly definition (LEVIR change, liver CT); full per-backbone per-domain evidence is in Appendix~\ref{app:descriptor}. We recommend this as baseline practice for any training-free VAD system.\footnote{Measured on an earlier 12-domain sampling of the same source datasets prior to the adoption of a generic-descriptor baseline in v10; the task-anchored descriptor was the earlier Direct baseline, whereas v10's Direct branch is intentionally descriptor-free (\S\ref{ssec:setup}) to match the v9 agent's task-preamble for a fair ensemble. The descriptor finding itself (task-anchored $>$ generic) is orthogonal to the v10 ensemble claim.}
+paper/sections/4_experiments.tex:84:\label{ssec:finding5}
+paper/sections/4_experiments.tex:87:The 3-backbone ensemble story splits into three distinct regimes. (i) \textbf{GPT-5.4 (strong agent)}: the v9 agent alone already beats Direct by $+3.64$~pp ($95\%$ CI $[+1.20,+6.21]$, $P{=}0.998$); the Direct branch adds a further $+0.37$~pp on top, yielding an ensemble macro of $0.772$ vs Direct's $0.731$ ($\Delta{=}+4.01$~pp, $[+2.58,+5.50]$, $P{=}1.000$). (ii) \textbf{SeedVL (balanced)}: both branches contribute significantly---v9 alone $+3.68$~pp over Direct, Ensemble a further $+2.31$~pp over v9, total $+5.99$~pp over Direct (all $P{\ge}0.998$). This is v10's best case: an ensemble of two noisy-but-complementary estimators each beats either alone. (iii) \textbf{Qwen3.5-VL-27B (weak agent)}: the v9 agent alone is \emph{significantly worse} than Direct ($-4.46$~pp, $95\%$ CI $[-7.61,-1.55]$, $P{=}0.001$)---a training-free agent can genuinely hurt a strong VLM backbone when the tool catalogue triggers tool misuse on specific domains (e.g.\ D7 LEVIR: Direct $0.877$, agent $0.657$). Yet v10's always-on Direct branch recovers the signal: the ensemble macro is $0.732$ vs Direct's $0.714$, $\Delta{=}+1.69$~pp, $P{=}0.971$ (positive in mean; lower CI $-0.08$~pp just touches zero).
+paper/sections/4_experiments.tex:89:The v2 design takeaway is the \textbf{failure-mode robustness of the parallel-Direct branch}. An ensemble-aware architecture is not just a minor improvement over a pure agent; it is what allows a training-free agent recipe to be deployed on a new VLM backbone without first verifying that the agent alone outperforms Direct. The agent's errors and Direct's errors are complementary in \emph{every} backbone we tested, even when the agent is individually weak: on Qwen3.5 the agent still adds signal on D1 ($+5.2$~pp over Direct when ensembled), D3 ($+4.2$), D5 ($+7.0$), D8 ($+6.8$), and D9 ($+7.3$), and Direct recovers the domains where the agent fails (D7, D11). Per-domain breakdown is in Appendix~\ref{app:perdomain}. The v10 code path is \texttt{agent\_v10.py} (parallel Direct + v9 trajectory, post-hoc $\alpha{=}0.5$ blend inside the single per-item call).
+paper/sections/4_experiments.tex:92:\label{ssec:v9_behavior}
+paper/sections/4_experiments.tex:101:\label{fig:agent_behavior}
+paper/sections/4_experiments.tex:109:\label{tab:agent_behavior}
+paper/sections/4_experiments.tex:143:\label{ssec:score_diversity}
+paper/sections/4_experiments.tex:158:\label{tab:score_diversity}
+paper/sections/4_experiments.tex:182:\label{ssec:perdomain_main}
+paper/sections/4_experiments.tex:186:\label{ssec:budget}
+paper/sections/4_experiments.tex:193:\label{tab:bootstrap}
+paper/sections/4_experiments.tex:220:\label{ssec:mmad}
+paper/sections/4_experiments.tex:222:We re-evaluated our Qwen3.5-VL-27B agent+Direct ensemble on \textbf{MMAD}~\citep{jiang2024mmad}, a $39{,}670$-question industrial-inspection MCQ benchmark whose Anomaly-Detection (AD) subset is a Yes/No binary-judgment task over four constituent datasets: DS-MVTec, MVTec-LOCO, VisA, and GoodsAD. We report on a stratified $500$-image sample balanced across all $38$ product classes (seed$=42$), yielding $n{=}483$ AD questions across the four datasets.\footnote{The sample also contains $n{=}5$ items from the original MVTec-AD split; we exclude it from Table~\ref{tab:mmad} because its small size precludes stable AUROC estimates.} Ground-truth labels are derived from \texttt{Options[Answer]} in \texttt{mmad.json} (preferred) with fallback to the immediate parent folder (\texttt{good}/\texttt{normal}$\,\to\,$label $0$); relying on substring matches against the full path would incorrectly assign label $0$ to every GoodsAD item because ``good'' is contained in ``GoodsAD''. Each query uses the first four \texttt{random\_templates} from \texttt{mmad.json} as normal references (matching MMAD's few-shot$=4$ setup); the Qwen3.5-VL-27B agent is the unified task-aware \texttt{agent\_v10} (\S\ref{ssec:mmad_v9}), and the ensemble is the same $0.5$-average recipe with no re-tuning. Because the MCQ-letter accuracy on a two-option Yes/No question is dominated by the choice of threshold rather than the underlying score ordering (cf.~\S\ref{ssec:score_diversity}), we report only threshold-free ranking metrics: \textbf{AUROC} (global ordering) and the maximum \textbf{F1-max} achievable under any single threshold (precision--recall curve).
+paper/sections/4_experiments.tex:227:\label{tab:mmad}
+paper/sections/4_experiments.tex:246:{\footnotesize All per-subset numbers use ground truth derived from \texttt{Options[Answer]}; an earlier evaluator variant that derived the label by substring match against the full path incorrectly assigned label $0$ to every GoodsAD item (``good'' is contained in ``GoodsAD''), which depressed pooled AUROC by roughly $7$ pp.}
+paper/sections/4_experiments.tex:252:\label{ssec:mmad_v9}
+paper/sections/4_experiments.tex:268:across 38 classes; seed~$42$, option-derived labels).
+paper/sections/4_experiments.tex:280:\label{tab:mmad_v9_fulltype}
+paper/sections/4_experiments.tex:320:\emph{architectural contribution}: a single training-free agent that
+paper/sections/4_experiments.tex:329:% removed 2026-04-20. Its successor is \S\ref{sec:controller} Controller
+paper/sections/4_experiments.tex:330:% Learning (v11), which inserts an arbitration stage between the method
+paper/sections/4_experiments.tex:331:% chapter and this experiments chapter. v11 with learning disabled is
+paper/sections/4_experiments.tex:339:\label{ssec:ablation}
+paper/sections/4_experiments.tex:344:\label{ssec:complementarity}
+paper/sections/4_experiments.tex:348:\label{ssec:limitations}
+paper/sections/2_related_work.tex:2:\label{sec:related_work}
+paper/sections/2_related_work.tex:4:\paragraph{Classical training-free anomaly detection.}
+paper/sections/2_related_work.tex:17:MVTec-AD~\citep{bergmann2019mvtec} and VisA~\citep{zou2022visa} remain the dominant benchmarks for training-free VAD, but both are industrial only. Remote-sensing~\citep{chen2020levircd}, medical~\citep{bao2024bmad,yang2023medmnist}, and road-anomaly~\citep{lis2019detecting,yu2020bdd100k} benchmarks exist in isolation, making it hard to argue about cross-domain generalisation. CrossDomainVAD-12 unifies twelve domains under a single reference-based image-level evaluation protocol with documented sampling, splits, and taxonomy, and is explicitly designed to surface the descriptor- and expert-complementarity questions that industrial-only evaluation hides.
+paper/sections/2_related_work.tex:20:Outside VAD, ReAct~\citep{yao2023react} and Toolformer~\citep{schick2023toolformer} demonstrated that LLMs can be prompted to invoke an external tool registry. Our framework inherits the Tool-$\times$-Strategy decomposition from this tradition; the novelty is (a) applying it to training-free VAD with non-parametric experts as a first-class axis, and (b) showing that a \emph{lightweight, calibration-only} router outperforms free-form VLM tool-calling on our benchmark.
+paper/sections/2_related_work.tex:23:Our contribution is (i) a decoupled Tool-$\times$-Expert-$\times$-Strategy framework for cross-domain VAD, (ii) a calibration-only router that outperforms every single-strategy baseline on all three backbones (significantly on SeedVL), (iii) an empirical study of what moves training-free VAD performance on top of modern VLMs, and (iv) a benchmark and a documented protocol to make such claims auditable.
+paper/sections/5_conclusion.tex:2:\label{sec:conclusion}
+paper/sections/5_conclusion.tex:4:We introduced \textbf{AnomalyClaw v10}, a training-free visual anomaly detection agent whose headline design is an \emph{always-on parallel-Direct branch}: a single per-item invocation runs a refutation-style tool-using trajectory (v9) and a descriptor-free Direct VLM call simultaneously on the same backbone, then returns their unweighted $0.5{-}0.5$ average. On \textbf{CrossDomainVAD-12} ($1{,}418$ test items across $12$ domains) the v10 ensemble significantly beats Direct on every backbone: GPT-5.4 macro AUROC $0.731\!\to\!0.772$ ($+4.01$ pp, $P{=}1.000$), SeedVL $0.678\!\to\!0.738$ ($+5.99$ pp, $P{=}1.000$), Qwen3.5-VL-27B $0.714\!\to\!0.732$ ($+1.69$ pp, $P{=}0.971$; CI $[-0.08,+3.51]$ touches zero). The gain is produced by complementary errors between Direct and the agent, which persist even when the agent is individually weaker than Direct: on Qwen3.5 the agent alone is significantly worse than Direct ($-4.46$ pp, $P{=}0.001$), and yet the ensemble still improves over Direct. This \emph{failure-mode robustness} is the load-bearing property of v10.
+paper/sections/4x_mmad_fulltype.tex:5:\label{ssec:mmad_fulltype}
+paper/sections/4x_mmad_fulltype.tex:40:\label{tab:mmad_fulltype}
+paper/sections/A_appendix.tex:2:\label{app:benchmark}
+paper/sections/A_appendix.tex:9:\label{tab:benchmark_detail}
+paper/sections/A_appendix.tex:17:D2  & Retail  & GoodsAD & Torn label, deformation, missing component & $\le 10$ & Research \\
+paper/sections/A_appendix.tex:42:    \item \textbf{D2 Retail (GoodsAD):} Normal = a packaged supermarket product matching the reference in label, shape, and surface. Anomaly = torn label, deformation, missing component, or printing defect.
+paper/sections/A_appendix.tex:58:\label{app:scoring}
+paper/sections/A_appendix.tex:63:Output: \texttt{\{image\_label, confidence, anomaly\_type\}}.
+paper/sections/A_appendix.tex:64:$s = c$ if label $=$ ``anomalous'', $s = 1{-}c$ if ``normal'', where $c$ is reported confidence. Parse failure rate: $<1\%$ across all backbones.
+paper/sections/A_appendix.tex:73:\label{app:ablation}
+paper/sections/A_appendix.tex:80:\label{tab:ablation_appendix}
+paper/sections/A_appendix.tex:110:\label{app:expert}
+paper/sections/A_appendix.tex:119:\label{tab:expert_appendix}
+paper/sections/A_appendix.tex:135:\label{app:descriptor}
+paper/sections/A_appendix.tex:144:\label{tab:descriptor_ablation}
+paper/sections/A_appendix.tex:175:\label{app:perdomain}
+paper/sections/A_appendix.tex:183:\label{fig:per_domain_appendix}
+paper/sections/A_appendix.tex:189:\label{tab:per_domain}
+paper/sections/A_appendix.tex:203:\label{app:loo}
+paper/sections/A_appendix.tex:208:\label{tab:loo}
+paper/sections/A_appendix.tex:224:\label{app:bootstrap}
+paper/sections/A_appendix.tex:231:\label{tab:bootstrap_full}
+paper/sections/A_appendix.tex:255:\label{tab:budget}
+paper/sections/A_appendix.tex:271:\label{app:complementarity}
+paper/sections/A_appendix.tex:277:\label{fig:complementarity}
+paper/sections/A_appendix.tex:281:\label{app:trace}
+paper/sections/A_appendix.tex:297:\textbf{Interpret call.} VLM re-examines the cropped hotspot bounding box (image coords $(307, 137)$--$(459, 478)$). \texttt{image\_label}=``anomalous'', \texttt{confidence}=$0.85$, \texttt{evidence}=``a linear scratch visible at the flagged region was missed at global inspection.''\\[2pt]
+paper/sections/A_appendix.tex:304:\label{app:routec}
+paper/sections/A_appendix.tex:311:\label{app:routing}
+paper/sections/A_appendix.tex:317:\label{fig:routing_appendix}
+paper/sections/A_appendix.tex:321:\label{app:debate}
+paper/sections/A_appendix.tex:323:The \emph{debate} strategy runs two VLM calls in sequence. The Proposer receives the query, references, and the task-anchored descriptor, and returns a JSON object \texttt{\{image\_label, anomaly\_type, evidence, confidence, bbox\}}. The Advocate receives the Proposer's output verbatim plus an adversarial prompt asking it to refute the Proposer's claim using the same references, and returns a JSON object \texttt{\{refute\_confidence, counter\_evidence\}}. We combine both into a final score via the rule: if \texttt{refute\_confidence}\,$\geq 0.6$, overturn the Proposer; if \texttt{proposer.confidence}\,$\geq 0.6$ and \texttt{refute\_confidence}\,$\leq 0.4$, commit to the Proposer; otherwise take the Proposer's score unchanged. No third VLM call and no oracle. Temperature is 0 for both calls; the same descriptor $\phi_d$ is used.
+paper/sections/A_appendix.tex:326:\label{app:router_rules}
+paper/sections/A_appendix.tex:333:\label{tab:router_rules}
+paper/sections/A_appendix.tex:352:\label{app:tools}
+paper/sections/A_appendix.tex:360:    \item \texttt{component\_counter(hotspot\_map, threshold=0.5) $\to$ (n, stats)}: connected-component labelling with skimage; returns component count and per-component area/centroid.
+paper/sections/A_appendix.tex:367:\label{app:rulebook_pilot}
+paper/sections/A_appendix.tex:369:The domain-rule corpus reused by the v11 Controller (\S\ref{sec:controller},
+paper/sections/A_appendix.tex:374:\texttt{corrective\_fn}, and \texttt{corrective\_fp} entries that the v11
+paper/sections/A_appendix.tex:399:labels, and ask a reflector VLM to propose $1$--$3$ \emph{corrective}
+paper/sections/A_appendix.tex:408:The v11 Controller never consumes these rules directly; instead it reads
+paper/sections/A_appendix.tex:417:\texttt{v3\_l2/}. The v11 stacked rulebook: \texttt{benchmark/results/verbalized/v4\_rulebook/}.
+paper/sections/0_abstract.tex:1:Vision-language models (VLMs) have become the default tool for training-free visual anomaly detection (VAD), yet single-pass prompting fails silently on domains where the VLM's world-knowledge priors conflict with the task-specific anomaly definition. We study how to add structure on top of a VLM for \emph{cross-domain} VAD and present two complementary contributions.
+paper/sections/0_abstract.tex:7:\textbf{Takeaway.} For training-free cross-domain VAD, the right architectural primitive is not a pure autonomous agent but an \emph{ensemble-aware} agent whose Direct-branch is always invoked. We release v10 (\texttt{agent\_v10.py} + v9 refutation core), the CrossDomainVAD-12 benchmark ($1{,}418$ items across 12 domains with calibration/dev/test splits), and full paired-bootstrap analysis artifacts for every headline comparison.
+paper/sections/1_introduction.tex:2:\label{sec:intro}
+paper/sections/1_introduction.tex:4:Vision-language models (VLMs) have become the default tool for training-free visual anomaly detection (VAD): a practitioner uploads a query image, optionally attaches one or two normal reference images, and asks the model whether the query is abnormal. This recipe drives much of the recent published progress on industrial~\citep{gu2024anomalygpt,jeong2023winclip}, medical~\citep{bao2024bmad}, and cross-domain~\citep{jiang2024mmad} benchmarks. The appeal is obvious: no training, no architecture changes, and a single VLM call per image.
+paper/sections/1_introduction.tex:11:    \label{fig:intuition}
+paper/sections/1_introduction.tex:16:We argue that these three decisions should be explicit and decoupled. We introduce \textbf{AnomalyClaw}, a training-free VAD agent organised around three orthogonal axes:
+paper/sections/1_introduction.tex:24:A lightweight \emph{router} selects a (tools, expert, strategy) triple per image. The router comes in two flavours: \emph{descriptor rules} (one rule per domain family, frozen once from the benchmark descriptor, no labelled data) and \emph{calibration argmax} (per-domain argmax over 20 labelled calibration items). An online expert-signal override can promote any domain to the \emph{interpret} strategy when patch-$k$-NN detects a spatially concentrated anomaly that the VLM missed.
+paper/sections/3_method.tex:2:\label{sec:method}
+paper/sections/3_method.tex:4:We present \textbf{AnomalyClaw}, a training-free visual anomaly detection (VAD) agent for cross-domain deployment. Rather than committing to one inference recipe, AnomalyClaw organises the design space around three orthogonal axes:
+paper/sections/3_method.tex:12:A lightweight \emph{router} picks a (tools, expert, strategy) triple per image. The router has two modes---a domain-descriptor rule set derived from the benchmark family taxonomy, and a calibration-driven argmax selector that uses 20 labelled items per domain---both of which are frozen before any test query is seen. The agent runs the selected strategy, records the trace, and returns a scalar anomaly score.
+paper/sections/3_method.tex:31:    \label{fig:architecture}
+paper/sections/3_method.tex:35:\label{ssec:tools}
+paper/sections/3_method.tex:39:\label{ssec:experts}
+paper/sections/3_method.tex:48:\label{ssec:strategies}
+paper/sections/3_method.tex:58:\label{ssec:router}
+paper/sections/3_method.tex:66:\label{ssec:algorithm}
+paper/sections/3_method.tex:70:\label{alg:anomalyclaw}
+paper/sections/3_method.tex:93:\label{ssec:v10}
+paper/sections/3_method.tex:139:\label{ssec:refutation}
+paper/sections/3_method.tex:176:\label{ssec:principles}
+paper/sections/verbalized.tex:1:\section{Domain-Selective Verbalized Rule Injection}
+paper/sections/verbalized.tex:2:\label{sec:verbalized}
+paper/sections/verbalized.tex:9:from a small oracle-labelled dev budget --- into a persistent
+paper/sections/verbalized.tex:21:\label{ssec:verb_regimes}
+paper/sections/verbalized.tex:28:\item[\textbf{Passive v9} (training-free)] — no rulebook. Baseline.
+paper/sections/verbalized.tex:47:\item[\textbf{+L2 clusters} (semi-supervised, $K{=}10$ oracle/domain)]
+paper/sections/verbalized.tex:51:  labels, and ask a reflector VLM --- seeing the \emph{whole batch}
+paper/sections/verbalized.tex:77:\label{ssec:verb_method}
+paper/sections/verbalized.tex:104:\textbf{$K{=}10$ revealed labels per domain, shared across classes}
+paper/sections/verbalized.tex:109:revealed labels). On single-class domains (D7--D12) this produces
+paper/sections/verbalized.tex:129:\label{ssec:verb_exp}
+paper/sections/verbalized.tex:140:\caption{\textbf{Verbalized Self-Evolution — macro AUROC} on
+paper/sections/verbalized.tex:145:\label{tab:verb_main}
+paper/sections/verbalized.tex:228:\label{ssec:verb_perdomain}
+paper/sections/verbalized.tex:235:\label{tab:verb_per_domain}
+paper/sections/verbalized.tex:270:\label{ssec:verb_limitations}
+paper/figures/v2_table1_draft.tex:32:\label{tab:main_results}
+paper/main.tex:1:% AnomalyClaw: Training-Free Cross-Domain Visual Anomaly Detection via Expert-Grounded Adaptive Reasoning
+paper/main.tex:56:\title{AnomalyClaw: Training-Free Cross-Domain Visual Anomaly Detection\\via Expert-Grounded Adaptive Reasoning}
+paper/sections/controller_learning.tex:1:\section{Controller-Level Verbalized Learning}
+paper/sections/controller_learning.tex:2:\label{sec:controller}
+paper/sections/controller_learning.tex:14:We answer with a v11 agent that generalises v10 with a learning
+paper/sections/controller_learning.tex:15:switch. When \emph{learning is disabled}, v11 is byte-equivalent to
+paper/sections/controller_learning.tex:17:blend. When \emph{learning is enabled}, a Controller VLM consumes
+paper/sections/controller_learning.tex:24:up-front that \emph{v11 is not training-free}: rule construction consumes
+paper/sections/controller_learning.tex:25:dev-set ground-truth labels. The total oracle budget is the $40$-item dev
+paper/sections/controller_learning.tex:26:split per domain ($480$ labels across $12$ domains); at inference, no
+paper/sections/controller_learning.tex:27:label is consulted. On Qwen3.5-VL-27B CrossDomainVAD-12 test
+paper/sections/controller_learning.tex:28:($n{=}1418$), the learning-enabled v11 reaches macro $0.7539$, a
+paper/sections/controller_learning.tex:34:\label{ssec:ctrl_arch}
+paper/sections/controller_learning.tex:51:\paragraph{v11 (learning-enabled).} A Controller VLM $C$ receives the
+paper/sections/controller_learning.tex:55:\hat{s}_{\mathrm{v11}}(x) \;=\; C\bigl(\mathrm{imgs}(x),\ (s_A, r_A),\ (s_B, r_B),\ \mathcal{R}(x)\bigr).
+paper/sections/controller_learning.tex:61:linear blend, preserving the $0.732$ floor. The Controller sees the
+paper/sections/controller_learning.tex:65:\paragraph{Rulebook RAG.} At inference, the Controller never sees the
+paper/sections/controller_learning.tex:75:\label{ssec:ctrl_protocol}
+paper/sections/controller_learning.tex:78:\emph{semi-supervised}: the Agent and Direct branches themselves never
+paper/sections/controller_learning.tex:79:see labels, but rule construction consults the dev-set ground-truth
+paper/sections/controller_learning.tex:80:labels ($40$ per domain). Specifically, all $40$ labels are consumed to
+paper/sections/controller_learning.tex:82:label of each sampled disagreement case is shown to the reflector VLM
+paper/sections/controller_learning.tex:85:(Appendix~\ref{app:rulebook_pilot}). At test time no label is consulted.
+paper/sections/controller_learning.tex:87:\paragraph{Stage A --- Passive collection.} We evaluate v11 with
+paper/sections/controller_learning.tex:90:label $y$.
+paper/sections/controller_learning.tex:109:and the ground-truth label. (Reference images are omitted because
+paper/sections/controller_learning.tex:116:from what the Controller sees. All $12$ domains produced parseable
+paper/sections/controller_learning.tex:131:\label{ssec:ctrl_results}
+paper/sections/controller_learning.tex:138:stratification) compare v11 against the v10 blend recomputed from the
+paper/sections/controller_learning.tex:145:\caption{\textbf{v11 Controller Learning on Qwen3.5-VL-27B
+paper/sections/controller_learning.tex:151:\label{tab:controller_main}
+paper/sections/controller_learning.tex:158:v10 blend = Passive v11      & $0.7333$ & ---     & --- & --- \\
+paper/sections/controller_learning.tex:159:v11 Controller (meta only)   & $0.7396$ & $+0.63$ & $[-1.26, +2.36]$ & $0.730$ \\
+paper/sections/controller_learning.tex:160:v11 Controller (meta+domain) & $\mathbf{0.7539}$ & $\mathbf{+2.05}$ & $[+0.41, +3.67]$ & $\mathbf{0.995}$ \\
+paper/sections/controller_learning.tex:173:v10-blend AUROC, v11 AUROC, and the Controller's categorical
+paper/sections/controller_learning.tex:179:\caption{\textbf{Per-domain Controller behaviour.} Columns: test $n$,
+paper/sections/controller_learning.tex:180:v10 blend AUROC (recomputed from the same branch outputs), v11
+paper/sections/controller_learning.tex:181:Controller AUROC, $\Delta$ in percentage points, then the Controller's
+paper/sections/controller_learning.tex:185:\label{tab:controller_per_domain}
+paper/sections/controller_learning.tex:188:Dom & Source & $n$ & v10 & v11 & $\Delta$ (pp) & Trust$_A$ & Trust$_B$ & Blend\\
+paper/sections/controller_learning.tex:211:\item \textbf{Controller arbitration beats fixed blend at $95\%$
+paper/sections/controller_learning.tex:218:Table~\ref{tab:main_results}), yet cumulative --- v11 compounds on top
+paper/sections/controller_learning.tex:226:The Controller (trust counts $24$ A / $55$ B / $19$ blend) correctly
+paper/sections/controller_learning.tex:229:(v11 $0.721$ vs blend $0.647$, $+7.4$ pp).
+paper/sections/controller_learning.tex:232:D3 VisA ($-1.9$ pp): the Controller over-trusts Direct ($60$ B /
+paper/sections/controller_learning.tex:235:the rulebook push the Controller off-target; \textit{agree-wrong}
+paper/sections/controller_learning.tex:236:items dominate error here so the Controller has no routing signal
+paper/sections/controller_learning.tex:238:essentially at the ceiling --- any Controller-driven deviation has
+paper/sections/controller_learning.tex:242:\item \textbf{Controller behaviour is domain-aware and
+paper/sections/controller_learning.tex:245:Agent ($53$). The Controller is not collapsing to a constant
+paper/sections/controller_learning.tex:257:full $>$ meta because the Controller needs domain knowledge to
+paper/sections/controller_learning.tex:263:Controller cannot reconstruct from routing rules.
+paper/sections/controller_learning.tex:267:\label{ssec:ctrl_limits}
+paper/sections/controller_learning.tex:269:Each AD-mode test item pays an extra VLM call (Controller), which
+paper/sections/controller_learning.tex:271:domain. The learning procedure is semi-supervised: the $40$-item dev
+paper/sections/controller_learning.tex:272:label budget per domain is the cost of rule construction (Stages B--C);
+paper/sections/controller_learning.tex:274:$K{=}10$ balanced FN/FP labels per domain for its L2 corrective rules
+paper/sections/controller_learning.tex:276:invariants are genuinely label-free. The rulebook is fixed at training
+paper/sections/controller_learning.tex:278:v11 floor guarantee depends on the Controller's JSON being
+paper/sections/controller_learning.tex:283:wrong together, the Controller has no routing signal to exploit.
+
+exec
+/bin/bash -lc "sed -n '1,180p' paper/main.tex" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+% AnomalyClaw: Training-Free Cross-Domain Visual Anomaly Detection via Expert-Grounded Adaptive Reasoning
+% NeurIPS/ICLR submission draft
+
+\documentclass{article}
+\usepackage[preprint]{neurips_2025}
+% For camera-ready: \usepackage[final]{neurips_2025}
+
+% Math
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+
+% Typography
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{colortbl}
+
+% cleveref must be loaded AFTER hyperref
+\usepackage[capitalize,noabbrev]{cleveref}
+
+% Theorems
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\crefname{assumption}{Assumption}{Assumptions}
+\Crefname{assumption}{Assumptions}{Assumptions}
+
+% Shared math commands
+\input{math_commands}
+
+% Color definitions for tables
+\definecolor{bestcolor}{HTML}{E8F5E9}
+\definecolor{secondcolor}{HTML}{FFF3E0}
+
+% Placeholder macro for values awaiting new experiments
+\newcommand{\tbd}[1]{\textcolor{red}{\textbf{#1}}}
+
+\title{AnomalyClaw: Training-Free Cross-Domain Visual Anomaly Detection\\via Expert-Grounded Adaptive Reasoning}
+
+% Anonymous for submission
+\author{Anonymous Authors}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/0_abstract}
+\end{abstract}
+
+\input{sections/1_introduction}
+\input{sections/2_related_work}
+\input{sections/3_method}
+\input{sections/controller_learning}
+\input{sections/4_experiments}
+\input{sections/5_conclusion}
+
+\bibliography{references}
+\bibliographystyle{plainnat}
+
+\newpage
+\appendix
+\input{sections/A_appendix}
+
+\end{document}
+
+exec
+/bin/bash -lc "sed -n '1,220p' paper/sections/0_abstract.tex 2>/dev/null || true; sed -n '1,220p' paper/sections/1_introduction.tex 2>/dev/null || true" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+Vision-language models (VLMs) have become the default tool for training-free visual anomaly detection (VAD), yet single-pass prompting fails silently on domains where the VLM's world-knowledge priors conflict with the task-specific anomaly definition. We study how to add structure on top of a VLM for \emph{cross-domain} VAD and present two complementary contributions.
+
+\textbf{Main finding.} On \textbf{CrossDomainVAD-12} ($12$ domains, $1{,}418$ test items, spanning industrial, medical, remote-sensing, infrastructure, 3D, and road-scene sources), we introduce \textbf{AnomalyClaw v10}: an autonomous refutation agent whose single per-item invocation runs, \emph{in parallel on the same VLM backbone}, (i) a descriptor-free Direct call and (ii) a multi-turn tool-using trajectory, and returns their unweighted average. On every one of three VLMs we tested, the ensemble significantly beats Direct: GPT-5.4 macro AUROC $0.731\!\to\!0.772$ ($+4.01$~pp, stratified paired bootstrap 95\% CI $[+2.58,+5.50]$, $P(\Delta\!>\!0){=}1.000$); SeedVL $0.678\!\to\!0.738$ ($+5.99$~pp, $[+4.32,+7.66]$, $P{=}1.000$); Qwen3.5-VL-27B $0.714\!\to\!0.732$ ($+1.69$~pp, $[-0.08,+3.51]$, $P{=}0.971$, positive in mean with lower CI touching zero).
+
+\textbf{Failure-mode robustness.} The agent is \emph{not} individually better than Direct on every backbone. On Qwen3.5-VL-27B the agent alone is significantly \emph{worse} than Direct ($-4.46$~pp, $95\%$ CI $[-7.61,-1.55]$, $P{=}0.001$), yet the always-on parallel-Direct branch still produces a positive ensemble gain. This failure-mode robustness is the load-bearing property of v10: an agent recipe that ensembles against its own Direct inside the same call can be dropped onto a new VLM backbone without first verifying that the agent alone is stronger than Direct. The agent and Direct make complementary errors on \emph{every} backbone we tested, even when the agent is weak.
+
+\textbf{Takeaway.} For training-free cross-domain VAD, the right architectural primitive is not a pure autonomous agent but an \emph{ensemble-aware} agent whose Direct-branch is always invoked. We release v10 (\texttt{agent\_v10.py} + v9 refutation core), the CrossDomainVAD-12 benchmark ($1{,}418$ items across 12 domains with calibration/dev/test splits), and full paired-bootstrap analysis artifacts for every headline comparison.
+\section{Introduction}
+\label{sec:intro}
+
+Vision-language models (VLMs) have become the default tool for training-free visual anomaly detection (VAD): a practitioner uploads a query image, optionally attaches one or two normal reference images, and asks the model whether the query is abnormal. This recipe drives much of the recent published progress on industrial~\citep{gu2024anomalygpt,jeong2023winclip}, medical~\citep{bao2024bmad}, and cross-domain~\citep{jiang2024mmad} benchmarks. The appeal is obvious: no training, no architecture changes, and a single VLM call per image.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig_intuition.pdf}
+    \caption{\textbf{AnomalyClaw on CrossDomainVAD-12 (legacy-design context).}
+    \textbf{(a)} No single strategy wins uniformly across domains: the best direct/fusion/debate/interpret cell differs by family (industrial, medical, logical, GI, change, road). \textbf{(b)} A calibration-driven router matches or beats the strongest single strategy on all three backbones and captures 40--60\% of the oracle gap; a zero-data descriptor router recovers much of the gain for free. \textbf{(c)} Per-domain strategy assignment is well-aligned with the oracle (9--10/12 agreement across backbones). This figure motivates v10's design (an always-on parallel-Direct branch alongside an autonomous refutation agent) by showing that no single strategy is uniformly best; v10's final headline numbers are in Table~\ref{tab:main_results}, computed on the updated CrossDomainVAD-12 test split.}
+    \label{fig:intuition}
+\end{figure}
+
+Two observations drive this work. First, a cross-domain VAD deployment must handle textural industrial defects, semantic road obstacles, brain-MRI lesions, infrastructure cracks, and 3D industrial product renders with the same pipeline. The same fixed recipe---no matter how clever---cannot be optimal on all of them simultaneously: on our 12-domain test split, the argmax strategy varies by domain family and per-domain strategy selection is worth several pp of macro AUROC (Figure~\ref{fig:intuition}a). Second, recent ``agentic VAD'' systems~\citep{zhang2025agentiad,chen2026eagle,wei2025autoiad} bundle three decisions---what the VLM attends to, which expert provides evidence, and how to aggregate---into a single monolithic pipeline that is hard to ablate and hard to compare against simpler baselines; a related concern is that a stronger agent does not always beat a plain Direct VLM on every backbone, and a pipeline that \emph{only} reports the agent's final score silently loses when the agent is the weaker estimator.
+
+We argue that these three decisions should be explicit and decoupled. We introduce \textbf{AnomalyClaw}, a training-free VAD agent organised around three orthogonal axes:
+
+\begin{itemize}
+    \item \textbf{Tools} --- zero-VLM-call primitives (domain descriptor, reference retriever, hotspot cropper, component counter, knowledge lookup).
+    \item \textbf{Experts} --- frozen, pre-computed, non-parametric detectors (SubspaceAD~\citep{subspacead2026}, DINOv2 patch-$k$-NN, DINOv2 global).
+    \item \textbf{Strategies} --- inference schemes that combine tools, experts, and VLM calls (direct, fusion, debate, interpret).
+\end{itemize}
+
+A lightweight \emph{router} selects a (tools, expert, strategy) triple per image. The router comes in two flavours: \emph{descriptor rules} (one rule per domain family, frozen once from the benchmark descriptor, no labelled data) and \emph{calibration argmax} (per-domain argmax over 20 labelled calibration items). An online expert-signal override can promote any domain to the \emph{interpret} strategy when patch-$k$-NN detects a spatially concentrated anomaly that the VLM missed.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+    \item \textbf{An always-on parallel-Direct branch inside an autonomous agent (v10).} A single per-item invocation of \texttt{agent\_v10.py} runs a descriptor-free Direct VLM call and a multi-turn tool-using refutation trajectory in parallel on the same backbone, returning their fixed-weight average $s_{\mathrm{final}}{=}0.5\!\cdot\!s_{\mathrm{Direct}}+0.5\!\cdot\!s_{\mathrm{agent}}$. The ensemble significantly beats Direct on every backbone we tested: GPT-5.4 macro AUROC $0.731{\to}0.772$ ($+4.01$~pp, $P{=}1.000$), SeedVL $0.678{\to}0.738$ ($+5.99$~pp, $P{=}1.000$), Qwen3.5-VL-27B $0.714{\to}0.732$ ($+1.69$~pp, $P{=}0.971$).
+    \item \textbf{Failure-mode robustness.} The agent is not individually better than Direct on every backbone: on Qwen3.5-VL-27B the agent alone is significantly \emph{worse} than Direct ($-4.46$~pp, $P{=}0.001$), yet v10's ensemble still improves over Direct. This robustness is the load-bearing property of v10 and the reason the Direct branch is always-on rather than conditionally invoked. The agent and Direct make complementary per-domain errors on every backbone tested, including when the agent is the weaker estimator globally.
+    \item \textbf{Task-anchored domain descriptors (legacy finding).} On an earlier design-exploration twelve-domain split, task-anchored descriptors uniformly beat generic ones on all three backbones at zero inference cost ($+6.4/+4.1/+3.2$ pp). v10 intentionally runs its Direct branch in descriptor-\emph{free} mode to match the agent's task preamble; the descriptor finding motivates why adding domain-specific hints is valuable but is orthogonal to the v10 ensemble claim.
+    \item \textbf{Benchmark and framework release.} We release \textbf{CrossDomainVAD-12} (12 domain codes D1--D12, $1{,}418$ test items, calibration/dev/test splits), the v10 agent implementation (\texttt{agent\_v10.py} wrapping \texttt{agent\_v9.py} with parallel Direct), the 13-tool library, the legacy Tool/Expert/Strategy registry and calibration-argmax router from the design-exploration phase, and stratified paired bootstrap confidence intervals for every headline comparison.
+\end{enumerate}
+
+codex
+The bootstrap outputs reproduce the headline table exactly, including the meta-only ablation. The main issue I’m seeing is no longer arithmetic; it is paper-level framing: the title/abstract/introduction still present a training-free v10 paper, while §4 now adds a semi-supervised v11 extension with a stronger Qwen result.
+exec
+/bin/bash -lc "python - <<'PY'
+import json, collections
+from pathlib import Path
+for d in ['D7','D8','D9']:
+    rows=json.load(open(f'benchmark/results/verbalized/v11_eval_test/{d}.json'))
+    c=collections.Counter((r.get('controller') or {}).get('trust') for r in rows)
+    fail=sum(1 for r in rows if r.get('error') or not r.get('controller'))
+    print(d, len(rows), dict(c), 'fail', fail)
+PY" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+D7 98 {'blend': 19, 'A': 24, 'B': 55} fail 16
+D8 120 {'A': 48, 'B': 51, 'blend': 21} fail 53
+D9 120 {'A': 34, 'blend': 51, 'B': 35} fail 4
+
+exec
+/bin/bash -lc "find benchmark/results/verbalized/v4_rulebook -maxdepth 1 -name 'D*.json' -printf '%f\\n' | sort -V | xargs -I{} sh -c \"python - <<'PY'\\nimport json\\np='benchmark/results/verbalized/v4_rulebook/{}'\\nrows=json.load(open(p))\\nprint('{}', len(rows))\\nPY\"" in /hdd1/jiangxi/AD-Agent
+ exited 123 in 0ms:
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+sh: 1: Syntax error: "(" unexpected
+
+exec
+/bin/bash -lc "python - <<'PY'
+import json, collections
+from pathlib import Path
+c=collections.Counter(); n=0; bad=0
+for p in sorted(Path('benchmark/results/verbalized/v11_eval_test').glob('D*.json')):
+    rows=json.load(open(p)); n+=len(rows)
+    for r in rows:
+        c[(r.get('controller') or {}).get('trust')]+=1
+        if r.get('error') or not r.get('controller'):
+            bad+=1
+print('n', n, 'trust', dict(c), 'bad', bad)
+PY" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+n 1418 trust {'B': 521, 'blend': 541, 'A': 356} bad 100
+
+exec
+/bin/bash -lc "python - <<'PY'
+import json
+for p in ['D7','D8']:
+  rows=json.load(open(f'benchmark/results/verbalized/v11_eval_test/{p}.json'))
+  print('---',p)
+  for r in rows:
+    if r.get('error') or not r.get('controller'):
+      print({k:r.get(k) for k in ['item_id','label_gt','anomaly_score','direct_score','v9_score','error','direct_error','controller']})
+      break
+PY" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+--- D7
+{'item_id': 'D7_0047', 'label_gt': 0, 'anomaly_score': 0.98, 'direct_score': 0.99, 'v9_score': 0.5, 'error': 'malformed JSON after retries', 'direct_error': None, 'controller': {'trust': 'B', 'reasoning': 'Branch B correctly identifies the massive structural discrepancy of a constructed runway replacing natural terrain, whereas Branch A failed to provide a valid rationale due to a parsing error.', 'tokens': {'input': 1142, 'output': 62}}}
+--- D8
+{'item_id': 'D8_0038', 'label_gt': 0, 'anomaly_score': 0.95, 'direct_score': 0.98, 'v9_score': 0.5, 'error': 'malformed JSON after retries', 'direct_error': None, 'controller': {'trust': 'B', 'reasoning': 'Branch B correctly identifies the ulcerated, necrotic nature of the lesion which deviates significantly from the normal pigmented nevi in the references, whereas Branch A failed to provide a valid rationale due to a parsing error.', 'tokens': {'input': 818, 'output': 76}}}
+
+exec
+/bin/bash -lc "python - <<'PY'
+import json
+from pathlib import Path
+for p in sorted(Path('benchmark/results/verbalized/v4_rulebook').glob('D*.json'), key=lambda x:int(x.stem[1:])):
+    rows=json.load(open(p))
+    print(p.name, len(rows))
+PY" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+D1.json 4
+D2.json 4
+D3.json 4
+D4.json 4
+D5.json 4
+D6.json 4
+D7.json 4
+D8.json 4
+D9.json 4
+D10.json 4
+D11.json 4
+D12.json 4
+
+exec
+/bin/bash -lc "python - <<'PY'
+import json, collections
+from pathlib import Path
+err=collections.Counter()
+for p in sorted(Path('benchmark/results/verbalized/v11_eval_test').glob('D*.json')):
+    rows=json.load(open(p))
+    for r in rows:
+        if r.get('error'):
+            err[str(r.get('error'))]+=1
+print(err)
+PY" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+Counter({'malformed JSON after retries': 100})
+
+codex
+One important raw-artifact issue surfaced: controller JSON itself appears parseable for all 1418 items, but 100 items carry `error: malformed JSON after retries` on the v9 branch while still receiving a controller decision. That is not the same as controller parse failure, and the paper should distinguish those two failure modes clearly.
+exec
+/bin/bash -lc "python - <<'PY'
+import json, collections
+from pathlib import Path
+for p in sorted(Path('benchmark/results/verbalized/v11_eval_test').glob('D*.json'), key=lambda x:int(x.stem[1:])):
+    rows=json.load(open(p))
+    n=len(rows); e=sum(1 for r in rows if r.get('error'))
+    print(p.stem, n, e, f'{e/n:.1%}')
+PY" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+D1 120 0 0.0%
+D2 120 4 3.3%
+D3 120 4 3.3%
+D4 120 0 0.0%
+D5 120 1 0.8%
+D6 120 1 0.8%
+D7 98 16 16.3%
+D8 120 53 44.2%
+D9 120 4 3.3%
+D10 120 7 5.8%
+D11 120 8 6.7%
+D12 120 2 1.7%
+
+exec
+/bin/bash -lc 'rg -n "malformed JSON|parse|fallback|missing branch|branch" benchmark/scripts/agent_v11.py' in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+10:    After both branches finish, a Controller VLM sees the image, refs, both
+11:    branch outputs (score + rationale), and a per-domain rulebook (meta-rules
+12:    about which branch to trust when + domain knowledge). Controller returns
+17:  Rules are injected ONLY at the controller; the v9 and Direct branches run
+33:import argparse
+55:    "You are the arbitrator for a two-branch visual anomaly detection ensemble.\n"
+58:    "Given both branch outputs and any applicable rules, decide the final anomaly score.\n"
+154:    parsed = extract_json(text)
+155:    if not parsed:
+156:        return None, {"error": "parse_failed", "raw": text[:200]}
+157:    s = parsed.get("final_score")
+159:        return None, {"error": "no_score_field", "parsed": parsed}
+162:        "trust": parsed.get("trust"),
+163:        "reasoning": parsed.get("reasoning"),
+177:    When ``learning_enabled=True`` and the item is AD-mode with both branch
+235:        fallback_score = (direct_result or {}).get("anomaly_score")
+237:        base["anomaly_score"] = fallback_score
+238:        base["direct_score"] = fallback_score
+240:                             if fallback_score is not None
+241:                             else "v9 agent failed, no fallback")
+274:    # controller fallback.
+282:    # learning_enabled=False OR non-AD mode OR missing branch → behave as v10.
+288:            base["controller"] = {"skipped": "missing_branch"}
+291:    # learning_enabled + AD + both branches present → controller arbitration.
+310:        base["controller"] = {**(ctrl_meta or {}), "fallback": "blend"}
+318:    ap = argparse.ArgumentParser()
+339:    args = ap.parse_args()
+
+exec
+/bin/bash -lc "python - <<'PY'
+import json, collections, numpy as np
+from pathlib import Path
+for d in ['D7','D8','D9','D10']:
+  rows=json.load(open(f'benchmark/results/verbalized/v11_eval_test/{d}.json'))
+  err=[r for r in rows if r.get('error')]
+  ok=[r for r in rows if not r.get('error')]
+  print('\\n',d,'err',len(err),'ok',len(ok))
+  for name,sub in [('err',err),('ok',ok)]:
+    if sub:
+      print(name,'mean v9',np.mean([r['v9_score'] for r in sub]),'direct',np.mean([r['direct_score'] for r in sub]),'v11',np.mean([r['anomaly_score'] for r in sub]),'trust',collections.Counter((r['controller'] or {}).get('trust') for r in sub))
+PY" in /hdd1/jiangxi/AD-Agent
+ succeeded in 169ms:
+
+ D7 err 16 ok 82
+err mean v9 0.5 direct 0.8031250000000001 v11 0.79875 trust Counter({'B': 16})
+ok mean v9 0.7135365853658537 direct 0.7332926829268293 v11 0.7276829268292683 trust Counter({'B': 39, 'A': 24, 'blend': 19})
+
+ D8 err 53 ok 67
+err mean v9 0.5 direct 0.6886792452830187 v11 0.5095283018867923 trust Counter({'B': 41, 'A': 12})
+ok mean v9 0.3301492537313433 direct 0.6782089552238806 v11 0.2774626865671641 trust Counter({'A': 36, 'blend': 21, 'B': 10})
+
+ D9 err 4 ok 116
+err mean v9 0.5 direct 0.26 v11 0.14625000000000002 trust Counter({'B': 3, 'A': 1})
+ok mean v9 0.8344827586206898 direct 0.748793103448276 v11 0.7435344827586206 trust Counter({'blend': 51, 'A': 33, 'B': 32})
+
+ D10 err 7 ok 113
+err mean v9 0.5 direct 0.8300000000000001 v11 0.8242857142857141 trust Counter({'B': 7})
+ok mean v9 0.5886725663716815 direct 0.9323008849557523 v11 0.668716814159292 trust Counter({'A': 53, 'blend': 43, 'B': 17})
+
+exec
+/bin/bash -lc "sed -n '170,320p' benchmark/scripts/agent_v11.py" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+                 w_direct=0.5, w_v9=0.5,
+                 learning_enabled=False, rulebook_dir=None,
+                 controller_max_tokens=400,
+                 controller_client=None, controller_model=None):
+    """Run v11 on a single item.
+
+    When ``learning_enabled=False``, returns the same score a v10 runner would.
+    When ``learning_enabled=True`` and the item is AD-mode with both branch
+    outputs present, the controller VLM arbitrates.
+    """
+    is_ad_expected = (question is None or options is None)
+
+    direct_holder = {"result": None, "error": None}
+    direct_thread = None
+    if is_ad_expected:
+        direct_thread = threading.Thread(
+            target=_direct_blocking,
+            args=(client, model, item, direct_holder),
+            daemon=True,
+        )
+        direct_thread.start()
+
+    try:
+        v9 = run_v9_item(client, model, item, split, max_turns,
+                         question=question, options=options)
+        v9_error = v9.error
+    except Exception as e:
+        v9 = None
+        v9_error = f"{type(e).__name__}: {e}"
+
+    if direct_thread is not None:
+        direct_thread.join()
+    direct_result = direct_holder["result"]
+    direct_error = direct_holder["error"]
+
+    base = {
+        "item_id": item.get("item_id"),
+        "domain_code": item.get("domain_code"),
+        "label_gt": item.get("label"),
+        "mode": None,
+        "anomaly_score": None,
+        "direct_score": None,
+        "v9_score": None,
+        "v9_initial_score": None,
+        "v9_updated_score": None,
+        "mcq_answer": None,
+        "free_text": None,
+        "option_scores": None,
+        "rationale": "",
+        "n_turns": 0,
+        "tools_used": [],
+        "confidence": 0,
+        "candidate_features": None,
+        "remaining_features": None,
+        "refutation_verdicts": [],
+        "history": [],
+        "w_direct": w_direct,
+        "w_v9": w_v9,
+        "learning_enabled": bool(learning_enabled),
+        "controller": None,
+        "error": v9_error,
+        "direct_error": direct_error,
+    }
+
+    if v9 is None:
+        fallback_score = (direct_result or {}).get("anomaly_score")
+        base["mode"] = "anomaly_detection" if is_ad_expected else "unknown"
+        base["anomaly_score"] = fallback_score
+        base["direct_score"] = fallback_score
+        base["rationale"] = ("v9 agent failed; reporting Direct-only score"
+                             if fallback_score is not None
+                             else "v9 agent failed, no fallback")
+        base["error"] = f"v9_failed: {v9_error}"
+        return base
+
+    base.update({
+        "mode": v9.mode,
+        "v9_score": v9.score,
+        "v9_initial_score": v9.initial_score,
+        "v9_updated_score": v9.updated_score,
+        "mcq_answer": v9.mcq_answer,
+        "free_text": v9.free_text,
+        "option_scores": v9.option_scores,
+        "rationale": v9.rationale,
+        "n_turns": v9.n_turns,
+        "tools_used": v9.tools_used,
+        "confidence": v9.confidence,
+        "candidate_features": v9.candidate_features,
+        "remaining_features": v9.remaining_features,
+        "refutation_verdicts": v9.refutation_verdicts,
+        "history": v9.history,
+    })
+
+    agent_decided_ad = (v9.mode == "anomaly_detection")
+    direct_score = (direct_result or {}).get("anomaly_score")
+    base["direct_score"] = direct_score if agent_decided_ad else None
+    # Preserve Direct rationale text so the downstream meta-rule reflector
+    # (verbalized_v4) has something to reason over. Cheap — just a string.
+    if direct_result is not None and agent_decided_ad:
+        base["direct_rationale"] = _direct_rationale(direct_result)
+    else:
+        base["direct_rationale"] = ""
+
+    # Fixed-weight blend: always computed as the v10-equivalent baseline /
+    # controller fallback.
+    if agent_decided_ad and direct_score is not None and v9.score is not None:
+        blend_score = max(0.0, min(1.0, w_direct * direct_score + w_v9 * v9.score))
+    elif v9.score is not None:
+        blend_score = v9.score
+    else:
+        blend_score = direct_score
+
+    # learning_enabled=False OR non-AD mode OR missing branch → behave as v10.
+    if (not learning_enabled) or (not agent_decided_ad) \
+       or (direct_score is None) or (v9.score is None):
+        base["anomaly_score"] = blend_score
+        if learning_enabled and agent_decided_ad and \
+           (direct_score is None or v9.score is None):
+            base["controller"] = {"skipped": "missing_branch"}
+        return base
+
+    # learning_enabled + AD + both branches present → controller arbitration.
+    rules_text = _retrieve_rules_cached(
+        rulebook_dir or "",
+        item.get("domain_code", "") or "",
+        item.get("category") or "",
+        max_meta=3, max_domain=4,
+    )
+    ctrl_client = controller_client or client
+    ctrl_model = controller_model or model
+    ctrl_score, ctrl_meta = _controller_arbitrate(
+        ctrl_client, ctrl_model, item,
+        v9_score=v9.score, v9_rationale=v9.rationale,
+        direct_score=direct_score,
+        direct_rationale=_direct_rationale(direct_result),
+        rules_text=rules_text,
+        max_tokens=controller_max_tokens,
+    )
+    if ctrl_score is None:
+        base["anomaly_score"] = blend_score
+        base["controller"] = {**(ctrl_meta or {}), "fallback": "blend"}
+    else:
+        base["anomaly_score"] = ctrl_score
+        base["controller"] = ctrl_meta
+    return base
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--manifest", required=True)
+    ap.add_argument("--split", choices=["calibration", "dev", "test"],
+
+exec
+/bin/bash -lc "python - <<'PY'
+import json
+p='benchmark/results/verbalized/v4_rulebook/D1.json'
+x=json.load(open(p))
+print(type(x), x.keys() if isinstance(x,dict) else '')
+for k,v in x.items():
+ print(k, type(v).__name__, len(v) if hasattr(v,'__len__') else None)
+ if isinstance(v, list) and v:
+  print(' first', v[0])
+PY" in /hdd1/jiangxi/AD-Agent
+ succeeded in 0ms:
+<class 'dict'> dict_keys(['domain_code', 'n_rules', 'rules', 'meta_origin'])
+domain_code str 2
+n_rules int None
+rules list 86
+ first {'type': 'meta_a_win', 'category': None, 'text': 'If the query image contains a complex object with a specific orientation (e.g., electronic components, nuts) and the Agent explicitly identifies a rotation or alignment mismatch compared to references, trust the Agent.', 'source_items': ['D1_0009', 'D1_0038', 'D1_0064', 'D1_0174'], 'confidence': 'oracle', 'id': 'D1_meta_a_win_0'}
+meta_origin dict 3
+
+codex
+Score: 7.1/10
+
+Verdict: almost
+
+Verified claims:  
+The headline v11 numbers are reproducible from disk. Running `benchmark/scripts/v11_bootstrap.py` on `benchmark/results/verbalized/v11_eval_test/` gives: Direct 0.7119, v9 0.6696, v10 blend 0.7333, v11 full 0.7539, Δ +2.05 pp, CI `[+0.41,+3.67]`, `P(Δ>0)=0.995`. The per-domain table also matches, including D7 +13.39 pp and D8 +7.42 pp.
+
+The meta-only ablation is also reproducible. `v11_bootstrap_3way.py` gives meta-only 0.7396, Δ +0.63 pp, CI `[-1.26,+2.36]`, `P=0.730`; full-minus-meta +1.43 pp, CI `[-0.19,+3.13]`, `P=0.960`. This supports the paper’s cautious statement that routing-only is directionally positive but not significant.
+
+The Controller architecture is not merely cosmetic. It fixes the R4 baseline mismatch by making passive v11 equal to v10, then adds a real learned arbitration layer over Agent/Direct score-rationale pairs plus RAG rules. However, the strongest gain is not purely from the new meta-routing idea: the statistically significant full result depends materially on reused v3 domain rules.
+
+Unverified / false claims:  
+The paper still has a title/abstract/introduction/conclusion framed as “Training-Free Cross-Domain VAD,” while §4’s best result is explicitly semi-supervised. This is now a paper-level inconsistency, not just wording.
+
+The opening of §4 says the “total oracle budget” is 40 dev labels/domain, but later §4 and Appendix `app:rulebook_pilot` say the reused L2 corrective layer consumes an additional `K=10` oracle FN/FP labels/domain. Either this is additional use of the same 40 dev labels or an additional oracle budget; the paper currently says both.
+
+The §4 meta-vs-full interpretation has a concrete domain-list error: it says full > meta on D2 retail, but the reproduced numbers show D2 meta-only 0.619 vs full 0.613. The full-dominant set should be D4/D7/D8/D10, not D2/D7/D8/D10.
+
+“Parse-failure rate is exactly 0” is only true for the Controller JSON, not the whole v11 branch pipeline. The raw artifacts contain 100 items with `error: malformed JSON after retries` from the v9 branch, including D8 53/120 and D7 16/98. The Controller still arbitrates these items using `v9_score=0.5` and often trusts Direct. That may be a valid robustness behavior, but it must be reported separately because §4 claims the Controller sees both branches’ score-rationale pairs.
+
+The abstract/conclusion still say the v10 ensemble “significantly beats Direct on every backbone,” but Qwen3.5 has CI `[-0.08,+3.51]`; if significance is defined by 95% CI excluding zero, that claim is false.
+
+Weaknesses (ranked, with minimum fix each)
+
+1. **Training-free vs semi-supervised identity crisis.**  
+Minimum fix: either retitle/reframe as “training-free core with semi-supervised verbalized controller extension,” or move §4 to an explicitly optional extension/appendix and keep the main claim v10-only.
+
+2. **Oracle budget accounting is not clean.**  
+Minimum fix: add one budget table with unique labels/domain and oracle exposures/domain: v10 = 0 labels, meta-rules = 40 dev labels/domain, L2 domain rules = either subset of those 40 or extra K=10/domain. Remove the contradictory “total oracle budget is 480” sentence unless it is strictly true.
+
+3. **Branch parse failures contaminate the Controller story.**  
+Minimum fix: report v9/direct/controller parse-failure rates separately, per domain. Add an ablation excluding v9-error items or forcing fallback-to-v10 whenever v9 has `error`, to show whether the +2.05 pp survives beyond “Controller learns to ignore malformed Agent outputs.”
+
+4. **Novelty is real but partly inherited from v3.**  
+Minimum fix: state explicitly that the new contribution is controller-level arbitration and meta-routing over v10, while the domain-content layer is reused from the prior rulebook pilot. Do not imply the full +2.05 pp is solely due to newly learned controller meta-rules.
+
+5. **Meta-only ablation is useful but not a clean routing-only isolation.**  
+Minimum fix: add a controller-with-no-rules or shuffled-meta control. Meta-only still includes image, rationales, branch scores, and visible branch failures; it isolates removal of domain rules, not pure routing knowledge.
+
+6. **Statistical framing is mostly correct but should be more precise.**  
+Minimum fix: call `P(Δ>0)` a bootstrap sign probability, not posterior mass. State that the bootstrap treats the 12 domains as fixed strata; it supports claims on CrossDomainVAD-12, not necessarily a random population of domains.
+
+7. **Paper integration is incomplete.**  
+Minimum fix: update abstract, intro contributions, conclusion, and main narrative to include v11 or explicitly say v11 is an optional semi-supervised extension. Right now §4 is stronger than the abstract’s stated release story, which still centers only v10.
+
+Memory update for Round 6 (if any)  
+Round 5 verified the v11 full and meta-only numbers from artifacts. Main remaining blockers are framing, not arithmetic: training-free title conflicts with semi-supervised §4; oracle budget wording is inconsistent; §4 has a D2/D4 meta-vs-full domain-list error; and raw v11 artifacts contain 100 v9 branch malformed-JSON errors, especially D8 53/120 and D7 16/98, despite Controller parse success being 1418/1418. The paper is close, but not ready until these are disclosed and controlled.
+tokens used
+107,814
+Score: 7.1/10
+
+Verdict: almost
+
+Verified claims:  
+The headline v11 numbers are reproducible from disk. Running `benchmark/scripts/v11_bootstrap.py` on `benchmark/results/verbalized/v11_eval_test/` gives: Direct 0.7119, v9 0.6696, v10 blend 0.7333, v11 full 0.7539, Δ +2.05 pp, CI `[+0.41,+3.67]`, `P(Δ>0)=0.995`. The per-domain table also matches, including D7 +13.39 pp and D8 +7.42 pp.
+
+The meta-only ablation is also reproducible. `v11_bootstrap_3way.py` gives meta-only 0.7396, Δ +0.63 pp, CI `[-1.26,+2.36]`, `P=0.730`; full-minus-meta +1.43 pp, CI `[-0.19,+3.13]`, `P=0.960`. This supports the paper’s cautious statement that routing-only is directionally positive but not significant.
+
+The Controller architecture is not merely cosmetic. It fixes the R4 baseline mismatch by making passive v11 equal to v10, then adds a real learned arbitration layer over Agent/Direct score-rationale pairs plus RAG rules. However, the strongest gain is not purely from the new meta-routing idea: the statistically significant full result depends materially on reused v3 domain rules.
+
+Unverified / false claims:  
+The paper still has a title/abstract/introduction/conclusion framed as “Training-Free Cross-Domain VAD,” while §4’s best result is explicitly semi-supervised. This is now a paper-level inconsistency, not just wording.
+
+The opening of §4 says the “total oracle budget” is 40 dev labels/domain, but later §4 and Appendix `app:rulebook_pilot` say the reused L2 corrective layer consumes an additional `K=10` oracle FN/FP labels/domain. Either this is additional use of the same 40 dev labels or an additional oracle budget; the paper currently says both.
+
+The §4 meta-vs-full interpretation has a concrete domain-list error: it says full > meta on D2 retail, but the reproduced numbers show D2 meta-only 0.619 vs full 0.613. The full-dominant set should be D4/D7/D8/D10, not D2/D7/D8/D10.
+
+“Parse-failure rate is exactly 0” is only true for the Controller JSON, not the whole v11 branch pipeline. The raw artifacts contain 100 items with `error: malformed JSON after retries` from the v9 branch, including D8 53/120 and D7 16/98. The Controller still arbitrates these items using `v9_score=0.5` and often trusts Direct. That may be a valid robustness behavior, but it must be reported separately because §4 claims the Controller sees both branches’ score-rationale pairs.
+
+The abstract/conclusion still say the v10 ensemble “significantly beats Direct on every backbone,” but Qwen3.5 has CI `[-0.08,+3.51]`; if significance is defined by 95% CI excluding zero, that claim is false.
+
+Weaknesses (ranked, with minimum fix each)
+
+1. **Training-free vs semi-supervised identity crisis.**  
+Minimum fix: either retitle/reframe as “training-free core with semi-supervised verbalized controller extension,” or move §4 to an explicitly optional extension/appendix and keep the main claim v10-only.
+
+2. **Oracle budget accounting is not clean.**  
+Minimum fix: add one budget table with unique labels/domain and oracle exposures/domain: v10 = 0 labels, meta-rules = 40 dev labels/domain, L2 domain rules = either subset of those 40 or extra K=10/domain. Remove the contradictory “total oracle budget is 480” sentence unless it is strictly true.
+
+3. **Branch parse failures contaminate the Controller story.**  
+Minimum fix: report v9/direct/controller parse-failure rates separately, per domain. Add an ablation excluding v9-error items or forcing fallback-to-v10 whenever v9 has `error`, to show whether the +2.05 pp survives beyond “Controller learns to ignore malformed Agent outputs.”
+
+4. **Novelty is real but partly inherited from v3.**  
+Minimum fix: state explicitly that the new contribution is controller-level arbitration and meta-routing over v10, while the domain-content layer is reused from the prior rulebook pilot. Do not imply the full +2.05 pp is solely due to newly learned controller meta-rules.
+
+5. **Meta-only ablation is useful but not a clean routing-only isolation.**  
+Minimum fix: add a controller-with-no-rules or shuffled-meta control. Meta-only still includes image, rationales, branch scores, and visible branch failures; it isolates removal of domain rules, not pure routing knowledge.
+
+6. **Statistical framing is mostly correct but should be more precise.**  
+Minimum fix: call `P(Δ>0)` a bootstrap sign probability, not posterior mass. State that the bootstrap treats the 12 domains as fixed strata; it supports claims on CrossDomainVAD-12, not necessarily a random population of domains.
+
+7. **Paper integration is incomplete.**  
+Minimum fix: update abstract, intro contributions, conclusion, and main narrative to include v11 or explicitly say v11 is an optional semi-supervised extension. Right now §4 is stronger than the abstract’s stated release story, which still centers only v10.
+
+Memory update for Round 6 (if any)  
+Round 5 verified the v11 full and meta-only numbers from artifacts. Main remaining blockers are framing, not arithmetic: training-free title conflicts with semi-supervised §4; oracle budget wording is inconsistent; §4 has a D2/D4 meta-vs-full domain-list error; and raw v11 artifacts contain 100 v9 branch malformed-JSON errors, especially D8 53/120 and D7 16/98, despite Controller parse success being 1418/1418. The paper is close, but not ready until these are disclosed and controlled.

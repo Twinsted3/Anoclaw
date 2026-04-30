@@ -1,0 +1,622 @@
+{
+  "domain_code": "D12",
+  "n_rules": 61,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B cites 'orientation change', 'rotation', or 'viewing angle' as the primary evidence for an anomaly, trust Branch A (Agent), as these are often normal variations in 3D point cloud data.",
+      "source_items": [
+        "D6_0007",
+        "D6_0008",
+        "D6_0070",
+        "D6_0082"
+      ],
+      "confidence": "oracle",
+      "id": "D6_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B identifies a 'missing section', 'void', or 'collapsed protrusion' that Branch A explicitly refutes by noting the feature exists in the reference set (natural variation), trust Branch A.",
+      "source_items": [
+        "D6_0007",
+        "D6_0008",
+        "D6_0070",
+        "D6_0082"
+      ],
+      "confidence": "oracle",
+      "id": "D6_meta_a_win_1"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If Branch B claims a 'deformation' or 'bending' that Branch A identifies as a consistent structural feature across references, trust Branch A.",
+      "source_items": [
+        "D6_0007",
+        "D6_0008",
+        "D6_0070",
+        "D6_0082"
+      ],
+      "confidence": "oracle",
+      "id": "D6_meta_a_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch A identifies a specific structural defect like a 'fold', 'crease', or 'twist' that is visually distinct from the smooth surfaces in the references, trust Branch B (Direct) if it flags the image as anomalous.",
+      "source_items": [
+        "D6_0020",
+        "D6_0029",
+        "D6_0036",
+        "D6_0090",
+        "D6_0098",
+        "D6_0164"
+      ],
+      "confidence": "oracle",
+      "id": "D6_meta_b_win_3"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch A's rationale contains a 'json parse failed' error or is otherwise malformed, trust Branch B (Direct).",
+      "source_items": [
+        "D6_0020",
+        "D6_0029",
+        "D6_0036",
+        "D6_0090",
+        "D6_0098",
+        "D6_0164"
+      ],
+      "confidence": "oracle",
+      "id": "D6_meta_b_win_4"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If Branch A classifies a query as 'normal' despite the object having a grossly distorted, irregular, or 'folded' shape compared to the flat/elongated references, trust Branch B.",
+      "source_items": [
+        "D6_0020",
+        "D6_0029",
+        "D6_0036",
+        "D6_0090",
+        "D6_0098",
+        "D6_0164"
+      ],
+      "confidence": "oracle",
+      "id": "D6_meta_b_win_5"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "fish",
+      "text": "The image contains exactly one single object instance.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_6"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "fish",
+      "text": "The object exhibits a continuous, closed boundary forming a fish silhouette.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_7"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "fish",
+      "text": "The object surface is composed of a uniform, stochastic point cloud pattern.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_8"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "fish",
+      "text": "The object features a continuous rainbow gradient transitioning from yellow to purple.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_9"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "butterflyFish",
+      "text": "The object is a single, continuous point cloud forming a fish-like silhouette.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_10"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "butterflyFish",
+      "text": "The object is oriented diagonally with the head pointing towards the bottom-right.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_11"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "butterflyFish",
+      "text": "The object exhibits a continuous rainbow gradient transitioning from yellow to purple.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_12"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "butterflyFish",
+      "text": "The surface is composed of a uniform, stochastic distribution of discrete points.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_13"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "diamond",
+      "text": "Exactly one single contiguous object is present in the image.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_14"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "diamond",
+      "text": "The object boundary is continuous and closed, forming a single enclosed region.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_15"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "diamond",
+      "text": "The object surface is composed of a dense, uniform distribution of discrete points.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_16"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "diamond",
+      "text": "The object exhibits a smooth vertical color gradient transitioning from yellow/green at the top to blue/purple at the bottom.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_17"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "airplane",
+      "text": "The object surface is composed entirely of a discrete, granular point cloud pattern.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_18"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "airplane",
+      "text": "The object exhibits a continuous spectral gradient ranging from yellow to purple.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_19"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "airplane",
+      "text": "The object geometry consists of a single connected component with no internal voids or holes.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_20"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "barCandy",
+      "text": "Object consists of a central elongated body with two rounded protrusions at each end.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_21"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "barCandy",
+      "text": "Object is oriented diagonally from top-left to bottom-right.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_22"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "barCandy",
+      "text": "Object exhibits a continuous rainbow gradient transitioning from yellow to purple.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_23"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "barCandy",
+      "text": "Surface is composed of a dense, uniform distribution of discrete colored points.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_24"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "car",
+      "text": "The object is a single, continuous, irregular 3D volume with a smooth, convex-like outer boundary.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_25"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "car",
+      "text": "The surface is composed of a dense, uniform distribution of discrete points (point cloud representation).",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_26"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "car",
+      "text": "The object exhibits a continuous spectral gradient ranging from yellow to green, cyan, and purple.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_27"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "car",
+      "text": "The object is centrally positioned against a uniform, featureless white background.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_28"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "duck",
+      "text": "The object consists of exactly two distinct, overlapping lobes or compartments.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_29"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "duck",
+      "text": "The object boundary is continuous and smooth, with no sharp protrusions, holes, or jagged edges.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_30"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "duck",
+      "text": "The surface is composed of a uniform, dense distribution of discrete points (point cloud).",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_31"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "duck",
+      "text": "The object displays a continuous spectral gradient ranging from purple/blue to green and yellow.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_32"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "pacCandy",
+      "text": "The object is a single, continuous, elongated rectangular shape with a diagonal orientation.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_33"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "pacCandy",
+      "text": "The surface is composed entirely of a dense, granular point-cloud pattern.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_34"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "pacCandy",
+      "text": "The object features a continuous rainbow gradient transitioning from yellow to purple.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_35"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "pacCandy",
+      "text": "The object is centered within a uniform white background.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_36"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "candybar",
+      "text": "Object consists of a central elongated body with two distinct rounded protrusions at opposite ends.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_37"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "candybar",
+      "text": "The object is oriented diagonally, extending from the top-left to the bottom-right of the frame.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_38"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "candybar",
+      "text": "The object surface displays a continuous rainbow gradient transitioning from yellow to purple.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_39"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "candybar",
+      "text": "The object surface is composed of a dense, uniform distribution of discrete colored points.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_40"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "gemstone",
+      "text": "The image contains exactly one single connected object.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_41"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "gemstone",
+      "text": "The object surface is colored with a continuous gradient ranging from yellow to purple.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_42"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "gemstone",
+      "text": "The object surface is composed of a dense, uniform distribution of discrete points.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_43"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "gemstone",
+      "text": "The object forms a single, continuous, closed volume without internal voids or disconnected fragments.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_44"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "chicken",
+      "text": "The image contains exactly one single connected object.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_45"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "chicken",
+      "text": "The object surface is composed of a uniform, stochastic distribution of discrete points.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_46"
+    },
+    {
+      "type": "invariant",
+      "subtype": "color_palette",
+      "category": "chicken",
+      "text": "The object features a continuous spectral gradient ranging from yellow to purple.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_47"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "chicken",
+      "text": "The object possesses a distinct, smaller protrusion attached to the main body.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D6_invariant_48"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "butterflyFish",
+      "text": "Flag sparse point density or gaps in protruding fin-like structures as defects.",
+      "source_items": [
+        "D6_0092"
+      ],
+      "confidence": "medium",
+      "id": "D6_corrective_fn_49"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "diamond",
+      "text": "Flag distinct linear cracks or tears in the point cloud, even if the overall shape appears intact.",
+      "source_items": [
+        "D6_0177"
+      ],
+      "confidence": "medium",
+      "id": "D6_corrective_fn_50"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "airplane",
+      "text": "Flag items with large central voids or missing mass in the main body as anomalies.",
+      "source_items": [
+        "D6_0090",
+        "D6_0098"
+      ],
+      "confidence": "medium",
+      "id": "D6_corrective_fn_51"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "airplane",
+      "text": "Flag items with distinct structural protrusions or detached clusters at the periphery as anomalies.",
+      "source_items": [
+        "D6_0178"
+      ],
+      "confidence": "medium",
+      "id": "D6_corrective_fn_52"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "airplane",
+      "text": "Do not flag natural density variations or minor voids in the center of the main body as anomalies.",
+      "source_items": [
+        "D6_0002"
+      ],
+      "confidence": "medium",
+      "id": "D6_corrective_fp_53"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "car",
+      "text": "Flag as anomaly if the upper surface lacks the two distinct raised bumps (ears) present in normal references.",
+      "source_items": [
+        "D6_0176",
+        "D6_0101"
+      ],
+      "confidence": "high",
+      "id": "D6_corrective_fn_54"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "car",
+      "text": "Do not flag as anomaly if the object is a complete car body with standard point density variations.",
+      "source_items": [
+        "D6_0070",
+        "D6_0053",
+        "D6_0081"
+      ],
+      "confidence": "high",
+      "id": "D6_corrective_fp_55"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "duck",
+      "text": "Do not flag the object as fragmented if the two lobes are connected by a continuous, albeit thin, bridge of points.",
+      "source_items": [
+        "D6_0010",
+        "D6_0074"
+      ],
+      "confidence": "high",
+      "id": "D6_corrective_fp_56"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "candybar",
+      "text": "Flag items with subtle point density variations or color gradient shifts as anomalies, even if the overall shape appears intact.",
+      "source_items": [
+        "D6_0138",
+        "D6_0124"
+      ],
+      "confidence": "medium",
+      "id": "D6_corrective_fn_57"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "chicken",
+      "text": "Flag global shape mismatches or silhouette deviations as anomalies, even if local surface texture appears normal.",
+      "source_items": [
+        "D6_0159"
+      ],
+      "confidence": "medium",
+      "id": "D6_corrective_fn_58"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "chicken",
+      "text": "Do not flag natural anatomical protrusions (lobes) or global orientation shifts as defects if they match reference shapes.",
+      "source_items": [
+        "D6_0067",
+        "D6_0037"
+      ],
+      "confidence": "medium",
+      "id": "D6_corrective_fp_59"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "chicken",
+      "text": "Ignore sharp color gradients or lines that follow the object's natural curvature, as they are likely rendering artifacts.",
+      "source_items": [
+        "D6_0006"
+      ],
+      "confidence": "medium",
+      "id": "D6_corrective_fp_60"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 4,
+    "n_b_wins": 6
+  },
+  "_shuffled_origin": "D6"
+}

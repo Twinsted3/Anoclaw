@@ -1,0 +1,462 @@
+{
+  "domain_code": "D8",
+  "n_rules": 43,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image shows a physical defect (tear, scratch, crush, or peeling seal) that is absent in the reference images, trust A (Agent).",
+      "source_items": [
+        "D2_0068",
+        "D2_0092",
+        "D2_0097",
+        "D2_0107",
+        "D2_0130",
+        "D2_0137"
+      ],
+      "confidence": "oracle",
+      "id": "D2_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image shows a structural state change (e.g., open flap vs. closed flap) that differs from the reference images, trust A (Agent).",
+      "source_items": [
+        "D2_0068",
+        "D2_0092",
+        "D2_0097",
+        "D2_0107",
+        "D2_0130",
+        "D2_0137"
+      ],
+      "confidence": "oracle",
+      "id": "D2_meta_a_win_1"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image shows a different product variant (different logo, text, or design) compared to the reference images, trust A (Agent).",
+      "source_items": [
+        "D2_0068",
+        "D2_0092",
+        "D2_0097",
+        "D2_0107",
+        "D2_0130",
+        "D2_0137"
+      ],
+      "confidence": "oracle",
+      "id": "D2_meta_a_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a handwritten mark (e.g., price tag) on the packaging, trust B (Direct) as it is likely a normal retail marking.",
+      "source_items": [
+        "D2_0037",
+        "D2_0056",
+        "D2_0063",
+        "D2_0087"
+      ],
+      "confidence": "oracle",
+      "id": "D2_meta_b_win_3"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a different angle or side of the same product (e.g., front vs. back) compared to the reference images, trust B (Direct).",
+      "source_items": [
+        "D2_0037",
+        "D2_0056",
+        "D2_0063",
+        "D2_0087"
+      ],
+      "confidence": "oracle",
+      "id": "D2_meta_b_win_4"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows the product in a different orientation (e.g., upside down) but with no physical defects, trust B (Direct).",
+      "source_items": [
+        "D2_0037",
+        "D2_0056",
+        "D2_0063",
+        "D2_0087"
+      ],
+      "confidence": "oracle",
+      "id": "D2_meta_b_win_5"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "food_package",
+      "text": "Exactly one food package object is present in the image.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_6"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "food_package",
+      "text": "The package is positioned upright on a flat surface against a perforated pegboard background.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_7"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "food_package",
+      "text": "The package exhibits a continuous, sealed boundary with no visible tears or holes.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_8"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "food_package",
+      "text": "The package surface displays specular highlights consistent with a glossy plastic material.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_9"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "food_box",
+      "text": "The object is a single, rigid, rectangular prism-shaped packaging box.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_10"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "food_box",
+      "text": "The box is positioned upright on a flat surface against a perforated pegboard background.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_11"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "food_box",
+      "text": "The box surface is smooth and continuous, without tears, holes, or missing pieces.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_12"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "drink_can",
+      "text": "Exactly one beverage container is present in the center of the frame.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_13"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "drink_can",
+      "text": "The container has a continuous, unbroken vertical boundary with a flat base.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_14"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "drink_can",
+      "text": "The container is positioned upright on a flat surface against a perforated background.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_15"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "cigarette_box",
+      "text": "Exactly one cigarette box is present in the image.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_16"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "cigarette_box",
+      "text": "The cigarette box is positioned vertically upright inside a clear plastic display holder.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_17"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "cigarette_box",
+      "text": "The cigarette box has a rigid, rectangular prism geometry with sharp edges.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_18"
+    },
+    {
+      "type": "invariant",
+      "subtype": "texture",
+      "category": "cigarette_box",
+      "text": "The surface of the cigarette box is smooth and glossy, showing specular highlights.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_19"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "drink_bottle",
+      "text": "Exactly one drink bottle is present in the image.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_20"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "drink_bottle",
+      "text": "The bottle is positioned upright on a flat surface.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_21"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "drink_bottle",
+      "text": "The background consists of a perforated pegboard wall.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_22"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "drink_bottle",
+      "text": "The bottle has a continuous, unbroken cylindrical body.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_23"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "drink_bottle",
+      "text": "The bottle is sealed with a cap on top.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_24"
+    },
+    {
+      "type": "invariant",
+      "subtype": "count",
+      "category": "food_bottle",
+      "text": "Exactly one food packaging container is present in the image.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_25"
+    },
+    {
+      "type": "invariant",
+      "subtype": "structural",
+      "category": "food_bottle",
+      "text": "The container has a continuous, unbroken cylindrical or tapered body.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_26"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "food_bottle",
+      "text": "The container is positioned upright on a flat surface.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_27"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": "food_bottle",
+      "text": "The container is centered horizontally within the frame.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D2_invariant_28"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "food_package",
+      "text": "Flag handwritten markings (e.g., price, date) on packaging as anomalies, even if the package structure is intact.",
+      "source_items": [
+        "D2_0170"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fn_29"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "food_package",
+      "text": "Do not flag minor wrinkles, creases, or scuffs on flexible packaging edges as defects if they are consistent with normal handling.",
+      "source_items": [
+        "D2_0072",
+        "D2_0037",
+        "D2_0001"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fp_30"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "food_box",
+      "text": "Flag any large, irregular hole or missing material on the top flap or edges of the box as a physical defect.",
+      "source_items": [
+        "D2_0144"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fn_31"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "food_box",
+      "text": "Do not flag specular glare or bright white reflections on glossy packaging surfaces as defects.",
+      "source_items": [
+        "D2_0003"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fp_32"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "food_box",
+      "text": "Do not flag standard packaging geometry or slight edge curvature as crushing or deformation.",
+      "source_items": [
+        "D2_0063",
+        "D2_0065"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fp_33"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "drink_can",
+      "text": "Flag cartons with attached plastic straw wrappers or straws as anomalies, even if the label print is perfect.",
+      "source_items": [
+        "D2_0097",
+        "D2_0092"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fn_34"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "drink_can",
+      "text": "Do not flag minor label smudges or print imperfections if the overall packaging design and text layout match the reference.",
+      "source_items": [
+        "D2_0031"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fp_35"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "drink_can",
+      "text": "Do not flag items as anomalies solely based on different packaging designs if the product type and brand are consistent with the reference set.",
+      "source_items": [
+        "D2_0056"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fp_36"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "cigarette_box",
+      "text": "Flag packs with open top flaps or torn cardboard as anomalies, even if the printed face is intact.",
+      "source_items": [
+        "D2_0162",
+        "D2_0169"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fn_37"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "cigarette_box",
+      "text": "Flag packs with completely different color schemes or graphics as anomalies, overriding 'design variation' logic.",
+      "source_items": [
+        "D2_0137"
+      ],
+      "confidence": "high",
+      "id": "D2_corrective_fn_38"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "drink_bottle",
+      "text": "Flag bottles with missing labels or exposed dark liquid as anomalies, even if the bottle shape is intact.",
+      "source_items": [
+        "D2_0095"
+      ],
+      "confidence": "medium",
+      "id": "D2_corrective_fn_39"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "drink_bottle",
+      "text": "Do not flag bottles with intact caps and labels as anomalies solely due to slight rotation or perceived misalignment.",
+      "source_items": [
+        "D2_0083"
+      ],
+      "confidence": "medium",
+      "id": "D2_corrective_fp_40"
+    },
+    {
+      "type": "corrective_fn",
+      "subtype": "anomaly_mode_extension",
+      "category": "food_bottle",
+      "text": "Flag small, high-contrast white spots on dark or purple packaging as defects, even if they appear as minor surface marks.",
+      "source_items": [
+        "D2_0107"
+      ],
+      "confidence": "medium",
+      "id": "D2_corrective_fn_41"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": "food_bottle",
+      "text": "Do not flag crinkled or uneven foil seals on the rim of cup noodles as defects if the seal remains intact.",
+      "source_items": [
+        "D2_0068"
+      ],
+      "confidence": "medium",
+      "id": "D2_corrective_fp_42"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 6,
+    "n_b_wins": 4
+  },
+  "_shuffled_origin": "D2"
+}

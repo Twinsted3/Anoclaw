@@ -1,0 +1,44 @@
+% Draft replacement for Table 1 — v2 manifest, 12 domains, v10 agent ensemble.
+% Numbers from paper/figures/v2_main_results.json (2026-04-22 04:42).
+% Direct = v0_direct_generic (DESCRIPTOR_MODE=generic, no domain hint).
+% Agent  = v9 (refutation) inside v10 wrapper.
+% Ens    = 0.5 * Direct + 0.5 * Agent, computed inside v10 per item in parallel.
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.8pt}
+\begin{tabular}{l|ccc|ccc|ccc}
+\toprule
+& \multicolumn{3}{c|}{\textbf{GPT-5.4}} & \multicolumn{3}{c|}{\textbf{SeedVL}} & \multicolumn{3}{c}{\textbf{Qwen3.5-VL-27B}} \\
+Domain & Direct & Ens & $\Delta$ & Direct & Ens & $\Delta$ & Direct & Ens & $\Delta$ \\
+\midrule
+D1  MVTec-AD industrial      & 0.956 & 0.954 & $-0.2$ & 0.836 & 0.880 & $+4.4$ & 0.903 & 0.955 & $+5.2$ \\
+D2  GoodsAD retail            & 0.765 & 0.788 & $+2.3$ & 0.865 & 0.883 & $+1.8$ & 0.644 & 0.603 & $-4.1$ \\
+D3  VisA complex industrial   & 0.837 & 0.895 & $+5.8$ & 0.886 & 0.891 & $+0.5$ & 0.787 & 0.829 & $+4.2$ \\
+D4  SDNET infrastructure      & 0.544 & 0.704 & $+16.0$ & 0.440 & 0.637 & $+19.7$ & 0.611 & 0.654 & $+4.3$ \\
+D5  MVTec-LOCO logical        & 0.640 & 0.741 & $+10.1$ & 0.664 & 0.839 & $+17.5$ & 0.604 & 0.674 & $+7.0$ \\
+D6  Real3D-AD 3D product      & 0.555 & 0.556 & $+0.1$  & 0.473 & 0.476 & $+0.3$  & 0.517 & 0.522 & $+0.5$ \\
+D7  LEVIR-CD+ change-det.     & 0.807 & 0.810 & $+0.3$  & 0.798 & 0.823 & $+2.5$  & 0.877 & 0.794 & $-8.3$ \\
+D8  DermaMNIST dermatology    & 0.644 & 0.702 & $+5.8$  & 0.605 & 0.621 & $+1.6$  & 0.551 & 0.619 & $+6.8$ \\
+D9  BraTS2021 brain MRI       & 0.826 & 0.835 & $+0.9$  & 0.587 & 0.653 & $+6.6$  & 0.779 & 0.852 & $+7.3$ \\
+D10 BMAD liver CT             & 0.448 & 0.493 & $+4.5$  & 0.442 & 0.426 & $-1.6$  & 0.483 & 0.487 & $+0.4$ \\
+D11 HyperKvasir GI endoscopy  & 0.776 & 0.785 & $+0.9$  & 0.730 & 0.759 & $+2.9$  & 0.847 & 0.809 & $-3.8$ \\
+D12 BDD100K+RA21 road safety  & 0.975 & 0.979 & $+0.4$  & 0.811 & 0.963 & $+15.2$ & 0.970 & 0.984 & $+1.4$ \\
+\midrule
+\textbf{Macro}                & \textbf{0.731} & \textbf{0.772} & $\mathbf{+4.01}$ & \textbf{0.678} & \textbf{0.738} & $\mathbf{+5.99}$ & \textbf{0.714} & \textbf{0.732} & $\mathbf{+1.69}$ \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Main results: per-domain AUROC across three VLM backbones on manifests_v2 test} ($n{=}1{,}418$ items across 12 domains). For each backbone we report the descriptor-free Direct VLM baseline and our \emph{agent+Direct ensemble} ($s = 0.5\!\cdot\!s_{\mathrm{Direct}} + 0.5\!\cdot\!s_{\mathrm{agent}}$), where the agent is \textbf{v10} = v9 refutation agent + parallel independent Direct call; both scores computed in a single \texttt{agent\_v10.py} run per item. Direct uses \texttt{DESCRIPTOR\_MODE=generic} (no domain hint), matching v9's descriptor-free task preamble for apples-to-apples comparison. \textbf{Macro} row at the bottom; $\Delta$ is ensemble macro minus Direct macro. 95\% stratified paired bootstrap CIs (1000 resamples): GPT-5.4 $[+2.58, +5.50]$ $P(\Delta{>}0){=}1.000$; SeedVL $[+4.32, +7.66]$ $P(\Delta{>}0){=}1.000$; Qwen3.5 $[-0.08, +3.51]$ $P(\Delta{>}0){=}0.971$ (positive in mean, CI touches zero).}
+\label{tab:main_results}
+\end{table}
+
+% --- Bootstrap CI summary paragraph ---
+% 95\% stratified paired bootstrap on macro AUROC (1000 resamples, per-domain strata):
+% GPT-5.4:      Ens vs Direct $+4.01$ pp, $[+2.58, +5.50]$, $P(\Delta{>}0){=}1.000$; V9 vs Direct $+3.64$ pp, $[+1.20, +6.21]$, $P{=}0.998$.
+% SeedVL:       Ens vs Direct $+5.99$ pp, $[+4.32, +7.66]$, $P{=}1.000$; V9 vs Direct $+3.68$ pp, $[+0.79, +6.40]$, $P{=}0.998$.
+% Qwen3.5-VL-27B: Ens vs Direct $+1.69$ pp, $[-0.08, +3.51]$, $P{=}0.971$; V9 vs Direct $\mathbf{-4.46}$ pp, $[-7.61, -1.55]$, $P{=}0.001$ (agent alone significantly weaker than Direct).
+%
+% Key finding on Qwen3.5: the v9 agent alone is significantly weaker than Direct (-4.46 pp, P=0.001),
+% but ensembling with the independent Direct call still yields a positive gain over Direct alone.
+% This demonstrates v10's robustness: the Direct branch of the ensemble acts as a safety net when
+% the agent backbone is weak, without sacrificing performance when the agent is strong (GPT-5.4 case).

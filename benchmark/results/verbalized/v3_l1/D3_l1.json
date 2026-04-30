@@ -1,0 +1,444 @@
+{
+  "domain": "D3",
+  "units": [
+    {
+      "unit": [
+        "D3",
+        "pcb4"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "spatial_layout",
+            "statement": "A silver USB Type-C connector is located on the left edge of the blue PCB.",
+            "evidence": "All 8 reference images show the USB connector fixed to the left side."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "A black integrated circuit (IC) chip is located in the center-right area of the board.",
+            "evidence": "The black IC is consistently positioned in the same relative location in all images."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "Four circular mounting holes are located at the four corners of the PCB.",
+            "evidence": "Every reference image displays exactly four holes at the corners."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The PCB substrate is blue, with silver metallic components and white silkscreen text.",
+            "evidence": "All images share this specific color scheme for the board and components."
+          },
+          {
+            "type": "structural",
+            "statement": "The PCB has a rectangular shape with a continuous, unbroken boundary.",
+            "evidence": "All reference images show a complete rectangular board without physical breaks."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "fryum"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "The object contains exactly six radial spokes connecting the center to the rim.",
+            "evidence": "All 8 reference images clearly show a wheel structure with exactly 6 spokes."
+          },
+          {
+            "type": "count",
+            "statement": "The object contains exactly one circular hole at the geometric center.",
+            "evidence": "Every reference image displays a single central aperture."
+          },
+          {
+            "type": "symmetry",
+            "statement": "The object exhibits 6-fold rotational symmetry (C6) around the central axis.",
+            "evidence": "The arrangement of spokes and gaps is identical in all 8 images, repeating every 60 degrees."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The object is a uniform light beige or pale orange color.",
+            "evidence": "All 8 images show the object with a consistent, solid light beige hue."
+          },
+          {
+            "type": "structural",
+            "statement": "The object has a continuous circular outer rim enclosing the spokes.",
+            "evidence": "In all 8 images, the outer boundary is a complete, unbroken circle."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "chewinggum"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "Exactly one single object is present in the image.",
+            "evidence": "All 8 reference images show a solitary white rectangular object with no other items."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The object is centered horizontally and vertically within the frame.",
+            "evidence": "In every reference image, the object is positioned in the middle of the dark background."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The object is solid white or off-white; the background is solid black.",
+            "evidence": "All 8 images consistently show a high-contrast white object against a black textured surface."
+          },
+          {
+            "type": "structural",
+            "statement": "The object has a rectangular shape with rounded corners.",
+            "evidence": "Every reference image displays the object with four sides and smoothly curved corners."
+          },
+          {
+            "type": "texture",
+            "statement": "The object surface is smooth and uniform without visible patterns.",
+            "evidence": "All 8 images show a matte, featureless surface on the object, distinct from the textured background."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "macaroni2"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "Exactly four macaroni pieces are present in every image.",
+            "evidence": "All 8 reference images consistently display exactly four distinct pasta objects."
+          },
+          {
+            "type": "structural",
+            "statement": "Each object is a curved, C-shaped pasta segment with a concave inner edge.",
+            "evidence": "Every piece in all 8 images exhibits the characteristic macaroni geometry with a hollow center."
+          },
+          {
+            "type": "color_palette",
+            "statement": "Objects are pale yellow; background is solid green.",
+            "evidence": "All 8 images show yellow pasta against a uniform green surface."
+          },
+          {
+            "type": "texture",
+            "statement": "Objects have a smooth surface with fine concentric ridges.",
+            "evidence": "Close inspection of all 8 images reveals consistent concentric striations on the pasta surface."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "cashew"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "Exactly one single cashew nut is present in the image.",
+            "evidence": "All 8 reference images contain precisely one isolated object."
+          },
+          {
+            "type": "structural",
+            "statement": "The object exhibits a continuous, kidney-bean or crescent shape with a central concave indentation.",
+            "evidence": "Every reference image shows a nut with this specific curved geometry and central dip."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The object surface is a uniform light golden-tan color without dark spots or discoloration.",
+            "evidence": "All 8 references show a consistent pale yellow/beige hue across the entire nut surface."
+          },
+          {
+            "type": "texture",
+            "statement": "The object surface is smooth and solid, lacking cracks, holes, or rough patches.",
+            "evidence": "Visual inspection of all 8 refs reveals a continuous, unbroken skin texture."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The object is centered on a dark, textured background.",
+            "evidence": "In all 8 images, the nut is positioned centrally against a black, grainy surface."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "macaroni1"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "There are exactly four macaroni pieces present in the image.",
+            "evidence": "All 8 reference images consistently display exactly four distinct pasta objects."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The four macaroni pieces are arranged in a 2x2 grid formation.",
+            "evidence": "In every reference image, the objects are positioned in two rows and two columns."
+          },
+          {
+            "type": "structural",
+            "statement": "Each macaroni piece has a continuous, smooth, C-shaped tubular geometry.",
+            "evidence": "All objects in all 8 images exhibit the standard curved tube shape without breaks or deformities."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The macaroni pieces are a uniform light orange/beige color.",
+            "evidence": "All objects across all 8 images share the same consistent pasta coloration."
+          },
+          {
+            "type": "texture",
+            "statement": "The background is a solid green surface with a fine, regular grid texture.",
+            "evidence": "Every reference image features the same green textured mat as the background."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "candle"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "There are exactly four circular objects present in the image.",
+            "evidence": "All 8 reference images consistently display exactly four candles."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The four objects are arranged in a 2x2 grid pattern.",
+            "evidence": "In every reference image, the candles are positioned in two rows and two columns."
+          },
+          {
+            "type": "structural",
+            "statement": "Each object is a solid circle with a single vertical slit in the center.",
+            "evidence": "All 8 images show four candles, each possessing a central vertical indentation."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The objects are a uniform light cream color against a dark background.",
+            "evidence": "All reference images feature cream-colored candles on a black surface."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "capsules"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "structural",
+            "statement": "All objects are smooth, elongated capsules with rounded ends and continuous boundaries.",
+            "evidence": "Every capsule in all 8 reference images exhibits a consistent pill-like geometry with no cracks, chips, or irregular shapes."
+          },
+          {
+            "type": "color_palette",
+            "statement": "Objects are translucent green with a distinct bright specular highlight on the surface.",
+            "evidence": "All capsules in every reference image share the same green hue and glossy finish, reflecting light similarly."
+          },
+          {
+            "type": "texture",
+            "statement": "The background is a uniform, fine-grained grey fabric texture.",
+            "evidence": "All 8 images show the capsules resting on the same grey, woven-textured surface."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "pcb2"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "The PCB has exactly four silver mounting holes, one in each corner.",
+            "evidence": "All 8 reference images clearly show four circular mounting holes at the corners of the board."
+          },
+          {
+            "type": "count",
+            "statement": "The PCB features exactly three black integrated circuits (chips) mounted on the surface.",
+            "evidence": "Every reference image displays three distinct black rectangular chips (labeled U1, U2, U3)."
+          },
+          {
+            "type": "count",
+            "statement": "There is a single 4-pin male header connector located at the top center edge.",
+            "evidence": "All 8 images show exactly one connector with four vertical pins at the top edge."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The text 'HC-SR04' is printed in white on the top-left area of the board.",
+            "evidence": "The label 'HC-SR04' is visible in the top-left quadrant in every reference image."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The PCB substrate is a solid blue color with white silkscreen text and silver solder pads.",
+            "evidence": "All 8 images consistently show a blue board background with white markings and silver components."
+          },
+          {
+            "type": "structural",
+            "statement": "The PCB has a rectangular shape with rounded corners.",
+            "evidence": "The geometric outline of the board is consistently rectangular with rounded corners in all images."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "pipe_fryum"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "Exactly one single object is present in the image.",
+            "evidence": "All 8 reference images contain precisely one isolated object."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The object is centered horizontally and vertically within the frame.",
+            "evidence": "In every reference image, the object is positioned in the center of the black background."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The object is a uniform beige/tan color against a solid black background.",
+            "evidence": "All 8 images show a beige object on a black background with no other colors."
+          },
+          {
+            "type": "texture",
+            "statement": "The object surface exhibits a consistent fine-grained, porous texture.",
+            "evidence": "Every reference image shows a distinct, uniform speckled or porous surface pattern."
+          },
+          {
+            "type": "structural",
+            "statement": "The object has a rectangular geometry with rounded corners.",
+            "evidence": "All 8 images display an object with four sides and rounded corners."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "pcb3"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "The module has exactly three metal pins protruding from the left edge.",
+            "evidence": "All 8 reference images clearly show a 3-pin header on the left side."
+          },
+          {
+            "type": "count",
+            "statement": "There is exactly one black cylindrical phototransistor on the right side.",
+            "evidence": "Every reference image displays a single black component on the right."
+          },
+          {
+            "type": "count",
+            "statement": "There is exactly one clear/translucent LED on the right side.",
+            "evidence": "Every reference image displays a single clear LED component on the right."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "A blue square potentiometer is located in the bottom-center of the PCB.",
+            "evidence": "The blue component is consistently positioned in the lower central area in all refs."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "A black integrated circuit (IC) chip is located in the top-center of the PCB.",
+            "evidence": "The black IC is consistently positioned in the upper central area in all refs."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The PCB substrate is blue, and the background is solid green.",
+            "evidence": "All 8 images show a blue circuit board against a green background."
+          }
+        ],
+        "confidence": "high"
+      }
+    },
+    {
+      "unit": [
+        "D3",
+        "pcb1"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "count",
+            "statement": "The module contains exactly two circular ultrasonic transducers.",
+            "evidence": "All 8 reference images consistently show two distinct circular sensor heads."
+          },
+          {
+            "type": "count",
+            "statement": "The module has exactly four metal pin connectors.",
+            "evidence": "Every reference image displays a set of four pins protruding from the board."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The four metal pins are located at the top edge of the PCB.",
+            "evidence": "In all 8 images, the pins are positioned along the upper boundary of the blue board."
+          },
+          {
+            "type": "spatial_layout",
+            "statement": "The two transducers are positioned symmetrically on the left and right sides.",
+            "evidence": "All images show the sensors flanking the central text and component area."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The printed circuit board (PCB) is blue.",
+            "evidence": "The dominant background color of the board is blue in every reference image."
+          },
+          {
+            "type": "texture",
+            "statement": "The transducer surfaces feature a fine black mesh pattern.",
+            "evidence": "Close inspection of all 8 images reveals a consistent grid-like mesh texture on the sensors."
+          }
+        ],
+        "confidence": "high"
+      }
+    }
+  ]
+}

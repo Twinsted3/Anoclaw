@@ -1,0 +1,67 @@
+{
+  "domain_code": "D11",
+  "n_rules": 4,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image contains prominent specular highlights (glare), bubbles, or mucus that could be mistaken for lesions, trust A (Agent) as it is better at distinguishing these artifacts from true pathology.",
+      "source_items": [
+        "D11_0075",
+        "D11_0087"
+      ],
+      "confidence": "oracle",
+      "id": "D11_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image shows a small, isolated, pale, rounded feature near a sphincter or fold that resembles a polyp but is likely a normal anatomical variant, trust A (Agent) to correctly identify it as normal.",
+      "source_items": [
+        "D11_0075",
+        "D11_0087"
+      ],
+      "confidence": "oracle",
+      "id": "D11_meta_a_win_1"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image displays diffuse, circumferential erythema (redness), edema, or a granular texture affecting the entire mucosal surface, trust B (Direct) as it is more sensitive to widespread inflammatory conditions like colitis or esophagitis.",
+      "source_items": [
+        "D11_0012",
+        "D11_0038",
+        "D11_0046",
+        "D11_0066",
+        "D11_0073",
+        "D11_0080",
+        "D11_0103",
+        "D11_0121"
+      ],
+      "confidence": "oracle",
+      "id": "D11_meta_b_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a dark, irregular, or depressed area that A (Agent) dismisses as a shadow or artifact, trust B (Direct) to correctly identify it as a pathological lesion (ulcer or tumor).",
+      "source_items": [
+        "D11_0012",
+        "D11_0038",
+        "D11_0046",
+        "D11_0066",
+        "D11_0073",
+        "D11_0080",
+        "D11_0103",
+        "D11_0121"
+      ],
+      "confidence": "oracle",
+      "id": "D11_meta_b_win_3"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 2,
+    "n_b_wins": 8
+  }
+}

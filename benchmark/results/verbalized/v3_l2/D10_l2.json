@@ -1,0 +1,94 @@
+{
+  "domain": "D10",
+  "seed": 0,
+  "k": 10,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D10_0011",
+    "D10_0014",
+    "D10_0022",
+    "D10_0026",
+    "D10_0035",
+    "D10_0052",
+    "D10_0064",
+    "D10_0067",
+    "D10_0075",
+    "D10_0080",
+    "D10_0091",
+    "D10_0094",
+    "D10_0102",
+    "D10_0104",
+    "D10_0136",
+    "D10_0152",
+    "D10_0167",
+    "D10_0172",
+    "D10_0173",
+    "D10_0176"
+  ],
+  "validation_ids": [
+    "D10_0018",
+    "D10_0019",
+    "D10_0020",
+    "D10_0024",
+    "D10_0030",
+    "D10_0031",
+    "D10_0036",
+    "D10_0078",
+    "D10_0084",
+    "D10_0087",
+    "D10_0112",
+    "D10_0117",
+    "D10_0119",
+    "D10_0151",
+    "D10_0157",
+    "D10_0159",
+    "D10_0160",
+    "D10_0162",
+    "D10_0168",
+    "D10_0171"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D10"
+      ],
+      "k": 10,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag small, simple oval shapes or tiny central specks as anomalies; these are valid normal variants.",
+          "covers_items": [
+            "D10_0067",
+            "D10_0080",
+            "D10_0052"
+          ],
+          "justification": "The agent incorrectly flagged items with extreme size reduction or simple oval geometry as anomalies, failing to recognize these as valid normal variations in the dataset.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag internal dark voids, holes, or bright streaks as anomalies; these are common normal features.",
+          "covers_items": [
+            "D10_0011",
+            "D10_0026",
+            "D10_0022"
+          ],
+          "justification": "The agent consistently misclassified normal internal structures (voids, holes, streaks) as defects, indicating a failure to distinguish between pathology and normal anatomical variation.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag irregular, multi-lobed shapes or detached fragments as anomalies; these are valid normal morphologies.",
+          "covers_items": [
+            "D10_0075",
+            "D10_0014",
+            "D10_0035"
+          ],
+          "justification": "The agent flagged complex shapes and fragments as defects, but the ground truth confirms these irregular morphologies are part of the normal class distribution.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    }
+  ]
+}

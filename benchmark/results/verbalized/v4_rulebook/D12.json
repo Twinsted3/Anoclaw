@@ -1,0 +1,130 @@
+{
+  "domain_code": "D12",
+  "n_rules": 10,
+  "rules": [
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image contains a large, distinct object (e.g., a person in a costume) that is explicitly present in the provided normal reference images, trust A (Agent) to correctly identify it as normal.",
+      "source_items": [
+        "D12_0020"
+      ],
+      "confidence": "oracle",
+      "id": "D12_meta_a_win_0"
+    },
+    {
+      "type": "meta_a_win",
+      "category": null,
+      "text": "If the query image depicts a standard driving scene where the only difference from references is the time of day (e.g., daytime vs. nighttime references), trust A (Agent) to classify it as normal rather than flagging it as a contextual anomaly.",
+      "source_items": [
+        "D12_0020"
+      ],
+      "confidence": "oracle",
+      "id": "D12_meta_a_win_1"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image contains a small, low-contrast object on the road surface (e.g., a dark spot or shadow) that A flags as an anomaly but B classifies as normal, trust B (Direct) to avoid false positives on minor visual noise.",
+      "source_items": [
+        "D12_0017",
+        "D12_0034",
+        "D12_0054",
+        "D12_0060",
+        "D12_0075",
+        "D12_0094"
+      ],
+      "confidence": "oracle",
+      "id": "D12_meta_b_win_2"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image contains common urban elements such as pedestrians crossing, emergency vehicles, or bright digital billboards that A flags as anomalies, trust B (Direct) to correctly classify them as normal traffic conditions.",
+      "source_items": [
+        "D12_0017",
+        "D12_0034",
+        "D12_0054",
+        "D12_0060",
+        "D12_0075",
+        "D12_0094"
+      ],
+      "confidence": "oracle",
+      "id": "D12_meta_b_win_3"
+    },
+    {
+      "type": "meta_b_win",
+      "category": null,
+      "text": "If the query image shows a standard highway or street scene with typical traffic flow and no obvious obstructions, trust B (Direct) to classify it as normal even if A identifies minor variations as anomalies.",
+      "source_items": [
+        "D12_0017",
+        "D12_0034",
+        "D12_0054",
+        "D12_0060",
+        "D12_0075",
+        "D12_0094"
+      ],
+      "confidence": "oracle",
+      "id": "D12_meta_b_win_4"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": null,
+      "text": "The camera viewpoint is from inside a vehicle, with the dashboard or hood visible at the bottom of the frame.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D12_invariant_5"
+    },
+    {
+      "type": "invariant",
+      "subtype": "spatial_layout",
+      "category": null,
+      "text": "The drivable road surface occupies the central and lower portion of the image, extending into the distance.",
+      "source_items": [],
+      "confidence": "high",
+      "id": "D12_invariant_6"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": null,
+      "text": "Ignore dark, elongated shadows or debris-like shapes on the road surface if they are consistent with low-light conditions or road texture.",
+      "source_items": [
+        "D12_0075",
+        "D12_0017"
+      ],
+      "confidence": "high",
+      "id": "D12_corrective_fp_7"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": null,
+      "text": "Do not flag pedestrians standing on sidewalks or near curbs as road obstacles unless they are clearly stepping into the active driving lane.",
+      "source_items": [
+        "D12_0054",
+        "D12_0064"
+      ],
+      "confidence": "high",
+      "id": "D12_corrective_fp_8"
+    },
+    {
+      "type": "corrective_fp",
+      "subtype": "normal_tolerance",
+      "category": null,
+      "text": "Treat bright reflections, billboards, or light bars on vehicles as normal environmental features rather than defects or anomalies.",
+      "source_items": [
+        "D12_0060",
+        "D12_0020"
+      ],
+      "confidence": "high",
+      "id": "D12_corrective_fp_9"
+    }
+  ],
+  "meta_origin": {
+    "error": null,
+    "n_a_wins": 1,
+    "n_b_wins": 6
+  }
+}

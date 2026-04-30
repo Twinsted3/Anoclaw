@@ -1,0 +1,91 @@
+{
+  "domain": "D7",
+  "seed": 0,
+  "k": 10,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D7_0003",
+    "D7_0010",
+    "D7_0020",
+    "D7_0027",
+    "D7_0048",
+    "D7_0061",
+    "D7_0062",
+    "D7_0067",
+    "D7_0070",
+    "D7_0074",
+    "D7_0079",
+    "D7_0080",
+    "D7_0082",
+    "D7_0083",
+    "D7_0100",
+    "D7_0104",
+    "D7_0119",
+    "D7_0139",
+    "D7_0146",
+    "D7_0148"
+  ],
+  "validation_ids": [
+    "D7_0012",
+    "D7_0013",
+    "D7_0017",
+    "D7_0025",
+    "D7_0031",
+    "D7_0039",
+    "D7_0057",
+    "D7_0072",
+    "D7_0076",
+    "D7_0077",
+    "D7_0091",
+    "D7_0093",
+    "D7_0095",
+    "D7_0103",
+    "D7_0105",
+    "D7_0108",
+    "D7_0109",
+    "D7_0114",
+    "D7_0129",
+    "D7_0137"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D7"
+      ],
+      "k": 10,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag seasonal vegetation color changes (e.g., green to brown fields) or phenological shifts as building anomalies.",
+          "covers_items": [
+            "D7_0067",
+            "D7_0027"
+          ],
+          "justification": "The agent incorrectly identified natural seasonal changes in field coloration and tree line health as defects. These are temporal variations in vegetation, not structural building changes.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Ignore global image quality differences such as color casts, desaturation, or texture variations when no specific building structure is missing or added.",
+          "covers_items": [
+            "D7_0062",
+            "D7_0074"
+          ],
+          "justification": "The agent flagged global texture and color inconsistencies as anomalies. These are likely due to sensor or atmospheric differences between acquisition dates, not actual building changes.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not classify natural landscape features like winding roads, ponds, or forest density variations as anomalies if they are consistent with the terrain.",
+          "covers_items": [
+            "D7_0061",
+            "D7_0020"
+          ],
+          "justification": "The agent misidentified static natural features (roads, water bodies) as anomalies. These are permanent landscape elements, not transient building changes.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    }
+  ]
+}

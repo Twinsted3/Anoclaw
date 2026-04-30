@@ -1,0 +1,31 @@
+{
+  "domain": "D7",
+  "units": [
+    {
+      "unit": [
+        "D7"
+      ],
+      "n_refs_seen": 8,
+      "rulebook": {
+        "invariants": [
+          {
+            "type": "texture",
+            "statement": "Images exhibit a top-down aerial perspective with a granular, high-frequency texture representing ground surfaces.",
+            "evidence": "All 8 reference images are satellite/aerial views showing detailed ground textures (vegetation, soil, pavement) rather than smooth or abstract patterns."
+          },
+          {
+            "type": "color_palette",
+            "statement": "The color palette is dominated by natural earth tones (browns, greens, greys) with no artificial neon or saturated hues.",
+            "evidence": "Every image displays realistic remote sensing colors: green vegetation, brown soil, and grey infrastructure, consistent with natural lighting."
+          },
+          {
+            "type": "structural",
+            "statement": "Structures and terrain features display continuous, coherent boundaries without abrupt, unnatural geometric truncations.",
+            "evidence": "In all 8 images, roads, fields, and buildings have complete, logical shapes; there are no missing chunks or floating artifacts."
+          }
+        ],
+        "confidence": "high"
+      }
+    }
+  ]
+}

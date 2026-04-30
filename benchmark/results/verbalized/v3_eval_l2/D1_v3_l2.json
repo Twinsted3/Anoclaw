@@ -1,0 +1,1560 @@
+[
+  {
+    "item_id": "D1_0043",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect features (faint light spots) observed in the query image were also present in the reference images, confirming they are natural variations of the wood texture and not anomalies.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "wood",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0063",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The initial suspicion of a chipped top edge was refuted by the side-by-side comparison, which showed similar features in the normal reference images. No other anomalies were detected, so the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "transistor",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0077",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with reference images confirms that the observed features (surface texture, logo contrast) are consistent with normal manufacturing variations and not defects. No anomalies are detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "capsule",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0037",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (small white specks) was found to be present in the reference images, indicating it is a normal variation. No other defects were detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "zipper",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0051",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed a white speck on the left fabric panel that is present in the query image but absent in all reference images. This localized contamination is a clear deviation from the normal baseline, indicating an anomaly.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "zipper",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0085",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a texture and color profile identical to the normal reference images. All initially suspected variations were confirmed to be present in the reference set, indicating no defect is present.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0040",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a brush with bristles that are uniformly aligned and shaped, matching the normal patterns seen in the reference images. No candidate defect features (splayed, bent, or disheveled bristles) were identified, so the anomaly score is low.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "toothbrush",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0039",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a structurally normal hairbrush. The bristles are upright and evenly spaced, matching the structural integrity of the reference images. The color difference is a product variant, not a defect. No anomalies detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "toothbrush",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0058",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate defect (faint light spots) was refuted by the side-by-side comparison, which showed similar features in the normal reference images. No other defect-like features remain, so the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "wood",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0002",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query capsule exhibits no anomalies; all observed features (logo, markings, surface reflections) are consistent with the normal reference baseline and allowed variations.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "capsule",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0011",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct cluster of bright, reflective spots in the bottom-right region that is absent in all reference images. This feature is not a natural variation of the texture and indicates a surface anomaly.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0014",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "A small white speck was detected on the fabric. Side-by-side comparison confirmed this feature is present only in the query image and absent in all normal reference images, identifying it as a surface defect.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "zipper",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0081",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a sharp, bright linear mark on the query's inner rim that is absent in all reference images, confirming it as a surface defect (likely a chip or crack).",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0005",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The red speckles are present in all reference images with similar characteristics, indicating they are normal variation rather than defects. The domain rule confirms not to flag scattered speckles when the imprint is clear and shape is intact.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "pill",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0036",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "Both candidate features (left and right leg irregularities) were refuted by side-by-side comparison with reference images, showing they are normal manufacturing variations. No other anomalies were detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "transistor",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0050",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a texture and color consistent with the provided normal reference images. No candidate defect features were identified that deviate from the normal grain pattern, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0047",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a hairbrush with a bristle structure (alignment, density, shape) that is identical to the normal reference images. The color difference is a normal variation. No defects such as splayed or bent bristles are present.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "toothbrush",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0053",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "A bright white speck was detected on the fabric in the query image. Side-by-side comparison with reference images confirmed this feature is absent in all normal samples, identifying it as a surface defect.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "zipper",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0003",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate defect (faint light spots) was refuted by side-by-side comparison, showing it is a natural variation present in the reference images. No other anomalies were found.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "wood",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0048",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The surface texture, edge integrity, and overall structure are consistent with the provided normal reference images. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "metal_nut",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0020",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The red speckles are present in all reference images with similar characteristics, indicating they are normal variation rather than defects. The domain rule confirms not to flag scattered speckles when the imprint is clear and shape is intact.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "pill",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0018",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a diagonal diamond mesh pattern. The reference profiler explicitly identifies this pattern and 'minor rotation' as allowed variations for normal instances. Therefore, the orientation difference is not an anomaly, and no other defects are present.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "grid",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0057",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct cluster of bright, reflective spots in the lower-right region that is absent in all reference images. This feature survives refutation and indicates a surface defect.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0065",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The candidate defect features (faint light spots) were found to be present in the reference images, indicating they are natural variations or common artifacts rather than anomalies. No unique defects were identified in the query image.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "wood",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0056",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected defect on the component body was compared against reference images and found to be a normal variation present in all samples. No other anomalies were detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "transistor",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0055",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the features initially suspected as anomalies (strand misalignment, discoloration) are present in the normal reference images. Therefore, the query image is consistent with the normal baseline and contains no defects.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "cable",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0041",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with reference images confirms that the query capsule exhibits no unique defects. All observed features, including surface reflections and logo contrast, are consistent with normal manufacturing variations seen in the reference pool.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "capsule",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0076",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a woven fabric texture that is consistent with the reference images. All initially suspected anomalies were refuted as natural variations in the weave pattern. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "carpet",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0010",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The red speckles are a normal characteristic present in all reference images. The domain rule explicitly states not to flag scattered red speckles when the FF imprint is clear and tablet shape is intact, which is the case here.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "pill",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0026",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the features initially suspected as anomalies in the query image are present in the reference images as normal variations. With no surviving candidate features, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "screw",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0035",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a normal hazelnut. The dark cap and shell texture are consistent with the provided reference images, confirming no anomalies are present.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "hazelnut",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0059",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The only candidate defect-like features (faint light spots) were found to be present in the reference images, indicating they are normal variations. No other anomalies were detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "wood",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0042",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The surface texture and edge integrity are consistent with the normal reference images, indicating the item is likely normal.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "metal_nut",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0069",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected defect (dark mark on the left) was found in the reference images, confirming it is a normal variation. No other anomalies were detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "transistor",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0080",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison with reference images confirms that the observed features in the query image (strand arrangement, minor color variations) are consistent with normal manufacturing variations. No unique anomalies were detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "cable",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0060",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a diagonal diamond grid pattern consistent with the reference baseline. The profiler confirms that minor rotation is an allowed variation, refuting the initial suspicion of an anomaly. No other defects are present.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "grid",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0087",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The refutation protocol confirms the presence of a defect. The irregular bright line on the query's rim is not present in any of the normal reference images, indicating a structural anomaly such as a crack or chip.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0000",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a localized bright linear defect on the query's inner rim that is absent in all reference images. This confirms the presence of an anomaly (likely a crack or chip).",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0029",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The surface texture and edge integrity are consistent with the normal reference images, indicating the item is likely normal.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "metal_nut",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0052",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the initially suspicious solder joint and leg shape in the query image are consistent with normal variations seen in the reference images. No other anomalies were detected, leading to a low anomaly score.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "transistor",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0012",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a cluster of bright, reflective spots in the lower-right region that are completely absent in the corresponding regions of all reference images. This feature is not a natural variation of the speckled texture and indicates a surface defect (likely contamination or shards).",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0028",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "A bright white speck was detected on the fabric in the query image. Side-by-side comparison with reference images confirmed this speck is absent in all normal samples, identifying it as a surface defect.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "zipper",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0067",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the texture and weave pattern in the query image are consistent with the normal reference images. The initial candidate feature was refuted as a natural variation. No anomalies were detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "carpet",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0074",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image was compared against reference images using side-by-side analysis. All initially suspected features (faint light spots and dark streaks) were found to be present in the normal reference pool, indicating they are natural variations. No unique anomalies were detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "wood",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0031",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no unique defects; all observed features are consistent with the natural variations seen in the reference images.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0030",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate defect (a scratch on the component body) was successfully refuted by observing the same feature in the normal reference images. No other anomalies were detected.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "transistor",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0013",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the initial scan. The query image's texture, weave pattern, and color are consistent with the normal reference images, indicating no anomaly.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "carpet",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0006",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image depicts a standard metal screw that aligns perfectly with the normal reference profile. No structural or surface anomalies were detected, and all observed features (shape, texture) are within the allowed variations.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "screw",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0075",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits the expected diagonal diamond grid pattern of an expanded metal mesh. The observed variations in orientation and lighting fall within the 'allowed_variation' list provided by the reference profiler. No local structural defects were identified.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "grid",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0071",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate feature (slight weave misalignment) was successfully refuted by the side-by-side tool, which showed the same variation in the reference images. With no remaining candidate features, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "carpet",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0078",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison refuted the initial candidate feature (potential scratch) by showing it is a normal surface texture variation present in the reference images. No unique anomalies were found in the query image.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "metal_nut",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0089",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The initial candidate defect (faint light spots) was refuted by side-by-side comparison, showing they are consistent with natural variations in the reference images. No other anomalies were found.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "wood",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0017",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a localized bright linear defect on the query's inner rim that is absent in all reference images. This confirms the presence of a structural anomaly (chip or crack).",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0068",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the observed surface texture and thread profile in the query image match the natural variations found in the reference images. No unique defects were identified, so the screw is classified as normal.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "screw",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0034",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "A small, bright white speck is present on the left fabric panel of the query image. This feature is not observed in the reference images and appears to be a localized defect, leading to a high anomaly score.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "zipper",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0025",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The red speckles observed in the query are also present in all reference images, indicating they are a normal characteristic of the product rather than a defect. The tablet shape and imprint are intact.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "pill",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0061",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query screw appears structurally sound with no obvious defects. The slight surface unevenness and minor drive slot asymmetry are common manufacturing variations and are explicitly noted in domain rules as not to be flagged. Comparing with reference images, the query falls within the normal range of appearance.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "screw",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0106",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, obvious hole in the shell, which is a structural defect not found in the normal reference images. This is distinct from the natural cap texture mentioned in the domain rules.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "hazelnut",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0083",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a screw that is visually consistent with the provided normal reference images. The candidate features (surface texture, drive slot) are common manufacturing variations and are explicitly noted in the domain rules as not to be flagged as defects. No structural anomalies or surface defects are observed.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "screw",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0032",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a texture and speckle pattern consistent with the provided normal reference images. No distinct defects such as cracks, scratches, or foreign objects are observed. The slight variations in speckle density fall within the expected range of normal manufacturing variation for this type of surface.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0027",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified; the capsule surface and markings are consistent with the reference images and domain rules.",
+    "label": 0,
+    "domain_code": "D1",
+    "category": "capsule",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0116",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query capsule appears normal with no visible defects. The surface is smooth, markings are clear, and it matches the reference images in appearance. The 'actavis' logo is present and clear, which according to domain rules should not be flagged as an anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "capsule",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0103",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct raised blob in the upper right quadrant that is absent in all reference images, confirming it as a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0105",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The scattered red speckles observed on the query tablet are also present in multiple reference images, indicating they are a normal variation and not a defect. The tablet's imprint and shape are intact, further confirming it is normal.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "pill",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0125",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows that the dark linear marks on the top arm are unique to the query image and absent in all normal reference samples, confirming a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "metal_nut",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0166",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear structural defect: a circular dent on the screw shank. This feature is absent in all reference images, which display smooth shanks. The refutation protocol confirms this is an anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "screw",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0095",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a localized bright linear defect on the query's inner rim that is absent in all reference images. This confirms the presence of a structural anomaly (crack/chip).",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0154",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear puncture defect in the upper-left region that is absent in all reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0149",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear structural defect (a chip on the rim) that is absent in all reference images. The side-by-side comparison confirms this is an anomaly, not a natural variation.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0157",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct elongated dark mark in the lower-left region that is not present in any of the reference images, confirming it as a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0099",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear structural anomaly: a splayed and disheveled bristle cluster at the top right. This feature is absent in all reference images, which display uniform, compact bristle clusters, confirming the defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "toothbrush",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0153",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a linear crack in the query image's mesh strand that is absent in all reference images, confirming a structural anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "grid",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0140",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct foreign linear object (likely a fiber or hair) in the top-left corner that is not present in any of the reference images, confirming a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0169",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark foreign object on the bristle surface that is absent in all reference images, confirming it as a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "toothbrush",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0129",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear structural defect (a break in the mesh wire) that is absent in all reference images. The side-by-side comparison definitively refutes the possibility of this being a normal variation, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "grid",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0104",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a bright, irregular spot on the inner rim of the query bottle that is absent in all normal reference images. This confirms the presence of a surface defect, such as a chip or contamination.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0098",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "Both suspected defects (edge irregularity and scratch) were found to be consistent with the natural manufacturing variations present in the reference images. No unique anomalies remain.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "metal_nut",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0108",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query component exhibits a clear structural defect (charring/crack) on the top-left corner of its casing, which is absent in all reference images. This confirms the image is anomalous.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "transistor",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0130",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the features initially flagged as potential defects are consistent with the natural variations seen in the reference images. No anomalies were found.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "screw",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0148",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crease/fold that is not present in any of the reference images, which all show a uniform texture. This confirms the presence of a structural anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0150",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear structural defect: the copper strands of the blue conductor are frayed and protruding from the insulation. This feature is absent in all reference images, which show neat, contained conductors. Therefore, the image is anomalous.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "cable",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0134",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "No candidate defect features were identified in the query image. The capsule's appearance, including markings and surface texture, matches the normal reference images exactly. Therefore, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "capsule",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0135",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct edge chip on the top-left arm that is absent in all reference images, confirming a structural anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "metal_nut",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0162",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains distinct red linear marks and spots that are completely absent from all reference images. These red markings are clearly surface defects (likely scratches or contamination) that do not match the natural wood grain variations seen in the normal reference samples.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "wood",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0122",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows an irregular bright patch on the query's rim that is absent in all normal reference images, confirming a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0115",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The red speckles observed in the query image are also present in all reference images, indicating they are a normal characteristic of this product batch rather than a defect. The tablet shape and imprint are intact.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "pill",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0100",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct horizontal scratch in the upper right region that is absent in all reference images, confirming a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0133",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a structural anomaly where the bottom-right conductor's insulation is stripped back, exposing the copper strands. This feature is not present in any of the reference images, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "cable",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0119",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits severe bristle splaying at the bottom, a structural defect not observed in any of the normal reference images which all display uniform, upright bristle alignment.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "toothbrush",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0109",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear structural defect (a chip on the rim) that is absent in all reference images. The side-by-side comparison definitively refutes the possibility of this being a normal variation.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0158",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains two distinct linear foreign objects (wires/fibers) lying on the bristles, which are absent in all reference images. This is a clear contamination/structural anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "toothbrush",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0097",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark linear smudge in the top-right region that is absent in all reference images, confirming it as a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0161",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear structural defect: the leftmost pin is broken and does not make contact with the PCB pad. This feature is absent in all reference images, which show intact pins, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "transistor",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0093",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a screw with a visibly bent and deformed tip, which is a structural anomaly not present in any of the normal reference images. The side-by-side comparison confirmed this defect is unique to the query.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "screw",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0136",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits clear structural defects (cracks and chips) on the rim that are absent in all reference images, confirming the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0163",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct bright, irregular patch on the left inner rim that is not present in any of the reference images. This feature is consistent with a surface defect such as a chip or contamination and is confirmed as anomalous via the refutation protocol.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "bottle",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0091",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear scratch on the shell surface that is not present in any of the normal reference images, confirming it as a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "hazelnut",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0128",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct translucent triangular shard that is not present in any of the normal reference images. This foreign object constitutes a clear surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0132",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a chip on the top-left edge of the query part that is not present in any of the normal reference images. This confirms the presence of a structural defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "metal_nut",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0124",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct puncture/hole defect in the lower-right quadrant that is not present in any of the reference images, confirming it as an anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0139",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a capsule that appears normal with no visible defects. The 'actavis' logo is present, and the surface texture is consistent with the reference images. No anomalies are detected.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "capsule",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0090",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark stain on the left side that is absent in all reference images, confirming a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "carpet",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0123",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear cut in the outer sheath, which is confirmed by side-by-side comparison to be absent in all normal reference images. This is a clear structural defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "cable",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0121",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the observed surface texture and thread features in the query are consistent with the normal reference images. No unique defects were identified, so the query is classified as normal.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "screw",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fp",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0147",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no defects; all observed variations (lighting, reflections) are within the allowed baseline profile for this capsule type.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "capsule",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0120",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains distinct dark, irregular linear defects that are completely absent in the reference images. The refutation protocol confirms these features are not part of the normal variation, leading to a high anomaly score.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "grid",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0173",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear structural anomaly: a cluster of splayed, disheveled bristles at the top-left. This feature is absent in all reference images, which display uniform, compact bristle clusters. The defect survives refutation against the normal baseline.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "toothbrush",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0151",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a significant structural defect (a broken shell exposing the kernel) that is completely absent in the reference images, which all show intact hazelnuts. This confirms the query is anomalous.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "hazelnut",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0113",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct reflective band at the top that is absent in all reference images, confirming a surface anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0102",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear structural defect (hole/puncture) that is absent in all reference images. The side-by-side comparison confirms this feature is unique to the query and not a natural variation, leading to a high anomaly score.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "hazelnut",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0107",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct dark stain on the zipper teeth that is absent in all reference images, confirming it as a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "zipper",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0176",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct edge chip on the bottom-left arm, which is absent in all reference images. This confirms a structural anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "metal_nut",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0155",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear structural defect (a tear or deformation) in the mesh pattern that is absent in all reference images. The side-by-side comparison definitively refutes the possibility of this being a normal variation.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "grid",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0144",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear linear scratch in the upper-right region. The side-by-side comparison with reference images confirms this defect is absent in all normal samples, validating the anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0171",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The red speckles are a normal characteristic present in all reference images. The tablet has a clear FF imprint and intact shape, matching the domain rule that such speckles should not be flagged as defects.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "pill",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0101",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "capsule",
+    "n_rules_injected": 2,
+    "rule_types": [
+      "corrective_fn",
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0131",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct linear crack that is absent in all normal reference images. This feature survived the refutation process, confirming the presence of a structural anomaly.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "tile",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  },
+  {
+    "item_id": "D1_0141",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct elongated mark on the left side that is not present in any of the reference images, confirming it as a surface defect.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "leather",
+    "n_rules_injected": 0,
+    "rule_types": []
+  },
+  {
+    "item_id": "D1_0112",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large crack on the right side of the hazelnut shell, which is a clear structural defect. This feature is not present in any of the reference images, which all show intact shells. Therefore, the query image is anomalous.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "hazelnut",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fp"
+    ]
+  },
+  {
+    "item_id": "D1_0168",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains two distinct diagonal scratches that are absent in all reference images. The side-by-side comparison confirms these are not natural grain variations but surface defects, leading to a high anomaly score.",
+    "label": 1,
+    "domain_code": "D1",
+    "category": "wood",
+    "n_rules_injected": 1,
+    "rule_types": [
+      "corrective_fn"
+    ]
+  }
+]

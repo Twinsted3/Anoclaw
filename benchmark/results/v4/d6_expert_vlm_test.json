@@ -1,0 +1,5012 @@
+[
+  {
+    "item_id": "D6_0064",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.888,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.888,
+        "raw_patch_distance": 0.2835,
+        "global_similarity": 0.8154,
+        "top_patch_distances": [
+          0.2976,
+          0.2971,
+          0.2929,
+          0.284,
+          0.2832
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 13.05,
+    "error": null
+  },
+  {
+    "item_id": "D6_0050",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.2229,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.2229,
+        "raw_patch_distance": 0.1175,
+        "global_similarity": 0.9602,
+        "top_patch_distances": [
+          0.1423,
+          0.1294,
+          0.1276,
+          0.1242,
+          0.1167
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 13.07,
+    "error": null
+  },
+  {
+    "item_id": "D6_0089",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.25632,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.3108,
+        "raw_patch_distance": 0.1402,
+        "global_similarity": 0.9486,
+        "top_patch_distances": [
+          0.1898,
+          0.1666,
+          0.1521,
+          0.1428,
+          0.141
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, outline, orientation, and color gradient closely match the normal references. Point density differences appear minor and consistent with normal variation; no clear structural defect, missing region, or foreign artifact is visible.",
+        "confidence": 0.78
+      },
+      "expert_score": 0.3108,
+      "vlm_score": 0.21999999999999997,
+      "fused_score": 0.25632,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 78
+    },
+    "latency_sec": 16.49,
+    "error": null
+  },
+  {
+    "item_id": "D6_0018",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9148,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9148,
+        "raw_patch_distance": 0.2987,
+        "global_similarity": 0.8001,
+        "top_patch_distances": [
+          0.341,
+          0.3195,
+          0.3137,
+          0.3128,
+          0.3028
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.66,
+    "error": null
+  },
+  {
+    "item_id": "D6_0042",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.24816,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.2754,
+        "raw_patch_distance": 0.1316,
+        "global_similarity": 0.9499,
+        "top_patch_distances": [
+          0.19,
+          0.1524,
+          0.1349,
+          0.1333,
+          0.1329
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, orientation, point density, and smooth color gradient closely match the normal references. Minor local differences around the right-end lobes and overall scatter appear consistent with normal variation rather than a distinct defect.",
+        "confidence": 0.77
+      },
+      "expert_score": 0.2754,
+      "vlm_score": 0.22999999999999998,
+      "fused_score": 0.24816,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 78
+    },
+    "latency_sec": 17.82,
+    "error": null
+  },
+  {
+    "item_id": "D6_0069",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.9433,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9433,
+        "raw_patch_distance": 0.3206,
+        "global_similarity": 0.7834,
+        "top_patch_distances": [
+          0.3782,
+          0.3459,
+          0.3423,
+          0.3409,
+          0.3315
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.72,
+    "error": null
+  },
+  {
+    "item_id": "D6_0001",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.1975,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.1975,
+        "raw_patch_distance": 0.1099,
+        "global_similarity": 0.9413,
+        "top_patch_distances": [
+          0.119,
+          0.1147,
+          0.1147,
+          0.1137,
+          0.1114
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "very similar to normal \u2014 no significant patch deviations",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.65,
+    "error": null
+  },
+  {
+    "item_id": "D6_0028",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9648,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9648,
+        "raw_patch_distance": 0.3456,
+        "global_similarity": 0.792,
+        "top_patch_distances": [
+          0.3631,
+          0.357,
+          0.3538,
+          0.3506,
+          0.3504
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.69,
+    "error": null
+  },
+  {
+    "item_id": "D6_0054",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.2258,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.2258,
+        "raw_patch_distance": 0.1184,
+        "global_similarity": 0.9544,
+        "top_patch_distances": [
+          0.1596,
+          0.143,
+          0.1347,
+          0.1291,
+          0.1234
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.51,
+    "error": null
+  },
+  {
+    "item_id": "D6_0030",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9901,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9901,
+        "raw_patch_distance": 0.4102,
+        "global_similarity": 0.7849,
+        "top_patch_distances": [
+          0.4421,
+          0.4338,
+          0.4185,
+          0.4172,
+          0.4133
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.49,
+    "error": null
+  },
+  {
+    "item_id": "D6_0047",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.8154,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8154,
+        "raw_patch_distance": 0.2543,
+        "global_similarity": 0.8353,
+        "top_patch_distances": [
+          0.2916,
+          0.279,
+          0.261,
+          0.2532,
+          0.2532
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.62,
+    "error": null
+  },
+  {
+    "item_id": "D6_0052",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9538,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9538,
+        "raw_patch_distance": 0.3314,
+        "global_similarity": 0.8293,
+        "top_patch_distances": [
+          0.3888,
+          0.3646,
+          0.3588,
+          0.3464,
+          0.3325
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.6,
+    "error": null
+  },
+  {
+    "item_id": "D6_0071",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.1605,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.1605,
+        "raw_patch_distance": 0.0973,
+        "global_similarity": 0.9689,
+        "top_patch_distances": [
+          0.1223,
+          0.1216,
+          0.1095,
+          0.1057,
+          0.1037
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "very similar to normal \u2014 no significant patch deviations",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.59,
+    "error": null
+  },
+  {
+    "item_id": "D6_0026",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.8635,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8635,
+        "raw_patch_distance": 0.2722,
+        "global_similarity": 0.7972,
+        "top_patch_distances": [
+          0.2901,
+          0.2801,
+          0.2787,
+          0.2765,
+          0.2758
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 1.04,
+    "error": null
+  },
+  {
+    "item_id": "D6_0014",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.30612,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.3453,
+        "raw_patch_distance": 0.148,
+        "global_similarity": 0.9159,
+        "top_patch_distances": [
+          0.1844,
+          0.1732,
+          0.158,
+          0.1509,
+          0.1504
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, orientation, point density, and color gradient closely match the normal references. Minor edge and scatter variations appear consistent with normal sample-to-sample variation, with no clear missing region, extra structure, or strong localized distortion.",
+        "confidence": 0.72
+      },
+      "expert_score": 0.3453,
+      "vlm_score": 0.28,
+      "fused_score": 0.30612,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 83
+    },
+    "latency_sec": 8.28,
+    "error": null
+  },
+  {
+    "item_id": "D6_0025",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.3764,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.401,
+        "raw_patch_distance": 0.1599,
+        "global_similarity": 0.9298,
+        "top_patch_distances": [
+          0.1962,
+          0.1766,
+          0.1738,
+          0.172,
+          0.1622
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the same elongated tapered point-cloud shape, orientation, edge roughness, and smooth yellow-to-purple color gradient seen in the normal references. Minor local differences at the right tip and point density appear consistent with normal sampling variation rather than a distinct defect.",
+        "confidence": 0.64
+      },
+      "expert_score": 0.401,
+      "vlm_score": 0.36,
+      "fused_score": 0.3764,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 89
+    },
+    "latency_sec": 9.69,
+    "error": null
+  },
+  {
+    "item_id": "D6_0012",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.9524,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9524,
+        "raw_patch_distance": 0.3298,
+        "global_similarity": 0.8112,
+        "top_patch_distances": [
+          0.3586,
+          0.3576,
+          0.3526,
+          0.3414,
+          0.3381
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.55,
+    "error": null
+  },
+  {
+    "item_id": "D6_0033",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.8946,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8946,
+        "raw_patch_distance": 0.2869,
+        "global_similarity": 0.7822,
+        "top_patch_distances": [
+          0.3161,
+          0.3011,
+          0.296,
+          0.2931,
+          0.2927
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.66,
+    "error": null
+  },
+  {
+    "item_id": "D6_0000",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.9718,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9718,
+        "raw_patch_distance": 0.357,
+        "global_similarity": 0.8187,
+        "top_patch_distances": [
+          0.3798,
+          0.3686,
+          0.3683,
+          0.3651,
+          0.3637
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.55,
+    "error": null
+  },
+  {
+    "item_id": "D6_0046",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.40671999999999997,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4468,
+        "raw_patch_distance": 0.1693,
+        "global_similarity": 0.919,
+        "top_patch_distances": [
+          0.19,
+          0.1877,
+          0.1872,
+          0.1775,
+          0.1737
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, outline, internal striation lines, and overall color gradient closely match the normal references. Minor point-density and contour differences appear consistent with normal variation rather than a distinct defect.",
+        "confidence": 0.62
+      },
+      "expert_score": 0.4468,
+      "vlm_score": 0.38,
+      "fused_score": 0.40671999999999997,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1445,
+      "output": 74
+    },
+    "latency_sec": 4.62,
+    "error": null
+  },
+  {
+    "item_id": "D6_0015",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.27572,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.2693,
+        "raw_patch_distance": 0.1301,
+        "global_similarity": 0.942,
+        "top_patch_distances": [
+          0.1615,
+          0.1408,
+          0.1349,
+          0.1323,
+          0.1287
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query closely matches the reference shape, orientation, point density, and smooth color gradient. Minor local differences around the edges and dot distribution appear consistent with normal variation rather than a defect.",
+        "confidence": 0.72
+      },
+      "expert_score": 0.2693,
+      "vlm_score": 0.28,
+      "fused_score": 0.27572,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 74
+    },
+    "latency_sec": 4.28,
+    "error": null
+  },
+  {
+    "item_id": "D6_0073",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.8994,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8994,
+        "raw_patch_distance": 0.2895,
+        "global_similarity": 0.8261,
+        "top_patch_distances": [
+          0.3156,
+          0.3108,
+          0.3037,
+          0.2996,
+          0.293
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.79,
+    "error": null
+  },
+  {
+    "item_id": "D6_0005",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.30072,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.3318,
+        "raw_patch_distance": 0.145,
+        "global_similarity": 0.9163,
+        "top_patch_distances": [
+          0.169,
+          0.1643,
+          0.1578,
+          0.1545,
+          0.154
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query matches the reference shape, orientation, point density, and smooth color gradient. Minor local sparsity and edge variation appear consistent with normal sample-to-sample variation.",
+        "confidence": 0.72
+      },
+      "expert_score": 0.3318,
+      "vlm_score": 0.28,
+      "fused_score": 0.30072,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 70
+    },
+    "latency_sec": 5.49,
+    "error": null
+  },
+  {
+    "item_id": "D6_0072",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.44987999999999995,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.5397,
+        "raw_patch_distance": 0.1879,
+        "global_similarity": 0.8979,
+        "top_patch_distances": [
+          0.2539,
+          0.2417,
+          0.2101,
+          0.2073,
+          0.1966
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, orientation, color gradient, and point distribution closely match the normal references. Minor variation along the lower-right edge appears consistent with normal sample-to-sample boundary noise rather than a distinct defect.",
+        "confidence": 0.61
+      },
+      "expert_score": 0.5397,
+      "vlm_score": 0.39,
+      "fused_score": 0.44987999999999995,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 77
+    },
+    "latency_sec": 4.99,
+    "error": null
+  },
+  {
+    "item_id": "D6_0017",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.8419,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8419,
+        "raw_patch_distance": 0.2636,
+        "global_similarity": 0.8178,
+        "top_patch_distances": [
+          0.2878,
+          0.2844,
+          0.2751,
+          0.2732,
+          0.2686
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.46,
+    "error": null
+  },
+  {
+    "item_id": "D6_0038",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.40800000000000003,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.48,
+        "raw_patch_distance": 0.176,
+        "global_similarity": 0.9042,
+        "top_patch_distances": [
+          0.206,
+          0.1916,
+          0.1891,
+          0.1739,
+          0.173
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, outline, point density, and internal ridge-like structures closely match the normal references. Minor local differences near the top center/right edge appear consistent with normal variation rather than a clear defect.",
+        "confidence": 0.64
+      },
+      "expert_score": 0.48,
+      "vlm_score": 0.36,
+      "fused_score": 0.40800000000000003,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1445,
+      "output": 76
+    },
+    "latency_sec": 5.46,
+    "error": null
+  },
+  {
+    "item_id": "D6_0056",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.59596,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4999,
+        "raw_patch_distance": 0.18,
+        "global_similarity": 0.8993,
+        "top_patch_distances": [
+          0.2125,
+          0.2069,
+          0.1972,
+          0.1952,
+          0.1852
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "truncated/missing lower-right tip and altered lower contour",
+        "evidence": "Compared with the normal references, the query silhouette is cut off on the lower-right end and the bottom edge is shorter/flatter. The left inner notch also appears larger/opened, giving a noticeably different outline despite similar overall color gradient and texture.",
+        "confidence": 0.66
+      },
+      "expert_score": 0.4999,
+      "vlm_score": 0.66,
+      "fused_score": 0.59596,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 99
+    },
+    "latency_sec": 5.79,
+    "error": null
+  },
+  {
+    "item_id": "D6_0051",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.941,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.941,
+        "raw_patch_distance": 0.3185,
+        "global_similarity": 0.8342,
+        "top_patch_distances": [
+          0.35,
+          0.3369,
+          0.3291,
+          0.3268,
+          0.3179
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.46,
+    "error": null
+  },
+  {
+    "item_id": "D6_0087",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.9758,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9758,
+        "raw_patch_distance": 0.3648,
+        "global_similarity": 0.7626,
+        "top_patch_distances": [
+          0.3958,
+          0.3741,
+          0.3737,
+          0.3711,
+          0.3705
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.33,
+    "error": null
+  },
+  {
+    "item_id": "D6_0013",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.8797,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8797,
+        "raw_patch_distance": 0.2795,
+        "global_similarity": 0.8459,
+        "top_patch_distances": [
+          0.3048,
+          0.3006,
+          0.2937,
+          0.2851,
+          0.2811
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.77,
+    "error": null
+  },
+  {
+    "item_id": "D6_0044",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 0,
+    "anomaly_score": 0.43176,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.5094,
+        "raw_patch_distance": 0.1819,
+        "global_similarity": 0.8892,
+        "top_patch_distances": [
+          0.207,
+          0.2018,
+          0.1938,
+          0.1885,
+          0.1838
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shape, outline, point density, and color gradient closely match the normal references. Minor differences appear consistent with natural variation in the point cloud and pose rather than a distinct structural defect.",
+        "confidence": 0.62
+      },
+      "expert_score": 0.5094,
+      "vlm_score": 0.38,
+      "fused_score": 0.43176,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 75
+    },
+    "latency_sec": 9.75,
+    "error": null
+  },
+  {
+    "item_id": "D6_0023",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.959,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.959,
+        "raw_patch_distance": 0.3376,
+        "global_similarity": 0.7732,
+        "top_patch_distances": [
+          0.3595,
+          0.3584,
+          0.3573,
+          0.3535,
+          0.3528
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.43,
+    "error": null
+  },
+  {
+    "item_id": "D6_0076",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.8395,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8395,
+        "raw_patch_distance": 0.2627,
+        "global_similarity": 0.8588,
+        "top_patch_distances": [
+          0.2899,
+          0.288,
+          0.2704,
+          0.2645,
+          0.2633
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.43,
+    "error": null
+  },
+  {
+    "item_id": "D6_0063",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.183,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.183,
+        "raw_patch_distance": 0.1052,
+        "global_similarity": 0.9473,
+        "top_patch_distances": [
+          0.1503,
+          0.1271,
+          0.114,
+          0.1039,
+          0.1028
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "very similar to normal \u2014 no significant patch deviations",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.51,
+    "error": null
+  },
+  {
+    "item_id": "D6_0021",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 0,
+    "anomaly_score": 0.41124,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4581,
+        "raw_patch_distance": 0.1716,
+        "global_similarity": 0.8841,
+        "top_patch_distances": [
+          0.2121,
+          0.1774,
+          0.1751,
+          0.1721,
+          0.1707
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query silhouette, point density, and color gradient closely match the normal references. Minor variations around the left opening and upper contour appear consistent with normal shape/noise variation rather than a distinct structural defect.",
+        "confidence": 0.62
+      },
+      "expert_score": 0.4581,
+      "vlm_score": 0.38,
+      "fused_score": 0.41124,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 76
+    },
+    "latency_sec": 9.64,
+    "error": null
+  },
+  {
+    "item_id": "D6_0003",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.60884,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4571,
+        "raw_patch_distance": 0.1714,
+        "global_similarity": 0.8964,
+        "top_patch_distances": [
+          0.1928,
+          0.1842,
+          0.1842,
+          0.1723,
+          0.171
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing lower-left region",
+        "evidence": "Compared with the normal references, the query shows a noticeably larger cut-out/open gap on the left side and a sparser, truncated lower-left contour, making the overall silhouette less filled and less consistent with the reference shape.",
+        "confidence": 0.71
+      },
+      "expert_score": 0.4571,
+      "vlm_score": 0.71,
+      "fused_score": 0.60884,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 90
+    },
+    "latency_sec": 4.37,
+    "error": null
+  },
+  {
+    "item_id": "D6_0048",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.974,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.974,
+        "raw_patch_distance": 0.3613,
+        "global_similarity": 0.7968,
+        "top_patch_distances": [
+          0.3876,
+          0.3751,
+          0.3696,
+          0.3695,
+          0.3665
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.43,
+    "error": null
+  },
+  {
+    "item_id": "D6_0062",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 0,
+    "anomaly_score": 0.32288000000000006,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.3872,
+        "raw_patch_distance": 0.157,
+        "global_similarity": 0.9216,
+        "top_patch_distances": [
+          0.2119,
+          0.1706,
+          0.1702,
+          0.1593,
+          0.159
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference leaf-like point cloud in overall shape, orientation, contour features, and smooth color gradient. Minor differences appear limited to point density/dispersion near the left notch and upper edge, which are within the variation seen across normal references.",
+        "confidence": 0.72
+      },
+      "expert_score": 0.3872,
+      "vlm_score": 0.28,
+      "fused_score": 0.32288000000000006,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 88
+    },
+    "latency_sec": 6.94,
+    "error": null
+  },
+  {
+    "item_id": "D6_0080",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.8624,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8624,
+        "raw_patch_distance": 0.2718,
+        "global_similarity": 0.8505,
+        "top_patch_distances": [
+          0.2981,
+          0.295,
+          0.2948,
+          0.2908,
+          0.2834
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.45,
+    "error": null
+  },
+  {
+    "item_id": "D6_0085",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.9582,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9582,
+        "raw_patch_distance": 0.3366,
+        "global_similarity": 0.7937,
+        "top_patch_distances": [
+          0.3577,
+          0.3561,
+          0.3472,
+          0.3434,
+          0.3401
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.79,
+    "error": null
+  },
+  {
+    "item_id": "D6_0035",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.9097,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9097,
+        "raw_patch_distance": 0.2955,
+        "global_similarity": 0.8442,
+        "top_patch_distances": [
+          0.3545,
+          0.3278,
+          0.32,
+          0.3093,
+          0.2983
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.73,
+    "error": null
+  },
+  {
+    "item_id": "D6_0016",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.66144,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.6186,
+        "raw_patch_distance": 0.2042,
+        "global_similarity": 0.8826,
+        "top_patch_distances": [
+          0.2263,
+          0.2259,
+          0.2258,
+          0.224,
+          0.2029
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / left-side notch enlargement",
+        "evidence": "Compared with the normal references, the query shows a noticeably larger and deeper inward cut on the left-middle side, making the lower-left protrusion appear more separated and altering the overall silhouette. The rest of the outline is broadly similar, so this appears borderline but visually abnormal.",
+        "confidence": 0.69
+      },
+      "expert_score": 0.6186,
+      "vlm_score": 0.69,
+      "fused_score": 0.66144,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1449,
+      "output": 100
+    },
+    "latency_sec": 12.46,
+    "error": null
+  },
+  {
+    "item_id": "D6_0011",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.2328,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.2328,
+        "raw_patch_distance": 0.1204,
+        "global_similarity": 0.9559,
+        "top_patch_distances": [
+          0.19,
+          0.1359,
+          0.1256,
+          0.1222,
+          0.1163
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.57,
+    "error": null
+  },
+  {
+    "item_id": "D6_0041",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.7708,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.7708,
+        "raw_patch_distance": 0.2406,
+        "global_similarity": 0.8807,
+        "top_patch_distances": [
+          0.3129,
+          0.2912,
+          0.2718,
+          0.2584,
+          0.2471
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.66,
+    "error": null
+  },
+  {
+    "item_id": "D6_0043",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.40115999999999996,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4329,
+        "raw_patch_distance": 0.1665,
+        "global_similarity": 0.9244,
+        "top_patch_distances": [
+          0.1883,
+          0.1857,
+          0.1763,
+          0.1666,
+          0.1655
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query closely matches the reference shape, point density, and color gradient. Minor variations along the left top contour and internal streaks appear consistent with normal sample-to-sample variation rather than a distinct defect.",
+        "confidence": 0.62
+      },
+      "expert_score": 0.4329,
+      "vlm_score": 0.38,
+      "fused_score": 0.40115999999999996,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 77
+    },
+    "latency_sec": 9.73,
+    "error": null
+  },
+  {
+    "item_id": "D6_0084",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 0,
+    "anomaly_score": 0.44908000000000003,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.5077,
+        "raw_patch_distance": 0.1815,
+        "global_similarity": 0.9077,
+        "top_patch_distances": [
+          0.2066,
+          0.1918,
+          0.1907,
+          0.1879,
+          0.1858
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shows the same single speckled oval shape, point density, and smooth boundary profile as the normal references. Color/gradient placement and overall silhouette variation appear within normal reference variability, with no clear defect, missing region, or extra structure.",
+        "confidence": 0.59
+      },
+      "expert_score": 0.5077,
+      "vlm_score": 0.41000000000000003,
+      "fused_score": 0.44908000000000003,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 87
+    },
+    "latency_sec": 6.57,
+    "error": null
+  },
+  {
+    "item_id": "D6_0088",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.8456,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8456,
+        "raw_patch_distance": 0.265,
+        "global_similarity": 0.8301,
+        "top_patch_distances": [
+          0.2771,
+          0.2756,
+          0.2715,
+          0.2702,
+          0.2672
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.62,
+    "error": null
+  },
+  {
+    "item_id": "D6_0031",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.31564000000000003,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.3391,
+        "raw_patch_distance": 0.1466,
+        "global_similarity": 0.924,
+        "top_patch_distances": [
+          0.1677,
+          0.1561,
+          0.1545,
+          0.1532,
+          0.1531
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query matches the reference brush-shaped point cloud in overall silhouette, orientation, color gradient, and edge structure. Minor local density differences near the lower-right tip and upper-left edge appear consistent with normal variation seen across the references.",
+        "confidence": 0.7
+      },
+      "expert_score": 0.3391,
+      "vlm_score": 0.30000000000000004,
+      "fused_score": 0.31564000000000003,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 81
+    },
+    "latency_sec": 8.4,
+    "error": null
+  },
+  {
+    "item_id": "D6_0059",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9522,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9522,
+        "raw_patch_distance": 0.3296,
+        "global_similarity": 0.8455,
+        "top_patch_distances": [
+          0.3992,
+          0.3572,
+          0.3533,
+          0.3382,
+          0.3359
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.7,
+    "error": null
+  },
+  {
+    "item_id": "D6_0061",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.9935,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9935,
+        "raw_patch_distance": 0.4318,
+        "global_similarity": 0.671,
+        "top_patch_distances": [
+          0.4501,
+          0.4484,
+          0.4389,
+          0.4378,
+          0.4373
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.7,
+    "error": null
+  },
+  {
+    "item_id": "D6_0075",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.32652000000000003,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.3813,
+        "raw_patch_distance": 0.1558,
+        "global_similarity": 0.9242,
+        "top_patch_distances": [
+          0.1946,
+          0.1703,
+          0.164,
+          0.1542,
+          0.1534
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, contour, internal ridge lines, and color gradient closely match the normal references. Minor differences appear limited to point density/pose variation and remain within the normal range.",
+        "confidence": 0.71
+      },
+      "expert_score": 0.3813,
+      "vlm_score": 0.29000000000000004,
+      "fused_score": 0.32652000000000003,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 72
+    },
+    "latency_sec": 3.85,
+    "error": null
+  },
+  {
+    "item_id": "D6_0057",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.6473599999999999,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.5684,
+        "raw_patch_distance": 0.1938,
+        "global_similarity": 0.9093,
+        "top_patch_distances": [
+          0.2184,
+          0.2119,
+          0.2043,
+          0.2019,
+          0.1975
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing lower-left region",
+        "evidence": "Compared with the normal references, the query shows a noticeably larger cut-out/open gap on the left-lower side and a rougher, truncated lower contour, making the overall silhouette slimmer and less filled in that region.",
+        "confidence": 0.7
+      },
+      "expert_score": 0.5684,
+      "vlm_score": 0.7,
+      "fused_score": 0.6473599999999999,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 89
+    },
+    "latency_sec": 15.97,
+    "error": null
+  },
+  {
+    "item_id": "D6_0034",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.28368,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.3642,
+        "raw_patch_distance": 0.1522,
+        "global_similarity": 0.9314,
+        "top_patch_distances": [
+          0.1799,
+          0.1586,
+          0.153,
+          0.1528,
+          0.1518
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, orientation, color gradient, and point distribution closely. Minor local density differences appear consistent with normal variation rather than a distinct defect.",
+        "confidence": 0.77
+      },
+      "expert_score": 0.3642,
+      "vlm_score": 0.22999999999999998,
+      "fused_score": 0.28368,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 69
+    },
+    "latency_sec": 4.1,
+    "error": null
+  },
+  {
+    "item_id": "D6_0083",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.926,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.926,
+        "raw_patch_distance": 0.3063,
+        "global_similarity": 0.81,
+        "top_patch_distances": [
+          0.3316,
+          0.3237,
+          0.3193,
+          0.3098,
+          0.3093
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.52,
+    "error": null
+  },
+  {
+    "item_id": "D6_0066",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.9803,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9803,
+        "raw_patch_distance": 0.3754,
+        "global_similarity": 0.7478,
+        "top_patch_distances": [
+          0.3979,
+          0.3974,
+          0.3925,
+          0.3825,
+          0.381
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.66,
+    "error": null
+  },
+  {
+    "item_id": "D6_0068",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.30076,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.3319,
+        "raw_patch_distance": 0.145,
+        "global_similarity": 0.933,
+        "top_patch_distances": [
+          0.1739,
+          0.1628,
+          0.1547,
+          0.1512,
+          0.1479
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query closely matches the reference shape, orientation, point density, and smooth color gradient. Minor local variation in dot placement and contour is consistent with normal sample-to-sample variation.",
+        "confidence": 0.72
+      },
+      "expert_score": 0.3319,
+      "vlm_score": 0.28,
+      "fused_score": 0.30076,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 72
+    },
+    "latency_sec": 8.92,
+    "error": null
+  },
+  {
+    "item_id": "D6_0022",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.37848000000000004,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4212,
+        "raw_patch_distance": 0.1641,
+        "global_similarity": 0.9306,
+        "top_patch_distances": [
+          0.1898,
+          0.1835,
+          0.1725,
+          0.1725,
+          0.1668
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, outline, point density, and color gradient closely match the normal references. Minor local differences around the right-end lobes and lower edge appear within normal variation rather than a distinct defect.",
+        "confidence": 0.65
+      },
+      "expert_score": 0.4212,
+      "vlm_score": 0.35,
+      "fused_score": 0.37848000000000004,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 76
+    },
+    "latency_sec": 4.67,
+    "error": null
+  },
+  {
+    "item_id": "D6_0120",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.7849,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.7849,
+        "raw_patch_distance": 0.2447,
+        "global_similarity": 0.8315,
+        "top_patch_distances": [
+          0.2577,
+          0.257,
+          0.2549,
+          0.2525,
+          0.2495
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.45,
+    "error": null
+  },
+  {
+    "item_id": "D6_0156",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.1571,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.1571,
+        "raw_patch_distance": 0.096,
+        "global_similarity": 0.9499,
+        "top_patch_distances": [
+          0.1014,
+          0.1011,
+          0.1004,
+          0.0997,
+          0.0994
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "very similar to normal \u2014 no significant patch deviations",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.42,
+    "error": null
+  },
+  {
+    "item_id": "D6_0144",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.9547,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9547,
+        "raw_patch_distance": 0.3324,
+        "global_similarity": 0.7581,
+        "top_patch_distances": [
+          0.3521,
+          0.3498,
+          0.3381,
+          0.3375,
+          0.3345
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.42,
+    "error": null
+  },
+  {
+    "item_id": "D6_0078",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 0,
+    "anomaly_score": 0.43343999999999994,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.5136,
+        "raw_patch_distance": 0.1827,
+        "global_similarity": 0.9092,
+        "top_patch_distances": [
+          0.1964,
+          0.1911,
+          0.1885,
+          0.1857,
+          0.1826
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape closely overall, including the two upper protrusions, left-side notch/opening, and tapered lower-right tip. Differences appear limited to minor contour variation and point-density noise consistent with normal sample variation.",
+        "confidence": 0.62
+      },
+      "expert_score": 0.5136,
+      "vlm_score": 0.38,
+      "fused_score": 0.43343999999999994,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 82
+    },
+    "latency_sec": 11.55,
+    "error": null
+  },
+  {
+    "item_id": "D6_0055",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.39164,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4241,
+        "raw_patch_distance": 0.1647,
+        "global_similarity": 0.8886,
+        "top_patch_distances": [
+          0.2065,
+          0.184,
+          0.1722,
+          0.1684,
+          0.1663
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query matches the reference shape, orientation, color gradient, and point distribution overall. Minor local density differences near the lower-right edge appear consistent with normal variation seen across the references.",
+        "confidence": 0.63
+      },
+      "expert_score": 0.4241,
+      "vlm_score": 0.37,
+      "fused_score": 0.39164,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 72
+    },
+    "latency_sec": 5.95,
+    "error": null
+  },
+  {
+    "item_id": "D6_0135",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9773,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9773,
+        "raw_patch_distance": 0.3682,
+        "global_similarity": 0.7994,
+        "top_patch_distances": [
+          0.3823,
+          0.3786,
+          0.3773,
+          0.3761,
+          0.3721
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.4,
+    "error": null
+  },
+  {
+    "item_id": "D6_0019",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "pacCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.37184000000000006,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4646,
+        "raw_patch_distance": 0.1729,
+        "global_similarity": 0.9055,
+        "top_patch_distances": [
+          0.1855,
+          0.1853,
+          0.1823,
+          0.1811,
+          0.1794
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query matches the reference shape, orientation, point density, and smooth color gradient closely. Minor edge and scatter variations are consistent with normal sample-to-sample variation rather than a distinct defect.",
+        "confidence": 0.69
+      },
+      "expert_score": 0.4646,
+      "vlm_score": 0.31000000000000005,
+      "fused_score": 0.37184000000000006,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 74
+    },
+    "latency_sec": 3.51,
+    "error": null
+  },
+  {
+    "item_id": "D6_0139",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.998,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.998,
+        "raw_patch_distance": 0.4918,
+        "global_similarity": 0.6133,
+        "top_patch_distances": [
+          0.5129,
+          0.5065,
+          0.5016,
+          0.5011,
+          0.4914
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.96,
+    "error": null
+  },
+  {
+    "item_id": "D6_0114",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.9368,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9368,
+        "raw_patch_distance": 0.3148,
+        "global_similarity": 0.8325,
+        "top_patch_distances": [
+          0.3573,
+          0.3415,
+          0.3367,
+          0.325,
+          0.3227
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.68,
+    "error": null
+  },
+  {
+    "item_id": "D6_0117",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.7782399999999999,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.7156,
+        "raw_patch_distance": 0.2261,
+        "global_similarity": 0.8669,
+        "top_patch_distances": [
+          0.2541,
+          0.252,
+          0.241,
+          0.2343,
+          0.2332
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing lower-left region",
+        "evidence": "Compared with the normal references, the query shows a noticeably altered outline: the lower-left lobe/opening is enlarged and the bottom edge is truncated/eroded, making the overall shape less filled and more irregular.",
+        "confidence": 0.82
+      },
+      "expert_score": 0.7156,
+      "vlm_score": 0.82,
+      "fused_score": 0.7782399999999999,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1448,
+      "output": 89
+    },
+    "latency_sec": 4.23,
+    "error": null
+  },
+  {
+    "item_id": "D6_0167",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.45624,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.5706,
+        "raw_patch_distance": 0.1942,
+        "global_similarity": 0.9126,
+        "top_patch_distances": [
+          0.2261,
+          0.2175,
+          0.2073,
+          0.1981,
+          0.1966
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, outline, internal groove pattern, and color gradient closely match the normal references. Differences appear limited to slight pose/point-density variation rather than a distinct structural defect.",
+        "confidence": 0.62
+      },
+      "expert_score": 0.5706,
+      "vlm_score": 0.38,
+      "fused_score": 0.45624,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 72
+    },
+    "latency_sec": 3.96,
+    "error": null
+  },
+  {
+    "item_id": "D6_0153",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.8908,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8908,
+        "raw_patch_distance": 0.285,
+        "global_similarity": 0.8015,
+        "top_patch_distances": [
+          0.3113,
+          0.3005,
+          0.2942,
+          0.2903,
+          0.2884
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.54,
+    "error": null
+  },
+  {
+    "item_id": "D6_0145",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.1606,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.1606,
+        "raw_patch_distance": 0.0973,
+        "global_similarity": 0.9608,
+        "top_patch_distances": [
+          0.115,
+          0.1066,
+          0.1039,
+          0.0998,
+          0.0986
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "very similar to normal \u2014 no significant patch deviations",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.52,
+    "error": null
+  },
+  {
+    "item_id": "D6_0118",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.38268,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4017,
+        "raw_patch_distance": 0.1601,
+        "global_similarity": 0.9271,
+        "top_patch_distances": [
+          0.2362,
+          0.2047,
+          0.1627,
+          0.1613,
+          0.157
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, orientation, point density, and smooth color gradient closely match the normal references. Minor local differences appear consistent with natural variation in the sampled point cloud rather than a distinct structural defect.",
+        "confidence": 0.63
+      },
+      "expert_score": 0.4017,
+      "vlm_score": 0.37,
+      "fused_score": 0.38268,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 75
+    },
+    "latency_sec": 5.8,
+    "error": null
+  },
+  {
+    "item_id": "D6_0123",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 0,
+    "anomaly_score": 0.47168,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.5942,
+        "raw_patch_distance": 0.1991,
+        "global_similarity": 0.9106,
+        "top_patch_distances": [
+          0.2861,
+          0.2335,
+          0.2266,
+          0.2076,
+          0.1952
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query closely matches the reference shape, outline, point density, and color gradient. Minor differences along the lower-left notch and contour appear consistent with normal variation seen across the references rather than a distinct defect.",
+        "confidence": 0.61
+      },
+      "expert_score": 0.5942,
+      "vlm_score": 0.39,
+      "fused_score": 0.47168,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 78
+    },
+    "latency_sec": 5.45,
+    "error": null
+  },
+  {
+    "item_id": "D6_0171",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.8065,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8065,
+        "raw_patch_distance": 0.2514,
+        "global_similarity": 0.8869,
+        "top_patch_distances": [
+          0.2944,
+          0.2932,
+          0.2841,
+          0.2687,
+          0.2658
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.7,
+    "error": null
+  },
+  {
+    "item_id": "D6_0097",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.9968,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9968,
+        "raw_patch_distance": 0.4669,
+        "global_similarity": 0.7026,
+        "top_patch_distances": [
+          0.5088,
+          0.4979,
+          0.4851,
+          0.478,
+          0.4737
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.53,
+    "error": null
+  },
+  {
+    "item_id": "D6_0116",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.32196,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.3999,
+        "raw_patch_distance": 0.1597,
+        "global_similarity": 0.9319,
+        "top_patch_distances": [
+          0.183,
+          0.1746,
+          0.1683,
+          0.168,
+          0.1601
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query matches the reference shape, orientation, point distribution, and color gradient closely. Minor local density differences appear consistent with normal variation and no clear structural defect or extra/missing region is visible.",
+        "confidence": 0.73
+      },
+      "expert_score": 0.3999,
+      "vlm_score": 0.27,
+      "fused_score": 0.32196,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 75
+    },
+    "latency_sec": 4.78,
+    "error": null
+  },
+  {
+    "item_id": "D6_0129",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.7635599999999999,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.6789,
+        "raw_patch_distance": 0.2174,
+        "global_similarity": 0.8804,
+        "top_patch_distances": [
+          0.2638,
+          0.2595,
+          0.2548,
+          0.2355,
+          0.23
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape truncation/missing lower region",
+        "evidence": "Compared with the normal references, the query object appears cut off in the lower-left to bottom region, with a noticeably reduced footprint and missing boundary/point distribution while the upper contour remains similar.",
+        "confidence": 0.82
+      },
+      "expert_score": 0.6789,
+      "vlm_score": 0.82,
+      "fused_score": 0.7635599999999999,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1449,
+      "output": 84
+    },
+    "latency_sec": 9.2,
+    "error": null
+  },
+  {
+    "item_id": "D6_0105",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.22775999999999996,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.2844,
+        "raw_patch_distance": 0.1339,
+        "global_similarity": 0.94,
+        "top_patch_distances": [
+          0.2214,
+          0.154,
+          0.1517,
+          0.1337,
+          0.1327
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query shape, orientation, outline, point density, and color gradient closely match the normal references. Minor local variations in dot distribution and edge roughness appear consistent with normal sampling variation rather than a distinct defect.",
+        "confidence": 0.81
+      },
+      "expert_score": 0.2844,
+      "vlm_score": 0.18999999999999995,
+      "fused_score": 0.22775999999999996,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 79
+    },
+    "latency_sec": 5.94,
+    "error": null
+  },
+  {
+    "item_id": "D6_0147",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.9542,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9542,
+        "raw_patch_distance": 0.3318,
+        "global_similarity": 0.8357,
+        "top_patch_distances": [
+          0.3665,
+          0.366,
+          0.3542,
+          0.3389,
+          0.3334
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.33,
+    "error": null
+  },
+  {
+    "item_id": "D6_0141",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.8775,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8775,
+        "raw_patch_distance": 0.2785,
+        "global_similarity": 0.8662,
+        "top_patch_distances": [
+          0.311,
+          0.3039,
+          0.3037,
+          0.3016,
+          0.294
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.33,
+    "error": null
+  },
+  {
+    "item_id": "D6_0143",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.9652,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9652,
+        "raw_patch_distance": 0.3462,
+        "global_similarity": 0.8162,
+        "top_patch_distances": [
+          0.3768,
+          0.3658,
+          0.3618,
+          0.3552,
+          0.3502
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.3,
+    "error": null
+  },
+  {
+    "item_id": "D6_0170",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.39239999999999997,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.456,
+        "raw_patch_distance": 0.1712,
+        "global_similarity": 0.9203,
+        "top_patch_distances": [
+          0.1893,
+          0.1839,
+          0.1823,
+          0.1803,
+          0.1782
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, contour, internal striation lines, and color gradient closely match the normal references. Minor differences appear consistent with normal variation and point-sampling noise rather than a distinct structural defect.",
+        "confidence": 0.65
+      },
+      "expert_score": 0.456,
+      "vlm_score": 0.35,
+      "fused_score": 0.39239999999999997,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 75
+    },
+    "latency_sec": 5.02,
+    "error": null
+  },
+  {
+    "item_id": "D6_0109",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.7405999999999999,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.6815,
+        "raw_patch_distance": 0.218,
+        "global_similarity": 0.8625,
+        "top_patch_distances": [
+          0.2342,
+          0.2279,
+          0.2233,
+          0.2231,
+          0.2228
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "rotation/orientation change",
+        "evidence": "The query object has a noticeably different orientation and silhouette than the normal references, tilted more vertically with the brightest region shifted to the upper-left and the tapered end at the lower-right. This departs from the consistent reference pose.",
+        "confidence": 0.78
+      },
+      "expert_score": 0.6815,
+      "vlm_score": 0.78,
+      "fused_score": 0.7405999999999999,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1450,
+      "output": 88
+    },
+    "latency_sec": 5.24,
+    "error": null
+  },
+  {
+    "item_id": "D6_0173",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.2353,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.2353,
+        "raw_patch_distance": 0.1211,
+        "global_similarity": 0.9534,
+        "top_patch_distances": [
+          0.1566,
+          0.1548,
+          0.128,
+          0.1248,
+          0.1227
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.4,
+    "error": null
+  },
+  {
+    "item_id": "D6_0093",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 0,
+    "anomaly_score": 0.46692,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.5373,
+        "raw_patch_distance": 0.1875,
+        "global_similarity": 0.8907,
+        "top_patch_distances": [
+          0.2165,
+          0.2119,
+          0.2022,
+          0.1965,
+          0.1954
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query closely matches the reference shape, point density, and smooth color gradient. Small differences around the lower-right tip and interior scatter appear consistent with normal sampling variation rather than a clear structural defect.",
+        "confidence": 0.58
+      },
+      "expert_score": 0.5373,
+      "vlm_score": 0.42000000000000004,
+      "fused_score": 0.46692,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 75
+    },
+    "latency_sec": 3.66,
+    "error": null
+  },
+  {
+    "item_id": "D6_0162",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.39164,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4091,
+        "raw_patch_distance": 0.1616,
+        "global_similarity": 0.9237,
+        "top_patch_distances": [
+          0.1871,
+          0.1749,
+          0.172,
+          0.1669,
+          0.1646
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, outline, point density, and internal band/crease patterns closely match the normal references. Minor differences appear consistent with small pose or sampling variation rather than a distinct structural defect.",
+        "confidence": 0.62
+      },
+      "expert_score": 0.4091,
+      "vlm_score": 0.38,
+      "fused_score": 0.39164,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 74
+    },
+    "latency_sec": 4.78,
+    "error": null
+  },
+  {
+    "item_id": "D6_0154",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.9089,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9089,
+        "raw_patch_distance": 0.295,
+        "global_similarity": 0.8146,
+        "top_patch_distances": [
+          0.3181,
+          0.3101,
+          0.3042,
+          0.3037,
+          0.301
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.35,
+    "error": null
+  },
+  {
+    "item_id": "D6_0099",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.41100000000000003,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4875,
+        "raw_patch_distance": 0.1775,
+        "global_similarity": 0.908,
+        "top_patch_distances": [
+          0.2382,
+          0.1938,
+          0.1848,
+          0.1784,
+          0.1755
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the reference shape, contour, and internal streak patterns closely. The left rounded lobe, top bump, right taper, and darker lower edge are all consistent with normal variation. Differences appear limited to slight point-density/pose variation rather than a distinct defect.",
+        "confidence": 0.64
+      },
+      "expert_score": 0.4875,
+      "vlm_score": 0.36,
+      "fused_score": 0.41100000000000003,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 91
+    },
+    "latency_sec": 10.66,
+    "error": null
+  },
+  {
+    "item_id": "D6_0115",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.9193,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9193,
+        "raw_patch_distance": 0.3017,
+        "global_similarity": 0.8389,
+        "top_patch_distances": [
+          0.3389,
+          0.3326,
+          0.3102,
+          0.3093,
+          0.3083
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.28,
+    "error": null
+  },
+  {
+    "item_id": "D6_0094",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.1876,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.1876,
+        "raw_patch_distance": 0.1067,
+        "global_similarity": 0.9465,
+        "top_patch_distances": [
+          0.125,
+          0.1178,
+          0.1151,
+          0.114,
+          0.1053
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "very similar to normal \u2014 no significant patch deviations",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.29,
+    "error": null
+  },
+  {
+    "item_id": "D6_0142",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9808,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9808,
+        "raw_patch_distance": 0.3767,
+        "global_similarity": 0.7771,
+        "top_patch_distances": [
+          0.3971,
+          0.3897,
+          0.3856,
+          0.3842,
+          0.3795
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.29,
+    "error": null
+  },
+  {
+    "item_id": "D6_0175",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.39968000000000004,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4292,
+        "raw_patch_distance": 0.1657,
+        "global_similarity": 0.9207,
+        "top_patch_distances": [
+          0.185,
+          0.1822,
+          0.1689,
+          0.166,
+          0.1655
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the overall silhouette, orientation, point density, and smooth color gradient of the normal references. Minor differences along the lower-right edge and tail-like protrusion appear consistent with natural variation in sparse point sampling rather than a clear structural defect.",
+        "confidence": 0.62
+      },
+      "expert_score": 0.4292,
+      "vlm_score": 0.38,
+      "fused_score": 0.39968000000000004,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1445,
+      "output": 86
+    },
+    "latency_sec": 26.76,
+    "error": null
+  },
+  {
+    "item_id": "D6_0104",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.28788,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.2697,
+        "raw_patch_distance": 0.1302,
+        "global_similarity": 0.945,
+        "top_patch_distances": [
+          0.196,
+          0.1772,
+          0.1564,
+          0.1222,
+          0.1215
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, orientation, point density, and color gradient closely match the normal references. Minor local scatter differences appear consistent with natural variation and no clear structural defect or missing/extra region is visible.",
+        "confidence": 0.7
+      },
+      "expert_score": 0.2697,
+      "vlm_score": 0.30000000000000004,
+      "fused_score": 0.28788,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 76
+    },
+    "latency_sec": 5.36,
+    "error": null
+  },
+  {
+    "item_id": "D6_0122",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.8144,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8144,
+        "raw_patch_distance": 0.2539,
+        "global_similarity": 0.8762,
+        "top_patch_distances": [
+          0.2833,
+          0.2754,
+          0.2657,
+          0.2609,
+          0.2574
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.41,
+    "error": null
+  },
+  {
+    "item_id": "D6_0169",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "candybar",
+    "label_pred": 0,
+    "anomaly_score": 0.2435,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.2435,
+        "raw_patch_distance": 0.1233,
+        "global_similarity": 0.9393,
+        "top_patch_distances": [
+          0.1451,
+          0.1295,
+          0.1293,
+          0.1289,
+          0.1269
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.28,
+    "error": null
+  },
+  {
+    "item_id": "D6_0113",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9736,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9736,
+        "raw_patch_distance": 0.3604,
+        "global_similarity": 0.7221,
+        "top_patch_distances": [
+          0.3862,
+          0.3861,
+          0.3675,
+          0.3657,
+          0.3646
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.3,
+    "error": null
+  },
+  {
+    "item_id": "D6_0130",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.67452,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.6213,
+        "raw_patch_distance": 0.2047,
+        "global_similarity": 0.8924,
+        "top_patch_distances": [
+          0.2269,
+          0.2243,
+          0.2066,
+          0.2045,
+          0.2041
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / contour irregularity",
+        "evidence": "Compared with the references, the query object is more elongated and tilted, with a noticeably irregular right edge and a sharper lower-right contour. The overall outline departs from the smoother rounded reference shapes.",
+        "confidence": 0.71
+      },
+      "expert_score": 0.6213,
+      "vlm_score": 0.71,
+      "fused_score": 0.67452,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1450,
+      "output": 84
+    },
+    "latency_sec": 16.36,
+    "error": null
+  },
+  {
+    "item_id": "D6_0146",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9851,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9851,
+        "raw_patch_distance": 0.3896,
+        "global_similarity": 0.8123,
+        "top_patch_distances": [
+          0.4269,
+          0.4208,
+          0.4115,
+          0.4047,
+          0.3887
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.42,
+    "error": null
+  },
+  {
+    "item_id": "D6_0151",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.9865,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9865,
+        "raw_patch_distance": 0.3947,
+        "global_similarity": 0.7089,
+        "top_patch_distances": [
+          0.406,
+          0.4049,
+          0.3967,
+          0.3966,
+          0.3954
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.31,
+    "error": null
+  },
+  {
+    "item_id": "D6_0150",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.9147,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9147,
+        "raw_patch_distance": 0.2986,
+        "global_similarity": 0.8514,
+        "top_patch_distances": [
+          0.3244,
+          0.3138,
+          0.3129,
+          0.3043,
+          0.303
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.29,
+    "error": null
+  },
+  {
+    "item_id": "D6_0126",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9382,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9382,
+        "raw_patch_distance": 0.316,
+        "global_similarity": 0.8501,
+        "top_patch_distances": [
+          0.3522,
+          0.3319,
+          0.3289,
+          0.3284,
+          0.3238
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.28,
+    "error": null
+  },
+  {
+    "item_id": "D6_0174",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.781,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.781,
+        "raw_patch_distance": 0.2436,
+        "global_similarity": 0.8796,
+        "top_patch_distances": [
+          0.3014,
+          0.2841,
+          0.2745,
+          0.2528,
+          0.2477
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.29,
+    "error": null
+  },
+  {
+    "item_id": "D6_0103",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9188,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9188,
+        "raw_patch_distance": 0.3013,
+        "global_similarity": 0.8088,
+        "top_patch_distances": [
+          0.3509,
+          0.3315,
+          0.3308,
+          0.3209,
+          0.3132
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.29,
+    "error": null
+  },
+  {
+    "item_id": "D6_0168",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.71336,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.6584,
+        "raw_patch_distance": 0.2128,
+        "global_similarity": 0.8628,
+        "top_patch_distances": [
+          0.228,
+          0.2219,
+          0.2188,
+          0.2177,
+          0.2168
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / missing lower-right extent",
+        "evidence": "Compared with the normal references, the query contour is noticeably truncated in the lower-right region and the overall silhouette appears smaller and more angular there, while the interior point pattern and color gradient remain otherwise similar.",
+        "confidence": 0.75
+      },
+      "expert_score": 0.6584,
+      "vlm_score": 0.75,
+      "fused_score": 0.71336,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1449,
+      "output": 86
+    },
+    "latency_sec": 5.62,
+    "error": null
+  },
+  {
+    "item_id": "D6_0172",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.9386,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9386,
+        "raw_patch_distance": 0.3163,
+        "global_similarity": 0.7876,
+        "top_patch_distances": [
+          0.3746,
+          0.3741,
+          0.325,
+          0.3177,
+          0.3127
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.4,
+    "error": null
+  },
+  {
+    "item_id": "D6_0179",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.8444,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.8444,
+        "raw_patch_distance": 0.2646,
+        "global_similarity": 0.8199,
+        "top_patch_distances": [
+          0.3324,
+          0.2735,
+          0.2663,
+          0.2621,
+          0.2607
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.35,
+    "error": null
+  },
+  {
+    "item_id": "D6_0121",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "gemstone",
+    "label_pred": 1,
+    "anomaly_score": 0.7874399999999999,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.7236,
+        "raw_patch_distance": 0.2281,
+        "global_similarity": 0.8873,
+        "top_patch_distances": [
+          0.2692,
+          0.2466,
+          0.2457,
+          0.2441,
+          0.2381
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "surface fold/deformation",
+        "evidence": "Compared with the normal references, the query shows a pronounced diagonal crease/fold across the lower-left to lower-center region and a sharper bent edge near the bottom, which is not present in the reference shapes.",
+        "confidence": 0.83
+      },
+      "expert_score": 0.7236,
+      "vlm_score": 0.83,
+      "fused_score": 0.7874399999999999,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1450,
+      "output": 84
+    },
+    "latency_sec": 13.87,
+    "error": null
+  },
+  {
+    "item_id": "D6_0160",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.9291,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9291,
+        "raw_patch_distance": 0.3086,
+        "global_similarity": 0.8286,
+        "top_patch_distances": [
+          0.3681,
+          0.34,
+          0.3391,
+          0.3269,
+          0.3144
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.62,
+    "error": null
+  },
+  {
+    "item_id": "D6_0096",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "chicken",
+    "label_pred": 1,
+    "anomaly_score": 0.9037,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9037,
+        "raw_patch_distance": 0.292,
+        "global_similarity": 0.841,
+        "top_patch_distances": [
+          0.3456,
+          0.3347,
+          0.3108,
+          0.3061,
+          0.2991
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.54,
+    "error": null
+  },
+  {
+    "item_id": "D6_0133",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.71048,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.6812,
+        "raw_patch_distance": 0.218,
+        "global_similarity": 0.8945,
+        "top_patch_distances": [
+          0.288,
+          0.267,
+          0.2497,
+          0.2492,
+          0.218
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape/orientation deviation",
+        "evidence": "The query object appears noticeably more elongated and rotated than the normal references, with a different contour and point-cloud distribution, especially along the left edge and overall vertical slant.",
+        "confidence": 0.73
+      },
+      "expert_score": 0.6812,
+      "vlm_score": 0.73,
+      "fused_score": 0.71048,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 77
+    },
+    "latency_sec": 7.9,
+    "error": null
+  },
+  {
+    "item_id": "D6_0106",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.9688,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9688,
+        "raw_patch_distance": 0.3517,
+        "global_similarity": 0.7603,
+        "top_patch_distances": [
+          0.3751,
+          0.3659,
+          0.3657,
+          0.3613,
+          0.3579
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.3,
+    "error": null
+  },
+  {
+    "item_id": "D6_0158",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "airplane",
+    "label_pred": 1,
+    "anomaly_score": 0.9437,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9437,
+        "raw_patch_distance": 0.321,
+        "global_similarity": 0.792,
+        "top_patch_distances": [
+          0.3458,
+          0.3364,
+          0.3326,
+          0.3257,
+          0.3242
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.31,
+    "error": null
+  },
+  {
+    "item_id": "D6_0091",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.778,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.778,
+        "raw_patch_distance": 0.2427,
+        "global_similarity": 0.9332,
+        "top_patch_distances": [
+          0.329,
+          0.3282,
+          0.2685,
+          0.2651,
+          0.2518
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.38,
+    "error": null
+  },
+  {
+    "item_id": "D6_0128",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "duck",
+    "label_pred": 1,
+    "anomaly_score": 0.9623,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.9623,
+        "raw_patch_distance": 0.342,
+        "global_similarity": 0.7681,
+        "top_patch_distances": [
+          0.3745,
+          0.3596,
+          0.3586,
+          0.3567,
+          0.3436
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "strong anomaly signal \u2014 multiple patches deviate significantly from normal",
+        "confidence": "high"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.45,
+    "error": null
+  },
+  {
+    "item_id": "D6_0152",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.70384,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.6796,
+        "raw_patch_distance": 0.2176,
+        "global_similarity": 0.8577,
+        "top_patch_distances": [
+          0.2454,
+          0.2319,
+          0.2274,
+          0.2233,
+          0.2206
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape/orientation deviation",
+        "evidence": "The query object differs from the references in overall pose and contour: it is rotated more, appears flatter/wider, and shows a noticeably different lower-edge curvature and color distribution compared with the consistent reference shapes.",
+        "confidence": 0.72
+      },
+      "expert_score": 0.6796,
+      "vlm_score": 0.72,
+      "fused_score": 0.70384,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1450,
+      "output": 84
+    },
+    "latency_sec": 6.5,
+    "error": null
+  },
+  {
+    "item_id": "D6_0125",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "car",
+    "label_pred": 0,
+    "anomaly_score": 0.401,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4475,
+        "raw_patch_distance": 0.1695,
+        "global_similarity": 0.9003,
+        "top_patch_distances": [
+          0.2066,
+          0.1797,
+          0.1769,
+          0.1698,
+          0.1689
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "The query matches the overall silhouette, point-cloud density, color gradient, and main internal ridge patterns seen across the normal references. There is some pose/shape variation on the right side and lower edge, but it remains within the range of normal variation and no clear extra structure or missing region stands out.",
+        "confidence": 0.63
+      },
+      "expert_score": 0.4475,
+      "vlm_score": 0.37,
+      "fused_score": 0.401,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1447,
+      "output": 97
+    },
+    "latency_sec": 5.64,
+    "error": null
+  },
+  {
+    "item_id": "D6_0119",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.2441,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "expert_confident",
+      "expert": {
+        "anomaly_score": 0.2441,
+        "raw_patch_distance": 0.1235,
+        "global_similarity": 0.9583,
+        "top_patch_distances": [
+          0.1695,
+          0.1398,
+          0.1397,
+          0.1319,
+          0.1286
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.42,
+    "error": null
+  },
+  {
+    "item_id": "D6_0095",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "diamond",
+    "label_pred": 1,
+    "anomaly_score": 0.70824,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.7356,
+        "raw_patch_distance": 0.2312,
+        "global_similarity": 0.858,
+        "top_patch_distances": [
+          0.2696,
+          0.2509,
+          0.2425,
+          0.24,
+          0.2384
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "orientation/appearance shift",
+        "evidence": "The query blob differs from the normal references in overall pose and color-gradient layout: the bright yellow region is concentrated on the upper-left and the darkest band runs along the bottom edge, unlike the references where the highlight is near the top/top-right and the right edge is more prominently blue. Shape contour also appears slightly rotated and redistributed.",
+        "confidence": 0.69
+      },
+      "expert_score": 0.7356,
+      "vlm_score": 0.69,
+      "fused_score": 0.70824,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1448,
+      "output": 109
+    },
+    "latency_sec": 8.41,
+    "error": null
+  },
+  {
+    "item_id": "D6_0112",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "fish",
+    "label_pred": 1,
+    "anomaly_score": 0.5456799999999999,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.4342,
+        "raw_patch_distance": 0.1668,
+        "global_similarity": 0.9066,
+        "top_patch_distances": [
+          0.1931,
+          0.1776,
+          0.1758,
+          0.169,
+          0.1679
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "ambiguous \u2014 borderline similarity to normal bank",
+        "confidence": "low"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation / extra protrusion",
+        "evidence": "Compared with the normal references, the query shows a noticeably different top contour with a rounded extra bump near the upper center and a slightly altered left opening/inner notch shape, while the rest of the point-cloud pattern remains broadly similar.",
+        "confidence": 0.62
+      },
+      "expert_score": 0.4342,
+      "vlm_score": 0.62,
+      "fused_score": 0.5456799999999999,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1446,
+      "output": 91
+    },
+    "latency_sec": 6.55,
+    "error": null
+  },
+  {
+    "item_id": "D6_0136",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "butterflyFish",
+    "label_pred": 1,
+    "anomaly_score": 0.69408,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.7002,
+        "raw_patch_distance": 0.2224,
+        "global_similarity": 0.9062,
+        "top_patch_distances": [
+          0.2762,
+          0.2532,
+          0.2511,
+          0.2447,
+          0.2386
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "moderate anomaly signal \u2014 some patches deviate from normal",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "anomalous",
+        "anomaly_type": "shape deformation",
+        "evidence": "The query outline differs from the normal references: the upper contour has a taller central peak and more irregular left notch/opening, with a slightly altered overall silhouette despite similar color distribution.",
+        "confidence": 0.69
+      },
+      "expert_score": 0.7002,
+      "vlm_score": 0.69,
+      "fused_score": 0.69408,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1450,
+      "output": 77
+    },
+    "latency_sec": 8.0,
+    "error": null
+  },
+  {
+    "item_id": "D6_0127",
+    "domain": "industrial_3d",
+    "domain_code": "D6",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "Real3D-AD",
+    "category": "barCandy",
+    "label_pred": 0,
+    "anomaly_score": 0.25168,
+    "raw_output": {
+      "method": "expert_vlm",
+      "path": "vlm_adjudication",
+      "expert": {
+        "anomaly_score": 0.2692,
+        "raw_patch_distance": 0.1301,
+        "global_similarity": 0.9399,
+        "top_patch_distances": [
+          0.1516,
+          0.1386,
+          0.1338,
+          0.1334,
+          0.1314
+        ],
+        "n_query_patches": 1369,
+        "n_ref_patches": 5476,
+        "interpretation": "mostly normal \u2014 minor deviations within expected range",
+        "confidence": "medium"
+      },
+      "vlm_response": {
+        "image_label": "normal",
+        "anomaly_type": null,
+        "evidence": "Query shape, orientation, point density, and color gradient closely match the normal references. Minor local differences around the left tip and right clustered end appear consistent with normal variation in the point cloud.",
+        "confidence": 0.76
+      },
+      "expert_score": 0.2692,
+      "vlm_score": 0.24,
+      "fused_score": 0.25168,
+      "retrieval_sims": []
+    },
+    "cost_tokens": {
+      "input": 1448,
+      "output": 75
+    },
+    "latency_sec": 8.57,
+    "error": null
+  }
+]

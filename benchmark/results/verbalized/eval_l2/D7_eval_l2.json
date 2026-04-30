@@ -1,0 +1,884 @@
+[
+  {
+    "item_id": "D7_0015",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct man-made rectangular structure that is absent in the reference images. This constitutes a significant change in the scene, classifying it as an anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0075",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a pond with a different color (black) compared to the reference (green), but the shape and surrounding environment are identical. According to the domain rules, color variations consistent with natural changes (like water quality or season) should not be flagged as anomalies. Therefore, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0044",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a significant anomaly: a drastically receded water level in the reservoir compared to the reference images, exposing large areas of sediment. This change is not consistent with normal seasonal variations or texture shifts and represents a distinct deviation from the established baseline.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0060",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a large triangular field that is bare brown earth, whereas the reference image shows the same field covered in green vegetation. This represents a significant change in land cover (vegetation to soil) that is not consistent with normal seasonal color variation, thus classifying it as an anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0021",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct white mineral deposit along the reservoir shoreline, indicating a significant drop in water level compared to the reference image where the water is higher and no such deposit is visible. This feature survives refutation as it is not present in the reference, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0006",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, localized dark patch indicating wet or muddy soil, which is absent in the reference image showing uniform dry terrain. This feature survives refutation as it is not a natural variation present in the normal baseline, classifying the image as anomalous.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0038",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, distinct pattern of light-colored tracks in the central field that is completely absent in the reference image. This feature is not a natural variation and represents a significant anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0066",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed difference is a change in field color (green to brown), which is a normal seasonal variation in agricultural land. The underlying infrastructure and boundaries remain structurally consistent with the reference images, satisfying the rule to not flag natural vegetation color changes as anomalies.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0016",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image matches the reference images perfectly, showing a normal agricultural field with consistent striping and standard rural infrastructure. No candidate anomaly features were identified, and domain rules confirm this pattern is normal.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0047",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image depicts a natural forest scene which is structurally inconsistent with the reference image showing an airport runway. The absence of the expected infrastructure (runway) and the presence of dense vegetation where a cleared airfield is expected confirms the anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0022",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed dense vegetation band is an edge irregularity, which is explicitly listed as an allowed variation by the reference profiler. Additionally, domain rules specify that natural vegetation bands should not be flagged as anomalies. Therefore, the query is classified as normal.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0055",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed difference in color and texture between the query and reference images corresponds to normal agricultural variations (e.g., harvested vs. growing crops), which are explicitly listed as allowed variations by the reference profiler. No anomalous features remain.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0046",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows no structural anomalies. Observed differences in vegetation color and field texture are consistent with natural seasonal variations and are present in the reference images, satisfying the domain rules for normal classification.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0071",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison definitively shows a large, bright white patch in the query image that is absent in the reference image. This feature is not a natural variation and constitutes a clear anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0024",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is structurally identical to the reference images. The candidate features (color/vegetation variations) are consistent with normal seasonal or lighting changes and do not constitute anomalies per the domain rules.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0073",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no features that deviate from the normal signatures defined in the domain rules. All observed elements (fields, vegetation, boundaries) are consistent with the reference images and expected natural variations.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0040",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows the same structural layout as the reference. The observed color difference in the agricultural field is explicitly covered by the allowed variation 'vegetation density changes' identified by the reference profiler. No anomalous features remain.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0035",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, irregular patch of light-colored, tilled soil that is completely absent in the reference image, which shows a uniform dark field. This localized textural and color difference is not explained by normal variations (like seasonal color shifts) and is therefore classified as an anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0051",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, cleared area with a circular structure in the upper central region, which is absent in the reference images showing natural forest. This represents a significant land-use change (construction/excavation) in a natural area, which is flagged as an anomaly per the domain rules.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0001",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct, high-density forest region bordering the residential grid, which is absent in the reference imagery (showing sparse vegetation instead). This matches the specific anomaly rule for land-use transitions.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0050",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed differences in color and texture between the query and reference images are explicitly listed as allowed variations (lighting shift, minor texture variation) by the reference profiler. The underlying structural geometry is consistent, confirming the image is normal.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0032",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0034",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0056",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, isolated rectangular structure in an open field that is absent in all reference images. This matches the anomaly rule for isolated structures in undeveloped zones.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0023",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The observed differences in vegetation color and pond appearance are consistent with the allowed variations of 'vegetation density' and 'lighting shift' defined in the reference profile. No structural anomalies were detected.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0004",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a dense forest in an area that is cleared land in the reference image. This significant land-cover difference is not a normal variation and matches the anomaly mode for 'distinct, high-density forest' in an unexpected location.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0033",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, light-colored rectangular field in the upper-left quadrant that is distinctly different from the corresponding brown field in the reference image. This significant deviation in land state confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0005",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays natural agricultural and forested land patterns consistent with the reference images. Observed variations in field color and vegetation density are explained by seasonal changes and species differences as per the domain rules, and no anomalous structures or land-use transitions are detected.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0059",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is structurally identical to the reference image, with the only notable difference being a global color shift consistent with seasonal changes (e.g., dry vs. wet season). Per the domain rules, such color variations should not be flagged as anomalies when the underlying geometry remains consistent. No new structures, missing infrastructure, or other defect-like features are present.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0042",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct, isolated structure with an orange roof in an undeveloped area, which is not present in the reference images. This matches the rule for flagging non-standard structures in open fields as an anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0026",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct man-made structure (white building) near the road junction that is completely absent in the reference image, which shows only natural terrain. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0011",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, dark, textured region in the bottom-right quadrant that is completely absent in the reference images, which show uniform soil. This significant deviation from the normal baseline confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0036",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear anomaly: a large area of cleared land with significantly reduced vegetation density compared to the dense forest seen in the reference image. This structural change in land cover is not consistent with normal seasonal variations.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0069",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains three distinct, bright white rectangular objects in a vegetated area that are absent in the reference image. This matches the rule for flagging 'distinct, isolated structures... in open fields or undeveloped zones' as an anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0045",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "Both initial candidate features (suspected new construction and vegetation density change) were refuted by side-by-side comparison with reference images, which showed these features to be consistent with the normal baseline. No anomalous features remain.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0000",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The observed color difference in the field is a natural variation (likely seasonal or crop type) and is explicitly excluded from being an anomaly by the domain rules. No structural defects or unexpected objects are present.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0054",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear anomaly: a large body of water present in the reference image is completely missing in the query, replaced by dry, barren land. This represents a significant change in the scene's state that is not consistent with normal variations.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0037",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The significant color difference in the ponds (dark vs. turquoise) and the surrounding terrain (green vs. brown) between the query and reference images is consistent with seasonal changes (e.g., wet vs. dry season) rather than a structural defect or anomaly. The geometry of the landscape remains identical.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0078",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct diagonal dirt road that is completely absent in the reference images. This represents a significant structural change (new infrastructure) in the landscape, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0018",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly identified was the sharp boundary between the forest and the residential area. The side-by-side comparison with the reference image confirmed that this boundary is a consistent feature of the location, not a defect. According to the domain rules, such a boundary should be classified as normal. With no other anomalies detected, the image is normal.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0014",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a rural scene consistent with the reference. The observed differences in field appearance are attributable to natural variations like seasonal changes or crop types, which are explicitly ruled out as anomalies by the domain rules. The infrastructure (roads, buildings) remains structurally consistent. No features matching the hypothesized anomaly modes (e.g., new construction, non-standard structures) are present.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0002",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a completed electrical substation, while the reference images show the same location as an empty lot. This significant structural change (new construction) is not present in the reference baseline and is classified as an anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0068",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct building complex with a pool in the top-left corner, which is absent in the reference image. This matches the anomaly rule for isolated structures in undeveloped zones and survives refutation.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0063",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because a significant building complex visible in the reference images is completely missing in the query image, indicating a major change in land use or infrastructure.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0058",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image depicts a standard agricultural scene with uniform striping and typical rural infrastructure, which aligns perfectly with the domain rules for normal imagery. No candidate features for anomalies were identified.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0065",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a significant structural change (missing paved parking lot) compared to the reference image, which is a clear anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0053",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays standard agricultural terrain with a drainage ditch and vegetation. The observed variations in vegetation density and field texture are consistent with seasonal changes and normal agricultural practices, as supported by the reference images and the domain rulebook. No anomalous structures, construction sites, or sharp land-use transitions are detected.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0008",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large-scale construction/excavation site in an area that is natural forest in the reference images. This matches the rule to flag large-scale construction in natural terrain as an anomaly. The feature was successfully refuted against the reference baseline.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0030",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large-scale industrial excavation site and a retention pond, which are completely absent in the reference image showing natural terrain. This confirms the anomaly.",
+    "label": 0,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0118",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The primary candidate anomaly, a sharp boundary between a dense forest and residential area, was found to be consistent with the reference images. The domain rules explicitly state that such a consistent, sharp boundary should be classified as normal. No other significant anomalies were detected.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0156",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0157",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large housing development in the upper-left quadrant that is completely absent in the reference image (which shows bare earth). This structural difference confirms the image is anomalous relative to the reference baseline.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0141",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0116",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image depicts a large, uniform agricultural field with consistent vertical striping. According to the domain rulebook, such fields should not be flagged as anomalies. The features observed (uniform texture, striping) are consistent with normal agricultural land and do not resemble defects. The difference in land use compared to the reference images (residential/commercial) is a class difference, not an anomaly within the agricultural class itself, and the rulebook explicitly protects t",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0081",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0101",
+    "score": 0.98,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it depicts a natural landscape where the reference images clearly show a developed residential area. The complete absence of the housing grid and paved roads constitutes a major structural anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0089",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (vehicle arrangement) was refuted by the reference images, which show similar variations. No structural defects or unexpected objects were found.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0132",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a natural landscape where the reference images clearly show a developed residential neighborhood. This complete absence of expected infrastructure is a definitive anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0131",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks the residential housing development visible in the reference images in the bottom-right corner. This missing infrastructure constitutes a significant deviation from the normal baseline.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0107",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks the extensive residential development and road infrastructure that is clearly present and established as the normal state in the reference image. This represents a significant deviation (missing structures) from the baseline.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0120",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a large undeveloped field where the reference images show a dense residential housing development. This significant land-use discrepancy (absence of expected infrastructure) constitutes a clear anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0147",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The observed difference in vegetation density and color is explicitly listed as an allowed variation by the reference profiler. Since the structural geometry remains consistent, the image is classified as normal.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0154",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0127",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a sharp boundary between residential infrastructure and natural forested land, a feature explicitly defined as normal in the domain rules. The side-by-side comparison confirms this pattern is consistent with the reference images, and no unique anomalies (like construction sites or non-standard structures) are present.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0098",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct red-roofed structure in an undeveloped area, which is absent in the reference images. This matches the anomaly rule for isolated structures with non-standard roof colors, and the refutation process confirmed this feature is not part of the normal baseline.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0133",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is a normal aerial view of a forest canopy, consistent with the reference baseline profile. The initial suspicion of 'missing infrastructure' was incorrect because the reference definition focuses on the forest texture, and the query exhibits no anomalous features outside the allowed variations.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0155",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0099",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image depicts a standard agricultural landscape with fields and power lines, which aligns perfectly with the reference profiler's definition of a normal scene ('aerial view of agricultural fields'). No anomalous features such as unexpected structures or construction sites are present.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0097",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large-scale housing development (dense grid of houses and roads) that is completely absent in the reference images, which show only natural terrain. This matches the hypothesized anomaly mode of 'large-scale housing development in a region dominated by natural terrain'. The refutation protocol confirms this feature is not present in the normal baseline.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0090",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a large undeveloped lot where the reference images clearly show a fully operational car dealership. This significant land-use change and absence of expected infrastructure constitutes a definitive anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0153",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a severe anomaly in the top-left reservoir, characterized by a bright teal/green color that is completely absent in the reference images (which show dark water). This distinct coloration suggests a significant environmental event such as an algal bloom or sediment disturbance, classifying the image as anomalous.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0117",
+    "score": 0.98,
+    "mode": "anomaly_detection",
+    "rationale": "The query image depicts a natural forest, whereas the reference images show a developed residential area. This fundamental land-use discrepancy constitutes a severe anomaly, as the expected infrastructure is completely absent in the query.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0150",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a significant land-use change (cleared field) compared to the reference (dense forest), which constitutes a structural anomaly. The difference is not merely seasonal or color variation but a fundamental change in the landscape.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0136",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0084",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it shows a significant absence of infrastructure (townhouses and a large parking lot) that is clearly present in the reference images for the same location. This 'missing infrastructure' constitutes a major deviation from the normal state defined by the references.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0106",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0125",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a residential area with a large white building and surrounding roads. Comparison with reference images confirms the building is a normal feature. Road layout differences are consistent with natural terrain or development variations, not anomalies. No defect-like features remain.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0096",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large-scale housing development that is completely absent in the reference image, which shows natural terrain. This constitutes a significant land-use anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0140",
+    "score": 0.85,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a filled reservoir, while the reference image shows the same location as an empty basin. This significant state change (presence of water) is not explained by the provided normal signatures and represents a major deviation from the reference baseline, classifying it as an anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0112",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a large empty lot in the upper-left quadrant where the reference images clearly show a complex of white buildings. This significant structural difference (missing infrastructure) is not a natural variation and constitutes an anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0149",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it shows open natural terrain (fields, pond) where the reference image clearly shows a dense, established suburban housing development. This represents a fundamental land-use discrepancy, not a minor variation.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0151",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, light-colored cleared area south of the highway that is completely absent in the reference image (which shows a green field). This significant land-use change constitutes a clear anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0138",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a highway interchange under construction with unpaved ground, whereas the reference image shows the same location as a completed, paved interchange. This significant structural deviation (construction vs. completed) constitutes an anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0122",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a large-scale housing development, which is a distinct structural anomaly compared to the agricultural fields shown in the reference images. This aligns with the domain rule flagging housing developments in natural terrain as anomalies.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0102",
+    "score": 0.9,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct, high-density forest border along the left edge, which is absent in the reference images. This matches the hypothesized anomaly mode and survives refutation, leading to a high anomaly score.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0144",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a large, uniform white rectangular structure (likely a pond or tank) that completely replaces the storage yard seen in the reference image. This is a significant structural anomaly indicating a major change in land use or infrastructure, which is not consistent with the normal baseline.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0142",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct orange-roofed structure in the bottom-right corner that is absent in the reference images. This matches the rule for flagging isolated structures with non-standard roof colors in undeveloped zones as anomalies.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0135",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image depicts a construction site with only foundations, whereas the reference image shows a fully built residential neighborhood in the same location. This significant structural difference confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0134",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it lacks a large commercial complex (with distinct orange roofs) that is clearly visible in the reference images at the same location. This represents a significant structural difference (missing infrastructure) rather than a natural variation.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0128",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a distinct, high-density forest region bordering the residential grid, creating a sharp land-use transition. This feature is absent in the reference images, which show open fields in the same area. According to the domain rules, this specific configuration is an anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0130",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct orange/red object near the road intersection that is absent in the reference image, indicating an anomaly consistent with construction equipment or a non-standard structure in an undeveloped area.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0126",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0094",
+    "score": 0.5,
+    "mode": "anomaly_detection",
+    "rationale": "json parse failed",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0085",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The reference profiler confirms the normal baseline is a rural landscape with roads and fields. The query image exhibits exactly these features (fields, scattered trees, roads) and falls within the allowed variations (vegetation density, texture). Therefore, the image is normal.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0113",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image depicts a forested area with natural paths and a pond, which aligns perfectly with the reference profiler's definition of the normal class ('aerial view of forested terrain'). The initial suspicion of missing infrastructure was refuted by the profiler confirming that the expected normal state is indeed natural terrain, not an airport.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0124",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits only variations (vegetation density, lighting) that are explicitly allowed by the reference profile. No structural anomalies or disallowed features were found.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0115",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image lacks the dense residential housing development clearly visible in the reference images for the same location, representing a significant structural anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  },
+  {
+    "item_id": "D7_0121",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a residential area in an active construction phase (unpaved roads, cleared land), while the reference image shows the same area fully developed. This significant deviation from the normal state (completed infrastructure) confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D7",
+    "category": "building"
+  }
+]

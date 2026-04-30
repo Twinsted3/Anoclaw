@@ -1,0 +1,4434 @@
+[
+  {
+    "item_id": "D2_0084",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.007157311041811387,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Bottle is shown from the back/side label panel with nutrition text and barcode facing front, whereas most references show the front branding panel.",
+            "location": "entire bottle body/front-facing side",
+            "support_conf": 0.99,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.35
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "Front yellow circular logo is only partially visible at the right edge instead of being centered and fully visible as in the front-view references.",
+            "location": "upper right shoulder of bottle",
+            "support_conf": 0.97,
+            "ref_consistency": 0.96,
+            "logical_relevance": 0.32
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "Lemon graphic near the lower body is mostly hidden, with only a thin sliver visible at the right edge compared with the prominent front lemon slice in references.",
+            "location": "lower right side of bottle",
+            "support_conf": 0.95,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.28
+          }
+        ],
+        "no_difference_conf": 0.7
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "No defect evidence. The bottle\u2019s side/back panel with nutrition facts and barcode is visible, but the bottle shape, cap, label application, and print appearance look intact.",
+            "benign_explanation": "This is a viewpoint/orientation difference: the query shows the bottle rotated relative to the front-view references. Under the fp_benign_variation rule, this does not constitute an anomaly without additional pathology.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.02,
+            "benign_conf": 0.98,
+            "positive_evidence": "No positive defect evidence associated with the partially visible upper logo. The visible portion appears normally printed and positioned on the wrapped label.",
+            "benign_explanation": "The yellow logo is only partly visible because the bottle is turned, not because the label is missing or damaged. This is a benign consequence of rotation/view angle.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.02,
+            "benign_conf": 0.98,
+            "positive_evidence": "No defect evidence around the lower graphic area. The lemon slice graphic is simply mostly out of view, with no sign of tearing, occlusion by foreign material, or misprint.",
+            "benign_explanation": "The lower lemon graphic is hidden by the bottle\u2019s orientation. References mostly show the front panel; the query shows the side/back panel.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 4011,
+      "output": 739
+    },
+    "latency_sec": 82.13,
+    "error": null
+  },
+  {
+    "item_id": "D2_0019",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.04917781276543021,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Strong specular glare/bright reflection across the top-center of the pack front, slightly washing out the printed text area.",
+            "location": "Upper central portion of the cigarette pack front",
+            "support_conf": 0.77,
+            "ref_consistency": 0.62,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Possible faint horizontal crease or line running across the front face around the midsection of the pack.",
+            "location": "Across the center of the pack, near the logo area",
+            "support_conf": 0.43,
+            "ref_consistency": 0.55,
+            "logical_relevance": 0.34
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Bottom warning text on the pack appears partially obscured/cropped by the transparent holder compared with the clearer presentation in the matching normal reference.",
+            "location": "Lower front of the pack behind the holder lip",
+            "support_conf": 0.58,
+            "ref_consistency": 0.71,
+            "logical_relevance": 0.31
+          }
+        ],
+        "no_difference_conf": 0.68
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "A bright reflective band is visible across the upper front of the pack and slightly reduces readability of the top text.",
+            "benign_explanation": "The pack appears glossy/sealed, and similar specular highlights are present in the references. This looks like lighting reflection rather than damage to the object surface.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.2,
+            "benign_conf": 0.8,
+            "positive_evidence": "There is a faint horizontal line across the front around the midsection.",
+            "benign_explanation": "A horizontal pack seam/opening line is also visible in the matching reference image of the same product, so this is consistent with normal packaging structure rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The lower text area is partly blocked by the transparent holder lip.",
+            "benign_explanation": "The holder is an external display device and similar occlusion by the holder appears across the references. This is not a defect of the pack itself.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 4009,
+      "output": 684
+    },
+    "latency_sec": 83.53,
+    "error": null
+  },
+  {
+    "item_id": "D2_0052",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.03869933584283025,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Query shows the box with the large white Chinese information panel facing front, a face not shown in the provided normal references where the front/back branding faces or narrow side panels are shown.",
+            "location": "Main visible long side of the box",
+            "support_conf": 0.93,
+            "ref_consistency": 0.62,
+            "logical_relevance": 0.46
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Slight upward curl/crease along the top front edge near the right corner, making the top flap edge look a bit uneven.",
+            "location": "Top edge of box, right-front corner",
+            "support_conf": 0.42,
+            "ref_consistency": 0.41,
+            "logical_relevance": 0.32
+          },
+          {
+            "id": "C3",
+            "type": "surface_defect",
+            "description": "Minor dent/compression appearance along the upper edge near the left side where the printed top panel meets the front face.",
+            "location": "Top front edge, left of center",
+            "support_conf": 0.36,
+            "ref_consistency": 0.38,
+            "logical_relevance": 0.27
+          }
+        ],
+        "no_difference_conf": 0.58
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.06,
+            "benign_conf": 0.94,
+            "positive_evidence": "The query shows a long side dominated by a white Chinese ingredient/nutrition label panel, which is not the same face emphasized in reference 1 or 4.",
+            "benign_explanation": "This is consistent with viewing a different normal side of the same box. Reference 2 and 3 already show other non-front faces, so packaging-face variation by viewpoint is expected and not a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "There is a very slight unevenness along the top edge near the right corner.",
+            "benign_explanation": "The edge irregularity is subtle and can be explained by perspective, flap seam geometry, or minor packaging tolerance. No clear tear, puncture, or significant crush damage is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.16,
+            "benign_conf": 0.84,
+            "positive_evidence": "A faint compression-like contour may be present along the upper edge left of center.",
+            "benign_explanation": "This is weak and not clearly separable from lighting/shadow on the top flap edge. There is no strong localized structural damage visible compared with the references.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 4018,
+      "output": 723
+    },
+    "latency_sec": 20.77,
+    "error": null
+  },
+  {
+    "item_id": "D2_0048",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.037823782345065116,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The visible silver vertical seam sits slightly left of center compared with the closest matching references, changing the left/right panel proportions.",
+            "location": "center-left vertical band on the package",
+            "support_conf": 0.55,
+            "ref_consistency": 0.52,
+            "logical_relevance": 0.42
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "A small whitish scuff/crease mark appears on the silver seam around mid-height, standing out slightly from the smoother seam appearance in the references.",
+            "location": "middle of the silver vertical seam",
+            "support_conf": 0.46,
+            "ref_consistency": 0.38,
+            "logical_relevance": 0.36
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "The right pale-yellow side panel is visible as a narrower edge strip than in the most similar rear/side references, suggesting a slight pose/wrap-state difference.",
+            "location": "far right edge of the package",
+            "support_conf": 0.5,
+            "ref_consistency": 0.45,
+            "logical_relevance": 0.34
+          }
+        ],
+        "no_difference_conf": 0.67
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.11,
+            "benign_conf": 0.89,
+            "positive_evidence": "The silver vertical seam appears slightly left of center in the query.",
+            "benign_explanation": "This shift is well explained by small pose and wrap-state changes. References 2 and 4 already show similar side/rear views with noticeable variation in seam placement and panel proportions, so this is not positive defect evidence.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "There is a faint light mark/crease around mid-height on the silver seam.",
+            "benign_explanation": "The package is heavily crumpled throughout, and the seam in the references also shows wrinkles, glare, and print interruptions. The observed mark is weak and consistent with normal crease/highlight variation rather than a clear localized defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The pale-yellow side panel at the far right is only visible as a narrow strip in the query.",
+            "benign_explanation": "This is a viewing-angle and package-shape difference. Across references, the amount of visible yellow side panel changes substantially with rotation and crumpling, so this is benign variation, not pathology.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 4015,
+      "output": 725
+    },
+    "latency_sec": 110.83,
+    "error": null
+  },
+  {
+    "item_id": "D2_0015",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.2887323785282,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Possible small glare/scuff-like bright patch on the upper front face, making the dark green panel look uneven compared with the cleaner front-face appearance in the references.",
+            "location": "Upper center-left area of the front face, around and above the large white characters",
+            "support_conf": 0.43,
+            "ref_consistency": 0.52,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Query shows an almost perfectly frontal view of the narrow side panel, whereas the references show the box slightly rotated with a visible adjacent side; this may indicate only a viewpoint/state difference rather than a product discrepancy.",
+            "location": "Overall object orientation",
+            "support_conf": 0.86,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.18
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "There is a slightly brighter uneven area on the upper front face of the box in the query, near the top portion of the dark panel around the white text.",
+            "benign_explanation": "The bright area is diffuse and consistent with specular glare/lighting on glossy packaging rather than a concrete defect such as a tear, dent, hole, or stain. Across the references, the same face is seen under different angles and lighting, and no stable localized damage pattern is established. The main difference in the query is the more frontal viewpoint, which can intensify reflections on the glossy surface.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 3939,
+      "output": 469
+    },
+    "latency_sec": 58.1,
+    "error": null
+  },
+  {
+    "item_id": "D2_0021",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0051",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.034299170341155816,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Back-view package stance appears slightly more front-facing/upright than the angled back-view reference, with the top seam and side folds sitting a bit differently.",
+            "location": "overall package silhouette and top edge",
+            "support_conf": 0.54,
+            "ref_consistency": 0.42,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Minor crease/wrinkle pattern on the right green nutrition panel differs slightly, including a visible vertical crumple near the right edge.",
+            "location": "right half of back panel",
+            "support_conf": 0.47,
+            "ref_consistency": 0.39,
+            "logical_relevance": 0.22
+          },
+          {
+            "id": "C3",
+            "type": "surface_defect",
+            "description": "Small dark speckling/debris on the surface below the package is present, though similar floor dust is also seen in references.",
+            "location": "base area on white shelf directly beneath package",
+            "support_conf": 0.44,
+            "ref_consistency": 0.31,
+            "logical_relevance": 0.14
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The query shows the same package back side, with expected small pose differences in how the bag stands and how the top seam bends.",
+            "benign_explanation": "Reference 1 already shows a near-straight back view, while Reference 2 shows a more angled back view. The query fits within this normal stance variation range and does not show damage or missing structure.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "There is a mild vertical crumple on the right green panel, but flexible snack packaging commonly exhibits changing wrinkle patterns between shots.",
+            "benign_explanation": "The references also show creases and shape changes across views. No tear, puncture, leakage, or clearly abnormal deformation is visible on the right panel.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "Small dark specks are visible on the shelf below the package.",
+            "benign_explanation": "Similar dust/debris appears beneath the package in the references as well, so this is background/surface variation rather than a product anomaly.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 4014,
+      "output": 712
+    },
+    "latency_sec": 16.95,
+    "error": null
+  },
+  {
+    "item_id": "D2_0053",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.03208276271808996,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Back-side nutrition label/barcode panel appears slightly shifted in pose, with the yellow sticker and barcode block sitting a bit more centered/upright than in the closest back-side reference.",
+            "location": "Center-right area of the package back face",
+            "support_conf": 0.46,
+            "ref_consistency": 0.62,
+            "logical_relevance": 0.32
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Minor crease/compression pattern differs along the central vertical seal, with a somewhat stronger inward pinch near mid-height.",
+            "location": "Vertical center seam of the package",
+            "support_conf": 0.41,
+            "ref_consistency": 0.58,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Blue handwritten marking on the back appears with slightly different visibility/placement compared with the reference back view.",
+            "location": "Upper-middle left of the back panel",
+            "support_conf": 0.38,
+            "ref_consistency": 0.49,
+            "logical_relevance": 0.24
+          }
+        ],
+        "no_difference_conf": 0.73
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The back-side barcode/nutrition/yellow-sticker region is visible and may appear slightly more centered/upright than Reference 1, but no damaged, missing, torn, or extra component is evident.",
+            "benign_explanation": "This is consistent with normal package pose and crumpling variation. The references already show substantial viewpoint and shape variation across the same product, and the queried back panel layout remains consistent with the product's expected back-side design.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The center vertical seal shows a slightly stronger pinch/crease at mid-height, but there is no sign of rupture, leakage, puncture, or abnormal deformation beyond ordinary bag compression.",
+            "benign_explanation": "Flexible snack bags naturally change crease patterns and compression from image to image. The observed seam shape looks like normal handling variation rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.14,
+            "benign_conf": 0.86,
+            "positive_evidence": "A blue handwritten mark is visible on the back and may differ slightly in visibility/placement from Reference 1, but no clear abnormal marking event or foreign substance is established.",
+            "benign_explanation": "The visibility of handwritten marks can shift with bag rotation, folds, and occlusion by the central seam. This appears to be the same marked package back, not a defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 4010,
+      "output": 762
+    },
+    "latency_sec": 63.78,
+    "error": null
+  },
+  {
+    "item_id": "D2_0036",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0062",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.03220618724103674,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The box is shown at a left-front angle with the side ingredient/information panel more exposed than in some references; the visible front-face composition appears slightly shifted due to viewpoint.",
+            "location": "Overall package orientation, especially left side panel and front face",
+            "support_conf": 0.58,
+            "ref_consistency": 0.97,
+            "logical_relevance": 0.34
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "Minor top flap opening/gap along the upper edge is visible, with a slightly uneven top seam.",
+            "location": "Top edge of the carton",
+            "support_conf": 0.46,
+            "ref_consistency": 0.62,
+            "logical_relevance": 0.41
+          }
+        ],
+        "no_difference_conf": 0.68
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "No concrete defect is visible. The package graphics, side information panel, and front product image are all consistent with reference views that show the box from different angles.",
+            "benign_explanation": "The apparent layout shift is explained by viewpoint/orientation. Reference 2 also shows a left-front angle with the side panel exposed similarly. This is a normal pose variation, not a packaging anomaly.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "A slight top seam gap/dark line is visible along the upper edge, but it is small and not clearly indicative of damage or an open carton.",
+            "benign_explanation": "Minor seam visibility is also seen in references and can result from carton folds, lighting, or angle. There is no strong evidence of tearing, crushing, or a materially open flap.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 3917,
+      "output": 530
+    },
+    "latency_sec": 117.27,
+    "error": null
+  },
+  {
+    "item_id": "D2_0022",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.028189843725465513,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Possible small bright scuff/glare mark along the top-right edge of the pack front, appearing slightly more pronounced than in the references.",
+            "location": "Top-right corner/upper edge of the cigarette pack",
+            "support_conf": 0.44,
+            "ref_consistency": 0.46,
+            "logical_relevance": 0.22
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The lower warning-text area appears positioned a bit higher relative to the clear holder lip, with slightly less of the gold warning text visible than in reference 2.",
+            "location": "Bottom front of pack behind the transparent holder",
+            "support_conf": 0.41,
+            "ref_consistency": 0.38,
+            "logical_relevance": 0.29
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "A small bright spot is visible near the top-right edge/upper border of the pack front.",
+            "benign_explanation": "Similar bright reflections and minor gloss highlights are present in the references, especially around the upper area of the packaging. The observed mark is consistent with lighting glare on glossy cellophane rather than a clear tear, dent, or material defect. No strong localized pathology is evident across the compared views.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The warning-text area is partially occluded by the transparent holder and may appear slightly shifted in visibility.",
+            "benign_explanation": "This is well explained by small pose/placement differences of the pack within the holder and camera viewpoint. The bottom text visibility varies across the references as well, and there is no evidence of packaging damage or true layout error on the product itself.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 2674,
+      "output": 545
+    },
+    "latency_sec": 35.71,
+    "error": null
+  },
+  {
+    "item_id": "D2_0073",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0006",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.011748415544664215,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The query pack front design most closely matches Normal reference 2 rather than reference 1; compared with reference 1, the text/logo arrangement and central emblem placement are different.",
+            "location": "front face of cigarette pack",
+            "support_conf": 0.98,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.35
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "A bright reflective glare/streak is visible across the upper front area near the top label, with slightly different wrinkle reflections on the plastic wrap than in the references.",
+            "location": "upper center of pack front, below the top gold edge",
+            "support_conf": 0.62,
+            "ref_consistency": 0.74,
+            "logical_relevance": 0.2
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The pack appears seated slightly differently in the clear holder, with minor left-right alignment/tilt differences relative to the holder edges.",
+            "location": "interface between pack bottom and transparent display holder",
+            "support_conf": 0.52,
+            "ref_consistency": 0.68,
+            "logical_relevance": 0.16
+          }
+        ],
+        "no_difference_conf": 0.63
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.02,
+            "benign_conf": 0.98,
+            "positive_evidence": "The query front-face design matches reference 2 very closely, including the large Chinese characters at top, the curved gold line, the circular emblem placement, and the PRIDE branding near the lower middle.",
+            "benign_explanation": "This is a product/version difference between the two references, not a defect. Since the query is consistent with one normal reference, the layout mismatch relative to reference 1 is benign variation.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "There is a visible reflective glare on the plastic wrap near the top center.",
+            "benign_explanation": "The bright streak appears to be normal lighting reflection on glossy cellophane, with no clear tear, puncture, hole, or material damage visible. Reflection differences across images are expected and are not positive defect evidence.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "The pack sits slightly differently within the transparent holder compared with the references.",
+            "benign_explanation": "Minor alignment and seating differences in the holder are normal placement variation and do not indicate product abnormality or damage.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 2778,
+      "output": 732
+    },
+    "latency_sec": 32.96,
+    "error": null
+  },
+  {
+    "item_id": "D2_0060",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [],
+        "no_difference_conf": 0.96
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "No positive defect evidence observed. The query shows the same milk carton variant and attached straw arrangement as Reference 2, with no visible damage, leakage, missing parts, or abnormal deformation.",
+            "benign_explanation": "Differences relative to Reference 1 are explained by viewpoint/state variation: the query matches the side/back view with straw seen in Reference 2 rather than the front view in Reference 1. Packaging graphics, carton shape, straw presence, and overall condition appear normal.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 2467,
+      "output": 226
+    },
+    "latency_sec": 99.38,
+    "error": null
+  },
+  {
+    "item_id": "D2_0071",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.06999999999999995,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [],
+        "no_difference_conf": 0.93
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "No positive defect evidence observed. The query carton shows the same banana milk drink package front as Reference 2, with consistent printed text, banana graphic, bottle image, and overall box shape.",
+            "benign_explanation": "Appearance matches a normal package variant/reference view. No tears, dents, leaks, missing parts, foreign objects, or abnormal deformation are visible. Minor differences are attributable to normal imaging/positioning.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 2467,
+      "output": 213
+    },
+    "latency_sec": 72.8,
+    "error": null
+  },
+  {
+    "item_id": "D2_0047",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.043031521595284006,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The white front label appears more noticeably slanted downward to the right than in the most frontal normal references, with the printed logo block sitting slightly lower on the right side.",
+            "location": "center-front label area",
+            "support_conf": 0.62,
+            "ref_consistency": 0.48,
+            "logical_relevance": 0.42
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "There is a visible crumple/crease cluster radiating from the top hanging hole area, making the top seal look more puckered than usual.",
+            "location": "top center edge around the hang hole",
+            "support_conf": 0.58,
+            "ref_consistency": 0.46,
+            "logical_relevance": 0.36
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "The chili/snack piece visible through the front window sits near the lower center and may be slightly shifted compared with references where it appears lower-right or less centered.",
+            "location": "transparent window in lower middle of the pouch front",
+            "support_conf": 0.51,
+            "ref_consistency": 0.31,
+            "logical_relevance": 0.28
+          }
+        ],
+        "no_difference_conf": 0.47
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The front white label does look slightly tilted downward to the right in the query.",
+            "benign_explanation": "Comparable label tilt and front-face orientation variation are already present across the references, especially the angled views. The pouch itself is soft and wrinkled, so small label slant changes are expected from pose and packaging deformation rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "There is a crease cluster around the top hanging hole, and the top seal appears puckered.",
+            "benign_explanation": "Similar top-edge wrinkling and seal puckering are visible in multiple references, particularly References 1 and 4. This looks like normal flexible-package crumpling, not distinct damage such as a tear, puncture, or missing material.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The visible snack piece in the window is near the lower center in the query.",
+            "benign_explanation": "The position of the internal snack piece naturally varies between images as the pouch is handled and viewed from slightly different angles. This is not evidence of pathology.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 4027,
+      "output": 738
+    },
+    "latency_sec": 145.89,
+    "error": null
+  },
+  {
+    "item_id": "D2_0067",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0035",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.011157610729369605,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Front-facing label panel is centered in the query, whereas the references show side/back or angled views with barcode/instructions or partial front panel. The visible graphic layout differs due to viewing angle rather than a clear product defect.",
+            "location": "entire cup front label area",
+            "support_conf": 0.97,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.22
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "Top foil/rim appearance differs slightly: the query shows a flatter, more uniformly tucked lid edge, while some references show a small lifted foil tab or more uneven rim contour.",
+            "location": "top rim and lid edge, especially upper right",
+            "support_conf": 0.63,
+            "ref_consistency": 0.71,
+            "logical_relevance": 0.28
+          }
+        ],
+        "no_difference_conf": 0.77
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "No positive defect evidence. The query shows the same blue Nissin Cup Noodles seafood flavor cup with centered front branding and product image.",
+            "benign_explanation": "The main difference is viewing angle. References include back/side and angled front views, while the query is a straight-on front view. This changes which panel is visible but does not indicate damage, misprint, or wrong product.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "No clear lid defect is visible. The rim and foil edge appear intact without tearing, puncture, or missing material.",
+            "benign_explanation": "Small differences in foil tuck, rim contour, and tab visibility are consistent with normal packaging variation and camera angle. Some references already show variability at the upper rim/tab area.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.95
+      }
+    },
+    "cost_tokens": {
+      "input": 3940,
+      "output": 548
+    },
+    "latency_sec": 94.73,
+    "error": null
+  },
+  {
+    "item_id": "D2_0079",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.013415999999999983,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Back-panel artwork appears upside down/rotated 180 degrees relative to the normal references: barcode is at the top in the query, while in references it is at the bottom, and the speech-bubble graphic is correspondingly inverted.",
+            "location": "Rear face of the box, full panel",
+            "support_conf": 0.98,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.94
+          }
+        ],
+        "no_difference_conf": 0.03
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The query shows the rear panel with the barcode at the top and the printed graphics/text inverted relative to the references, indicating the package is simply rotated 180 degrees compared with the reference views.",
+            "benign_explanation": "This is a viewpoint/orientation difference, not a defect. The rear-panel elements visible in the query (barcode, QR code, nutrition table, speech bubble, illustration) are all consistent with the same package design seen in the references, just upside down due to box rotation. No positive evidence of damage, tampering, missing print, or structural pathology is visible.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 3838,
+      "output": 368
+    },
+    "latency_sec": 83.78,
+    "error": null
+  },
+  {
+    "item_id": "D2_0054",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.06000000000000005,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [],
+        "no_difference_conf": 0.94
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "No positive defect evidence observed. The query shows the same cylindrical container, lid, label seam, blue panel on the left, vertical white text strip, green nutrition box, and partial front label as seen in the references.",
+            "benign_explanation": "The query closely matches Reference 1 in orientation and appearance. Any tiny differences are attributable to normal viewing angle, lighting, and rotation of the printed label, not damage or pathology.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 3717,
+      "output": 216
+    },
+    "latency_sec": 26.28,
+    "error": null
+  },
+  {
+    "item_id": "D2_0009",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.69062418631936,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "A loose transparent plastic flap or wrinkled film is visibly protruding along the lower-left side of the cup body, extending outward near the base. The references do not show such a pronounced hanging side flap.",
+            "location": "Left lower side of the cup, near the bottom edge/base",
+            "support_conf": 0.86,
+            "ref_consistency": 0.82,
+            "logical_relevance": 0.76
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The tamper/shrink film around the lid appears more visibly bunched and extended on the left-front rim than in the references, creating an asymmetric wrapped look.",
+            "location": "Left-front edge of the lid rim",
+            "support_conf": 0.61,
+            "ref_consistency": 0.63,
+            "logical_relevance": 0.49
+          }
+        ],
+        "no_difference_conf": 0.32
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.9,
+            "benign_conf": 0.1,
+            "positive_evidence": "There is a clearly visible transparent plastic flap/wrinkle protruding outward from the lower-left side of the cup body near the base in the query image. Across the references, shrink film is seen mainly around the lid rim, but no comparable loose side flap hanging off the cup wall near the bottom is visible. This is a concrete localized packaging/surface irregularity rather than a mere pose or print variation.",
+            "benign_explanation": "Minor shrink-wrap variation around the lid can be benign, but the lower-left side protruding plastic is stronger and more localized evidence of an abnormal loose film/wrapping defect.",
+            "status": "anomaly"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.22,
+            "benign_conf": 0.78,
+            "positive_evidence": "The lid film on the left-front rim looks somewhat bunched.",
+            "benign_explanation": "This appears within normal shrink-wrap variation and is not clearly beyond what is seen in the references, where lid sealing film and slight asymmetry are also present.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.86
+      }
+    },
+    "cost_tokens": {
+      "input": 3940,
+      "output": 578
+    },
+    "latency_sec": 33.41,
+    "error": null
+  },
+  {
+    "item_id": "D2_0032",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.03948438026368417,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Front-face printed design differs from one normal reference: the query shows the Chinese-text variant with a jar illustration, while another reference shows the Korean-text variant with a bottle illustration.",
+            "location": "Entire front panel",
+            "support_conf": 0.99,
+            "ref_consistency": 0.42,
+            "logical_relevance": 0.38
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Drinking straw placement is slightly shifted/angled relative to the references, leaning across the center-left/front panel rather than matching the exact alignment in the references.",
+            "location": "Top to bottom across the front face",
+            "support_conf": 0.72,
+            "ref_consistency": 0.63,
+            "logical_relevance": 0.31
+          },
+          {
+            "id": "C3",
+            "type": "surface_defect",
+            "description": "Possible mild vertical crease/compression line on the carton front near the center seam area.",
+            "location": "Front face, vertically through the middle under the straw",
+            "support_conf": 0.46,
+            "ref_consistency": 0.55,
+            "logical_relevance": 0.34
+          }
+        ],
+        "no_difference_conf": 0.58
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.04,
+            "benign_conf": 0.96,
+            "positive_evidence": "The query front design differs from Reference 2, showing a Chinese-text/jar-illustration variant rather than the Korean-text/bottle-illustration variant.",
+            "benign_explanation": "Reference 1 already shows the same Chinese-text variant with the same jar illustration and overall layout as the query. This is a normal packaging/design variation, not a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.06,
+            "benign_conf": 0.94,
+            "positive_evidence": "The straw in the query is slightly angled and positioned across the center-left of the front face.",
+            "benign_explanation": "Straw attachment angle and placement commonly vary slightly between units. The query matches Reference 1 closely, and there is no evidence of missing or extra components.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.22,
+            "benign_conf": 0.78,
+            "positive_evidence": "A faint vertical line/crease is visible near the center under the straw.",
+            "benign_explanation": "The line appears consistent with normal carton seam/compression from packaging and is mild without clear damage, tearing, leakage, or deformation. Under the asymmetric rule, this is insufficient positive defect evidence.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.88
+      }
+    },
+    "cost_tokens": {
+      "input": 2764,
+      "output": 716
+    },
+    "latency_sec": 201.38,
+    "error": null
+  },
+  {
+    "item_id": "D2_0010",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.019158646221996922,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "global_difference",
+            "description": "Top brand text/logo area appears weaker or partially missing compared with the references, with only the small line 'WELL-KNOWN MARK IN CHINA' clearly visible while the larger brand name at the very top is faint/obscured.",
+            "location": "upper red panel of the cigarette pack",
+            "support_conf": 0.84,
+            "ref_consistency": 0.8,
+            "logical_relevance": 0.53
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The front design matches the second reference style, but the pack in the query is slightly shifted/tilted within the holder and the visible side border proportions differ somewhat.",
+            "location": "overall pack placement in the clear plastic holder; right vertical border of pack front",
+            "support_conf": 0.46,
+            "ref_consistency": 0.55,
+            "logical_relevance": 0.26
+          }
+        ],
+        "no_difference_conf": 0.41
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.11,
+            "benign_conf": 0.89,
+            "positive_evidence": "The larger top brand text is faint in the query image, but there is no clear sign of physical damage, missing material, tear, stain, or print defect. The small line 'WELL-KNOWN MARK IN CHINA' and the main central emblem/health text are present and aligned with reference 2.",
+            "benign_explanation": "The faintness in the upper red panel is consistent with glare, low contrast, or viewing angle on glossy packaging. Reference 2 already shows the same design family, and the query matches it closely. This is a benign appearance variation rather than positive defect evidence.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.04,
+            "benign_conf": 0.96,
+            "positive_evidence": "The pack appears slightly shifted/tilted in the holder, but no abnormal deformation or structural issue is visible.",
+            "benign_explanation": "Placement differences in a transparent display holder and small perspective changes are normal scene variation, not product anomaly.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 2700,
+      "output": 584
+    },
+    "latency_sec": 82.65,
+    "error": null
+  },
+  {
+    "item_id": "D2_0055",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.014544960618879998,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The bottle is shown at a slightly different rotation, making the right-side label elements more visible while some side text seen in other references is less visible.",
+            "location": "Front-right side of the bottle label",
+            "support_conf": 0.78,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.22
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "Minor differences in highlight/reflection pattern on the shoulder and cap area compared with the references.",
+            "location": "Cap, neck, and upper bottle shoulder",
+            "support_conf": 0.66,
+            "ref_consistency": 0.98,
+            "logical_relevance": 0.12
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "No clear defect is visible. The query bottle shows the same green tea bottle shape, cap, liquid level, and front label design seen across the references. The slight visibility of right-side label elements is consistent with a small rotation change.",
+            "benign_explanation": "This is a viewpoint/layout variation. The references already show the bottle from multiple rotations, including front, front-left, front-right, and side views. The query matches that normal rotational variation rather than indicating damage or mislabeling.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.05,
+            "benign_conf": 0.95,
+            "positive_evidence": "There is no sign of structural damage, leakage, deformation, or contamination in the cap, neck, or shoulder. Differences are limited to reflection/highlight placement.",
+            "benign_explanation": "Highlight changes are expected from lighting and small pose differences. The cap and shoulder appearance remain consistent with the references.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 3909,
+      "output": 532
+    },
+    "latency_sec": 116.83,
+    "error": null
+  },
+  {
+    "item_id": "D2_0074",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.9031263074697475,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "extra_part",
+            "description": "A blue triangular flap/tab is protruding upward from the cup rim on the upper-right side, appearing more prominent than in the references.",
+            "location": "Top rim, slightly right of center",
+            "support_conf": 0.96,
+            "ref_consistency": 0.86,
+            "logical_relevance": 0.88
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The visible side panel is shifted to show a barcode-dominant section and dense vertical text block, a view not cleanly matched by the provided normal reference angles.",
+            "location": "Right half of cup body",
+            "support_conf": 0.63,
+            "ref_consistency": 0.41,
+            "logical_relevance": 0.46
+          },
+          {
+            "id": "C3",
+            "type": "surface_defect",
+            "description": "The rim edge near the protruding flap looks slightly uneven/crumpled compared with the smoother rim in most references.",
+            "location": "Top rim, upper-right edge",
+            "support_conf": 0.74,
+            "ref_consistency": 0.68,
+            "logical_relevance": 0.71
+          }
+        ],
+        "no_difference_conf": 0.17
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.93,
+            "benign_conf": 0.07,
+            "positive_evidence": "The query shows a clearly lifted blue triangular flap/tab protruding upward from the rim on the upper-right side. Compared against the references, this feature is absent in References 1 and 2 and only a much smaller, less pronounced rim irregularity is visible in References 3 and 4. In the query, the flap is more obviously peeled/lifted and stands out as a distinct extra protruding piece from the lid/rim area.",
+            "benign_explanation": "Minor rim unevenness can occur from viewing angle or packaging seam variation, and References 3 and 4 do show a small right-side rim tab-like area. However, the query protrusion is more prominent and looks like a lifted/deformed flap rather than a normal printed seam.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.93
+      }
+    },
+    "cost_tokens": {
+      "input": 4007,
+      "output": 573
+    },
+    "latency_sec": 60.57,
+    "error": null
+  },
+  {
+    "item_id": "D2_0061",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.03762426679802888,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "surface_texture",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Possible stronger crumple/glare mark on the top-left corner of the front wrapper compared with the references.",
+            "location": "Top-left area of the cigarette pack front face near the upper edge",
+            "support_conf": 0.56,
+            "ref_consistency": 0.64,
+            "logical_relevance": 0.41
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Lower warning text band appears slightly more obscured by the clear holder, making the visible text extent differ somewhat from the references.",
+            "location": "Bottom front of pack, behind the center cradle of the transparent display holder",
+            "support_conf": 0.47,
+            "ref_consistency": 0.58,
+            "logical_relevance": 0.32
+          }
+        ],
+        "no_difference_conf": 0.63
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "There is a visible reflective/crumpled-looking highlight near the top-left of the front wrapper in the query image.",
+            "benign_explanation": "Similar wrapper glare and slight film crinkle are also present in the references, especially along the top edge and upper corners. The observed mark is consistent with lighting angle and normal plastic wrap variation rather than a discrete defect or damage unique to the query.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "The lower warning text band is partly obscured by the transparent holder in the query.",
+            "benign_explanation": "The references also show the lower text partially blocked by the clear display cradle, with small differences in visible text extent due to placement and viewing angle. This is not positive evidence of a product anomaly.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.82
+      }
+    },
+    "cost_tokens": {
+      "input": 2671,
+      "output": 525
+    },
+    "latency_sec": 102.97,
+    "error": null
+  },
+  {
+    "item_id": "D2_0007",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.011359699092160058,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Front label artwork appears slightly shifted/scaled compared with the references: the large black characters and flower/logo cluster sit a bit lower and more leftward, with slightly different spacing to the bottle edges.",
+            "location": "Front main label, central printed area",
+            "support_conf": 0.43,
+            "ref_consistency": 0.56,
+            "logical_relevance": 0.45
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Possible small irregular dark notch/mark along the right bottle shoulder/label boundary that is not obvious in the front-view references.",
+            "location": "Upper right shoulder area, near the white label edge below the cap",
+            "support_conf": 0.24,
+            "ref_consistency": 0.31,
+            "logical_relevance": 0.22
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The front-facing query bottle matches the same product design seen in References 1 and 4: same cap color, bottle shape, white-to-green label gradient, large black Chinese characters, flower icon, and lower purple logo cluster. The apparent shift in artwork is minor and can be explained by small viewpoint/pose differences and label placement tolerance.",
+            "benign_explanation": "This looks like normal packaging variation rather than a defect. The overall front label layout is consistent with the front-view references, and there is no clear missing print, extra object, tear, deformation, or misapplied label.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "The suspected dark notch near the upper right shoulder is not clearly visible as a distinct defect in the query image. Similar edge darkness can arise from bottle curvature, liquid color showing through, or shadow along the label boundary.",
+            "benign_explanation": "There is no concrete localized damage, hole, tear, or contamination that is clearly supported by the image. The area appears consistent with normal lighting/reflection on the bottle shoulder.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 3931,
+      "output": 598
+    },
+    "latency_sec": 104.38,
+    "error": null
+  },
+  {
+    "item_id": "D2_0034",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.036657820173856104,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Blue handwritten marker/scribble on the back label appears slightly different in shape/intensity, with a prominent '2'-like stroke visible on the left-center white panel.",
+            "location": "Back side, left-center area of the white label",
+            "support_conf": 0.58,
+            "ref_consistency": 0.41,
+            "logical_relevance": 0.42
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Top crimp/folded edge of the bag has a somewhat different wrinkle/compression pattern, especially near the upper-left and upper-center seam.",
+            "location": "Top edge of package",
+            "support_conf": 0.44,
+            "ref_consistency": 0.36,
+            "logical_relevance": 0.24
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Bottom corners and base flare look slightly shifted, with the lower-right red border appearing a bit more exposed than in the back-reference.",
+            "location": "Bottom edge, especially lower-right corner",
+            "support_conf": 0.37,
+            "ref_consistency": 0.39,
+            "logical_relevance": 0.21
+          }
+        ],
+        "no_difference_conf": 0.67
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.2,
+            "benign_conf": 0.8,
+            "positive_evidence": "The query shows a blue handwritten mark/stamp-like scribble on the left-center of the back label, and its exact stroke shape differs somewhat from the visible blue mark in the back reference.",
+            "benign_explanation": "A blue handwritten/inspection mark is already present in Reference 4 in the same general area. The observed difference is limited to pen stroke shape/intensity, which is consistent with normal package-to-package or viewing variation rather than a defect. No tear, puncture, leakage, missing label, or other pathology is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The top crimp edge in the query has slightly different wrinkle/compression contours than the reference.",
+            "benign_explanation": "This is normal flexible-package shape variation. The top seam remains intact with no evidence of opening, ripping, or seal failure.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "The bottom flare and corner exposure differ slightly from the reference view.",
+            "benign_explanation": "The bag is a soft package, so base spread and corner angles naturally vary with placement. No structural damage or missing material is visible.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.87
+      }
+    },
+    "cost_tokens": {
+      "input": 4021,
+      "output": 740
+    },
+    "latency_sec": 31.45,
+    "error": null
+  },
+  {
+    "item_id": "D2_0028",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.025999110521497615,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Query shows a different visible side/rotation of the can: large partial '50 ORIGINAL' front-side lettering is visible together with the barcode panel, whereas the references mainly show the back text panel or a slightly different barcode-side orientation.",
+            "location": "entire can body, especially left half with large black lettering and lower-center barcode area",
+            "support_conf": 0.98,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.25
+          },
+          {
+            "id": "C2",
+            "type": "global_difference",
+            "description": "Barcode panel appears more centered and fully exposed in the query compared with the references, where the barcode is either absent or shifted further to the side.",
+            "location": "lower central-left area of the can",
+            "support_conf": 0.93,
+            "ref_consistency": 0.96,
+            "logical_relevance": 0.22
+          },
+          {
+            "id": "C3",
+            "type": "surface_defect",
+            "description": "Possible tiny dark scuff/speck near the bottom rim/base area of the can, slightly left of center.",
+            "location": "bottom edge of can near the silver base rim",
+            "support_conf": 0.34,
+            "ref_consistency": 0.55,
+            "logical_relevance": 0.3
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "No defect evidence. The can graphics, color, shape, and printed elements are consistent with the same product.",
+            "benign_explanation": "This is a rotation/viewpoint difference. Reference 4 already shows the barcode side adjacent to the text panel, and the query simply reveals more of the front-side '50 ORIGINAL' lettering due to a different angle.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.04,
+            "benign_conf": 0.96,
+            "positive_evidence": "No pathology associated with the barcode area is visible; the barcode label and nearby text appear normally printed and aligned for the visible side.",
+            "benign_explanation": "The barcode being more centered/exposed is explained by can rotation. Reference 4 shows the same barcode panel on the can, just from a slightly different angle.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "There may be a tiny dark speck near the bottom rim, but it is extremely small and could be shadow, dust, or imaging noise rather than damage to the can.",
+            "benign_explanation": "No clear dent, tear, leakage, or persistent local defect is visible across the can surface. The suspected mark is too weak/ambiguous to count as positive defect evidence.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 4041,
+      "output": 767
+    },
+    "latency_sec": 118.29,
+    "error": null
+  },
+  {
+    "item_id": "D2_0082",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.040000000000000036,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [],
+        "no_difference_conf": 0.96
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "No positive defect evidence found. The query shows the same back/side panel as Reference 1: SOMERSBY text, Chinese text block, QR code, and vertical barcode in expected positions. Can shape, top/bottom rims, and visible side graphics are consistent with the references.",
+            "benign_explanation": "Observed differences are limited to minor viewpoint, focus, and lighting variations. Label printing, alignment, and package structure appear normal and consistent with the reference can.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.97
+      }
+    },
+    "cost_tokens": {
+      "input": 3092,
+      "output": 224
+    },
+    "latency_sec": 85.18,
+    "error": null
+  },
+  {
+    "item_id": "D2_0020",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.020000000000000018,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [],
+        "no_difference_conf": 0.98
+      },
+      "judge": {
+        "per_candidate": [],
+        "final_label": "normal",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 3713,
+      "output": 73
+    },
+    "latency_sec": 92.05,
+    "error": null
+  },
+  {
+    "item_id": "D2_0025",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.016699278528000017,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Possible tiny dark scuff/scratch mark on the upper front-left area of the blue can body, just below the top rim.",
+            "location": "Upper third of the can, slightly left of center beneath the silver rim.",
+            "support_conf": 0.31,
+            "ref_consistency": 0.63,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Possible faint vertical crease/dent-like reflection irregularity on the front center of the can body; could be lighting-related.",
+            "location": "Central vertical band of the front face, extending from above the logo down toward the text.",
+            "support_conf": 0.27,
+            "ref_consistency": 0.58,
+            "logical_relevance": 0.24
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "A very small dark speck/mark may be perceived below the top rim on the upper left-front area of the can.",
+            "benign_explanation": "The query front view closely matches Reference 1 in overall appearance, logo placement, text, rim shape, and glossy reflections. The suspected mark is tiny, weakly defined, and plausibly caused by specular reflection, image noise, or normal print/surface variation. There is no strong localized defect evidence.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "There is a faint vertical reflection irregularity along the central front body of the can.",
+            "benign_explanation": "The can is highly reflective, and similar vertical highlight bands are visible in the references. The queried central band does not show a clear crease edge, deformation contour, or persistent dent signature distinct from normal lighting. Under the fp_benign_variation rule, this is insufficient to call an anomaly.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 3303,
+      "output": 567
+    },
+    "latency_sec": 47.06,
+    "error": null
+  },
+  {
+    "item_id": "D2_0017",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.012287680000000023,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Front label artwork includes an extra circular gold/cream emblem near the lower center of the bottle that is not visible in the normal reference views.",
+            "location": "Lower front label, just above the bottom text area",
+            "support_conf": 0.93,
+            "ref_consistency": 0.88,
+            "logical_relevance": 0.82
+          }
+        ],
+        "no_difference_conf": 0.27
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "A circular gold/cream emblem is visible near the lower front label in the query and is not clearly visible in the provided reference views.",
+            "benign_explanation": "The bottle otherwise matches the same product line, shape, cap, main red-white label design, brand mark, and peanut graphics seen in multiple references. The reported difference is a packaging/layout variation only, with no positive evidence of damage, contamination, deformation, leakage, missing part, or other defect/pathology. Under the fp_benign_variation rule, this should not be called anomalous.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.92
+      }
+    },
+    "cost_tokens": {
+      "input": 3821,
+      "output": 347
+    },
+    "latency_sec": 94.03,
+    "error": null
+  },
+  {
+    "item_id": "D2_0085",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 1,
+    "anomaly_score": 0.95891202,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fn_subtle_local",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Top lid/rim color appears white/silver in the query instead of the yellow lid seen in all references.",
+            "location": "very top circular lid and upper rim of the can",
+            "support_conf": 0.97,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.95
+          }
+        ],
+        "no_difference_conf": 0.04
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "In the query, the top lid and visible upper rim of the can are white/silver. In all four reference views, the lid/rim is consistently yellow. This is a concrete localized appearance change at the top of the can and is not explained by rotation, since the lid color should remain the same across viewpoints.",
+            "benign_explanation": "Minor lighting could slightly shift shade, but it would not turn the consistently yellow lid seen in all references into a clearly white/silver lid.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 3813,
+      "output": 326
+    },
+    "latency_sec": 28.97,
+    "error": null
+  },
+  {
+    "item_id": "D2_0018",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0024",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0069",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.03330421543897599,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Front-facing orientation is slightly different from the references, with the main label centered similarly to normal reference 2 but shifted a bit left, exposing a thin side panel on the left.",
+            "location": "overall cup body, especially left edge",
+            "support_conf": 0.72,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.22
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Minor lid-edge unevenness or small flap-like deformation is visible along the left-front rim, though similar slight lid irregularities also appear in the references.",
+            "location": "left-front edge of yellow lid",
+            "support_conf": 0.48,
+            "ref_consistency": 0.7,
+            "logical_relevance": 0.3
+          }
+        ],
+        "no_difference_conf": 0.7
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The cup front is visible with a slight leftward shift, but no structural break, missing print, tear, dent, or foreign object is evident.",
+            "benign_explanation": "This matches normal viewpoint/orientation variation seen across the references. Reference 2 shows a similar front-facing presentation, while references 3 and 4 show partial side exposure. The thin left side panel visibility is consistent with rotation, not damage.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "A small uneven area is visible on the left-front lid rim, but it does not clearly exceed normal manufacturing/sealing irregularity and no crack or major deformation is seen.",
+            "benign_explanation": "Similar minor lid-edge unevenness appears in the references, especially around the foil/lid overlap area. This looks like routine packaging variation rather than a defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 3926,
+      "output": 545
+    },
+    "latency_sec": 39.99,
+    "error": null
+  },
+  {
+    "item_id": "D2_0041",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.014794792634558407,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Handwritten blue marker scribble near the top branding area appears present and prominent.",
+            "location": "Upper front face, across the pink header and near the word 'Peanut'.",
+            "support_conf": 0.98,
+            "ref_consistency": 0.35,
+            "logical_relevance": 0.42
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Front package is shown in a more centered, upright pose with slightly different lean and bottom edge shape compared with the angled reference view.",
+            "location": "Whole package silhouette and base seam.",
+            "support_conf": 0.78,
+            "ref_consistency": 0.22,
+            "logical_relevance": 0.18
+          },
+          {
+            "id": "C3",
+            "type": "surface_defect",
+            "description": "Clear window shows a different glare pattern and stronger white reflection streaks across the peanuts.",
+            "location": "Transparent window on the lower-middle front.",
+            "support_conf": 0.89,
+            "ref_consistency": 0.15,
+            "logical_relevance": 0.1
+          }
+        ],
+        "no_difference_conf": 0.56
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The query shows a blue handwritten marker scribble near the top branding area.",
+            "benign_explanation": "The same blue handwritten scribble is also clearly visible in Reference 3 and Reference 4 in the same upper-front area. Since it is present in multiple reference images of the same product, it is part of the normal package state rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.05,
+            "benign_conf": 0.95,
+            "positive_evidence": "The package in the query is front-facing and upright with small differences in lean, centering, and bottom seam shape.",
+            "benign_explanation": "These differences are consistent with normal pose variation across the references: Reference 3 is also front-facing, while Reference 4 is angled. The bottom edge and silhouette vary naturally due to flexible packaging and placement.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.03,
+            "benign_conf": 0.97,
+            "positive_evidence": "The transparent window in the query has bright reflection streaks across the peanuts.",
+            "benign_explanation": "Reflection and glare patterns vary strongly across the references as well, especially on the glossy window. This is a lighting/viewing effect and not evidence of damage or product abnormality.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.96
+      }
+    },
+    "cost_tokens": {
+      "input": 3999,
+      "output": 713
+    },
+    "latency_sec": 94.78,
+    "error": null
+  },
+  {
+    "item_id": "D2_0081",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.02686421963392871,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Front graphic panel appears shifted slightly leftward, with the left-side bowl/graphic strip more exposed than in the most frontal references.",
+            "location": "Left front face of the package",
+            "support_conf": 0.58,
+            "ref_consistency": 0.42,
+            "logical_relevance": 0.38
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "A horizontal crease/compression line across the upper front panel is noticeable, running through the red area above the main text.",
+            "location": "Upper-middle front face",
+            "support_conf": 0.64,
+            "ref_consistency": 0.36,
+            "logical_relevance": 0.34
+          },
+          {
+            "id": "C3",
+            "type": "layout_mismatch",
+            "description": "Top flap lies flatter and more forward across the package, making the top branding area less visible than in the frontal normal references.",
+            "location": "Top surface/front top edge",
+            "support_conf": 0.61,
+            "ref_consistency": 0.39,
+            "logical_relevance": 0.33
+          }
+        ],
+        "no_difference_conf": 0.68
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The left-side front graphic strip is somewhat more visible in the query than in the most frontal references.",
+            "benign_explanation": "This is well explained by small pose/orientation and package deformation differences. Reference 3 already shows strong viewpoint-dependent shifts of the front panel layout, and the query remains consistent with the same product packaging.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "A horizontal compression/crease line is visible across the upper front red area.",
+            "benign_explanation": "The package is a flexible plastic bag of instant noodles, and comparable wrinkling/compression is present throughout the references. This looks like ordinary bag crumpling rather than a defect or pathology.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The top flap lies somewhat flatter/forward, reducing visibility of some top branding.",
+            "benign_explanation": "This is a normal consequence of soft-package shape variation and viewing angle. The references show substantial top-surface variation as the bag settles differently, with no evidence of missing parts or damage beyond ordinary crumpling.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 4001,
+      "output": 706
+    },
+    "latency_sec": 20.36,
+    "error": null
+  },
+  {
+    "item_id": "D2_0078",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.01660631260847356,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Possible small scuff/scratch or dirt mark near the lower right area of the front-facing red side panel, close to the base.",
+            "location": "Lower right portion of the red side panel, just above the bottom edge",
+            "support_conf": 0.37,
+            "ref_consistency": 0.46,
+            "logical_relevance": 0.35
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "The printed logo/text block appears slightly lower and a bit more left-shifted within the visible side panel compared with the most similar reference view, though this may be due to pose/camera alignment.",
+            "location": "Center of the visible red side panel",
+            "support_conf": 0.28,
+            "ref_consistency": 0.41,
+            "logical_relevance": 0.22
+          }
+        ],
+        "no_difference_conf": 0.71
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.14,
+            "benign_conf": 0.86,
+            "positive_evidence": "A faint small dark mark is visible near the lower right/base area of the red side panel in the query image.",
+            "benign_explanation": "The mark is very subtle and could be explained by shadow, shelf dust, compression noise, or a tiny incidental speck rather than packaging damage. The overall panel shape, print, edges, and sealing match the references, especially Reference 4 which shows the same side panel without any clear defect. There is no strong positive evidence of a real scratch, tear, dent, or stain.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The logo/text block position may appear slightly shifted within the panel.",
+            "benign_explanation": "This is consistent with small pose/camera alignment differences relative to the references. The visible side panel closely matches Reference 4 in design, orientation, and layout, with no convincing print misplacement or packaging deformation.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 3935,
+      "output": 566
+    },
+    "latency_sec": 35.91,
+    "error": null
+  },
+  {
+    "item_id": "D2_0077",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.01483844269760004,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Top opening/collar of the bag is tilted more strongly to the left, creating a more asymmetrical upper silhouette than the front-view references.",
+            "location": "top edge and upper-left flap of the package",
+            "support_conf": 0.49,
+            "ref_consistency": 0.63,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Slightly heavier creasing/compression on the front-left lower panel, making the left side look more pinched inward than in the normal examples.",
+            "location": "lower-left front corner of the bag",
+            "support_conf": 0.42,
+            "ref_consistency": 0.57,
+            "logical_relevance": 0.24
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "No clear defect evidence. The top opening appears folded and tilted, but similar variation in upper silhouette and crumpling is visible across the references, especially the angled views.",
+            "benign_explanation": "This is consistent with normal soft-package pose variation, crumpling, and viewing angle. The bag is flexible and the top edge/flap naturally shifts between images.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.1,
+            "benign_conf": 0.9,
+            "positive_evidence": "No localized damage beyond ordinary compression/creasing is visible. The lower-left front area is slightly pinched, but the references also show variable wrinkling and shape changes on the same type of flexible bag.",
+            "benign_explanation": "This is normal deformation of a soft package rather than a pathology. No tear, hole, leakage, missing print, or structural failure is evident.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.91
+      }
+    },
+    "cost_tokens": {
+      "input": 3921,
+      "output": 534
+    },
+    "latency_sec": 16.48,
+    "error": null
+  },
+  {
+    "item_id": "D2_0013",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.011822197049577543,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Front label artwork appears slightly rotated/shifted compared with the closest normal views, with the white figure and angular logo sitting a bit more to the right side of the visible face.",
+            "location": "center-front bottle label",
+            "support_conf": 0.47,
+            "ref_consistency": 0.62,
+            "logical_relevance": 0.38
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "A small bright/whitish speck or glare-like mark is visible on the lower front label area, which is not clearly seen in the references.",
+            "location": "lower center-right of the green label, above the base ring",
+            "support_conf": 0.28,
+            "ref_consistency": 0.31,
+            "logical_relevance": 0.2
+          }
+        ],
+        "no_difference_conf": 0.66
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.09,
+            "benign_conf": 0.91,
+            "positive_evidence": "The front label elements appear slightly shifted in visible position relative to some references.",
+            "benign_explanation": "Across the references, the bottle is photographed from different viewing angles around the circumference, and the visible artwork naturally shifts left/right and rotates slightly. The query closely matches Reference 3 and Reference 4, with the same white figure, angular logo, and general label placement. No clear printing defect, missing element, or structural abnormality is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "There is a faint small bright spot/glare-like area near the lower label region.",
+            "benign_explanation": "The mark is weak and consistent with reflection/compression noise on the glossy bottle surface. Similar tiny highlights and glare variations are present across the references and shelf scene. There is no convincing evidence of a true surface defect or damage.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 3930,
+      "output": 552
+    },
+    "latency_sec": 42.39,
+    "error": null
+  },
+  {
+    "item_id": "D2_0002",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0076",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.054446811286400054,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The visible side of the cup in the query shows a different wrap orientation/panel arrangement: the white checklist text appears near the upper right while the pink ladder graphic is centered-right, a combination not shown in any single reference view.",
+            "location": "Front/right face of the cup label",
+            "support_conf": 0.82,
+            "ref_consistency": 0.62,
+            "logical_relevance": 0.56
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Top rim appears slightly uneven/wavy with a small lifted or dented section near the right side of the lid edge.",
+            "location": "Upper rim, especially top-right edge",
+            "support_conf": 0.55,
+            "ref_consistency": 0.47,
+            "logical_relevance": 0.42
+          }
+        ],
+        "no_difference_conf": 0.38
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.14,
+            "benign_conf": 0.86,
+            "positive_evidence": "The query shows the blue upper band with white checklist text on the right and the pink ladder graphic below/right. This visible combination is not shown in exactly the same framing among the references.",
+            "benign_explanation": "The references depict different rotational views of the same cup. Reference 1 and 4 show the front branding and strawberry/Oreo graphics, while Reference 2 shows the side/back with checklist text. The query appears to be an intermediate rotation between these views, so the panel arrangement is consistent with normal wraparound label variation rather than a defect. No printing error, missing panel, tear, or duplicated artwork is clearly visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.22,
+            "benign_conf": 0.78,
+            "positive_evidence": "The lid rim in the query looks slightly uneven at the top-right edge.",
+            "benign_explanation": "Similar minor waviness/irregularity of the paper/plastic rim is also visible in the references, especially along the top edge. There is no clear crack, puncture, major dent, or structural failure. This looks like normal manufacturing or handling variation.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.84
+      }
+    },
+    "cost_tokens": {
+      "input": 3931,
+      "output": 595
+    },
+    "latency_sec": 35.3,
+    "error": null
+  },
+  {
+    "item_id": "D2_0011",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 1,
+    "anomaly_score": 0.9692892000000001,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "clear_case",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Black handwritten marking '146' is present on the front panel.",
+            "location": "Lower-left central area of the front face, below the red fruit graphics and above the alarm clock icon.",
+            "support_conf": 0.99,
+            "ref_consistency": 0.99,
+            "logical_relevance": 0.96
+          }
+        ],
+        "no_difference_conf": 0.01
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.99,
+            "benign_conf": 0.01,
+            "positive_evidence": "The query image shows a clear black handwritten marking reading '146' on the front panel in the lower-left central area. This marking is also absent from Reference 1 and appears as an added surface mark relative to the clean printed packaging design.",
+            "benign_explanation": "The mark is not part of the printed product graphics and is a distinct overlaid handwritten surface marking, so benign packaging variation is very unlikely.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.99
+      }
+    },
+    "cost_tokens": {
+      "input": 2562,
+      "output": 309
+    },
+    "latency_sec": 80.39,
+    "error": null
+  },
+  {
+    "item_id": "D2_0042",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0059",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for user, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0014",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.027083466114043664,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The visible front face in the query is shown at a slightly different rotation compared with the closest frontal reference, making the left side panel more exposed; printed elements appear shifted in view but not clearly changed on the package itself.",
+            "location": "Overall box orientation, especially front-left edge and visible left side panel",
+            "support_conf": 0.45,
+            "ref_consistency": 0.92,
+            "logical_relevance": 0.35
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "A slight irregularity/dark crease is visible along the top front edge seam of the box, but similar minor top-edge waviness is also present in references and may be normal packaging wear.",
+            "location": "Top edge seam above the pink front panel",
+            "support_conf": 0.34,
+            "ref_consistency": 0.71,
+            "logical_relevance": 0.28
+          }
+        ],
+        "no_difference_conf": 0.72
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.07,
+            "benign_conf": 0.93,
+            "positive_evidence": "No clear packaging print change, missing element, or structural damage is visible. The apparent shift in graphics is consistent with the box being photographed from a slightly different angle, exposing more of the left side panel.",
+            "benign_explanation": "The query matches the same product box seen in the references. Front artwork, QR/instruction area, side graphics, and overall box shape remain consistent; the difference is viewpoint/rotation only.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.18,
+            "benign_conf": 0.82,
+            "positive_evidence": "There is a faint dark/uneven line along the top seam, but it is minor and not clearly stronger than normal edge waviness already visible in multiple references.",
+            "benign_explanation": "Slight top-edge seam irregularity appears to be ordinary carton fold/wear and lighting shadow rather than a distinct defect such as tearing, crushing, or opening.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 3950,
+      "output": 570
+    },
+    "latency_sec": 39.75,
+    "error": null
+  },
+  {
+    "item_id": "D2_0000",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.2907887961924479,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The visible front graphics/logo are split across both side edges in the query, leaving a mostly blank center panel. This matches a rotated viewing angle but could be flagged as an unusual visible layout compared with the more front-facing references.",
+            "location": "Upper left and upper right edges of the can body",
+            "support_conf": 0.7,
+            "ref_consistency": 0.95,
+            "logical_relevance": 0.35
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Top rim/seal area appears slightly crumpled or peeled, with a small flap visible near the left side of the lid.",
+            "location": "Top-left edge of the can lid/rim",
+            "support_conf": 0.62,
+            "ref_consistency": 0.55,
+            "logical_relevance": 0.58
+          }
+        ],
+        "no_difference_conf": 0.6
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.06,
+            "benign_conf": 0.94,
+            "positive_evidence": "The center panel appears mostly blank with partial logo/text visible at both side edges.",
+            "benign_explanation": "This is well explained by can rotation/viewing angle. References 1 and 4 also show side/back views with large blank white areas and partial graphics wrapping around the cylinder. No defect or missing print is evidenced.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.68,
+            "benign_conf": 0.32,
+            "positive_evidence": "There is a visible lifted/crumpled flap at the top-left rim/seal area of the can in the query. The top edge looks slightly torn or peeled rather than smoothly sealed.",
+            "benign_explanation": "Some references also show mild irregularity near the lid edge, so slight deformation at the top is not entirely unique; however the query still shows concrete localized physical damage evidence at the rim.",
+            "status": "anomaly"
+          }
+        ],
+        "final_label": "anomalous",
+        "final_confidence": 0.69
+      }
+    },
+    "cost_tokens": {
+      "input": 3937,
+      "output": 548
+    },
+    "latency_sec": 45.71,
+    "error": null
+  },
+  {
+    "item_id": "D2_0049",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.030000000000000027,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [],
+        "no_difference_conf": 0.97
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.02,
+            "benign_conf": 0.98,
+            "positive_evidence": "No positive defect evidence observed. The query matches Reference 1 in product type, yellow pack color, 'peel lemon honey' branding, blue leaf graphic, and lower 'BEE CAPSULE' label area.",
+            "benign_explanation": "Any tiny differences are consistent with normal imaging variation such as glare, perspective, and print visibility. Under the fp_benign_variation rule, there is no concrete pathology or defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.98
+      }
+    },
+    "cost_tokens": {
+      "input": 3717,
+      "output": 216
+    },
+    "latency_sec": 9.35,
+    "error": null
+  },
+  {
+    "item_id": "D2_0088",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.007974697634099193,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "The cigarette pack appears slightly shifted/tilted within the clear holder compared with the most similar reference, with the lower text area sitting at a slightly different height relative to the holder rim.",
+            "location": "Lower half of the pack and its placement in the clear display holder",
+            "support_conf": 0.42,
+            "ref_consistency": 0.52,
+            "logical_relevance": 0.28
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Minor variation in glare/brightness across the upper front face may suggest a small crease or surface reflection difference, but this is subtle and could be due to lighting.",
+            "location": "Upper central area of the front face of the pack",
+            "support_conf": 0.23,
+            "ref_consistency": 0.31,
+            "logical_relevance": 0.14
+          }
+        ],
+        "no_difference_conf": 0.79
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.92,
+            "positive_evidence": "The query pack is the same white-and-green Double Happiness/\u597d\u65e5\u5b50 cigarette pack as Reference 1, with matching printed elements, green side band, emblem, and warning text region. I do not see a structural defect or abnormal missing/extra component.",
+            "benign_explanation": "The small shift/tilt and slightly different vertical position in the clear holder are consistent with ordinary placement variation and camera/viewpoint differences. Under the fp_benign_variation rule, this is not positive defect evidence.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.06,
+            "benign_conf": 0.94,
+            "positive_evidence": "There is no clear visible crease, tear, puncture, or material damage on the upper front face. The observed brightness differences are weak and not localized as a definite defect.",
+            "benign_explanation": "The upper-face variation is best explained by lighting/glare on the glossy packaging surface. This kind of reflection change is common and does not constitute pathology.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 3939,
+      "output": 576
+    },
+    "latency_sec": 15.33,
+    "error": null
+  },
+  {
+    "item_id": "D2_0005",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0058",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.019638723499521893,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Bottle is shown from a back/side label view rather than the front branding view seen in most references; visible text block and nutrition/ingredient panel dominate the face.",
+            "location": "main bottle label, front-facing visible side",
+            "support_conf": 0.98,
+            "ref_consistency": 0.72,
+            "logical_relevance": 0.56
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Possible slight label crumple/uneven reflection along the upper white label area near the right shoulder, suggesting minor wrinkling or glare distortion.",
+            "location": "upper-right portion of white label below the neck",
+            "support_conf": 0.44,
+            "ref_consistency": 0.41,
+            "logical_relevance": 0.25
+          },
+          {
+            "id": "C3",
+            "type": "global_difference",
+            "description": "Query orientation appears slightly more rotated to the right/back than any fully front-facing references, exposing the side seam/edge of the label on the right.",
+            "location": "overall bottle pose/orientation",
+            "support_conf": 0.9,
+            "ref_consistency": 0.65,
+            "logical_relevance": 0.47
+          }
+        ],
+        "no_difference_conf": 0.42
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.05,
+            "benign_conf": 0.95,
+            "positive_evidence": "The query shows the bottle from the back/side with ingredient/nutrition text visible. This differs from the mostly front-facing references 2 and 4.",
+            "benign_explanation": "Reference 3 also shows the back label view with a similar text-heavy panel and matching bottle shape, cap, color gradient, and overall packaging. So the layout difference is explained by viewpoint/orientation rather than a defect.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.12,
+            "benign_conf": 0.88,
+            "positive_evidence": "There is a slight uneven reflection or possible mild wrinkling near the upper-right white label area below the neck.",
+            "benign_explanation": "The effect is weak and consistent with glare/label curvature from the bottle surface. No clear tear, puncture, major crease, or missing label area is visible.",
+            "status": "benign"
+          },
+          {
+            "id": "C3",
+            "anomaly_conf": 0.04,
+            "benign_conf": 0.96,
+            "positive_evidence": "The bottle is rotated somewhat toward the right/back, making the side seam/edge more visible than in front-facing references.",
+            "benign_explanation": "This is a pose difference only. Reference 3 already demonstrates a comparable back-oriented view, so the observed rotation is normal variation and not evidence of product abnormality.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.94
+      }
+    },
+    "cost_tokens": {
+      "input": 4025,
+      "output": 747
+    },
+    "latency_sec": 49.89,
+    "error": null
+  },
+  {
+    "item_id": "D2_0039",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 429 - {'error': {'message': 'Concurrency limit exceeded for account, please retry later', 'type': 'rate_limit_error'}}"
+  },
+  {
+    "item_id": "D2_0086",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.00990972577039606,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "surface_defect",
+            "description": "Slightly stronger glare/bright reflection across the top-center of the pack front, which partially washes out the brand text area compared with the red reference.",
+            "location": "Top center of the cigarette pack front",
+            "support_conf": 0.62,
+            "ref_consistency": 0.41,
+            "logical_relevance": 0.22
+          },
+          {
+            "id": "C2",
+            "type": "layout_mismatch",
+            "description": "Pack appears marginally more tilted/leaning left within the holder than in the reference views.",
+            "location": "Overall pack orientation in the center slot",
+            "support_conf": 0.46,
+            "ref_consistency": 0.35,
+            "logical_relevance": 0.18
+          }
+        ],
+        "no_difference_conf": 0.71
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.08,
+            "benign_conf": 0.91,
+            "positive_evidence": "A bright reflection is present across the top-center area of the pack front and partially obscures some printed text.",
+            "benign_explanation": "The same kind of strong glossy glare is also visible in both references, especially on the red pack reference, indicating this is consistent with packaging reflectivity and viewing angle rather than a defect on the object itself.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.05,
+            "benign_conf": 0.93,
+            "positive_evidence": "The pack may be leaning slightly within the holder.",
+            "benign_explanation": "This is a minor pose/orientation variation and not positive evidence of damage, contamination, or structural abnormality. The object, holder, and printed layout remain consistent with the red reference.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.9
+      }
+    },
+    "cost_tokens": {
+      "input": 2661,
+      "output": 497
+    },
+    "latency_sec": 43.71,
+    "error": null
+  },
+  {
+    "item_id": "D2_0026",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.03938923890368007,
+    "anomaly_type_pred": null,
+    "raw_output": {
+      "scout": {
+        "visual_regime": "clear_object",
+        "failure_mode": "fp_benign_variation",
+        "candidates": [
+          {
+            "id": "C1",
+            "type": "layout_mismatch",
+            "description": "Back-panel print layout appears vertically flipped relative to the most similar reference side: the barcode is placed near the top in the query, whereas in the reference back side it is near the bottom, and the nutrition/info blocks are correspondingly inverted.",
+            "location": "Rear/ingredient-information panel, full height of side face",
+            "support_conf": 0.91,
+            "ref_consistency": 0.96,
+            "logical_relevance": 0.44
+          },
+          {
+            "id": "C2",
+            "type": "surface_defect",
+            "description": "Small dark protrusion/notch visible along the top edge center of the box, suggesting a slight flap lift or minor top-edge deformation not clearly seen in the references.",
+            "location": "Top edge, center",
+            "support_conf": 0.51,
+            "ref_consistency": 0.63,
+            "logical_relevance": 0.34
+          }
+        ],
+        "no_difference_conf": 0.41
+      },
+      "judge": {
+        "per_candidate": [
+          {
+            "id": "C1",
+            "anomaly_conf": 0.05,
+            "benign_conf": 0.95,
+            "positive_evidence": "The query shows a blue information panel with barcode, nutrition table, and text blocks, but no clear damage, tampering, missing print, or pathological defect is visible.",
+            "benign_explanation": "The apparent top/bottom reversal is consistent with viewing the opposite side or a rotated package face rather than a defect. Reference 1 already shows a similar information panel with the barcode at the opposite end, so this is best explained by orientation/layout variation, not anomaly.",
+            "status": "benign"
+          },
+          {
+            "id": "C2",
+            "anomaly_conf": 0.22,
+            "benign_conf": 0.78,
+            "positive_evidence": "There is a slight dark notch/protrusion at the top edge center of the query box that could indicate a minimally lifted flap.",
+            "benign_explanation": "The top-edge irregularity is very small and not clearly separable from normal carton seam/flap geometry or perspective shadow. It is weak evidence and does not rise to a clear defect.",
+            "status": "benign"
+          }
+        ],
+        "final_label": "normal",
+        "final_confidence": 0.89
+      }
+    },
+    "cost_tokens": {
+      "input": 3943,
+      "output": 569
+    },
+    "latency_sec": 62.14,
+    "error": null
+  },
+  {
+    "item_id": "D2_0066",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0178",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0156",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0016",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0117",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0012",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0004",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 0,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0103",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0139",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0155",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0114",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0120",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0100",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0141",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0166",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0179",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0105",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0116",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0127",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0147",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0174",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0124",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0109",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0094",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0165",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0125",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0110",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0164",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0171",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0135",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0142",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0115",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0096",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0122",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0161",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0154",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0128",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0158",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0126",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0111",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0176",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0151",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0134",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0104",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0175",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0098",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0093",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0152",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0148",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0131",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0132",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0113",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "cigarette_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0140",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0136",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0123",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_box",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0168",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0108",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0119",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0118",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0150",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_package",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0149",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0172",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0177",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "drink_can",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  },
+  {
+    "item_id": "D2_0129",
+    "domain": "retail",
+    "domain_code": "D2",
+    "label_gt": 1,
+    "split": "test",
+    "source_dataset": "GoodsAD",
+    "category": "food_bottle",
+    "label_pred": 0,
+    "anomaly_score": 0.5,
+    "anomaly_type_pred": null,
+    "raw_output": null,
+    "cost_tokens": {
+      "input": 0,
+      "output": 0
+    },
+    "latency_sec": 0.0,
+    "error": "Error code: 503 - {'error': {'message': 'Service temporarily unavailable', 'type': 'api_error'}}"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "a_wins_rules": [
+    "If the query image contains a complex object with a specific orientation (e.g., electronic components, nuts) and the Agent explicitly identifies a rotation or alignment mismatch compared to references, trust the Agent.",
+    "If the Agent's rationale explicitly states that a suspected defect (e.g., discoloration, missing text) was verified as a 'normal variation' present in the reference images, trust the Agent over the Direct branch."
+  ],
+  "b_wins_rules": [
+    "If the Direct branch identifies a small, localized foreign object or contamination (e.g., a fiber on fabric) with a specific bounding box, trust the Direct branch.",
+    "If the Direct branch detects a missing printed feature (e.g., logo, text) on a capsule or similar object, trust the Direct branch, as the Agent may incorrectly classify such omissions as normal variations."
+  ],
+  "a_evidence": [
+    "D1_0009",
+    "D1_0038",
+    "D1_0064",
+    "D1_0174"
+  ],
+  "b_evidence": [
+    "D1_0073",
+    "D1_0111",
+    "D1_0137"
+  ],
+  "raw": "```json\n{\n  \"a_wins_rules\": [\n    \"If the query image contains a complex object with a specific orientation (e.g., electronic components, nuts) and the Agent explicitly identifies a rotation or alignment mismatch compared to references, trust the Agent.\",\n    \"If the Agent's rationale explicitly states that a suspected defect (e.g., discoloration, missing text) was verified as a 'normal variation' present in the reference images, trust the Agent over the Direct branch.\"\n  ],\n  \"b_wins_rules\": [\n    \"If the Direct branch identifies a small, localized foreign object or contamination (e.g., a fiber on fabric) with a specific bounding box, trust the Direct branch.\",\n    \"If the Direct branch detects a missing printed feature (e.g., logo, text) on a capsule or similar object, trust the Direct branch, as the Agent may incorrectly classify such omissions as normal variations.\"\n  ]\n}\n```",
+  "tokens": {
+    "input": 3498,
+    "output": 203
+  },
+  "error": null,
+  "partition_stats": {
+    "agree_correct": 29,
+    "agree_wrong": 4,
+    "disagree_a_wins_total": 4,
+    "disagree_b_wins_total": 3,
+    "reflected_a": 4,
+    "reflected_b": 3,
+    "skipped": 0
+  },
+  "domain_code": "D1",
+  "seconds": 19.0
+}

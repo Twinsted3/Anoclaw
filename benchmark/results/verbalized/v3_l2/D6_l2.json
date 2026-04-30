@@ -1,0 +1,237 @@
+{
+  "domain": "D6",
+  "seed": 0,
+  "k": 10,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D6_0002",
+    "D6_0006",
+    "D6_0010",
+    "D6_0027",
+    "D6_0037",
+    "D6_0053",
+    "D6_0067",
+    "D6_0070",
+    "D6_0074",
+    "D6_0081",
+    "D6_0090",
+    "D6_0092",
+    "D6_0098",
+    "D6_0101",
+    "D6_0124",
+    "D6_0138",
+    "D6_0159",
+    "D6_0176",
+    "D6_0177",
+    "D6_0178"
+  ],
+  "validation_ids": [
+    "D6_0007",
+    "D6_0008",
+    "D6_0009",
+    "D6_0020",
+    "D6_0029",
+    "D6_0036",
+    "D6_0040",
+    "D6_0079",
+    "D6_0082",
+    "D6_0086",
+    "D6_0107",
+    "D6_0110",
+    "D6_0111",
+    "D6_0132",
+    "D6_0140",
+    "D6_0148",
+    "D6_0149",
+    "D6_0157",
+    "D6_0164",
+    "D6_0165"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D6",
+        "butterflyFish"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag sparse point density or gaps in protruding fin-like structures as defects.",
+          "covers_items": [
+            "D6_0092"
+          ],
+          "justification": "The agent missed a defect in a fin-like protrusion because it dismissed the sparse point density as texture irregularity. Protrusions are critical geometric features where density gaps indicate material loss.",
+          "side": "FN"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D6",
+        "diamond"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag distinct linear cracks or tears in the point cloud, even if the overall shape appears intact.",
+          "covers_items": [
+            "D6_0177"
+          ],
+          "justification": "The agent failed to detect a clear linear crack in the lower-right quadrant, likely dismissing it due to the lack of global shape deformation.",
+          "side": "FN"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D6",
+        "airplane"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag items with large central voids or missing mass in the main body as anomalies.",
+          "covers_items": [
+            "D6_0090",
+            "D6_0098"
+          ],
+          "justification": "The agent missed anomalies characterized by significant missing mass or voids in the center of the structure, likely due to a failure to recognize global density deficits as defects.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag items with distinct structural protrusions or detached clusters at the periphery as anomalies.",
+          "covers_items": [
+            "D6_0178"
+          ],
+          "justification": "The agent failed to detect a clear protrusion (detached cluster) at the top of the structure, indicating a need to prioritize peripheral shape deviations.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag natural density variations or minor voids in the center of the main body as anomalies.",
+          "covers_items": [
+            "D6_0002"
+          ],
+          "justification": "The agent incorrectly flagged a normal item due to a perceived 'central void', suggesting it is over-sensitive to natural density fluctuations in the core of the point cloud.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D6",
+        "car"
+      ],
+      "k": 5,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the upper surface lacks the two distinct raised bumps (ears) present in normal references.",
+          "covers_items": [
+            "D6_0176",
+            "D6_0101"
+          ],
+          "justification": "The agent missed anomalies where the defining 'bump' features on the top surface were missing. The agent's reasoning correctly identified the missing bumps but failed to output a high anomaly score, suggesting a threshold issue for missing structural features.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag as anomaly if the object is a complete car body with standard point density variations.",
+          "covers_items": [
+            "D6_0070",
+            "D6_0053",
+            "D6_0081"
+          ],
+          "justification": "The agent falsely flagged normal car bodies due to perceived 'missing sections' or 'density irregularities'. These are likely artifacts of the point cloud rendering or normal geometric curvature, not actual defects.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D6",
+        "duck"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag the object as fragmented if the two lobes are connected by a continuous, albeit thin, bridge of points.",
+          "covers_items": [
+            "D6_0010",
+            "D6_0074"
+          ],
+          "justification": "The agent incorrectly identified the natural 'neck' or constriction of the duck shape as a structural break. The point cloud is continuous across the gap, indicating a single object rather than a defect.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "unit": [
+        "D6",
+        "candybar"
+      ],
+      "k": 3,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag items with subtle point density variations or color gradient shifts as anomalies, even if the overall shape appears intact.",
+          "covers_items": [
+            "D6_0138",
+            "D6_0124"
+          ],
+          "justification": "The agent missed anomalies in both items because it relied on gross shape matching. The ground truth indicates that subtle textural defects (density/color) are valid anomalies in this class.",
+          "side": "FN"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "unit": [
+        "D6",
+        "chicken"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag global shape mismatches or silhouette deviations as anomalies, even if local surface texture appears normal.",
+          "covers_items": [
+            "D6_0159"
+          ],
+          "justification": "The agent missed the anomaly in D6_0159 because it focused on local features (color, lobe) but failed to recognize the overall silhouette mismatch as a defect.",
+          "side": "FN"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag natural anatomical protrusions (lobes) or global orientation shifts as defects if they match reference shapes.",
+          "covers_items": [
+            "D6_0067",
+            "D6_0037"
+          ],
+          "justification": "The agent incorrectly flagged natural structural variations (top protrusion, lobe) and orientation differences as anomalies, failing to recognize them as normal biological variance.",
+          "side": "FP"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Ignore sharp color gradients or lines that follow the object's natural curvature, as they are likely rendering artifacts.",
+          "covers_items": [
+            "D6_0006"
+          ],
+          "justification": "The agent misidentified a sharp curved line (likely a lighting or rendering artifact) as a defect, whereas it is a common visual feature in these point cloud renderings.",
+          "side": "FP"
+        }
+      ],
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,1082 @@
+[
+  {
+    "item_id": "D10_0058",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits normal variations in shape and texture that are consistent with the reference images. No anomalous features were found after refutation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0065",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The only potential anomaly (the central void) was successfully refuted by observing the same feature in the normal reference images. The query image exhibits all characteristics of the normal class: single contiguous mass, granular texture, and organic shape.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0004",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear internal void (cavitation) in the center of the object, which is absent in all normal reference images. This confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0010",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits internal cavitation (black holes within the white mass), a feature explicitly defined as an anomaly in the domain rules and confirmed absent in all reference images via side-by-side comparison.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0083",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits structural fragmentation (two disconnected objects), which is explicitly excluded from the allowed variations of the normal reference class (single object). This confirms the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0003",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits structural fragmentation, consisting of two disconnected components, whereas all reference images show single contiguous objects. This deviation from the normal signature confirms the presence of an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0056",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal instance: a single contiguous mass, uniform granular texture, and organic boundaries. No candidate features for anomalies (fragmentation, voids, erosion, geometric deformation, or contamination) are present. The initial low anomaly score is confirmed as the object matches the normal signature perfectly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0043",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query object possesses a distinct internal void (black hole) and a protrusion that are absent in all reference images, which are smooth, contiguous masses. These features match the 'Internal cavitation' and 'Structural fragmentation' anomaly modes defined in the rulebook.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0034",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal instance: a single contiguous white region with uniform granular texture and organic boundaries. No features matching the hypothesized anomaly modes (fragmentation, cavitation, erosion, deformation, contamination) are present. The initial low anomaly score is confirmed.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0039",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal instance: a single contiguous mass with uniform granular texture and organic boundaries. No candidate defect features (fragmentation, voids, erosion, or contamination) were identified to warrant further refutation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0037",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains a distinct, sharp black void (internal cavitation) cutting through the white mass. In contrast, the reference images (ref0-ref3) show solid, contiguous white regions without such internal holes. According to the domain rules, 'internal cavitation' is a specific anomaly mode. Since this feature is present in the query but absent in the normal references, the query is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0013",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits internal cavitation (black holes) which is explicitly listed as an anomaly mode and is absent in all reference images. The feature survives refutation, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0007",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (black hole) within the white region. The side-by-side comparison with reference images confirms that this feature is absent in all normal samples, which are solid and contiguous. This deviation matches the 'Internal cavitation' anomaly mode defined in the rules.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0072",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal instance: a single contiguous mass, uniform granular texture, and organic boundaries. No candidate defect features were identified that would require refutation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0055",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits structural fragmentation (two disconnected components), which is explicitly defined as an anomaly mode and is not observed in any of the normal reference images.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0040",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains a large internal void (black hole) and a sharp linear cut, features that are completely absent in all reference images which show solid, contiguous masses. These features match the 'Internal cavitation' and 'Geometric deformation' anomaly modes defined in the rulebook, confirming the query is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0082",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (internal void) was successfully refuted by observing the same feature in the normal reference images. No other defect-like features remain.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0069",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image exhibits structural fragmentation (two disconnected components), whereas all reference images show a single, contiguous object. This feature is not present in the normal baseline and matches the 'Structural fragmentation' anomaly mode defined in the rules.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0005",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits clear internal cavitation (a black hole) and structural fragmentation, features that are entirely absent in the reference images which all display solid, contiguous white regions. These deviations confirm the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0041",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single contiguous mass with a granular texture and organic boundaries, consistent with the normal reference images. No anomalous features such as fragmentation, internal voids, or geometric deformities were detected. The side-by-side comparison confirmed that observed variations are within the normal range.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0085",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (black hole) within the white region, which is absent in all normal reference images. This confirms the presence of an anomaly (internal cavitation).",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0008",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison reveals that the 'fragmentation' observed in the query image is also present in Reference Image 3 (the fourth image in the composite). Since the reference set defines the normal baseline and includes a fragmented instance, this structural feature is a valid variation within the class, not an anomaly. The query image is therefore normal.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0033",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits an internal black void (cavitation) which is absent in all reference images. This feature survives refutation and matches the 'Internal cavitation' anomaly mode defined in the rules, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0061",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single contiguous object with a granular texture and organic shape that matches the normal variations seen in the reference images. No anomalies such as holes, fragmentation, or noise were detected.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0023",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single contiguous white region with a uniform granular texture, consistent with the normal reference images. The small protrusion is a natural variation and not an anomaly. No other defect-like features are present.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0088",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single contiguous object with granular texture. The reference profiler explicitly allows for size variation, rotation, and texture density differences. The query's features fall entirely within these allowed normal variations, and no defect-like features (holes, fragmentation) are present.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0074",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits structural fragmentation (two disconnected components), which is explicitly absent in all reference images and contradicts the normal signature of a single contiguous region. The anomaly is confirmed.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0053",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal black void (cavitation) which is absent in all reference images. This violates the normal signature of 'Absence of internal voids' and matches the 'Internal cavitation' anomaly mode. The feature was successfully refuted against the reference pool, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0070",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single, contiguous object with a uniform granular texture and organic boundaries, which are all consistent with the normal reference images. No anomalous features such as fragmentation, voids, or contamination were found.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0077",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of the normal signature: a single contiguous region, uniform granular texture, organic boundaries, and no internal voids or external artifacts. The candidate features (shape irregularity, texture variation) are consistent with the natural variation seen in the reference images and do not constitute anomalies.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0060",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single, contiguous white region with uniform granular texture and organic boundaries, matching the normal signature defined in the rulebook and observed in the reference images. No candidate defect features (fragmentation, voids, noise) were identified.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0025",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains a distinct, large internal void (black hole) within the white mass. In contrast, the reference images show solid, contiguous white regions without such internal cavities. According to the domain rules, 'internal cavitation' is a specific anomaly mode. Since this feature is present in the query but absent in the normal references, the query is definitively anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0015",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains a large internal black void and structural fragmentation, whereas all reference images show solid, contiguous white regions. This 'internal cavitation' is a definitive anomaly not present in the normal baseline.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0079",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single contiguous stomach-like object with granular texture. The observed minor texture noise is explicitly listed as an allowed variation by the reference profiler. No other anomaly modes (fragmentation, voids, deformation) are present.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0050",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (black hole) within the white granular mass, a feature explicitly defined as 'Internal cavitation' in the anomaly modes. The side-by-side comparison with reference images confirms this void is absent in all normal samples, which are solid and contiguous. Therefore, the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0042",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a single, contiguous object with a uniform granular texture and organic boundaries, fully consistent with the provided normal reference images. No anomalies such as holes, fragmentation, or texture defects were found.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0006",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits an internal black void (cavitation) which is a structural defect not present in any of the normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0051",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits internal cavitation (black holes within the white mass), a feature explicitly defined as an anomaly in the domain rules. The side-by-side comparison with reference images confirms that normal instances are solid and lack these voids. Therefore, the query is anomalous.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0027",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal instance: a single contiguous object with uniform granular texture and organic boundaries. No candidate features for fragmentation, cavitation, erosion, deformation, or contamination were identified, and the appearance is consistent with the provided reference images.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0066",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (hole) within the white object. The side-by-side comparison with reference images confirms that normal instances are solid and contiguous, lacking such cavities. This feature survives refutation and is classified as an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0086",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits structural fragmentation (two disconnected components), which is explicitly defined as an anomaly mode. The side-by-side comparison confirms that all normal reference images consist of single, contiguous masses, refuting the possibility that this fragmentation is a normal variation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0081",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a structural anomaly where the object is fragmented into two disconnected components, a feature absent in all normal reference images which show single contiguous masses.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0071",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits internal cavitation (black holes) which is explicitly defined as an anomaly in the domain rules. The side-by-side comparison confirms this feature is absent in the normal reference images, validating the anomaly detection.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0057",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (black hole) within the white region. The side-by-side comparison with reference images confirms that this feature is absent in all normal samples, which are solid and contiguous. This constitutes a clear 'Internal cavitation' anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0062",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains distinct black voids (holes) within the white granular mass, whereas the reference images show solid, contiguous white regions without internal cavities. This 'Internal cavitation' is a clear anomaly according to the domain rules.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0016",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (cavitation) which is absent in all reference images. According to the domain rules, internal holes indicate an anomaly. The refutation protocol confirms this feature is not a normal variation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0002",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single, contiguous, granular white shape with an irregular oval contour, which matches the normal signature and allowed variations (texture density, rotation) defined by the reference profiler. No anomalies such as fragmentation, holes, or contamination are present.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0068",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains a distinct internal black void (hole) in the upper region, whereas the reference images (ref0-ref3) show solid, contiguous white masses without such internal cavities. This 'internal cavitation' is explicitly defined as an anomaly mode in the domain rules, and the feature is not present in the normal references, confirming the anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0038",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits clear internal cavitation (a black hole) and structural fragmentation (a detached piece), which are explicitly defined as anomaly modes. The side-by-side comparison with reference images confirms these features are absent in the normal class, validating the anomaly classification.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0009",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single contiguous mass with uniform texture and a minor boundary indentation. The reference profiler confirms that such shape variations and internal features are normal for this class. No anomalies like voids, fragmentation, or texture defects are present.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0047",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a single, contiguous object with the expected granular texture and no internal defects. The reference profiler explicitly lists 'size variation' as a normal characteristic, refuting the initial concern about the object's small size. Thus, the image is classified as normal.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0049",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains a distinct black void (hole) within the white region, whereas the reference images show solid, contiguous white masses without internal cavities. This 'Internal cavitation' is a clear anomaly according to the domain rules.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0017",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains large internal voids (black holes) and is fragmented into disconnected components, whereas all reference images show solid, contiguous shapes with no internal cavities. These features (internal cavitation and structural fragmentation) are definitive anomalies according to the domain rules.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0000",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of the normal signature: a single contiguous object with uniform granular texture, no internal voids, and a clean background. No candidate defect features were identified to warrant further refutation.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0046",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a single, contiguous object with a uniform granular texture and organic boundaries, matching the normal signature defined in the rulebook and observed in the reference images. No fragmentation, voids, or contamination are detected.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0029",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits internal cavitation (holes) and structural fragmentation, which are explicitly defined as anomaly modes and are not present in any of the normal reference images.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0109",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single, contiguous white region with a uniform granular texture and no internal voids or external noise, which aligns perfectly with the 'normal_signature' defined in the domain rules. No candidate defect features were identified to warrant refutation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0001",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image shows a tiny speck that lacks the defining shape ('irregular curved organ') and texture ('granular') of the reference class. Although 'fragmentation' is an allowed variation, the query represents a total collapse of the object's scale and identity, which is inconsistent with the normal baseline of large, contiguous organ cross-sections. Thus, it is an anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0073",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits clear internal cavitation (a black hole) and structural fragmentation (a disconnected piece), both of which are explicitly defined as anomaly modes in the domain rules. The side-by-side comparison with reference images confirms these features are not present in the normal class, leading to a high anomaly score.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0089",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a fragmented object with two disconnected components, a feature explicitly absent in all reference images which show only single contiguous masses. This confirms the anomaly.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0098",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits no anomalous features; its texture and shape are consistent with the normal reference images, confirming it is a normal instance.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0048",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single, contiguous object with uniform texture. The profiler confirms that size and shape variations are normal for this class. No anomaly features (fragmentation, holes, noise) are present.",
+    "label": 0,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0096",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits structural fragmentation (two disconnected components), which is explicitly defined as an anomaly in the domain rules and is not observed in any of the normal reference images.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0169",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a single, contiguous, granular white region. The reference profiler confirms that variations in size, density, and contour are normal for this class. No anomalous features (like fragmentation, voids, or foreign objects) are present. Thus, the image is normal.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0145",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits structural fragmentation (a disconnected component), which is explicitly listed as an anomaly mode. The side-by-side comparison with reference images confirms this feature is absent in normal samples, validating the anomaly detection.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0125",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a single, contiguous, granular white object with an organic shape. The reference profiler confirms that variations in shape, size, rotation, and texture density are normal for this class. No anomalies such as fragmentation, voids, or noise are present.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0090",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (internal void) was found in a reference image, proving it is a normal characteristic of the class. No other defects were observed.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0156",
+    "score": 0.98,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a tiny, isolated speck that lacks the characteristic large, contiguous, bean-shaped structure and granular texture of the normal reference objects. This extreme deviation in size and form confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0116",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a clear structural fragmentation where the object is broken into disconnected parts, a feature absent in all normal reference images. This confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0114",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of the normal signature: a single contiguous mass with uniform granular texture and organic boundaries. No candidate defect features (fragmentation, voids, erosion, geometric anomalies, or contamination) were identified to warrant further refutation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0093",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a prominent black cross-shaped void (internal cavitation) which is absent in all reference images. This violates the normal signature of a 'single, isolated, contiguous white region' and matches the hypothesized anomaly mode of internal cavitation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0177",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits an internal void (hole) which is explicitly defined as an anomaly mode ('Internal cavitation') in the domain rules. The refutation step confirmed that this feature is absent in all reference images, validating the anomaly classification.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0110",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single, contiguous, granular white region with no internal voids or external noise. The small size and texture are consistent with the allowed variations ('slice thickness', 'internal texture density') identified in the reference profiler. No anomaly is detected.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0097",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (hole) within the white granular mass, a feature explicitly defined as 'Internal cavitation' in the anomaly rules. The side-by-side comparison with reference images confirms this void is absent in normal samples, validating the anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0129",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single, contiguous white region with uniform granular texture and no internal voids or fragmentation. These features align perfectly with the normal signature and allowed variations (slice thickness, texture noise) defined by the reference profiler for stomach cross-sections. No anomalous features were found.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0099",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (bright internal patch) was confirmed to be a normal variation by its presence in the reference images. No other defects like fragmentation or external noise were found.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0113",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (internal void) was refuted by the side-by-side comparison, which showed the same feature in normal reference images. The query image exhibits no other deviations from the normal signature.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0121",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a single, contiguous object with a granular texture that falls within the normal variation range established by the reference images. All candidate defect features were refuted by the side-by-side comparison.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0128",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query object is structurally fragmented into two disconnected components, whereas all four reference images show single, contiguous masses. This 'Structural fragmentation' is a definitive anomaly according to the domain rules and is not present in the normal reference set.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0133",
+    "score": 0.08,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (internal bright spots) is present in the normal reference images, indicating it is a natural variation. The query object exhibits no other defects like fragmentation or voids, confirming it is normal.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0141",
+    "score": 0.88,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains a distinct internal black void (hole) within the white region, whereas the reference images (ref0-ref3) show solid, contiguous white masses without such internal cavities. This 'Internal cavitation' is a hypothesized anomaly mode and is not present in the normal references, confirming the query is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0138",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of the normal signature: a single contiguous mass with uniform granular texture and no internal voids or fragmentation. Unlike the reference images which show clear anomalies (holes, splits), the query object is structurally intact and uniform.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0100",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays significant structural fragmentation with multiple disconnected components, which is not a consistent feature in the reference images (most show single contiguous objects). This deviation from the normal signature confirms the presence of an anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0148",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (cavitation) which is absent in all normal reference images. This feature survives the refutation protocol, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0115",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a fragmented object with multiple disconnected components, a feature completely absent in the reference images which all show single contiguous objects. This structural break confirms the anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0150",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it contains multiple disconnected components (fragmentation), whereas the reference images and domain rules define a normal object as a single, contiguous region. This feature was successfully refuted against the reference set.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0143",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal instance: a single contiguous region, uniform granular texture, and organic boundaries, with no signs of fragmentation, voids, or contamination. No candidate defect features were identified to warrant further refutation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0146",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays structural fragmentation (two disconnected components), a feature absent in all reference images which show single contiguous objects. This confirms the anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0103",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal instance: a single contiguous white region with granular texture and organic boundaries against a black background. No candidate features for anomalies (fragmentation, voids, deformation, contamination) were identified. The initial low anomaly score is maintained as the object aligns with the normal signature.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0144",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single contiguous object with a granular texture and organic shape, matching the normal baseline of a stomach cross-section. Observed variations in texture density and boundary smoothness are explicitly listed as allowed variations in the reference profile, confirming the image is normal.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0123",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains a distinct internal void (black hole) within the white granular mass, whereas all four reference images show solid, contiguous objects without any internal cavitation. This feature matches the 'Internal cavitation' anomaly mode defined in the rulebook and is not present in the normal references, confirming the anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0111",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single white textured blob. The reference profiler explicitly allows for size variation and minor shape deformation, which covers the observed characteristics of the query. No anomalous features like fragmentation or voids are present.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0108",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (hole) within the white region, a feature explicitly absent in all reference images. This confirms the presence of an anomaly consistent with 'Internal cavitation'.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0178",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query object exhibits all characteristics of a normal instance: it is a single, contiguous mass with a uniform granular texture and organic boundaries. The candidate features (small size, slight elongation) are variations seen in the reference set and do not constitute anomalies per the rulebook. No defects like fragmentation, cavitation, or contamination are present.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0154",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (black hole) within the white granular mass. The side-by-side comparison with reference images confirms that this feature is absent in all normal samples, which are solid and contiguous. Therefore, the query is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0139",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirms that the query image contains distinct internal black voids (holes) within the white granular mass, whereas all four reference images show solid, contiguous white regions without such internal cavities. This 'internal cavitation' is explicitly defined as an anomaly mode in the domain rules, and the feature is not found in the normal references.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0101",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of the normal signature: a single contiguous white region with uniform granular texture and organic boundaries. No candidate anomaly features (fragmentation, voids, erosion, deformation, or contamination) were observed. The object is consistent with the reference images.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0105",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomaly (boundary indentation) is a common feature in the reference images, confirming it is a normal variation. The object exhibits no other defects.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0092",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a single, contiguous, irregular white shape with granular texture. The reference profiler confirms that size, rotation, and texture density variations are normal for this class. No anomalies such as fragmentation, voids, or geometric deformation are present.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0158",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (hole) within the white region, a feature explicitly absent in all reference images and forbidden by the domain rules. This confirms the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0161",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of the normal signature: a single contiguous region, uniform granular texture, organic boundaries, and no internal voids or external artifacts. No candidate defect features were identified that require refutation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0155",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains an internal black void (cavitation) within the white region, which is explicitly defined as an anomaly in the domain rules. This feature is absent in all reference images, confirming the object is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0132",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a structural anomaly where the object is fragmented into disconnected components, a feature not observed in any of the normal reference images.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0118",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (black hole) within the white granular mass. This feature is absent in all reference images, which display solid, contiguous structures. According to the domain rules, internal cavitation is a definitive anomaly.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0166",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (black hole) within the white region, a feature explicitly defined as 'Internal cavitation' in the anomaly modes. The side-by-side comparison with reference images confirms this feature is absent in normal samples, definitively classifying the query as anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0164",
+    "score": 0.95,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a clear internal black void (hole) within the white mass. The side-by-side comparison with reference images confirms that this feature is absent in all normal samples, which are solid. This matches the 'Internal cavitation' anomaly mode, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0107",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal instance: a single contiguous mass, uniform granular texture, and organic boundaries, with no signs of fragmentation, voids, or contamination. No candidate defect features were identified to warrant further refutation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0126",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (black hole) which is absent in all reference images. This matches the 'Internal cavitation' anomaly mode defined in the rules, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0095",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a distinct internal void (black hole) within the white object, which is explicitly defined as an anomaly ('Internal cavitation') in the domain rules. The side-by-side comparison with reference images confirms that this feature is absent in normal instances, validating the anomaly detection.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0170",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image is anomalous because it contains multiple disconnected components (fragmentation), while the reference images and domain rules define the normal state as a single contiguous object.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0130",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a single contiguous object with a granular texture consistent with the normal reference images. The initially suspected texture sparsity was refuted by observing similar variations in the reference set. No anomalies such as fragmentation, voids, or contamination are present.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0124",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The suspected anomalies (protrusion and internal voids) are present in the reference images, confirming they are normal variations of the object class. The query image is consistent with the normal references.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0122",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits internal cavitation (black holes) which is absent in all reference images, confirming it as an anomaly according to the domain rules.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0165",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image displays a tiny, isolated speck that lacks the defining granular/stippled texture of the normal reference instances. While size variation is allowed, the extreme reduction in size coupled with the complete absence of the characteristic texture indicates this is likely a fragmentation artifact or noise, not a valid normal instance.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0131",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (black hole) within the white granular mass, a feature explicitly defined as 'Internal cavitation' in the anomaly modes. The side-by-side comparison confirms this feature is absent in all reference images, which are solid. Therefore, the query is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0134",
+    "score": 0.15,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of a normal instance: a single contiguous white region with uniform granular texture, organic boundaries, and no internal voids or background noise. No candidate defect features were identified to warrant further refutation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0174",
+    "score": 0.1,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits all characteristics of the normal signature: a single contiguous region with uniform granular texture and no internal voids or geometric deformities. No candidate defect features were identified to warrant further refutation.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0127",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image contains a small white speck in the black background area, which is absent in all reference images. This matches the 'Contamination' anomaly mode defined in the rules, confirming the image is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0153",
+    "score": 0.92,
+    "mode": "anomaly_detection",
+    "rationale": "The query image exhibits a clear internal void (hole) within the white region, which is explicitly listed as an anomaly mode ('Internal cavitation'). The side-by-side comparison with reference images confirms that normal instances are solid and lack such voids. Therefore, the query is anomalous.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  },
+  {
+    "item_id": "D10_0149",
+    "score": 0.05,
+    "mode": "anomaly_detection",
+    "rationale": "The side-by-side comparison confirmed that the observed texture variation is a natural characteristic of the class, present in the reference images. No anomalous features (fragmentation, voids, deformation) were found.",
+    "label": 1,
+    "domain_code": "D10",
+    "category": "liver_ct"
+  }
+]

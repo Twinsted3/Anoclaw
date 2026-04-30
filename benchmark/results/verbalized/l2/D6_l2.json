@@ -1,0 +1,259 @@
+{
+  "domain": "D6",
+  "seed": 0,
+  "k": 10,
+  "use_l1_context": false,
+  "selection_frac": 0.5,
+  "selection_ids": [
+    "D6_0002",
+    "D6_0006",
+    "D6_0010",
+    "D6_0027",
+    "D6_0037",
+    "D6_0053",
+    "D6_0067",
+    "D6_0070",
+    "D6_0074",
+    "D6_0081",
+    "D6_0090",
+    "D6_0092",
+    "D6_0098",
+    "D6_0101",
+    "D6_0124",
+    "D6_0138",
+    "D6_0159",
+    "D6_0176",
+    "D6_0177",
+    "D6_0178"
+  ],
+  "validation_ids": [
+    "D6_0007",
+    "D6_0008",
+    "D6_0009",
+    "D6_0020",
+    "D6_0029",
+    "D6_0036",
+    "D6_0040",
+    "D6_0079",
+    "D6_0082",
+    "D6_0086",
+    "D6_0107",
+    "D6_0110",
+    "D6_0111",
+    "D6_0132",
+    "D6_0140",
+    "D6_0148",
+    "D6_0149",
+    "D6_0157",
+    "D6_0164",
+    "D6_0165"
+  ],
+  "units": [
+    {
+      "unit": [
+        "D6",
+        "butterflyFish"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the point cloud exhibits a continuous rainbow color gradient, as this indicates a rendering artifact rather than natural texture.",
+          "justification": "The agent missed the anomaly because it focused on structural gaps. The rainbow gradient is a definitive visual artifact indicating a synthetic or corrupted input, which should be flagged regardless of structural similarity to references.",
+          "from_item": "D6_0092"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D6",
+        "diamond"
+      ],
+      "k": 1,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If a distinct linear crack or tear is detected in the lower-right quadrant, classify as anomaly regardless of initial confidence.",
+          "justification": "The agent initially identified a linear crack but refuted it. This rule forces classification as anomaly when such a specific defect is found, preventing false negatives.",
+          "from_item": "D6_0177"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D6",
+        "airplane"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If the object lacks a compact, solid mass and appears as a diffuse, irregular point cloud, classify as anomaly.",
+          "justification": "The agent hesitated because the diffuse point cloud did not match standard defect patterns. This rule explicitly flags non-compact, scattered structures as anomalies, correcting the underprediction.",
+          "from_item": "D6_0098"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag large central voids or missing mass in the main body as anomalies if the object is a point-cloud or particle-based rendering.",
+          "justification": "The agent incorrectly identified the natural empty space within a point-cloud airplane rendering as a defect. This rule clarifies that such voids are expected in this specific data modality.",
+          "from_item": "D6_0002"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If the object exhibits a non-uniform, multi-spectral color gradient (e.g., rainbow) across its surface, classify as anomaly.",
+          "justification": "The agent hesitated despite identifying structural defects. This rule explicitly flags the unnatural rainbow coloring as a definitive anomaly, overriding uncertainty about shape irregularities.",
+          "from_item": "D6_0178"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If the object exhibits a large central void or missing mass where a solid structure is expected, classify as anomaly.",
+          "justification": "The agent initially detected the void but lowered the score. This rule reinforces that missing mass in a solid structure is a definitive anomaly, preventing underprediction.",
+          "from_item": "D6_0090"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D6",
+        "car"
+      ],
+      "k": 5,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Treat natural variations in point cloud density and surface curvature as normal if consistent with reference images.",
+          "justification": "The agent flagged natural density variations and curvature as defects. This rule clarifies that such features are acceptable if they match reference patterns, preventing false positives.",
+          "from_item": "D6_0053"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If the upper surface lacks the two distinct raised bumps consistently present in normal references, classify as anomaly.",
+          "justification": "The agent correctly identified the missing bumps but was uncertain. This rule explicitly defines the absence of these specific structural features as a definitive anomaly, resolving the hesitation.",
+          "from_item": "D6_0176"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag images as anomalous solely based on point-cloud rendering artifacts or color gradients if the underlying object silhouette is intact.",
+          "justification": "The agent misinterpreted the visual style (point cloud) as a structural defect. This rule clarifies that rendering artifacts do not constitute anomalies when the object shape is complete.",
+          "from_item": "D6_0081"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag missing mid-foot sections as anomalies if side-by-side comparison confirms the feature is consistent across all reference images.",
+          "justification": "The agent initially suspected a defect due to a missing mid-foot section. The rule clarifies that consistency with reference images overrides this specific visual suspicion, preventing false positives.",
+          "from_item": "D6_0070"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If the object exhibits a missing structural region or significant boundary discontinuity compared to reference images, classify as anomaly.",
+          "justification": "The agent initially detected the missing upper-left region but was uncertain. This rule explicitly defines missing structural regions as anomalies, ensuring such defects are correctly flagged.",
+          "from_item": "D6_0101"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D6",
+        "duck"
+      ],
+      "k": 2,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag structural fragmentation as an anomaly if the object is composed of a point-cloud or stippled texture, as gaps are inherent to the style.",
+          "justification": "The agent incorrectly identified the natural gaps in the point-cloud rendering as a defect. This rule clarifies that for stippled textures, discontinuities are expected and should not trigger an anomaly score.",
+          "from_item": "D6_0074"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag point-cloud or stippled textures as anomalies if the global silhouette matches the class shape.",
+          "justification": "The agent incorrectly interpreted the granular, fragmented texture as a defect. This rule clarifies that texture style (stippling) is acceptable provided the overall shape remains intact.",
+          "from_item": "D6_0010"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D6",
+        "candybar"
+      ],
+      "k": 3,
+      "rules": [
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the object exhibits a continuous rainbow color gradient, as normal candy bars are monochromatic.",
+          "justification": "The agent incorrectly classified the rainbow gradient as normal. This rule explicitly defines the multi-colored gradient as a defect, correcting the underprediction.",
+          "from_item": "D6_0138"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "If the object shape, color gradient, and point distribution match the reference class, classify as normal regardless of initial uncertainty.",
+          "justification": "The agent correctly identified visual similarity but hesitated due to lack of explicit defect features. This rule reinforces that matching reference characteristics confirms normality, preventing false anomaly scores.",
+          "from_item": "D6_0027"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "Flag as anomaly if the object exhibits a rainbow color gradient, as the standard class definition requires a uniform or monochromatic color scheme.",
+          "justification": "The agent incorrectly classified the item as normal because it focused on shape and density. This rule explicitly identifies the non-standard rainbow gradient as a defect feature, correcting the underprediction.",
+          "from_item": "D6_0124"
+        }
+      ]
+    },
+    {
+      "unit": [
+        "D6",
+        "chicken"
+      ],
+      "k": 4,
+      "rules": [
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag distinct color gradients or sharp curved lines as anomalies if they are consistent with the object's overall point-cloud texture.",
+          "justification": "The agent incorrectly identified a stylistic color gradient as a defect. This rule clarifies that such visual features are acceptable variations within the normal class distribution.",
+          "from_item": "D6_0006"
+        },
+        {
+          "rule_type": "anomaly_mode_extension",
+          "text": "If the organ silhouette exhibits significant asymmetry or an elongated lobe deviating from the standard compact shape, classify as anomaly.",
+          "justification": "The agent initially detected shape mismatch and elongation but failed to commit. This rule explicitly links structural asymmetry and lobe elongation to the anomaly class, preventing underprediction.",
+          "from_item": "D6_0159"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag the small, smooth lobe protrusion on the upper-left side of the chicken as an anomaly; this is a standard anatomical feature.",
+          "justification": "The agent incorrectly identified the normal anatomical lobe on the upper-left as a defect. This rule explicitly defines that specific protrusion as a valid normal feature, preventing false positives.",
+          "from_item": "D6_0037"
+        },
+        {
+          "rule_type": "normal_tolerance",
+          "text": "Do not flag natural top protrusions or global asymmetry as defects if they match the reference set's morphological variation.",
+          "justification": "The agent initially flagged natural shape variations (protrusion, asymmetry) as defects. This rule clarifies that such features are normal if consistent with the reference set, preventing false positives.",
+          "from_item": "D6_0067"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "D6 / butterflyFish": {
+      "butterflyFish": 1
+    },
+    "D6 / diamond": {
+      "diamond": 1
+    },
+    "D6 / airplane": {
+      "airplane": 4
+    },
+    "D6 / car": {
+      "car": 5
+    },
+    "D6 / duck": {
+      "duck": 2
+    },
+    "D6 / candybar": {
+      "candybar": 3
+    },
+    "D6 / chicken": {
+      "chicken": 4
+    }
+  }
+}

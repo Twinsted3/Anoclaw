@@ -2,41 +2,49 @@
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+*.egg-info/
+build/
+dist/
 .venv/
-.venv_qwen35/
+venv/
+.venv_*/
 
-# IDE
+# IDE / editor artifacts
 .vscode/
 .idea/
+*.swp
+.DS_Store
 
-# Claude/ARIS sessions
-.claude/
-.aris/
-
-# Data (too large for git)
-MMAD/
+# Data (download into these dirs via DATA.md; not redistributed)
 benchmark/data/
 benchmark/retrieval_index/
-experts/AnomalyVFM/checkpoints/
+experts/*/checkpoints/
+experts/*/data/
+
+# Cloned upstream baselines (see experts/README.md)
+experts/AnomalyDINO/
+experts/AnomalyVFM/
+experts/IAD-R1/
 experts/SubspaceAD/
+experts/VisualAD/
+!experts/README.md
 
-# Large result files (track selectively)
-benchmark/results/*.json
-!benchmark/results/anomaclaw_v4_qwen35_test.json
-!benchmark/results/anomaclaw_react_skill_d1_test.json
-!benchmark/results/anomaclaw_react_v2_multi.json
-!benchmark/results/anomaclaw_react_v2_d1d10.json
+# Large/transient runtime outputs
+logs/
+*.log
+test_output/
+/tmp/
 
-# Build artifacts
+# Paper build artifacts
 paper/main.aux
 paper/main.bbl
 paper/main.blg
 paper/main.log
 paper/main.out
 paper/main.pdf
+paper/*.synctex*
 
-# Logs
-logs/
-/tmp/
-test_output/
-*.log
+# OS-specific
+Thumbs.db
+.AppleDouble

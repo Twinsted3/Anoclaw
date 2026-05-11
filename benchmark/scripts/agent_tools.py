@@ -12,6 +12,12 @@ import os
 import numpy as np
 from pathlib import Path
 
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
+def _default_index_dir() -> str:
+    return os.environ.get("ANOMALYCLAW_INDEX_DIR", str(_REPO_ROOT / "benchmark" / "retrieval_index"))
+
 
 # ─── Tool 1: Visual Retrieval ────────────────────────────────────────────────
 
@@ -40,7 +46,7 @@ def _get_query_embedding(image_path, model, transform, device="cuda"):
 
 
 def tool_visual_retrieval(query_image_path, domain_code, k=4,
-                          index_dir="/hdd1/jiangxi/AD-Agent/benchmark/retrieval_index",
+                          index_dir=None,
                           device="cuda"):
     """Retrieve top-k most similar normal reference images."""
     global _retrieval_cache
@@ -55,7 +61,8 @@ def tool_visual_retrieval(query_image_path, domain_code, k=4,
 
     # Load index
     if domain_code not in _retrieval_cache:
-        index_path = os.path.join(index_dir, f"{domain_code}_index.npz")
+        idx_root = index_dir if index_dir is not None else _default_index_dir()
+        index_path = os.path.join(idx_root, f"{domain_code}_index.npz")
         if not os.path.exists(index_path):
             return []
         data = np.load(index_path, allow_pickle=True)
@@ -276,7 +283,7 @@ def tool_domain_knowledge(domain_code):
 # ─── Tool 3: Expert AD Model (DINOv2 few-shot) ──────────────────────────────
 
 def tool_expert_ad_score(query_image_path, domain_code, k=8,
-                         index_dir="/hdd1/jiangxi/AD-Agent/benchmark/retrieval_index",
+                         index_dir=None,
                          device="cuda"):
     """Few-shot AD using DINOv2 embedding distance.
     Returns anomaly_score (0-1) and interpretation.

@@ -4,10 +4,18 @@ VisualAD, AD-Copilot) and emit a LaTeX-ready row block for Table 1.
 """
 import argparse
 import json
+import os
 from pathlib import Path
 
 import numpy as np
 from sklearn.metrics import roc_auc_score
+
+
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+_DEFAULT_ROOT = os.environ.get(
+    "ANOMALYCLAW_BASELINE_DIR",
+    str(_REPO_ROOT / "benchmark" / "results" / "baselines"),
+)
 
 
 DOMAINS = ["D1", "D5", "D2", "D6", "D3", "D4", "D7", "D8", "D9", "D10", "D11", "D12"]
@@ -36,7 +44,7 @@ def per_domain_auroc(result_dir):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="/hdd1/jiangxi/AD-Agent/benchmark/results/baselines")
+    ap.add_argument("--root", default=_DEFAULT_ROOT)
     args = ap.parse_args()
 
     rows = {}

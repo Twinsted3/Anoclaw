@@ -34,7 +34,8 @@ from PIL import Image
 sys.path.insert(0, str(Path(__file__).parent))
 from infer import call_llm, extract_json, img_msg, load_and_encode, text_msg  # noqa: E402
 
-RESULTS_DIR = Path("/hdd1/jiangxi/AD-Agent/benchmark/results")
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+RESULTS_DIR = Path(os.environ.get("ANOMALYCLAW_RESULTS_DIR", _REPO_ROOT / "benchmark" / "results"))
 
 
 # ─── Helpers ────────────────────────────────────────────────────────────────
@@ -742,7 +743,7 @@ def _load_retrieval_model_v6(device: str = "cuda"):
 
 def tool_reference_retriever(query_path: str, domain_code: str | None = None,
                              k: int = 4,
-                             index_dir: str = "/hdd1/jiangxi/AD-Agent/benchmark/retrieval_index",
+                             index_dir: str | None = None,
                              device: str = "cuda",
                              item_id: str | None = None,
                              _manifest_domain: str | None = None, **_) -> dict:
@@ -755,6 +756,11 @@ def tool_reference_retriever(query_path: str, domain_code: str | None = None,
     domain_code = domain_code or _manifest_domain
     if not domain_code:
         return {"error": "domain_code required to locate retrieval index"}
+    if index_dir is None:
+        index_dir = os.environ.get(
+            "ANOMALYCLAW_INDEX_DIR",
+            str(_REPO_ROOT / "benchmark" / "retrieval_index"),
+        )
     idx_path = os.path.join(index_dir, f"{domain_code}_index.npz")
     if not os.path.exists(idx_path):
         return {"error": f"no retrieval index at {idx_path}"}

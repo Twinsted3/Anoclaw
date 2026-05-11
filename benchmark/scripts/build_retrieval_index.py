@@ -101,15 +101,21 @@ def retrieve_topk(query_path, index_path, model, transform, k=4, device="cuda"):
 
 
 if __name__ == "__main__":
-    manifest_path = "/hdd1/jiangxi/AD-Agent/benchmark/manifests/full_manifest.json"
-    output_dir = "/hdd1/jiangxi/AD-Agent/benchmark/retrieval_index"
+    from pathlib import Path as _Path
+    _repo_root = _Path(__file__).resolve().parents[2]
+    manifest_path = os.environ.get(
+        "ANOMALYCLAW_MANIFEST", str(_repo_root / "benchmark" / "manifests_v2" / "full_manifest.json")
+    )
+    output_dir = os.environ.get(
+        "ANOMALYCLAW_INDEX_DIR", str(_repo_root / "benchmark" / "retrieval_index")
+    )
     os.makedirs(output_dir, exist_ok=True)
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Loading {MODEL_NAME} on {device}...")
     model, transform = load_model(device)
 
-    domains = ["D1", "D5", "D6", "D3", "D3b", "D3c", "D3d", "D7", "D9", "D10"]
+    domains = ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10", "D11", "D12"]
     for dc in domains:
         build_index_for_domain(manifest_path, dc, output_dir, model, transform, device)
 

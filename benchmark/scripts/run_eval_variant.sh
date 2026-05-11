@@ -2,12 +2,13 @@
 # Single-variant eval runner: processes one of {l1, l2, l1l2} across all 12 domains.
 # Designed for running 3 variants in parallel (each as its own process).
 set -u
+REPO_ROOT="${REPO_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
 VARIANT=$1  # l1 | l2 | l1l2
 export QWEN_API_BASE=${QWEN_API_BASE:-http://localhost:8210/v1}
 export QWEN_MODEL=Qwen3.5-VL-27B
 export QWEN_API_KEY=${QWEN_API_KEY:-EMPTY}
 
-ROOT=/hdd1/jiangxi/AD-Agent
+ROOT=${REPO_ROOT}
 SCR=$ROOT/benchmark/scripts/verbalized_learning.py
 MAN=$ROOT/benchmark/manifests_v2
 OUT=$ROOT/benchmark/results/verbalized

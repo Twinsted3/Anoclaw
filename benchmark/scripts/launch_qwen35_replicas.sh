@@ -3,7 +3,8 @@
 # vllm_lb.py routes requests round-robin on port 8210.
 
 set -u
-MODEL_PATH="/hdd1/models/Qwen3.5-27B-FP8"
+REPO_ROOT="${REPO_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
+MODEL_PATH="${MODELS_DIR}/Qwen3.5-27B-FP8"
 SERVED_NAME="Qwen3.5-VL-27B"
 MAX_LEN=16384
 MM_LIMIT=12
@@ -11,7 +12,7 @@ UTIL=0.85
 LOG_DIR=/tmp/v6_vllm_logs
 mkdir -p "$LOG_DIR"
 
-VENV_PY=/hdd1/jiangxi/AD-Agent/.venv_qwen35/bin/python
+VENV_PY=${REPO_ROOT}/.venv_qwen35/bin/python
 
 launch_one() {
     local gpu=$1

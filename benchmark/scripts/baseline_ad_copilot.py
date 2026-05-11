@@ -89,7 +89,8 @@ def main():
     ap.add_argument("--manifest", required=True)
     ap.add_argument("--split", default="test")
     ap.add_argument("--output", required=True)
-    ap.add_argument("--model_path", default="/hdd1/jiangxi/AD-Copilot/AD-Copilot")
+    ap.add_argument("--model_path", default=os.environ.get("AD_COPILOT_DIR", ""),
+                    help="path to AD-Copilot checkpoint (or set AD_COPILOT_DIR env var)")
     ap.add_argument("--device", default="cuda:0")
     ap.add_argument("--max_edge", type=int, default=512)
     ap.add_argument("--prompt", default=DEFAULT_PROMPT)

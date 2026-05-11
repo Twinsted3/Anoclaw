@@ -1,9 +1,0 @@
-Vision-language models (VLMs) offer strong semantic reasoning for visual anomaly detection (VAD), yet they lack quantitative grounding, hallucinate defects on unfamiliar images, and cannot self-verify their judgments.
-We present \textsc{AnomalyClaw}, a training-free framework that detects anomalies through \emph{adversarial debate} between two VLM-based agents---an Anomaly Proposer that actively searches for defects and a Normality Advocate that challenges each claim with counter-evidence---grounded by an extensible pool of lightweight vision experts.
-An autonomous controller orchestrates the process: it selects which experts to invoke based on the query context, feeds their structured evidence into the debate, and terminates when claims converge or a computational budget is exhausted.
-This design replaces rigid pipelines with a self-regulating reasoning loop where the VLM decides what evidence it needs and when it has seen enough.
-We evaluate on a cross-domain benchmark spanning 12 diverse domains (industrial, 3D, remote sensing, medical, road-safety, and logical anomalies) with 1{,}440 test items.
-AnomalyClaw achieves \tbd{X.XXX} macro-averaged AUROC, improving over single-pass VLM baselines (\tbd{X.XXX}) and prior agent-based methods (\tbd{X.XXX}).
-Ablations confirm that adversarial debate outperforms single-agent reasoning by \tbd{+X.X} AUROC points, and that expert grounding contributes an additional \tbd{+X.X} points.
-The framework generalizes across multiple VLM backends without modification.
-Code, benchmark, and evaluation scripts will be released upon acceptance.

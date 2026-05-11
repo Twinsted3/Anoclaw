@@ -1,8 +1,0 @@
-Vision-language models (VLMs) offer strong semantic reasoning for visual anomaly detection (VAD), yet they suffer from three common limitations: they cannot compute quantitative patch-level statistics, they hallucinate defects on unfamiliar images, and they lack calibration across domains with different anomaly semantics.
-We present \textsc{AnomaClaw}, a training-free system that addresses these limitations by augmenting VLM reasoning with a PatchCore-style patch expert whose findings are injected as structured text context.
-The key design insight is that expert evidence helps VLMs most as \emph{text context}---not as a routing signal or score-fusion prior---because the VLM can selectively weigh quantitative patch statistics against its own semantic understanding.
-We evaluate on a cross-domain benchmark spanning 10 diverse domains (industrial, medical, retail, road-safety, and logical anomalies) with 1{,}200 test items and 200 calibration items.
-Matched ablations confirm that expert-as-context outperforms expert-as-router (+3.3 AUROC points) and score-fusion (+3.0 points) integration strategies, with the largest benefits appearing on local-appearance and logical anomaly domains.
-With calibration-tuned family-adaptive fusion, AnomaClaw achieves 0.882 macro-averaged AUROC (95\% CI: 0.824--0.937), improving over a pure VLM baseline (0.866) and a multi-round agent baseline (0.873).
-A cost-efficient variant reaches 0.847 AUROC using only 41\% of VLM calls.
-Code, benchmark, and evaluation scripts will be released upon acceptance.

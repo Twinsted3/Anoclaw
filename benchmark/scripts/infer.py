@@ -408,7 +408,25 @@ def build_prompt_refuter(domain_code: str, claims_json: str) -> str:
 
 # ─── Image utils ──────────────────────────────────────────────────────────────
 
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
+def resolve_data_path(path: str) -> str:
+    """Resolve a manifest path. Manifests store paths starting with the
+    placeholder ``{DATA_ROOT}/``; we substitute it for the runtime data root
+    (env var ``ANOMALYCLAW_DATA``, defaulting to ``<repo>/benchmark/data``).
+
+    Absolute paths are returned unchanged so the same code path also works on
+    machines where the manifests were already rewritten.
+    """
+    if path.startswith("{DATA_ROOT}/"):
+        data_root = os.environ.get("ANOMALYCLAW_DATA", str(_REPO_ROOT / "benchmark" / "data"))
+        return os.path.join(data_root, path[len("{DATA_ROOT}/"):])
+    return path
+
+
 def load_and_encode(path: str, max_side: int = 512) -> str:
+    path = resolve_data_path(path)
     img = cv2.imread(path)
     if img is None:
         raise FileNotFoundError(f"Cannot read image: {path}")
@@ -540,11 +558,15 @@ def get_client(backend: str) -> OpenAI:
         api_key = os.environ.get("GPT_API_KEY") or os.environ.get("OPENAI_API_KEY")
         base_url = os.environ.get("GPT_API_BASE") or os.environ.get("OPENAI_API_BASE")
         if not api_key:
-            api_key = "***REDACTED-GPT-KEY***"
-            base_url = "http://localhost:8080/v1"
+            raise RuntimeError(
+                "GPT backend requires GPT_API_KEY (or OPENAI_API_KEY) and "
+                "GPT_API_BASE (or OPENAI_API_BASE) to be set."
+            )
         return OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
     elif backend == "seedvl":
-        api_key = os.environ.get("SEED_API_KEY", "***REDACTED-SEED-KEY***")
+        api_key = os.environ.get("SEED_API_KEY")
+        if not api_key:
+            raise RuntimeError("SeedVL backend requires SEED_API_KEY to be set.")
         base_url = os.environ.get("SEED_API_BASE", "https://ark.cn-beijing.volces.com/api/v3")
         return OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
     elif backend == "qwen3":
@@ -2483,7 +2505,9 @@ def main():
         elif args.variant not in ASYNC_VARIANT_FNS:
             print(f"[WARN] --batch not implemented for variant {args.variant}, falling back to sync mode")
         else:
-            ark_key = os.environ.get("SEED_API_KEY", "***REDACTED-SEED-KEY***")
+            ark_key = os.environ.get("SEED_API_KEY")
+            if not ark_key:
+                raise RuntimeError("SEED_API_KEY env var required for --batch with seedvl backend")
             asyncio.run(run_batch(items, ark_key, model, args.variant,
                                   args.batch_workers, args.output, existing.values()))
             return

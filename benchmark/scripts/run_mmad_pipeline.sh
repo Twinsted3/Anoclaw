@@ -5,14 +5,15 @@
 #   PHASE ∈ {dev, test, analyze, all}
 
 set -e
+REPO_ROOT="${REPO_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
 PHASE=${1:-all}
 export QWEN_API_BASE="http://localhost:8210/v1"
-export QWEN_MODEL="/hdd1/models/Qwen3.5-27B-FP8"
+export QWEN_MODEL="${MODELS_DIR}/Qwen3.5-27B-FP8"
 
-cd /hdd1/jiangxi/AD-Agent
+cd ${REPO_ROOT}
 mkdir -p benchmark/results
 
-PY=/hdd1/jiangxi/AD-Agent/.venv_qwen35/bin/python
+PY=${REPO_ROOT}/.venv_qwen35/bin/python
 DEV_OUT=benchmark/results/mmad_v9_dev_n500.json
 TEST_OUT=benchmark/results/mmad_v9_test_n2000.json
 REPORT=benchmark/results/mmad_v9_report.json

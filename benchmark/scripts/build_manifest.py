@@ -29,9 +29,11 @@ from pathlib import Path
 SEED = 42
 random.seed(SEED)
 
-MVTEC_ROOT = Path("/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-AD")
-GOODSAD_ROOT = Path("/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/GoodsAD")
-MANIFEST_DIR = Path("/hdd1/jiangxi/AD-Agent/benchmark/manifests")
+_ROOT = os.environ.get("ANOMALYCLAW_ROOT", str(Path(__file__).resolve().parents[2]))
+
+MVTEC_ROOT = Path(_ROOT + "/external_data/MMAD/MVTec-AD")
+GOODSAD_ROOT = Path(_ROOT + "/external_data/MMAD/GoodsAD")
+MANIFEST_DIR = Path(_ROOT + "/benchmark/manifests")
 MANIFEST_DIR.mkdir(parents=True, exist_ok=True)
 
 # Taxonomy mapping
@@ -275,14 +277,14 @@ def build_d2_retail(max_per_cat=15):
     return assign_split(items)
 
 
-SDNET_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/SDNET2018/DATA_Maguire_20180517_ALL/SDNET2018")
-PIDRAY_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/PIDray/data")
-ROAD_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/RoadAnomaly21/RoadAnomaly21")
-ROADOBS_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/RoadAnomaly21/RoadObstacle21")
-BDD_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/BDD100K_normal")
-AVENUE_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/Avenue/Avenue Dataset")
-CHEXPERT_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/CheXpert")
-LEVIR_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/LEVIR-CD")
+SDNET_ROOT = Path(_ROOT + "/benchmark/data/SDNET2018/DATA_Maguire_20180517_ALL/SDNET2018")
+PIDRAY_ROOT = Path(_ROOT + "/benchmark/data/PIDray/data")
+ROAD_ROOT = Path(_ROOT + "/benchmark/data/RoadAnomaly21/RoadAnomaly21")
+ROADOBS_ROOT = Path(_ROOT + "/benchmark/data/RoadAnomaly21/RoadObstacle21")
+BDD_ROOT = Path(_ROOT + "/benchmark/data/BDD100K_normal")
+AVENUE_ROOT = Path(_ROOT + "/benchmark/data/Avenue/Avenue Dataset")
+CHEXPERT_ROOT = Path(_ROOT + "/benchmark/data/CheXpert")
+LEVIR_ROOT = Path(_ROOT + "/benchmark/data/LEVIR-CD")
 
 
 def build_d3_screening():
@@ -410,7 +412,7 @@ def build_d5_medical():
     import numpy as np
     from PIL import Image
 
-    DERMAMNIST_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/MedMNIST")
+    DERMAMNIST_ROOT = Path(_ROOT + "/benchmark/data/MedMNIST")
     npz_path = DERMAMNIST_ROOT / "dermamnist_224.npz"
     if not npz_path.exists():
         print("  [WARN] D3: DermaMNIST not found. Run: pip install medmnist && download.")
@@ -756,7 +758,7 @@ def build_d8_surveillance():
         print("  [WARN] D8: Avenue dataset not found. Run: bash benchmark/scripts/download_datasets.sh avenue")
         return []
 
-    frames_dir = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/Avenue/frames")
+    frames_dir = Path(_ROOT + "/benchmark/data/Avenue/frames")
 
     # Check if frames already extracted
     existing_normal = sorted(frames_dir.glob("normal_*.jpg")) if frames_dir.exists() else []
@@ -825,12 +827,12 @@ def build_placeholder_domain(code, name, source, n=180):
     return []
 
 
-VISA_ROOT = Path("/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/VisA")
-LOCO_ROOT = Path("/hdd1/jiangxi/AD-Agent/MMAD/dataset/MMAD/MVTec-LOCO")
-MVTEC3D_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/MVTec3D")
-BRAIN_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/BMAD/Brain_AD/BraTS2021_slice")
-LIVER_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/BMAD/Liver_AD/hist_DIY")
-HYPER_ROOT = Path("/hdd1/jiangxi/AD-Agent/benchmark/data/HyperKvasir")
+VISA_ROOT = Path(_ROOT + "/external_data/MMAD/VisA")
+LOCO_ROOT = Path(_ROOT + "/external_data/MMAD/MVTec-LOCO")
+MVTEC3D_ROOT = Path(_ROOT + "/benchmark/data/MVTec3D")
+BRAIN_ROOT = Path(_ROOT + "/benchmark/data/BMAD/Brain_AD/BraTS2021_slice")
+LIVER_ROOT = Path(_ROOT + "/benchmark/data/BMAD/Liver_AD/hist_DIY")
+HYPER_ROOT = Path(_ROOT + "/benchmark/data/HyperKvasir")
 
 
 def build_d10_visa():

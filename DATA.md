@@ -17,8 +17,9 @@ What does ship with the repo (already in `benchmark/`):
 - `results/subspacead_*.json`, `results/anomalyvfm_*.json` — per-item expert
   score caches (~3 MB) so you can reproduce the paper's headline numbers
   without rerunning every expert
-- `results/verbalized/v12_*` — the v12 agent run outputs that back the main
-  results table
+- `results/v2/v12_passive_{test,test_seedvl,gpt55_test}/` — the v12 agent
+  per-domain run outputs that back the paper Table 1 main results
+  (Qwen3.5-VL-27B / Seed2.0-lite / GPT-5.5 respectively)
 
 So once you have the raw images in place, `evaluate.py` and `agent_v12.py`
 have everything they need.
@@ -34,7 +35,7 @@ mkdir -p "$ANOMALYCLAW_DATA"
 #    into the layout shown under "On-disk layout".
 
 # 3. Run the agent (no further data step required)
-bash benchmark/scripts/run_v12_eval_test.sh
+bash benchmark/scripts/run_v12_passive_test.sh
 ```
 
 ## Manifest path convention

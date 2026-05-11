@@ -128,8 +128,15 @@ labels. Per-domain breakdown:
 <img src="assets/per_domain.png" alt="Per-domain AUROC" width="86%">
 </div>
 
-The full benchmark-table run outputs that back these numbers ship in
-`benchmark/results/verbalized/v12_eval_test/` (1 JSON per domain × backbone).
+The exact run outputs that back the table ship in:
+
+```
+benchmark/results/v2/v12_passive_test/         # Qwen3.5-VL-27B  → 0.7480
+benchmark/results/v2/v12_passive_test_seedvl/  # Seed2.0-lite    → 0.7672
+benchmark/results/v2/v12_passive_gpt55_test/   # GPT-5.5         → 0.8135
+```
+
+Each is a directory of `D{1..12}.json` per-item records, blended with α=0.5.
 
 ## 📦 Installation
 
@@ -179,51 +186,45 @@ python benchmark/scripts/agent_v12.py \
        --manifest benchmark/manifests_v2/D1_industrial_manifest.json \
        --split test \
        --backend qwen3 \
-       --output benchmark/results/verbalized/v12_eval_test/D1.json \
+       --output benchmark/results/v2/v12_passive_test/D1.json \
        --max_turns 3 --max_workers 8 --resume
 ```
 
 ### 4. Or run the full reference sweep
 
 ```bash
-bash benchmark/scripts/run_v12_eval_test.sh   # all 12 test domains
+bash benchmark/scripts/run_v12_passive_test.sh   # all 12 test domains
 ```
 
 ## ✅ Evaluation
 
-Per-domain metrics for a single result file:
+Reproduce the paper's **Table 1 macro AUROC** in one command (per backbone):
+
+```bash
+# Qwen3.5-VL-27B → 0.7480  (paper: 0.748)
+python benchmark/scripts/aggregate_v12.py \
+       --results benchmark/results/v2/v12_passive_test
+
+# Seed2.0-lite → 0.7672  (paper: 0.767)
+python benchmark/scripts/aggregate_v12.py \
+       --results benchmark/results/v2/v12_passive_test_seedvl
+
+# GPT-5.5 → 0.8135  (paper: 0.814)
+python benchmark/scripts/aggregate_v12.py \
+       --results benchmark/results/v2/v12_passive_gpt55_test
+```
+
+`aggregate_v12.py` implements the paper's exact aggregation: AD-mode filter
+(`mode == "anomaly_detection"`, both branch scores present, no error) and
+α=0.5 blend of `direct_score` + `v9_score`.
+
+To get per-item metrics on a single domain file:
 
 ```bash
 python benchmark/scripts/evaluate.py \
-       --results benchmark/results/verbalized/v12_eval_test/D1.json \
-       --output  benchmark/results/verbalized/v12_eval_test/D1_metrics.json
+       --results benchmark/results/v2/v12_passive_test/D1.json \
+       --output  /tmp/D1_metrics.json
 ```
-
-To aggregate **macro AUROC across the 12 test domains** from the shipped run:
-
-```python
-import json, glob, numpy as np
-from sklearn.metrics import roc_auc_score
-
-dir_ = "benchmark/results/verbalized/v12_eval_test"
-aurocs = []
-for f in sorted(glob.glob(f"{dir_}/D*.json")):
-    rows = [r for r in json.load(open(f))
-            if r.get("error") is None
-            and r.get("anomaly_score") is not None
-            and r.get("label_gt") is not None]
-    y = [r["label_gt"] for r in rows]
-    s = [r["anomaly_score"] for r in rows]
-    if len(set(y)) >= 2:
-        aurocs.append(roc_auc_score(y, s))
-print(f"Macro AUROC = {np.mean(aurocs):.4f}  (n_domains = {len(aurocs)})")
-```
-
-The shipped JSONs reproduce **macro AUROC ≈ 0.735** on Qwen3.5-VL-27B, within
-~1 pp of the paper's 0.748 headline (run-to-run noise from temperature-0
-VLM decoding plus minor controller drift between snapshot freezes). For
-exact paper numbers, rerun `run_v12_eval_test.sh` against your own VLM
-backend.
 
 For the MMAD-MCQA fair-baseline pipeline (paper §4.6):
 

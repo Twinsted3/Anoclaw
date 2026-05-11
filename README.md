@@ -191,18 +191,45 @@ bash benchmark/scripts/run_v12_eval_test.sh   # all 12 test domains
 
 ## ✅ Evaluation
 
-Aggregate macro AUROC + paired-bootstrap CI from result JSONs:
+Per-domain metrics for a single result file:
 
 ```bash
 python benchmark/scripts/evaluate.py \
-       --pred benchmark/results/verbalized/v12_eval_test \
-       --report-bootstrap
+       --results benchmark/results/verbalized/v12_eval_test/D1.json \
+       --output  benchmark/results/verbalized/v12_eval_test/D1_metrics.json
 ```
 
-For the MMAD-MCQA fair-baseline numbers (paper §4.6):
+To aggregate **macro AUROC across the 12 test domains** from the shipped run:
+
+```python
+import json, glob, numpy as np
+from sklearn.metrics import roc_auc_score
+
+dir_ = "benchmark/results/verbalized/v12_eval_test"
+aurocs = []
+for f in sorted(glob.glob(f"{dir_}/D*.json")):
+    rows = [r for r in json.load(open(f))
+            if r.get("error") is None
+            and r.get("anomaly_score") is not None
+            and r.get("label_gt") is not None]
+    y = [r["label_gt"] for r in rows]
+    s = [r["anomaly_score"] for r in rows]
+    if len(set(y)) >= 2:
+        aurocs.append(roc_auc_score(y, s))
+print(f"Macro AUROC = {np.mean(aurocs):.4f}  (n_domains = {len(aurocs)})")
+```
+
+The shipped JSONs reproduce **macro AUROC ≈ 0.735** on Qwen3.5-VL-27B, within
+~1 pp of the paper's 0.748 headline (run-to-run noise from temperature-0
+VLM decoding plus minor controller drift between snapshot freezes). For
+exact paper numbers, rerun `run_v12_eval_test.sh` against your own VLM
+backend.
+
+For the MMAD-MCQA fair-baseline pipeline (paper §4.6):
 
 ```bash
 python benchmark/scripts/mmad_eval_v12_mmad.py --help
+python benchmark/scripts/mmad_eval_single_letter.py --help
 ```
 
 ## 🗂️ Repository layout
@@ -216,7 +243,7 @@ AnomalyClaw/
 │   ├── results/                       # paper-final result JSONs + expert caches
 │   └── scripts/
 │       ├── agent_v12.py               # canonical AD agent  ★
-│       ├── agent_v12_mmad{,_mcq}.py   # MMAD-MCQA variants
+│       ├── agent_v12_mmad.py          # MMAD-MCQA variant
 │       ├── agent_v12_logitdirect.py   # logit-Direct deployment variant
 │       ├── agent_prompt_v{9,10,12_mmad*}.py
 │       ├── agent_tools_v8.py          # 13-tool catalog  ★

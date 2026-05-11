@@ -16,11 +16,16 @@ venv/
 *.swp
 .DS_Store
 
-# Data (download into these dirs via DATA.md; not redistributed)
+# Raw image data — fetched per-dataset from upstream (see DATA.md)
 benchmark/data/
-benchmark/retrieval_index/
+
+# Expert checkpoints (download from upstream baselines, see experts/README.md)
 experts/*/checkpoints/
 experts/*/data/
+
+# NOTE: benchmark/retrieval_index/ and the expert score-cache JSONs
+# under benchmark/results/ ARE checked in — they are derived (DINOv2
+# features + per-item floats), small, and reproducible.
 
 # Cloned upstream baselines (see experts/README.md)
 experts/AnomalyDINO/

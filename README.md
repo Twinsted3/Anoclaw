@@ -51,16 +51,20 @@ Most users will reproduce results in three steps.
 
 ### 1. Get the data
 
-Datasets and pre-computed expert score caches are released on Hugging Face;
-see `DATA.md` for the full download script. After downloading,
-`benchmark/data/` should contain the dataset folders, and
-`benchmark/results/baselines/`, `benchmark/results/subspacead_*.json`,
-`benchmark/results/anomalyvfm_*.json` should contain the expert caches.
+The repo already ships everything *derived* — split manifests, DINOv2
+retrieval indices, expert score caches, and the v12 main-table run outputs.
+You only need to fetch the **raw images** yourself, since most upstream
+datasets (MVTec family in particular) prohibit redistribution.
 
 ```bash
 export ANOMALYCLAW_DATA=$PWD/benchmark/data    # default; override if needed
-bash benchmark/scripts/download_datasets.sh    # convenience wrapper
+mkdir -p "$ANOMALYCLAW_DATA"
 ```
+
+Then follow the per-dataset download table in `DATA.md` to populate
+`$ANOMALYCLAW_DATA` into the documented layout. Manifest paths use a
+portable `{DATA_ROOT}/...` placeholder that the loader resolves to
+`$ANOMALYCLAW_DATA` at runtime — no manual rewriting needed.
 
 ### 2. Bring up a VLM backend
 

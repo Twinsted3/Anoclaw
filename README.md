@@ -4,7 +4,7 @@
 
 ### A Universal Visual Anomaly Detection Agent via Tool-Grounded Refutation
 
-<!-- Replace with arXiv badge once submitted -->
+[![arXiv](https://img.shields.io/badge/arXiv-2605.10397-b31b1b.svg)](https://arxiv.org/abs/2605.10397)
 [![License](https://img.shields.io/badge/License-CC--BY--NC--4.0-lightgrey.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg)](https://pytorch.org/)
@@ -44,7 +44,7 @@ extension generates the agent's own rulebook online with *zero oracle labels*.
 ## 🚧 News
 
 - **2026-05** — Code, benchmark manifests, and pre-computed result tables released.
-- *(under review)* — Paper submission.
+- **2026-05** — Preprint available on [arXiv:2605.10397](https://arxiv.org/abs/2605.10397).
 
 ## 🧠 Method
 
@@ -266,10 +266,14 @@ datasets and expert baselines retain their original licenses.
 
 ```bibtex
 @article{jiang2026anomalyclaw,
-  title   = {AnomalyClaw: A Universal Visual Anomaly Detection Agent via Tool-Grounded Refutation},
-  author  = {Jiang, Xi and Zhao, Yinjie and Yang, Zesheng and Zheng, Feng},
-  journal = {arXiv preprint},
-  year    = {2026}
+  title         = {AnomalyClaw: A Universal Visual Anomaly Detection Agent via Tool-Grounded Refutation},
+  author        = {Jiang, Xi and Zhao, Yinjie and Yang, Zesheng and Zheng, Feng},
+  journal       = {arXiv preprint arXiv:2605.10397},
+  year          = {2026},
+  eprint        = {2605.10397},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2605.10397}
 }
 ```
 

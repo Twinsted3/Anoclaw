@@ -9,13 +9,6 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg)](https://pytorch.org/)
 
-**Xi Jiang**<sup>1</sup>, Yinjie Zhao<sup>2,3</sup>, Zesheng Yang<sup>1</sup>, Feng Zheng<sup>1†</sup>
-
-<sup>1</sup> Department of Computer Science and Engineering, Southern University of Science and Technology, Shenzhen, China<br>
-<sup>2</sup> School of EEE, Nanyang Technological University, Singapore &nbsp;&nbsp;
-<sup>3</sup> CFAR, A\*STAR, Singapore<br>
-<sup>†</sup> Corresponding author: `f.zheng@ieee.org`
-
 <img src="assets/architecture.png" alt="AnomalyClaw architecture" width="92%">
 
 </div>

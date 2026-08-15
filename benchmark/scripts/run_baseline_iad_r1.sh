@@ -1,0 +1,30 @@
+#!/bin/bash
+# IAD-R1-UPDATE Qwen2.5-VL-Instruct-7B baseline.
+# Native short prompt + max_new_tokens=300 (covers ~99% of generations
+# self-terminated by <|im_end|>). Sharded across GPUs by domain list.
+set -u
+REPO_ROOT="${REPO_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
+GPU=${GPU:-0}
+DOMAINS=${DOMAINS:-"D1 D5 D2 D6 D3 D4 D7 D8 D9 D10 D11 D12"}
+OUT=${REPO_ROOT}/benchmark/results/baselines/iad_r1
+MAN=${REPO_ROOT}/benchmark/manifests_v2
+MODEL='${IAD_R1_CKPT_DIR}/IAD-R1(Qwen2.5-VL-Instruct-7B)'
+mkdir -p "$OUT"
+
+for D in $DOMAINS; do
+    M=$(ls "$MAN/${D}_"*.json 2>/dev/null | grep -v domain_config | grep -v split_ids | grep -v full_manifest | head -1)
+    O="$OUT/${D}.json"
+    if [ -f "$O" ] && [ "$(stat -c %s "$O")" -gt 1000 ]; then
+        echo "[skip] $D"; continue
+    fi
+    echo "[$(date +%H:%M:%S)] IAD-R1 $D ← $M (GPU=$GPU)"
+    CUDA_VISIBLE_DEVICES=$GPU python3 \
+        ${REPO_ROOT}/benchmark/scripts/baseline_iad_r1.py \
+        --manifest "$M" --split test --output "$O" \
+        --model_path "$MODEL" --device cuda:0 --n_refs 1 \
+        --max_new_tokens 300 \
+        --prompt 'Are there any defects in the test image?' \
+        --resume \
+        || echo "[warn] $D failed"
+done
+echo "[$(date +%H:%M:%S)] IAD-R1 done (GPU=$GPU)."

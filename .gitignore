@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.venv_*/
+
+# IDE / editor artifacts
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Raw image data — fetched per-dataset from upstream (see DATA.md)
+benchmark/data/
+
+# Expert checkpoints (download from upstream baselines, see experts/README.md)
+experts/*/checkpoints/
+experts/*/data/
+
+# NOTE: benchmark/retrieval_index/ and the expert score-cache JSONs
+# under benchmark/results/ ARE checked in — they are derived (DINOv2
+# features + per-item floats), small, and reproducible.
+
+# Cloned upstream baselines (see experts/README.md)
+experts/AnomalyDINO/
+experts/AnomalyVFM/
+experts/IAD-R1/
+experts/SubspaceAD/
+experts/VisualAD/
+!experts/README.md
+
+# Large/transient runtime outputs
+logs/
+*.log
+test_output/
+/tmp/
+
+# Paper build artifacts
+paper/main.aux
+paper/main.bbl
+paper/main.blg
+paper/main.log
+paper/main.out
+paper/main.pdf
+paper/*.synctex*
+
+# OS-specific
+Thumbs.db
+.AppleDouble

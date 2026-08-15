@@ -1,0 +1,777 @@
+"""AnomalyClaw v7 — 13-tool catalog with interpretation + disconfirm hints.
+
+Changes from v6:
+- Every tool's return dict includes an `interpretation` field built via
+  `_wrap_interpretation(obs, verdict, disconfirm)`: a verdict hint
+  ("observation suggests X") paired with a disconfirming clause
+  ("IF Y then the query is likely NORMAL"). Reduces confirmation bias.
+- Alignment-sensitive tools (image_diff, rotate_align) now return an
+  UNRELIABLE flag when their internal confidence is low.
+- dispatch_tool is gated to a KEEP set (loaded lazily from
+  refine-logs/tool_cards/*.md) during v7 runs; audit runs use the
+  un-gated dispatch via the single_tool_agent.
+
+Original v6 header follows:
+
+Design invariants:
+- No per-domain branching inside tools. Domain code is never a modeling input
+  (only used by tool_reference_retriever to locate its cached index file).
+- Pure functions where possible; cache expensive resources at module level.
+- Each tool returns a JSON-serializable dict with an `error` key on failure.
+
+Tiers:
+  1. Expert probes: tool_expert_score
+  2. Visual inspection: hotspot_cropper, zoom_bbox, patch_grid, image_diff,
+                        rotate_align, side_by_side
+  3. Reference understanding: reference_profiler, reference_retriever
+  4. Structural: component_counter, segment_and_count, texture_fft
+  5. Knowledge: domain_knowledge
+"""
+from __future__ import annotations
+
+import base64
+import json
+import os
+import sys
+from functools import lru_cache
+from io import BytesIO
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+from PIL import Image
+
+sys.path.insert(0, str(Path(__file__).parent))
+from infer import call_llm, extract_json, img_msg, load_and_encode, text_msg  # noqa: E402
+
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+RESULTS_DIR = Path(os.environ.get("ANOMALYCLAW_RESULTS_DIR", _REPO_ROOT / "benchmark" / "results"))
+
+
+# ─── Helpers ────────────────────────────────────────────────────────────────
+
+def _pil_to_b64(img: Image.Image, max_side: int = 512, quality: int = 85) -> str:
+    w, h = img.size
+    if max(w, h) > max_side:
+        scale = max_side / max(w, h)
+        img = img.resize((int(w * scale), int(h * scale)))
+    buf = BytesIO()
+    img.save(buf, format="JPEG", quality=quality)
+    return base64.b64encode(buf.getvalue()).decode("utf-8")
+
+
+def _wrap_interpretation(obs: dict, verdict: str, disconfirm: str) -> dict:
+    """Attach a verdict + disconfirming clause to a tool observation.
+
+    Format: "Observation suggests: <verdict>. IMPORTANT: if <disconfirm>,
+    the query is likely NORMAL despite this signal."
+
+    Intent: force the VLM to consider the null hypothesis before updating
+    its score. Many v6 failures came from confirmation bias where a tool's
+    signal (e.g. 'strong anomaly') was treated as proof rather than evidence.
+    """
+    obs["interpretation"] = (
+        f"Observation suggests: {verdict}. "
+        f"IMPORTANT: if {disconfirm}, the query is likely NORMAL despite this signal."
+    )
+    return obs
+
+
+# ─── Tier 1: Expert probes ──────────────────────────────────────────────────
+
+EXPERT_FILES = {
+    "subspacead":    {"calibration": "subspacead_calibration.json",
+                      "dev":         "subspacead_dev.json",
+                      "test":        "subspacead_test.json"},
+    "anomalyvfm":    {"calibration": "anomalyvfm_calibration.json",
+                      "dev":         "anomalyvfm_dev.json",  # may not exist
+                      "test":        "anomalyvfm_test.json"},
+    "patchknn":      {"calibration": "classical_dinov2_patch_test_all.json",
+                      "dev":         "classical_dinov2_patch_test_all.json",
+                      "test":        "classical_dinov2_patch_test_all.json"},
+    "dinov2_global": {"calibration": "classical_dinov2_global_test_all.json",
+                      "dev":         "classical_dinov2_global_test_all.json",
+                      "test":        "classical_dinov2_global_test_all.json"},
+}
+
+
+@lru_cache(maxsize=16)
+def _load_expert_scores(expert: str, split: str) -> tuple[dict, np.ndarray]:
+    """Return (item_id -> record, sorted score array for percentile ranking)."""
+    if expert not in EXPERT_FILES:
+        raise ValueError(f"unknown expert {expert!r}; must be one of {list(EXPERT_FILES)}")
+    fname = EXPERT_FILES[expert].get(split)
+    if fname is None:
+        raise ValueError(f"no {split} file for expert {expert!r}")
+    path = RESULTS_DIR / fname
+    if not path.exists():
+        return {}, np.array([])
+    raw = json.load(open(path))
+    if isinstance(raw, list):
+        recs = {x["item_id"]: x for x in raw if "item_id" in x}
+    else:
+        recs = raw
+    scores = np.array([float(r["anomaly_score"]) for r in recs.values()
+                       if r.get("anomaly_score") is not None])
+    scores.sort()
+    return recs, scores
+
+
+def tool_expert_score(item_id: str, expert: str = "subspacead",
+                      split: str = "test", **_) -> dict:
+    """Look up a cached expert anomaly score + its percentile rank within `split`.
+
+    Returns: {expert, score, normalized_rank, top_patches, interpretation, error}
+    """
+    try:
+        recs, all_scores = _load_expert_scores(expert, split)
+    except ValueError as e:
+        return {"error": str(e)}
+    rec = recs.get(item_id)
+    if rec is None or rec.get("anomaly_score") is None:
+        return {"error": f"no cached score for {item_id} in {expert}/{split}"}
+    s = float(rec["anomaly_score"])
+    if len(all_scores) == 0:
+        rank = 0.5
+    else:
+        rank = float(np.searchsorted(all_scores, s) / len(all_scores))
+    # v7: binned verdict + disconfirm
+    if rank >= 0.85:
+        verdict = (f"strong anomaly signal (rank {rank:.2f}: the query's {expert} "
+                   f"score is higher than 85% of samples in this split)")
+        disconfirm = (f"the {expert} expert is known to over-flag this domain's "
+                      f"natural texture variation, OR the refs happen to be outliers")
+    elif rank >= 0.60:
+        verdict = (f"moderate/ambiguous anomaly signal (rank {rank:.2f}: mild "
+                   f"deviation, but within normal variation for many images)")
+        disconfirm = (f"the refs show comparable variation, or the score reflects "
+                      f"benign domain texture not a defect")
+    else:
+        verdict = (f"weak signal (rank {rank:.2f}: the query looks like normal "
+                   f"samples in this split)")
+        disconfirm = (f"a small localised defect may not shift the global {expert} "
+                      f"score; do not rule out anomaly if a suspicious region is visible")
+    out = {
+        "expert": expert,
+        "score": s,
+        "normalized_rank": rank,
+        "top_patches": rec.get("top_patches") or [],
+        "error": None,
+    }
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+# ─── Tier 2: Visual inspection ──────────────────────────────────────────────
+
+def tool_hotspot_cropper(query_path: str, patches: list[dict] | None = None,
+                         pad: float = 0.15, k: int = 5,
+                         _expert_patches: list | None = None, **_) -> dict:
+    """Crop query image around top-k expert-flagged patches (48x48 grid).
+
+    If `patches` is not provided, falls back to `_expert_patches` from session
+    context (populated by a prior tool_expert_score call).
+    """
+    patches = patches or _expert_patches or []
+    if not patches:
+        return {"error": "no patches available; call tool_expert_score(subspacead) first"}
+    img = Image.open(query_path).convert("RGB")
+    W, H = img.size
+    grid = 48
+    rows = [p.get("row") for p in patches[:k] if p.get("row") is not None]
+    cols = [p.get("col") for p in patches[:k] if p.get("col") is not None]
+    if not rows or not cols:
+        return {"error": "patches missing row/col fields"}
+    r0, r1 = min(rows), max(rows) + 1
+    c0, c1 = min(cols), max(cols) + 1
+    span_r, span_c = r1 - r0, c1 - c0
+    r0 = max(0, r0 - max(1, int(pad * max(span_r, 1))))
+    r1 = min(grid, r1 + max(1, int(pad * max(span_r, 1))))
+    c0 = max(0, c0 - max(1, int(pad * max(span_c, 1))))
+    c1 = min(grid, c1 + max(1, int(pad * max(span_c, 1))))
+    x0, x1 = int(c0 / grid * W), int(c1 / grid * W)
+    y0, y1 = int(r0 / grid * H), int(r1 / grid * H)
+    if x1 <= x0 or y1 <= y0:
+        return {"error": "degenerate crop"}
+    crop = img.crop((x0, y0, x1, y1))
+    out = {
+        "bbox": [x0, y0, x1, y1],
+        "crop_b64": _pil_to_b64(crop),
+        "original_size": [W, H],
+        "n_patches_used": len(patches[:k]),
+        "error": None,
+    }
+    verdict = (f"high-expert-attention region extracted from {out['n_patches_used']} "
+               f"hotspot patches; inspect crop for a genuine defect")
+    disconfirm = ("the attention region shows normal texture, a lighting artifact, "
+                  "or a benign edge — in that case treat as normal")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+def tool_zoom_bbox(query_path: str, bbox: list[int], **_) -> dict:
+    """Agent-specified crop. bbox = [x0, y0, x1, y1] in pixel coords."""
+    if not isinstance(bbox, (list, tuple)) or len(bbox) != 4:
+        return {"error": "bbox must be [x0, y0, x1, y1]"}
+    x0, y0, x1, y1 = bbox
+    if x1 <= x0 or y1 <= y0:
+        return {"error": f"invalid bbox {bbox}: x1 must be > x0 and y1 > y0"}
+    img = Image.open(query_path).convert("RGB")
+    W, H = img.size
+    x0 = max(0, min(W - 1, int(x0)))
+    y0 = max(0, min(H - 1, int(y0)))
+    x1 = max(x0 + 1, min(W, int(x1)))
+    y1 = max(y0 + 1, min(H, int(y1)))
+    crop = img.crop((x0, y0, x1, y1))
+    out = {
+        "bbox": [x0, y0, x1, y1],
+        "crop_b64": _pil_to_b64(crop),
+        "original_size": [W, H],
+        "error": None,
+    }
+    verdict = ("agent-requested region returned at higher resolution; "
+               "inspect closely for localised defect not visible at overview scale")
+    disconfirm = ("the crop shows normal surface texture or a benign visual cue "
+                  "(lighting, joint, shadow) — in that case treat as normal")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+def tool_patch_grid(query_path: str, rows: int = 3, cols: int = 3, **_) -> dict:
+    """Return rows*cols tiles covering the image in a regular grid."""
+    try:
+        rows, cols = int(rows), int(cols)
+    except (TypeError, ValueError):
+        return {"error": "rows/cols must be integers"}
+    if rows < 1 or cols < 1:
+        return {"error": f"rows/cols must be >= 1; got {rows}x{cols}"}
+    # v7: cap at 3x3 to keep tiles readable and VLM context manageable
+    rows = min(rows, 3)
+    cols = min(cols, 3)
+    img = Image.open(query_path).convert("RGB")
+    W, H = img.size
+    tw, th = W // cols, H // rows
+    tiles = []
+    for i in range(rows):
+        for j in range(cols):
+            x0, y0 = j * tw, i * th
+            x1 = (j + 1) * tw if j < cols - 1 else W
+            y1 = (i + 1) * th if i < rows - 1 else H
+            crop = img.crop((x0, y0, x1, y1))
+            tiles.append({
+                "cell": [i, j],
+                "bbox": [x0, y0, x1, y1],
+                "crop_b64": _pil_to_b64(crop, max_side=256),
+            })
+    out = {"rows": rows, "cols": cols, "tiles": tiles, "error": None}
+    verdict = (f"image split into {rows}x{cols} tiles; look for a single tile "
+               f"that differs clearly from the others in texture/content")
+    disconfirm = ("all tiles vary naturally (texture, lighting gradient), no "
+                  "single tile stands out — in that case treat as normal")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+def tool_image_diff(query_path: str, ref_path: str | None = None,
+                    ref_paths: list[str] | None = None, ref_idx: int = 0,
+                    threshold: float = 30.0, **_) -> dict:
+    """Absolute pixel diff between query and a reference, with stats + mask.
+
+    Accepts either `ref_path` directly or `ref_idx` + `ref_paths` from session.
+    """
+    if ref_path is None and ref_paths:
+        try:
+            ref_path = ref_paths[int(ref_idx)]
+        except (IndexError, ValueError):
+            return {"error": f"ref_idx {ref_idx} out of range"}
+    if not ref_path or not os.path.exists(ref_path):
+        return {"error": f"ref_path not found: {ref_path!r}"}
+    q = np.array(Image.open(query_path).convert("RGB").resize((256, 256)))
+    r = np.array(Image.open(ref_path).convert("RGB").resize((256, 256)))
+    diff = np.abs(q.astype(float) - r.astype(float)).mean(axis=2)
+    mask = (diff > threshold).astype(np.uint8) * 255
+    change_pct = float(mask.mean() / 255 * 100)
+    mean_diff = float(diff.mean())
+    # v7: detect unreliable diff when query/ref alignment is poor
+    unreliable = (mean_diff > 40.0) or (change_pct > 45.0)
+    out = {
+        "mean_diff": mean_diff,
+        "max_diff": float(diff.max()),
+        "change_percent": change_pct,
+        "threshold": threshold,
+        "unreliable_alignment": unreliable,
+        "diff_mask_b64": _pil_to_b64(Image.fromarray(mask, mode="L").convert("RGB"),
+                                     max_side=256),
+        "error": None,
+    }
+    if unreliable:
+        verdict = (f"UNRELIABLE: query and reference are not aligned "
+                   f"(mean_diff={mean_diff:.1f}, change={change_pct:.1f}%); "
+                   f"the diff mask reflects alignment noise, not defects")
+        disconfirm = ("alignment noise ALWAYS looks like many bright regions; "
+                      "do NOT use this tool's output as evidence for this sample")
+    else:
+        verdict = (f"pixel diff computed; {change_pct:.1f}% of pixels changed "
+                   f"above the {threshold}-intensity threshold")
+        disconfirm = ("changed regions may be benign lighting/color variation, "
+                      "not a true defect — cross-check with zoom_bbox on bright regions")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+def tool_rotate_align(query_path: str, ref_path: str | None = None,
+                      ref_paths: list[str] | None = None, ref_idx: int = 0,
+                      **_) -> dict:
+    """Try rotations [-10,-5,0,5,10] deg on ref, pick min-MSE, then return aligned diff."""
+    if ref_path is None and ref_paths:
+        try:
+            ref_path = ref_paths[int(ref_idx)]
+        except (IndexError, ValueError):
+            return {"error": f"ref_idx {ref_idx} out of range"}
+    if not ref_path or not os.path.exists(ref_path):
+        return {"error": f"ref_path not found: {ref_path!r}"}
+    q = np.array(Image.open(query_path).convert("RGB").resize((256, 256)))
+    r_img = Image.open(ref_path).convert("RGB").resize((256, 256))
+    best_angle, best_mse, best_diff = 0.0, float("inf"), None
+    for angle in [-10, -5, 0, 5, 10]:
+        r_rot = np.array(r_img.rotate(angle, resample=Image.BILINEAR))
+        d = np.abs(q.astype(float) - r_rot.astype(float)).mean(axis=2)
+        mse = float(d.mean())
+        if mse < best_mse:
+            best_mse, best_angle, best_diff = mse, angle, d
+    mask = (best_diff > 30.0).astype(np.uint8) * 255
+    unreliable = best_mse > 40.0
+    out = {
+        "rotation_angle_deg": float(best_angle),
+        "aligned_mean_diff": float(best_mse),
+        "unreliable_alignment": unreliable,
+        "aligned_diff_b64": _pil_to_b64(Image.fromarray(mask, mode="L").convert("RGB"),
+                                        max_side=256),
+        "error": None,
+    }
+    if unreliable:
+        verdict = (f"UNRELIABLE: even the best rotation ({best_angle}°) yields "
+                   f"mean diff {best_mse:.1f} — query and ref cannot be aligned; "
+                   f"do NOT use this tool's output")
+        disconfirm = ("treat as no evidence; rely on other tools or direct inspection")
+    else:
+        verdict = (f"best rotation {best_angle}°, post-alignment mean diff "
+                   f"{best_mse:.1f}; diff mask shows residual change")
+        disconfirm = ("post-alignment residual may still be lighting/color variation; "
+                      "confirm with zoom_bbox on suspicious bright regions")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+def tool_side_by_side(query_path: str, bbox: list[int],
+                      ref_paths: list[str] | None = None, **_) -> dict:
+    """Composite: query_crop | ref0_crop | ref1_crop | ref2_crop | ref3_crop.
+
+    bbox is interpreted in 256x256 normalized coords (resize all images to 256).
+    """
+    if not isinstance(bbox, (list, tuple)) or len(bbox) != 4:
+        return {"error": "bbox must be [x0, y0, x1, y1]"}
+    x0, y0, x1, y1 = [int(v) for v in bbox]
+    if x1 <= x0 or y1 <= y0:
+        return {"error": f"invalid bbox {bbox}"}
+    if not ref_paths:
+        return {"error": "no ref_paths in session"}
+    def _crop(path):
+        img = Image.open(path).convert("RGB").resize((256, 256))
+        xa = max(0, min(255, x0)); ya = max(0, min(255, y0))
+        xb = max(xa + 1, min(256, x1)); yb = max(ya + 1, min(256, y1))
+        return img.crop((xa, ya, xb, yb)).resize((128, 128))
+    crops = [_crop(query_path)] + [_crop(p) for p in ref_paths[:4]]
+    total_w = 128 * len(crops)
+    composite = Image.new("RGB", (total_w, 128), (255, 255, 255))
+    for i, c in enumerate(crops):
+        composite.paste(c, (i * 128, 0))
+    out = {
+        "bbox": bbox,
+        "n_crops": len(crops),
+        "composite_b64": _pil_to_b64(composite, max_side=768),
+        "error": None,
+    }
+    verdict = ("side-by-side composite (query | ref0 | ref1 | ref2 | ref3); "
+               "look for a structural/textural feature present ONLY in query")
+    disconfirm = ("refs themselves show natural variation; a feature that is "
+                  "slightly different in degree but present across samples is NORMAL")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+# ─── Tier 3: Reference understanding ────────────────────────────────────────
+
+PROFILER_SYSTEM = (
+    "You are describing NORMAL reference images for anomaly detection. Output ONLY "
+    "what normal looks like — do NOT speculate about anomalies. Return JSON with "
+    "these EXACT fields, each a single short phrase:\n"
+    "  object: the main object/scene content (one noun phrase)\n"
+    "  expected_color: 2-3 dominant colors\n"
+    "  expected_shape: overall geometric/structural pattern (one phrase)\n"
+    "  allowed_variation: list 2-4 variations that are NORMAL across refs "
+    "(e.g. 'minor rotation', 'lighting shift', 'minor texture variation')\n"
+    "Do NOT include anomaly hypotheses. JSON format: "
+    "{\"object\": \"...\", \"expected_color\": \"...\", \"expected_shape\": \"...\", "
+    "\"allowed_variation\": [\"...\", \"...\"]}"
+)
+
+
+def tool_reference_profiler(ref_paths: list[str] | None = None,
+                            vlm_client=None, vlm_model: str | None = None,
+                            max_tokens: int = 400, **_) -> dict:
+    """Ask a VLM to describe the normality profile from 4 refs."""
+    if os.environ.get("ANOMA_TEST_STUB") == "1":
+        return {
+            "error": None,
+            "profile_text": "stub profile",
+            "common_objects": ["stub"],
+            "typical_colors": [],
+            "variations": [],
+            "n_refs_used": len(ref_paths[:4]) if ref_paths else 0,
+        }
+    if not ref_paths:
+        return {"error": "no ref_paths"}
+    if vlm_client is None or vlm_model is None:
+        return {"error": "vlm_client and vlm_model required"}
+    parts = [text_msg(PROFILER_SYSTEM)]
+    for p in ref_paths[:4]:
+        parts.append(img_msg(load_and_encode(p)))
+    parts.append(text_msg("Profile these 4 normal references using ONLY the 4 fields listed."))
+    messages = [{"role": "user", "content": parts}]
+    try:
+        text, _, _ = call_llm(vlm_client, vlm_model, messages,
+                              max_tokens=max_tokens, temperature=0.0)
+    except Exception as e:
+        return {"error": f"vlm call failed: {e}"}
+    parsed = extract_json(text) or {}
+    out = {
+        "error": None,
+        "object": parsed.get("object", ""),
+        "expected_color": parsed.get("expected_color", ""),
+        "expected_shape": parsed.get("expected_shape", ""),
+        "allowed_variation": parsed.get("allowed_variation", []),
+        "n_refs_used": len(ref_paths[:4]),
+    }
+    verdict = (f"normal-baseline profile extracted: object='{out['object']}', "
+               f"shape='{out['expected_shape']}', allowed variations: "
+               f"{out['allowed_variation']}")
+    disconfirm = ("the query exhibits a variation LISTED in allowed_variation — in "
+                  "that case it is NORMAL, not anomalous. Also: profiler only describes "
+                  "what refs have in common; it cannot detect anomalies by itself")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+import threading as _threading
+
+_RETRIEVAL_CACHE: dict[str, Any] = {}
+_RETRIEVAL_LOCK = _threading.Lock()
+
+
+def _load_retrieval_model_v6(device: str = "cuda"):
+    if "model" in _RETRIEVAL_CACHE:
+        return _RETRIEVAL_CACHE["model"], _RETRIEVAL_CACHE["transform"]
+    with _RETRIEVAL_LOCK:
+        if "model" in _RETRIEVAL_CACHE:  # double-check after acquiring lock
+            return _RETRIEVAL_CACHE["model"], _RETRIEVAL_CACHE["transform"]
+        import torch  # noqa: F401
+        import timm
+        model = timm.create_model("vit_small_patch14_dinov2.lvd142m",
+                                  pretrained=True, num_classes=0)
+        model = model.to(device).eval()
+        cfg = timm.data.resolve_data_config(model.pretrained_cfg)
+        transform = timm.data.create_transform(**cfg, is_training=False)
+        _RETRIEVAL_CACHE["model"] = model
+        _RETRIEVAL_CACHE["transform"] = transform
+        return model, transform
+
+
+def tool_reference_retriever(query_path: str, domain_code: str | None = None,
+                             k: int = 4,
+                             index_dir: str | None = None,
+                             device: str = "cuda",
+                             item_id: str | None = None,
+                             _manifest_domain: str | None = None, **_) -> dict:
+    """Retrieve top-k most similar normal references via DINOv2 similarity.
+
+    `domain_code` may be provided by the agent; if not, we try `_manifest_domain`
+    (auto-injected from session ctx; this is the only place the agent legitimately
+    uses the domain code — to locate its cached normality bank, not for modeling).
+    """
+    domain_code = domain_code or _manifest_domain
+    if not domain_code:
+        return {"error": "domain_code required to locate retrieval index"}
+    if index_dir is None:
+        index_dir = os.environ.get(
+            "ANOMALYCLAW_INDEX_DIR",
+            str(_REPO_ROOT / "benchmark" / "retrieval_index"),
+        )
+    idx_path = os.path.join(index_dir, f"{domain_code}_index.npz")
+    if not os.path.exists(idx_path):
+        return {"error": f"no retrieval index at {idx_path}"}
+    try:
+        import torch
+        model, transform = _load_retrieval_model_v6(device)
+        img = Image.open(query_path).convert("RGB")
+        tensor = transform(img).unsqueeze(0).to(device)
+        with torch.no_grad():
+            emb = model(tensor).cpu().numpy().flatten()
+        emb = emb / (np.linalg.norm(emb) + 1e-8)
+        data = np.load(idx_path, allow_pickle=True)
+        sims = data["embeddings"] @ emb
+        top_idx = np.argsort(sims)[::-1][:k]
+        results = [{"path": str(data["paths"][i]),
+                    "similarity": float(sims[i])} for i in top_idx]
+        out = {"results": results, "error": None,
+               "top_similarity": float(sims[top_idx[0]]) if len(top_idx) else 0.0}
+        verdict = (f"top-{k} most similar NORMAL refs retrieved "
+                   f"(top_similarity={out['top_similarity']:.3f})")
+        disconfirm = ("high top_similarity means the query matches a normal cluster "
+                      "well → likely NORMAL. Low similarity alone does NOT prove anomaly "
+                      "— the query may just be in a less-represented normal subtype")
+        return _wrap_interpretation(out, verdict, disconfirm)
+    except Exception as e:
+        return {"error": f"retrieval failed: {e}"}
+
+
+# ─── Tier 4: Structural analysis ────────────────────────────────────────────
+
+def tool_component_counter(patches: list[dict] | None = None,
+                           _expert_patches: list | None = None,
+                           threshold: float = 0.5, **_) -> dict:
+    """Count connected components among top-k expert patches (48x48 grid, 4-conn)."""
+    patches = patches or _expert_patches or []
+    # v7: require at least 3 hotspot patches for component count to be meaningful
+    if len(patches) < 3:
+        out = {"error": None, "n_components": 0, "n_active_patches": len(patches),
+               "not_applicable": True}
+        verdict = (f"not applicable: only {len(patches)} expert patch(es) available; "
+                   f"component counting needs >=3 patches to be meaningful")
+        disconfirm = "ignore this tool's output for this sample"
+        return _wrap_interpretation(out, verdict, disconfirm)
+    grid = np.zeros((48, 48), dtype=np.uint8)
+    for p in patches:
+        r, c = p.get("row"), p.get("col")
+        if r is not None and c is not None and 0 <= r < 48 and 0 <= c < 48:
+            grid[r, c] = 1
+    n, seen = 0, np.zeros_like(grid, dtype=bool)
+    for i in range(48):
+        for j in range(48):
+            if grid[i, j] and not seen[i, j]:
+                n += 1
+                stack = [(i, j)]
+                while stack:
+                    ii, jj = stack.pop()
+                    if (0 <= ii < 48 and 0 <= jj < 48 and grid[ii, jj]
+                            and not seen[ii, jj]):
+                        seen[ii, jj] = True
+                        stack.extend([(ii+1, jj), (ii-1, jj),
+                                      (ii, jj+1), (ii, jj-1)])
+    n_active = int(grid.sum())
+    out = {"error": None, "n_components": int(n),
+           "n_active_patches": n_active, "not_applicable": False}
+    verdict = (f"{n} connected hotspot blob(s) across {n_active} active patches; "
+               f"many small blobs = diffuse anomaly, one large blob = localised defect")
+    disconfirm = ("expert hotspots may be spread across normal high-variance regions "
+                  "without a true defect; cross-check with zoom_bbox")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+def tool_segment_and_count(query_path: str, ref_paths: list[str] | None = None,
+                           grid_size: int = 8, **_) -> dict:
+    """Coarse structural-change signal via 8x8 intensity-grid diff vs ref 0."""
+    if not ref_paths:
+        return {"error": "ref_paths required"}
+    q = np.array(Image.open(query_path).convert("L").resize((256, 256)))
+    r = np.array(Image.open(ref_paths[0]).convert("L").resize((256, 256)))
+    cell = 256 // grid_size
+    q_grid = q.reshape(grid_size, cell, grid_size, cell).mean(axis=(1, 3))
+    r_grid = r.reshape(grid_size, cell, grid_size, cell).mean(axis=(1, 3))
+    diff = np.abs(q_grid - r_grid)
+    changed = int((diff > 20).sum())
+    top_idx = np.argsort(diff.ravel())[::-1][:5]
+    top_diffs = [{"row": int(i // grid_size), "col": int(i % grid_size),
+                  "diff": float(diff.ravel()[i])} for i in top_idx
+                 if diff.ravel()[i] > 10]
+    out = {
+        "error": None,
+        "changed_cells": changed,
+        "total_cells": grid_size * grid_size,
+        "change_ratio": round(changed / (grid_size * grid_size), 3),
+        "top_differences": top_diffs,
+    }
+    verdict = (f"{changed}/{out['total_cells']} coarse cells changed > threshold "
+               f"(ratio {out['change_ratio']})")
+    disconfirm = ("coarse diff is sensitive to global intensity shift (lighting, "
+                  "exposure, dye/contrast); not conclusive evidence of a defect")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+def tool_texture_fft(query_path: str, **_) -> dict:
+    """FFT periodicity score: top-10 peak energy / total spectrum energy."""
+    img = np.array(Image.open(query_path).convert("L").resize((256, 256))).astype(float)
+    img -= img.mean()
+    spec = np.abs(np.fft.fftshift(np.fft.fft2(img)))
+    h, w = spec.shape
+    cy, cx = h // 2, w // 2
+    spec[cy - 3:cy + 3, cx - 3:cx + 3] = 0
+    total = float(spec.sum()) + 1e-8
+    top_k = float(np.sort(spec.ravel())[::-1][:10].sum())
+    score = float(top_k / total)
+    periodicity = min(1.0, max(0.0, score))
+    out = {"error": None, "periodicity_score": periodicity}
+    if periodicity > 0.15:
+        verdict = (f"periodic texture detected (score {periodicity:.3f}); a regular "
+                   f"repeating pattern is present")
+        disconfirm = ("periodicity alone does not indicate defect — many normal "
+                      "textures (fabric, grid, lattice) are highly periodic")
+    else:
+        verdict = (f"low periodicity (score {periodicity:.3f}); texture is irregular")
+        disconfirm = ("irregular texture is normal for many domains (natural scenes, "
+                      "tissue); do NOT use this alone to flag anomaly")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+# ─── Tier 5: Semantic knowledge ─────────────────────────────────────────────
+
+KNOWLEDGE_SYSTEM = (
+    "You are a domain knowledge assistant for visual anomaly detection. "
+    "Answer the question in 2-4 sentences with concrete visual details. "
+    "Do not hedge. Return JSON: {\"answer\": \"...\"}"
+)
+
+
+def tool_domain_knowledge(question: str, llm_client=None,
+                          llm_model: str | None = None,
+                          vlm_client=None, vlm_model: str | None = None,
+                          max_tokens: int = 300, **_) -> dict:
+    """Text-only LLM query. Agent phrases its own question; no domain hint baked in."""
+    if os.environ.get("ANOMA_TEST_STUB") == "1":
+        return {"error": None, "answer": f"[stub] re: {question}"}
+    client = llm_client or vlm_client
+    model = llm_model or vlm_model
+    if client is None or model is None:
+        return {"error": "llm_client and llm_model required"}
+    messages = [
+        {"role": "system", "content": KNOWLEDGE_SYSTEM},
+        {"role": "user", "content": question},
+    ]
+    try:
+        text, _, _ = call_llm(client, model, messages,
+                              max_tokens=max_tokens, temperature=0.0)
+    except Exception as e:
+        return {"error": f"llm call failed: {e}"}
+    parsed = extract_json(text) or {}
+    out = {"error": None, "answer": parsed.get("answer", text.strip()[:300])}
+    verdict = "text-only LLM answer returned"
+    disconfirm = ("the LLM may hallucinate or give generic advice that doesn't match "
+                  "this specific image; always cross-check against the visual evidence "
+                  "before updating your score")
+    return _wrap_interpretation(out, verdict, disconfirm)
+
+
+# ─── Dispatcher ─────────────────────────────────────────────────────────────
+
+TOOL_REGISTRY = {
+    "tool_expert_score":        tool_expert_score,
+    "tool_hotspot_cropper":     tool_hotspot_cropper,
+    "tool_zoom_bbox":           tool_zoom_bbox,
+    "tool_patch_grid":          tool_patch_grid,
+    "tool_image_diff":          tool_image_diff,
+    "tool_rotate_align":        tool_rotate_align,
+    "tool_side_by_side":        tool_side_by_side,
+    "tool_reference_profiler":  tool_reference_profiler,
+    "tool_reference_retriever": tool_reference_retriever,
+    "tool_component_counter":   tool_component_counter,
+    "tool_segment_and_count":   tool_segment_and_count,
+    "tool_texture_fft":         tool_texture_fft,
+    "tool_domain_knowledge":    tool_domain_knowledge,
+}
+
+
+PROTECTED_CTX_KEYS = (
+    "query_path", "ref_paths", "item_id", "split",
+    "vlm_client", "vlm_model", "llm_client", "llm_model",
+    "_expert_patches", "_manifest_domain", "index_dir",
+)
+
+
+def dispatch_tool(name: str, args: dict, ctx: dict | None = None) -> dict:
+    """Dispatch a tool call. ctx carries session state that tools need but
+    that the VLM shouldn't re-type (query_path, ref_paths, split, clients).
+
+    PROTECTED_CTX_KEYS are ALWAYS taken from ctx — model-supplied args for
+    those keys are dropped (prevents VLM from redirecting a tool to
+    different item/split by crafting malicious args).
+    """
+    if name not in TOOL_REGISTRY:
+        return {"error": f"unknown tool {name!r}; must be one of {sorted(TOOL_REGISTRY)}"}
+    ctx = ctx or {}
+    fn = TOOL_REGISTRY[name]
+    # Defensive: VLM sometimes emits args as a string. Try to JSON parse, else ignore.
+    if isinstance(args, str):
+        try:
+            args = json.loads(args) if args.strip() else {}
+            if not isinstance(args, dict):
+                args = {}
+        except Exception:
+            args = {}
+    if args is None:
+        args = {}
+    # Start from sanitized model args: drop protected keys
+    injected = {k: v for k, v in (args or {}).items() if k not in PROTECTED_CTX_KEYS}
+    # Overlay ctx (ctx wins over model args for protected fields)
+    for k in PROTECTED_CTX_KEYS:
+        if k in ctx:
+            injected[k] = ctx[k]
+    try:
+        return fn(**injected)
+    except TypeError as e:
+        return {"error": f"bad args for {name}: {e}"}
+    except Exception as e:
+        return {"error": f"{name} raised {type(e).__name__}: {e}"}
+
+
+# ─── KEEP-gated dispatch (used by agent_v7 after audit is complete) ─────────
+
+_KEEP_TOOLS: set[str] | None = None
+
+
+def _load_keep_tools() -> set[str]:
+    """Load KEEP set from refine-logs/tool_cards/*.md.
+
+    Three states:
+      (a) cards directory missing / empty → treat as audit-not-yet-run,
+          return ALL registered tools (single_tool_agent uses its own
+          restricted dispatch, so this only affects agent_v7 before audit).
+      (b) cards exist and >=1 is KEEP → return that KEEP set.
+      (c) cards exist but zero KEEP → return empty set (no tools allowed);
+          audit has concluded no tool is useful — do NOT silently re-enable
+          everything.
+    """
+    global _KEEP_TOOLS
+    cards = Path(__file__).resolve().parent.parent.parent / "refine-logs" / "tool_cards"
+    keep: set[str] = set()
+    cards_present = False
+    if cards.exists():
+        md_files = list(cards.glob("*.md"))
+        cards_present = len(md_files) > 0
+        for md in md_files:
+            try:
+                text = md.read_text()
+            except OSError:
+                continue
+            if "**Verdict:** KEEP" in text:
+                keep.add(md.stem)
+    if cards_present:
+        _KEEP_TOOLS = keep  # may be empty — that's intentional
+    else:
+        _KEEP_TOOLS = set(TOOL_REGISTRY.keys())  # pre-audit fallback
+    return _KEEP_TOOLS
+
+
+def dispatch_tool_keep_only(name: str, args: dict, ctx: dict | None = None) -> dict:
+    """Same as dispatch_tool but refuses tools not in the KEEP set.
+
+    agent_v7 uses this; audit runs use the un-gated dispatch_tool.
+    """
+    global _KEEP_TOOLS
+    if _KEEP_TOOLS is None:
+        _load_keep_tools()
+    if name not in (_KEEP_TOOLS or set()):
+        return {"error": (f"{name} is not a v7 KEEP tool; allowed set: "
+                          f"{sorted(_KEEP_TOOLS or [])}")}
+    return dispatch_tool(name, args, ctx)

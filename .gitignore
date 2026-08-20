@@ -15,7 +15,9 @@ venv/
 .idea/
 *.swp
 .DS_Store
-.waylog
+.waylog/
+.hf_cache/
+.workbuddy/
 
 # Raw image data — fetched per-dataset from upstream (see DATA.md)
 benchmark/data/
@@ -23,6 +25,7 @@ benchmark/data/
 # Expert checkpoints (download from upstream baselines, see experts/README.md)
 experts/*/checkpoints/
 experts/*/data/
+weights/
 
 # NOTE: benchmark/retrieval_index/ and the expert score-cache JSONs
 # under benchmark/results/ ARE checked in — they are derived (DINOv2
@@ -41,6 +44,7 @@ logs/
 *.log
 test_output/
 /tmp/
+output/
 
 # Paper build artifacts
 paper/main.aux

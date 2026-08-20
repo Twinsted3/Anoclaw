@@ -24,7 +24,7 @@ import argparse
 import json
 import os
 import sys
-import threading
+# import threading  # unused — direct branch thread is disabled
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from functools import lru_cache
@@ -59,21 +59,27 @@ _OBS_IMAGE_KEYS = (
 
 
 def _run_v9_agent_v12(client, model, item, split, max_turns,
-                      question=None, options=None, rulebook=None):
+                      question=None, options=None, rulebook=None,
+                      dispatch_fn=None):
     """Run the v9 refutation loop using agent_prompt_v10 + agent_tools_v8.
 
     Adapted from agent_v9.run_v9_item, changes limited to:
       - _build_initial_messages swapped to use _p10 (v10 prompt)
-      - dispatch_tool routed through _t8
+      - dispatch_tool routed through _t8 (or dispatch_fn when provided)
       - observation image-attach loop extended to the v8 key set.
     All other logic (mode handling, refutation trace, forced-final,
     MCQ coercion) is inherited from agent_v9.
+
+    dispatch_fn: if provided, replaces _t8.dispatch_tool for every tool call.
+      Pass a wrapper here instead of monkey-patching the module attribute —
+      that approach is unreliable due to Python's bytecode specialisation cache.
     """
     item_id = item["item_id"]
     query_path = item["query_path"]
     ref_paths = item.get("ref_paths", []) or []
     domain_code = item.get("domain_code")
 
+    # 给模型提供基础信息的context上下文
     ctx = {
         "query_path": query_path,
         "ref_paths": ref_paths,
@@ -231,10 +237,13 @@ def _run_v9_agent_v12(client, model, item, split, max_turns,
                 confidence=0, error="forced-final produced non-final",
             )
 
-        # Execute tool via v8 dispatcher
+        # Execute tool via v8 dispatcher (or the injected wrapper).
+        # dispatch_fn is preferred over the module attribute to avoid
+        # Python bytecode-specialisation caching breaking monkey-patches.
         tool_name = action["tool"]
         tool_args = action.get("args") or {}
-        observation = _t8.dispatch_tool(tool_name, tool_args, ctx)
+        _dispatch = dispatch_fn if dispatch_fn is not None else _t8.dispatch_tool
+        observation = _dispatch(tool_name, tool_args, ctx)
         tools_used.append(tool_name)
         history.append({"turn": turn, **_v9._summarise_action(action),
                         "obs_keys": list(observation.keys()),
@@ -289,37 +298,39 @@ def run_v12_item(client, model, item, split, max_turns,
                  question=None, options=None,
                  w_direct=0.5, w_v9=0.5,
                  learning_enabled=False, rulebook_dir=None,
-                 controller_max_tokens=400,
+                 controller_max_tokens=16e3,
                  controller_client=None, controller_model=None,
-                 refutation_rulebook=None):
+                 refutation_rulebook=None,
+                 dispatch_fn=None):
     """v12 item runner — parallel Direct + v9-agent-with-v8-tools + optional
     controller arbitration.
     """
-    is_ad_expected = (question is None or options is None)
+    is_ad_expected = (question is None or options is None)  # question && options => MCQ mode
 
     direct_holder = {"result": None, "error": None}
-    direct_thread = None
-    if is_ad_expected:
-        direct_thread = threading.Thread(
-            target=_direct_blocking,
-            args=(client, model, item, direct_holder),
-            daemon=True,
-        )
-        direct_thread.start()
+    # Direct branch disabled: the agent (v9) result is used directly without
+    # blending. The thread below is NOT started so _direct_blocking never
+    # runs. direct_score / direct_rationale remain None throughout.
+    # direct_thread = threading.Thread(
+    #     target=_direct_blocking,
+    #     args=(client, model, item, direct_holder),
+    #     daemon=True,
+    # )
+    # direct_thread.start()
 
     try:
         v9 = _run_v9_agent_v12(client, model, item, split, max_turns,
                                question=question, options=options,
-                               rulebook=refutation_rulebook)
+                               rulebook=refutation_rulebook,
+                               dispatch_fn=dispatch_fn)
         v9_error = v9.error
     except Exception as e:
         v9 = None
         v9_error = f"{type(e).__name__}: {e}"
 
-    if direct_thread is not None:
-        direct_thread.join()
-    direct_result = direct_holder["result"]
-    direct_error = direct_holder["error"]
+    # direct_thread.join() — no thread was started, nothing to join.
+    direct_result = direct_holder["result"]   # always None
+    direct_error = direct_holder["error"]     # always None
 
     base = {
         "item_id": item.get("item_id"),

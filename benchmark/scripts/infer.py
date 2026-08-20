@@ -570,8 +570,10 @@ def get_client(backend: str) -> OpenAI:
         base_url = os.environ.get("SEED_API_BASE", "https://ark.cn-beijing.volces.com/api/v3")
         return OpenAI(api_key=api_key, base_url=base_url, timeout=120.0)
     elif backend == "qwen3":
-        api_key = os.environ.get("QWEN_API_KEY", "EMPTY")
-        base_url = os.environ.get("QWEN_API_BASE", "http://localhost:8000/v1")
+        # api_key = os.environ.get("QWEN_API_KEY", "EMPTY")
+        api_key = os.environ.get("QWEN_API_KEY", None)
+        # base_url = os.environ.get("QWEN_API_BASE", "http://localhost:8000/v1")
+        base_url = os.environ.get("QWEN_API_BASE", "https://dashscope.aliyuncs.com/compatible-mode/v1")
         return OpenAI(api_key=api_key, base_url=base_url)
     else:
         raise ValueError(f"Unknown backend: {backend}")
@@ -580,7 +582,8 @@ def get_client(backend: str) -> OpenAI:
 BACKEND_MODELS = {
     "gpt": os.environ.get("GPT_MODEL", "gpt-4o"),
     "seedvl": os.environ.get("SEED_MODEL", "doubao-seed-2-0-lite-260215"),
-    "qwen3": os.environ.get("QWEN_MODEL", "Qwen3-VL-8B-Instruct"),
+    # "qwen3": os.environ.get("QWEN_MODEL", "Qwen3-VL-8B-Instruct"),
+    "qwen3": os.environ.get("QWEN_MODEL", "qwen3.5-flash"),
 }
 
 
@@ -639,7 +642,7 @@ def call_llm(client: OpenAI, model: str, messages: list,
             pass
     kwargs = dict(model=model, messages=messages, max_tokens=max_tokens, temperature=temperature)
     if "qwen3" in str(model).lower() or "Qwen3" in str(model):
-        kwargs["extra_body"] = {"chat_template_kwargs": {"enable_thinking": False}}
+        kwargs["extra_body"] = {"chat_template_kwargs": {"enable_thinking": True}}
     # GPT-5.x models have been observed to emit the same JSON object twice
     # back-to-back on complex multi-image prompts (see extract_json). Asking
     # for json_object response_format prevents the duplicate echo and also

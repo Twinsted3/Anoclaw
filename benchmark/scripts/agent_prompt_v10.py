@@ -318,9 +318,8 @@ Return ONLY a JSON object.
 
 
 DOMAIN_HINTS = {
-    "D1":  ("D1 — MVTec-AD (aligned industrial). expert_score is STRONG here "
-            "(AUROC 0.97). Standard pipeline on a suspicious candidate: "
-            "expert_score → side_by_side(bbox=suggested_bbox_256). "
+    "D1":  ("D1 — MVTec-AD (aligned industrial). Images are pixel-aligned. "
+            "Standard pipeline: side_by_side(bbox) on a suspicious region. "
             "image_diff / rotate_align are also applicable (refs are aligned "
             "photographs of the same item)."),
     "D5":  ("D5 — GoodsAD (retail, mostly aligned). expert_score STRONG "

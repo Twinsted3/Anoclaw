@@ -1109,8 +1109,11 @@ def tool_domain_knowledge(question: str, llm_client=None,
 # ─── Dispatcher ─────────────────────────────────────────────────────────────
 
 TOOL_REGISTRY = {
-    "tool_expert_score":        tool_expert_score,
-    "tool_hotspot_cropper":     tool_hotspot_cropper,
+    # tool_expert_score and tool_hotspot_cropper are permanently disabled:
+    # they depend on pre-computed SubspaceAD scores which are not available
+    # in real industrial deployment. Use tool_side_by_side instead.
+    # "tool_expert_score":        tool_expert_score,
+    # "tool_hotspot_cropper":     tool_hotspot_cropper,
     "tool_zoom_bbox":           tool_zoom_bbox,
     "tool_patch_grid":          tool_patch_grid,
     "tool_image_diff":          tool_image_diff,
@@ -1140,6 +1143,15 @@ def dispatch_tool(name: str, args: dict, ctx: dict | None = None) -> dict:
     those keys are dropped (prevents VLM from redirecting a tool to
     different item/split by crafting malicious args).
     """
+    if name in ("tool_expert_score", "tool_hotspot_cropper"):
+        return {
+            "error": (
+                f"{name} is permanently disabled — no pre-computed expert "
+                "scores are available in this deployment. "
+                "Use tool_side_by_side or tool_segment_and_count instead."
+            ),
+            "available": False,
+        }
     if name not in TOOL_REGISTRY:
         return {"error": f"unknown tool {name!r}; must be one of {sorted(TOOL_REGISTRY)}"}
     ctx = ctx or {}

@@ -455,7 +455,15 @@ def main():
     ap.add_argument("--learning_enabled", action="store_true")
     ap.add_argument("--rulebook_dir", default="")
     ap.add_argument("--controller_max_tokens", type=int, default=400)
+    ap.add_argument("--log_dir", default="",
+                    help="If set, write per-item conversation.json files here. "
+                         "Requires --max_workers 1 for thread-safe LLM logging.")
     args = ap.parse_args()
+
+    if args.log_dir and args.max_workers > 1:
+        print("[WARNING] --log_dir is set with max_workers > 1. "
+              "LLM call logging will NOT be thread-safe. "
+              "Use --max_workers 1 for reliable conversation logs.", flush=True)
 
     items = json.load(open(args.manifest))
     items = [x for x in items if x.get("split") == args.split]
@@ -472,15 +480,87 @@ def main():
     client = get_client(args.backend)
     model = get_model_name(args.backend)
 
+    def _strip_b64(messages):
+        """Replace base64 image payloads with a placeholder for logging."""
+        if not isinstance(messages, list):
+            return messages
+        out = []
+        for msg in messages:
+            if not isinstance(msg, dict):
+                out.append(msg); continue
+            content = msg.get("content")
+            if isinstance(content, list):
+                parts = []
+                for p in content:
+                    if (isinstance(p, dict) and p.get("type") == "image_url"
+                            and isinstance(p.get("image_url"), dict)):
+                        parts.append({"type": "image_url",
+                                      "image_url": {"url": "<base64_stripped>"}})
+                    else:
+                        parts.append(p)
+                out.append({**msg, "content": parts})
+            else:
+                out.append(msg)
+        return out
+
     def _run(x):
         try:
-            return run_v12_item(
-                client, model, x, args.split, args.max_turns,
-                w_direct=args.w_direct, w_v9=args.w_v9,
-                learning_enabled=args.learning_enabled,
-                rulebook_dir=args.rulebook_dir,
-                controller_max_tokens=args.controller_max_tokens,
-            )
+            if not args.log_dir:
+                return run_v12_item(
+                    client, model, x, args.split, args.max_turns,
+                    w_direct=args.w_direct, w_v9=args.w_v9,
+                    learning_enabled=args.learning_enabled,
+                    rulebook_dir=args.rulebook_dir,
+                    controller_max_tokens=args.controller_max_tokens,
+                )
+
+            # --- Logging mode ---
+            conv = {"item_id": x["item_id"], "llm_calls": [], "tool_calls": []}
+
+            def patched_dispatch(name, tool_args, ctx=None):
+                obs = _t8.dispatch_tool(name, tool_args, ctx)
+                entry = {"tool": name, "args": tool_args, "obs": {}}
+                for k, v in (obs or {}).items():
+                    if isinstance(v, str) and len(v) > 200 and k.endswith("_b64"):
+                        entry["obs"][k] = f"<b64 {len(v)} chars>"
+                    else:
+                        entry["obs"][k] = v
+                conv["tool_calls"].append(entry)
+                return obs
+
+            orig_call_llm = _v9.call_llm
+            def patched_call_llm(*a, **kw):
+                result = orig_call_llm(*a, **kw)
+                try:
+                    msgs = a[0] if a else kw.get("messages", [])
+                    conv["llm_calls"].append({
+                        "messages": _strip_b64(msgs),
+                        "response": result,
+                    })
+                except Exception:
+                    pass
+                return result
+
+            _v9.call_llm = patched_call_llm
+            try:
+                r = run_v12_item(
+                    client, model, x, args.split, args.max_turns,
+                    w_direct=args.w_direct, w_v9=args.w_v9,
+                    learning_enabled=args.learning_enabled,
+                    rulebook_dir=args.rulebook_dir,
+                    controller_max_tokens=args.controller_max_tokens,
+                    dispatch_fn=patched_dispatch,
+                )
+            finally:
+                _v9.call_llm = orig_call_llm
+
+            conv["result"] = {k: v for k, v in r.items() if k != "history"}
+            item_log_dir = Path(args.log_dir) / str(x["item_id"])
+            item_log_dir.mkdir(parents=True, exist_ok=True)
+            with open(item_log_dir / "conversation.json", "w", encoding="utf-8") as f:
+                json.dump(conv, f, indent=2, default=str)
+            return r
+
         except Exception as e:
             return {"item_id": x["item_id"], "anomaly_score": 0.5,
                     "error": f"{type(e).__name__}: {e}"}
